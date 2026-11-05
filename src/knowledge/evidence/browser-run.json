@@ -1,7 +1,7 @@
 {
   "tool": "Playwright (playwright-core 1.64.1)",
-  "environment": "Chromium 151.0.7922.173 headless · Linux · 1280×900 و390×844 · reduced motion",
-  "startedAt": "2026-11-05T15:43:01.511Z",
+  "environment": "Chromium 156.0.8078.80 headless · win32 · 1280×900 و390×844 · reduced motion",
+  "startedAt": "2026-11-05T17:57:14.198Z",
   "results": [
     {
       "id": "BR-CI-01",

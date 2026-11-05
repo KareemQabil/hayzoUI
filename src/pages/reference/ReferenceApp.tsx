@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { DEFAULT_SEARCH, formatPhoneEG, matchText, nationalPhoneEG, normalizeDigits, toDisplayDigits, type SearchOptions } from '../../arabic'
 import {
   AmountText,
+  Digits,
   Badge,
   Button,
   CurrencyInput,
@@ -281,7 +282,7 @@ export function ReferenceApp() {
           <h3 id="collect-h" className="t-h3 text-fg">
             تحصيل مبلغ
           </h3>
-          <p className="t-caption text-fg-2">{'من ١ إلى ٥٠ ٠٠٠ ج.م. التسجيل محاكاة محلية.'}</p>
+          <p className="t-caption text-fg-2">من <Digits>1</Digits> إلى <Digits>50 000</Digits> ج.م. التسجيل محاكاة محلية.</p>
         </div>
         <div className="md:col-span-2 md:max-w-[26rem]">
           <CurrencyInput key={formKey} ref={amountRef} label="المبلغ المستلم" size="lg" value={amount} onValueChange={(v) => setAmount(v)} min={MIN} max={MAX} showValidation={submitAttempted} />

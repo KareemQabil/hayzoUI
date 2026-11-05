@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { CURRENCIES, parseAmount, type AmountParseResult } from '../../../arabic'
-import { Button, CurrencyInput, SegmentedControl, Select, Switch, type CurrencyInputHandle } from '../../../system'
+import { Button, CurrencyInput, Digits, SegmentedControl, Select, Switch, type CurrencyInputHandle } from '../../../system'
 import { CodeBlock, PreviewFrame, useMediaQuery } from '../../../app/ui'
 import { generateCode, HELPER, LABELS, PAYMENT_RANGE, stateDraft, type LabSettings, type LabState } from './lab'
 import { ContractStrip, stepLabel, StatusBadge } from './shared'
@@ -69,7 +69,7 @@ export function LabTab({ settings: s, onChange }: { settings: LabSettings; onCha
       <ControlGroup title="القواعد">
         <Select label="العملة" size="sm" value={s.currency} onValueChange={(v) => onChange({ currency: v })} options={(['EGP', 'SAR', 'KWD'] as const).map((c) => ({ value: c, label: `${CURRENCIES[c].nameAr} (${CURRENCIES[c].minorDigits === 3 ? '٣ أرقام عشرية' : 'رقمان عشريان'})` }))} />
         <SegmentedControl label="عرض العملة" fullWidth value={s.currencyDisplay} onValueChange={(v) => onChange({ currencyDisplay: v })} options={[{ value: 'symbol', label: 'رمز' }, { value: 'code', label: 'رمز ISO' }, { value: 'none', label: 'بلا' }]} />
-        <SegmentedControl label="المدى" fullWidth value={s.range} onValueChange={(v) => onChange({ range: v })} options={[{ value: 'none', label: 'بلا حدود' }, { value: 'payment', label: '١ – ٥٠ ٠٠٠' }]} />
+        <SegmentedControl label="المدى" fullWidth value={s.range} onValueChange={(v) => onChange({ range: v })} options={[{ value: 'none', label: 'بلا حدود' }, { value: 'payment', label: <><Digits>1</Digits> – <Digits>50 000</Digits></>, ariaLabel: 'من 1 إلى 50000' }]} />
         <SegmentedControl label="إظهار التحقق" fullWidth value={s.validateOn} onValueChange={(v) => onChange({ validateOn: v })} options={[{ value: 'blur', label: 'عند المغادرة' }, { value: 'change', label: 'أثناء الكتابة' }]} />
         <Switch label="اختياري" checked={s.optional} onCheckedChange={(v) => onChange({ optional: v })} description="يُظهر «اختياري» ويلغي رسالة «أدخل المبلغ»." />
         <Switch label="يسمح بالسالب" checked={s.allowNegative} onCheckedChange={(v) => onChange({ allowNegative: v })} />

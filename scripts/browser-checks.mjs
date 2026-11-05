@@ -2,9 +2,10 @@
 // Writes src/knowledge/evidence/browser-run.json. Usage: node scripts/browser-checks.mjs [baseUrl]
 import fs from 'node:fs'
 import { chromium } from 'playwright-core'
+import { chromiumPath } from './chromium.mjs'
 
-const base = process.argv[2] ?? 'http://localhost:3000/'
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM ?? '/usr/bin/chromium', args: ['--no-sandbox'] })
+const base = process.argv[2] ?? 'http://localhost:5179/'
+const browser = await chromium.launch({ executablePath: chromiumPath(), args: ['--no-sandbox'] })
 const pwVersion = JSON.parse(fs.readFileSync('node_modules/playwright-core/package.json', 'utf8')).version
 const startedAt = new Date().toISOString()
 const results = []
@@ -180,7 +181,7 @@ await check('BR-LAY-01', 'no page-level horizontal overflow at 390px', async () 
 
 const run = {
   tool: `Playwright (playwright-core ${pwVersion})`,
-  environment: `Chromium ${browser.version()} headless · Linux · 1280×900 و390×844 · reduced motion`,
+  environment: `Chromium ${browser.version()} headless · ${process.platform} · 1280×900 و390×844 · reduced motion`,
   startedAt,
   results,
 }

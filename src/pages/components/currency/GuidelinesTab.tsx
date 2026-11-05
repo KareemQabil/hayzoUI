@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { CURRENCIES, formatAmount, parseAmount, type AmountErrorCode } from '../../../arabic'
 import { amountErrorMessage, requiredAmountMessage } from '../../../content/messages'
-import { CurrencyInput, DataTable, Icon, SegmentedControl, useLocale, type CurrencyInputHandle, type Dir } from '../../../system'
+import { CurrencyInput, DataTable, Digits, Icon, SegmentedControl, useLocale, type CurrencyInputHandle, type Dir } from '../../../system'
 import { PreviewFrame, Section } from '../../../app/ui'
 import type { Density, Mode } from '../../../tokens/theme'
 import { visibleInput } from './shared'
@@ -209,7 +209,7 @@ export function GuidelinesTab() {
           />
         </div>
       </Section>
-      <Section eyebrow="الكتابة" title="نصوص الرسائل" intro={'كل رسالة مولّدة من رمز الخطأ في طبقة المحتوى؛ المكوّن لا يحتوي نصوصًا ثابتة. الحدود المعروضة هنا مثال بمدى ١ – ٥٠ ٠٠٠.'}>
+      <Section eyebrow="الكتابة" title="نصوص الرسائل" intro={<>كل رسالة مولّدة من رمز الخطأ في طبقة المحتوى؛ المكوّن لا يحتوي نصوصًا ثابتة. الحدود المعروضة هنا مثال بمدى <Digits>1</Digits> – <Digits>50 000</Digits>.</>}>
         <DataTable
           label="نصوص رسائل حقل المبلغ"
           rows={[{ code: 'required' as const }, ...codes.map((code) => ({ code }))]}
