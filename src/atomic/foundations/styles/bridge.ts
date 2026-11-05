@@ -6,6 +6,6 @@ export function contextPresetToContextLayer(preset: ContextPresetDefinition): Co
   return {
     id: preset.id,
     kind: 'context-preset',
-    values: preset.environmentDefaults ?? {},
+    values: { ...preset.environmentDefaults },
   }
 }

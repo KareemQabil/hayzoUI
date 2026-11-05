@@ -86,6 +86,8 @@ export type StyleAssetIssueCode =
   | 'no-shared-density'
   | 'unsupported-density'
   | 'unsupported-input-modality'
+  | 'unsupported-appearance-mode'
+  | 'invalid-context-layer'
 
 export interface StyleAssetIssue {
   code: StyleAssetIssueCode
@@ -95,6 +97,11 @@ export interface StyleAssetIssue {
 }
 
 export interface StyleAssetValidationResult {
+  valid: boolean
+  issues: StyleAssetIssue[]
+}
+
+export interface ExperienceCompositionValidationResult {
   valid: boolean
   issues: StyleAssetIssue[]
 }

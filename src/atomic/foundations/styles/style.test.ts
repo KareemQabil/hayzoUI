@@ -47,7 +47,8 @@ describe('style asset contracts', () => {
       erpCompactContextPreset,
       crmResponsiveContextPreset,
     ]) {
-      expect(validateStyleAssetSchema(asset)).toBe(true)
+      const valid = validateStyleAssetSchema(asset)
+      expect(valid, `${asset.id}: ${JSON.stringify(validateStyleAssetSchema.errors)}`).toBe(true)
     }
   })
 

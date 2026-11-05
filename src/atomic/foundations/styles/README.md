@@ -106,3 +106,60 @@ The context preset's token-layer reference is consumed by the token engine. Its 
 - No component implementation is duplicated per theme or context.
 
 The referenced token and recipe assets must be versioned and resolved by their own registries. The references in the examples are proposed identifiers only.
+
+## Effective context resolution
+
+`resolveExperienceContext` validates all four loaded assets before composing preset,
+profile, system, user, and scope values. It then checks the **effective** density
+and input modality, including library defaults when neither asset sets them.
+This prevents a user or scoped override from bypassing capability checks.
+
+```ts
+import { resolveExperienceContext } from './index'
+
+const result = resolveExperienceContext({
+  profile,
+  visualSystem,
+  brandTheme,
+  contextPreset,
+  appearanceMode: 'light',
+  preferenceLayers: [
+    { id: 'operator', kind: 'user-preferences', values: { motion: 'reduced' } },
+  ],
+})
+```
+
+Appearance is an explicit selection and must be supported by both visual system
+and brand. `preferenceLayers` only accepts system, user, and scope sources; the
+selected preset and profile are supplied through their dedicated inputs. Failed
+resolution returns diagnostics without a partial context. Successful results
+contain the detached scalar context, contribution trace, applied layer IDs, and
+selected appearance. Output is mutable caller-owned data; it is not frozen.
+
+The lower-level `validateExperienceComposition` accepts an optional fifth argument
+for an already resolved context. Without it, it only checks profile/preset selections;
+use the facade above when runtime preferences or library defaults are involved.
+
+These metadata checks do not enforce token contrast, hit-target dimensions, or
+accessibility constraints. Those checks belong to the subsequent token/recipe and
+component integrations.
+
+Exact versions follow SemVer syntax, including prerelease and build identifiers;
+version ranges and numeric prerelease identifiers with leading zeros are rejected.
+JSON schemas are structural validation. Locale canonicalization, duplicate reference
+IDs across different versions, and cross-field capabilities still require the runtime
+validators; schema validation alone is not a full composition acceptance check.
+
+## Verification
+
+With the repository dependencies installed, from the repository root:
+
+```sh
+pnpm exec vitest run --config src/atomic/foundations/vitest.config.ts
+pnpm exec tsc --noEmit --project src/atomic/foundations/tsconfig.json
+```
+
+The dedicated configuration runs in Node and avoids application plugins. The scoped
+TypeScript configuration excludes the DOM library. See the dated review evidence in
+`docs/reviews/ATOMIC_FOUNDATIONS_VALIDATION.md` for commands actually run
+and dependency-install limitations during this change.

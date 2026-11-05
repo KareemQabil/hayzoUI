@@ -1,4 +1,5 @@
 import { DEFAULT_EXPERIENCE_CONTEXT } from './defaults'
+import { isPlainRecord as isRecord } from '../validation'
 import { isPartialExperienceContext, validateContextValues } from './validate'
 import { CONTEXT_FIELD_NAMES, CONTEXT_LAYER_KINDS } from './types'
 import type {
@@ -35,10 +36,6 @@ const DEFAULT_SOURCE: ContextSource = Object.freeze({
   id: 'library-defaults',
   kind: 'library-default',
 })
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value)
-}
 
 function issue(
   code: ContextIssue['code'],
@@ -187,6 +184,6 @@ export function profileToContextLayer(profile: ExperienceProfileDefinition): Con
   return {
     id: profile.id,
     kind: 'experience-profile',
-    values: profile.context ?? {},
+    values: { ...profile.context },
   }
 }

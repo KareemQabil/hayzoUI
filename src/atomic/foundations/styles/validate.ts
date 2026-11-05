@@ -1,9 +1,10 @@
 import { validateContextValues } from '../context/validate'
-import type { ExperienceProfileDefinition, VersionedReference } from '../context/types'
+import type { Density, ExperienceContext, ExperienceProfileDefinition, VersionedReference } from '../context/types'
+import { EXACT_VERSION_PATTERN as VERSION_PATTERN, isPlainRecord as isRecord } from '../validation'
 import type {
   BrandThemeDefinition,
   ContextPresetDefinition,
-  Density,
+  ExperienceCompositionValidationResult,
   SupportedInputModality,
   StyleAssetIssue,
   StyleAssetValidationResult,
@@ -13,7 +14,6 @@ import type {
 type StyleAssetDefinitionKind = 'visual-system' | 'brand-theme' | 'context-preset'
 
 const ID_PATTERN = /^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$/
-const VERSION_PATTERN = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/
 
 const VISUAL_SYSTEM_FIELDS = new Set([
   'schemaVersion', 'kind', 'id', 'version', 'name', 'description',
@@ -33,12 +33,6 @@ const REQUIREMENT_FIELDS = new Set([
   'minimumTargetSize', 'dataDensity', 'keyboardPriority',
   'responsiveStrategy', 'supportedInputModalities',
 ])
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  if (typeof value !== 'object' || value === null || Array.isArray(value)) return false
-  const prototype = Object.getPrototypeOf(value)
-  return prototype === Object.prototype || prototype === null
-}
 
 function issue(
   code: StyleAssetIssue['code'],
@@ -286,10 +280,7 @@ export function isContextPresetDefinition(input: unknown): input is ContextPrese
   return validateContextPresetDefinition(input).valid
 }
 
-export interface ExperienceCompositionValidationResult {
-  valid: boolean
-  issues: StyleAssetIssue[]
-}
+export type { ExperienceCompositionValidationResult } from './types'
 
 /**
  * Check compatibility after all four versioned assets have been loaded and individually validated.
@@ -300,6 +291,7 @@ export function validateExperienceComposition(
   visualSystem: VisualSystemDefinition,
   brandTheme: BrandThemeDefinition,
   contextPreset: ContextPresetDefinition,
+  resolvedContext?: ExperienceContext,
 ): ExperienceCompositionValidationResult {
   const issues: StyleAssetIssue[] = []
 
@@ -328,14 +320,15 @@ export function validateExperienceComposition(
     issues.push(issue('no-shared-density', 'composition.densities', 'Visual system and context preset have no supported density in common.'))
   }
 
-  const selectedDensity = profile.context?.density ?? contextPreset.environmentDefaults?.density
+  const contextPath = resolvedContext ? 'composition.context' : 'profile.context'
+  const selectedDensity = resolvedContext?.density ?? profile.context?.density ?? contextPreset.environmentDefaults?.density
   if (selectedDensity && (!visualSystem.supportedDensities.includes(selectedDensity) || !contextPreset.supportedDensities.includes(selectedDensity))) {
-    issues.push(issue('unsupported-density', 'profile.context.density', 'Selected density is not supported by both the visual system and context preset.', selectedDensity))
+    issues.push(issue('unsupported-density', `${contextPath}.density`, 'Selected density is not supported by both the visual system and context preset.', selectedDensity))
   }
 
-  const selectedModality = profile.context?.inputModality ?? contextPreset.environmentDefaults?.inputModality
+  const selectedModality = resolvedContext?.inputModality ?? profile.context?.inputModality ?? contextPreset.environmentDefaults?.inputModality
   if (selectedModality && selectedModality !== 'unknown' && !contextPreset.requirements.supportedInputModalities.includes(selectedModality)) {
-    issues.push(issue('unsupported-input-modality', 'profile.context.inputModality', 'Selected input modality is not supported by the context preset.', selectedModality))
+    issues.push(issue('unsupported-input-modality', `${contextPath}.inputModality`, 'Selected input modality is not supported by the context preset.', selectedModality))
   }
 
   return { valid: issues.length === 0, issues }

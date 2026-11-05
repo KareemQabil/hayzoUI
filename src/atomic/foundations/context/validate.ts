@@ -1,4 +1,5 @@
 import { CONTEXT_FIELD_NAMES } from './types'
+import { EXACT_VERSION_PATTERN as VERSION_PATTERN, isPlainRecord as isRecord } from '../validation'
 import type {
   ContextIssue,
   ContextValidationResult,
@@ -21,7 +22,6 @@ const REQUIRED_CONTEXT_FIELDS = [
 ] as const
 
 const ID_PATTERN = /^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$/
-const VERSION_PATTERN = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/
 const UNICODE_TYPE_PATTERN = /^[a-z0-9]{3,8}(?:-[a-z0-9]{3,8})*$/
 const REGION_PATTERN = /^[A-Z]{2}$/
 const CURRENCY_PATTERN = /^[A-Z]{3}$/
@@ -40,10 +40,6 @@ const PROFILE_FIELDS = new Set([
 ])
 
 const REFERENCE_FIELDS = new Set(['id', 'version'])
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value)
-}
 
 function issue(
   code: ContextIssue['code'],
