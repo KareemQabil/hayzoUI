@@ -47,8 +47,24 @@ export function stripBidiControls(input: string): { text: string; removed: numbe
   return { text: input.replace(BIDI_CONTROLS, ''), removed }
 }
 
+/**
+ * Bidi-safe spaces for numbers (arabic.digits.v1, rule R-BIDI-003).
+ *
+ * Arabic-Indic digits have bidi class AN. An ASCII space between two AN runs is a neutral that UAX #9
+ * resolves as right-to-left, so even inside an LTR field «٠١٠ ١٢٣٤ ٥٦٧٨» is drawn as «٥٦٧٨ ١٢٣٤ ٠١٠».
+ * U+00A0 (NO-BREAK SPACE) and U+202F (NARROW NO-BREAK SPACE) have bidi class CS: a single CS between two
+ * numbers joins them into one run (rule W4), so the groups keep their order. No invisible marks are added.
+ */
+export const NBSP = ' '
+export const NNBSP = ' '
+
+/** Replaces ASCII spaces with a bidi-safe space. Same length, so a caret position stays valid. */
+export function numericSpaces(text: string, space: string = NBSP): string {
+  return text.replace(/ /g, space)
+}
+
 /** Formats an integer count for display (no grouping for small counts). */
 export function formatCount(n: number, numerals: DisplayNumerals): string {
   const grouped = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-  return numerals === 'arab' ? toDisplayDigits(grouped, 'arab').replace(/,/g, '٬') : grouped
+  return numerals === 'arab' ? toDisplayDigits(grouped, 'arab').replace(/,/g, NNBSP) : grouped
 }

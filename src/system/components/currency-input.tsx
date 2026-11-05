@@ -10,7 +10,7 @@
  *             invalid-text-is-preserved · external value changes do not overwrite an active draft.
  */
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState, type ReactNode } from 'react'
-import { CURRENCIES, editingAmount, formatAmount, parseAmount, type AmountParseResult, type CurrencyCode } from '../../arabic'
+import { CURRENCIES, editingAmount, formatAmount, NNBSP, numericSpaces, parseAmount, type AmountParseResult, type CurrencyCode } from '../../arabic'
 import { amountErrorMessage, requiredAmountMessage } from '../../content/messages'
 import { useLocale } from '../locale'
 import type { Size } from './button'
@@ -284,7 +284,17 @@ export const CurrencyInput = forwardRef<CurrencyInputHandle, CurrencyInputProps>
             const r = resultRef.current
             if (r.status === 'valid') setText(display(r.minor, false))
           }}
-          onChange={(e) => apply(e.target.value, 'input')}
+          onChange={(e) => {
+            // Typed grouping spaces become U+202F so Arabic-Indic groups keep their order (R-BIDI-003).
+            const el = e.currentTarget
+            const safe = numericSpaces(el.value, NNBSP)
+            if (safe !== el.value) {
+              const [start, end] = [el.selectionStart, el.selectionEnd]
+              el.value = safe
+              el.setSelectionRange(start, end)
+            }
+            apply(safe, 'input')
+          }}
           onKeyDown={(e) => {
             if (e.key === 'Escape' && textRef.current !== focusSnapshot.current) {
               // Revert the draft to its value at focus time; do not let a parent dialog close.

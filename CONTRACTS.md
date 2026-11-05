@@ -37,7 +37,11 @@ Logical properties only · colors from tokens only · no `letter-spacing` on Ara
 
 ## arabic.amount.v1
 
-Input accepts `0-9`, `٠-٩`, `۰-۹`; decimal `.` or `٫`; grouping `٬`/space only in valid groups of three; `,` and `،` are rejected with explicit suggestions; no rounding; bidi controls removed. Storage: integer minor units or `null`. Display: grouped, in provider numerals, only when not editing. On focus the field switches to the ungrouped editing form and selects it.
+Input accepts `0-9`, `٠-٩`, `۰-۹`; decimal `.` or `٫`; grouping `٬`/space only in valid groups of three; `,` and `،` are rejected with explicit suggestions; no rounding; bidi controls removed. Storage: integer minor units or `null`. Display: grouped, in provider numerals, only when not editing. Arabic-Indic display groups with U+202F (not «٬», which looks like «٫» in UI fonts); typed ASCII spaces become U+202F (R-BIDI-003).
+
+## arabic.phone.eg.v1 display
+
+Groups are joined with U+00A0, never an ASCII space: between Arabic-Indic digits an ASCII space makes UAX #9 reverse the group order even inside an LTR field. Typed spaces become U+00A0 with the caret preserved (R-BIDI-003). On focus the field switches to the ungrouped editing form and selects it.
 
 Supported currencies: EGP, SAR (2 decimals), KWD (3). Max 12 integer digits.
 

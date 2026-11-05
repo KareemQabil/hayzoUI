@@ -1,6 +1,6 @@
 /** PhoneInput — Egyptian mobile numbers (v1). Stores E.164; displays an LTR island in any UI direction. */
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState, type ReactNode } from 'react'
-import { nationalPhoneEG, parsePhoneEG, toDisplayDigits, type PhoneParseResult } from '../../arabic'
+import { nationalPhoneEG, numericSpaces, parsePhoneEG, toDisplayDigits, type PhoneParseResult } from '../../arabic'
 import { phoneErrorMessage } from '../../content/messages'
 import { useLocale } from '../locale'
 import type { Size } from './button'
@@ -60,15 +60,24 @@ export const PhoneInput = forwardRef<PhoneInputHandle, PhoneInputProps>(function
           type="tel"
           inputMode="tel"
           autoComplete="tel-national"
-          placeholder={toDisplayDigits('010 1234 5678', numerals)}
+          placeholder={toDisplayDigits(numericSpaces('010 1234 5678'), numerals)}
           value={text}
           disabled={disabled}
           aria-invalid={error ? true : undefined}
           aria-required={!optional || undefined}
           aria-describedby={describedBy(ids, !!helper, !!error)}
           onChange={(e) => {
-            setText(e.target.value)
-            const r = parsePhoneEG(e.target.value)
+            // Typed spaces become U+00A0 so Arabic-Indic groups keep their order (R-BIDI-003).
+            // Same length, so the caret is restored at the same index.
+            const el = e.currentTarget
+            const safe = numericSpaces(el.value)
+            if (safe !== el.value) {
+              const [start, end] = [el.selectionStart, el.selectionEnd]
+              el.value = safe
+              el.setSelectionRange(start, end)
+            }
+            setText(safe)
+            const r = parsePhoneEG(safe)
             setResult(r)
             last.current = r.e164
             onValueChange(r.e164, r)

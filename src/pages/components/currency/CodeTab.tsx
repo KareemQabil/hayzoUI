@@ -34,7 +34,7 @@ const bad = parseAmount('1234,50', { currency: 'EGP' })
 // bad.suggestions[0].canonical === '1234.50'   (never applied automatically)
 
 formatAmount(123450, { currency: 'EGP', numerals: 'arab' })
-// '١٬٢٣٤٫٥٠'`
+// '١\u202f٢٣٤٫٥٠'  (U+202F thin space: «٬» and «٫» look alike in UI fonts)`
 
 export function CodeTab({ settings }: { settings: LabSettings }) {
   const record = getComponent('currency-input')!

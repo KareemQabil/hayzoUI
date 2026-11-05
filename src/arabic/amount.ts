@@ -202,7 +202,14 @@ export interface FormatAmountOptions {
   symbol?: boolean
 }
 
-/** Display form: grouped, in the requested numerals. Never used as input. */
+/**
+ * Display form: grouped, in the requested numerals. Never used as input.
+ *
+ * Arabic-Indic display groups with U+202F, not «٬» (U+066C): in common Arabic UI fonts (IBM Plex Sans Arabic,
+ * Readex Pro) «٬» and «٫» are drawn as the same comma-like mark, so «١٬٢٣٤٫٥٠» reads as «١,٢٣٤,٥٠» — the
+ * ambiguity the parser refuses to guess. With a thin space the only comma-like mark left is the decimal.
+ * The parser still accepts «٬» in input.
+ */
 export function formatAmount(minor: number, { currency, numerals, grouping = true, symbol = false }: FormatAmountOptions): string {
   const { minorDigits, symbolAr } = CURRENCIES[currency]
   const negative = minor < 0
@@ -212,7 +219,7 @@ export function formatAmount(minor: number, { currency, numerals, grouping = tru
   if (grouping) int = int.replace(/\B(?=(\d{3})+(?!\d))/g, '\u0001')
   let text = `${negative ? '-' : ''}${int}${minorDigits ? '\u0002' + frac : ''}`
   text = toDisplayDigits(text, numerals)
-    .replace(/\u0001/g, numerals === 'arab' ? '\u066c' : ',')
+    .replace(/\u0001/g, numerals === 'arab' ? '\u202f' : ',')
     .replace(/\u0002/g, numerals === 'arab' ? '\u066b' : '.')
   return symbol ? `${text} ${symbolAr}` : text
 }

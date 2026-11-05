@@ -1,73 +1,73 @@
 {
   "tool": "Vitest 5.1.0",
-  "environment": "Node v22.23.4 · linux x64",
-  "startedAt": "2026-11-05T15:42:57.641Z",
+  "environment": "Node v22.19.0 · win32 x64",
+  "startedAt": "2026-11-05T16:01:59.588Z",
   "results": [
     {
       "id": "CI-F01",
       "name": "CI-F01 أرقام لاتينية بفاصلة عشرية نقطة",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 3
     },
     {
       "id": "CI-F02",
       "name": "CI-F02 أرقام عربية مشرقية وفاصلة عشرية عربية",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 0
     },
     {
       "id": "CI-F03",
       "name": "CI-F03 أرقام فارسية (عربية ممتدة)",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F04",
       "name": "CI-F04 الفاصلة الملتبسة لا تُفسَّر بصمت ويُقترح المعنى",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "CI-F05",
       "name": "CI-F05 أكثر من فاصلة عشرية مرفوض",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F06",
       "name": "CI-F06 الحقل الفارغ قيمته null وليس صفرًا",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F07",
       "name": "CI-F07 كسور أكثر من وحدة العملة الصغرى مرفوضة دون تقريب",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F08",
       "name": "CI-F08 الدينار الكويتي يقبل ثلاثة أرقام عشرية",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F09",
       "name": "CI-F09 فاصل آلاف لاتيني مع نقطة عشرية يبقى ملتبسًا مع اقتراح",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "CI-F10",
       "name": "CI-F10 فاصل الآلاف العربي «٬» في موضع صحيح",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F11",
       "name": "CI-F11 فاصل آلاف في غير موضعه مرفوض",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F12",
@@ -79,7 +79,7 @@
       "id": "CI-F13",
       "name": "CI-F13 رمز العملة داخل الحقل لا يُحذف بصمت",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F14",
@@ -103,7 +103,7 @@
       "id": "CI-F17",
       "name": "CI-F17 أكثر من ١٢ رقمًا قبل الفاصلة مرفوض",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F18",
@@ -115,25 +115,37 @@
       "id": "FM-F01",
       "name": "FM-F01 العرض بأرقام لاتينية لا يغيّر القيمة المخزنة",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "FM-F02",
-      "name": "FM-F02 العرض بأرقام عربية مع فواصل عربية",
+      "name": "FM-F02 العرض بأرقام عربية: الفاصلة العشرية «٫» هي العلامة الوحيدة الشبيهة بالفاصلة، والآلاف بمسافة رفيعة",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
+    },
+    {
+      "id": "FM-F03",
+      "name": "FM-F03 رقم الهاتف بأرقام عربية لا يحتوي مسافة عادية تقلب ترتيب المجموعات",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "FM-F04",
+      "name": "FM-F04 الصيغة الدولية للهاتف بأرقام عربية بلا مسافات عادية",
+      "status": "passed",
+      "durationMs": 0
     },
     {
       "id": "PH-F01",
       "name": "PH-F01 رقم محمول مصري محلي",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "PH-F02",
       "name": "PH-F02 رقم محمول بأرقام عربية",
       "status": "passed",
-      "durationMs": 3
+      "durationMs": 0
     },
     {
       "id": "PH-F03",
@@ -163,7 +175,7 @@
       "id": "SR-F01",
       "name": "SR-F01 البحث المتسامح: «احمد» يجد «أحمد Khaled»",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 0
     },
     {
       "id": "SR-F02",
@@ -181,49 +193,55 @@
       "id": "SR-F04",
       "name": "SR-F04 التشكيل لا يمنع المطابقة ويبقى معروضًا",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SR-F05",
       "name": "SR-F05 الأسماء المتشابهة تُعرض كتنبيه ولا تُدمج",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "status": "passed",
-      "durationMs": 88
+      "durationMs": 21
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
       "status": "passed",
-      "durationMs": 119
+      "durationMs": 27
     },
     {
       "id": "PROP-03",
       "name": "PROP-03 parse is deterministic and canonical is a fixed point",
       "status": "passed",
-      "durationMs": 12
+      "durationMs": 4
     },
     {
       "id": "PROP-04",
       "name": "PROP-04 an ambiguous comma is never accepted silently",
       "status": "passed",
-      "durationMs": 19
+      "durationMs": 7
     },
     {
       "id": "PROP-05",
       "name": "PROP-05 tolerance only adds matches, never removes them",
       "status": "passed",
-      "durationMs": 23
+      "durationMs": 9
+    },
+    {
+      "id": "PROP-07",
+      "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
+      "status": "passed",
+      "durationMs": 44
     },
     {
       "id": "PROP-06",
       "name": "PROP-06 search normalization never changes the stored name",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     }
   ]
 }

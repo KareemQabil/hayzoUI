@@ -69,7 +69,7 @@ export function LabTab({ settings: s, onChange }: { settings: LabSettings; onCha
       <ControlGroup title="القواعد">
         <Select label="العملة" size="sm" value={s.currency} onValueChange={(v) => onChange({ currency: v })} options={(['EGP', 'SAR', 'KWD'] as const).map((c) => ({ value: c, label: `${CURRENCIES[c].nameAr} (${CURRENCIES[c].minorDigits === 3 ? '٣ أرقام عشرية' : 'رقمان عشريان'})` }))} />
         <SegmentedControl label="عرض العملة" fullWidth value={s.currencyDisplay} onValueChange={(v) => onChange({ currencyDisplay: v })} options={[{ value: 'symbol', label: 'رمز' }, { value: 'code', label: 'رمز ISO' }, { value: 'none', label: 'بلا' }]} />
-        <SegmentedControl label="المدى" fullWidth value={s.range} onValueChange={(v) => onChange({ range: v })} options={[{ value: 'none', label: 'بلا حدود' }, { value: 'payment', label: '١ – ٥٠٬٠٠٠' }]} />
+        <SegmentedControl label="المدى" fullWidth value={s.range} onValueChange={(v) => onChange({ range: v })} options={[{ value: 'none', label: 'بلا حدود' }, { value: 'payment', label: '١ – ٥٠ ٠٠٠' }]} />
         <SegmentedControl label="إظهار التحقق" fullWidth value={s.validateOn} onValueChange={(v) => onChange({ validateOn: v })} options={[{ value: 'blur', label: 'عند المغادرة' }, { value: 'change', label: 'أثناء الكتابة' }]} />
         <Switch label="اختياري" checked={s.optional} onCheckedChange={(v) => onChange({ optional: v })} description="يُظهر «اختياري» ويلغي رسالة «أدخل المبلغ»." />
         <Switch label="يسمح بالسالب" checked={s.allowNegative} onCheckedChange={(v) => onChange({ allowNegative: v })} />
