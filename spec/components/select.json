@@ -1,0 +1,136 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "select",
+  "name": "القائمة المنسدلة",
+  "nameEn": "Select",
+  "family": "inputs",
+  "maturity": "alpha",
+  "purpose": "عنصر select أصلي بتنسيق النظام. السلوك ولوحة المفاتيح من المتصفح.",
+  "whenToUse": [
+    "اختيار واحد من 4 إلى 15 خيارًا معروفًا"
+  ],
+  "whenNotToUse": [
+    "أقل من 4 خيارات (Segmented Control)",
+    "قوائم طويلة تحتاج بحثًا (Combobox)"
+  ],
+  "anatomy": [
+    "root",
+    "label",
+    "control",
+    "chevron"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "V",
+      "doc": "Controlled value. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "V",
+      "doc": "Initial value when uncontrolled. Defaults to the first option."
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: V) => void",
+      "doc": "يُستدعى عند كل تغيير من المستخدم، في الوضعين."
+    },
+    {
+      "name": "options",
+      "type": "SelectOption<V>[]",
+      "doc": "الخيارات: قيمة واسم، ويمكن تعطيل خيار.",
+      "required": true
+    },
+    {
+      "name": "helper",
+      "type": "ReactNode",
+      "doc": "نص مساعد مرتبط بـaria-describedby."
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "doc": "غير متاح؛ لا يستقبل تركيزًا ولا يُرسل."
+    },
+    {
+      "name": "hideLabel",
+      "type": "boolean",
+      "doc": "يخفي الاسم بصريًا ويبقيه اسمًا مقروءًا."
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "disabled"
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "Arrow / Type-ahead",
+      "action": "سلوك المتصفح الأصلي لعنصر select."
+    }
+  ],
+  "aria": {
+    "role": "combobox (select أصلي)",
+    "labelling": "label[for]",
+    "describedBy": [
+      "helper"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "native-semantics",
+      "statement": "select أصلي: لوحة المفاتيح وقارئ الشاشة من المتصفح، والسهم يتبع الاتجاه."
+    },
+    {
+      "id": "uncontrolled-works",
+      "statement": "دون value يبدأ بأول خيار أو defaultValue ويتغير بالاختيار.",
+      "tests": [
+        "CMP-05"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "native",
+    "relationship": "adapted",
+    "note": "select أصلي؛ نسخة مخصّصة على React Aria مخطط لها حين نحتاج أيقونات أو مجموعات."
+  },
+  "rules": [],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

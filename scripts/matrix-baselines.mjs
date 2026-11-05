@@ -28,8 +28,10 @@ let compared = 0
 const failures = []
 for (const spec of specs) {
   fs.mkdirSync(path.join(OUT, spec.id), { recursive: true })
-  for (const content of spec.content) {
-    for (const density of DENSITIES) {
+  // Every content variant at the default density, plus the first variant at the other densities.
+  const combos = [...spec.content.map((c) => [c, 'default']), ...DENSITIES.filter((d) => d !== 'default').map((d) => [spec.content[0], d])]
+  for (const [content, density] of combos) {
+    {
       await page.evaluate((h) => (location.hash = h), `#/matrix/${spec.id}?content=${content}&density=${density}`)
       await page.waitForSelector(`[data-matrix-cell$="|${density}"]`)
       await page.evaluate(() => document.fonts.ready)

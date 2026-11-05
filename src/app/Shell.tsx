@@ -142,7 +142,7 @@ export function Shell({ route, children }: { route: string[]; children: ReactNod
         </div>
       </header>
 
-      <Drawer open={menuOpen} onOpenChange={setMenuOpen} title="القائمة" closeLabel="إغلاق القائمة">
+      <Drawer open={menuOpen} onOpenChange={setMenuOpen} title="القائمة" labels={{ close: 'إغلاق القائمة' }}>
         <nav aria-label="التنقل الرئيسي" className="flex flex-col gap-5">
           {NAV.map((g) => (
             <div key={g.group}>

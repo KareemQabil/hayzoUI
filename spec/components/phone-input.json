@@ -1,0 +1,180 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "phone-input",
+  "name": "حقل الهاتف",
+  "nameEn": "Phone Input",
+  "family": "inputs",
+  "maturity": "alpha",
+  "purpose": "رقم محمول مصري يُخزَّن بصيغة E.164 ويُعرض جزيرة LTR في أي اتجاه.",
+  "whenToUse": [
+    "رقم محمول مصري يُخزَّن ويُتصل به"
+  ],
+  "whenNotToUse": [
+    "أرقام أرضية أو دول أخرى (غير مدعومة في v1)"
+  ],
+  "anatomy": [
+    "root",
+    "label",
+    "control",
+    "input",
+    "affix",
+    "error",
+    "helper"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string | null",
+      "doc": "Controlled E.164 number, or null when empty or invalid. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string | null",
+      "doc": "القيمة الابتدائية في الوضع غير المتحكم فيه.",
+      "default": null
+    },
+    {
+      "name": "onValueChange",
+      "type": "(e164: string | null, details: PhoneParseResult) => void",
+      "doc": "details is the full parse result (status, error code, e164)."
+    },
+    {
+      "name": "optional",
+      "type": "boolean",
+      "doc": "الحقل مطلوب افتراضيًا؛ هذه الخاصية تعلّمه اختياريًا."
+    },
+    {
+      "name": "helper",
+      "type": "ReactNode",
+      "doc": "نص مساعد مرتبط بـaria-describedby."
+    },
+    {
+      "name": "showValidation",
+      "type": "boolean",
+      "doc": "إظهار التحقق قبل المغادرة، مثل بعد محاولة الإرسال."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "doc": "غير متاح؛ لا يستقبل تركيزًا ولا يُرسل."
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    }
+  ],
+  "states": [
+    "default",
+    "focus-visible",
+    "invalid",
+    "disabled",
+    "required"
+  ],
+  "content": [
+    "short",
+    "arabic-digits",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "Tab",
+      "action": "يغادر؛ الرقم الصالح يُعرض مجمّعًا بأرقام التفضيل."
+    },
+    {
+      "key": "Space",
+      "action": "تتحول المسافة إلى U+00A0 مع بقاء المؤشر في مكانه."
+    }
+  ],
+  "aria": {
+    "role": "textbox",
+    "labelling": "label[for]",
+    "describedBy": [
+      "helper",
+      "error"
+    ],
+    "notes": [
+      "type=tel وinputMode=tel",
+      "aria-invalid عند الخطأ الظاهر فقط"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "all",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [
+      "input"
+    ],
+    "mirroredIcons": []
+  },
+  "contracts": [
+    "arabic.phone.eg.v1"
+  ],
+  "invariants": [
+    {
+      "id": "same-number-any-numerals",
+      "statement": "نفس الرقم بأرقام لاتينية أو مشرقية يعطي نفس E.164.",
+      "tests": [
+        "PH-F01",
+        "PH-F02"
+      ]
+    },
+    {
+      "id": "groups-never-reverse",
+      "statement": "العرض ورسائل الخطأ لا تحتوي مسافة عادية بين مجموعات الأرقام.",
+      "tests": [
+        "FM-F03",
+        "FM-F04",
+        "PROP-07",
+        "CT-01"
+      ]
+    },
+    {
+      "id": "lookalike-letters-rejected",
+      "statement": "حرف لاتيني يشبه رقمًا يُرفض برسالة، ولا يُحذف بصمت.",
+      "tests": [
+        "PH-F06"
+      ]
+    },
+    {
+      "id": "uncontrolled-keeps-typing",
+      "statement": "دون value يبقى النص المكتوب ويُبلَّغ عنه عبر onValueChange.",
+      "tests": [
+        "CMP-04"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": [
+      "أرقام أرضية",
+      "دول غير مصر"
+    ]
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-NUM-001",
+    "R-BIDI-001"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

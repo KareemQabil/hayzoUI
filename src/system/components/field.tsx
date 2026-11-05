@@ -5,6 +5,7 @@
 import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from 'react'
 import { Icon } from '../icons'
 import { useLocale } from '../locale'
+import { textOrNull, useControllable } from '../use-controllable'
 import type { Size } from './button'
 
 export interface FieldIds {
@@ -25,6 +26,8 @@ export function describedBy(ids: FieldIds, hasHelper: boolean, hasError: boolean
 }
 
 export interface FieldProps {
+  /** Visually hides the label; it stays the accessible name. */
+  hideLabel?: boolean
   ids: FieldIds
   label: ReactNode
   /** Visible "optional" marker. Required fields are the default and are marked with aria-required. */
@@ -41,8 +44,8 @@ export interface FieldProps {
   errorActions?: ReactNode
 }
 
-export function Field({ ids, label, optional, helper, error, size = 'md', disabled, readOnly, className, labelAside, children, errorActions }: FieldProps) {
-  const { dir } = useLocale()
+export function Field({ ids, label, hideLabel, optional, helper, error, size = 'md', disabled, readOnly, className, labelAside, children, errorActions }: FieldProps) {
+  const { dir, lang } = useLocale()
   return (
     <div
       className={['ax-field', className].filter(Boolean).join(' ')}
@@ -52,10 +55,10 @@ export function Field({ ids, label, optional, helper, error, size = 'md', disabl
       data-readonly={readOnly ? '' : undefined}
       data-dir={dir}
     >
-      <div className="ax-field__label-row">
+      <div className={hideLabel ? 'ax-sr' : 'ax-field__label-row'}>
         <label className="ax-field__label" htmlFor={ids.input} id={ids.label}>
           {label}
-          {optional ? <span className="ax-field__optional">{dir === 'rtl' ? 'اختياري' : 'Optional'}</span> : null}
+          {optional ? <span className="ax-field__optional">{lang === 'ar' ? 'اختياري' : 'Optional'}</span> : null}
         </label>
         {labelAside}
       </div>
@@ -82,8 +85,10 @@ export function Field({ ids, label, optional, helper, error, size = 'md', disabl
 
 export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'value' | 'defaultValue' | 'onChange' | 'dir'> {
   label: ReactNode
-  value: string
-  onValueChange: (value: string) => void
+  /** Controlled text. Empty is null (CONTRACTS.md §Props); '' is accepted as empty too. Omit to use defaultValue. */
+  value?: string | null
+  defaultValue?: string | null
+  onValueChange?: (value: string | null) => void
   helper?: ReactNode
   error?: ReactNode
   optional?: boolean
@@ -94,11 +99,13 @@ export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElemen
 }
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextField(
-  { label, value, onValueChange, helper, error, optional, size = 'md', contentDir = 'auto', mono, id, disabled, readOnly, className, ...rest },
+  { label, value: valueProp, defaultValue = null, onValueChange, helper, error, optional, size = 'md', contentDir = 'auto', mono, id, disabled, readOnly, className, ...rest },
   ref,
 ) {
   const ids = useFieldIds(id)
   const { dir: uiDir } = useLocale()
+  const [current, setValue] = useControllable<string | null>(valueProp === '' ? null : valueProp, defaultValue === '' ? null : defaultValue, onValueChange)
+  const value = current ?? ''
   // dir="auto" resolves to LTR for an empty value, which flips Arabic placeholders; follow the UI until typed.
   const resolvedDir = contentDir === 'auto' && value === '' ? uiDir : contentDir
   return (
@@ -110,7 +117,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function T
           className={['ax-control__input', mono && 'ax-mono'].filter(Boolean).join(' ')}
           dir={resolvedDir}
           value={value}
-          onChange={(e) => onValueChange(e.target.value)}
+          onChange={(e) => setValue(textOrNull(e.target.value), undefined)}
           aria-invalid={error ? true : undefined}
           aria-required={!optional || undefined}
           aria-describedby={describedBy(ids, !!helper, !!error)}

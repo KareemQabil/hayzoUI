@@ -89,7 +89,7 @@ function StatesGallery() {
           {v === 'empty' && <EmptyState icon="wallet" title="اختر عميلًا لتحصيل مبلغ منه">ابحث بالاسم أو رقم الهاتف. إن لم يكن مسجلًا، أضفه أولًا.</EmptyState>}
           {v === 'none' && (
             <div className="flex flex-col gap-2">
-              <SearchField label="ابحث عن عميل" hideLabel value={q} onValueChange={setQ} />
+              <SearchField label="ابحث عن عميل" hideLabel value={q} onValueChange={(v) => setQ(v ?? '')} />
               <EmptyState icon="search" title="لا يوجد عميل بهذا الاسم أو الرقم" action={<Button variant="outline" iconStart="user-plus">أضف «{q}» كعميل جديد</Button>}>تأكد من الإملاء، أو أضفه كعميل جديد.</EmptyState>
             </div>
           )}

@@ -57,7 +57,7 @@ export function ResourcesPage({ id }: { id?: string }) {
           { key: 'l', header: 'الرخصة', nowrap: true, cell: (r) => <License r={r} /> },
         ]}
       />
-      <Drawer open={!!open} onOpenChange={(o) => !o && navigate('#/resources')} title={open?.title ?? ''} description={open ? `${open.maintainer} · ${KIND[open.kind]}` : undefined} size="lg" closeLabel="إغلاق تفاصيل المورد">
+      <Drawer open={!!open} onOpenChange={(o) => !o && navigate('#/resources')} title={open?.title ?? ''} description={open ? `${open.maintainer} · ${KIND[open.kind]}` : undefined} size="lg" labels={{ close: 'إغلاق تفاصيل المورد' }}>
         {open ? (
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-2">

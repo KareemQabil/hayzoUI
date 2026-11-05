@@ -1,0 +1,162 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "text-field",
+  "name": "حقل النص",
+  "nameEn": "Text Field",
+  "family": "inputs",
+  "maturity": "alpha",
+  "purpose": "حقل نصي على تشريح الحقل المشترك، باتجاه محتوى تلقائي للأسماء المختلطة.",
+  "whenToUse": [
+    "نص حر قصير: اسم، عنوان، رقم مرجعي"
+  ],
+  "whenNotToUse": [
+    "مبالغ (حقل المبلغ)",
+    "هواتف (حقل الهاتف)",
+    "نص طويل متعدد الأسطر"
+  ],
+  "anatomy": [
+    "root",
+    "label",
+    "control",
+    "input",
+    "error",
+    "helper"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string | null",
+      "doc": "Controlled text. Empty is null (CONTRACTS.md §Props); '' is accepted as empty too. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string | null",
+      "doc": "القيمة الابتدائية في الوضع غير المتحكم فيه.",
+      "default": null
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string | null) => void",
+      "doc": "يُستدعى عند كل تغيير من المستخدم، في الوضعين."
+    },
+    {
+      "name": "helper",
+      "type": "ReactNode",
+      "doc": "نص مساعد مرتبط بـaria-describedby."
+    },
+    {
+      "name": "error",
+      "type": "ReactNode",
+      "doc": "رسالة خطأ ظاهرة ومرتبطة بالحقل."
+    },
+    {
+      "name": "optional",
+      "type": "boolean",
+      "doc": "الحقل مطلوب افتراضيًا؛ هذه الخاصية تعلّمه اختياريًا."
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "contentDir",
+      "type": "'auto' | 'ltr' | 'rtl'",
+      "doc": "Direction of the content, not of the UI. \"auto\" follows the first strong character.",
+      "default": "auto"
+    },
+    {
+      "name": "mono",
+      "type": "boolean",
+      "doc": "خط ثابت العرض للأكواد والأرقام المرجعية."
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "invalid",
+    "disabled",
+    "readonly"
+  ],
+  "content": [
+    "short",
+    "long-arabic",
+    "mixed",
+    "ltr-island",
+    "diacritics"
+  ],
+  "keyboard": [
+    {
+      "key": "Tab",
+      "action": "تنقل عادي؛ لا سلوك خاص."
+    }
+  ],
+  "aria": {
+    "role": "textbox",
+    "labelling": "label[for]",
+    "describedBy": [
+      "helper",
+      "error"
+    ],
+    "notes": [
+      "aria-required ما لم يكن optional"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "all",
+    "numeralsDisplay": "none",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "empty-is-null",
+      "statement": "مسح النص يبلّغ null لا سلسلة فارغة.",
+      "tests": [
+        "CMP-01"
+      ]
+    },
+    {
+      "id": "placeholder-follows-ui",
+      "statement": "الحقل الفارغ يتبع اتجاه الواجهة حتى لا ينقلب placeholder العربي؛ بعد الكتابة يتبع أول حرف قوي.",
+      "tests": [
+        "CMP-02"
+      ]
+    },
+    {
+      "id": "mixed-name-isolated",
+      "statement": "اسم مختلط مثل «أحمد Khaled» يُعرض بترتيبه المنطقي في الاتجاهين."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-BIDI-001"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

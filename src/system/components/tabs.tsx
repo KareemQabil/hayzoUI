@@ -1,6 +1,7 @@
 /** Tabs — automatic activation, roving tabindex, Home/End, direction-aware arrows. */
 import { useRef, type ReactNode } from 'react'
 import { useLocale } from '../locale'
+import { useControllable } from '../use-controllable'
 
 export interface TabItem<V extends string> {
   value: V
@@ -9,10 +10,14 @@ export interface TabItem<V extends string> {
 }
 
 export interface TabsProps<V extends string> {
+  /** Links tabs to panels rendered by the consumer with tabPanelProps(idBase, value). */
   idBase: string
   label: string
-  value: V
-  onValueChange: (value: V) => void
+  /** Controlled value. Omit to use defaultValue. */
+  value?: V
+  /** Initial tab when uncontrolled. Defaults to the first item. */
+  defaultValue?: V
+  onValueChange?: (value: V) => void
   items: TabItem<V>[]
   className?: string
   variant?: 'line' | 'contained'
@@ -22,12 +27,13 @@ export function tabPanelProps(idBase: string, value: string) {
   return { role: 'tabpanel' as const, id: `${idBase}-panel-${value}`, 'aria-labelledby': `${idBase}-tab-${value}`, tabIndex: 0 }
 }
 
-export function Tabs<V extends string>({ idBase, label, value, onValueChange, items, className, variant = 'line' }: TabsProps<V>) {
+export function Tabs<V extends string>({ idBase, label, value: valueProp, defaultValue, onValueChange, items, className, variant = 'line' }: TabsProps<V>) {
   const { dir } = useLocale()
+  const [value, setValue] = useControllable<V>(valueProp, defaultValue ?? items[0]?.value, onValueChange)
   const refs = useRef<Array<HTMLButtonElement | null>>([])
   const focusAt = (i: number) => {
     const n = (i + items.length) % items.length
-    onValueChange(items[n].value)
+    setValue(items[n].value, undefined)
     refs.current[n]?.focus()
   }
   return (
@@ -62,9 +68,9 @@ export function Tabs<V extends string>({ idBase, label, value, onValueChange, it
             aria-selected={selected}
             aria-controls={`${idBase}-panel-${t.value}`}
             tabIndex={selected ? 0 : -1}
-            data-state={selected ? 'active' : 'inactive'}
+            data-selected={selected ? '' : undefined}
             className="ax-tabs__tab"
-            onClick={() => onValueChange(t.value)}
+            onClick={() => setValue(t.value, undefined)}
           >
             {t.label}
             {t.count != null ? <span className="ax-tabs__count">{t.count}</span> : null}

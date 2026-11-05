@@ -1,0 +1,123 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "toast",
+  "name": "الإشعار المؤقت",
+  "nameEn": "Toast",
+  "family": "feedback",
+  "maturity": "draft",
+  "purpose": "تأكيد قصير غير حرج في منطقة حية مهذّبة. لا يُستخدم للأخطاء التي تتطلب إجراء.",
+  "whenToUse": [
+    "تأكيد نتيجة إجراء انتهى: حُفظ، نُسخ"
+  ],
+  "whenNotToUse": [
+    "خطأ يحتاج تصحيحًا (Inline Message)",
+    "قرار (Dialog)"
+  ],
+  "anatomy": [
+    "region",
+    "toast",
+    "icon",
+    "title",
+    "body",
+    "close"
+  ],
+  "props": [
+    {
+      "name": "tone",
+      "type": "MessageTone",
+      "doc": "النبرة اللونية. اللون لا يكون الإشارة الوحيدة.",
+      "required": true,
+      "default": "info"
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "doc": "العنوان.",
+      "required": true
+    },
+    {
+      "name": "body",
+      "type": "ReactNode",
+      "doc": "نص إضافي تحت العنوان."
+    },
+    {
+      "name": "duration",
+      "type": "number | null",
+      "doc": "ms before it closes by itself. Default 6000; danger toasts stay until dismissed (null)."
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "variants": [
+    {
+      "prop": "tone",
+      "values": [
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ]
+    }
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "Tab",
+      "action": "زر الإغلاق قابل للوصول؛ التركيز داخل المكدس يوقف المؤقت."
+    }
+  ],
+  "aria": {
+    "role": "status",
+    "labelling": "العنوان",
+    "live": "polite",
+    "notes": [
+      "الاتجاه واللغة من LocaleProvider",
+      "زر الإغلاق باسم labels.dismiss"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "locale-not-hardcoded",
+      "statement": "المكدس يأخذ dir وlang من أقرب LocaleProvider.",
+      "tests": [
+        "CMP-09"
+      ]
+    },
+    {
+      "id": "timing-adjustable",
+      "statement": "المؤقت يتوقف عند المرور أو التركيز، والأخطاء لا تختفي وحدها (WCAG 2.2.1).",
+      "tests": [
+        "CMP-10"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": [
+      "إجراء داخل الإشعار (تراجع)"
+    ]
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-CNT-001"
+  ],
+  "patterns": []
+}

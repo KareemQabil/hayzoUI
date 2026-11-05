@@ -1,0 +1,111 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "inline-message",
+  "name": "الرسالة المضمّنة",
+  "nameEn": "Inline Message",
+  "family": "feedback",
+  "maturity": "alpha",
+  "purpose": "رسائل info/success/warning/danger داخل المهمة، مع إجراءات تصحيح حقيقية فقط.",
+  "whenToUse": [
+    "حالة مرتبطة بجزء من الصفحة: فشل حفظ، تنبيه قبل إجراء"
+  ],
+  "whenNotToUse": [
+    "تأكيد عابر (Toast)",
+    "خطأ حقل واحد (رسالة الحقل)"
+  ],
+  "anatomy": [
+    "root",
+    "icon",
+    "title",
+    "body",
+    "actions"
+  ],
+  "props": [
+    {
+      "name": "tone",
+      "type": "MessageTone",
+      "doc": "النبرة اللونية. اللون لا يكون الإشارة الوحيدة.",
+      "default": "info"
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "doc": "العنوان."
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "doc": "المحتوى."
+    },
+    {
+      "name": "actions",
+      "type": "ReactNode",
+      "doc": "إجراءات مرتبطة بالرسالة."
+    },
+    {
+      "name": "live",
+      "type": "'polite' | 'assertive' | 'off'",
+      "doc": "\"assertive\" uses role=alert. Use only for failures the person must act on now.",
+      "default": "polite"
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "variants": [
+    {
+      "prop": "tone",
+      "values": [
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ]
+    }
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [],
+  "aria": {
+    "role": "status / alert حسب live",
+    "labelling": "العنوان والنص",
+    "live": "polite",
+    "notes": [
+      "danger مع live=assertive يصبح alert"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "not-color-only",
+      "statement": "كل نبرة لها أيقونة ونص، لا لون فقط."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-CNT-001",
+    "R-SRCH-002"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

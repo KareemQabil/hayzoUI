@@ -1,0 +1,116 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "icon-button",
+  "name": "الزر الأيقوني",
+  "nameEn": "Icon Button",
+  "family": "actions",
+  "maturity": "alpha",
+  "purpose": "زر بأيقونة فقط؛ الاسم المسموع إلزامي في الواجهة البرمجية.",
+  "whenToUse": [
+    "إجراء متكرر معروف بأيقونته: إغلاق، مسح، نسخ"
+  ],
+  "whenNotToUse": [
+    "إجراء رئيسي أو غير مألوف (زر بنص)"
+  ],
+  "anatomy": [
+    "root",
+    "icon"
+  ],
+  "props": [
+    {
+      "name": "icon",
+      "type": "IconName",
+      "doc": "الأيقونة.",
+      "required": true
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "doc": "Required accessible name, in the UI language.",
+      "required": true
+    },
+    {
+      "name": "variant",
+      "type": "Variant",
+      "doc": "الشكل البصري.",
+      "default": "solid"
+    },
+    {
+      "name": "tone",
+      "type": "Tone",
+      "doc": "النبرة اللونية. اللون لا يكون الإشارة الوحيدة.",
+      "default": "accent"
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "disabled"
+  ],
+  "variants": [
+    {
+      "prop": "variant",
+      "values": [
+        "solid",
+        "soft",
+        "outline",
+        "ghost"
+      ]
+    }
+  ],
+  "content": [
+    "short"
+  ],
+  "keyboard": [
+    {
+      "key": "Enter / Space",
+      "action": "ينفّذ الإجراء."
+    }
+  ],
+  "aria": {
+    "role": "button",
+    "labelling": "aria-label من label (إلزامي)",
+    "notes": [
+      "title يطابق label للماوس"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": [
+      "icon"
+    ]
+  },
+  "invariants": [
+    {
+      "id": "always-named",
+      "statement": "لا يوجد زر أيقونة بلا اسم مقروء؛ label إلزامي في النوع."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-A11Y-001",
+    "R-BIDI-002"
+  ],
+  "patterns": []
+}

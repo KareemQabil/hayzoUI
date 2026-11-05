@@ -1,0 +1,107 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "badge",
+  "name": "الشارة",
+  "nameEn": "Badge",
+  "family": "feedback",
+  "maturity": "alpha",
+  "purpose": "حالة قصيرة غير تفاعلية: النضج، العلاقة بالمصدر، حالة الدليل.",
+  "whenToUse": [
+    "حالة قصيرة لسجل: مدفوع، متأخر، جديد"
+  ],
+  "whenNotToUse": [
+    "عدد قابل للنقر (زر)",
+    "جملة كاملة (Inline Message)"
+  ],
+  "anatomy": [
+    "root",
+    "dot",
+    "label"
+  ],
+  "props": [
+    {
+      "name": "tone",
+      "type": "BadgeTone",
+      "doc": "النبرة اللونية. اللون لا يكون الإشارة الوحيدة.",
+      "default": "info"
+    },
+    {
+      "name": "variant",
+      "type": "'soft' | 'outline'",
+      "doc": "الشكل البصري.",
+      "default": "soft"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "doc": "Short status text. Color is never the only signal.",
+      "required": true
+    },
+    {
+      "name": "dot",
+      "type": "boolean",
+      "doc": "Leading dot, decorative."
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "doc": "Longer description shown on hover."
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "variants": [
+    {
+      "prop": "tone",
+      "values": [
+        "neutral",
+        "accent",
+        "success",
+        "warning",
+        "danger",
+        "info"
+      ]
+    }
+  ],
+  "content": [
+    "short",
+    "arabic-digits",
+    "long-arabic"
+  ],
+  "keyboard": [],
+  "aria": {
+    "role": "none (نص)",
+    "labelling": "النص نفسه",
+    "notes": [
+      "النقطة زخرفية aria-hidden"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "not-color-only",
+      "statement": "الحالة مكتوبة نصًا؛ اللون يدعم ولا يحمل المعنى وحده."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [],
+  "patterns": []
+}

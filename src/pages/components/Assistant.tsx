@@ -81,7 +81,7 @@ export function Assistant({ open, onOpenChange, context }: { open: boolean; onOp
   const copy = useCopy()
 
   return (
-    <Drawer open={open} onOpenChange={onOpenChange} title="مساعد الاختيار" description="توصيات قائمة على قواعد ثابتة من بيانات هذا النموذج. لا يوجد نموذج ذكاء اصطناعي." size="lg" closeLabel="إغلاق مساعد الاختيار"
+    <Drawer open={open} onOpenChange={onOpenChange} title="مساعد الاختيار" description="توصيات قائمة على قواعد ثابتة من بيانات هذا النموذج. لا يوجد نموذج ذكاء اصطناعي." size="lg" labels={{ close: 'إغلاق مساعد الاختيار' }}
       footer={<Button variant="outline" iconStart="json" disabled={!out.recs.length} onClick={() => copy(JSON.stringify({ input: a, reasons: out.recs, ...knowledgeExport(out.recs.map((r) => r.id), out.rules, out.patterns) }, null, 2), 'التوصيات بصيغة JSON')}>نسخ التوصيات JSON</Button>}
     >
       <div className="flex flex-col gap-6">

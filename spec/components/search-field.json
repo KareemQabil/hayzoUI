@@ -1,0 +1,175 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "search-field",
+  "name": "حقل البحث",
+  "nameEn": "Search Field",
+  "family": "inputs",
+  "maturity": "alpha",
+  "purpose": "بحث بإعلان مهذّب لعدد النتائج، ومسح بـ Escape، وزر مسح باسم عربي.",
+  "whenToUse": [
+    "تصفية قائمة أو جدول ظاهر بالاسم أو الرقم"
+  ],
+  "whenNotToUse": [
+    "اختيار قيمة واحدة من قائمة (Combobox)"
+  ],
+  "anatomy": [
+    "root",
+    "icon",
+    "input",
+    "clear",
+    "status"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "hideLabel",
+      "type": "boolean",
+      "doc": "Visually hide the label (the accessible name stays)."
+    },
+    {
+      "name": "value",
+      "type": "string | null",
+      "doc": "Controlled query. Empty is null; '' is accepted as empty too. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string | null",
+      "doc": "القيمة الابتدائية في الوضع غير المتحكم فيه.",
+      "default": null
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string | null) => void",
+      "doc": "يُستدعى عند كل تغيير من المستخدم، في الوضعين."
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "status",
+      "type": "ReactNode",
+      "doc": "Live status announced politely, e.g. \"٣ نتائج\"."
+    },
+    {
+      "name": "labels",
+      "type": "Partial<SearchFieldLabels>",
+      "doc": "Internal strings, Arabic by default."
+    },
+    {
+      "name": "onKeyDown",
+      "type": "React.KeyboardEventHandler<HTMLInputElement>",
+      "doc": "معالج لوحة مفاتيح إضافي، يُستدعى بعد سلوك الحقل."
+    },
+    {
+      "name": "inputProps",
+      "type": "React.InputHTMLAttributes<HTMLInputElement>",
+      "doc": "خصائص HTML إضافية للعنصر input."
+    },
+    {
+      "name": "trailing",
+      "type": "ReactNode",
+      "doc": "محتوى في نهاية الحقل (زر فلتر مثلًا)."
+    }
+  ],
+  "states": [
+    "default",
+    "focus-visible",
+    "empty"
+  ],
+  "content": [
+    "short",
+    "mixed",
+    "diacritics",
+    "arabic-digits"
+  ],
+  "keyboard": [
+    {
+      "key": "Escape",
+      "when": "فيه نص",
+      "action": "يمسح البحث ولا يغلق الحوار الأب."
+    },
+    {
+      "key": "Escape",
+      "when": "فارغ",
+      "action": "يمر للأب."
+    }
+  ],
+  "aria": {
+    "role": "searchbox",
+    "labelling": "label[for] (مخفي بصريًا عند hideLabel)",
+    "describedBy": [
+      "status"
+    ],
+    "live": "polite",
+    "notes": [
+      "زر المسح له aria-label من labels.clear"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "all",
+    "numeralsDisplay": "none",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "contracts": [
+    "arabic.search.v1"
+  ],
+  "invariants": [
+    {
+      "id": "tolerant-matching",
+      "statement": "البحث المتسامح يطابق الهمزات والتشكيل ولا يغيّر الاسم المخزّن.",
+      "tests": [
+        "SR-F01",
+        "SR-F04",
+        "PROP-05",
+        "PROP-06"
+      ]
+    },
+    {
+      "id": "escape-clears-first",
+      "statement": "أول Escape يمسح النص ولا يغلق الحوار الأب.",
+      "tests": [
+        "CMP-03"
+      ]
+    },
+    {
+      "id": "empty-is-null",
+      "statement": "مسح البحث يبلّغ null.",
+      "tests": [
+        "CMP-03"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-SRCH-001",
+    "R-A11Y-001"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

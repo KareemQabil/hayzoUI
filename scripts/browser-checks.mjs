@@ -191,7 +191,8 @@ await check('BR-MX-01', 'every spec state × content variant has a rendered matr
       await page.waitForTimeout(250)
       const r = await page.evaluate(() => ({ cells: document.querySelectorAll('[data-matrix-cell]').length, missing: [...document.querySelectorAll('[data-matrix-missing]')].map((e) => e.getAttribute('data-matrix-missing')) }))
       assert(!r.missing.length, `missing: ${r.missing.slice(0, 3).join(', ')}`)
-      assert(r.cells === s.states.length * 4, `${s.id}/${content}: ${r.cells} cells, expected ${s.states.length * 4}`)
+      const rows = s.states.length + (s.variants ?? []).reduce((n, v) => n + v.values.length, 0)
+      assert(r.cells === rows * 4, `${s.id}/${content}: ${r.cells} cells, expected ${rows * 4}`)
       cells += r.cells
     }
   }

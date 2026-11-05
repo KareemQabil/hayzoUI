@@ -1,0 +1,140 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "segmented-control",
+  "name": "المفتاح المقسّم",
+  "nameEn": "Segmented Control",
+  "family": "inputs",
+  "maturity": "alpha",
+  "purpose": "اختيار واحد من خيارات قليلة بدلالات radiogroup وأسهم تتبع الاتجاه.",
+  "whenToUse": [
+    "اختيار واحد من 2 إلى 4 خيارات ظاهرة معًا"
+  ],
+  "whenNotToUse": [
+    "أكثر من 4 خيارات (Select)",
+    "تنقل بين أقسام محتوى (Tabs)"
+  ],
+  "anatomy": [
+    "root",
+    "label",
+    "item"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "hideLabel",
+      "type": "boolean",
+      "doc": "يخفي الاسم بصريًا ويبقيه اسمًا مقروءًا."
+    },
+    {
+      "name": "value",
+      "type": "V",
+      "doc": "Controlled value. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "V",
+      "doc": "Initial value when uncontrolled. Defaults to the first enabled option."
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: V) => void",
+      "doc": "يُستدعى عند كل تغيير من المستخدم، في الوضعين."
+    },
+    {
+      "name": "options",
+      "type": "SegmentOption<V>[]",
+      "doc": "الخيارات: قيمة واسم، ويمكن تعطيل خيار.",
+      "required": true
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "sm"
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "doc": "يملأ عرض الحاوية."
+    },
+    {
+      "name": "wrap",
+      "type": "boolean",
+      "doc": "Allow options to wrap onto two rows in narrow containers."
+    }
+  ],
+  "states": [
+    "default",
+    "checked",
+    "focus-visible",
+    "disabled"
+  ],
+  "content": [
+    "short",
+    "arabic-digits",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "ArrowLeft / ArrowRight",
+      "action": "تتبع الاتجاه البصري: في RTL السهم الأيسر للخيار التالي، وتختار فورًا."
+    },
+    {
+      "key": "ArrowUp / ArrowDown",
+      "action": "السابق / التالي."
+    }
+  ],
+  "aria": {
+    "role": "radiogroup",
+    "labelling": "aria-labelledby → label",
+    "notes": [
+      "roving tabindex: الخيار المحدد وحده في ترتيب Tab"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "arrows-follow-visual-direction",
+      "statement": "في RTL السهم الأيسر يحدد الخيار التالي بصريًا، وفي LTR الأيمن.",
+      "tests": [
+        "CMP-06"
+      ]
+    },
+    {
+      "id": "skips-disabled",
+      "statement": "الأسهم تتخطى الخيارات المعطلة.",
+      "tests": [
+        "CMP-06"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [],
+  "patterns": []
+}

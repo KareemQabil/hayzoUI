@@ -25,7 +25,7 @@ const specs = fs
 function knownTestIds(): Set<string> {
   const ids = new Set<string>([...FIXTURES.map((f) => f.id), ...BROWSER_CHECKS.map((b) => b.id)])
   const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]))
-  for (const f of walk(path.resolve(__dirname, '..')).filter((f) => f.endsWith('.test.ts'))) {
+  for (const f of walk(path.resolve(__dirname, '..')).filter((f) => /\.test\.tsx?$/.test(f))) {
     for (const m of fs.readFileSync(f, 'utf8').matchAll(/test\(['`]([A-Z]+-[A-Z0-9]+)\s/g)) ids.add(m[1])
   }
   return ids
@@ -34,7 +34,10 @@ function knownTestIds(): Set<string> {
 /** Public prop names of `export interface <Name>Props { … }` in a component file (top-level members only). */
 function codeProps(file: string, nameEn: string): string[] {
   const src = fs.readFileSync(path.resolve(__dirname, '../..', file), 'utf8')
-  const iface = `${nameEn.replace(/\s+/g, '')}Props`
+  let iface = `${nameEn.split('/')[0].replace(/\s+/g, '')}Props`
+  // Follow `export type DialogProps = OverlayProps` to the interface that declares the members.
+  const alias = src.match(new RegExp(`export type ${iface} = ([A-Za-z]+)\\b`))
+  if (alias) iface = alias[1]
   const start = src.indexOf(`export interface ${iface}`)
   if (start < 0) throw new Error(`${iface} not found in ${file}`)
   const body = src.slice(src.indexOf('{', start) + 1, src.indexOf('\n}', start))
@@ -42,7 +45,7 @@ function codeProps(file: string, nameEn: string): string[] {
 }
 
 // Props that exist in code but are not part of the public contract.
-const INTERNAL_PROPS = new Set(['id', 'name', 'className', 'placeholder', 'forceState', 'onParse'])
+const INTERNAL_PROPS = new Set(['id', 'name', 'className', 'placeholder', 'forceState', 'onParse', 'presentation'])
 
 const ajv = new Ajv({ allErrors: true, strict: false })
 const validate = ajv.compile(schema)
@@ -57,12 +60,17 @@ describe('spec gate', () => {
         const ok = validate(spec)
         expect(ok, ajv.errorsText(validate.errors, { separator: '\n' })).toBe(true)
         expect(file).toBe(`${spec.id}.json`)
+        // Drafts from scripts/spec-draft.mjs mark judgment fields TODO; none may reach the gate unfilled.
+        const todos = JSON.stringify(spec).match(/"[^"]*TODO[^"]*"/g) ?? []
+        expect(todos, `unfilled: ${todos.slice(0, 4).join(', ')}`).toEqual([])
       })
 
       test(`SP-03 ${spec.id} uses only closed vocabularies`, () => {
         for (const s of spec.states) expect(vocabulary.states, `state ${s}`).toContain(s)
         for (const c of spec.content) expect(vocabulary.content, `content ${c}`).toContain(c)
         for (const c of spec.contracts ?? []) expect(vocabulary.contracts, `contract ${c}`).toContain(c)
+        const closed: Record<string, string[]> = { tone: vocabulary.tones, size: vocabulary.sizes, variant: vocabulary.variants }
+        for (const v of spec.variants ?? []) for (const x of v.values) if (closed[v.prop]) expect(closed[v.prop], `${v.prop} ${x}`).toContain(x)
       })
 
       test(`SP-04 ${spec.id} follows the prop naming contract`, () => {
@@ -74,8 +82,10 @@ describe('spec gate', () => {
         }
         if (names.has('open')) expect(names.has('onOpenChange'), 'open needs onOpenChange').toBe(true)
         for (const p of spec.props) if (/^is[A-Z]/.test(p.name)) throw new Error(`boolean props are plain adjectives, not ${p.name}`)
+        // Empty is null: required when the component can be empty (an `empty` state) or holds text ('' is not empty).
+        // Single-choice components that always hold a value (tabs, segmented control) have no empty state.
         const valueProp = spec.props.find((p: { name: string }) => p.name === 'value')
-        if (valueProp) expect(valueProp.type, 'empty value is null').toMatch(/null/)
+        if (valueProp && (spec.states.includes('empty') || /\bstring\b/.test(valueProp.type))) expect(valueProp.type, 'empty value is null').toMatch(/null/)
       })
 
       test(`SP-05 ${spec.id} references existing records and tests`, () => {

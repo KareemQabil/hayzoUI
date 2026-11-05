@@ -1,6 +1,7 @@
-import { createContext, useCallback, useContext, useRef, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { Icon, type IconName } from '../icons'
+import { useLocale } from '../locale'
 import { IconButton } from './button'
 
 export type MessageTone = 'info' | 'success' | 'warning' | 'danger'
@@ -33,7 +34,18 @@ export function InlineMessage({ tone = 'info', title, children, actions, live = 
 
 export type BadgeTone = 'neutral' | 'accent' | 'success' | 'warning' | 'danger' | 'info'
 
-export function Badge({ tone = 'neutral', variant = 'soft', children, dot, title }: { tone?: BadgeTone; variant?: 'soft' | 'outline'; children: ReactNode; dot?: boolean; title?: string }) {
+export interface BadgeProps {
+  tone?: BadgeTone
+  variant?: 'soft' | 'outline'
+  /** Short status text. Color is never the only signal. */
+  children: ReactNode
+  /** Leading dot, decorative. */
+  dot?: boolean
+  /** Longer description shown on hover. */
+  title?: string
+}
+
+export function Badge({ tone = 'neutral', variant = 'soft', children, dot, title }: BadgeProps) {
   return (
     <span className="ax-badge" data-tone={tone} data-variant={variant} title={title}>
       {dot ? <span className="ax-badge__dot" aria-hidden="true" /> : null}
@@ -42,7 +54,17 @@ export function Badge({ tone = 'neutral', variant = 'soft', children, dot, title
   )
 }
 
-export function EmptyState({ icon = 'search', title, children, action }: { icon?: IconName; title: ReactNode; children?: ReactNode; action?: ReactNode }) {
+export interface EmptyStateProps {
+  icon?: IconName
+  /** What is empty, in one line. */
+  title: ReactNode
+  /** Why it is empty and what to do next. */
+  children?: ReactNode
+  /** One primary way forward (button or link). */
+  action?: ReactNode
+}
+
+export function EmptyState({ icon = 'search', title, children, action }: EmptyStateProps) {
   return (
     <div className="ax-empty">
       <span className="ax-empty__icon">
@@ -68,44 +90,100 @@ export function Skeleton({ width = '100%', height = 14 }: { width?: number | str
   return <span className="ax-skeleton" style={{ width, height }} aria-hidden="true" />
 }
 
-interface ToastItem {
-  id: number
+/** Options for toast(). */
+export interface ToastProps {
   tone: MessageTone
   title: ReactNode
   body?: ReactNode
+  /** ms before it closes by itself. Default 6000; danger toasts stay until dismissed (null). */
+  duration?: number | null
 }
 
-const ToastContext = createContext<(t: Omit<ToastItem, 'id'>) => void>(() => {})
+export interface ToastLabels {
+  dismiss: string
+}
+const DEFAULT_TOAST_LABELS: ToastLabels = { dismiss: 'إغلاق الإشعار' }
 
-export function ToastProvider({ children }: { children: ReactNode }) {
+interface ToastItem extends ToastProps {
+  id: number
+}
+
+const ToastContext = createContext<(t: ToastProps) => void>(() => {})
+
+/**
+ * Toasts take direction and language from the nearest LocaleProvider (never hard-coded).
+ * Timers pause while the stack is hovered or holds focus (WCAG 2.2.1), and errors never auto-dismiss.
+ */
+export function ToastProvider({ children, labels: labelsProp }: { children: ReactNode; labels?: Partial<ToastLabels> }) {
+  const { dir, lang } = useLocale()
+  const labels = { ...DEFAULT_TOAST_LABELS, ...labelsProp }
   const [items, setItems] = useState<ToastItem[]>([])
+  const [paused, setPaused] = useState(false)
   const seq = useRef(0)
   const dismiss = (id: number) => setItems((xs) => xs.filter((x) => x.id !== id))
-  const push = useCallback((t: Omit<ToastItem, 'id'>) => {
+  const push = useCallback((t: ToastProps) => {
     const id = ++seq.current
     setItems((xs) => [...xs.slice(-2), { ...t, id }])
-    window.setTimeout(() => dismiss(id), 5000)
   }, [])
   return (
     <ToastContext.Provider value={push}>
       {children}
       {createPortal(
-      <div className="ax-toasts" role="status" aria-live="polite" dir="rtl" lang="ar">
+      <div
+        className="ax-toasts"
+        role="status"
+        aria-live="polite"
+        dir={dir}
+        lang={lang}
+        onPointerEnter={() => setPaused(true)}
+        onPointerLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setPaused(false)
+        }}
+      >
         {items.map((t) => (
-          <div key={t.id} className="ax-toast" data-tone={t.tone}>
-            <Icon name={TONE_ICON[t.tone]} size={18} className="ax-message__icon" />
-            <div className="ax-toast__content">
-              <p className="ax-toast__title">{t.title}</p>
-              {t.body ? <p className="ax-toast__body">{t.body}</p> : null}
-            </div>
-            <IconButton icon="close" label="إغلاق الإشعار" size="sm" onClick={() => dismiss(t.id)} />
-          </div>
+          <ToastTimer key={t.id} duration={t.duration === undefined ? (t.tone === 'danger' ? null : 6000) : t.duration} paused={paused} onDone={() => dismiss(t.id)} />
+        ))}
+        {items.map((t) => (
+          <ToastCard key={t.id} tone={t.tone} title={t.title} body={t.body} labels={labels} onDismiss={() => dismiss(t.id)} />
         ))}
       </div>,
         document.body,
       )}
     </ToastContext.Provider>
   )
+}
+
+/** One toast. Rendered by ToastProvider; exported for state sheets. */
+export function ToastCard({ tone, title, body, labels: labelsProp, onDismiss }: Omit<ToastProps, 'duration'> & { labels?: Partial<ToastLabels>; onDismiss?: () => void }) {
+  const labels = { ...DEFAULT_TOAST_LABELS, ...labelsProp }
+  return (
+    <div className="ax-toast" data-tone={tone}>
+      <Icon name={TONE_ICON[tone]} size={18} className="ax-message__icon" />
+      <div className="ax-toast__content">
+        <p className="ax-toast__title">{title}</p>
+        {body ? <p className="ax-toast__body">{body}</p> : null}
+      </div>
+      <IconButton icon="close" label={labels.dismiss} size="sm" onClick={onDismiss} />
+    </div>
+  )
+}
+
+/** Counts down only while not paused; the remaining time survives pauses. */
+function ToastTimer({ duration, paused, onDone }: { duration: number | null; paused: boolean; onDone: () => void }) {
+  const remaining = useRef(duration)
+  useEffect(() => {
+    if (remaining.current == null || paused) return
+    const start = Date.now()
+    const t = window.setTimeout(onDone, remaining.current)
+    return () => {
+      window.clearTimeout(t)
+      if (remaining.current != null) remaining.current -= Date.now() - start
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paused])
+  return null
 }
 
 export function useToast() {

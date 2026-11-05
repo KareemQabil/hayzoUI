@@ -1,0 +1,91 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "empty-state",
+  "name": "الحالة الفارغة",
+  "nameEn": "Empty State",
+  "family": "feedback",
+  "maturity": "alpha",
+  "purpose": "يشرح سبب الفراغ ويقدّم الخطوة التالية المدعومة.",
+  "whenToUse": [
+    "قائمة أو بحث بلا نتائج، أو أول استخدام"
+  ],
+  "whenNotToUse": [
+    "خطأ تحميل (Inline Message مع إعادة المحاولة)"
+  ],
+  "anatomy": [
+    "icon",
+    "title",
+    "body",
+    "action"
+  ],
+  "props": [
+    {
+      "name": "icon",
+      "type": "IconName",
+      "doc": "الأيقونة.",
+      "default": "search"
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "doc": "What is empty, in one line.",
+      "required": true
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "doc": "Why it is empty and what to do next."
+    },
+    {
+      "name": "action",
+      "type": "ReactNode",
+      "doc": "One primary way forward (button or link)."
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [],
+  "aria": {
+    "role": "none (نص)",
+    "labelling": "العنوان",
+    "notes": [
+      "الأيقونة زخرفية"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "one-way-forward",
+      "statement": "يشرح السبب ويقدّم طريقًا واحدًا للأمام على الأكثر."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-CNT-001"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}
