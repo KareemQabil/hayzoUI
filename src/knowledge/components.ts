@@ -1,8 +1,14 @@
 import type { ComponentRecord } from './types'
 
-const own = 'تطبيق أصلي في هذا المشروع. لم يُعتمد primitive خارجي بعد؛ قرار الـprimitive معلّق على تجربة المقارنة (React Aria / Base UI / Radix).'
+const own = 'تطبيق خاص بالمشروع.'
 
-export const COMPONENTS: ComponentRecord[] = [
+/**
+ * Knowledge records. For every component with a spec (spec/components/<id>.json), the spec is the single
+ * source of name, family, maturity, summary, anatomy, states, relationship, primitive, rules and patterns:
+ * withSpec() overrides those fields below, so a record can never drift from its spec. Records keep what
+ * a spec does not hold: implementation path, tests, where it is used, and limitations.
+ */
+const RECORDS: ComponentRecord[] = [
   {
     id: 'currency-input',
     name: 'حقل المبلغ',
@@ -202,7 +208,7 @@ export const COMPONENTS: ComponentRecord[] = [
     implementation: 'src/system/components/overlay.tsx',
     rules: ['R-A11Y-002', 'R-A11Y-001'],
     patterns: ['P-COLLECT-PAYMENT'],
-    tests: ['BR-DLG-01', 'BR-DLG-02', 'BR-DLG-03'],
+    tests: ['BR-DLG-01', 'BR-DLG-02', 'BR-DLG-03', 'BR-DLG-04'],
     usedIn: ['تأكيد التحصيل', 'البحث الشامل'],
     limitations: ['لا يوجد حركة خروج؛ الإغلاق فوري.'],
   },
@@ -351,6 +357,43 @@ export const COMPONENTS: ComponentRecord[] = [
     limitations: ['تاريخ واحد؛ المدى (من–إلى) غير مدعوم بعد.', 'تقويم أم القرى فقط من التقاويم الهجرية في الواجهة.'],
   },
 ]
+
+interface SpecFields {
+  id: string
+  name: string
+  nameEn?: string
+  family: ComponentRecord['family']
+  maturity: ComponentRecord['maturity']
+  purpose: string
+  anatomy: string[]
+  states: string[]
+  primitive: { source: string; relationship: ComponentRecord['relationship']; note?: string }
+  rules: string[]
+  patterns?: string[]
+}
+const SPECS = Object.values(import.meta.glob('../../spec/components/*.json', { eager: true, import: 'default' }) as Record<string, SpecFields>)
+const PRIMITIVE_LABEL: Record<string, string> = { own: own, 'react-aria': 'React Aria خلف الـadapter (src/system/adapter/react-aria.tsx).', native: 'عنصر HTML أصلي.' }
+
+function withSpec(r: ComponentRecord): ComponentRecord {
+  const s = SPECS.find((x) => x.id === r.id)
+  if (!s) return r
+  return {
+    ...r,
+    name: s.name,
+    nameEn: s.nameEn ?? r.nameEn,
+    family: s.family,
+    maturity: s.maturity,
+    summary: s.purpose,
+    anatomy: s.anatomy,
+    states: s.states,
+    relationship: s.primitive.relationship,
+    primitive: s.primitive.note ?? PRIMITIVE_LABEL[s.primitive.source] ?? s.primitive.source,
+    rules: s.rules,
+    patterns: s.patterns ?? [],
+  }
+}
+
+export const COMPONENTS: ComponentRecord[] = RECORDS.map(withSpec)
 
 export const FAMILY_LABEL: Record<ComponentRecord['family'], string> = {
   foundations: 'الأساسات',

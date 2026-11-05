@@ -136,7 +136,7 @@
   "primitive": {
     "source": "own",
     "relationship": "original",
-    "note": "ينتقل إلى React Aria Modal خلف الـadapter."
+    "note": "نفس تنفيذ Dialog؛ يبقى خاصًا بنا (spikes/primitives/DECISION.md)."
   },
   "rules": [
     "R-A11Y-002"

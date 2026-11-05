@@ -7,7 +7,7 @@ import { chromium } from 'playwright-core'
 import { chromiumPath } from './chromium.mjs'
 
 const base = process.argv[2] ?? 'http://localhost:5179/'
-const LIBS = ['react-aria', 'base-ui', 'radix']
+const LIBS = ['react-aria', 'base-ui', 'radix', 'own']
 const browser = await chromium.launch({ executablePath: chromiumPath() })
 const results = []
 
@@ -30,9 +30,10 @@ async function check(lib, id, name, fn) {
   console.log(`${r.status.padEnd(7)} ${lib.padEnd(10)} ${id} ${name}${r.detail && r.status !== 'passed' ? ` — ${r.detail}` : ''}`)
 }
 const assert = (c, m) => { if (!c) throw new Error(m) }
-const dialog = (page) => page.getByTestId('dialog')
+// By role, not test id: the same element in every library (RA Dialog, Base UI Popup, Radix Content, ours).
+const dialog = (page) => page.locator('[role="dialog"]')
 const isOpen = async (page) => (await dialog(page).count()) > 0 && (await dialog(page).isVisible())
-const focusInDialog = (page) => page.evaluate(() => !!document.activeElement?.closest('[data-testid="dialog"]'))
+const focusInDialog = (page) => page.evaluate(() => !!document.activeElement?.closest('[role="dialog"]'))
 const amount = (page) => page.getByLabel(/^المبلغ المستلم/)
 async function openDialog(page) {
   await page.getByTestId('open').click()
@@ -119,7 +120,7 @@ for (const lib of LIBS) {
     for (const id of ['C1', 'C2', 'C3', 'C4', 'C5', 'C6']) await check(lib, id, 'combobox', async () => 'n/a')
     continue
   }
-  const combo = (page) => page.getByTestId('combo-input')
+  const combo = (page) => page.getByRole('combobox').first()
   const options = (page) => page.locator('[role="option"]:visible')
   await check(lib, 'C1', 'custom filter: «احمد» finds «أحمد Khaled» (hamza-tolerant L2 search)', async () => {
     const { ctx, page } = await fresh(lib)
@@ -177,8 +178,9 @@ for (const lib of LIBS) {
       await page.keyboard.type(dir === 'rtl' ? 'ا' : 'O')
       await page.waitForTimeout(250)
       const r = await page.evaluate(() => {
-        const i = document.querySelector('[data-testid="combo-input"]').getBoundingClientRect()
-        const p = document.querySelector('[data-testid="popup"]')?.getBoundingClientRect()
+        // Anchor: our control wraps input and trigger; the others anchor to the input.
+        const i = (document.querySelector('.ax-combobox .ax-control') ?? document.querySelector('[role="combobox"]')).getBoundingClientRect()
+        const p = (document.querySelector('[data-testid="popup"]') ?? document.querySelector('.ax-combobox__popover'))?.getBoundingClientRect()
         return p ? { il: i.left, ir: i.right, pl: p.left, pr: p.right } : null
       })
       await ctx.close()
@@ -196,10 +198,10 @@ for (const lib of LIBS) {
     await page.keyboard.press('Escape')
     await page.waitForTimeout(200)
     const visible = await options(page).count()
-    const focused = await page.evaluate(() => document.activeElement?.getAttribute('data-testid'))
+    const focused = await page.evaluate(() => document.activeElement?.getAttribute('role'))
     await ctx.close()
     assert(visible === 0, 'popup still open')
-    assert(focused === 'combo-input', `focus on ${focused}`)
+    assert(focused === 'combobox', `focus on ${focused}`)
   })
 }
 await browser.close()
@@ -218,6 +220,6 @@ for (const [lib, code] of Object.entries(ENTRIES)) {
 console.log('bundle (used parts):', JSON.stringify(sizes))
 
 const versions = Object.fromEntries(
-  [['react-aria', 'react-aria-components'], ['base-ui', '@base-ui/react'], ['radix', 'radix-ui']].map(([k, p]) => [k, JSON.parse(fs.readFileSync(`node_modules/${p}/package.json`, 'utf8')).version]),
+  [['react-aria', 'react-aria-components'], ['base-ui', '@base-ui/react'], ['radix', 'radix-ui'], ['own', 'react']].map(([k, p]) => [k, JSON.parse(fs.readFileSync(`node_modules/${p}/package.json`, 'utf8')).version]),
 )
 fs.writeFileSync('spikes/primitives/results.json', JSON.stringify({ ranAt: new Date().toISOString(), environment: `Chrome headless · ${process.platform}`, versions, sizes, results }, null, 2) + '\n')
