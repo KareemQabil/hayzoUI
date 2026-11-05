@@ -4,12 +4,13 @@
  * The same page is the target of visual baselines and browser checks (data-matrix-* attributes).
  * Query: #/matrix/<id>?density=default&content=short&numerals=latn
  */
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { type DisplayNumerals } from '../arabic'
 import { PreviewFrame, Section } from '../app/ui'
 import { navigate } from '../app/router'
-import { RENDERERS } from '../matrix/renderers'
-import { SegmentedControl } from '../system'
+import { FORCED, RENDERERS, type MatrixCase } from '../matrix/renderers'
+import { installForcedStates } from '../matrix/force-states'
+import { SegmentedControl, Select } from '../system'
 import type { Density, Mode } from '../tokens/theme'
 
 const SPECS = import.meta.glob('../../spec/components/*.json', { eager: true, import: 'default' }) as Record<string, MatrixSpec>
@@ -19,7 +20,16 @@ interface MatrixSpec {
   nameEn?: string
   maturity: string
   states: string[]
+  variants?: Array<{ prop: string; values: string[] }>
   content: string[]
+}
+
+/** Matrix rows: every spec state, then one row per visual variant value (drawn in the default state). */
+function rowsOf(spec: MatrixSpec): Array<{ key: string; c: Omit<MatrixCase, 'content'> }> {
+  return [
+    ...spec.states.map((state) => ({ key: state, c: { state } })),
+    ...(spec.variants ?? []).flatMap((v) => v.values.map((value) => ({ key: `${v.prop}=${value}`, c: { state: 'default', variant: { prop: v.prop, value } } }))),
+  ]
 }
 const specs = Object.values(SPECS).sort((a, b) => a.id.localeCompare(b.id))
 
@@ -49,6 +59,8 @@ export function MatrixPage({ id }: { id?: string }) {
   const q = useQuery()
   const spec = specs.find((s) => s.id === id) ?? specs[0]
   const renderer = RENDERERS[spec.id]
+  const rows = rowsOf(spec)
+  useEffect(installForcedStates, [])
   const density = (DENSITIES as string[]).includes(q.get('density') ?? '') ? (q.get('density') as Density) : 'default'
   const content = spec.content.includes(q.get('content') ?? '') ? q.get('content')! : spec.content[0]
   const numerals = (renderer?.numerals?.(content) ?? (q.get('numerals') === 'arab' ? 'arab' : 'latn')) as DisplayNumerals
@@ -59,7 +71,8 @@ export function MatrixPage({ id }: { id?: string }) {
   }
 
   const missing = useMemo(
-    () => (renderer ? spec.states.flatMap((s) => spec.content.filter((c) => renderer.render({ state: s, content: c }) == null).map((c) => `${s}/${c}`)) : ['renderer']),
+    () => (renderer ? rows.flatMap((r) => spec.content.filter((content) => renderer.render({ ...r.c, content }) == null).map((content) => `${r.key}/${content}`)) : ['renderer']),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [spec, renderer],
   )
 
@@ -72,14 +85,14 @@ export function MatrixPage({ id }: { id?: string }) {
       >
         <div className="flex flex-wrap items-end gap-4">
           {specs.length > 1 ? (
-            <SegmentedControl label="المكوّن" value={spec.id} onValueChange={(v) => navigate(`#/matrix/${v}`)} options={specs.map((s) => ({ value: s.id, label: s.name }))} />
+            <Select label="المكوّن" size="sm" value={spec.id} onValueChange={(v) => navigate(`#/matrix/${v}`)} options={specs.map((s) => ({ value: s.id, label: `${s.name} · ${s.id}` }))} />
           ) : null}
           <SegmentedControl label="الكثافة" value={density} onValueChange={(v) => set('density', v)} options={DENSITIES.map((d) => ({ value: d, label: d }))} />
           <SegmentedControl label="المحتوى" wrap value={content} onValueChange={(v) => set('content', v)} options={spec.content.map((c) => ({ value: c, label: CONTENT_LABEL[c] ?? c }))} />
         </div>
         <p className="t-caption text-fg-2" data-matrix-coverage={missing.length === 0 ? 'complete' : 'incomplete'}>
           {missing.length === 0
-            ? `التغطية كاملة: ${spec.states.length} حالات × ${spec.content.length} متغيرات محتوى × ${COLUMNS.length} أعمدة × ${DENSITIES.length} كثافات`
+            ? `التغطية كاملة: ${rows.length} صفوف (حالات ومتغيرات) × ${spec.content.length} متغيرات محتوى × ${COLUMNS.length} أعمدة × ${DENSITIES.length} كثافات`
             : `حالات بلا renderer: ${missing.join('، ')}`}
         </p>
       </Section>
@@ -97,14 +110,14 @@ export function MatrixPage({ id }: { id?: string }) {
             </tr>
           </thead>
           <tbody>
-            {spec.states.map((state) => (
-              <tr key={state}>
+            {rows.map((row) => (
+              <tr key={row.key}>
                 <th scope="row" className="t-label text-fg text-start align-top pt-3">
-                  <bdi dir="ltr">{state}</bdi>
+                  <bdi dir="ltr">{row.key}</bdi>
                 </th>
                 {COLUMNS.map((col) => {
-                  const node = renderer?.render({ state, content })
-                  const key = `${state}|${content}|${col.dir}|${col.mode}|${density}`
+                  const node = renderer?.render({ ...row.c, content })
+                  const key = `${row.key}|${content}|${col.dir}|${col.mode}|${density}`
                   return (
                     <td key={key} className="align-top min-w-[16rem]">
                       {node == null ? (
@@ -113,7 +126,9 @@ export function MatrixPage({ id }: { id?: string }) {
                         </div>
                       ) : (
                         <PreviewFrame dir={col.dir} mode={col.mode} density={density} numerals={numerals} className="rounded-[var(--ax-radius-surface)] border border-line-2 p-4" label={key}>
-                          <div data-matrix-cell={key}>{node}</div>
+                          <div data-matrix-cell={key} data-force-scope={FORCED.has(row.c.state) ? row.c.state : undefined}>
+                            {node}
+                          </div>
                         </PreviewFrame>
                       )}
                     </td>

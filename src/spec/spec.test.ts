@@ -45,7 +45,7 @@ function codeProps(file: string, nameEn: string): string[] {
 }
 
 // Props that exist in code but are not part of the public contract.
-const INTERNAL_PROPS = new Set(['id', 'name', 'className', 'placeholder', 'forceState', 'onParse'])
+const INTERNAL_PROPS = new Set(['id', 'name', 'className', 'placeholder', 'forceState', 'onParse', 'presentation'])
 
 const ajv = new Ajv({ allErrors: true, strict: false })
 const validate = ajv.compile(schema)
@@ -69,7 +69,7 @@ describe('spec gate', () => {
         for (const s of spec.states) expect(vocabulary.states, `state ${s}`).toContain(s)
         for (const c of spec.content) expect(vocabulary.content, `content ${c}`).toContain(c)
         for (const c of spec.contracts ?? []) expect(vocabulary.contracts, `contract ${c}`).toContain(c)
-        const closed: Record<string, string[]> = { tone: vocabulary.tones, size: vocabulary.sizes }
+        const closed: Record<string, string[]> = { tone: vocabulary.tones, size: vocabulary.sizes, variant: vocabulary.variants }
         for (const v of spec.variants ?? []) for (const x of v.values) if (closed[v.prop]) expect(closed[v.prop], `${v.prop} ${x}`).toContain(x)
       })
 

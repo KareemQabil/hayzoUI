@@ -54,6 +54,17 @@
     "focus-visible",
     "disabled"
   ],
+  "variants": [
+    {
+      "prop": "variant",
+      "values": [
+        "solid",
+        "soft",
+        "outline",
+        "ghost"
+      ]
+    }
+  ],
   "content": [
     "short"
   ],

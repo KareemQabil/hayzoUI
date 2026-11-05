@@ -146,19 +146,27 @@ export function ToastProvider({ children, labels: labelsProp }: { children: Reac
           <ToastTimer key={t.id} duration={t.duration === undefined ? (t.tone === 'danger' ? null : 6000) : t.duration} paused={paused} onDone={() => dismiss(t.id)} />
         ))}
         {items.map((t) => (
-          <div key={t.id} className="ax-toast" data-tone={t.tone}>
-            <Icon name={TONE_ICON[t.tone]} size={18} className="ax-message__icon" />
-            <div className="ax-toast__content">
-              <p className="ax-toast__title">{t.title}</p>
-              {t.body ? <p className="ax-toast__body">{t.body}</p> : null}
-            </div>
-            <IconButton icon="close" label={labels.dismiss} size="sm" onClick={() => dismiss(t.id)} />
-          </div>
+          <ToastCard key={t.id} tone={t.tone} title={t.title} body={t.body} labels={labels} onDismiss={() => dismiss(t.id)} />
         ))}
       </div>,
         document.body,
       )}
     </ToastContext.Provider>
+  )
+}
+
+/** One toast. Rendered by ToastProvider; exported for state sheets. */
+export function ToastCard({ tone, title, body, labels: labelsProp, onDismiss }: Omit<ToastProps, 'duration'> & { labels?: Partial<ToastLabels>; onDismiss?: () => void }) {
+  const labels = { ...DEFAULT_TOAST_LABELS, ...labelsProp }
+  return (
+    <div className="ax-toast" data-tone={tone}>
+      <Icon name={TONE_ICON[tone]} size={18} className="ax-message__icon" />
+      <div className="ax-toast__content">
+        <p className="ax-toast__title">{title}</p>
+        {body ? <p className="ax-toast__body">{body}</p> : null}
+      </div>
+      <IconButton icon="close" label={labels.dismiss} size="sm" onClick={onDismiss} />
+    </div>
   )
 }
 

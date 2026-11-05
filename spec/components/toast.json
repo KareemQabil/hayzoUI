@@ -49,6 +49,17 @@
   "states": [
     "default"
   ],
+  "variants": [
+    {
+      "prop": "tone",
+      "values": [
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ]
+    }
+  ],
   "content": [
     "short",
     "long-arabic"

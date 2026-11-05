@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { Shell } from './app/Shell'
 import { useRoute } from './app/router'
 import { RootLocale, SettingsProvider, ToastProvider } from './system'
@@ -10,7 +10,8 @@ import { EvidencePage } from './pages/EvidencePage'
 import { ResourcesPage } from './pages/ResourcesPage'
 import { RulesPage } from './pages/RulesPage'
 import { EcosystemPage } from './pages/EcosystemPage'
-import { MatrixPage } from './pages/MatrixPage'
+// The state matrix is a review tool: loaded on demand with its renderers and specs.
+const MatrixPage = lazy(() => import('./pages/MatrixPage').then((m) => ({ default: m.MatrixPage })))
 
 function Routes() {
   const route = useRoute()
@@ -39,7 +40,11 @@ function Routes() {
       page = <RulesPage id={route[1]} />
       break
     case 'matrix':
-      page = <MatrixPage id={route[1]} />
+      page = (
+        <Suspense fallback={<p className="t-caption text-fg-2">جارٍ تحميل المصفوفة…</p>}>
+          <MatrixPage id={route[1]} />
+        </Suspense>
+      )
       break
     case 'ecosystem':
       page = <EcosystemPage />

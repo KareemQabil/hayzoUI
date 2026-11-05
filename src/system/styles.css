@@ -235,6 +235,9 @@
     .ax-overlay[data-kind='drawer'] { --ax-slide: 0; inset-inline: 0; inset-block-start: auto; inline-size: 100vw !important; max-block-size: 92dvh; border-start-start-radius: var(--ax-radius-overlay); border-start-end-radius: var(--ax-radius-overlay); animation-name: ax-sheet-in; }
     .ax-overlay[data-kind='drawer']:dir(rtl) { --ax-slide: 0; }
   }
+  /* State sheets: presentation="inline" draws the panel in flow, without fixed positioning or motion. */
+  .ax-overlay-root:has(> .ax-overlay[data-presentation='inline']) { position: static; z-index: auto; }
+  .ax-overlay[data-presentation='inline'] { position: relative; inset: auto; margin: 0; inline-size: 100% !important; max-inline-size: 460px; max-block-size: none; border-radius: var(--ax-radius-overlay); animation: none; }
   .ax-overlay__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 18px 22px 10px; }
   .ax-overlay__titles { display: flex; flex-direction: column; gap: 4px; min-inline-size: 0; }
   .ax-overlay__title { font-size: var(--ax-type-h3-size); line-height: var(--ax-type-h3-line); font-weight: 600; }

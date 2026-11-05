@@ -78,6 +78,25 @@
     "disabled",
     "loading"
   ],
+  "variants": [
+    {
+      "prop": "variant",
+      "values": [
+        "solid",
+        "soft",
+        "outline",
+        "ghost"
+      ]
+    },
+    {
+      "prop": "tone",
+      "values": [
+        "accent",
+        "neutral",
+        "danger"
+      ]
+    }
+  ],
   "content": [
     "short",
     "long-arabic"

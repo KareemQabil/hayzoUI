@@ -104,7 +104,7 @@
     "role": "dialog",
     "labelling": "aria-labelledby → title",
     "notes": [
-      "يخرج من جهة بداية السطر: اليمين في RTL"
+      "aria-modal=true والخلفية inert"
     ]
   },
   "locale": {
@@ -115,8 +115,8 @@
   },
   "invariants": [
     {
-      "id": "opens-from-inline-start",
-      "statement": "اللوحة تخرج من بداية السطر: يمين الشاشة في RTL ويسارها في LTR."
+      "id": "opens-from-inline-end",
+      "statement": "على الشاشات العريضة تخرج من نهاية السطر (يسار الشاشة في RTL ويمينها في LTR)، وتحت 640px تصبح لوحة سفلية."
     },
     {
       "id": "focus-trapped",

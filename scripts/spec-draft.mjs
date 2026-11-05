@@ -24,7 +24,7 @@ const arr = (k) => [...(rec.match(new RegExp(`${k}: \\[([^\\]]*)\\]`))?.[1] ?? '
 const nameEn = str('nameEn')
 const file = str('implementation')?.split('·')[0].trim()
 const iface = `${nameEn.split('/')[0].replace(/\s+/g, '')}Props`
-const INTERNAL = new Set(['id', 'name', 'className', 'placeholder', 'forceState', 'onParse'])
+const INTERNAL = new Set(['id', 'name', 'className', 'placeholder', 'forceState', 'onParse', 'presentation'])
 
 function props() {
   if (!file || file === '—') return []

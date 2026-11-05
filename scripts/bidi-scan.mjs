@@ -22,6 +22,8 @@ const routes = [
   ...tabs.map((t) => `#/components/currency-input/${t}`),
   ...components.filter((c) => c !== 'currency-input').map((c) => `#/components/${c}`),
   ...patterns.map((p) => `#/patterns/${p}`),
+  // Every spec's state matrix: all states and variants, in both numerals, through the same oracle.
+  ...fs.readdirSync('spec/components').filter((f) => f.endsWith('.json')).map((f) => `#/matrix/${f.replace('.json', '')}`),
 ]
 // Values that make fields show messages containing numbers (examples, limits, counts).
 const STRESS = { tel: '0101234', decimal: '12,5' }

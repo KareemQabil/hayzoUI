@@ -43,9 +43,12 @@ export interface OverlayProps {
   size?: 'sm' | 'md' | 'lg'
   /** Prevent closing (e.g. during a busy submit). */
   dismissible?: boolean
+  /** State sheets only: draw the panel in place (no portal, scrim, app lock or focus trap). */
+  presentation?: 'modal' | 'inline'
 }
 
-function OverlayCore({ kind, open, onOpenChange, title, description, children, footer, initialFocus, returnFocus, labels: labelsProp, size = 'md', dismissible = true }: OverlayProps & { kind: 'dialog' | 'drawer' }) {
+function OverlayCore({ kind, open, onOpenChange, title, description, children, footer, initialFocus, returnFocus, labels: labelsProp, size = 'md', dismissible = true, presentation = 'modal' }: OverlayProps & { kind: 'dialog' | 'drawer' }) {
+  const inline = presentation === 'inline'
   const labels = { ...DEFAULT_OVERLAY_LABELS, ...labelsProp }
   const { dir, lang, numerals } = useLocale()
   const panelRef = useRef<HTMLDivElement>(null)
@@ -55,7 +58,7 @@ function OverlayCore({ kind, open, onOpenChange, title, description, children, f
   dismissibleRef.current = dismissible
 
   useEffect(() => {
-    if (!open) return
+    if (!open || inline) return
     opener.current = document.activeElement as HTMLElement | null
     lockApp(true)
     const frame = requestAnimationFrame(() => {
@@ -103,13 +106,13 @@ function OverlayCore({ kind, open, onOpenChange, title, description, children, f
     }
   }
 
-  return createPortal(
+  const tree = (
     <LocaleProvider dir={dir} lang={lang} numerals={numerals} className="ax-overlay-root">
-      <div className="ax-scrim" data-kind={kind} onMouseDown={() => dismissible && onOpenChange(false, { reason: 'scrim' })} />
+      {inline ? null : <div className="ax-scrim" data-kind={kind} onMouseDown={() => dismissible && onOpenChange(false, { reason: 'scrim' })} />}
       <div
         ref={panelRef}
         role="dialog"
-        aria-modal="true"
+        aria-modal={inline ? undefined : 'true'}
         aria-labelledby={titleId}
         aria-describedby={description ? titleId + '-d' : undefined}
         tabIndex={-1}
@@ -117,6 +120,7 @@ function OverlayCore({ kind, open, onOpenChange, title, description, children, f
         data-kind={kind}
         data-size={size}
         data-state="open"
+        data-presentation={inline ? 'inline' : undefined}
         onKeyDown={onKeyDown}
       >
         <header className="ax-overlay__header">
@@ -135,9 +139,9 @@ function OverlayCore({ kind, open, onOpenChange, title, description, children, f
         <div className="ax-overlay__body">{children}</div>
         {footer ? <footer className="ax-overlay__footer">{footer}</footer> : null}
       </div>
-    </LocaleProvider>,
-    document.body,
+    </LocaleProvider>
   )
+  return inline ? tree : createPortal(tree, document.body)
 }
 
 export function Dialog(props: OverlayProps) {

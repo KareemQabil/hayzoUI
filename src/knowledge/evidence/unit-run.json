@@ -1,13 +1,13 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-05T18:25:35.442Z",
+  "startedAt": "2026-11-05T18:55:16.900Z",
   "results": [
     {
       "id": "CT-01",
       "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
       "status": "passed",
-      "durationMs": 6
+      "durationMs": 7
     },
     {
       "id": "CI-F01",
@@ -19,7 +19,7 @@
       "id": "CI-F02",
       "name": "CI-F02 أرقام عربية مشرقية وفاصلة عشرية عربية",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "CI-F03",
@@ -121,7 +121,7 @@
       "id": "FM-F01",
       "name": "FM-F01 العرض بأرقام لاتينية لا يغيّر القيمة المخزنة",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "FM-F02",
@@ -211,13 +211,13 @@
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "status": "passed",
-      "durationMs": 28
+      "durationMs": 31
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
       "status": "passed",
-      "durationMs": 47
+      "durationMs": 52
     },
     {
       "id": "PROP-03",
@@ -235,13 +235,13 @@
       "id": "PROP-05",
       "name": "PROP-05 tolerance only adds matches, never removes them",
       "status": "passed",
-      "durationMs": 13
+      "durationMs": 12
     },
     {
       "id": "PROP-07",
       "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
       "status": "passed",
-      "durationMs": 57
+      "durationMs": 62
     },
     {
       "id": "PROP-06",
@@ -257,21 +257,81 @@
     },
     {
       "id": "SP-02",
-      "name": "SP-02 currency-input passes the schema",
+      "name": "SP-02 badge passes the schema",
       "status": "passed",
       "durationMs": 3
     },
     {
       "id": "SP-03",
+      "name": "SP-03 badge uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 badge follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 badge references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 badge props match the implementation",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 button passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 button uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 button follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 button references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 button props match the implementation",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 currency-input passes the schema",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-03",
       "name": "SP-03 currency-input uses only closed vocabularies",
       "status": "passed",
-      "durationMs": 3
+      "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 currency-input follows the prop naming contract",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-05",
@@ -283,7 +343,487 @@
       "id": "SP-06",
       "name": "SP-06 currency-input props match the implementation",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 data-table passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 data-table uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 data-table follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 data-table references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 data-table props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 dialog passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 dialog uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 dialog follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 dialog references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 dialog props match the implementation",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 drawer passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 drawer uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 drawer follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 drawer references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 drawer props match the implementation",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 empty-state passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 empty-state uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 empty-state follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 empty-state references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 empty-state props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 icon-button passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 icon-button uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 icon-button follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 icon-button references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 icon-button props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 inline-message passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 inline-message uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 inline-message follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 inline-message references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 inline-message props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 phone-input passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 phone-input uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 phone-input follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 phone-input references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 phone-input props match the implementation",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 search-field passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 search-field uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 search-field follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 search-field references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 search-field props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 segmented-control passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 segmented-control uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 segmented-control follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 segmented-control references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 segmented-control props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 select passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 select uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 select follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 select references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 select props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 switch passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 switch uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 switch follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 switch references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 switch props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 tabs passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 tabs uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 tabs follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 tabs references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 tabs props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 text-field passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 text-field uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 text-field follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 text-field references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 text-field props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 toast passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 toast uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 toast follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 toast references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 toast props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CMP-01",
+      "name": "CMP-01 TextField reports null, not \"\", when the text is cleared",
+      "status": "passed",
+      "durationMs": 38
+    },
+    {
+      "id": "CMP-02",
+      "name": "CMP-02 empty TextField follows the UI direction; typed text resolves automatically",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "CMP-03",
+      "name": "CMP-03 first Escape clears the search (null) and does not reach the parent",
+      "status": "passed",
+      "durationMs": 46
+    },
+    {
+      "id": "CMP-04",
+      "name": "CMP-04 uncontrolled PhoneInput keeps typed text and reports E.164",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "CMP-05",
+      "name": "CMP-05 uncontrolled Select starts at the first option and follows the selection",
+      "status": "passed",
+      "durationMs": 7
+    },
+    {
+      "id": "CMP-06",
+      "name": "CMP-06 SegmentedControl arrows follow the visual direction and skip disabled options",
+      "status": "passed",
+      "durationMs": 15
+    },
+    {
+      "id": "CMP-07",
+      "name": "CMP-07 uncontrolled Switch toggles and reports the new state",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "CMP-08",
+      "name": "CMP-08 Tabs: ArrowLeft is next in RTL; only the selected tab has data-selected",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "CMP-09",
+      "name": "CMP-09 the toast stack takes dir and lang from the LocaleProvider",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "CMP-10",
+      "name": "CMP-10 toast timers pause on hover and errors never auto-dismiss",
+      "status": "passed",
+      "durationMs": 18
     },
     {
       "id": "CT-02",

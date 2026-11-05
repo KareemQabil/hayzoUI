@@ -112,6 +112,7 @@ const FILL = {
     contexts: RTL,
   },
   button: {
+    variants: [{ prop: 'variant', values: ['solid', 'soft', 'outline', 'ghost'] }, { prop: 'tone', values: ['accent', 'neutral', 'danger'] }],
     whenToUse: ['إجراء واحد واضح: حفظ، تحصيل، إرسال'],
     whenNotToUse: ['تنقل لصفحة (رابط)', 'تبديل حالة (Switch)'],
     content: ['short', 'long-arabic'],
@@ -125,6 +126,7 @@ const FILL = {
     contexts: { ...RTL, supported: RTL.supported.filter((c) => !c.startsWith('numerals') && c !== 'controlled' && c !== 'uncontrolled') },
   },
   'icon-button': {
+    variants: [{ prop: 'variant', values: ['solid', 'soft', 'outline', 'ghost'] }],
     whenToUse: ['إجراء متكرر معروف بأيقونته: إغلاق، مسح، نسخ'],
     whenNotToUse: ['إجراء رئيسي أو غير مألوف (زر بنص)'],
     content: ['short'],
@@ -196,9 +198,9 @@ const FILL = {
     whenNotToUse: ['قرار قصير (Dialog)'],
     content: ['short', 'long-arabic'],
     keyboard: [{ key: 'Tab / Shift+Tab', action: 'يبقى التركيز داخل اللوحة.' }, { key: 'Escape', action: 'يغلق ما لم يكن dismissible=false.' }],
-    aria: { role: 'dialog', labelling: 'aria-labelledby → title', notes: ['يخرج من جهة بداية السطر: اليمين في RTL'] },
+    aria: { role: 'dialog', labelling: 'aria-labelledby → title', notes: ['aria-modal=true والخلفية inert'] },
     locale: NO_NUM,
-    invariants: [{ id: 'opens-from-inline-start', statement: 'اللوحة تخرج من بداية السطر: يمين الشاشة في RTL ويسارها في LTR.' }, { id: 'focus-trapped', statement: 'نفس عقد Dialog للتركيز.' }],
+    invariants: [{ id: 'opens-from-inline-end', statement: 'على الشاشات العريضة تخرج من نهاية السطر (يسار الشاشة في RTL ويمينها في LTR)، وتحت 640px تصبح لوحة سفلية.' }, { id: 'focus-trapped', statement: 'نفس عقد Dialog للتركيز.' }],
     contexts: { supported: ['rtl', 'ltr', 'controlled', 'react-19', 'chromium'], unsupported: [] },
     primitive: { source: 'own', relationship: 'original', note: 'ينتقل إلى React Aria Modal خلف الـadapter.' },
   },
@@ -223,6 +225,7 @@ const FILL = {
     contexts: { supported: ['rtl', 'ltr', 'react-19', 'chromium'], unsupported: [] },
   },
   toast: {
+    variants: [{ prop: 'tone', values: ['info', 'success', 'warning', 'danger'] }],
     whenToUse: ['تأكيد نتيجة إجراء انتهى: حُفظ، نُسخ'],
     whenNotToUse: ['خطأ يحتاج تصحيحًا (Inline Message)', 'قرار (Dialog)'],
     content: ['short', 'long-arabic'],

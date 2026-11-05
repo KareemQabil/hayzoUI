@@ -20,19 +20,25 @@ Adapter rules: public props follow this contract, never the primitive's (`disabl
 
 ## Props
 
-- Value: `value` / `defaultValue` / `onValueChange(value, details)`. Empty is always `null`.
+- Value: `value` / `defaultValue` / `onValueChange(value, details)`. Every value component works controlled (`value` present, even `null`) and uncontrolled (`defaultValue`), through one hook (`src/system/use-controllable.ts`); `onValueChange` fires on user changes in both modes, never on a prop update. `details` is an object when the component has something to report (parse result, close reason) and `undefined` otherwise.
+- Empty is `null`: required wherever a component can be empty, including text (`TextField`, `SearchField` report `null`, never `''`; `''` is accepted as empty input). Single-choice components that always hold a value (Tabs, SegmentedControl, Select without placeholder) have no empty state.
+- Boolean toggles: `checked` / `defaultChecked` / `onCheckedChange` (Switch, later Checkbox).
 - Open state: `open` / `onOpenChange(open, details)`.
 - States: `disabled`, `readOnly`, `optional` (required is the default), `loading`.
 - `size: 'sm' | 'md' | 'lg'`. Density comes from the theme, never a prop.
 - `variant: 'solid' | 'soft' | 'outline' | 'ghost'`, `tone: 'accent' | 'neutral' | 'danger'` (Button). Message tones: `info | success | warning | danger`.
 - Direction, language, display numerals: only from `LocaleProvider`. No component takes `dir`. Content direction (e.g. a code field) uses `contentDir` on TextField — it describes the data, not the UI.
-- Internal strings: `labels` object, Arabic defaults. Icon-only buttons require `label`.
+- Internal strings: `labels` object, Arabic defaults (Dialog/Drawer `close`, SearchField `clear`, CurrencyInput, ToastProvider `dismiss`). Per-instance content is not an internal string and stays a plain prop (Button `loadingLabel`, like `children`). Icon-only buttons require `label`.
+- Every component exports a named `<Name>Props` interface (or an alias such as `DialogProps = OverlayProps`), so consumers can type wrappers.
+- State-sheet-only props, never documented as public API: `forceState`, `presentation="inline"` (overlays drawn in flow). Interaction states in the matrix come from `data-force-scope`, generated from the real `:hover` / `:focus-visible` / `:active` rules (`src/matrix/force-states.ts`).
 - Composition: **`render` prop** (`render={<a href="…" />}` or `render={(props) => <a {...props} />}`), decided 2026-11-05. `asChild` depends on `cloneElement` and implicit prop merging; `render` is typed, explicit, and matches both React Aria render props and Base UI. One mechanism only; no component takes both.
 - `ref` always points to the primary DOM element.
 
 ## Specs
 
-Every component gets `spec/components/<id>.json`, validated by `spec/schema/component.schema.json` and the closed lists in `spec/vocabulary.json`. `src/spec/spec.test.ts` (SP-01…06) fails on unknown states or content variants, prop names that break this contract, references to missing rules, patterns or tests, and any drift between spec props and the implementation's props. `contexts.tested` may not be written by hand.
+Every component gets `spec/components/<id>.json`, validated by `spec/schema/component.schema.json` and the closed lists in `spec/vocabulary.json`. `src/spec/spec.test.ts` (SP-01…06) fails on unfilled `TODO` fields, unknown states, content or variant values, prop names that break this contract, references to missing rules, patterns or tests, and any drift between spec props and the implementation's props. `contexts.tested` may not be written by hand.
+
+Factory: `scripts/spec-draft.mjs <id>` drafts a spec from the code (props, types, defaults, JSDoc via the TypeScript compiler) and the knowledge record; judgment fields come out as `TODO`. `scripts/spec-fill.mjs` holds those fields (purpose, keyboard, aria, invariants, contexts) for all components in one reviewable file. 17 components have specs; Combobox and Date Picker are planned on React Aria.
 
 ## License
 
