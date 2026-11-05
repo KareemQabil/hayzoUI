@@ -14,7 +14,9 @@ Status: **draft, prototype release 0**. This records the conventions the code in
 | Knowledge | `src/knowledge/` — rules, components, patterns, resources, fixtures, evidence | L2 (fixtures) |
 | Product | `src/app/`, `src/pages/` (Tailwind for shell layout only) | all |
 
-No external behavior primitive is used yet. Decision between React Aria / Base UI / Radix is _open_ (spike not run).
+**Behavior primitive: React Aria** (`react-aria-components`), behind an adapter in L3. Fallback: Base UI. Radix excluded. Decided 2026-11-05 by the spike in `spikes/primitives/` (evidence: `results.json`, reasoning: `DECISION.md`): React Aria and Base UI both passed 13/13 integration checks; Radix closes a dialog on Escape even when a field inside has a draft to revert (capture-phase listener) and has no Combobox. React Aria wins the tie on Hijri calendars and date components. Existing components are still `own`; they move onto the adapter family by family.
+
+Adapter rules: public props follow this contract, never the primitive's (`disabled`, not `isDisabled`); styles read only our data-attributes; internal strings come from our content layer (React Aria's Arabic messages use only one/other plural forms), with its built-in messages as a fallback.
 
 ## Props
 
@@ -25,7 +27,16 @@ No external behavior primitive is used yet. Decision between React Aria / Base U
 - `variant: 'solid' | 'soft' | 'outline' | 'ghost'`, `tone: 'accent' | 'neutral' | 'danger'` (Button). Message tones: `info | success | warning | danger`.
 - Direction, language, display numerals: only from `LocaleProvider`. No component takes `dir`. Content direction (e.g. a code field) uses `contentDir` on TextField — it describes the data, not the UI.
 - Internal strings: `labels` object, Arabic defaults. Icon-only buttons require `label`.
-- Composition (`render` vs `asChild`): _open_.
+- Composition: **`render` prop** (`render={<a href="…" />}` or `render={(props) => <a {...props} />}`), decided 2026-11-05. `asChild` depends on `cloneElement` and implicit prop merging; `render` is typed, explicit, and matches both React Aria render props and Base UI. One mechanism only; no component takes both.
+- `ref` always points to the primary DOM element.
+
+## Specs
+
+Every component gets `spec/components/<id>.json`, validated by `spec/schema/component.schema.json` and the closed lists in `spec/vocabulary.json`. `src/spec/spec.test.ts` (SP-01…06) fails on unknown states or content variants, prop names that break this contract, references to missing rules, patterns or tests, and any drift between spec props and the implementation's props. `contexts.tested` may not be written by hand.
+
+## License
+
+Core packages: MIT (decided 2026-11-05). Final product name: _open_ (working name hayzoUI).
 
 ## State attributes
 

@@ -1,0 +1,16 @@
+.spike-page { padding: 24px; display: flex; flex-direction: column; gap: 16px; max-inline-size: 520px; }
+.spike-title { font-weight: 600; }
+.spike-btn { padding-block: 8px; padding-inline: 16px; border: 1px solid var(--ax-color-border, #888); border-radius: 8px; background: var(--ax-color-surface, #fff); inline-size: fit-content; }
+.spike-overlay { position: fixed; inset: 0; background: rgb(0 0 0 / 0.3); display: grid; place-items: center; }
+.spike-modal { background: var(--ax-color-surface, #fff); border-radius: 12px; padding: 20px; inline-size: min(420px, 90vw); }
+.spike-dialog { display: flex; flex-direction: column; gap: 12px; outline: none; }
+/* Base UI and Radix render the popup without a centering overlay wrapper. */
+[data-testid='dialog']:not(.spike-modal .spike-dialog) { position: fixed; inset-block-start: 15vh; inset-inline-start: calc(50% - 210px); }
+.spike-body { display: flex; flex-direction: column; gap: 12px; }
+.spike-label, .spike-combo { display: flex; flex-direction: column; gap: 4px; }
+.spike-input { border: 1px solid var(--ax-color-border, #888); border-radius: 8px; padding-block: 8px; padding-inline: 12px; inline-size: 280px; }
+.spike-popover { background: var(--ax-color-surface, #fff); border: 1px solid var(--ax-color-border, #888); border-radius: 8px; min-inline-size: 280px; }
+.spike-list { list-style: none; margin: 0; padding: 4px; max-block-size: 240px; overflow: auto; }
+.spike-option { padding-block: 6px; padding-inline: 10px; border-radius: 6px; cursor: default; }
+.spike-option[data-focused], .spike-option[data-highlighted] { background: var(--ax-color-accent-soft, #e6eefc); }
+.spike-note { color: var(--ax-color-fg-2, #666); }
