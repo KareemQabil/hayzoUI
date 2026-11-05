@@ -179,6 +179,27 @@ await check('BR-LAY-01', 'no page-level horizontal overflow at 390px', async () 
   return `${routes.length} شاشة بلا تجاوز`
 })
 
+await check('BR-DLG-04', 'nested dialogs: Escape closes only the inner one; focus and the background lock hold', async () => {
+  const { ctx, page } = await fresh('spikes/primitives/?lib=own&nested=1')
+  await page.getByTestId('open').click()
+  await page.waitForTimeout(250)
+  await page.getByTestId('open-b').click()
+  await page.waitForTimeout(250)
+  await page.keyboard.press('Escape')
+  await page.waitForTimeout(300)
+  const s = await page.evaluate(() => ({ dialogs: document.querySelectorAll('[role="dialog"]').length, focus: document.activeElement?.getAttribute('data-testid'), blocked: !!document.querySelector('[data-testid="outside"]').closest('[inert],[aria-hidden="true"]') }))
+  let escaped = false
+  for (let i = 0; i < 10 && !escaped; i++) {
+    await page.keyboard.press('Tab')
+    escaped = await page.evaluate(() => !document.activeElement?.closest('[role="dialog"]'))
+  }
+  await ctx.close()
+  assert(s.dialogs === 1, `${s.dialogs} dialogs open`)
+  assert(s.focus === 'open-b', `focus on ${s.focus}`)
+  assert(s.blocked && !escaped, `background blocked=${s.blocked}, Tab escaped=${escaped}`)
+  return 'الداخلي فقط أُغلق · التركيز على «تأكيد» · الخلفية مقفلة'
+})
+
 // ---------- Combobox and DatePicker (React Aria behind the adapter) ----------
 async function withNumerals(hash, numerals) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' })

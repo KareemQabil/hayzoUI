@@ -140,6 +140,13 @@
     {
       "id": "field-escape-wins",
       "statement": "Escape في حقل فيه مسودة يرجعها ولا يغلق الحوار."
+    },
+    {
+      "id": "nested-dialogs",
+      "statement": "حوار داخل حوار: Escape يغلق الداخلي فقط، والتركيز يعود لزره، ولا يخرج Tab من الخارجي، والخلفية تبقى مقفلة.",
+      "tests": [
+        "BR-DLG-04"
+      ]
     }
   ],
   "contexts": {
@@ -147,17 +154,16 @@
       "rtl",
       "ltr",
       "controlled",
+      "nested",
       "react-19",
       "chromium"
     ],
-    "unsupported": [
-      "حوار داخل حوار"
-    ]
+    "unsupported": []
   },
   "primitive": {
     "source": "own",
     "relationship": "original",
-    "note": "ينتقل إلى React Aria Modal خلف الـadapter (spikes/primitives)."
+    "note": "يجتاز نفس فحوص React Aria الـ14 بحجم 8.6 مقابل 27.9KB gzip؛ يبقى خاصًا بنا (spikes/primitives/DECISION.md)."
   },
   "rules": [
     "R-A11Y-002",

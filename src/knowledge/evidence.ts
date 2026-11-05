@@ -36,6 +36,7 @@ export const BROWSER_CHECKS: BrowserCheck[] = [
   { id: 'BR-DLG-01', requirement: 'التركيز يدخل الحوار عند فتحه', rule: 'R-A11Y-002', component: 'dialog', method: 'Playwright: فتح البحث الشامل بـ Ctrl+K', expected: 'العنصر النشط داخل role=dialog' },
   { id: 'BR-DLG-02', requirement: 'Tab يبقى داخل الحوار', rule: 'R-A11Y-002', component: 'dialog', method: 'Playwright: ١٢ ضغطة Tab', expected: 'التركيز داخل الحوار بعد كل ضغطة' },
   { id: 'BR-DLG-03', requirement: 'Escape يغلق ويعيد التركيز إلى زر الفتح', rule: 'R-A11Y-002', component: 'dialog', method: 'Playwright: نقر زر البحث ← Escape', expected: 'الحوار مغلق والتركيز على زر البحث' },
+  { id: 'BR-DLG-04', requirement: 'حوار داخل حوار: Escape يغلق الداخلي فقط والخلفية تبقى مقفلة', rule: 'R-A11Y-002', component: 'dialog', method: 'Playwright: فتح حوارين ← Escape ← 10 ضغطات Tab', expected: 'حوار واحد مفتوح، التركيز على زر الفتح، ولا خروج' },
   { id: 'BR-APP-01', requirement: 'النقر المزدوج على «تأكيد التحصيل» يسجل عملية واحدة', rule: 'R-FLOW-001', component: 'button', method: 'Playwright: dblclick على زر التأكيد', expected: 'صف واحد جديد في السجل' },
   { id: 'BR-APP-02', requirement: 'الفشل المحاكى يحفظ المبلغ، وإعادة المحاولة تنجح', rule: 'R-CNT-001', component: 'inline-message', method: 'Playwright: تفعيل الفشل ← تأكيد ← أعد المحاولة', expected: 'رسالة فشل، المبلغ باقٍ، ثم إيصال' },
   { id: 'BR-LAY-01', requirement: 'لا تمرير أفقي للصفحة على عرض 390px', rule: 'R-BIDI-001', component: 'data-table', method: 'Playwright: scrollWidth ≤ clientWidth لكل شاشة', expected: 'لا تجاوز' },

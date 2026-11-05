@@ -202,7 +202,7 @@ export const COMPONENTS: ComponentRecord[] = [
     implementation: 'src/system/components/overlay.tsx',
     rules: ['R-A11Y-002', 'R-A11Y-001'],
     patterns: ['P-COLLECT-PAYMENT'],
-    tests: ['BR-DLG-01', 'BR-DLG-02', 'BR-DLG-03'],
+    tests: ['BR-DLG-01', 'BR-DLG-02', 'BR-DLG-03', 'BR-DLG-04'],
     usedIn: ['تأكيد التحصيل', 'البحث الشامل'],
     limitations: ['لا يوجد حركة خروج؛ الإغلاق فوري.'],
   },

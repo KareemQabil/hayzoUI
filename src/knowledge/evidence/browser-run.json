@@ -1,7 +1,7 @@
 {
   "tool": "Playwright (playwright-core 1.64.1)",
   "environment": "Chromium 156.0.8078.80 headless · win32 · 1280×900 و390×844 · reduced motion",
-  "startedAt": "2026-11-05T19:20:08.866Z",
+  "startedAt": "2026-11-05T19:34:10.006Z",
   "results": [
     {
       "id": "BR-CI-01",
@@ -62,6 +62,12 @@
       "name": "no page-level horizontal overflow at 390px",
       "status": "passed",
       "detail": "17 شاشة بلا تجاوز"
+    },
+    {
+      "id": "BR-DLG-04",
+      "name": "nested dialogs: Escape closes only the inner one; focus and the background lock hold",
+      "status": "passed",
+      "detail": "الداخلي فقط أُغلق · التركيز على «تأكيد» · الخلفية مقفلة"
     },
     {
       "id": "BR-CB-01",

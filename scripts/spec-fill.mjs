@@ -239,9 +239,10 @@ const FILL = {
       { id: 'focus-trapped', statement: 'التركيز يدخل عند الفتح ولا يخرج بالـTab.', tests: ['BR-DLG-01', 'BR-DLG-02'] },
       { id: 'focus-returns', statement: 'الإغلاق يعيد التركيز لمن فتحه.', tests: ['BR-DLG-03'] },
       { id: 'field-escape-wins', statement: 'Escape في حقل فيه مسودة يرجعها ولا يغلق الحوار.' },
+      { id: 'nested-dialogs', statement: 'حوار داخل حوار: Escape يغلق الداخلي فقط، والتركيز يعود لزره، ولا يخرج Tab من الخارجي، والخلفية تبقى مقفلة.', tests: ['BR-DLG-04'] },
     ],
-    contexts: { supported: ['rtl', 'ltr', 'controlled', 'react-19', 'chromium'], unsupported: ['حوار داخل حوار'] },
-    primitive: { source: 'own', relationship: 'original', note: 'ينتقل إلى React Aria Modal خلف الـadapter (spikes/primitives).' },
+    contexts: { supported: ['rtl', 'ltr', 'controlled', 'nested', 'react-19', 'chromium'], unsupported: [] },
+    primitive: { source: 'own', relationship: 'original', note: 'يجتاز نفس فحوص React Aria الـ14 بحجم 8.6 مقابل 27.9KB gzip؛ يبقى خاصًا بنا (spikes/primitives/DECISION.md).' },
   },
   drawer: {
     whenToUse: ['محتوى جانبي أطول: فلاتر، تفاصيل، قائمة تنقل على الهاتف'],
@@ -252,7 +253,7 @@ const FILL = {
     locale: NO_NUM,
     invariants: [{ id: 'opens-from-inline-end', statement: 'على الشاشات العريضة تخرج من نهاية السطر (يسار الشاشة في RTL ويمينها في LTR)، وتحت 640px تصبح لوحة سفلية.' }, { id: 'focus-trapped', statement: 'نفس عقد Dialog للتركيز.' }],
     contexts: { supported: ['rtl', 'ltr', 'controlled', 'react-19', 'chromium'], unsupported: [] },
-    primitive: { source: 'own', relationship: 'original', note: 'ينتقل إلى React Aria Modal خلف الـadapter.' },
+    primitive: { source: 'own', relationship: 'original', note: 'نفس تنفيذ Dialog؛ يبقى خاصًا بنا (spikes/primitives/DECISION.md).' },
   },
   'data-table': {
     whenToUse: ['سجلات بأعمدة للمقارنة: عملاء، فواتير، مخزون'],

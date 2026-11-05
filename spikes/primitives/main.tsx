@@ -8,7 +8,8 @@
 import { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { DEFAULT_SEARCH, matchText } from '../../src/arabic'
-import { CurrencyInput, LocaleProvider, SettingsProvider } from '../../src/system'
+import { Button, CurrencyInput, Dialog, LocaleProvider, SettingsProvider } from '../../src/system'
+import { Combobox } from '../../src/system/aria'
 import '../../src/index.css'
 import './spike.css'
 
@@ -19,7 +20,7 @@ import { DirectionProvider as BDirection } from '@base-ui/react/direction-provid
 import { Dialog as RDialog, Direction as RDirection } from 'radix-ui'
 
 const params = new URLSearchParams(location.search)
-const lib = (params.get('lib') ?? 'react-aria') as 'react-aria' | 'base-ui' | 'radix'
+const lib = (params.get('lib') ?? 'react-aria') as 'react-aria' | 'base-ui' | 'radix' | 'own'
 const dir = (params.get('dir') ?? 'rtl') as 'rtl' | 'ltr'
 document.documentElement.dir = dir
 
@@ -130,13 +131,79 @@ function RadixSpike() {
   )
 }
 
+/** Nested dialogs: a confirmation opened from inside a dialog (?nested=1). */
+function OwnNested() {
+  const [a, setA] = useState(false)
+  const [b, setB] = useState(false)
+  return (
+    <>
+      <Button data-testid="open" onClick={() => setA(true)}>تحصيل مبلغ</Button>
+      <button data-testid="outside">زر خارج الحوار</button>
+      <Dialog open={a} onOpenChange={setA} title="تحصيل مبلغ" footer={<Button data-testid="open-b" onClick={() => setB(true)}>تأكيد</Button>}>
+        <DialogBody />
+      </Dialog>
+      <Dialog open={b} onOpenChange={setB} title="تأكيد التحصيل" size="sm" footer={<Button data-testid="close-b" onClick={() => setB(false)}>رجوع</Button>}>
+        <p>هل تريد تسجيل المبلغ؟</p>
+      </Dialog>
+    </>
+  )
+}
+
+function AriaNested() {
+  return (
+    <RA.I18nProvider locale="ar-EG">
+      <RA.DialogTrigger>
+        <RA.Button className="spike-btn" data-testid="open">تحصيل مبلغ</RA.Button>
+        <RA.ModalOverlay className="spike-overlay" isDismissable>
+          <RA.Modal className="spike-modal">
+            <RA.Dialog className="spike-dialog">
+              <RA.Heading slot="title">تحصيل مبلغ</RA.Heading>
+              <DialogBody />
+              <RA.DialogTrigger>
+                <RA.Button className="spike-btn" data-testid="open-b">تأكيد</RA.Button>
+                <RA.ModalOverlay className="spike-overlay">
+                  <RA.Modal className="spike-modal">
+                    <RA.Dialog className="spike-dialog">
+                      <RA.Heading slot="title">تأكيد التحصيل</RA.Heading>
+                      <RA.Button slot="close" className="spike-btn" data-testid="close-b">رجوع</RA.Button>
+                    </RA.Dialog>
+                  </RA.Modal>
+                </RA.ModalOverlay>
+              </RA.DialogTrigger>
+            </RA.Dialog>
+          </RA.Modal>
+        </RA.ModalOverlay>
+      </RA.DialogTrigger>
+      <button data-testid="outside">زر خارج الحوار</button>
+    </RA.I18nProvider>
+  )
+}
+
+/** Our current own Dialog, and our Combobox (React Aria behind the adapter), on the same checks. */
+function OwnSpike() {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <Button data-testid="open" onClick={() => setOpen(true)}>تحصيل مبلغ</Button>
+      <Dialog open={open} onOpenChange={setOpen} title="تحصيل مبلغ" footer={<Button data-testid="close" onClick={() => setOpen(false)}>إغلاق</Button>}>
+        <div data-testid="dialog">
+          <DialogBody />
+        </div>
+      </Dialog>
+      <div className="spike-combo" data-testid="combo">
+        <Combobox label="العميل" items={CUSTOMERS.map((c) => ({ value: c, label: c }))} />
+      </div>
+    </>
+  )
+}
+
 function App() {
   const [ready] = useState(true)
   return (
     <SettingsProvider>
       <LocaleProvider dir={dir} lang={dir === 'rtl' ? 'ar' : 'en'} numerals="latn" className="spike-page">
         <h1 className="spike-title" data-testid="lib">{lib}</h1>
-        {ready && (lib === 'react-aria' ? <ReactAriaSpike /> : lib === 'base-ui' ? <BaseUiSpike /> : <RadixSpike />)}
+        {ready && params.get('nested') ? (lib === 'own' ? <OwnNested /> : <AriaNested />) : ready && (lib === 'react-aria' ? <ReactAriaSpike /> : lib === 'base-ui' ? <BaseUiSpike /> : lib === 'own' ? <OwnSpike /> : <RadixSpike />)}
         <div style={{ height: '200vh' }} aria-hidden="true" />
       </LocaleProvider>
     </SettingsProvider>
