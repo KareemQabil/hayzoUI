@@ -2,7 +2,7 @@
  * Fixtures — the same list drives the automated suite (vitest) and the live evidence view.
  * `run()` calls the implemented logic; nothing here is a recorded or hard-coded result.
  */
-import { formatAmount, matchText, parseAmount, parsePhoneEG, similarNames, DEFAULT_SEARCH, STRICT_SEARCH, type CurrencyCode } from '../arabic'
+import { formatAmount, formatPhoneEG, matchText, nationalPhoneEG, parseAmount, parsePhoneEG, similarNames, toDisplayDigits, DEFAULT_SEARCH, STRICT_SEARCH, type CurrencyCode } from '../arabic'
 import type { Fixture } from './types'
 
 function amount(id: string, requirement: string, rule: string, input: string, expected: { status: 'valid' | 'invalid' | 'empty'; canonical?: string; code?: string; suggestion?: string }, currency: CurrencyCode = 'EGP'): Fixture {
@@ -77,13 +77,37 @@ export const FIXTURES: Fixture[] = [
   {
     id: 'FM-F02',
     area: 'format',
-    requirement: 'العرض بأرقام عربية مع فواصل عربية',
-    rule: 'R-NUM-004',
+    requirement: 'العرض بأرقام عربية: الفاصلة العشرية «٫» هي العلامة الوحيدة الشبيهة بالفاصلة، والآلاف بمسافة رفيعة',
+    rule: 'R-BIDI-003',
     input: '123450 (minor)',
-    expected: '١٬٢٣٤٫٥٠',
+    expected: '١ ٢٣٤٫٥٠',
     run: () => {
       const actual = formatAmount(123450, { currency: 'EGP', numerals: 'arab' })
-      return { actual, pass: actual === '١٬٢٣٤٫٥٠' }
+      return { actual, pass: actual === '١ ٢٣٤٫٥٠' }
+    },
+  },
+  {
+    id: 'FM-F03',
+    area: 'format',
+    requirement: 'رقم الهاتف بأرقام عربية لا يحتوي مسافة عادية تقلب ترتيب المجموعات',
+    rule: 'R-BIDI-003',
+    input: '+201012345678 (arab)',
+    expected: '٠١٠ ١٢٣٤ ٥٦٧٨',
+    run: () => {
+      const actual = toDisplayDigits(nationalPhoneEG('+201012345678'), 'arab')
+      return { actual, pass: actual === '٠١٠ ١٢٣٤ ٥٦٧٨' && !actual.includes(' ') }
+    },
+  },
+  {
+    id: 'FM-F04',
+    area: 'format',
+    requirement: 'الصيغة الدولية للهاتف بأرقام عربية بلا مسافات عادية',
+    rule: 'R-BIDI-003',
+    input: '+201012345678 (arab, intl)',
+    expected: '+٢٠ ١٠ ١٢٣٤ ٥٦٧٨',
+    run: () => {
+      const actual = toDisplayDigits(formatPhoneEG('+201012345678'), 'arab')
+      return { actual, pass: actual === '+٢٠ ١٠ ١٢٣٤ ٥٦٧٨' }
     },
   },
   phone('PH-F01', 'رقم محمول مصري محلي', '01012345678', '+201012345678'),

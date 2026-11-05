@@ -2,7 +2,7 @@
  * arabic.phone.eg.v1 — Egyptian mobile numbers only in this release.
  * Accepts any supported numerals, spaces, dashes, dots and parentheses; stores E.164.
  */
-import { normalizeDigits, stripBidiControls } from './digits'
+import { NBSP, normalizeDigits, stripBidiControls } from './digits'
 
 export type PhoneErrorCode = 'invalid-character' | 'too-short' | 'too-long' | 'invalid-prefix'
 
@@ -34,15 +34,15 @@ export function parsePhoneEG(input: string): PhoneParseResult {
   return { status: 'valid', e164: '+20' + national.slice(1), error: null }
 }
 
-/** "+201012345678" → "+20 10 1234 5678". Always rendered as an LTR island. */
+/** "+201012345678" → "+20 10 1234 5678" (groups joined by U+00A0, see numericSpaces). Always rendered as an LTR island. */
 export function formatPhoneEG(e164: string): string {
   const n = e164.replace(/^\+20/, '')
   if (n.length !== 10) return e164
-  return `+20 ${n.slice(0, 2)} ${n.slice(2, 6)} ${n.slice(6)}`
+  return ['+20', n.slice(0, 2), n.slice(2, 6), n.slice(6)].join(NBSP)
 }
 
-/** Local editing form "010 1234 5678". */
+/** Local editing form "010 1234 5678" (groups joined by U+00A0). */
 export function nationalPhoneEG(e164: string): string {
   const n = '0' + e164.replace(/^\+20/, '')
-  return `${n.slice(0, 3)} ${n.slice(3, 7)} ${n.slice(7)}`
+  return [n.slice(0, 3), n.slice(3, 7), n.slice(7)].join(NBSP)
 }

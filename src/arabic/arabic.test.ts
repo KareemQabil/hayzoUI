@@ -4,7 +4,7 @@
  */
 import { describe, expect, test } from 'vitest'
 import { FIXTURES } from '../knowledge/fixtures'
-import { editingAmount, formatAmount, normalizeForSearch, parseAmount, toDisplayDigits, DEFAULT_SEARCH, matchText } from './index'
+import { editingAmount, formatAmount, formatPhoneEG, nationalPhoneEG, NNBSP, normalizeForSearch, numericSpaces, parseAmount, parsePhoneEG, toDisplayDigits, DEFAULT_SEARCH, matchText } from './index'
 
 describe('fixtures', () => {
   for (const f of FIXTURES) {
@@ -82,6 +82,26 @@ describe('properties (seed 20260314, 500 cases each)', () => {
       const strict = matchText(q, n, { hamza: false, alefMaqsura: false, taaMarbuta: false, ignoreSpaces: false }).match
       const tolerant = matchText(q, n, DEFAULT_SEARCH).match
       if (strict) expect(tolerant).toBe(true)
+    }
+  })
+  test('PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark', () => {
+    // An ASCII space between Arabic-Indic digits reorders the groups (UAX #9 N1); «٬» looks like «٫» in UI fonts.
+    const r = rng(SEED + 5)
+    const NUMBER_RUN = /^-?[٠-٩]+( [٠-٩]{3})*(٫[٠-٩]+)?$/
+    for (let i = 0; i < 500; i++) {
+      const minor = Math.floor(r() * 1e14) * (r() < 0.1 ? -1 : 1)
+      for (const cur of ['EGP', 'KWD'] as const) {
+        const shown = formatAmount(minor, { currency: cur, numerals: 'arab' })
+        expect(shown).toMatch(NUMBER_RUN)
+        expect(parseAmount(shown, { currency: cur, allowNegative: true }).minor).toBe(minor)
+      }
+      const national = '01' + ['0', '1', '2', '5'][Math.floor(r() * 4)] + String(Math.floor(r() * 1e8)).padStart(8, '0')
+      const e164 = parsePhoneEG(national).e164!
+      for (const shown of [nationalPhoneEG(e164), formatPhoneEG(e164)].map((s) => toDisplayDigits(s, 'arab'))) {
+        expect(shown).not.toContain(' ')
+        expect(parsePhoneEG(shown).e164).toBe(e164)
+      }
+      expect(numericSpaces('١ ٢٣٤', NNBSP)).toBe('١ ٢٣٤')
     }
   })
   test('PROP-06 search normalization never changes the stored name', () => {

@@ -10,7 +10,8 @@
     "format": "oxfmt",
     "test": "vitest run",
     "evidence:unit": "node scripts/record-unit.mjs",
-    "evidence:browser": "node scripts/browser-checks.mjs"
+    "evidence:browser": "node scripts/browser-checks.mjs",
+    "check:bidi": "node scripts/bidi-scan.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.69.0",
