@@ -43,11 +43,14 @@ Input accepts `0-9`, `٠-٩`, `۰-۹`; decimal `.` or `٫`; grouping `٬`/space 
 
 Groups are joined with U+00A0, never an ASCII space: between Arabic-Indic digits an ASCII space makes UAX #9 reverse the group order even inside an LTR field. Typed spaces become U+00A0 with the caret preserved (R-BIDI-003). On focus the field switches to the ungrouped editing form and selects it.
 
+Validation messages follow the display numerals, and number examples inside them use U+00A0 too: inside an Arabic sentence an ASCII space reverses Latin digit groups as well (UAX #9 W7 only turns them into L after left-to-right text). Checked by `CT-01` over every error code × currency × numerals.
+
 Supported currencies: EGP, SAR (2 decimals), KWD (3). Max 12 integer digits.
 
 ## Evidence
 
-- `pnpm test` — Vitest suite (fixtures + 6 seeded properties).
+- `pnpm test` — Vitest suite (fixtures, 7 seeded properties, content invariants).
+- `pnpm check:bidi` — blind scan against the dev server: every route discovered from the knowledge base × both numerals × desktop and 390px, with stress values typed into phone and amount fields; measures on screen whether digit groups are drawn in reverse. Fails on any finding. Uses local Chrome/Edge or `CHROMIUM`.
 - `pnpm evidence:unit` — runs Vitest and writes `src/knowledge/evidence/unit-run.json`.
 - `pnpm evidence:browser` — Playwright (playwright-core + system Chromium) against the dev server; writes `browser-run.json`.
 

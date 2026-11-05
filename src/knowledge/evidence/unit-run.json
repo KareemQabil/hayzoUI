@@ -1,13 +1,13 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-05T16:01:59.588Z",
+  "startedAt": "2026-11-05T17:34:14.771Z",
   "results": [
     {
       "id": "CI-F01",
       "name": "CI-F01 أرقام لاتينية بفاصلة عشرية نقطة",
       "status": "passed",
-      "durationMs": 3
+      "durationMs": 2
     },
     {
       "id": "CI-F02",
@@ -205,13 +205,13 @@
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "status": "passed",
-      "durationMs": 21
+      "durationMs": 22
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
       "status": "passed",
-      "durationMs": 27
+      "durationMs": 29
     },
     {
       "id": "PROP-03",
@@ -235,13 +235,19 @@
       "id": "PROP-07",
       "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
       "status": "passed",
-      "durationMs": 44
+      "durationMs": 42
     },
     {
       "id": "PROP-06",
       "name": "PROP-06 search normalization never changes the stored name",
       "status": "passed",
       "durationMs": 0
+    },
+    {
+      "id": "CT-01",
+      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
+      "status": "passed",
+      "durationMs": 5
     }
   ]
 }

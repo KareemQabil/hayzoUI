@@ -46,7 +46,7 @@ export const PhoneInput = forwardRef<PhoneInputHandle, PhoneInputProps>(function
 
   const visible = touched || showValidation
   let error: string | null = null
-  if (visible && result.status === 'invalid' && result.error) error = phoneErrorMessage(result.error.code, result.error.char)
+  if (visible && result.status === 'invalid' && result.error) error = phoneErrorMessage(result.error.code, result.error.char, numerals)
   if (visible && result.status === 'empty' && !optional) error = phoneErrorMessage('required')
 
   return (

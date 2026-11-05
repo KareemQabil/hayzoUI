@@ -2,7 +2,7 @@
  * Content layer — Arabic copy for validation and system messages.
  * L2 returns codes; this module turns them into sentences. Terms must match the glossary.
  */
-import { CURRENCIES, formatAmount, toDisplayDigits, type AmountError, type CurrencyCode, type DisplayNumerals, type PhoneErrorCode } from '../arabic'
+import { CURRENCIES, formatAmount, numericSpaces, toDisplayDigits, type AmountError, type CurrencyCode, type DisplayNumerals, type PhoneErrorCode } from '../arabic'
 
 function digitsWord(n: number): string {
   if (n === 1) return 'رقمًا واحدًا'
@@ -42,18 +42,24 @@ export function amountErrorMessage(error: AmountError, currency: CurrencyCode, n
 
 export const requiredAmountMessage = 'أدخل المبلغ.'
 
-export function phoneErrorMessage(code: PhoneErrorCode | 'required', char?: string): string {
+/**
+ * Phone messages follow the display numerals. The example number is joined with U+00A0: inside an Arabic
+ * sentence an ASCII space between digit groups makes UAX #9 reverse their order, for Latin digits too (R-BIDI-003).
+ */
+export function phoneErrorMessage(code: PhoneErrorCode | 'required', char?: string, numerals: DisplayNumerals = 'latn'): string {
+  const n = (s: string) => toDisplayDigits(numericSpaces(s), numerals)
+  const example = n('010 1234 5678')
   switch (code) {
     case 'required':
       return 'أدخل رقم المحمول.'
     case 'invalid-character':
       return `«${char}» ليس رقمًا. أدخل رقم المحمول بالأرقام فقط.`
     case 'too-short':
-      return 'الرقم أقصر من رقم المحمول المصري (١١ رقمًا، مثل 010 1234 5678).'
+      return `الرقم أقصر من رقم المحمول المصري (${n('11')} رقمًا، مثل ${example}).`
     case 'too-long':
-      return 'الرقم أطول من رقم المحمول المصري (١١ رقمًا، مثل 010 1234 5678).'
+      return `الرقم أطول من رقم المحمول المصري (${n('11')} رقمًا، مثل ${example}).`
     case 'invalid-prefix':
-      return 'يبدأ رقم المحمول المصري بـ 010 أو 011 أو 012 أو 015.'
+      return `يبدأ رقم المحمول المصري بـ ${n('010')} أو ${n('011')} أو ${n('012')} أو ${n('015')}.`
   }
 }
 

@@ -99,7 +99,7 @@ export const RULES: Rule[] = [
     review: 'proposed',
     components: ['phone-input', 'currency-input'],
     patterns: ['P-COLLECT-PAYMENT'],
-    tests: ['FM-F02', 'FM-F03', 'FM-F04'],
+    tests: ['FM-F02', 'FM-F03', 'FM-F04', 'CT-01'],
   },
   {
     id: 'R-BIDI-002',
