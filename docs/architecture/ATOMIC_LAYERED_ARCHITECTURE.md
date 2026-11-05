@@ -1,7 +1,7 @@
 # HayzoUI Atomic & Layered Architecture
 
 **Status:** Proposed architecture baseline  
-**Branch:** `architecture/atomic-layered-system`  
+**Document:** Architecture baseline; implementation is developed in isolated feature branches  
 **Scope:** Greenfield target architecture for the next HayzoUI generation  
 **Important:** Existing code is a working reference and evidence source, not an automatic architectural constraint. New foundations are built in an isolated namespace and promoted only after contracts and tests pass. Do not delete or rewrite the current application in one pass.
 
@@ -62,7 +62,7 @@ The functional/behavior plane and the visual/style plane must remain independent
 | S6 — Context presets | Operational constraints for product environments | POS, ERP, CRM, education |
 | S7 — Experience profiles | Tested composition of visual system + theme + context + density + locale | Arabic POS touch profile |
 
-These are not nine mandatory wrappers around every component. They are composable layers with typed boundaries. A component may use the default recipe and theme without requiring a context preset.
+These are not nine mandatory wrappers around every component. They are composable layers with typed boundaries. A component may use the default recipe and theme without requiring a context preset. Density uses the repository's established values: `compact | default | touch`.
 
 ### 3.3 Cross-cutting foundations
 
@@ -70,19 +70,44 @@ The following are explicit contexts/services, not incidental theme properties:
 
 - Direction: `ltr | rtl`
 - Locale: BCP 47 language tag
-- Region: ISO 3166-1 alpha-2 or an explicitly supported custom region
+- Region: ISO 3166-1 alpha-2
 - Numbering system: explicit identifier
 - Calendar: explicit identifier
 - First day of week: explicit value or resolved regional rule
 - Time zone: IANA identifier
-- Density: `compact | comfortable | touch`
+- Density: `compact | default | touch`
 - Motion preference: `full | reduced`
 - Contrast preference: `normal | more | forced`
-- Input modality: `pointer | touch | keyboard | assistive`
+- Input modality: `unknown | pointer | touch | keyboard | assistive`
 
 Do not infer all of these from a single `locale` string.
 
 ---
+
+## 3.4 Alignment with the existing MASTER_PLAN
+
+The layer numbers in `docs/MASTER_PLAN.md` remain the canonical project delivery sequence. The F-layers and S-layers in this document are orthogonal responsibility maps used to reason about dependencies; they do not replace or renumber the master plan.
+
+| Canonical project layer | Responsibility | Mapping in this document |
+|---|---|---|
+| L0 — Contracts | Component, rule, pattern, token, locale, context, experience-profile, and test schemas | Contracts across F/S layers |
+| L1 — Tokens | Primitive, semantic, component, locale, theme, visual-system, and context token composition | S0–S2 plus token-layer inputs |
+| L2 — Arabic core | Pure digit, amount, phone, search, bidi, plural, and locale-sensitive data logic | F0 core |
+| L3 — Behavior | Headless state, keyboard, focus, ARIA, and platform adapters behind owned contracts | F1–F2 |
+| L4 — Style | Plain CSS, custom properties, logical properties, recipes, and `data-*` selectors | S3–S4 |
+| L5 — Components | React components assembled from behavior and style contracts | F3–F4 |
+| L6 — Patterns | Complete task and workflow compositions | F5 |
+| L7 — Product | Docs, explorer, theme studio, evidence, knowledge export | F6 |
+
+The harness and evidence system cut across every layer. Evidence must be generated from the current commit and must distinguish proposed, demonstrated, manually tested, automated, and unchecked claims.
+
+**Repository decisions that this architecture must preserve:**
+
+- The current delivery plan is code-first; Figma Make is not a required implementation layer.
+- L4 ships plain CSS with CSS custom properties, logical properties, and `data-*` attributes. No runtime CSS-in-JS.
+- Arabic and locale-sensitive data logic remains pure and independent of React and the DOM.
+- The existing `compact | default | touch` density vocabulary is canonical unless a versioned RFC changes it.
+- The existing component specs and evidence model remain the source of truth for component behavior and maturity. New architecture must extend these contracts rather than invent parallel status systems.
 
 ## 4. Dependency direction
 
@@ -342,7 +367,7 @@ Do not attempt every possible combination. Use risk-based coverage plus pairwise
 - Light and dark modes.
 - At least three materially different visual systems.
 - At least two brand themes.
-- Compact, comfortable, and touch density.
+- Compact, default, and touch density.
 - Reduced motion and normal motion.
 - Normal and increased contrast.
 
@@ -473,8 +498,8 @@ A component is not Beta until its behavior, keyboard, accessibility, visual, RTL
 
 These require prototypes or evidence; do not silently decide them during implementation:
 
-- Final styling runtime: CSS variables + authored CSS, CSS Modules, or a typed recipe compiler.
-- Whether recipes compile at build time or resolve at runtime.
+- Styling delivery follows `docs/MASTER_PLAN.md`: plain CSS, CSS custom properties, logical properties, and `data-*` state attributes. No runtime CSS-in-JS. A future build-time tool may generate CSS from typed recipes, but must preserve the CSS output contract.
+- Whether recipe authoring should use a small typed schema that compiles to plain CSS at build time.
 - Exact React adapter API and support for other frameworks.
 - Whether the package workspace should be introduced immediately or after the first vertical slice.
 - Final names and public exports.
