@@ -19,3 +19,7 @@ logs/
 # beside it.
 /.plugins/
 /.opencode-skills/
+
+# visual baseline run outputs (baselines themselves are committed)
+design/baselines/**/*.diff.png
+design/baselines/**/*.actual.png

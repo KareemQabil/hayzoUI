@@ -10,6 +10,7 @@ import { EvidencePage } from './pages/EvidencePage'
 import { ResourcesPage } from './pages/ResourcesPage'
 import { RulesPage } from './pages/RulesPage'
 import { EcosystemPage } from './pages/EcosystemPage'
+import { MatrixPage } from './pages/MatrixPage'
 
 function Routes() {
   const route = useRoute()
@@ -36,6 +37,9 @@ function Routes() {
       break
     case 'rules':
       page = <RulesPage id={route[1]} />
+      break
+    case 'matrix':
+      page = <MatrixPage id={route[1]} />
       break
     case 'ecosystem':
       page = <EcosystemPage />

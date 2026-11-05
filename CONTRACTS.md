@@ -66,3 +66,7 @@ Supported currencies: EGP, SAR (2 decimals), KWD (3). Max 12 integer digits.
 - `pnpm evidence:browser` — Playwright (playwright-core + system Chromium) against the dev server; writes `browser-run.json`.
 
 Status vocabulary: proposed · demo (live in browser) · manual · automated (from a run file) · unchecked. No manual checks are recorded in this release.
+
+## State matrix and visual baselines
+
+`#/matrix/<id>` renders every `spec.states` × direction × theme from the spec, with density and content variant as page axes. Renderers live in `src/matrix/renderers.tsx`; a state or variant without one shows as a visible gap and fails `BR-MX-01`. `pnpm check:visual` photographs each spec × content × density and pixel-diffs against `design/baselines/` (tolerance 0.1% of pixels); `pnpm baselines:update` records new baselines only after a person approves the change.

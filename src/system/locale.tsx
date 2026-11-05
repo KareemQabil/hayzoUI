@@ -3,7 +3,7 @@
  * Components never accept a `dir` prop; nest a provider to scope a preview.
  */
 import { createContext, useContext, type ReactNode } from 'react'
-import { toDisplayDigits, type DisplayNumerals } from '../arabic'
+import { NNBSP, toDisplayDigits, type DisplayNumerals } from '../arabic'
 import { useSettings } from './settings'
 
 export type Dir = 'rtl' | 'ltr'
@@ -45,5 +45,5 @@ export function useLocale(): LocaleValue {
  */
 export function Digits({ children }: { children: string }) {
   const { numerals } = useLocale()
-  return <>{toDisplayDigits(children.replace(/(d) (?=d)/g, '$1 '), numerals)}</>
+  return <>{toDisplayDigits(children.replace(/(\d) (?=\d)/g, `$1${NNBSP}`), numerals)}</>
 }
