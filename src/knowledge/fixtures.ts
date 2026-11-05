@@ -2,7 +2,7 @@
  * Fixtures — the same list drives the automated suite (vitest) and the live evidence view.
  * `run()` calls the implemented logic; nothing here is a recorded or hard-coded result.
  */
-import { formatAmount, formatPhoneEG, matchText, nationalPhoneEG, parseAmount, parsePhoneEG, similarNames, toDisplayDigits, DEFAULT_SEARCH, STRICT_SEARCH, type CurrencyCode } from '../arabic'
+import { formatAmount, formatPhoneEG, matchDigits, matchText, nationalPhoneEG, parseAmount, parsePhoneEG, similarNames, toDisplayDigits, DEFAULT_SEARCH, STRICT_SEARCH, type CurrencyCode } from '../arabic'
 import type { Fixture } from './types'
 
 function amount(id: string, requirement: string, rule: string, input: string, expected: { status: 'valid' | 'invalid' | 'empty'; canonical?: string; code?: string; suggestion?: string }, currency: CurrencyCode = 'EGP'): Fixture {
@@ -116,6 +116,30 @@ export const FIXTURES: Fixture[] = [
   phone('PH-F04', 'رقم ناقص', '0101234567', 'مرفوض · too-short'),
   phone('PH-F05', 'بادئة غير مدعومة', '01312345678', 'مرفوض · invalid-prefix'),
   phone('PH-F06', 'حرف لاتيني يشبه الرقم ١', '010l2345678', 'مرفوض · invalid-character'),
+  {
+    id: 'SR-F06',
+    area: 'search',
+    requirement: 'البحث برقم الهاتف المحلي يجد الرقم المخزن بالصيغة الدولية، بأي أرقام',
+    rule: 'R-SRCH-001',
+    input: '0101 · ٠١٠١ · 01012345678 → +20 10 1234 5678',
+    expected: 'مطابق ×3',
+    run: () => {
+      const n = ['0101', '٠١٠١', '01012345678'].filter((q) => matchDigits(q, '+20 10 1234 5678')).length
+      return { actual: `مطابق ×${n}`, pass: n === 3 }
+    },
+  },
+  {
+    id: 'SR-F07',
+    area: 'search',
+    requirement: 'رقمان فقط أو نص فيه حروف لا يُعامل كرقم هاتف',
+    rule: 'R-SRCH-001',
+    input: '01 · احمد 010 → +20 10 1234 5678',
+    expected: 'غير مطابق ×2',
+    run: () => {
+      const n = ['01', 'احمد 010'].filter((q) => !matchDigits(q, '+20 10 1234 5678')).length
+      return { actual: `غير مطابق ×${n}`, pass: n === 2 }
+    },
+  },
   {
     id: 'SR-F01',
     area: 'search',

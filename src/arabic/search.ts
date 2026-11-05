@@ -2,6 +2,7 @@
  * arabic.search.v1 — tolerant matching that never alters stored text.
  * Normalization produces an index map back to the original string so matches can be highlighted.
  */
+import { normalizeDigits } from './digits'
 export interface SearchOptions {
   /** أ إ آ ٱ → ا ، ؤ → و ، ئ → ي ، ء ignored */
   hamza: boolean
@@ -84,4 +85,16 @@ export function similarNames<T>(name: string, records: T[], getName: (r: T) => s
   const n = normalizeForSearch(name, DUPLICATE_CHECK).text.trim()
   if (n.length < 3) return []
   return records.filter((r) => normalizeForSearch(getName(r), DUPLICATE_CHECK).text.trim() === n)
+}
+
+/**
+ * Digits-only matching for phone numbers and codes: the query matches when its digits, in any numeral
+ * system, appear in the target's digits, ignoring spaces, «+» and dashes. At least 3 digits, so a single
+ * digit does not match every record. For Egypt, «010…» matches «+20 10 …» because the digits of the
+ * international form are «2» followed by the national number.
+ */
+export function matchDigits(query: string, target: string, minDigits = 3): boolean {
+  const q = normalizeDigits(query).text.replace(/\D/g, '')
+  if (q.length < minDigits || /[^\d\s+\-()\u00a0\u202f]/.test(normalizeDigits(query).text)) return false
+  return normalizeDigits(target).text.replace(/\D/g, '').includes(q)
 }

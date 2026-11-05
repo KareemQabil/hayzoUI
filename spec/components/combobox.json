@@ -1,0 +1,225 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "combobox",
+  "name": "منتقي العميل",
+  "nameEn": "Combobox / Customer Picker",
+  "family": "inputs",
+  "tier": "T3",
+  "maturity": "alpha",
+  "purpose": "اختيار عميل واحد بالكتابة: بحث متسامح مع الهمزات والتشكيل والمسافات، ومطابقة بالاسم أو الهاتف مع تمييز الجزء المطابق.",
+  "whenToUse": [
+    "اختيار سجل واحد من قائمة طويلة بالكتابة: عميل، منتج، مندوب"
+  ],
+  "whenNotToUse": [
+    "أقل من 15 خيارًا ثابتًا (Select)",
+    "تصفية جدول ظاهر (Search Field)"
+  ],
+  "anatomy": [
+    "root",
+    "label",
+    "control",
+    "input",
+    "trigger",
+    "popover",
+    "listbox",
+    "option",
+    "helper",
+    "error"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "items",
+      "type": "ComboboxItem[]",
+      "doc": "العناصر بالترتيب المنطقي؛ الاتجاه البصري يتبع الـprovider.",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string | null",
+      "doc": "Controlled selected value, or null for none. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string | null",
+      "doc": "القيمة الابتدائية في الوضع غير المتحكم فيه.",
+      "default": null
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string | null, details: { item: ComboboxItem | null }) => void",
+      "doc": "details.item is the selected item, or null when cleared."
+    },
+    {
+      "name": "search",
+      "type": "SearchOptions",
+      "doc": "Matching rules. Default: Arabic-tolerant (L2 DEFAULT_SEARCH)."
+    },
+    {
+      "name": "helper",
+      "type": "ReactNode",
+      "doc": "نص مساعد مرتبط بـaria-describedby."
+    },
+    {
+      "name": "error",
+      "type": "ReactNode",
+      "doc": "رسالة خطأ ظاهرة ومرتبطة بالحقل."
+    },
+    {
+      "name": "optional",
+      "type": "boolean",
+      "doc": "الحقل مطلوب افتراضيًا؛ هذه الخاصية تعلّمه اختياريًا."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "doc": "غير متاح؛ لا يستقبل تركيزًا ولا يُرسل."
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "doc": "معروض ويمكن نسخه، لا يُعدَّل."
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "hideLabel",
+      "type": "boolean",
+      "doc": "يخفي الاسم بصريًا ويبقيه اسمًا مقروءًا."
+    },
+    {
+      "name": "labels",
+      "type": "Partial<ComboboxLabels>",
+      "doc": "Internal strings, Arabic by default."
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "open",
+    "empty",
+    "invalid",
+    "disabled",
+    "readonly"
+  ],
+  "content": [
+    "short",
+    "mixed",
+    "diacritics",
+    "arabic-digits",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "كتابة",
+      "action": "تفتح القائمة وتصفّيها بالبحث المتسامح (الهمزات، التشكيل) وبأرقام الهاتف بأي أرقام."
+    },
+    {
+      "key": "ArrowDown / ArrowUp",
+      "action": "تنقل بين الخيارات مع بقاء التركيز في الحقل (aria-activedescendant)."
+    },
+    {
+      "key": "Enter",
+      "action": "يختار الخيار المميّز ويغلق القائمة."
+    },
+    {
+      "key": "Escape",
+      "action": "يغلق القائمة ويبقي التركيز في الحقل."
+    }
+  ],
+  "aria": {
+    "role": "combobox + listbox",
+    "labelling": "aria-labelledby → label",
+    "describedBy": [
+      "helper",
+      "error"
+    ],
+    "notes": [
+      "aria-activedescendant للخيار المميّز",
+      "زر الفتح باسم labels.open",
+      "رسالة القائمة الفارغة من labels.empty"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "all",
+    "numeralsDisplay": "none",
+    "ltrIslands": [
+      "option-desc"
+    ],
+    "mirroredIcons": []
+  },
+  "contracts": [
+    "arabic.search.v1"
+  ],
+  "invariants": [
+    {
+      "id": "tolerant-matching",
+      "statement": "«احمد» يجد «أحمد Khaled» و«محمد» يجد «مُحَمَّد السيد»، مع تمييز الجزء المطابق.",
+      "tests": [
+        "SR-F01",
+        "SR-F04",
+        "BR-CB-01"
+      ]
+    },
+    {
+      "id": "phone-by-digits",
+      "statement": "«0101» أو «٠١٠١» يجد الرقم المخزّن «+20 10 1234 5678».",
+      "tests": [
+        "SR-F06",
+        "SR-F07",
+        "BR-CB-02"
+      ]
+    },
+    {
+      "id": "empty-is-null",
+      "statement": "الاختيار يبلّغ القيمة، والمسح ثم المغادرة يبلّغ null.",
+      "tests": [
+        "BR-CB-03"
+      ]
+    },
+    {
+      "id": "popup-aligned-in-rtl",
+      "statement": "القائمة تحاذي بداية الحقل في الاتجاهين، وEscape يغلقها والتركيز باقٍ في الحقل.",
+      "tests": [
+        "BR-CB-04"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": [
+      "اختيار متعدد",
+      "أكثر من 1000 خيار دون virtualization"
+    ]
+  },
+  "primitive": {
+    "source": "react-aria",
+    "relationship": "integrated",
+    "note": "React Aria ComboBox خلف الـadapter؛ المطابقة والنصوص والسمات من طبقاتنا."
+  },
+  "rules": [
+    "R-SRCH-001"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

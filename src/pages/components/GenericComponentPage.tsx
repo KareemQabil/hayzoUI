@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { lazy, Suspense, useState, type ReactNode } from 'react'
 import { DEFAULT_SEARCH, matchText, STRICT_SEARCH } from '../../arabic'
 import { getRule, type ComponentRecord } from '../../knowledge'
 import { automatedFor } from '../../knowledge/evidence'
@@ -83,6 +83,10 @@ function TabsDemo() {
     </div>
   )
 }
+
+// React Aria demos load on demand so other pages do not carry React Aria and every calendar system.
+const ComboboxDemo = lazy(() => import('./AriaDemos').then((m) => ({ default: m.ComboboxDemo })))
+const DateDemo = lazy(() => import('./AriaDemos').then((m) => ({ default: m.DateDemo })))
 
 function Demo({ id }: { id: string }): ReactNode {
   const [name, setName] = useState('أحمد Khaled')
@@ -187,6 +191,18 @@ function Demo({ id }: { id: string }): ReactNode {
             </Badge>
           ))}
         </div>
+      )
+    case 'combobox':
+      return (
+        <Suspense fallback={null}>
+          <ComboboxDemo />
+        </Suspense>
+      )
+    case 'date-picker':
+      return (
+        <Suspense fallback={null}>
+          <DateDemo />
+        </Suspense>
       )
     case 'empty-state':
       return <EmptyState icon="search" title="لا يوجد عميل بهذا الاسم" action={<Button variant="outline" iconStart="user-plus">إضافة عميل</Button>}>تأكد من الإملاء، أو أضفه كعميل جديد.</EmptyState>

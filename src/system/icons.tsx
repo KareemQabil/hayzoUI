@@ -12,6 +12,8 @@ import {
   Check,
   ChevronDown,
   ChevronRight,
+  ChevronLeft,
+  CalendarDays,
   ArrowRight,
   ChevronsUpDown,
   CircleAlert,
@@ -59,6 +61,8 @@ type Mirror = 'auto' | 'never'
 // Glyphs are drawn for LTR. "forward" is the reading-direction next step.
 export const ICONS = {
   forward: { icon: ChevronRight, mirror: 'auto', note: 'تقدّم في اتجاه القراءة؛ يُعكس في RTL' },
+  'chevron-back': { icon: ChevronLeft, mirror: 'auto', note: 'السابق في اتجاه القراءة (الشهر السابق)؛ يُعكس في RTL' },
+  calendar: { icon: CalendarDays, mirror: 'never', note: 'تقويم؛ لا يُعكس' },
   back: { icon: ArrowLeft, mirror: 'auto', note: 'رجوع؛ يتبع اتجاه القراءة' },
   next: { icon: ArrowRight, mirror: 'auto', note: 'الخطوة التالية؛ يُعكس في RTL' },
   'chevron-down': { icon: ChevronDown, mirror: 'never', note: '' },
