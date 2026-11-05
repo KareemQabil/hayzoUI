@@ -22,7 +22,7 @@ export const BROWSER_RUN = browserRun as RunFile
 export interface BrowserCheck {
   id: string
   requirement: string
-  rule: string
+  rule?: string
   component: string
   method: string
   expected: string
@@ -39,6 +39,7 @@ export const BROWSER_CHECKS: BrowserCheck[] = [
   { id: 'BR-APP-01', requirement: 'النقر المزدوج على «تأكيد التحصيل» يسجل عملية واحدة', rule: 'R-FLOW-001', component: 'button', method: 'Playwright: dblclick على زر التأكيد', expected: 'صف واحد جديد في السجل' },
   { id: 'BR-APP-02', requirement: 'الفشل المحاكى يحفظ المبلغ، وإعادة المحاولة تنجح', rule: 'R-CNT-001', component: 'inline-message', method: 'Playwright: تفعيل الفشل ← تأكيد ← أعد المحاولة', expected: 'رسالة فشل، المبلغ باقٍ، ثم إيصال' },
   { id: 'BR-LAY-01', requirement: 'لا تمرير أفقي للصفحة على عرض 390px', rule: 'R-BIDI-001', component: 'data-table', method: 'Playwright: scrollWidth ≤ clientWidth لكل شاشة', expected: 'لا تجاوز' },
+  { id: 'BR-MX-01', requirement: 'كل حالة × متغير محتوى في الـspec لها خلية مرسومة في المصفوفة', component: 'currency-input', method: 'Playwright: كل spec × كل محتوى في #/matrix', expected: 'لا خلايا ناقصة ولا أخطاء console' },
 ]
 
 export type AutomatedState = { state: 'passed' | 'failed' | 'not-run'; run?: RunFile; detail?: string }

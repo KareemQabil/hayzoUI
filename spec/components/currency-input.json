@@ -1,0 +1,81 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "currency-input",
+  "name": "حقل المبلغ",
+  "nameEn": "Currency Input",
+  "family": "inputs",
+  "tier": "T2",
+  "maturity": "alpha",
+  "purpose": "إدخال مبلغ مالي بدقة الوحدة الصغرى، يقبل كل أنظمة الأرقام ويرفض الالتباس بدل تخمينه.",
+  "whenToUse": ["مبلغ يُحصَّل أو يُدفع أو يُسجَّل بعملة واحدة معروفة", "حدود دنيا وعليا للمبلغ يجب شرحها للمستخدم"],
+  "whenNotToUse": ["كميات أو أعداد بلا عملة (استخدم حقل العدد)", "أسعار صرف أو نسب بأكثر من خانات العملة"],
+  "anatomy": ["root", "label", "control", "input", "clear", "affix", "helper", "error", "suggestions"],
+  "props": [
+    { "name": "label", "type": "ReactNode", "required": true, "doc": "اسم الحقل الظاهر. العملة تُضاف لاسمه المقروء تلقائيًا." },
+    { "name": "value", "type": "number | null", "doc": "الوحدات الصغرى (قروش). null يعني فارغ أو غير صالح." },
+    { "name": "defaultValue", "type": "number | null", "default": null, "doc": "قيمة ابتدائية في الوضع غير المتحكم فيه." },
+    { "name": "onValueChange", "type": "(value: number | null, details: { status, result, reason }) => void", "doc": "يُستدعى عند تغيّر القيمة الصالحة، وعند المسح والاقتراح والتراجع حتى لو لم تتغير." },
+    { "name": "currency", "type": "'EGP' | 'SAR' | 'KWD'", "default": "EGP", "doc": "تحدد عدد الخانات العشرية ورمز العرض." },
+    { "name": "min", "type": "number | null", "default": null, "doc": "أقل مبلغ بالوحدات الصغرى." },
+    { "name": "max", "type": "number | null", "default": null, "doc": "أعلى مبلغ بالوحدات الصغرى." },
+    { "name": "allowNegative", "type": "boolean", "default": false, "doc": "يسمح بالسالب بعلامة قبل الرقم فقط." },
+    { "name": "optional", "type": "boolean", "default": false, "doc": "الحقل مطلوب افتراضيًا." },
+    { "name": "disabled", "type": "boolean", "default": false, "doc": "غير متاح ولا يُرسل." },
+    { "name": "readOnly", "type": "boolean", "default": false, "doc": "معروض ويمكن نسخه، لا يُعدَّل." },
+    { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "md", "doc": "الحجم. الكثافة من السمة لا من الخاصية." },
+    { "name": "helper", "type": "ReactNode", "doc": "نص مساعد مرتبط بـaria-describedby." },
+    { "name": "error", "type": "ReactNode", "doc": "خطأ خارجي (مثل الخادم)، يُعرض إذا لم يوجد خطأ محلي." },
+    { "name": "showValidation", "type": "boolean", "default": false, "doc": "إظهار التحقق قبل المغادرة، مثل بعد محاولة الإرسال." },
+    { "name": "validateOn", "type": "'blur' | 'change'", "default": "blur", "doc": "متى يظهر التحقق." },
+    { "name": "clearable", "type": "boolean", "default": true, "doc": "زر مسح باسم مقروء." },
+    { "name": "showSuggestions", "type": "boolean", "default": true, "doc": "اقتراحات للمعنى عند الفاصلة الملتبسة." },
+    { "name": "currencyDisplay", "type": "'symbol' | 'code' | 'none'", "default": "symbol", "doc": "ما يظهر بجانب الحقل." },
+    { "name": "labels", "type": "Partial<{ clear, suggestionsIntro, currencyPrefix }>", "doc": "نصوص داخلية، قيمها الافتراضية عربية." }
+  ],
+  "states": ["default", "hover", "focus-visible", "empty", "invalid", "disabled", "readonly", "required"],
+  "content": ["short", "arabic-digits", "overflow", "long-arabic"],
+  "keyboard": [
+    { "key": "Tab", "action": "يغادر الحقل؛ القيمة الصالحة تُعرض مجمّعة بأرقام التفضيل." },
+    { "key": "Focus", "action": "يتحول إلى صيغة التحرير غير المجمّعة ويحدد القيمة كاملة." },
+    { "key": "Escape", "when": "المسودة تغيّرت منذ التركيز", "action": "يعيد المسودة لقيمتها عند التركيز ولا يغلق الحوار الأب." },
+    { "key": "Escape", "when": "المسودة لم تتغير", "action": "يمر للأب (مثل إغلاق الحوار)." },
+    { "key": "ArrowUp / ArrowDown", "action": "لا تغيّر القيمة (لا يوجد stepper)." }
+  ],
+  "aria": {
+    "role": "textbox",
+    "labelling": "label[for] + اسم العملة مخفي بصريًا",
+    "describedBy": ["helper", "error"],
+    "notes": ["aria-invalid عند الخطأ الظاهر فقط", "aria-required ما لم يكن optional", "زر المسح له aria-label من labels.clear", "الاقتراحات role=group باسم labels.suggestionsIntro"]
+  },
+  "tokens": {
+    "control.height": "size.control.{density}.{size}",
+    "control.border": "color.border.default",
+    "control.border.invalid": "color.danger.border",
+    "control.radius": "radius.control",
+    "focus.ring": "focus.ring"
+  },
+  "locale": {
+    "numeralsInput": "all",
+    "numeralsDisplay": "provider",
+    "ltrIslands": ["input", "suggestions"],
+    "mirroredIcons": [],
+    "labels": { "clear": "مسح المبلغ", "suggestionsIntro": "هل تقصد:", "currencyPrefix": "بعملة" }
+  },
+  "contracts": ["arabic.amount.v1"],
+  "invariants": [
+    { "id": "clear-then-blur-stays-empty", "statement": "مسح الحقل ثم مغادرته يبقيه فارغًا وقيمته null.", "tests": ["CI-F06", "BR-CI-01"] },
+    { "id": "same-value-any-numerals", "statement": "نفس المبلغ بأرقام لاتينية أو مشرقية أو فارسية يعطي نفس الوحدات الصغرى.", "tests": ["CI-F01", "CI-F02", "CI-F03", "PROP-01"] },
+    { "id": "never-round-silently", "statement": "خانات عشرية أكثر من العملة تُرفض ولا تُقرَّب.", "tests": ["CI-F07"] },
+    { "id": "ambiguous-comma-never-silent", "statement": "الفاصلة الملتبسة لا تُفسَّر بصمت، وتظهر اقتراحات بالمعاني.", "tests": ["CI-F04", "CI-F09", "PROP-04", "BR-CI-03"] },
+    { "id": "invalid-text-is-preserved", "statement": "النص غير الصالح يبقى كما كُتب حتى يصححه المستخدم.", "tests": ["BR-CI-03"] },
+    { "id": "display-is-one-bidi-run", "statement": "العرض بأي أرقام لا يحتوي مسافة عادية بين مجموعات الأرقام.", "tests": ["FM-F02", "PROP-07"] },
+    { "id": "escape-reverts-without-closing-parent", "statement": "Escape مع مسودة متغيرة يعيدها ولا يغلق الحوار الأب." }
+  ],
+  "contexts": {
+    "supported": ["rtl", "ltr", "numerals:latn", "numerals:arab", "controlled", "uncontrolled", "inside-dialog", "react-19", "chromium"],
+    "unsupported": ["التفقيط والإدخال بالكلمات", "عملات بأكثر من 3 خانات عشرية", "stepper بالأسهم"]
+  },
+  "primitive": { "source": "own", "relationship": "original", "note": "الإدخال والتحليل من L2؛ لا يعتمد على NumberParser من أي مكتبة لأن عقد الفاصلة الملتبسة مختلف." },
+  "rules": ["R-NUM-001", "R-NUM-002", "R-NUM-003", "R-NUM-004", "R-NUM-005", "R-BIDI-001", "R-BIDI-003", "R-A11Y-001"],
+  "patterns": ["P-COLLECT-PAYMENT"]
+}

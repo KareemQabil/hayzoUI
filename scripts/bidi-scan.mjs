@@ -7,18 +7,10 @@
 // Exit code 1 when any reversed group is found.
 import fs from 'node:fs'
 import { chromium } from 'playwright-core'
+import { chromiumPath } from './chromium.mjs'
 
 const base = process.argv[2] ?? 'http://localhost:5179/'
-const candidates = [
-  process.env.CHROMIUM,
-  'C:/Program Files/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-  '/usr/bin/chromium',
-  '/usr/bin/google-chrome',
-].filter(Boolean)
-const executablePath = candidates.find((p) => fs.existsSync(p))
-if (!executablePath) throw new Error('No Chromium found; set CHROMIUM=/path/to/chrome')
+const executablePath = chromiumPath()
 
 // Routes are discovered from the knowledge base, so new components and patterns are scanned without edits here.
 const ids = (file, rx) => [...fs.readFileSync(file, 'utf8').matchAll(rx)].map((m) => m[1])

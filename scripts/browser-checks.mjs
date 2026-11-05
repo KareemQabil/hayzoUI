@@ -2,9 +2,10 @@
 // Writes src/knowledge/evidence/browser-run.json. Usage: node scripts/browser-checks.mjs [baseUrl]
 import fs from 'node:fs'
 import { chromium } from 'playwright-core'
+import { chromiumPath } from './chromium.mjs'
 
-const base = process.argv[2] ?? 'http://localhost:3000/'
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM ?? '/usr/bin/chromium', args: ['--no-sandbox'] })
+const base = process.argv[2] ?? 'http://localhost:5179/'
+const browser = await chromium.launch({ executablePath: chromiumPath(), args: ['--no-sandbox'] })
 const pwVersion = JSON.parse(fs.readFileSync('node_modules/playwright-core/package.json', 'utf8')).version
 const startedAt = new Date().toISOString()
 const results = []
@@ -164,7 +165,7 @@ await check('BR-APP-02', 'simulated failure preserves data, retry succeeds', asy
 })
 
 await check('BR-LAY-01', 'no page-level horizontal overflow at 390px', async () => {
-  const routes = ['components/currency-input', 'components/currency-input/lab', 'components/currency-input/guidelines', 'components/currency-input/behavior', 'components/currency-input/code', 'components/currency-input/provenance', 'components/button', 'components/data-table', 'studio', 'patterns', 'patterns/P-COLLECT-PAYMENT', 'app', 'evidence', 'resources', 'rules/R-NUM-002', 'ecosystem']
+  const routes = ['components/currency-input', 'components/currency-input/lab', 'components/currency-input/guidelines', 'components/currency-input/behavior', 'components/currency-input/code', 'components/currency-input/provenance', 'components/button', 'components/data-table', 'studio', 'patterns', 'patterns/P-COLLECT-PAYMENT', 'app', 'evidence', 'resources', 'rules/R-NUM-002', 'ecosystem', 'matrix/currency-input']
   const { ctx, page } = await fresh('#/components/currency-input', { width: 390, height: 844 })
   const bad = []
   for (const r of routes) {
@@ -178,9 +179,30 @@ await check('BR-LAY-01', 'no page-level horizontal overflow at 390px', async () 
   return `${routes.length} شاشة بلا تجاوز`
 })
 
+await check('BR-MX-01', 'every spec state × content variant has a rendered matrix cell', async () => {
+  const specs = fs.readdirSync('spec/components').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync('spec/components/' + f, 'utf8')))
+  const { ctx, page } = await fresh('#/matrix/' + specs[0].id)
+  const errors = []
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text().slice(0, 120)))
+  let cells = 0
+  for (const s of specs) {
+    for (const content of s.content) {
+      await page.evaluate((h) => (location.hash = h), `#/matrix/${s.id}?content=${content}`)
+      await page.waitForTimeout(250)
+      const r = await page.evaluate(() => ({ cells: document.querySelectorAll('[data-matrix-cell]').length, missing: [...document.querySelectorAll('[data-matrix-missing]')].map((e) => e.getAttribute('data-matrix-missing')) }))
+      assert(!r.missing.length, `missing: ${r.missing.slice(0, 3).join(', ')}`)
+      assert(r.cells === s.states.length * 4, `${s.id}/${content}: ${r.cells} cells, expected ${s.states.length * 4}`)
+      cells += r.cells
+    }
+  }
+  await ctx.close()
+  assert(!errors.length, 'console: ' + errors[0])
+  return `${specs.length} spec · ${cells} خلية`
+})
+
 const run = {
   tool: `Playwright (playwright-core ${pwVersion})`,
-  environment: `Chromium ${browser.version()} headless · Linux · 1280×900 و390×844 · reduced motion`,
+  environment: `Chromium ${browser.version()} headless · ${process.platform} · 1280×900 و390×844 · reduced motion`,
   startedAt,
   results,
 }

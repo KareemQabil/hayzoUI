@@ -1,0 +1,19 @@
+{
+  "$comment": "Closed vocabularies (CONTRACTS.md §3). A spec may only use values listed here; adding one is a contract change.",
+  "states": [
+    "default", "hover", "focus-visible", "pressed", "selected", "checked", "indeterminate", "disabled", "readonly",
+    "invalid", "required", "loading", "empty", "open", "closed", "highlighted", "expanded", "collapsed", "dragging"
+  ],
+  "content": ["short", "long-arabic", "mixed", "ltr-island", "diacritics", "arabic-digits", "overflow"],
+  "dataAttributes": [
+    "data-disabled", "data-readonly", "data-invalid", "data-required", "data-loading", "data-state", "data-selected",
+    "data-highlighted", "data-pressed", "data-focus-visible", "data-orientation", "data-empty", "data-dir",
+    "data-size", "data-variant", "data-tone", "data-force"
+  ],
+  "sizes": ["sm", "md", "lg"],
+  "densities": ["compact", "default", "touch"],
+  "tones": ["neutral", "accent", "success", "warning", "danger", "info"],
+  "variants": ["solid", "soft", "outline", "ghost"],
+  "contracts": ["arabic.amount.v1", "arabic.phone.eg.v1", "arabic.search.v1", "arabic.digits.v1"],
+  "forbiddenProps": ["dir", "style", "isDisabled", "isOpen", "onChangeValue"]
+}

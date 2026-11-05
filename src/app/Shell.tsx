@@ -28,6 +28,7 @@ export const NAV: Array<{ group: string; items: NavItem[] }> = [
   {
     group: 'الثقة',
     items: [
+      { href: '#/matrix/currency-input', label: 'مصفوفة الحالات', match: 'matrix' },
       { href: '#/evidence', label: 'الأدلة', match: 'evidence' },
       { href: '#/resources', label: 'الموارد', match: 'resources' },
     ],

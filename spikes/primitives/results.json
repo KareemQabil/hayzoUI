@@ -1,0 +1,274 @@
+{
+  "ranAt": "2026-11-05T18:12:52.937Z",
+  "environment": "Chrome headless · win32",
+  "versions": {
+    "react-aria": "1.22.1",
+    "base-ui": "1.9.0",
+    "radix": "1.8.1"
+  },
+  "sizes": {
+    "react-aria": {
+      "minKB": 209.5,
+      "gzipKB": 63.6
+    },
+    "base-ui": {
+      "minKB": 159.7,
+      "gzipKB": 55.9
+    },
+    "radix": {
+      "minKB": 41.2,
+      "gzipKB": 14
+    }
+  },
+  "results": [
+    {
+      "lib": "react-aria",
+      "id": "D1",
+      "name": "focus moves into the dialog on open",
+      "status": "passed"
+    },
+    {
+      "lib": "react-aria",
+      "id": "D2",
+      "name": "Tab and Shift+Tab stay inside the dialog (12 presses)",
+      "status": "passed",
+      "detail": "synchronous"
+    },
+    {
+      "lib": "react-aria",
+      "id": "D3",
+      "name": "Escape in a field with a changed draft reverts it and keeps the dialog open",
+      "status": "passed",
+      "detail": "open, draft reverted"
+    },
+    {
+      "lib": "react-aria",
+      "id": "D4",
+      "name": "Escape with no draft closes and returns focus to the trigger",
+      "status": "passed"
+    },
+    {
+      "lib": "react-aria",
+      "id": "D5",
+      "name": "dialog role, accessible name from the title, background inert or aria-modal",
+      "status": "passed",
+      "detail": "aria-modal=null · background hidden=true"
+    },
+    {
+      "lib": "react-aria",
+      "id": "D6",
+      "name": "page scroll is locked while open",
+      "status": "passed"
+    },
+    {
+      "lib": "react-aria",
+      "id": "C1",
+      "name": "custom filter: «احمد» finds «أحمد Khaled» (hamza-tolerant L2 search)",
+      "status": "passed"
+    },
+    {
+      "lib": "react-aria",
+      "id": "C2",
+      "name": "custom filter: «محمد» finds «مُحَمَّد السيد» (diacritics)",
+      "status": "passed"
+    },
+    {
+      "lib": "react-aria",
+      "id": "C3",
+      "name": "ArrowDown highlights an option via aria-activedescendant; focus stays in the input",
+      "status": "passed",
+      "detail": "role=combobox · active=مُحَمَّد السيد"
+    },
+    {
+      "lib": "react-aria",
+      "id": "C4",
+      "name": "Enter selects: input shows the option text and the popup closes",
+      "status": "passed"
+    },
+    {
+      "lib": "react-aria",
+      "id": "C5",
+      "name": "popup aligns with the input's inline-start edge (rtl)",
+      "status": "passed",
+      "detail": "offset 0.0px"
+    },
+    {
+      "lib": "react-aria",
+      "id": "C5-ltr",
+      "name": "popup aligns with the input's inline-start edge (ltr)",
+      "status": "passed",
+      "detail": "offset 0.0px"
+    },
+    {
+      "lib": "react-aria",
+      "id": "C6",
+      "name": "Escape closes the popup and keeps focus in the input",
+      "status": "passed"
+    },
+    {
+      "lib": "base-ui",
+      "id": "D1",
+      "name": "focus moves into the dialog on open",
+      "status": "passed"
+    },
+    {
+      "lib": "base-ui",
+      "id": "D2",
+      "name": "Tab and Shift+Tab stay inside the dialog (12 presses)",
+      "status": "passed",
+      "detail": "2 async guard redirects (settled < 50 ms)"
+    },
+    {
+      "lib": "base-ui",
+      "id": "D3",
+      "name": "Escape in a field with a changed draft reverts it and keeps the dialog open",
+      "status": "passed",
+      "detail": "open, draft reverted"
+    },
+    {
+      "lib": "base-ui",
+      "id": "D4",
+      "name": "Escape with no draft closes and returns focus to the trigger",
+      "status": "passed"
+    },
+    {
+      "lib": "base-ui",
+      "id": "D5",
+      "name": "dialog role, accessible name from the title, background inert or aria-modal",
+      "status": "passed",
+      "detail": "aria-modal=null · background hidden=true"
+    },
+    {
+      "lib": "base-ui",
+      "id": "D6",
+      "name": "page scroll is locked while open",
+      "status": "passed"
+    },
+    {
+      "lib": "base-ui",
+      "id": "C1",
+      "name": "custom filter: «احمد» finds «أحمد Khaled» (hamza-tolerant L2 search)",
+      "status": "passed"
+    },
+    {
+      "lib": "base-ui",
+      "id": "C2",
+      "name": "custom filter: «محمد» finds «مُحَمَّد السيد» (diacritics)",
+      "status": "passed"
+    },
+    {
+      "lib": "base-ui",
+      "id": "C3",
+      "name": "ArrowDown highlights an option via aria-activedescendant; focus stays in the input",
+      "status": "passed",
+      "detail": "role=combobox · active=مُحَمَّد السيد"
+    },
+    {
+      "lib": "base-ui",
+      "id": "C4",
+      "name": "Enter selects: input shows the option text and the popup closes",
+      "status": "passed"
+    },
+    {
+      "lib": "base-ui",
+      "id": "C5",
+      "name": "popup aligns with the input's inline-start edge (rtl)",
+      "status": "passed",
+      "detail": "offset 0.0px"
+    },
+    {
+      "lib": "base-ui",
+      "id": "C5-ltr",
+      "name": "popup aligns with the input's inline-start edge (ltr)",
+      "status": "passed",
+      "detail": "offset 0.0px"
+    },
+    {
+      "lib": "base-ui",
+      "id": "C6",
+      "name": "Escape closes the popup and keeps focus in the input",
+      "status": "passed"
+    },
+    {
+      "lib": "radix",
+      "id": "D1",
+      "name": "focus moves into the dialog on open",
+      "status": "passed"
+    },
+    {
+      "lib": "radix",
+      "id": "D2",
+      "name": "Tab and Shift+Tab stay inside the dialog (12 presses)",
+      "status": "passed",
+      "detail": "synchronous"
+    },
+    {
+      "lib": "radix",
+      "id": "D3",
+      "name": "Escape in a field with a changed draft reverts it and keeps the dialog open",
+      "status": "failed",
+      "detail": "dialog closed: the library handled Escape before the field could stop it"
+    },
+    {
+      "lib": "radix",
+      "id": "D4",
+      "name": "Escape with no draft closes and returns focus to the trigger",
+      "status": "passed"
+    },
+    {
+      "lib": "radix",
+      "id": "D5",
+      "name": "dialog role, accessible name from the title, background inert or aria-modal",
+      "status": "passed",
+      "detail": "aria-modal=null · background hidden=true"
+    },
+    {
+      "lib": "radix",
+      "id": "D6",
+      "name": "page scroll is locked while open",
+      "status": "passed"
+    },
+    {
+      "lib": "radix",
+      "id": "C1",
+      "name": "combobox",
+      "status": "n/a",
+      "detail": "n/a"
+    },
+    {
+      "lib": "radix",
+      "id": "C2",
+      "name": "combobox",
+      "status": "n/a",
+      "detail": "n/a"
+    },
+    {
+      "lib": "radix",
+      "id": "C3",
+      "name": "combobox",
+      "status": "n/a",
+      "detail": "n/a"
+    },
+    {
+      "lib": "radix",
+      "id": "C4",
+      "name": "combobox",
+      "status": "n/a",
+      "detail": "n/a"
+    },
+    {
+      "lib": "radix",
+      "id": "C5",
+      "name": "combobox",
+      "status": "n/a",
+      "detail": "n/a"
+    },
+    {
+      "lib": "radix",
+      "id": "C6",
+      "name": "combobox",
+      "status": "n/a",
+      "detail": "n/a"
+    }
+  ]
+}

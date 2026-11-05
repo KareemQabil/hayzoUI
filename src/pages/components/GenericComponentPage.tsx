@@ -4,6 +4,7 @@ import { getRule, type ComponentRecord } from '../../knowledge'
 import { automatedFor } from '../../knowledge/evidence'
 import {
   Badge,
+  Digits,
   Button,
   DataTable,
   Dialog,
@@ -77,7 +78,7 @@ function TabsDemo() {
   const [v, setV] = useState('a')
   return (
     <div>
-      <Tabs idBase="demo" label="أقسام العميل" value={v} onValueChange={setV} items={[{ value: 'a', label: 'التحصيلات', count: '٣' }, { value: 'b', label: 'الفواتير' }, { value: 'c', label: 'الملاحظات' }]} />
+      <Tabs idBase="demo" label="أقسام العميل" value={v} onValueChange={setV} items={[{ value: 'a', label: 'التحصيلات', count: <Digits>3</Digits> }, { value: 'b', label: 'الفواتير' }, { value: 'c', label: 'الملاحظات' }]} />
       <p className="t-body pt-4 text-fg-2">جرّب الأسهم: في RTL يتقدم السهم الأيسر إلى التبويب التالي.</p>
     </div>
   )

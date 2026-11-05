@@ -1,7 +1,7 @@
 {
   "tool": "Playwright (playwright-core 1.64.1)",
-  "environment": "Chromium 151.0.7922.173 headless · Linux · 1280×900 و390×844 · reduced motion",
-  "startedAt": "2026-11-05T15:43:01.511Z",
+  "environment": "Chromium 156.0.8078.80 headless · win32 · 1280×900 و390×844 · reduced motion",
+  "startedAt": "2026-11-05T18:19:32.077Z",
   "results": [
     {
       "id": "BR-CI-01",
@@ -61,7 +61,13 @@
       "id": "BR-LAY-01",
       "name": "no page-level horizontal overflow at 390px",
       "status": "passed",
-      "detail": "16 شاشة بلا تجاوز"
+      "detail": "17 شاشة بلا تجاوز"
+    },
+    {
+      "id": "BR-MX-01",
+      "name": "every spec state × content variant has a rendered matrix cell",
+      "status": "passed",
+      "detail": "1 spec · 128 خلية"
     }
   ]
 }

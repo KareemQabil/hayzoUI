@@ -1,13 +1,19 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-05T17:34:14.771Z",
+  "startedAt": "2026-11-05T18:25:35.442Z",
   "results": [
+    {
+      "id": "CT-01",
+      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
+      "status": "passed",
+      "durationMs": 6
+    },
     {
       "id": "CI-F01",
       "name": "CI-F01 أرقام لاتينية بفاصلة عشرية نقطة",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 3
     },
     {
       "id": "CI-F02",
@@ -175,7 +181,7 @@
       "id": "SR-F01",
       "name": "SR-F01 البحث المتسامح: «احمد» يجد «أحمد Khaled»",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SR-F02",
@@ -205,37 +211,37 @@
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "status": "passed",
-      "durationMs": 22
+      "durationMs": 28
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
       "status": "passed",
-      "durationMs": 29
+      "durationMs": 47
     },
     {
       "id": "PROP-03",
       "name": "PROP-03 parse is deterministic and canonical is a fixed point",
       "status": "passed",
-      "durationMs": 4
+      "durationMs": 5
     },
     {
       "id": "PROP-04",
       "name": "PROP-04 an ambiguous comma is never accepted silently",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 9
     },
     {
       "id": "PROP-05",
       "name": "PROP-05 tolerance only adds matches, never removes them",
       "status": "passed",
-      "durationMs": 9
+      "durationMs": 13
     },
     {
       "id": "PROP-07",
       "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
       "status": "passed",
-      "durationMs": 42
+      "durationMs": 57
     },
     {
       "id": "PROP-06",
@@ -244,10 +250,46 @@
       "durationMs": 0
     },
     {
-      "id": "CT-01",
-      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
+      "id": "SP-01",
+      "name": "SP-01 at least one spec exists",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 2
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 currency-input passes the schema",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 currency-input uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 currency-input follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 currency-input references existing records and tests",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 currency-input props match the implementation",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "CT-02",
+      "name": "CT-02 static numbers follow the numerals and never keep an ASCII space between digit groups",
+      "status": "passed",
+      "durationMs": 20
     }
   ]
 }
