@@ -1,0 +1,68 @@
+/**
+ * Test records. Status is derived, never typed by hand:
+ *  - demo:       fixture executed live in this browser against the implemented logic
+ *  - automated:  present in a recorded run file (unit-run.json / browser-run.json) with tool + environment
+ *  - manual:     none recorded in this release
+ *  - unchecked:  defined but not run
+ */
+import unitRun from './evidence/unit-run.json'
+import browserRun from './evidence/browser-run.json'
+import { FIXTURES } from './fixtures'
+
+export interface RunFile {
+  tool: string | null
+  environment: string | null
+  startedAt: string | null
+  results: Array<{ id: string; name: string; status: 'passed' | 'failed' | 'skipped'; durationMs?: number; detail?: string }>
+}
+
+export const UNIT_RUN = unitRun as RunFile
+export const BROWSER_RUN = browserRun as RunFile
+
+export interface BrowserCheck {
+  id: string
+  requirement: string
+  rule: string
+  component: string
+  method: string
+  expected: string
+}
+
+export const BROWSER_CHECKS: BrowserCheck[] = [
+  { id: 'BR-CI-01', requirement: 'المسح ثم مغادرة الحقل يبقيه فارغًا ويظهر «أدخل المبلغ»', rule: 'R-NUM-005', component: 'currency-input', method: 'Playwright: كتابة ← Tab ← مسح ← Tab', expected: 'value="" ورسالة الخطأ ظاهرة' },
+  { id: 'BR-CI-02', requirement: 'أرقام عربية مكتوبة تُعرض بعد المغادرة حسب تفضيل العرض', rule: 'R-NUM-004', component: 'currency-input', method: 'Playwright: كتابة ١٢٣٤٫٥ ← Tab', expected: '1,234.50' },
+  { id: 'BR-CI-03', requirement: 'الفاصلة الملتبسة تُرفض مع زر اقتراح يصحح القيمة عند اختياره', rule: 'R-NUM-002', component: 'currency-input', method: 'Playwright: كتابة 1234,50 ← Tab ← نقر الاقتراح', expected: 'خطأ ثم 1234.50 في الحقل' },
+  { id: 'BR-CI-04', requirement: 'الدخول إلى حقل ممتلئ بلوحة المفاتيح ثم الكتابة يستبدل المبلغ ولا يُلحق به', rule: 'R-NUM-005', component: 'currency-input', method: 'Playwright: 1234.50 ← Tab ← Shift+Tab ← كتابة 77', expected: 'value = 77' },
+  { id: 'BR-DLG-01', requirement: 'التركيز يدخل الحوار عند فتحه', rule: 'R-A11Y-002', component: 'dialog', method: 'Playwright: فتح البحث الشامل بـ Ctrl+K', expected: 'العنصر النشط داخل role=dialog' },
+  { id: 'BR-DLG-02', requirement: 'Tab يبقى داخل الحوار', rule: 'R-A11Y-002', component: 'dialog', method: 'Playwright: ١٢ ضغطة Tab', expected: 'التركيز داخل الحوار بعد كل ضغطة' },
+  { id: 'BR-DLG-03', requirement: 'Escape يغلق ويعيد التركيز إلى زر الفتح', rule: 'R-A11Y-002', component: 'dialog', method: 'Playwright: نقر زر البحث ← Escape', expected: 'الحوار مغلق والتركيز على زر البحث' },
+  { id: 'BR-APP-01', requirement: 'النقر المزدوج على «تأكيد التحصيل» يسجل عملية واحدة', rule: 'R-FLOW-001', component: 'button', method: 'Playwright: dblclick على زر التأكيد', expected: 'صف واحد جديد في السجل' },
+  { id: 'BR-APP-02', requirement: 'الفشل المحاكى يحفظ المبلغ، وإعادة المحاولة تنجح', rule: 'R-CNT-001', component: 'inline-message', method: 'Playwright: تفعيل الفشل ← تأكيد ← أعد المحاولة', expected: 'رسالة فشل، المبلغ باقٍ، ثم إيصال' },
+  { id: 'BR-LAY-01', requirement: 'لا تمرير أفقي للصفحة على عرض 390px', rule: 'R-BIDI-001', component: 'data-table', method: 'Playwright: scrollWidth ≤ clientWidth لكل شاشة', expected: 'لا تجاوز' },
+]
+
+export type AutomatedState = { state: 'passed' | 'failed' | 'not-run'; run?: RunFile; detail?: string }
+
+export function automatedFor(id: string): AutomatedState {
+  for (const run of [UNIT_RUN, BROWSER_RUN]) {
+    const hits = run.results.filter((r) => r.id === id)
+    if (hits.length) {
+      const failed = hits.find((h) => h.status === 'failed')
+      return { state: failed ? 'failed' : 'passed', run, detail: failed?.detail ?? hits[0].detail }
+    }
+  }
+  return { state: 'not-run' }
+}
+
+export function liveFixtureResults() {
+  return FIXTURES.map((f) => ({ fixture: f, ...f.run(), automated: automatedFor(f.id) }))
+}
+
+export const NOT_CHECKED = [
+  'قارئات الشاشة: NVDA وJAWS وVoiceOver وTalkBack — لم يُجرَ أي فحص يدوي.',
+  'Firefox وSafari/WebKit — الفحوص الآلية شُغّلت على Chromium فقط.',
+  'أجهزة لمس حقيقية — لم تُختبر.',
+  'React 18 وNext.js App Router وSSR — لم تُختبر.',
+  'فحص axe الآلي — غير مثبّت في هذا الإصدار.',
+  'تباين الألوان المخصصة في كل الحالات — محسوب للأزواج المعلنة فقط.',
+]

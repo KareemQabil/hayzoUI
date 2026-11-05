@@ -1,0 +1,34 @@
+/* Product-shell styles that are not part of the component library. */
+@layer components {
+  .anatomy-dot { display: inline-grid; place-items: center; flex: none; inline-size: 20px; block-size: 20px; border-radius: 999px; background: var(--ax-text-primary); color: var(--ax-bg-surface); font-size: 11.5px; font-weight: 600; line-height: 1; }
+  .anatomy-specimen { --dot: 18px; }
+  .anatomy-specimen :is(.ax-field__label, .ax-control, .ax-control__clear, .ax-control__affix, .ax-field__error-text, .ax-suggest, .ax-field__helper) { position: relative; }
+  .anatomy-specimen :is(.ax-field__label, .ax-control, .ax-control__clear, .ax-control__affix, .ax-field__error-text, .ax-suggest, .ax-field__helper)::after,
+  .anatomy-specimen .ax-control::before {
+    position: absolute; z-index: 2; display: grid; place-items: center; inline-size: var(--dot); block-size: var(--dot);
+    border-radius: 999px; background: var(--ax-text-primary); color: var(--ax-bg-surface);
+    font-size: 11px; font-weight: 600; line-height: 1; font-family: var(--ax-font-sans); pointer-events: none;
+    box-shadow: 0 0 0 2px var(--ax-bg-sunken);
+  }
+  .anatomy-specimen .ax-field__label::after { content: var(--n1); inset-inline-start: calc(100% + 6px); inset-block-start: 3px; }
+  .anatomy-specimen .ax-control::after { content: var(--n2); inset-inline-end: calc(-1 * var(--dot) - 8px); inset-block-start: calc(50% - var(--dot) / 2); }
+  .anatomy-specimen .ax-control::before { content: var(--n3); inset-inline-start: 6px; inset-block-start: -9px; }
+  .anatomy-specimen .ax-control__clear::after { content: var(--n4); inset-block-start: -14px; inset-inline-start: 4px; }
+  .anatomy-specimen .ax-control__affix::after { content: var(--n5); inset-block-start: -14px; inset-inline-start: 14px; }
+  .anatomy-specimen .ax-field__error-text::after { content: var(--n6); inset-inline-end: calc(-1 * var(--dot) - 8px); inset-block-start: 3px; }
+  .anatomy-specimen .ax-suggest::after { content: var(--n7); inset-inline-end: calc(-1 * var(--dot) - 8px); inset-block-start: 5px; }
+  .anatomy-specimen .ax-field__helper::after { content: var(--n8); inset-inline-end: calc(-1 * var(--dot) - 8px); inset-block-start: 2px; }
+  .anatomy-specimen[data-hl='label'] .ax-field__label,
+  .anatomy-specimen[data-hl='control'] .ax-control,
+  .anatomy-specimen[data-hl='input'] .ax-control__input,
+  .anatomy-specimen[data-hl='clear'] .ax-control__clear,
+  .anatomy-specimen[data-hl='affix'] .ax-control__affix,
+  .anatomy-specimen[data-hl='error'] .ax-field__error-text,
+  .anatomy-specimen[data-hl='suggest'] .ax-suggest,
+  .anatomy-specimen[data-hl='helper'] .ax-field__helper {
+    outline: 2px dashed var(--ax-focus-ring); outline-offset: 3px; border-radius: 3px;
+  }
+
+  .stage-grid { background-color: var(--ax-bg-sunken); }
+  .prose-ar p + p { margin-block-start: 0.75em; }
+}

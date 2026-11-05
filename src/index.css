@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+@import './system/styles.css';
+@import './app/app.css';
+
+/* Map semantic tokens to Tailwind utilities used by the product shell (bg-surface, text-fg-2, border-line…). */
+@theme inline {
+  --color-canvas: var(--ax-bg-canvas);
+  --color-surface: var(--ax-bg-surface);
+  --color-sunken: var(--ax-bg-sunken);
+  --color-raised: var(--ax-bg-raised);
+  --color-inverse: var(--ax-bg-inverse);
+  --color-fg: var(--ax-text-primary);
+  --color-fg-2: var(--ax-text-secondary);
+  --color-fg-3: var(--ax-text-tertiary);
+  --color-fg-inverse: var(--ax-text-inverse);
+  --color-link: var(--ax-text-link);
+  --color-line: var(--ax-border-subtle);
+  --color-line-2: var(--ax-border-default);
+  --color-line-3: var(--ax-border-strong);
+  --color-action: var(--ax-action-primary);
+  --color-on-action: var(--ax-action-on-primary);
+  --color-soft: var(--ax-action-soft);
+  --color-on-soft: var(--ax-action-on-soft);
+  --color-selection: var(--ax-selection-bg);
+  --color-focus: var(--ax-focus-ring);
+  --color-danger: var(--ax-danger-fg);
+  --color-danger-bg: var(--ax-danger-bg);
+  --color-success: var(--ax-success-fg);
+  --color-success-bg: var(--ax-success-bg);
+  --color-warning: var(--ax-warning-fg);
+  --color-warning-bg: var(--ax-warning-bg);
+  --font-sans: var(--ax-font-sans);
+  --font-mono: var(--ax-font-mono);
+}
+
+@layer base {
+  html {
+    font-family: var(--ax-font-sans);
+    background: var(--ax-bg-canvas);
+    color: var(--ax-text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-size: var(--ax-type-body-size);
+    line-height: var(--ax-type-body-line);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--ax-selection-bg);
+  }
+  code,
+  pre,
+  kbd {
+    font-family: var(--ax-font-mono);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ax-focus-ring);
+    outline-offset: 2px;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* Single-column grids must never size to min-content on narrow screens. Utilities override this. */
+@layer base {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

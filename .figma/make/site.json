@@ -1,0 +1,10 @@
+{
+  "description": "مرجع تفاعلي للمصممين والمطورين لبناء واجهات عربية أوضح، مع استكشاف المكونات والأنماط وضبط السمات واختبار تجارب العملاء والمدفوعات.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

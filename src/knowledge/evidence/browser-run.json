@@ -1,0 +1,67 @@
+{
+  "tool": "Playwright (playwright-core 1.64.1)",
+  "environment": "Chromium 151.0.7922.173 headless · Linux · 1280×900 و390×844 · reduced motion",
+  "startedAt": "2026-11-05T15:43:01.511Z",
+  "results": [
+    {
+      "id": "BR-CI-01",
+      "name": "clear then blur stays empty",
+      "status": "passed",
+      "detail": "value=\"\" · «أدخل المبلغ.» ظاهرة"
+    },
+    {
+      "id": "BR-CI-02",
+      "name": "arabic digits display after blur",
+      "status": "passed",
+      "detail": "1,234.50"
+    },
+    {
+      "id": "BR-CI-03",
+      "name": "ambiguous comma rejected, suggestion applies",
+      "status": "passed",
+      "detail": "«1234,50» محفوظ ← «1234.50»"
+    },
+    {
+      "id": "BR-CI-04",
+      "name": "tab into a filled field and type replaces the amount",
+      "status": "passed",
+      "detail": "«1,234.50» ← Shift+Tab ← «77»"
+    },
+    {
+      "id": "BR-DLG-01",
+      "name": "focus enters dialog",
+      "status": "passed",
+      "detail": "activeElement داخل role=dialog"
+    },
+    {
+      "id": "BR-DLG-02",
+      "name": "tab is contained",
+      "status": "passed",
+      "detail": "١٢ ضغطة (Tab وShift+Tab) داخل الحوار"
+    },
+    {
+      "id": "BR-DLG-03",
+      "name": "escape closes and restores focus",
+      "status": "passed",
+      "detail": "مغلق · التركيز على زر البحث"
+    },
+    {
+      "id": "BR-APP-01",
+      "name": "double activation records once",
+      "status": "passed",
+      "detail": "الصفوف 2 ← 3"
+    },
+    {
+      "id": "BR-APP-02",
+      "name": "simulated failure preserves data, retry succeeds",
+      "status": "passed",
+      "detail": "فشل ← المبلغ 250.00 باقٍ ← إيصال"
+    },
+    {
+      "id": "BR-LAY-01",
+      "name": "no page-level horizontal overflow at 390px",
+      "status": "passed",
+      "detail": "16 شاشة بلا تجاوز"
+    }
+  ]
+}
