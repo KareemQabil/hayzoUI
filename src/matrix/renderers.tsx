@@ -31,6 +31,7 @@ import {
   type Tone,
   type Variant,
 } from '../system'
+import { CalendarPreview, Combobox, ComboboxListPreview, DatePicker } from '../system/aria'
 
 export interface MatrixCase {
   state: string
@@ -90,7 +91,79 @@ const ROWS = [
 ]
 type Row = (typeof ROWS)[number]
 
+const CUSTOMERS = [
+  { value: 'CUS-0001', label: 'أحمد Khaled', description: '+20 10 1234 5678' },
+  { value: 'CUS-0002', label: 'إيمان عبد الرحمن', description: '+20 11 2345 6789' },
+  { value: 'CUS-0003', label: 'مُحَمَّد السيد', description: '+20 12 3456 7890' },
+  { value: 'CUS-0004', label: 'شركة النيل المتحدة للتوريدات والمقاولات العامة والاستيراد والتصدير', description: '+20 15 4567 8901' },
+]
+/** Query typed for each content variant, and the item it selects. */
+const COMBO_CONTENT: Record<string, { query: string; selected: string }> = {
+  short: { query: 'احمد', selected: 'CUS-0001' },
+  mixed: { query: 'Khaled', selected: 'CUS-0001' },
+  diacritics: { query: 'محمد', selected: 'CUS-0003' },
+  'arabic-digits': { query: '٠١٠١', selected: 'CUS-0001' },
+  'long-arabic': { query: 'النيل', selected: 'CUS-0004' },
+}
+
 export const RENDERERS: Record<string, MatrixRenderer> = {
+  combobox: {
+    numerals: arabicDigits,
+    render: ({ state, content }) => {
+      const c = COMBO_CONTENT[content]
+      if (!c) return null
+      const common = { label: 'العميل', items: CUSTOMERS, placeholder: 'اكتب الاسم أو رقم الهاتف' }
+      switch (asDefault(state)) {
+        case 'default':
+          return <Combobox {...common} defaultValue={c.selected} />
+        case 'empty':
+          return <Combobox {...common} />
+        case 'open':
+          return (
+            <div className="flex flex-col gap-1">
+              <Combobox {...common} />
+              <ComboboxListPreview items={CUSTOMERS.filter((i) => i.value === c.selected)} query={c.query} />
+            </div>
+          )
+        case 'invalid':
+          return <Combobox {...common} error="اختر عميلًا من القائمة." />
+        case 'disabled':
+          return <Combobox {...common} defaultValue={c.selected} disabled />
+        case 'readonly':
+          return <Combobox {...common} defaultValue={c.selected} readOnly />
+        default:
+          return null
+      }
+    },
+  },
+
+  'date-picker': {
+    numerals: arabicDigits,
+    render: ({ state, content }) => {
+      if (!['short', 'arabic-digits', 'long-arabic'].includes(content)) return null
+      const long = content === 'long-arabic'
+      const label = long ? 'تاريخ استحقاق القسط الأول حسب العقد الموقّع مع العميل' : 'تاريخ الاستحقاق'
+      const calendar = long ? ('islamic-umalqura' as const) : ('gregory' as const)
+      const common = { label, calendar, helper: long ? 'يُعرض بالتقويم الهجري ويُخزَّن ميلاديًا.' : undefined }
+      switch (asDefault(state)) {
+        case 'default':
+          return <DatePicker {...common} defaultValue="2026-11-05" />
+        case 'empty':
+          return <DatePicker {...common} />
+        case 'open':
+          return <CalendarPreview value="2026-11-05" calendar={calendar} />
+        case 'invalid':
+          return <DatePicker {...common} defaultValue="2026-11-05" error="التاريخ بعد آخر موعد مسموح به." />
+        case 'disabled':
+          return <DatePicker {...common} defaultValue="2026-11-05" disabled />
+        case 'readonly':
+          return <DatePicker {...common} defaultValue="2026-11-05" readOnly />
+        default:
+          return null
+      }
+    },
+  },
+
   'currency-input': {
     numerals: arabicDigits,
     render: ({ state, content }) => {

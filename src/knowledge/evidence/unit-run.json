@@ -1,14 +1,8 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-05T18:55:16.900Z",
+  "startedAt": "2026-11-05T19:23:12.490Z",
   "results": [
-    {
-      "id": "CT-01",
-      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
-      "status": "passed",
-      "durationMs": 7
-    },
     {
       "id": "CI-F01",
       "name": "CI-F01 أرقام لاتينية بفاصلة عشرية نقطة",
@@ -121,7 +115,7 @@
       "id": "FM-F01",
       "name": "FM-F01 العرض بأرقام لاتينية لا يغيّر القيمة المخزنة",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "FM-F02",
@@ -178,6 +172,18 @@
       "durationMs": 0
     },
     {
+      "id": "SR-F06",
+      "name": "SR-F06 البحث برقم الهاتف المحلي يجد الرقم المخزن بالصيغة الدولية، بأي أرقام",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SR-F07",
+      "name": "SR-F07 رقمان فقط أو نص فيه حروف لا يُعامل كرقم هاتف",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
       "id": "SR-F01",
       "name": "SR-F01 البحث المتسامح: «احمد» يجد «أحمد Khaled»",
       "status": "passed",
@@ -211,13 +217,13 @@
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "status": "passed",
-      "durationMs": 31
+      "durationMs": 36
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
       "status": "passed",
-      "durationMs": 52
+      "durationMs": 32
     },
     {
       "id": "PROP-03",
@@ -229,25 +235,31 @@
       "id": "PROP-04",
       "name": "PROP-04 an ambiguous comma is never accepted silently",
       "status": "passed",
-      "durationMs": 9
+      "durationMs": 7
     },
     {
       "id": "PROP-05",
       "name": "PROP-05 tolerance only adds matches, never removes them",
       "status": "passed",
-      "durationMs": 12
+      "durationMs": 9
     },
     {
       "id": "PROP-07",
       "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
       "status": "passed",
-      "durationMs": 62
+      "durationMs": 47
     },
     {
       "id": "PROP-06",
       "name": "PROP-06 search normalization never changes the stored name",
       "status": "passed",
       "durationMs": 0
+    },
+    {
+      "id": "CT-01",
+      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
+      "status": "passed",
+      "durationMs": 6
     },
     {
       "id": "SP-01",
@@ -317,15 +329,45 @@
     },
     {
       "id": "SP-02",
-      "name": "SP-02 currency-input passes the schema",
+      "name": "SP-02 combobox passes the schema",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-03",
-      "name": "SP-03 currency-input uses only closed vocabularies",
+      "name": "SP-03 combobox uses only closed vocabularies",
       "status": "passed",
       "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 combobox follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 combobox references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 combobox props match the implementation",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 currency-input passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 currency-input uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 1
     },
     {
       "id": "SP-04",
@@ -373,6 +415,36 @@
       "id": "SP-06",
       "name": "SP-06 data-table props match the implementation",
       "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "SP-02",
+      "name": "SP-02 date-picker passes the schema",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-03",
+      "name": "SP-03 date-picker uses only closed vocabularies",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-04",
+      "name": "SP-04 date-picker follows the prop naming contract",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-05",
+      "name": "SP-05 date-picker references existing records and tests",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "SP-06",
+      "name": "SP-06 date-picker props match the implementation",
+      "status": "passed",
       "durationMs": 0
     },
     {
@@ -403,7 +475,7 @@
       "id": "SP-06",
       "name": "SP-06 dialog props match the implementation",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-02",
@@ -553,7 +625,7 @@
       "id": "SP-06",
       "name": "SP-06 phone-input props match the implementation",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-02",
@@ -673,7 +745,7 @@
       "id": "SP-06",
       "name": "SP-06 switch props match the implementation",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
@@ -769,7 +841,7 @@
       "id": "CMP-01",
       "name": "CMP-01 TextField reports null, not \"\", when the text is cleared",
       "status": "passed",
-      "durationMs": 38
+      "durationMs": 40
     },
     {
       "id": "CMP-02",
@@ -781,7 +853,7 @@
       "id": "CMP-03",
       "name": "CMP-03 first Escape clears the search (null) and does not reach the parent",
       "status": "passed",
-      "durationMs": 46
+      "durationMs": 47
     },
     {
       "id": "CMP-04",

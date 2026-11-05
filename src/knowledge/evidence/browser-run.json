@@ -1,7 +1,7 @@
 {
   "tool": "Playwright (playwright-core 1.64.1)",
   "environment": "Chromium 156.0.8078.80 headless · win32 · 1280×900 و390×844 · reduced motion",
-  "startedAt": "2026-11-05T18:53:52.091Z",
+  "startedAt": "2026-11-05T19:20:08.866Z",
   "results": [
     {
       "id": "BR-CI-01",
@@ -64,10 +64,58 @@
       "detail": "17 شاشة بلا تجاوز"
     },
     {
+      "id": "BR-CB-01",
+      "name": "combobox: tolerant matching with the match highlighted",
+      "status": "passed",
+      "detail": "احمد→أحمد Khaled · محمد→مُحَمَّد السيد · khaled→أحمد Khaled"
+    },
+    {
+      "id": "BR-CB-02",
+      "name": "combobox: phone search by digits in any numerals",
+      "status": "passed",
+      "detail": "«0101» و«٠١٠١» ← أحمد Khaled"
+    },
+    {
+      "id": "BR-CB-03",
+      "name": "combobox: Enter selects the value; clear and leave reports null",
+      "status": "passed",
+      "detail": "CUS-0001 ← null"
+    },
+    {
+      "id": "BR-CB-04",
+      "name": "combobox: popup aligned to the inline-start edge in RTL; Escape keeps focus",
+      "status": "passed",
+      "detail": "محاذاة 0.0px"
+    },
+    {
+      "id": "BR-DP-01",
+      "name": "date: Gregorian and Hijri show the same stored ISO date",
+      "status": "passed",
+      "detail": "5/11/2026 = 25/5/1448هـ ← 2026-11-05"
+    },
+    {
+      "id": "BR-DP-02",
+      "name": "date: segments accept the other numeral system",
+      "status": "passed",
+      "detail": "latn: «١٢» · arab: «12» ← 2026-11-12"
+    },
+    {
+      "id": "BR-DP-03",
+      "name": "date: ArrowLeft is the next day in RTL; selection stored as Gregorian ISO",
+      "status": "passed",
+      "detail": "هجري 25 ← 26 ← 2026-11-06"
+    },
+    {
+      "id": "BR-DP-04",
+      "name": "date: the Hijri calendar shows Hijri month names in Arabic",
+      "status": "passed",
+      "detail": "جمادى الأولى 1448 هـ"
+    },
+    {
       "id": "BR-MX-01",
       "name": "every spec state × content variant has a rendered matrix cell",
       "status": "passed",
-      "detail": "17 spec · 936 خلية"
+      "detail": "19 spec · 1192 خلية"
     }
   ]
 }

@@ -36,6 +36,10 @@ const DOC = {
   loadingLabel: 'النص المعروض والمعلن أثناء الانشغال، مثل «جارٍ الحفظ…».',
   icon: 'الأيقونة.',
   status: 'نص حالة يُعلن بلطف، مثل عدد النتائج.',
+  search: 'قواعد المطابقة؛ الافتراضي البحث المتسامح من L2.',
+  calendar: 'تقويم العرض؛ التخزين يبقى ميلاديًا ISO.',
+  min: 'أقدم تاريخ مسموح (ISO).',
+  max: 'أحدث تاريخ مسموح (ISO).',
   trailing: 'محتوى في نهاية الحقل (زر فلتر مثلًا).',
   onKeyDown: 'معالج لوحة مفاتيح إضافي، يُستدعى بعد سلوك الحقل.',
   inputProps: 'خصائص HTML إضافية للعنصر input.',
@@ -66,6 +70,52 @@ const RTL = { supported: ['rtl', 'ltr', 'numerals:latn', 'numerals:arab', 'contr
 const NO_NUM = { numeralsInput: 'none', numeralsDisplay: 'provider', ltrIslands: [], mirroredIcons: [] }
 
 const FILL = {
+  combobox: {
+    tier: 'T3',
+    whenToUse: ['اختيار سجل واحد من قائمة طويلة بالكتابة: عميل، منتج، مندوب'],
+    whenNotToUse: ['أقل من 15 خيارًا ثابتًا (Select)', 'تصفية جدول ظاهر (Search Field)'],
+    content: ['short', 'mixed', 'diacritics', 'arabic-digits', 'long-arabic'],
+    keyboard: [
+      { key: 'كتابة', action: 'تفتح القائمة وتصفّيها بالبحث المتسامح (الهمزات، التشكيل) وبأرقام الهاتف بأي أرقام.' },
+      { key: 'ArrowDown / ArrowUp', action: 'تنقل بين الخيارات مع بقاء التركيز في الحقل (aria-activedescendant).' },
+      { key: 'Enter', action: 'يختار الخيار المميّز ويغلق القائمة.' },
+      { key: 'Escape', action: 'يغلق القائمة ويبقي التركيز في الحقل.' },
+    ],
+    aria: { role: 'combobox + listbox', labelling: 'aria-labelledby → label', describedBy: ['helper', 'error'], notes: ['aria-activedescendant للخيار المميّز', 'زر الفتح باسم labels.open', 'رسالة القائمة الفارغة من labels.empty'] },
+    locale: { numeralsInput: 'all', numeralsDisplay: 'none', ltrIslands: ['option-desc'], mirroredIcons: [] },
+    contracts: ['arabic.search.v1'],
+    invariants: [
+      { id: 'tolerant-matching', statement: '«احمد» يجد «أحمد Khaled» و«محمد» يجد «مُحَمَّد السيد»، مع تمييز الجزء المطابق.', tests: ['SR-F01', 'SR-F04', 'BR-CB-01'] },
+      { id: 'phone-by-digits', statement: '«0101» أو «٠١٠١» يجد الرقم المخزّن «+20 10 1234 5678».', tests: ['SR-F06', 'SR-F07', 'BR-CB-02'] },
+      { id: 'empty-is-null', statement: 'الاختيار يبلّغ القيمة، والمسح ثم المغادرة يبلّغ null.', tests: ['BR-CB-03'] },
+      { id: 'popup-aligned-in-rtl', statement: 'القائمة تحاذي بداية الحقل في الاتجاهين، وEscape يغلقها والتركيز باقٍ في الحقل.', tests: ['BR-CB-04'] },
+    ],
+    contexts: { ...RTL, unsupported: ['اختيار متعدد', 'أكثر من 1000 خيار دون virtualization'] },
+    primitive: { source: 'react-aria', relationship: 'integrated', note: 'React Aria ComboBox خلف الـadapter؛ المطابقة والنصوص والسمات من طبقاتنا.' },
+  },
+  'date-picker': {
+    tier: 'T3',
+    whenToUse: ['تاريخ واحد: استحقاق، ميلاد، موعد، بالتقويم الميلادي أو الهجري'],
+    whenNotToUse: ['مدى من–إلى (غير مدعوم بعد)', 'وقت فقط'],
+    content: ['short', 'arabic-digits', 'long-arabic'],
+    keyboard: [
+      { key: 'أرقام', action: 'تُكتب في المقاطع (يوم/شهر/سنة) بأي نظام أرقام، بغض النظر عن أرقام العرض.' },
+      { key: 'ArrowUp / ArrowDown', action: 'تزيد أو تنقص المقطع المحدد.' },
+      { key: 'ArrowLeft / ArrowRight', action: 'في التقويم تتبع الاتجاه البصري: في RTL السهم الأيسر لليوم التالي.' },
+      { key: 'Enter', action: 'يختار اليوم المميّز ويغلق التقويم.' },
+    ],
+    aria: { role: 'group + spinbutton (مقاطع) + dialog (تقويم) + grid', labelling: 'aria-labelledby → label', describedBy: ['helper', 'error'], notes: ['زر الفتح والتنقل بين الشهور بأسماء من labels'] },
+    locale: { numeralsInput: 'all', numeralsDisplay: 'provider', ltrIslands: [], mirroredIcons: ['chevron-back', 'forward'] },
+    contracts: ['arabic.digits.v1'],
+    invariants: [
+      { id: 'storage-independent-of-calendar', statement: 'القيمة المخزنة ISO ميلادية واحدة، سواء عُرضت بالميلادي أو الهجري.', tests: ['BR-DP-01'] },
+      { id: 'any-digits-in-segments', statement: 'المقاطع تقبل أرقامًا لاتينية ومشرقية بغض النظر عن أرقام العرض.', tests: ['BR-DP-02'] },
+      { id: 'arrows-follow-visual-direction', statement: 'في التقويم بالـRTL السهم الأيسر لليوم التالي، والاختيار يُخزَّن ميلاديًا.', tests: ['BR-DP-03'] },
+      { id: 'hijri-month-names', statement: 'التقويم الهجري يعرض أسماء الشهور الهجرية بالعربية.', tests: ['BR-DP-04'] },
+    ],
+    contexts: { ...RTL, unsupported: ['مدى تواريخ', 'تقاويم هجرية غير أم القرى في الواجهة'] },
+    primitive: { source: 'react-aria', relationship: 'integrated', note: 'React Aria DatePicker وCalendar خلف الـadapter؛ إدخال الأرقام بأي نظام من طبقتنا.' },
+  },
   'phone-input': {
     whenToUse: ['رقم محمول مصري يُخزَّن ويُتصل به'],
     whenNotToUse: ['أرقام أرضية أو دول أخرى (غير مدعومة في v1)'],

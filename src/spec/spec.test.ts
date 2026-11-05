@@ -34,7 +34,7 @@ function knownTestIds(): Set<string> {
 /** Public prop names of `export interface <Name>Props { … }` in a component file (top-level members only). */
 function codeProps(file: string, nameEn: string): string[] {
   const src = fs.readFileSync(path.resolve(__dirname, '../..', file), 'utf8')
-  let iface = `${nameEn.split('/')[0].replace(/\s+/g, '')}Props`
+  let iface = `${nameEn.split(/[/(]/)[0].replace(/\s+/g, '')}Props`
   // Follow `export type DialogProps = OverlayProps` to the interface that declares the members.
   const alias = src.match(new RegExp(`export type ${iface} = ([A-Za-z]+)\\b`))
   if (alias) iface = alias[1]

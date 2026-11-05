@@ -179,6 +179,139 @@ await check('BR-LAY-01', 'no page-level horizontal overflow at 390px', async () 
   return `${routes.length} شاشة بلا تجاوز`
 })
 
+// ---------- Combobox and DatePicker (React Aria behind the adapter) ----------
+async function withNumerals(hash, numerals) {
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' })
+  await ctx.addInitScript((n) => localStorage.setItem('ax.prefs.v0', JSON.stringify({ numerals: n, locale: 'ar-EG' })), numerals)
+  const page = await ctx.newPage()
+  await page.goto(base + hash, { waitUntil: 'networkidle' })
+  await page.waitForTimeout(300)
+  return { ctx, page }
+}
+const comboInput = (page) => page.getByRole('combobox', { name: 'العميل' })
+const visibleOptions = async (page) => (await page.locator('[role="option"]:visible').allInnerTexts()).map((t) => t.replace(/\s+/g, ' ').trim())
+
+await check('BR-CB-01', 'combobox: tolerant matching with the match highlighted', async () => {
+  const { ctx, page } = await fresh('#/components/combobox')
+  const input = comboInput(page)
+  const out = []
+  for (const [q, expect] of [['احمد', 'أحمد Khaled'], ['محمد', 'مُحَمَّد السيد'], ['khaled', 'أحمد Khaled']]) {
+    await input.fill('')
+    await input.pressSequentially(q)
+    await page.waitForTimeout(200)
+    const opts = await visibleOptions(page)
+    assert(opts.length === 1 && opts[0].startsWith(expect), `«${q}» → ${JSON.stringify(opts)}`)
+    out.push(`${q}→${expect}`)
+  }
+  const marks = await page.locator('[role="option"] mark').count()
+  await ctx.close()
+  assert(marks > 0, 'no highlighted match')
+  return out.join(' · ')
+})
+
+await check('BR-CB-02', 'combobox: phone search by digits in any numerals', async () => {
+  const { ctx, page } = await fresh('#/components/combobox')
+  const input = comboInput(page)
+  for (const q of ['0101', '٠١٠١']) {
+    await input.fill('')
+    await input.pressSequentially(q)
+    await page.waitForTimeout(200)
+    const opts = await visibleOptions(page)
+    assert(opts.length === 1 && opts[0].startsWith('أحمد Khaled'), `«${q}» → ${JSON.stringify(opts)}`)
+  }
+  await ctx.close()
+  return '«0101» و«٠١٠١» ← أحمد Khaled'
+})
+
+await check('BR-CB-03', 'combobox: Enter selects the value; clear and leave reports null', async () => {
+  const { ctx, page } = await fresh('#/components/combobox')
+  const input = comboInput(page)
+  await input.pressSequentially('احمد')
+  await page.keyboard.press('ArrowDown')
+  await page.keyboard.press('Enter')
+  await page.waitForTimeout(200)
+  const picked = await page.getByTestId('combobox-value').innerText()
+  await input.fill('')
+  await page.keyboard.press('Tab')
+  await page.waitForTimeout(200)
+  const cleared = await page.getByTestId('combobox-value').innerText()
+  await ctx.close()
+  assert(picked === 'CUS-0001', `picked ${picked}`)
+  assert(cleared === 'null', `cleared ${cleared}`)
+  return 'CUS-0001 ← null'
+})
+
+await check('BR-CB-04', 'combobox: popup aligned to the inline-start edge in RTL; Escape keeps focus', async () => {
+  const { ctx, page } = await fresh('#/components/combobox')
+  const input = comboInput(page)
+  await input.pressSequentially('ا')
+  await page.waitForTimeout(250)
+  const r = await page.evaluate(() => {
+    const c = document.querySelector('.ax-combobox .ax-control').getBoundingClientRect()
+    const p = document.querySelector('.ax-combobox__popover').getBoundingClientRect()
+    return { delta: Math.abs(c.right - p.right), width: Math.abs(c.width - p.width) }
+  })
+  await page.keyboard.press('Escape')
+  await page.waitForTimeout(200)
+  const open = await page.locator('[role="option"]:visible').count()
+  const focused = await page.evaluate(() => document.activeElement?.getAttribute('role'))
+  await ctx.close()
+  assert(r.delta <= 2 && r.width <= 2, `offset ${r.delta}px, width diff ${r.width}px`)
+  assert(open === 0 && focused === 'combobox', `open=${open} focus=${focused}`)
+  return `محاذاة ${r.delta.toFixed(1)}px`
+})
+
+await check('BR-DP-01', 'date: Gregorian and Hijri show the same stored ISO date', async () => {
+  const { ctx, page } = await fresh('#/components/date-picker')
+  const texts = (await page.locator('.ax-date__group').allInnerTexts()).map((t) => t.replace(/[\s\u200f\u200e]+/g, ''))
+  const stored = await page.getByTestId('date-value').innerText()
+  await ctx.close()
+  assert(stored === '2026-11-05', stored)
+  assert(texts[0] === '5/11/2026' && texts[1].startsWith('25/5/1448'), JSON.stringify(texts))
+  return `${texts[0]} = ${texts[1]} ← ${stored}`
+})
+
+await check('BR-DP-02', 'date: segments accept the other numeral system', async () => {
+  const out = []
+  for (const [numerals, typed] of [['latn', '١٢'], ['arab', '12']]) {
+    const { ctx, page } = await withNumerals('#/components/date-picker', numerals)
+    await page.locator('.ax-date__group').first().locator('[role="spinbutton"]').first().click()
+    await page.keyboard.type(typed)
+    await page.waitForTimeout(200)
+    const stored = await page.getByTestId('date-value').innerText()
+    await ctx.close()
+    assert(stored === '2026-11-12', `${numerals}: «${typed}» → ${stored}`)
+    out.push(`${numerals}: «${typed}»`)
+  }
+  return out.join(' · ') + ' ← 2026-11-12'
+})
+
+await check('BR-DP-03', 'date: ArrowLeft is the next day in RTL; selection stored as Gregorian ISO', async () => {
+  const { ctx, page } = await fresh('#/components/date-picker')
+  await page.getByRole('button', { name: 'فتح التقويم' }).nth(1).click()
+  await page.waitForTimeout(300)
+  const before = await page.evaluate(() => document.activeElement?.textContent)
+  await page.keyboard.press('ArrowLeft')
+  const after = await page.evaluate(() => document.activeElement?.textContent)
+  await page.keyboard.press('Enter')
+  await page.waitForTimeout(200)
+  const stored = await page.getByTestId('date-value').innerText()
+  await ctx.close()
+  assert(Number(after) === Number(before) + 1, `${before} → ${after}`)
+  assert(stored === '2026-11-06', stored)
+  return `هجري ${before} ← ${after} ← ${stored}`
+})
+
+await check('BR-DP-04', 'date: the Hijri calendar shows Hijri month names in Arabic', async () => {
+  const { ctx, page } = await fresh('#/components/date-picker')
+  await page.getByRole('button', { name: 'فتح التقويم' }).nth(1).click()
+  await page.waitForTimeout(300)
+  const title = await page.locator('.ax-calendar__title').innerText()
+  await ctx.close()
+  assert(/جمادى الأولى/.test(title) && /1448/.test(title), title)
+  return title
+})
+
 await check('BR-MX-01', 'every spec state × content variant has a rendered matrix cell', async () => {
   const specs = fs.readdirSync('spec/components').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync('spec/components/' + f, 'utf8')))
   const { ctx, page } = await fresh('#/matrix/' + specs[0].id)

@@ -257,6 +257,46 @@
   .ax-toast__content { flex: 1; min-inline-size: 0; }
   .ax-toast__title { font-size: 14px; font-weight: 600; line-height: 1.6; }
   .ax-toast__body { font-size: 13px; line-height: 1.6; color: var(--ax-text-secondary); }
+
+  /* ---------- Combobox (React Aria behind the adapter; styles read our attributes only) ---------- */
+  .ax-combobox__trigger { background: transparent; border-block: 0; border-inline-end: 0; cursor: default; color: var(--ax-text-secondary); }
+  .ax-combobox__trigger:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ax-focus-ring); border-radius: 4px; }
+  .ax-control[data-state='open'] .ax-combobox__trigger .ax-icon { transform: rotate(180deg); }
+  .ax-combobox__popover { inline-size: var(--trigger-width); max-block-size: min(320px, var(--visual-viewport-height, 60vh)); overflow: auto; background: var(--ax-bg-raised); color: var(--ax-text-primary); border: 1px solid var(--ax-border-subtle); border-radius: var(--ax-radius-control); box-shadow: var(--ax-elevation-2); font-family: var(--ax-font-sans); }
+  .ax-combobox__list { padding: 4px; outline: none; }
+  .ax-combobox__popover--inline, .ax-date__popover--inline { inline-size: 100%; max-inline-size: 360px; overflow: visible; }
+  .ax-combobox__option { outline: none; cursor: default; }
+  .ax-combobox__option-inner { display: flex; align-items: center; gap: 8px; padding-block: 8px; padding-inline: 10px; border-radius: calc(var(--ax-radius-control) * 0.75); font-size: 14px; line-height: 1.5; }
+  .ax-combobox__option-inner[data-highlighted] { background: var(--ax-bg-sunken); }
+  .ax-combobox__option-inner[data-selected] { font-weight: 600; }
+  .ax-combobox__option-label { flex: 1; min-inline-size: 0; }
+  .ax-combobox__option-desc { color: var(--ax-text-secondary); font-size: 12.5px; }
+  .ax-combobox__check { color: var(--ax-action-primary); }
+  .ax-combobox__empty { padding: 12px; font-size: 13.5px; color: var(--ax-text-secondary); }
+
+  /* ---------- Date picker and calendar ---------- */
+  .ax-date__input { display: flex; flex: 1; align-items: center; min-inline-size: 0; font-size: 15px; unicode-bidi: isolate; }
+  .ax-date__segment { padding-inline: 1px; border-radius: 3px; outline: none; font-variant-numeric: tabular-nums; caret-color: transparent; }
+  .ax-date__segment:focus { background: var(--ax-action-soft); color: var(--ax-action-on-soft); }
+  .ax-date__segment [data-empty] { color: var(--ax-text-tertiary); }
+  .ax-date__literal { color: var(--ax-text-tertiary); }
+  .ax-date__trigger { background: transparent; border-block: 0; border-inline-end: 0; color: var(--ax-text-secondary); }
+  .ax-date__trigger:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ax-focus-ring); border-radius: 4px; }
+  .ax-date__popover { background: var(--ax-bg-raised); color: var(--ax-text-primary); border: 1px solid var(--ax-border-subtle); border-radius: var(--ax-radius-overlay); box-shadow: var(--ax-elevation-2); font-family: var(--ax-font-sans); }
+  .ax-date__dialog { outline: none; padding: 12px; }
+  .ax-calendar__header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-block-end: 8px; }
+  .ax-calendar__title { font-size: 15px; font-weight: 600; }
+  .ax-calendar__nav { display: inline-grid; place-items: center; inline-size: 32px; block-size: 32px; border: 1px solid var(--ax-border-default); border-radius: var(--ax-radius-control); background: transparent; color: var(--ax-text-primary); }
+  .ax-calendar__nav:hover { background: var(--ax-bg-sunken); }
+  .ax-calendar__nav:focus-visible { outline: none; box-shadow: var(--ax-focus-ring); }
+  .ax-calendar__grid { border-collapse: collapse; }
+  .ax-calendar__grid th { padding-block: 4px; font-size: 12px; font-weight: 500; color: var(--ax-text-secondary); }
+  .ax-calendar__cell { display: block; border-radius: 50%; outline: none; cursor: default; }
+  .ax-calendar__day { display: grid; place-items: center; inline-size: 36px; block-size: 36px; border-radius: 50%; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .ax-calendar__cell:hover .ax-calendar__day { background: var(--ax-bg-sunken); }
+  .ax-calendar__cell:focus-visible { box-shadow: 0 0 0 2px var(--ax-focus-ring); }
+  .ax-calendar__day[data-selected] { background: var(--ax-action-primary); color: var(--ax-action-on-primary); }
+  .ax-calendar__day[data-disabled] { color: var(--ax-text-tertiary); text-decoration: line-through; }
 }
 
 @media (prefers-reduced-motion: reduce) {

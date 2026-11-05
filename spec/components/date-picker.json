@@ -1,0 +1,216 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "date-picker",
+  "name": "منتقي التاريخ",
+  "nameEn": "Date Picker (Gregorian + Hijri)",
+  "family": "inputs",
+  "tier": "T3",
+  "maturity": "alpha",
+  "purpose": "تاريخ يُخزَّن ميلاديًا بصيغة ISO ويُعرض بالتقويم الميلادي أو الهجري (أم القرى)، مع فصل التقويم عن اللغة وعن نظام الأرقام.",
+  "whenToUse": [
+    "تاريخ واحد: استحقاق، ميلاد، موعد، بالتقويم الميلادي أو الهجري"
+  ],
+  "whenNotToUse": [
+    "مدى من–إلى (غير مدعوم بعد)",
+    "وقت فقط"
+  ],
+  "anatomy": [
+    "root",
+    "label",
+    "control",
+    "segments",
+    "trigger",
+    "popover",
+    "calendar",
+    "helper",
+    "error"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string | null",
+      "doc": "ISO 8601 Gregorian date ('YYYY-MM-DD'), or null. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string | null",
+      "doc": "القيمة الابتدائية في الوضع غير المتحكم فيه.",
+      "default": null
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string | null) => void",
+      "doc": "يُستدعى عند كل تغيير من المستخدم، في الوضعين."
+    },
+    {
+      "name": "calendar",
+      "type": "CalendarSystem",
+      "doc": "Display calendar. Storage stays Gregorian ISO.",
+      "default": "gregory"
+    },
+    {
+      "name": "min",
+      "type": "string | null",
+      "doc": "Earliest allowed date, ISO."
+    },
+    {
+      "name": "max",
+      "type": "string | null",
+      "doc": "Latest allowed date, ISO."
+    },
+    {
+      "name": "helper",
+      "type": "ReactNode",
+      "doc": "نص مساعد مرتبط بـaria-describedby."
+    },
+    {
+      "name": "error",
+      "type": "ReactNode",
+      "doc": "رسالة خطأ ظاهرة ومرتبطة بالحقل."
+    },
+    {
+      "name": "optional",
+      "type": "boolean",
+      "doc": "الحقل مطلوب افتراضيًا؛ هذه الخاصية تعلّمه اختياريًا."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "doc": "غير متاح؛ لا يستقبل تركيزًا ولا يُرسل."
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "doc": "معروض ويمكن نسخه، لا يُعدَّل."
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "labels",
+      "type": "Partial<DatePickerLabels>",
+      "doc": "Internal strings, Arabic by default."
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "open",
+    "empty",
+    "invalid",
+    "disabled",
+    "readonly"
+  ],
+  "content": [
+    "short",
+    "arabic-digits",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "أرقام",
+      "action": "تُكتب في المقاطع (يوم/شهر/سنة) بأي نظام أرقام، بغض النظر عن أرقام العرض."
+    },
+    {
+      "key": "ArrowUp / ArrowDown",
+      "action": "تزيد أو تنقص المقطع المحدد."
+    },
+    {
+      "key": "ArrowLeft / ArrowRight",
+      "action": "في التقويم تتبع الاتجاه البصري: في RTL السهم الأيسر لليوم التالي."
+    },
+    {
+      "key": "Enter",
+      "action": "يختار اليوم المميّز ويغلق التقويم."
+    }
+  ],
+  "aria": {
+    "role": "group + spinbutton (مقاطع) + dialog (تقويم) + grid",
+    "labelling": "aria-labelledby → label",
+    "describedBy": [
+      "helper",
+      "error"
+    ],
+    "notes": [
+      "زر الفتح والتنقل بين الشهور بأسماء من labels"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "all",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": [
+      "chevron-back",
+      "forward"
+    ]
+  },
+  "contracts": [
+    "arabic.digits.v1"
+  ],
+  "invariants": [
+    {
+      "id": "storage-independent-of-calendar",
+      "statement": "القيمة المخزنة ISO ميلادية واحدة، سواء عُرضت بالميلادي أو الهجري.",
+      "tests": [
+        "BR-DP-01"
+      ]
+    },
+    {
+      "id": "any-digits-in-segments",
+      "statement": "المقاطع تقبل أرقامًا لاتينية ومشرقية بغض النظر عن أرقام العرض.",
+      "tests": [
+        "BR-DP-02"
+      ]
+    },
+    {
+      "id": "arrows-follow-visual-direction",
+      "statement": "في التقويم بالـRTL السهم الأيسر لليوم التالي، والاختيار يُخزَّن ميلاديًا.",
+      "tests": [
+        "BR-DP-03"
+      ]
+    },
+    {
+      "id": "hijri-month-names",
+      "statement": "التقويم الهجري يعرض أسماء الشهور الهجرية بالعربية.",
+      "tests": [
+        "BR-DP-04"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": [
+      "مدى تواريخ",
+      "تقاويم هجرية غير أم القرى في الواجهة"
+    ]
+  },
+  "primitive": {
+    "source": "react-aria",
+    "relationship": "integrated",
+    "note": "React Aria DatePicker وCalendar خلف الـadapter؛ إدخال الأرقام بأي نظام من طبقتنا."
+  },
+  "rules": [
+    "R-NUM-001",
+    "R-NUM-004"
+  ],
+  "patterns": []
+}

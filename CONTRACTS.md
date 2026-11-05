@@ -76,3 +76,15 @@ Status vocabulary: proposed · demo (live in browser) · manual · automated (fr
 ## State matrix and visual baselines
 
 `#/matrix/<id>` renders every `spec.states` × direction × theme from the spec, with density and content variant as page axes. Renderers live in `src/matrix/renderers.tsx`; a state or variant without one shows as a visible gap and fails `BR-MX-01`. `pnpm check:visual` photographs each spec × content × density and pixel-diffs against `design/baselines/` (tolerance 0.1% of pixels); `pnpm baselines:update` records new baselines only after a person approves the change.
+
+## arabic.date (DatePicker)
+
+Storage: ISO 8601 Gregorian `YYYY-MM-DD` or `null`, independent of the display calendar. Display: `calendar` (`gregory` | `islamic-umalqura`) and the provider's numerals, recombined by the adapter into one locale tag (`ar-EG-u-ca-islamic-umalqura-nu-arab`). Input: segments accept Latin, Arabic-Indic and Extended Arabic-Indic digits whatever the display numerals. React Aria parses segment digits with the locale's numbering system only and drops the others silently; the component re-dispatches `beforeinput` with the expected digits (BR-DP-02).
+
+## arabic.search: digits
+
+`matchDigits(query, target)` matches phone numbers and codes by digits only, in any numeral system, ignoring spaces, `+` and dashes, from 3 digits up. For Egypt «010…» finds «+20 10 …» (SR-F06, SR-F07). Combobox matches item descriptions this way in addition to tolerant text matching.
+
+## Entry points
+
+`src/system` (main) never imports React Aria. Components built on it are exported from `src/system/aria` (Combobox, DatePicker, the adapter), the equivalent of a package subpath export: an app that does not use them does not load React Aria or its calendar systems (355 KB in the Explorer build, loaded only on pages that use them).

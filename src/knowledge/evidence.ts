@@ -39,6 +39,14 @@ export const BROWSER_CHECKS: BrowserCheck[] = [
   { id: 'BR-APP-01', requirement: 'النقر المزدوج على «تأكيد التحصيل» يسجل عملية واحدة', rule: 'R-FLOW-001', component: 'button', method: 'Playwright: dblclick على زر التأكيد', expected: 'صف واحد جديد في السجل' },
   { id: 'BR-APP-02', requirement: 'الفشل المحاكى يحفظ المبلغ، وإعادة المحاولة تنجح', rule: 'R-CNT-001', component: 'inline-message', method: 'Playwright: تفعيل الفشل ← تأكيد ← أعد المحاولة', expected: 'رسالة فشل، المبلغ باقٍ، ثم إيصال' },
   { id: 'BR-LAY-01', requirement: 'لا تمرير أفقي للصفحة على عرض 390px', rule: 'R-BIDI-001', component: 'data-table', method: 'Playwright: scrollWidth ≤ clientWidth لكل شاشة', expected: 'لا تجاوز' },
+  { id: 'BR-CB-01', requirement: 'البحث المتسامح في منتقي العميل مع تمييز الجزء المطابق', rule: 'R-SRCH-001', component: 'combobox', method: 'Playwright: «احمد»، «محمد»، «khaled»', expected: 'خيار واحد صحيح لكل بحث، وmark ظاهر' },
+  { id: 'BR-CB-02', requirement: 'البحث برقم الهاتف بأي أرقام', rule: 'R-SRCH-001', component: 'combobox', method: 'Playwright: «0101» و«٠١٠١»', expected: 'أحمد Khaled' },
+  { id: 'BR-CB-03', requirement: 'Enter يختار، والمسح ثم المغادرة يبلّغ null', rule: 'R-NUM-005', component: 'combobox', method: 'Playwright: احمد ← ArrowDown ← Enter ← مسح ← Tab', expected: 'CUS-0001 ثم null' },
+  { id: 'BR-CB-04', requirement: 'القائمة محاذية لبداية الحقل في RTL، وEscape يبقي التركيز', rule: 'R-BIDI-001', component: 'combobox', method: 'Playwright: قياس الحواف ثم Escape', expected: 'فرق ≤ 2px والتركيز في الحقل' },
+  { id: 'BR-DP-01', requirement: 'الميلادي والهجري يعرضان نفس القيمة المخزنة', rule: 'R-NUM-004', component: 'date-picker', method: 'Playwright: قراءة المقاطع', expected: '5/11/2026 = 25/5/1448 ← 2026-11-05' },
+  { id: 'BR-DP-02', requirement: 'مقاطع التاريخ تقبل نظام الأرقام الآخر', rule: 'R-NUM-001', component: 'date-picker', method: 'Playwright: «١٢» بأرقام لاتينية و«12» بأرقام مشرقية', expected: '2026-11-12 في الحالتين' },
+  { id: 'BR-DP-03', requirement: 'السهم الأيسر لليوم التالي في RTL، والاختيار يُخزَّن ميلاديًا', rule: 'R-BIDI-001', component: 'date-picker', method: 'Playwright: فتح الهجري ← ArrowLeft ← Enter', expected: '2026-11-06' },
+  { id: 'BR-DP-04', requirement: 'التقويم الهجري بأسماء الشهور العربية', rule: 'R-NUM-004', component: 'date-picker', method: 'Playwright: عنوان الشهر', expected: 'جمادى الأولى 1448 هـ' },
   { id: 'BR-MX-01', requirement: 'كل حالة × متغير محتوى في الـspec لها خلية مرسومة في المصفوفة', component: 'currency-input', method: 'Playwright: كل spec × كل محتوى في #/matrix', expected: 'لا خلايا ناقصة ولا أخطاء console' },
 ]
 
