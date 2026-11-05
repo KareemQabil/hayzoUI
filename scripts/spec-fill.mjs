@@ -74,7 +74,7 @@ const FILL = {
     tier: 'T3',
     whenToUse: ['اختيار سجل واحد من قائمة طويلة بالكتابة: عميل، منتج، مندوب'],
     whenNotToUse: ['أقل من 15 خيارًا ثابتًا (Select)', 'تصفية جدول ظاهر (Search Field)'],
-    content: ['short', 'mixed', 'diacritics', 'arabic-digits', 'long-arabic'],
+    content: ['short', 'mixed', 'latin', 'latin-first', 'diacritics', 'arabic-digits', 'long-arabic'],
     keyboard: [
       { key: 'كتابة', action: 'تفتح القائمة وتصفّيها بالبحث المتسامح (الهمزات، التشكيل) وبأرقام الهاتف بأي أرقام.' },
       { key: 'ArrowDown / ArrowUp', action: 'تنقل بين الخيارات مع بقاء التركيز في الحقل (aria-activedescendant).' },
@@ -88,6 +88,7 @@ const FILL = {
       { id: 'tolerant-matching', statement: '«احمد» يجد «أحمد Khaled» و«محمد» يجد «مُحَمَّد السيد»، مع تمييز الجزء المطابق.', tests: ['SR-F01', 'SR-F04', 'BR-CB-01'] },
       { id: 'phone-by-digits', statement: '«0101» أو «٠١٠١» يجد الرقم المخزّن «+20 10 1234 5678».', tests: ['SR-F06', 'SR-F07', 'BR-CB-02'] },
       { id: 'empty-is-null', statement: 'الاختيار يبلّغ القيمة، والمسح ثم المغادرة يبلّغ null.', tests: ['BR-CB-03'] },
+      { id: 'latin-names-follow-preference', statement: 'أسماء الخيارات اللاتينية أو التي تبدأ بلاتيني تُحاذى حسب mixedAlign، ونقطة «Dr.» في مكانها.', tests: ['BR-MIX-01', 'BR-MIX-03'] },
       { id: 'popup-aligned-in-rtl', statement: 'القائمة تحاذي بداية الحقل في الاتجاهين، وEscape يغلقها والتركيز باقٍ في الحقل.', tests: ['BR-CB-04'] },
     ],
     contexts: { ...RTL, unsupported: ['اختيار متعدد', 'أكثر من 1000 خيار دون virtualization'] },
@@ -135,7 +136,7 @@ const FILL = {
   'text-field': {
     whenToUse: ['نص حر قصير: اسم، عنوان، رقم مرجعي'],
     whenNotToUse: ['مبالغ (حقل المبلغ)', 'هواتف (حقل الهاتف)', 'نص طويل متعدد الأسطر'],
-    content: ['short', 'long-arabic', 'mixed', 'ltr-island', 'diacritics'],
+    content: ['short', 'long-arabic', 'mixed', 'latin', 'latin-first', 'ltr-island', 'diacritics'],
     keyboard: [{ key: 'Tab', action: 'تنقل عادي؛ لا سلوك خاص.' }],
     aria: { role: 'textbox', labelling: 'label[for]', describedBy: ['helper', 'error'], notes: ['aria-required ما لم يكن optional'] },
     locale: { numeralsInput: 'all', numeralsDisplay: 'none', ltrIslands: [], mirroredIcons: [] },
@@ -143,6 +144,7 @@ const FILL = {
       { id: 'empty-is-null', statement: 'مسح النص يبلّغ null لا سلسلة فارغة.', tests: ['CMP-01'] },
       { id: 'placeholder-follows-ui', statement: 'الحقل الفارغ يتبع اتجاه الواجهة حتى لا ينقلب placeholder العربي؛ بعد الكتابة يتبع أول حرف قوي.', tests: ['CMP-02'] },
       { id: 'mixed-name-isolated', statement: 'اسم مختلط مثل «أحمد Khaled» يُعرض بترتيبه المنطقي في الاتجاهين.' },
+      { id: 'mixed-text-alignment', statement: 'النص بلغة أخرى يُحاذى حسب تفضيل mixedAlign: مع الواجهة (حافة البداية) أو مع النص، واتجاهه الداخلي من أول حرف قوي في الحالتين.', tests: ['BR-MIX-01', 'BR-MIX-02'] },
     ],
     contexts: RTL,
   },
@@ -258,7 +260,7 @@ const FILL = {
   'data-table': {
     whenToUse: ['سجلات بأعمدة للمقارنة: عملاء، فواتير، مخزون'],
     whenNotToUse: ['أقل من 3 أعمدة (قائمة)', 'تحرير خلوي (غير مدعوم بعد)'],
-    content: ['short', 'long-arabic', 'ltr-island', 'arabic-digits', 'overflow'],
+    content: ['short', 'long-arabic', 'latin', 'latin-first', 'ltr-island', 'arabic-digits', 'overflow'],
     keyboard: [{ key: 'Tab', action: 'تنقل بين العناصر التفاعلية داخل الخلايا؛ لا تنقل خلوي بالأسهم بعد.' }],
     aria: { role: 'table', labelling: 'aria-label من label + caption', notes: ['الصف المحدد aria-selected', 'الأعمدة الرقمية محاذاة لنهاية الخلية'] },
     locale: { numeralsInput: 'none', numeralsDisplay: 'provider', ltrIslands: ['cell'], mirroredIcons: [] },

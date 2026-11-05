@@ -44,6 +44,8 @@ const CONTENT_LABEL: Record<string, string> = {
   short: 'قصير',
   'long-arabic': 'عربي طويل',
   mixed: 'مختلط',
+  latin: 'لاتيني كامل',
+  'latin-first': 'يبدأ بلاتيني',
   'ltr-island': 'جزيرة LTR',
   diacritics: 'تشكيل',
   'arabic-digits': 'أرقام مشرقية',

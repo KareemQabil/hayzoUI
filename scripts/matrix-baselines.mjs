@@ -23,6 +23,9 @@ const browser = await chromium.launch({ executablePath: chromiumPath() })
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, reducedMotion: 'reduce' })
 const page = await ctx.newPage()
 await page.goto(base + '#/matrix/' + specs[0].id, { waitUntil: 'networkidle' })
+// The site header is sticky and would overlap the top of the matrix in element screenshots:
+// a header change must not register as a change in every component.
+await page.addStyleTag({ content: '[data-shell-header], header.sticky { display: none !important; }' })
 
 let compared = 0
 const failures = []

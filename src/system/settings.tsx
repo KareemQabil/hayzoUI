@@ -5,15 +5,18 @@
 import { createContext, useContext, useLayoutEffect, useMemo, useState, type ReactNode } from 'react'
 import { buildThemeVars, DEFAULT_THEME, type ThemeConfig } from '../tokens/theme'
 import type { DisplayNumerals } from '../arabic'
+import type { MixedAlign } from './locale'
 
 export type RegionLocale = 'ar-EG' | 'ar-SA'
 
 export interface Prefs {
   numerals: DisplayNumerals
   locale: RegionLocale
+  /** Alignment of text in the other script (a Latin name in an Arabic list). */
+  mixedAlign: MixedAlign
 }
 
-const DEFAULT_PREFS: Prefs = { numerals: 'latn', locale: 'ar-EG' }
+const DEFAULT_PREFS: Prefs = { numerals: 'latn', locale: 'ar-EG', mixedAlign: 'ui' }
 
 interface SettingsValue {
   theme: ThemeConfig

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { fonts, primaryPresets, typeScale, type FontKey } from '../tokens/reference'
 import { evaluateContrast, exportTheme, primaryBase, semanticColors, type Radius } from '../tokens/theme'
 import { isHex } from '../tokens/color'
-import {
+import { AutoText,
   AmountText,
   Badge,
   Button,
@@ -65,7 +65,7 @@ function ProductPreview() {
             rowKey={(r) => r.id}
             columns={[
               { key: 'id', header: 'الإيصال', nowrap: true, cell: (r) => <LtrIsland mono>{r.id}</LtrIsland> },
-              { key: 'w', header: 'العميل', cell: (r) => <span dir="auto">{r.who}</span> },
+              { key: 'w', header: 'العميل', cell: (r) => <AutoText>{r.who}</AutoText> },
               { key: 's', header: 'الحالة', cell: (r) => <Badge tone={r.s} dot>{r.s === 'success' ? 'مسجّل' : 'قيد المطابقة'}</Badge> },
               { key: 'm', header: 'المبلغ', numeric: true, nowrap: true, cell: (r) => <AmountText minor={r.m} currency="EGP" /> },
             ]}
@@ -118,7 +118,7 @@ function TypeSpecimen() {
 }
 
 export function StudioPage() {
-  const { theme, setTheme, resetTheme } = useSettings()
+  const { theme, setTheme, resetTheme, prefs, setPrefs } = useSettings()
   const copy = useCopy()
   const [hexDraft, setHexDraft] = useState(theme.customPrimary)
   const hexError = hexDraft && !isHex(hexDraft) ? 'أدخل اللون بصيغة ‎#RRGGBB، مثل ‎#B0431F.' : null
@@ -185,6 +185,16 @@ export function StudioPage() {
         value={String(theme.radius) as '0' | '4' | '8' | '12'}
         onValueChange={(v) => setTheme({ radius: Number(v) as Radius })}
         options={(['0', '4', '8', '12'] as const).map((r) => ({ value: r, label: <N>{r}</N>, ariaLabel: `${r} بكسل` }))}
+      />
+      <SegmentedControl
+        label="محاذاة الأسماء اللاتينية في الواجهة العربية"
+        fullWidth
+        value={prefs.mixedAlign}
+        onValueChange={(v) => setPrefs({ mixedAlign: v })}
+        options={[
+          { value: 'ui', label: 'مع الواجهة' },
+          { value: 'content', label: 'مع النص' },
+        ]}
       />
       <div className="flex flex-wrap gap-2 border-t border-line pt-5">
         <Button variant="outline" size="sm" iconStart="reset" onClick={() => { resetTheme(); setHexDraft('#B0431F') }}>

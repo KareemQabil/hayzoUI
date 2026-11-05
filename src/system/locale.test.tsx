@@ -18,3 +18,21 @@ describe('Digits', () => {
     expect(shown('1 – 50', 'arab')).toBe('١ – ٥٠')
   })
 })
+
+describe('mixed-script alignment', () => {
+  test('CT-03 the provider resolves mixedAlign to a side; AutoText takes its direction from the text', async () => {
+    const { mixedAlignValue } = await import('./locale')
+    const { AutoText } = await import('./components/text')
+    expect(mixedAlignValue('rtl', 'ui')).toBe('right')
+    expect(mixedAlignValue('ltr', 'ui')).toBe('left')
+    expect(mixedAlignValue('rtl', 'content')).toBe('start')
+    const { container } = render(
+      <LocaleProvider dir="rtl" mixedAlign="content">
+        <AutoText>Sara Haddad</AutoText>
+      </LocaleProvider>,
+    )
+    const provider = container.firstElementChild as HTMLElement
+    expect(provider.style.getPropertyValue('--ax-mixed-align')).toBe('start')
+    expect(provider.querySelector('.ax-auto')?.getAttribute('dir')).toBe('auto')
+  })
+})

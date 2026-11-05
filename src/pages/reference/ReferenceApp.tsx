@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { DEFAULT_SEARCH, formatPhoneEG, matchText, nationalPhoneEG, normalizeDigits, toDisplayDigits, type SearchOptions } from '../../arabic'
 import {
   AmountText,
+  AutoText,
   Digits,
   Badge,
   Button,
@@ -205,9 +206,9 @@ export function ReferenceApp() {
                   className={['flex w-full items-center gap-3 px-4 py-3 text-start md:px-5', on ? 'bg-selection' : 'hover:bg-sunken', 'focus-visible:shadow-[inset_0_0_0_2px_var(--ax-focus-ring)] focus-visible:outline-none'].join(' ')}
                 >
                   <span className="min-w-0 flex-1">
-                    <span className="block t-label text-fg" dir="auto">
+                    <AutoText className="t-label text-fg">
                       <Highlight text={c.name} ranges={ranges} />
-                    </span>
+                    </AutoText>
                     <span className="mt-0.5 flex flex-wrap gap-x-3 t-caption text-fg-2">
                       <LtrIsland className="ax-num">{toDisplayDigits(nationalPhoneEG(c.phone), numerals)}</LtrIsland>
                       <LtrIsland mono className="text-fg-3">
@@ -237,9 +238,9 @@ export function ReferenceApp() {
       <header className="flex items-start gap-4 border-b border-line px-4 py-5 md:px-8">
         <Initial name={selected.name} />
         <div className="min-w-0 flex-1">
-          <h2 id="cust-name" className="t-h2 text-fg" dir="auto">
+          <AutoText as="h2" id="cust-name" className="t-h2 text-fg">
             {selected.name}
-          </h2>
+          </AutoText>
           <p className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 t-caption text-fg-2">
             <span className="inline-flex items-center gap-1.5">
               <Icon name="phone" size={14} />
@@ -397,7 +398,7 @@ export function ReferenceApp() {
             </div>
             <dl className="grid grid-cols-[7rem_1fr] gap-y-2.5 t-body">
               <dt className="text-fg-2">العميل</dt>
-              <dd className="text-fg" dir="auto">{selected.name}</dd>
+              <AutoText as="dd" className="text-fg">{selected.name}</AutoText>
               <dt className="text-fg-2">الهاتف</dt>
               <dd><LtrIsland className="ax-num">{toDisplayDigits(formatPhoneEG(selected.phone), numerals)}</LtrIsland></dd>
               <dt className="text-fg-2">الطريقة</dt>
@@ -427,7 +428,7 @@ export function ReferenceApp() {
           setQuery('')
           setAddOpen(false)
           openCustomer(c.id)
-          toast({ tone: 'success', title: 'أُضيف العميل', body: c.name })
+          toast({ tone: 'success', title: 'أُضيف العميل', body: <AutoText inline>{c.name}</AutoText> })
         }}
       />
     </div>

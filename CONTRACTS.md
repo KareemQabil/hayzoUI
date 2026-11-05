@@ -88,3 +88,12 @@ Storage: ISO 8601 Gregorian `YYYY-MM-DD` or `null`, independent of the display c
 ## Entry points
 
 `src/system` (main) never imports React Aria. Components built on it are exported from `src/system/aria` (Combobox, DatePicker, the adapter), the equivalent of a package subpath export: an app that does not use them does not load React Aria or its calendar systems (355 KB in the Explorer build, loaded only on pages that use them).
+
+## Mixed text
+
+Names and other free text of unknown script render through `AutoText` (`dir="auto"`, `.ax-auto`): direction comes from the first strong character, so «Dr. سامي الحلبي» keeps its period after «Dr» (inside a plain RTL block it moves before it). Alignment is a regional preference, `mixedAlign`:
+
+- `ui` (default): every line starts at the container's start edge, so a Latin name in an Arabic list lines up with the Arabic names.
+- `content`: each line starts on its own direction's side; Latin names sit on the left in RTL.
+
+The provider resolves the preference to a side (`--ax-mixed-align`: `right` / `left` / `start`). `text-align: match-parent` would express it logically, but Chromium computes it as `start`, measured. Overlays and popovers portaled out of the provider carry the variable explicitly. Content variants `latin` («Sara Haddad») and `latin-first` («Dr. سامي الحلبي») are in the closed vocabulary. Checked by `check:bidi` oracle 2 (direction = first strong, first character at the line start, alignment per preference; one pass per preference) and BR-MIX-01…03. Codes (`CUS-0008`, `INV-2026-0148`) are identifiers and keep the digits they were written with; only quantities, amounts, phones and dates follow the numerals preference.

@@ -8,6 +8,7 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 import type { DisplayNumerals } from '../arabic'
 import {
+  AutoText,
   Badge,
   Button,
   CurrencyInput,
@@ -66,6 +67,8 @@ const TEXT: Record<string, { label: string; value: string }> = {
   short: { label: 'اسم العميل', value: 'هالة مؤمن' },
   'long-arabic': { label: 'اسم العميل كما يظهر في السجل التجاري والبطاقة الضريبية', value: 'شركة النيل المتحدة للتوريدات والمقاولات العامة والاستيراد والتصدير' },
   mixed: { label: 'اسم العميل', value: 'أحمد Khaled' },
+  latin: { label: 'اسم العميل', value: 'Sara Haddad' },
+  'latin-first': { label: 'اسم العميل', value: 'Dr. سامي الحلبي' },
   'ltr-island': { label: 'رقم الفاتورة', value: 'INV-2026-0148' },
   diacritics: { label: 'اسم العميل', value: 'مُحَمَّد السَّيِّد' },
   'arabic-digits': { label: 'الكمية', value: '١٢٣٤' },
@@ -96,6 +99,8 @@ const CUSTOMERS = [
   { value: 'CUS-0002', label: 'إيمان عبد الرحمن', description: '+20 11 2345 6789' },
   { value: 'CUS-0003', label: 'مُحَمَّد السيد', description: '+20 12 3456 7890' },
   { value: 'CUS-0004', label: 'شركة النيل المتحدة للتوريدات والمقاولات العامة والاستيراد والتصدير', description: '+20 15 4567 8901' },
+  { value: 'CUS-0008', label: 'Sara Haddad', description: '+20 11 5556 6677' },
+  { value: 'CUS-0011', label: 'Dr. سامي الحلبي', description: '+20 10 1122 3344' },
 ]
 /** Query typed for each content variant, and the item it selects. */
 const COMBO_CONTENT: Record<string, { query: string; selected: string }> = {
@@ -104,6 +109,8 @@ const COMBO_CONTENT: Record<string, { query: string; selected: string }> = {
   diacritics: { query: 'محمد', selected: 'CUS-0003' },
   'arabic-digits': { query: '٠١٠١', selected: 'CUS-0001' },
   'long-arabic': { query: 'النيل', selected: 'CUS-0004' },
+  latin: { query: 'sara', selected: 'CUS-0008' },
+  'latin-first': { query: 'سامي', selected: 'CUS-0011' },
 }
 
 export const RENDERERS: Record<string, MatrixRenderer> = {
@@ -385,10 +392,10 @@ export const RENDERERS: Record<string, MatrixRenderer> = {
     numerals: arabicDigits,
     render: ({ state, content }) => {
       if (!(content in TEXT)) return null
-      const rows: Row[] = content === 'long-arabic' ? ROWS.map((r, i) => (i === 0 ? { ...r, name: TEXT['long-arabic'].value } : r)) : content === 'overflow' ? ROWS.map((r, i) => (i === 0 ? { ...r, id: TEXT.overflow.value } : r)) : ROWS
+      const rows: Row[] = content === 'long-arabic' || content === 'latin' || content === 'latin-first' ? ROWS.map((r, i) => (i === 0 ? { ...r, name: TEXT[content].value } : r)) : content === 'overflow' ? ROWS.map((r, i) => (i === 0 ? { ...r, id: TEXT.overflow.value } : r)) : ROWS
       const columns = [
         { key: 'id', header: 'الرقم', cell: (r: Row) => <bdi dir="ltr" className="ax-mono">{r.id}</bdi>, nowrap: true },
-        { key: 'name', header: 'الاسم', cell: (r: Row) => r.name },
+        { key: 'name', header: 'الاسم', cell: (r: Row) => <AutoText>{r.name}</AutoText> },
         { key: 'balance', header: 'الرصيد', cell: (r: Row) => <bdi dir="ltr" className="ax-num">{content === 'arabic-digits' ? r.balance.replace(/[0-9]/g, (d) => String.fromCodePoint(0x660 + +d)).replace(/,/g, ' ').replace('.', '٫') : r.balance}</bdi>, numeric: true, align: 'end' as const },
       ]
       const s = asDefault(state)

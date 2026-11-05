@@ -90,6 +90,8 @@
     "short",
     "long-arabic",
     "mixed",
+    "latin",
+    "latin-first",
     "ltr-island",
     "diacritics"
   ],
@@ -134,6 +136,14 @@
     {
       "id": "mixed-name-isolated",
       "statement": "اسم مختلط مثل «أحمد Khaled» يُعرض بترتيبه المنطقي في الاتجاهين."
+    },
+    {
+      "id": "mixed-text-alignment",
+      "statement": "النص بلغة أخرى يُحاذى حسب تفضيل mixedAlign: مع الواجهة (حافة البداية) أو مع النص، واتجاهه الداخلي من أول حرف قوي في الحالتين.",
+      "tests": [
+        "BR-MIX-01",
+        "BR-MIX-02"
+      ]
     }
   ],
   "contexts": {
