@@ -1,8 +1,14 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-05T19:23:12.490Z",
+  "startedAt": "2026-11-05T19:39:56.383Z",
   "results": [
+    {
+      "id": "CT-01",
+      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
+      "status": "passed",
+      "durationMs": 6
+    },
     {
       "id": "CI-F01",
       "name": "CI-F01 أرقام لاتينية بفاصلة عشرية نقطة",
@@ -13,7 +19,7 @@
       "id": "CI-F02",
       "name": "CI-F02 أرقام عربية مشرقية وفاصلة عشرية عربية",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CI-F03",
@@ -187,7 +193,7 @@
       "id": "SR-F01",
       "name": "SR-F01 البحث المتسامح: «احمد» يجد «أحمد Khaled»",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SR-F02",
@@ -217,7 +223,7 @@
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "status": "passed",
-      "durationMs": 36
+      "durationMs": 26
     },
     {
       "id": "PROP-02",
@@ -235,31 +241,25 @@
       "id": "PROP-04",
       "name": "PROP-04 an ambiguous comma is never accepted silently",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 8
     },
     {
       "id": "PROP-05",
       "name": "PROP-05 tolerance only adds matches, never removes them",
       "status": "passed",
-      "durationMs": 9
+      "durationMs": 11
     },
     {
       "id": "PROP-07",
       "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
       "status": "passed",
-      "durationMs": 47
+      "durationMs": 52
     },
     {
       "id": "PROP-06",
       "name": "PROP-06 search normalization never changes the stored name",
       "status": "passed",
       "durationMs": 0
-    },
-    {
-      "id": "CT-01",
-      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
-      "status": "passed",
-      "durationMs": 6
     },
     {
       "id": "SP-01",
@@ -415,7 +415,7 @@
       "id": "SP-06",
       "name": "SP-06 data-table props match the implementation",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-02",
@@ -745,7 +745,7 @@
       "id": "SP-06",
       "name": "SP-06 switch props match the implementation",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-02",
@@ -847,19 +847,19 @@
       "id": "CMP-02",
       "name": "CMP-02 empty TextField follows the UI direction; typed text resolves automatically",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 6
     },
     {
       "id": "CMP-03",
       "name": "CMP-03 first Escape clears the search (null) and does not reach the parent",
       "status": "passed",
-      "durationMs": 47
+      "durationMs": 46
     },
     {
       "id": "CMP-04",
       "name": "CMP-04 uncontrolled PhoneInput keeps typed text and reports E.164",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 6
     },
     {
       "id": "CMP-05",
@@ -889,19 +889,19 @@
       "id": "CMP-09",
       "name": "CMP-09 the toast stack takes dir and lang from the LocaleProvider",
       "status": "passed",
-      "durationMs": 4
+      "durationMs": 3
     },
     {
       "id": "CMP-10",
       "name": "CMP-10 toast timers pause on hover and errors never auto-dismiss",
       "status": "passed",
-      "durationMs": 18
+      "durationMs": 17
     },
     {
       "id": "CT-02",
       "name": "CT-02 static numbers follow the numerals and never keep an ASCII space between digit groups",
       "status": "passed",
-      "durationMs": 20
+      "durationMs": 21
     }
   ]
 }
