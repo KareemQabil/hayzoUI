@@ -53,7 +53,7 @@ References are structured objects. A reference inherits the type of its owning t
 - orderTokenLayers, composeTokenLayers
 - validateTokenLayers
 - resolveTokens
-- generateCssVariables, toCssVariableName
+- validateCssVariableNames, generateCssVariables, toCssVariableName
 - createTokenTrace
 
 ## Usage

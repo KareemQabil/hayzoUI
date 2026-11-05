@@ -1,4 +1,5 @@
 import { composeTokenLayers, type ComposedToken } from "./layers";
+import { validateCssVariableNames } from "./css-variables";
 import { isValidLayerId, isValidTokenPath, compareTokenPaths } from "./paths";
 import { getTokenReference, isTokenReference, isTokenType } from "./references";
 import {
@@ -359,5 +360,6 @@ export function validateTokenLayers(layers: readonly unknown[]): TokenIssue[] {
   const composition = composeTokenLayers(sanitizedLayers);
   issues.push(...composition.issues);
   issues.push(...validateReferenceGraph(composition.tokens));
+  issues.push(...validateCssVariableNames([...composition.tokens.keys()]));
   return issues;
 }

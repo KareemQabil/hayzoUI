@@ -290,6 +290,7 @@ describe("atomic token engine", () => {
       ]),
     ]);
 
+    expect(result.issues.some((entry) => entry.code === "CSS_VARIABLE_COLLISION")).toBe(true);
     const css = generateCssVariables(result);
     expect(css.isValid).toBe(false);
     expect(css.variables).toEqual({});

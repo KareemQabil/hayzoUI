@@ -59,6 +59,38 @@ export function toCssVariableName(path: string, namespace = "hz"): string {
 }
 
 /**
+ * Validates path-to-custom-property names independently of CSS emission.
+ * The same namespace is applied to every path, so collision identity is stable.
+ */
+export function validateCssVariableNames(paths: readonly string[], namespace = "hz"): TokenIssue[] {
+  if (!/^[a-z][a-z0-9-]*$/.test(namespace)) {
+    return [{
+      code: "INVALID_CSS_NAMESPACE",
+      explanation: `CSS namespace "${namespace}" must be lowercase kebab-case.`,
+    }];
+  }
+
+  const pathByVariable = new Map<string, string>();
+  const issues: TokenIssue[] = [];
+
+  for (const path of [...new Set(paths)].sort()) {
+    const variableName = toCssVariableName(path, namespace);
+    const previousPath = pathByVariable.get(variableName);
+    if (previousPath !== undefined && previousPath !== path) {
+      issues.push({
+        code: "CSS_VARIABLE_COLLISION",
+        affectedToken: path,
+        explanation: `Token paths "${previousPath}" and "${path}" both map to "${variableName}".`,
+      });
+      continue;
+    }
+    pathByVariable.set(variableName, path);
+  }
+
+  return issues;
+}
+
+/**
  * Emits a deterministic :root block. Path-to-name collisions are errors and
  * never result in last-write-wins behavior.
  */
@@ -70,36 +102,20 @@ export function generateCssVariables(
     return { isValid: false, variables: {}, css: "", issues: resolution.issues };
   }
 
-  if (!/^[a-z][a-z0-9-]*$/.test(namespace)) {
-    const invalidNamespace: TokenIssue = {
-      code: "INVALID_CSS_NAMESPACE",
-      explanation: `CSS namespace "${namespace}" must be lowercase kebab-case.`,
-    };
-    return { isValid: false, variables: {}, css: "", issues: [invalidNamespace] };
+  const paths = Object.keys(resolution.tokens).sort();
+  const namingIssues = validateCssVariableNames(paths, namespace);
+  if (namingIssues.length > 0) {
+    return { isValid: false, variables: {}, css: "", issues: namingIssues };
   }
 
   const variables: Record<string, string> = {};
-  const pathByVariable = new Map<string, string>();
   const issues: TokenIssue[] = [];
-  const paths = Object.keys(resolution.tokens).sort();
 
   for (const path of paths) {
     const token = resolution.tokens[path];
     if (!token) continue;
 
     const variableName = toCssVariableName(path, namespace);
-    const previousPath = pathByVariable.get(variableName);
-    if (previousPath !== undefined && previousPath !== path) {
-      issues.push({
-        code: "CSS_VARIABLE_COLLISION",
-        affectedToken: path,
-        sourceLayer: token.sourceLayer.id,
-        sourceLayerType: token.sourceLayer.type,
-        explanation: `Token paths "${previousPath}" and "${path}" both map to "${variableName}".`,
-      });
-      continue;
-    }
-
     const cssValue = serializeToken(token);
     if (cssValue === undefined) {
       issues.push({
@@ -112,7 +128,6 @@ export function generateCssVariables(
       continue;
     }
 
-    pathByVariable.set(variableName, path);
     variables[variableName] = cssValue;
   }
 
