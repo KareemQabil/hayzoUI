@@ -83,13 +83,26 @@ export function Shell({ route, children }: { route: string[]; children: ReactNod
       ]}
     />
   )
+  // Alignment of Latin names in Arabic lists: with the interface (one start edge) or with each text.
+  const alignment = (
+    <SegmentedControl
+      label="محاذاة الأسماء اللاتينية"
+      hideLabel
+      value={prefs.mixedAlign}
+      onValueChange={(v) => setPrefs({ mixedAlign: v })}
+      options={[
+        { value: 'ui', label: 'مع الواجهة', ariaLabel: 'محاذاة الأسماء اللاتينية مع الواجهة' },
+        { value: 'content', label: 'مع النص', ariaLabel: 'محاذاة الأسماء اللاتينية مع اتجاه النص' },
+      ]}
+    />
+  )
 
   return (
     <div className="flex min-h-dvh flex-col">
       <a href="#main" className="ax-sr focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-[70] focus:rounded-md focus:bg-fg focus:px-3 focus:py-2 focus:text-surface">
         انتقل إلى المحتوى
       </a>
-      <header className="sticky top-0 z-30 border-b border-line bg-surface/95 backdrop-blur-[2px]">
+      <header data-shell-header className="sticky top-0 z-30 border-b border-line bg-surface/95 backdrop-blur-[2px]">
         <div className="mx-auto flex h-14 max-w-[1520px] items-center gap-4 px-4 lg:px-6">
           {!wide ? <IconButton icon="menu" label="القائمة الرئيسية" onClick={() => setMenuOpen(true)} /> : null}
           <Brand />
@@ -166,6 +179,8 @@ export function Shell({ route, children }: { route: string[]; children: ReactNod
           <div className="border-t border-line pt-4">
             <p className="t-eyebrow mb-2">أرقام العرض</p>
             {regional}
+            <p className="t-eyebrow mb-2 mt-4">محاذاة الأسماء اللاتينية</p>
+            {alignment}
           </div>
         </nav>
       </Drawer>

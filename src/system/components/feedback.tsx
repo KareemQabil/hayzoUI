@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { Icon, type IconName } from '../icons'
-import { useLocale } from '../locale'
+import { mixedAlignValue, useLocale } from '../locale'
 import { IconButton } from './button'
 
 export type MessageTone = 'info' | 'success' | 'warning' | 'danger'
@@ -115,7 +115,7 @@ const ToastContext = createContext<(t: ToastProps) => void>(() => {})
  * Timers pause while the stack is hovered or holds focus (WCAG 2.2.1), and errors never auto-dismiss.
  */
 export function ToastProvider({ children, labels: labelsProp }: { children: ReactNode; labels?: Partial<ToastLabels> }) {
-  const { dir, lang } = useLocale()
+  const { dir, lang, mixedAlign } = useLocale()
   const labels = { ...DEFAULT_TOAST_LABELS, ...labelsProp }
   const [items, setItems] = useState<ToastItem[]>([])
   const [paused, setPaused] = useState(false)
@@ -135,6 +135,7 @@ export function ToastProvider({ children, labels: labelsProp }: { children: Reac
         aria-live="polite"
         dir={dir}
         lang={lang}
+        style={{ '--ax-mixed-align': mixedAlignValue(dir, mixedAlign) } as React.CSSProperties}
         onPointerEnter={() => setPaused(true)}
         onPointerLeave={() => setPaused(false)}
         onFocus={() => setPaused(true)}

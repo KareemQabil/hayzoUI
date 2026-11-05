@@ -30,6 +30,10 @@ export const SEED_CUSTOMERS: Customer[] = [
   { id: 'CUS-0008', name: 'Sara Haddad', phone: '+201155566677', since: '2025-08-19' },
   { id: 'CUS-0009', name: 'يوسف الأمين', phone: '+201277788899', since: '2023-03-27' },
   { id: 'CUS-0010', name: 'آمنة عبد الله', phone: '+201566677788', since: '2024-07-02' },
+  // Mixed-script edge cases: Latin first with punctuation, digit first, Latin in brackets inside Arabic.
+  { id: 'CUS-0011', name: 'Dr. سامي الحلبي', phone: '+201011223344', since: '2025-02-14' },
+  { id: 'CUS-0012', name: '3M مصر', phone: '+201122334455', since: '2024-04-01' },
+  { id: 'CUS-0013', name: 'محمد (Mido) السيد', phone: '+201233445566', since: '2023-10-10' },
 ]
 
 export const SEED_COLLECTIONS: Collection[] = [

@@ -333,6 +333,81 @@ await check('BR-DP-04', 'date: the Hijri calendar shows Hijri month names in Ara
   return title
 })
 
+// ---------- Mixed-script names: direction, punctuation, alignment preference ----------
+async function withPrefs(hash, prefs) {
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' })
+  await ctx.addInitScript((p) => localStorage.setItem('ax.prefs.v0', JSON.stringify({ numerals: 'latn', locale: 'ar-EG', ...p })), prefs)
+  const page = await ctx.newPage()
+  await page.goto(base + hash, { waitUntil: 'networkidle' })
+  await page.waitForTimeout(300)
+  return { ctx, page }
+}
+/** Right and left edge of each customer name's text in the reference list, by name. */
+const nameEdges = (page) =>
+  page.evaluate(() =>
+    Object.fromEntries(
+      [...document.querySelectorAll('li .ax-auto')].map((el) => {
+        const r = document.createRange()
+        r.selectNodeContents(el)
+        const t = r.getBoundingClientRect()
+        return [el.textContent.trim(), { left: Math.round(t.left), right: Math.round(t.right), boxLeft: Math.round(el.getBoundingClientRect().left), boxRight: Math.round(el.getBoundingClientRect().right) }]
+      }),
+    ),
+  )
+
+await check('BR-MIX-01', 'Latin names in an Arabic list follow the alignment preference', async () => {
+  const out = []
+  for (const mixedAlign of ['ui', 'content']) {
+    const { ctx, page } = await withPrefs('#/app', { mixedAlign })
+    const e = await nameEdges(page)
+    await ctx.close()
+    const arabic = e['هالة مؤمن']
+    for (const latin of ['Sara Haddad', 'Dr. سامي الحلبي', '3M مصر']) {
+      const x = e[latin]
+      assert(x && arabic, `missing ${latin}`)
+      if (mixedAlign === 'ui') assert(Math.abs(x.right - arabic.right) <= 1, `ui: «${latin}» ends at ${x.right}, Arabic names at ${arabic.right}`)
+      else assert(Math.abs(x.left - x.boxLeft) <= 1, `content: «${latin}» starts at ${x.left}, box at ${x.boxLeft}`)
+    }
+    out.push(mixedAlign === 'ui' ? 'مع الواجهة: حافة واحدة' : 'مع النص: اللاتيني يسارًا')
+  }
+  return out.join(' · ')
+})
+
+await check('BR-MIX-02', 'a text field with a Latin name aligns by the preference', async () => {
+  const out = []
+  for (const [mixedAlign, expect] of [['ui', 'right'], ['content', 'start']]) {
+    const { ctx, page } = await withPrefs('#/matrix/text-field?content=latin', { mixedAlign })
+    const align = await page.locator('[data-matrix-cell^="default|latin|rtl|light"] input').evaluate((i) => getComputedStyle(i).textAlign)
+    await ctx.close()
+    assert(align === expect, `${mixedAlign}: text-align ${align}, expected ${expect}`)
+    out.push(`${mixedAlign}: ${align}`)
+  }
+  return out.join(' · ')
+})
+
+await check('BR-MIX-03', 'Latin-first names keep punctuation in place: «Dr.» reads Dr then the period', async () => {
+  const { ctx, page } = await withPrefs('#/app', { mixedAlign: 'ui' })
+  const r = await page.evaluate(() => {
+    const el = [...document.querySelectorAll('li .ax-auto')].find((e) => e.textContent.trim().startsWith('Dr.'))
+    const node = el.querySelector('*')?.firstChild ?? el.firstChild
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT)
+    let n = walker.nextNode()
+    while (n && !n.data.includes('Dr.')) n = walker.nextNode()
+    const at = (i) => {
+      const range = document.createRange()
+      range.setStart(n, i)
+      range.setEnd(n, i + 1)
+      return range.getBoundingClientRect().left
+    }
+    const i = n.data.indexOf('Dr.')
+    return { d: at(i), r: at(i + 1), dot: at(i + 2), dir: getComputedStyle(el).direction, node: !!node }
+  })
+  await ctx.close()
+  assert(r.dir === 'ltr', `direction ${r.dir}`)
+  assert(r.d < r.r && r.r < r.dot, `D=${r.d} r=${r.r} .=${r.dot}`)
+  return 'D ← r ← . بالترتيب، والاتجاه ltr'
+})
+
 await check('BR-MX-01', 'every spec state × content variant has a rendered matrix cell', async () => {
   const specs = fs.readdirSync('spec/components').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync('spec/components/' + f, 'utf8')))
   const { ctx, page } = await fresh('#/matrix/' + specs[0].id)

@@ -9,11 +9,11 @@ import { ComboBox as AriaComboBox, Button as AriaButton, Group, Input, ListBox, 
 import { DEFAULT_SEARCH, matchDigits, matchText, type SearchOptions } from '../../arabic'
 import { AriaLocale } from '../adapter/react-aria'
 import { Icon } from '../icons'
-import { useLocale } from '../locale'
+import { mixedAlignValue, useLocale } from '../locale'
 import { useControllable } from '../use-controllable'
 import type { Size } from './button'
 import { describedBy, Field, useFieldIds } from './field'
-import { Highlight } from './text'
+import { AutoText, Highlight } from './text'
 
 export interface ComboboxItem {
   value: string
@@ -56,7 +56,7 @@ export function Combobox(props: ComboboxProps) {
   const { label, items, value: valueProp, defaultValue = null, onValueChange, search = DEFAULT_SEARCH, placeholder, helper, error, optional, disabled, readOnly, size = 'md', hideLabel, id } = props
   const labels = { ...DEFAULT_LABELS, ...props.labels }
   const ids = useFieldIds(id)
-  const { dir } = useLocale()
+  const { dir, mixedAlign } = useLocale()
   const [value, setValue] = useControllable<string | null, { item: ComboboxItem | null }>(valueProp, defaultValue, onValueChange)
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
@@ -104,7 +104,8 @@ export function Combobox(props: ComboboxProps) {
               <Icon name="chevron-down" size={16} />
             </AriaButton>
           </Group>
-          <Popover className="ax-combobox__popover" offset={4} dir={dir}>
+          {/* The popover is portaled out of the provider: carry direction and mixed-text alignment explicitly. */}
+          <Popover className="ax-combobox__popover" offset={4} dir={dir} style={{ '--ax-mixed-align': mixedAlignValue(dir, mixedAlign) } as React.CSSProperties}>
             {/* dependencies: items are cached by React Aria; the highlight depends on the query. */}
             <ListBox<ComboboxItem> className="ax-combobox__list" dependencies={[query]} renderEmptyState={() => <p className="ax-combobox__empty">{labels.empty}</p>}>
               {(item) => <ComboboxOption item={item} query={query} search={search} />}
@@ -121,9 +122,9 @@ function ComboboxOption({ item, query, search }: { item: ComboboxItem; query: st
     <ListBoxItem id={item.value} textValue={item.label} className="ax-combobox__option">
       {({ isFocused, isSelected }) => (
         <span className="ax-combobox__option-inner" data-highlighted={isFocused ? '' : undefined} data-selected={isSelected ? '' : undefined}>
-          <span className="ax-combobox__option-label">
+          <AutoText className="ax-combobox__option-label">
             <Highlight text={item.label} ranges={query ? matchText(query, item.label, search).ranges : []} />
-          </span>
+          </AutoText>
           {item.description ? (
             <bdi dir="ltr" className="ax-combobox__option-desc ax-num">
               <Highlight text={item.description} ranges={query ? matchText(query, item.description, search).ranges : []} />

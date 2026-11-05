@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { normalizeDigits, parsePhoneEG, similarNames, toDisplayDigits, formatPhoneEG } from '../../arabic'
 import { nameMessages } from '../../content/messages'
-import { Button, Drawer, InlineMessage, LtrIsland, PhoneInput, TextField, useLocale } from '../../system'
+import { AutoText, Button, Drawer, InlineMessage, LtrIsland, PhoneInput, TextField, useLocale } from '../../system'
 import type { Customer } from './data'
 
 export function AddCustomerDrawer({
@@ -98,9 +98,7 @@ export function AddCustomerDrawer({
               {flagged.map((c) => (
                 <li key={c.id} className="flex flex-wrap items-center justify-between gap-2 py-2">
                   <span className="min-w-0">
-                    <span className="block t-label text-fg" dir="auto">
-                      {c.name}
-                    </span>
+                    <AutoText className="t-label text-fg">{c.name}</AutoText>
                     <span className="t-caption text-fg-2">
                       <LtrIsland className="ax-num">{toDisplayDigits(formatPhoneEG(c.phone), numerals)}</LtrIsland> · <LtrIsland mono>{c.id}</LtrIsland>
                     </span>

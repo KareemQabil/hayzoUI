@@ -80,6 +80,8 @@
   "content": [
     "short",
     "long-arabic",
+    "latin",
+    "latin-first",
     "ltr-island",
     "arabic-digits",
     "overflow"

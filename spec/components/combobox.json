@@ -115,6 +115,8 @@
   "content": [
     "short",
     "mixed",
+    "latin",
+    "latin-first",
     "diacritics",
     "arabic-digits",
     "long-arabic"
@@ -185,6 +187,14 @@
       "statement": "الاختيار يبلّغ القيمة، والمسح ثم المغادرة يبلّغ null.",
       "tests": [
         "BR-CB-03"
+      ]
+    },
+    {
+      "id": "latin-names-follow-preference",
+      "statement": "أسماء الخيارات اللاتينية أو التي تبدأ بلاتيني تُحاذى حسب mixedAlign، ونقطة «Dr.» في مكانها.",
+      "tests": [
+        "BR-MIX-01",
+        "BR-MIX-03"
       ]
     },
     {

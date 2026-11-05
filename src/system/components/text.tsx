@@ -10,6 +10,19 @@ export function VisuallyHidden({ children, id }: { children: ReactNode; id?: str
   )
 }
 
+/**
+ * Names and other free text whose script is not known in advance ("Sara Haddad", "Dr. سامي الحلبي").
+ * Direction comes from the first strong character, so punctuation lands on the right side of Latin-first
+ * names; alignment follows the provider's mixedAlign preference (CONTRACTS.md §Mixed text).
+ */
+export function AutoText({ children, as: Tag = 'span', inline = false, className, id }: { children: ReactNode; as?: 'span' | 'p' | 'h2' | 'h3' | 'dd' | 'div'; inline?: boolean; className?: string; id?: string }) {
+  return (
+    <Tag id={id} dir="auto" className={['ax-auto', inline && 'ax-auto--inline', className].filter(Boolean).join(' ')}>
+      {children}
+    </Tag>
+  )
+}
+
 /** Isolates LTR data (codes, phones, e-mail, URLs) inside RTL text without reordering its neighbours. */
 export function LtrIsland({ children, mono = false, className }: { children: ReactNode; mono?: boolean; className?: string }) {
   return (

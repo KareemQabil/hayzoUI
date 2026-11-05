@@ -1,14 +1,8 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-05T19:39:56.383Z",
+  "startedAt": "2026-11-05T20:09:21.212Z",
   "results": [
-    {
-      "id": "CT-01",
-      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
-      "status": "passed",
-      "durationMs": 6
-    },
     {
       "id": "CI-F01",
       "name": "CI-F01 أرقام لاتينية بفاصلة عشرية نقطة",
@@ -19,7 +13,7 @@
       "id": "CI-F02",
       "name": "CI-F02 أرقام عربية مشرقية وفاصلة عشرية عربية",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "CI-F03",
@@ -223,13 +217,13 @@
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "status": "passed",
-      "durationMs": 26
+      "durationMs": 38
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
       "status": "passed",
-      "durationMs": 32
+      "durationMs": 38
     },
     {
       "id": "PROP-03",
@@ -241,13 +235,13 @@
       "id": "PROP-04",
       "name": "PROP-04 an ambiguous comma is never accepted silently",
       "status": "passed",
-      "durationMs": 8
+      "durationMs": 7
     },
     {
       "id": "PROP-05",
       "name": "PROP-05 tolerance only adds matches, never removes them",
       "status": "passed",
-      "durationMs": 11
+      "durationMs": 13
     },
     {
       "id": "PROP-07",
@@ -262,6 +256,12 @@
       "durationMs": 0
     },
     {
+      "id": "CT-01",
+      "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
+      "status": "passed",
+      "durationMs": 6
+    },
+    {
       "id": "SP-01",
       "name": "SP-01 at least one spec exists",
       "status": "passed",
@@ -271,7 +271,7 @@
       "id": "SP-02",
       "name": "SP-02 badge passes the schema",
       "status": "passed",
-      "durationMs": 3
+      "durationMs": 4
     },
     {
       "id": "SP-03",
@@ -385,7 +385,7 @@
       "id": "SP-06",
       "name": "SP-06 currency-input props match the implementation",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-02",
@@ -841,7 +841,7 @@
       "id": "CMP-01",
       "name": "CMP-01 TextField reports null, not \"\", when the text is cleared",
       "status": "passed",
-      "durationMs": 40
+      "durationMs": 42
     },
     {
       "id": "CMP-02",
@@ -853,7 +853,7 @@
       "id": "CMP-03",
       "name": "CMP-03 first Escape clears the search (null) and does not reach the parent",
       "status": "passed",
-      "durationMs": 46
+      "durationMs": 53
     },
     {
       "id": "CMP-04",
@@ -865,43 +865,49 @@
       "id": "CMP-05",
       "name": "CMP-05 uncontrolled Select starts at the first option and follows the selection",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 8
     },
     {
       "id": "CMP-06",
       "name": "CMP-06 SegmentedControl arrows follow the visual direction and skip disabled options",
       "status": "passed",
-      "durationMs": 15
+      "durationMs": 18
     },
     {
       "id": "CMP-07",
       "name": "CMP-07 uncontrolled Switch toggles and reports the new state",
       "status": "passed",
-      "durationMs": 4
+      "durationMs": 5
     },
     {
       "id": "CMP-08",
       "name": "CMP-08 Tabs: ArrowLeft is next in RTL; only the selected tab has data-selected",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 6
     },
     {
       "id": "CMP-09",
       "name": "CMP-09 the toast stack takes dir and lang from the LocaleProvider",
       "status": "passed",
-      "durationMs": 3
+      "durationMs": 6
     },
     {
       "id": "CMP-10",
       "name": "CMP-10 toast timers pause on hover and errors never auto-dismiss",
       "status": "passed",
-      "durationMs": 17
+      "durationMs": 19
     },
     {
       "id": "CT-02",
       "name": "CT-02 static numbers follow the numerals and never keep an ASCII space between digit groups",
       "status": "passed",
-      "durationMs": 21
+      "durationMs": 26
+    },
+    {
+      "id": "CT-03",
+      "name": "CT-03 the provider resolves mixedAlign to a side; AutoText takes its direction from the text",
+      "status": "passed",
+      "durationMs": 8
     }
   ]
 }

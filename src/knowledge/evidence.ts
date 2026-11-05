@@ -48,6 +48,9 @@ export const BROWSER_CHECKS: BrowserCheck[] = [
   { id: 'BR-DP-02', requirement: 'مقاطع التاريخ تقبل نظام الأرقام الآخر', rule: 'R-NUM-001', component: 'date-picker', method: 'Playwright: «١٢» بأرقام لاتينية و«12» بأرقام مشرقية', expected: '2026-11-12 في الحالتين' },
   { id: 'BR-DP-03', requirement: 'السهم الأيسر لليوم التالي في RTL، والاختيار يُخزَّن ميلاديًا', rule: 'R-BIDI-001', component: 'date-picker', method: 'Playwright: فتح الهجري ← ArrowLeft ← Enter', expected: '2026-11-06' },
   { id: 'BR-DP-04', requirement: 'التقويم الهجري بأسماء الشهور العربية', rule: 'R-NUM-004', component: 'date-picker', method: 'Playwright: عنوان الشهر', expected: 'جمادى الأولى 1448 هـ' },
+  { id: 'BR-MIX-01', requirement: 'الأسماء اللاتينية في قائمة عربية تتبع تفضيل المحاذاة', rule: 'R-BIDI-001', component: 'text-field', method: 'Playwright: قائمة العملاء بالتفضيلين', expected: 'مع الواجهة: نفس حافة الأسماء العربية · مع النص: اللاتيني يسارًا' },
+  { id: 'BR-MIX-02', requirement: 'حقل نص فيه اسم لاتيني يتبع تفضيل المحاذاة', rule: 'R-BIDI-001', component: 'text-field', method: 'Playwright: text-align المحسوب في المصفوفة', expected: 'right مع الواجهة · start مع النص' },
+  { id: 'BR-MIX-03', requirement: 'الاسم الذي يبدأ بلاتيني تبقى علامات ترقيمه في مكانها', rule: 'R-BIDI-001', component: 'combobox', method: 'Playwright: مواضع D وr و. في «Dr. سامي الحلبي»', expected: 'بالترتيب واتجاه ltr' },
   { id: 'BR-MX-01', requirement: 'كل حالة × متغير محتوى في الـspec لها خلية مرسومة في المصفوفة', component: 'currency-input', method: 'Playwright: كل spec × كل محتوى في #/matrix', expected: 'لا خلايا ناقصة ولا أخطاء console' },
 ]
 
