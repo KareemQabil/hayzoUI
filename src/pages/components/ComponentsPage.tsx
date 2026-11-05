@@ -73,7 +73,7 @@ export function ComponentsPage({ id, tab }: { id: string; tab?: string }) {
         ) : null}
         {record.id === 'currency-input' ? <CurrencyInputPage tab={tab} /> : <GenericComponentPage record={record} />}
       </div>
-      <Drawer open={pickerOpen} onOpenChange={setPickerOpen} title="المكونات" closeLabel="إغلاق فهرس المكونات">
+      <Drawer open={pickerOpen} onOpenChange={setPickerOpen} title="المكونات" labels={{ close: 'إغلاق فهرس المكونات' }}>
         <ComponentNav current={record.id} onNavigate={() => setPickerOpen(false)} />
       </Drawer>
     </div>

@@ -37,7 +37,7 @@ function ProductPreview() {
       </div>
       <div className="grid gap-px bg-line xl:grid-cols-[minmax(0,22rem)_1fr]">
         <form className="flex flex-col gap-4 bg-surface p-5" onSubmit={(e) => e.preventDefault()}>
-          <TextField label="اسم العميل" value={name} onValueChange={setName} />
+          <TextField label="اسم العميل" value={name} onValueChange={(v) => setName(v ?? '')} />
           <PhoneInput label="رقم المحمول" value={phone} onValueChange={(v) => setPhone(v)} />
           <CurrencyInput label="المبلغ المستلم" value={amount} onValueChange={(v) => setAmount(v)} />
           <Select label="طريقة التحصيل" value={method} onValueChange={setMethod} options={[{ value: 'cash', label: 'نقدًا' }, { value: 'transfer', label: 'تحويل بنكي' }]} />
@@ -165,7 +165,8 @@ export function StudioPage() {
                 mono
                 value={hexDraft}
                 error={hexError}
-                onValueChange={(v) => {
+                onValueChange={(next) => {
+                  const v = next ?? ''
                   setHexDraft(v)
                   if (isHex(v)) setTheme({ customPrimary: v.toUpperCase() })
                 }}

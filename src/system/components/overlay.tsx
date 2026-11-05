@@ -23,6 +23,11 @@ function lockApp(lock: boolean) {
   }
 }
 
+export interface OverlayLabels {
+  close: string
+}
+const DEFAULT_OVERLAY_LABELS: OverlayLabels = { close: 'إغلاق' }
+
 export interface OverlayProps {
   open: boolean
   onOpenChange: (open: boolean, details: { reason: 'escape' | 'scrim' | 'close-button' | 'action' }) => void
@@ -33,13 +38,15 @@ export interface OverlayProps {
   initialFocus?: RefObject<HTMLElement | null>
   /** Fallback when the opener no longer exists. */
   returnFocus?: RefObject<HTMLElement | null>
-  closeLabel?: string
+  /** Internal strings, Arabic by default. */
+  labels?: Partial<OverlayLabels>
   size?: 'sm' | 'md' | 'lg'
   /** Prevent closing (e.g. during a busy submit). */
   dismissible?: boolean
 }
 
-function OverlayCore({ kind, open, onOpenChange, title, description, children, footer, initialFocus, returnFocus, closeLabel = 'إغلاق', size = 'md', dismissible = true }: OverlayProps & { kind: 'dialog' | 'drawer' }) {
+function OverlayCore({ kind, open, onOpenChange, title, description, children, footer, initialFocus, returnFocus, labels: labelsProp, size = 'md', dismissible = true }: OverlayProps & { kind: 'dialog' | 'drawer' }) {
+  const labels = { ...DEFAULT_OVERLAY_LABELS, ...labelsProp }
   const { dir, lang, numerals } = useLocale()
   const panelRef = useRef<HTMLDivElement>(null)
   const opener = useRef<HTMLElement | null>(null)
@@ -123,7 +130,7 @@ function OverlayCore({ kind, open, onOpenChange, title, description, children, f
               </p>
             ) : null}
           </div>
-          <IconButton icon="close" label={closeLabel} disabled={!dismissible} onClick={() => onOpenChange(false, { reason: 'close-button' })} />
+          <IconButton icon="close" label={labels.close} disabled={!dismissible} onClick={() => onOpenChange(false, { reason: 'close-button' })} />
         </header>
         <div className="ax-overlay__body">{children}</div>
         {footer ? <footer className="ax-overlay__footer">{footer}</footer> : null}
@@ -141,3 +148,7 @@ export function Dialog(props: OverlayProps) {
 export function Drawer(props: OverlayProps) {
   return <OverlayCore kind="drawer" {...props} />
 }
+
+/** Dialog and Drawer share one props contract. */
+export type DialogProps = OverlayProps
+export type DrawerProps = OverlayProps

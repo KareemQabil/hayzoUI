@@ -1,0 +1,169 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "dialog",
+  "name": "الحوار",
+  "nameEn": "Dialog",
+  "family": "overlays",
+  "maturity": "alpha",
+  "purpose": "حوار نمطي: دخول التركيز وحبسه وEscape وإعادة التركيز، والخلفية inert.",
+  "whenToUse": [
+    "مهمة قصيرة تحتاج قرارًا قبل المتابعة: إضافة عميل، تأكيد"
+  ],
+  "whenNotToUse": [
+    "محتوى طويل أو تصفح (Drawer أو صفحة)",
+    "رسالة لا تحتاج قرارًا (Toast)"
+  ],
+  "anatomy": [
+    "scrim",
+    "panel",
+    "header",
+    "title",
+    "description",
+    "close",
+    "body",
+    "footer"
+  ],
+  "props": [
+    {
+      "name": "open",
+      "type": "boolean",
+      "doc": "حالة الفتح، متحكم فيها.",
+      "required": true
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean, details: { reason: 'escape' | 'scrim' | 'close-button' | 'action' }) => void",
+      "doc": "يُستدعى بالحالة الجديدة وسبب الإغلاق (escape، scrim، close-button، action).",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "doc": "العنوان.",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "ReactNode",
+      "doc": "وصف قصير مرتبط بـaria-describedby."
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "doc": "المحتوى.",
+      "required": true
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "doc": "أزرار الإجراءات أسفل اللوحة."
+    },
+    {
+      "name": "initialFocus",
+      "type": "RefObject<HTMLElement | null>",
+      "doc": "العنصر الذي يأخذ التركيز عند الفتح. الافتراضي أول عنصر قابل للتركيز."
+    },
+    {
+      "name": "returnFocus",
+      "type": "RefObject<HTMLElement | null>",
+      "doc": "Fallback when the opener no longer exists."
+    },
+    {
+      "name": "labels",
+      "type": "Partial<OverlayLabels>",
+      "doc": "Internal strings, Arabic by default."
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "doc": "Prevent closing (e.g. during a busy submit).",
+      "default": true
+    }
+  ],
+  "states": [
+    "open",
+    "closed"
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "Tab / Shift+Tab",
+      "action": "يبقى التركيز داخل الحوار."
+    },
+    {
+      "key": "Escape",
+      "action": "يغلق ما لم يكن dismissible=false، وما لم يستهلكه حقل داخلي."
+    }
+  ],
+  "aria": {
+    "role": "dialog",
+    "labelling": "aria-labelledby → title",
+    "describedBy": [
+      "description"
+    ],
+    "notes": [
+      "aria-modal=true والخلفية inert",
+      "زر الإغلاق باسم labels.close"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "focus-trapped",
+      "statement": "التركيز يدخل عند الفتح ولا يخرج بالـTab.",
+      "tests": [
+        "BR-DLG-01",
+        "BR-DLG-02"
+      ]
+    },
+    {
+      "id": "focus-returns",
+      "statement": "الإغلاق يعيد التركيز لمن فتحه.",
+      "tests": [
+        "BR-DLG-03"
+      ]
+    },
+    {
+      "id": "field-escape-wins",
+      "statement": "Escape في حقل فيه مسودة يرجعها ولا يغلق الحوار."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "controlled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": [
+      "حوار داخل حوار"
+    ]
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original",
+    "note": "ينتقل إلى React Aria Modal خلف الـadapter (spikes/primitives)."
+  },
+  "rules": [
+    "R-A11Y-002",
+    "R-A11Y-001"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

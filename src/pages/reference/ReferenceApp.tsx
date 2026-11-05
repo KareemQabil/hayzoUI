@@ -171,7 +171,7 @@ export function ReferenceApp() {
         </Button>
       </div>
       <div className="flex flex-col gap-3 px-4 py-3 md:px-5">
-        <SearchField label="ابحث عن عميل بالاسم أو رقم الهاتف" hideLabel placeholder="اسم، أو رقم هاتف، أو CUS-0001" value={query} onValueChange={setQuery} status={`${results.length} عميل`} />
+        <SearchField label="ابحث عن عميل بالاسم أو رقم الهاتف" hideLabel placeholder="اسم، أو رقم هاتف، أو CUS-0001" value={query} onValueChange={(v) => setQuery(v ?? '')} status={`${results.length} عميل`} />
         <div className="flex flex-wrap gap-x-5 gap-y-2">
           <Switch label="متسامح مع الهمزة والتشكيل" checked={opts.hamza} onCheckedChange={(v) => setOpts((o) => ({ ...o, hamza: v }))} />
           <Switch label="تجاهل المسافة في الأسماء المركبة" checked={opts.ignoreSpaces} onCheckedChange={(v) => setOpts((o) => ({ ...o, ignoreSpaces: v }))} />
@@ -288,7 +288,7 @@ export function ReferenceApp() {
           <CurrencyInput key={formKey} ref={amountRef} label="المبلغ المستلم" size="lg" value={amount} onValueChange={(v) => setAmount(v)} min={MIN} max={MAX} showValidation={submitAttempted} />
         </div>
         <Select label="طريقة التحصيل" value={method} onValueChange={setMethod} options={(Object.keys(METHOD_LABEL) as Method[]).map((m) => ({ value: m, label: METHOD_LABEL[m] }))} />
-        <TextField label="رقم الفاتورة" optional value={reference} onValueChange={setReference} contentDir="ltr" mono placeholder="INV-2026-0148" maxLength={32} helper="إن كان التحصيل عن فاتورة محددة." />
+        <TextField label="رقم الفاتورة" optional value={reference} onValueChange={(v) => setReference(v ?? '')} contentDir="ltr" mono placeholder="INV-2026-0148" maxLength={32} helper="إن كان التحصيل عن فاتورة محددة." />
         <div className="flex flex-wrap items-center gap-3 md:col-span-2">
           <Button ref={reviewBtn} type="submit" size="lg" iconEnd="forward">
             مراجعة التحصيل

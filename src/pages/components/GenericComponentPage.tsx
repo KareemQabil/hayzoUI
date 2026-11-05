@@ -34,7 +34,7 @@ function SearchDemo() {
   const rows = NAMES.map((n) => ({ n, m: matchText(q, n, tolerant ? DEFAULT_SEARCH : STRICT_SEARCH) })).filter((x) => x.m.match)
   return (
     <div className="flex flex-col gap-4">
-      <SearchField label="ابحث عن عميل" value={q} onValueChange={setQ} status={`${rows.length} نتيجة`} />
+      <SearchField label="ابحث عن عميل" value={q} onValueChange={(v) => setQ(v ?? '')} status={`${rows.length} نتيجة`} />
       <Switch label="مطابقة متسامحة مع الهمزة والتشكيل" checked={tolerant} onCheckedChange={setTolerant} />
       <ul className="divide-y divide-line border-y border-line">
         {rows.map((r) => (
@@ -58,7 +58,7 @@ function OverlayDemo({ kind }: { kind: 'dialog' | 'drawer' }) {
         {kind === 'dialog' ? 'افتح الحوار' : 'افتح اللوح'}
       </Button>
       <C open={open} onOpenChange={setOpen} title={kind === 'dialog' ? 'إعادة تسمية الفرع' : 'تفاصيل الفرع'} description="التركيز يدخل أول حقل، وTab محبوس، وEscape يغلق ويعيد التركيز إلى الزر." footer={<><Button variant="ghost" onClick={() => setOpen(false)}>إلغاء</Button><Button onClick={() => setOpen(false)}>حفظ</Button></>}>
-        <TextField label="اسم الفرع" value={name} onValueChange={setName} placeholder="فرع مدينة نصر" />
+        <TextField label="اسم الفرع" value={name} onValueChange={(v) => setName(v ?? '')} placeholder="فرع مدينة نصر" />
       </C>
     </>
   )
@@ -124,7 +124,7 @@ function Demo({ id }: { id: string }): ReactNode {
         </div>
       )
     case 'text-field':
-      return <TextField label="اسم العميل" value={name} onValueChange={setName} helper="اكتب الاسم كما في سجلات العميل. الاتجاه يتبع أول حرف قوي." />
+      return <TextField label="اسم العميل" value={name} onValueChange={(v) => setName(v ?? '')} helper="اكتب الاسم كما في سجلات العميل. الاتجاه يتبع أول حرف قوي." />
     case 'phone-input':
       return (
         <div className="flex flex-col gap-3">

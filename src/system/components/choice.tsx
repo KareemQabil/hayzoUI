@@ -4,6 +4,7 @@
  */
 import { useId, useRef, type ReactNode } from 'react'
 import { useLocale } from '../locale'
+import { useControllable } from '../use-controllable'
 import type { Size } from './button'
 
 export interface SegmentOption<V extends string> {
@@ -17,8 +18,11 @@ export interface SegmentOption<V extends string> {
 export interface SegmentedControlProps<V extends string> {
   label: string
   hideLabel?: boolean
-  value: V
-  onValueChange: (value: V) => void
+  /** Controlled value. Omit to use defaultValue. */
+  value?: V
+  /** Initial value when uncontrolled. Defaults to the first enabled option. */
+  defaultValue?: V
+  onValueChange?: (value: V) => void
   options: SegmentOption<V>[]
   size?: Size
   fullWidth?: boolean
@@ -26,8 +30,9 @@ export interface SegmentedControlProps<V extends string> {
   wrap?: boolean
 }
 
-export function SegmentedControl<V extends string>({ label, hideLabel, value, onValueChange, options, size = 'sm', fullWidth, wrap }: SegmentedControlProps<V>) {
+export function SegmentedControl<V extends string>({ label, hideLabel, value: valueProp, defaultValue, onValueChange, options, size = 'sm', fullWidth, wrap }: SegmentedControlProps<V>) {
   const { dir } = useLocale()
+  const [value, setValue] = useControllable<V>(valueProp, defaultValue ?? (options.find((o) => !o.disabled) ?? options[0]).value, onValueChange)
   const labelId = 'seg' + useId().replace(/:/g, '')
   const refs = useRef<Array<HTMLButtonElement | null>>([])
   const enabled = options.filter((o) => !o.disabled)
@@ -35,7 +40,7 @@ export function SegmentedControl<V extends string>({ label, hideLabel, value, on
   const move = (delta: number) => {
     const i = enabled.findIndex((o) => o.value === value)
     const next = enabled[(i + delta + enabled.length) % enabled.length]
-    onValueChange(next.value)
+    setValue(next.value, undefined)
     refs.current[options.indexOf(next)]?.focus()
   }
 
@@ -78,7 +83,7 @@ export function SegmentedControl<V extends string>({ label, hideLabel, value, on
               disabled={o.disabled}
               data-state={checked ? 'checked' : 'unchecked'}
               className="ax-segmented__item"
-              onClick={() => onValueChange(o.value)}
+              onClick={() => setValue(o.value, undefined)}
             >
               {o.label}
             </button>
@@ -91,14 +96,17 @@ export function SegmentedControl<V extends string>({ label, hideLabel, value, on
 
 export interface SwitchProps {
   label: ReactNode
-  checked: boolean
-  onCheckedChange: (checked: boolean) => void
+  /** Controlled state. Omit to use defaultChecked. */
+  checked?: boolean
+  defaultChecked?: boolean
+  onCheckedChange?: (checked: boolean) => void
   description?: ReactNode
   disabled?: boolean
 }
 
-export function Switch({ label, checked, onCheckedChange, description, disabled }: SwitchProps) {
+export function Switch({ label, checked: checkedProp, defaultChecked = false, onCheckedChange, description, disabled }: SwitchProps) {
   const id = 'sw' + useId().replace(/:/g, '')
+  const [checked, setChecked] = useControllable<boolean>(checkedProp, defaultChecked, onCheckedChange)
   return (
     <div className="ax-switch-row" data-disabled={disabled ? '' : undefined}>
       <button
@@ -110,7 +118,7 @@ export function Switch({ label, checked, onCheckedChange, description, disabled 
         disabled={disabled}
         className="ax-switch"
         data-state={checked ? 'checked' : 'unchecked'}
-        onClick={() => onCheckedChange(!checked)}
+        onClick={() => setChecked(!checked, undefined)}
       >
         <span className="ax-switch__thumb" />
       </button>

@@ -1,0 +1,141 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "button",
+  "name": "الزر",
+  "nameEn": "Button",
+  "family": "actions",
+  "maturity": "alpha",
+  "purpose": "أربعة أشكال وثلاث نبرات وحالة انشغال تحرس الإرسال المكرر دون فقد التركيز.",
+  "whenToUse": [
+    "إجراء واحد واضح: حفظ، تحصيل، إرسال"
+  ],
+  "whenNotToUse": [
+    "تنقل لصفحة (رابط)",
+    "تبديل حالة (Switch)"
+  ],
+  "anatomy": [
+    "root",
+    "label",
+    "spinner"
+  ],
+  "props": [
+    {
+      "name": "variant",
+      "type": "Variant",
+      "doc": "الشكل البصري.",
+      "default": "solid"
+    },
+    {
+      "name": "tone",
+      "type": "Tone",
+      "doc": "النبرة اللونية. اللون لا يكون الإشارة الوحيدة.",
+      "default": "accent"
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "doc": "Busy state: keeps focus, blocks activation, announces `loadingLabel`.",
+      "default": false
+    },
+    {
+      "name": "loadingLabel",
+      "type": "string",
+      "doc": "النص المعروض والمعلن أثناء الانشغال، مثل «جارٍ الحفظ…»."
+    },
+    {
+      "name": "iconStart",
+      "type": "IconName",
+      "doc": "أيقونة في بداية الزر (تنعكس حسب تسجيلها)."
+    },
+    {
+      "name": "iconEnd",
+      "type": "IconName",
+      "doc": "أيقونة في نهاية الزر."
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "doc": "يملأ عرض الحاوية."
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "doc": "المحتوى.",
+      "required": true
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "Enter / Space",
+      "action": "ينفّذ الإجراء، إلا أثناء الانشغال."
+    }
+  ],
+  "aria": {
+    "role": "button",
+    "labelling": "نص الزر",
+    "notes": [
+      "أثناء الانشغال: aria-busy ويبقى قابلًا للتركيز ولا ينفّذ",
+      "disabled حقيقي فقط حين لا معنى للإجراء"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": [
+      "iconStart",
+      "iconEnd"
+    ]
+  },
+  "invariants": [
+    {
+      "id": "loading-keeps-focus",
+      "statement": "الانشغال لا يُفقد التركيز ولا يسمح بتنفيذ مزدوج.",
+      "tests": [
+        "BR-APP-02"
+      ]
+    },
+    {
+      "id": "label-is-verb",
+      "statement": "نص الزر فعل أو مصدر يصف النتيجة («تحصيل المبلغ») لا «موافق»."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-FLOW-001",
+    "R-BIDI-002"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

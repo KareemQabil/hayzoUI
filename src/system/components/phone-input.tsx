@@ -8,8 +8,11 @@ import { describedBy, Field, useFieldIds } from './field'
 
 export interface PhoneInputProps {
   label: ReactNode
-  value: string | null
-  onValueChange: (e164: string | null, result: PhoneParseResult) => void
+  /** Controlled E.164 number, or null when empty or invalid. Omit to use defaultValue. */
+  value?: string | null
+  defaultValue?: string | null
+  /** details is the full parse result (status, error code, e164). */
+  onValueChange?: (e164: string | null, details: PhoneParseResult) => void
   optional?: boolean
   helper?: ReactNode
   showValidation?: boolean
@@ -23,20 +26,22 @@ export interface PhoneInputHandle {
 }
 
 export const PhoneInput = forwardRef<PhoneInputHandle, PhoneInputProps>(function PhoneInput(
-  { label, value, onValueChange, optional, helper, showValidation, disabled, size = 'md', id },
+  { label, value, defaultValue = null, onValueChange, optional, helper, showValidation, disabled, size = 'md', id },
   ref,
 ) {
   const ids = useFieldIds(id)
   const { numerals, dir } = useLocale()
   const inputRef = useRef<HTMLInputElement>(null)
-  const [text, setText] = useState(() => (value ? toDisplayDigits(nationalPhoneEG(value), numerals) : ''))
+  const initial = value !== undefined ? value : defaultValue
+  const [text, setText] = useState(() => (initial ? toDisplayDigits(nationalPhoneEG(initial), numerals) : ''))
   const [result, setResult] = useState<PhoneParseResult>(() => parsePhoneEG(text))
   const [touched, setTouched] = useState(false)
-  const last = useRef(value)
+  const last = useRef(initial)
   useImperativeHandle(ref, () => ({ focus: () => inputRef.current?.focus() }))
 
   useEffect(() => {
-    if (value === last.current) return
+    // Only a controlled value overwrites the text, and only when it differs from what we emitted.
+    if (value === undefined || value === last.current) return
     last.current = value
     const t = value ? toDisplayDigits(nationalPhoneEG(value), numerals) : ''
     setText(t)
@@ -80,7 +85,7 @@ export const PhoneInput = forwardRef<PhoneInputHandle, PhoneInputProps>(function
             const r = parsePhoneEG(safe)
             setResult(r)
             last.current = r.e164
-            onValueChange(r.e164, r)
+            onValueChange?.(r.e164, r)
           }}
           onBlur={() => {
             setTouched(true)

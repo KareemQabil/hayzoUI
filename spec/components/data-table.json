@@ -1,0 +1,147 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "data-table",
+  "name": "جدول البيانات",
+  "nameEn": "Data Table",
+  "family": "data",
+  "maturity": "draft",
+  "purpose": "جدول دلالي بمحاذاة رقمية، وتمرير داخل حاويته فقط، وأعمدة تختفي في الشاشات الضيقة.",
+  "whenToUse": [
+    "سجلات بأعمدة للمقارنة: عملاء، فواتير، مخزون"
+  ],
+  "whenNotToUse": [
+    "أقل من 3 أعمدة (قائمة)",
+    "تحرير خلوي (غير مدعوم بعد)"
+  ],
+  "anatomy": [
+    "region",
+    "caption",
+    "row",
+    "cell",
+    "empty"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "caption",
+      "type": "ReactNode",
+      "doc": "عنوان الجدول المقروء (caption)."
+    },
+    {
+      "name": "columns",
+      "type": "Column<T>[]",
+      "doc": "الأعمدة: عنوان، خلية، محاذاة، وnowrap.",
+      "required": true
+    },
+    {
+      "name": "rows",
+      "type": "T[]",
+      "doc": "الصفوف.",
+      "required": true
+    },
+    {
+      "name": "rowKey",
+      "type": "(row: T) => string",
+      "doc": "مفتاح ثابت لكل صف.",
+      "required": true
+    },
+    {
+      "name": "selectedKey",
+      "type": "string | null",
+      "doc": "الصف المحدد (aria-selected)، أو null."
+    },
+    {
+      "name": "empty",
+      "type": "ReactNode",
+      "doc": "ما يظهر حين لا توجد صفوف."
+    },
+    {
+      "name": "maxHeight",
+      "type": "number | string",
+      "doc": "أقصى ارتفاع قبل التمرير الداخلي مع ترويسة ثابتة."
+    },
+    {
+      "name": "minWidth",
+      "type": "number",
+      "doc": "أقل عرض للجدول؛ أضيق منه يتمرر أفقيًا داخل حاويته."
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "selected",
+    "empty"
+  ],
+  "content": [
+    "short",
+    "long-arabic",
+    "ltr-island",
+    "arabic-digits",
+    "overflow"
+  ],
+  "keyboard": [
+    {
+      "key": "Tab",
+      "action": "تنقل بين العناصر التفاعلية داخل الخلايا؛ لا تنقل خلوي بالأسهم بعد."
+    }
+  ],
+  "aria": {
+    "role": "table",
+    "labelling": "aria-label من label + caption",
+    "notes": [
+      "الصف المحدد aria-selected",
+      "الأعمدة الرقمية محاذاة لنهاية الخلية"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [
+      "cell"
+    ],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "scroll-inside",
+      "statement": "أضيق من minWidth يتمرر داخل حاويته ولا يوسّع الصفحة.",
+      "tests": [
+        "BR-LAY-01"
+      ]
+    },
+    {
+      "id": "sticky-header",
+      "statement": "مع maxHeight تبقى الترويسة ظاهرة."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": [
+      "ترتيب وتصفح وتحرير مدمج",
+      "أكثر من 1000 صف دون virtualization"
+    ]
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [
+    "R-NUM-004",
+    "R-BIDI-001"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

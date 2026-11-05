@@ -1,0 +1,133 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "tabs",
+  "name": "التبويبات",
+  "nameEn": "Tabs",
+  "family": "navigation",
+  "maturity": "alpha",
+  "purpose": "تفعيل تلقائي، تركيز دوّار، وأسهم تتبع الاتجاه البصري.",
+  "whenToUse": [
+    "أقسام محتوى متوازية في نفس السياق"
+  ],
+  "whenNotToUse": [
+    "خطوات متسلسلة (Stepper)",
+    "تبديل قيمة نموذج (Segmented Control)"
+  ],
+  "anatomy": [
+    "tablist",
+    "tab",
+    "count",
+    "tabpanel"
+  ],
+  "props": [
+    {
+      "name": "idBase",
+      "type": "string",
+      "doc": "Links tabs to panels rendered by the consumer with tabPanelProps(idBase, value).",
+      "required": true
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "V",
+      "doc": "Controlled value. Omit to use defaultValue."
+    },
+    {
+      "name": "defaultValue",
+      "type": "V",
+      "doc": "Initial tab when uncontrolled. Defaults to the first item."
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: V) => void",
+      "doc": "يُستدعى عند كل تغيير من المستخدم، في الوضعين."
+    },
+    {
+      "name": "items",
+      "type": "TabItem<V>[]",
+      "doc": "العناصر بالترتيب المنطقي؛ الاتجاه البصري يتبع الـprovider.",
+      "required": true
+    },
+    {
+      "name": "variant",
+      "type": "'line' | 'contained'",
+      "doc": "الشكل البصري.",
+      "default": "line"
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "selected"
+  ],
+  "content": [
+    "short",
+    "arabic-digits",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "ArrowLeft / ArrowRight",
+      "action": "تنقل حسب الاتجاه البصري مع تفعيل تلقائي."
+    },
+    {
+      "key": "Home / End",
+      "action": "أول / آخر تبويب."
+    }
+  ],
+  "aria": {
+    "role": "tablist / tab / tabpanel",
+    "labelling": "aria-label على tablist",
+    "notes": [
+      "aria-controls وaria-labelledby عبر idBase",
+      "roving tabindex"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "arrows-follow-visual-direction",
+      "statement": "في RTL السهم الأيسر للتبويب التالي.",
+      "tests": [
+        "CMP-08"
+      ]
+    },
+    {
+      "id": "selected-is-data-selected",
+      "statement": "التبويب المحدد يحمل data-selected وaria-selected=true فقط.",
+      "tests": [
+        "CMP-08"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [],
+  "patterns": []
+}

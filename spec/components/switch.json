@@ -1,0 +1,119 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "switch",
+  "name": "المفتاح",
+  "nameEn": "Switch",
+  "family": "inputs",
+  "maturity": "alpha",
+  "purpose": "تشغيل وإيقاف فوري بدلالات role=\"switch\"، يتحرك المقبض بخصائص منطقية.",
+  "whenToUse": [
+    "تفعيل إعداد يسري فورًا"
+  ],
+  "whenNotToUse": [
+    "اختيار يحتاج زر حفظ (Checkbox)"
+  ],
+  "anatomy": [
+    "root",
+    "thumb",
+    "label",
+    "description"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "doc": "اسم الحقل الظاهر، وهو اسمه المقروء.",
+      "required": true
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "doc": "Controlled state. Omit to use defaultChecked."
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "doc": "الحالة الابتدائية في الوضع غير المتحكم فيه.",
+      "default": false
+    },
+    {
+      "name": "onCheckedChange",
+      "type": "(checked: boolean) => void",
+      "doc": "يُستدعى بالحالة الجديدة عند كل تبديل."
+    },
+    {
+      "name": "description",
+      "type": "ReactNode",
+      "doc": "وصف قصير مرتبط بـaria-describedby."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "doc": "غير متاح؛ لا يستقبل تركيزًا ولا يُرسل."
+    }
+  ],
+  "states": [
+    "default",
+    "checked",
+    "focus-visible",
+    "disabled"
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "Space / Enter",
+      "action": "يبدّل الحالة."
+    }
+  ],
+  "aria": {
+    "role": "switch",
+    "labelling": "label[for]",
+    "describedBy": [
+      "description"
+    ],
+    "notes": [
+      "aria-checked يعكس الحالة"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "thumb-follows-direction",
+      "statement": "المقبض في المفعّل يكون في نهاية المسار حسب الاتجاه (يسار في RTL)."
+    },
+    {
+      "id": "uncontrolled-toggles",
+      "statement": "دون checked يبدّل حالته الداخلية ويبلّغ onCheckedChange.",
+      "tests": [
+        "CMP-07"
+      ]
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "numerals:latn",
+      "numerals:arab",
+      "controlled",
+      "uncontrolled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original"
+  },
+  "rules": [],
+  "patterns": []
+}

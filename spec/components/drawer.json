@@ -1,0 +1,147 @@
+{
+  "$schema": "../schema/component.schema.json",
+  "id": "drawer",
+  "name": "اللوح الجانبي",
+  "nameEn": "Drawer / Sheet",
+  "family": "overlays",
+  "maturity": "alpha",
+  "purpose": "نفس نواة الحوار؛ جانبي عند نهاية السطر على الشاشات الواسعة، ولوح سفلي تحت 640px.",
+  "whenToUse": [
+    "محتوى جانبي أطول: فلاتر، تفاصيل، قائمة تنقل على الهاتف"
+  ],
+  "whenNotToUse": [
+    "قرار قصير (Dialog)"
+  ],
+  "anatomy": [
+    "scrim",
+    "panel",
+    "header",
+    "body",
+    "footer"
+  ],
+  "props": [
+    {
+      "name": "open",
+      "type": "boolean",
+      "doc": "حالة الفتح، متحكم فيها.",
+      "required": true
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean, details: { reason: 'escape' | 'scrim' | 'close-button' | 'action' }) => void",
+      "doc": "يُستدعى بالحالة الجديدة وسبب الإغلاق (escape، scrim، close-button، action).",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "doc": "العنوان.",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "ReactNode",
+      "doc": "وصف قصير مرتبط بـaria-describedby."
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "doc": "المحتوى.",
+      "required": true
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "doc": "أزرار الإجراءات أسفل اللوحة."
+    },
+    {
+      "name": "initialFocus",
+      "type": "RefObject<HTMLElement | null>",
+      "doc": "العنصر الذي يأخذ التركيز عند الفتح. الافتراضي أول عنصر قابل للتركيز."
+    },
+    {
+      "name": "returnFocus",
+      "type": "RefObject<HTMLElement | null>",
+      "doc": "Fallback when the opener no longer exists."
+    },
+    {
+      "name": "labels",
+      "type": "Partial<OverlayLabels>",
+      "doc": "Internal strings, Arabic by default."
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "doc": "الحجم. الكثافة من السمة لا من الخاصية.",
+      "default": "md"
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "doc": "Prevent closing (e.g. during a busy submit).",
+      "default": true
+    }
+  ],
+  "states": [
+    "open",
+    "closed"
+  ],
+  "content": [
+    "short",
+    "long-arabic"
+  ],
+  "keyboard": [
+    {
+      "key": "Tab / Shift+Tab",
+      "action": "يبقى التركيز داخل اللوحة."
+    },
+    {
+      "key": "Escape",
+      "action": "يغلق ما لم يكن dismissible=false."
+    }
+  ],
+  "aria": {
+    "role": "dialog",
+    "labelling": "aria-labelledby → title",
+    "notes": [
+      "يخرج من جهة بداية السطر: اليمين في RTL"
+    ]
+  },
+  "locale": {
+    "numeralsInput": "none",
+    "numeralsDisplay": "provider",
+    "ltrIslands": [],
+    "mirroredIcons": []
+  },
+  "invariants": [
+    {
+      "id": "opens-from-inline-start",
+      "statement": "اللوحة تخرج من بداية السطر: يمين الشاشة في RTL ويسارها في LTR."
+    },
+    {
+      "id": "focus-trapped",
+      "statement": "نفس عقد Dialog للتركيز."
+    }
+  ],
+  "contexts": {
+    "supported": [
+      "rtl",
+      "ltr",
+      "controlled",
+      "react-19",
+      "chromium"
+    ],
+    "unsupported": []
+  },
+  "primitive": {
+    "source": "own",
+    "relationship": "original",
+    "note": "ينتقل إلى React Aria Modal خلف الـadapter."
+  },
+  "rules": [
+    "R-A11Y-002"
+  ],
+  "patterns": [
+    "P-COLLECT-PAYMENT"
+  ]
+}

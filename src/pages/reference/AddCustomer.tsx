@@ -69,7 +69,7 @@ export function AddCustomerDrawer({
       dismissible={!busy}
       title="إضافة عميل"
       description="يُحفظ الاسم كما تكتبه تمامًا. محاكاة محلية."
-      closeLabel="إغلاق نموذج إضافة عميل"
+      labels={{ close: 'إغلاق نموذج إضافة عميل' }}
       footer={
         <>
           <Button variant="ghost" disabled={busy} onClick={() => onOpenChange(false)}>
@@ -89,7 +89,7 @@ export function AddCustomerDrawer({
           submit()
         }}
       >
-        <TextField ref={nameRef} label="اسم العميل" value={name} onValueChange={setName} error={nameError} helper="الاسم الكامل كما يظهر في سجلاته. يمكن أن يجمع العربية واللاتينية." autoComplete="off" />
+        <TextField ref={nameRef} label="اسم العميل" value={name} onValueChange={(v) => setName(v ?? '')} error={nameError} helper="الاسم الكامل كما يظهر في سجلاته. يمكن أن يجمع العربية واللاتينية." autoComplete="off" />
         <PhoneInput label="رقم المحمول" value={phone} onValueChange={(v) => setPhone(v)} showValidation={attempted} helper="محمول مصري. يقبل الأرقام العربية واللاتينية." />
         {flagged.length ? (
           <InlineMessage tone="warning" title={samePhone.length && !similar.length ? 'هذا الرقم مسجّل لعميل آخر' : 'يوجد عميل باسم مشابه'}>
