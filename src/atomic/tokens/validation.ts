@@ -200,8 +200,6 @@ function validateDefinitionValue(definition: TokenDefinition, sourceLayer: strin
         ? []
         : [issue("INVALID_TOKEN_VALUE", `Easing token "${definition.path}" must be a supported keyword or cubic-bezier() value.`, details)];
   }
-
-  return [issue("INVALID_TOKEN_VALUE", `Token "${definition.path}" has an unsupported value.`, details)];
 }
 
 function validateReferenceGraph(tokens: ReadonlyMap<string, ComposedToken>): TokenIssue[] {
