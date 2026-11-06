@@ -115,6 +115,8 @@ export interface ResolvedToken {
   readonly type: TokenType;
   readonly value: TokenValueMap[TokenType];
   readonly originalDefinition: TokenDefinition;
+  /** Layer that introduced this token before any authorized overrides. */
+  readonly originalSourceLayer: TokenSource;
   /** Winning definition after all authorized overrides. */
   readonly definition: TokenDefinition;
   /** Layer that supplied the winning definition. */
@@ -129,6 +131,7 @@ export interface ResolvedToken {
 export interface TokenTrace {
   readonly tokenPath: TokenPath;
   readonly originalDefinition: TokenDefinition;
+  readonly originalSourceLayer: TokenSource;
   readonly definition: TokenDefinition;
   readonly sourceLayer: TokenSource;
   readonly sourceLayerType: LayerType;

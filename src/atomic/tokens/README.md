@@ -97,6 +97,8 @@ Validation is conservative and intentionally does not claim to parse the complet
 | shadow | none or a restricted comma-separated box-shadow subset using px/rem/em lengths and hex/basic named colors |
 | easing | linear, ease, ease-in, ease-out, ease-in-out, or cubic-bezier() with x control points in [0, 1] |
 
+Unknown token-definition and deprecation metadata keys, as well as duplicate override permissions, are rejected. Reference cycles are reported even when they also contain incompatible types.
+
 Token paths use lowercase dot-separated segments. Segments may be lowercase words, kebab-case words, or numeric scale values. Empty segments, uppercase characters, whitespace, and other punctuation are rejected.
 
 Reference validation checks unknown targets, target type mismatches, and direct/indirect cycles. Cycle issues include the complete closed path. CSS variable generation converts dots to hyphens under a validated namespace (default hz) and rejects collisions instead of overwriting.
@@ -106,6 +108,7 @@ Reference validation checks unknown targets, target type mismatches, and direct/
 Every resolved token exposes:
 
 - originalDefinition: the first definition in the stack.
+- originalSourceLayer: the layer that originally introduced the token.
 - definition: the winning authorized definition.
 - sourceLayer / sourceLayer.type: where the winning definition came from.
 - valueSource: where the terminal literal value came from after aliases.

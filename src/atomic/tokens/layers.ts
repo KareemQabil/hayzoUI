@@ -24,6 +24,7 @@ export const LAYER_PRECEDENCE: Readonly<Record<LayerType, number>> = {
 
 export interface ComposedToken {
   readonly originalDefinition: TokenDefinition;
+  readonly originalSourceLayer: TokenSource;
   readonly definition: TokenDefinition;
   readonly sourceLayer: TokenSource;
   readonly overrideHistory: readonly TokenOverrideTrace[];
@@ -61,6 +62,7 @@ export function composeTokenLayers(layers: readonly TokenLayer[]): LayerComposit
       if (!previous) {
         composed.set(definition.path, {
           originalDefinition: definition,
+          originalSourceLayer: source,
           definition,
           sourceLayer: source,
           overrideHistory: [],
@@ -101,6 +103,7 @@ export function composeTokenLayers(layers: readonly TokenLayer[]): LayerComposit
 
       composed.set(definition.path, {
         originalDefinition: previous.originalDefinition,
+        originalSourceLayer: previous.originalSourceLayer,
         definition,
         sourceLayer: source,
         overrideHistory: attemptedHistory,

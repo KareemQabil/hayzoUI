@@ -142,6 +142,35 @@ describe("atomic token engine", () => {
     expect(result.issues.some((entry) => entry.code === "TOKEN_TYPE_MISMATCH")).toBe(true);
   });
 
+  it("reports a cycle even when an edge also has a type mismatch", () => {
+    const issues = validateTokenLayers([
+      layer("mixed-cycle", "semantic", [
+        { path: "color.a", type: "color", value: { $ref: "space.b" }, overridableBy: [] },
+        { path: "space.b", type: "dimension", value: { $ref: "color.a" }, overridableBy: [] },
+      ]),
+    ]);
+
+    expect(issues.map((entry) => entry.code)).toContain("TOKEN_TYPE_MISMATCH");
+    expect(issues.find((entry) => entry.code === "REFERENCE_CYCLE")?.referenceChain)
+      .toEqual(["color.a", "space.b", "color.a"]);
+  });
+
+  it("rejects duplicate override permissions and unknown definition metadata", () => {
+    const issues = validateTokenLayers([
+      {
+        id: "invalid-metadata",
+        type: "primitive",
+        tokens: [
+          { path: "color.duplicate", type: "color", value: "#111111", overridableBy: ["theme", "theme"] },
+          { path: "color.extra", type: "color", value: "#222222", overridableBy: [], surprise: true },
+          { path: "color.deprecated", type: "color", value: "#333333", overridableBy: [], deprecated: { since: "1.0", expires: "2.0" } },
+        ],
+      },
+    ]);
+
+    expect(issues.filter((entry) => entry.code === "INVALID_TOKEN_DEFINITION")).toHaveLength(3);
+  });
+
   it("rejects an override that changes the original token type", () => {
     const result = resolveTokens([
       layer("semantic", "semantic", [
@@ -295,6 +324,7 @@ describe("atomic token engine", () => {
     expect(css.isValid).toBe(false);
     expect(css.variables).toEqual({});
     expect(css.issues[0]?.code).toBe("CSS_VARIABLE_COLLISION");
+    expect(result.issues[0]?.sourceLayer).toBe("primitives");
   });
 
   it("exposes definition source, value source, alias chain, and override history", () => {
@@ -312,6 +342,8 @@ describe("atomic token engine", () => {
 
     const token = result.tokens["color.text.primary"];
     expect(token?.originalDefinition.value).toBe("#111111");
+    expect(token?.originalSourceLayer).toEqual({ id: "semantics", type: "semantic" });
+    expect(result.traces["color.text.primary"]?.originalSourceLayer).toEqual({ id: "semantics", type: "semantic" });
     expect(token?.sourceLayer).toEqual({ id: "brand-dark", type: "theme" });
     expect(token?.valueSource).toEqual({ id: "primitives", type: "primitive" });
     expect(token?.overrideHistory).toHaveLength(1);

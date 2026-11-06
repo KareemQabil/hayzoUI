@@ -5,6 +5,7 @@ export function createTokenTrace(token: ResolvedToken): TokenTrace {
   return {
     tokenPath: token.path,
     originalDefinition: token.originalDefinition,
+    originalSourceLayer: token.originalSourceLayer,
     definition: token.definition,
     sourceLayer: token.sourceLayer,
     sourceLayerType: token.sourceLayer.type,

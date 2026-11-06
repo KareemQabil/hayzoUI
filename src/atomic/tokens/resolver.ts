@@ -107,6 +107,7 @@ export function resolveTokens(layers: readonly TokenLayer[]): TokenResolutionRes
       type: composed.definition.type,
       value: resolvedValue.value,
       originalDefinition: composed.originalDefinition,
+      originalSourceLayer: composed.originalSourceLayer,
       definition: composed.definition,
       sourceLayer: composed.sourceLayer,
       valueSource: resolvedValue.valueSource,

@@ -94,11 +94,16 @@ function hasValueShape(type: TokenType, value: unknown): boolean {
 
 function isTokenDefinitionShape(value: unknown): value is TokenDefinition {
   if (!isRecord(value) || typeof value.path !== "string" || !isTokenType(value.type)) return false;
+  const allowedKeys = new Set(["path", "type", "value", "description", "overridableBy", "deprecated"]);
+  if (!Object.keys(value).every((key) => allowedKeys.has(key))) return false;
   if (!Array.isArray(value.overridableBy) || !value.overridableBy.every(isLayerType)) return false;
+  if (new Set(value.overridableBy).size !== value.overridableBy.length) return false;
   if (value.description !== undefined && typeof value.description !== "string") return false;
 
   if (value.deprecated !== undefined) {
     if (!isRecord(value.deprecated) || typeof value.deprecated.since !== "string" || !hasSafeText(value.deprecated.since)) return false;
+    const allowedDeprecationKeys = new Set(["since", "message", "replacement"]);
+    if (!Object.keys(value.deprecated).every((key) => allowedDeprecationKeys.has(key))) return false;
     if (value.deprecated.message !== undefined && typeof value.deprecated.message !== "string") return false;
     if (value.deprecated.replacement !== undefined && typeof value.deprecated.replacement !== "string") return false;
     if (typeof value.deprecated.replacement === "string" && !isValidTokenPath(value.deprecated.replacement)) return false;
@@ -252,7 +257,8 @@ function validateReferenceGraph(tokens: ReadonlyMap<string, ComposedToken>): Tok
     if (token) {
       const reference = getTokenReference(token.definition.value);
       const target = reference ? tokens.get(reference.$ref) : undefined;
-      if (reference && target && target.definition.type === token.definition.type) visit(reference.$ref);
+      // Traverse even mismatched edges so a cycle is reported alongside type errors.
+      if (reference && target) visit(reference.$ref);
     }
     stack.pop();
     state.set(path, 2);
@@ -360,6 +366,11 @@ export function validateTokenLayers(layers: readonly unknown[]): TokenIssue[] {
   const composition = composeTokenLayers(sanitizedLayers);
   issues.push(...composition.issues);
   issues.push(...validateReferenceGraph(composition.tokens));
-  issues.push(...validateCssVariableNames([...composition.tokens.keys()]));
+  for (const cssIssue of validateCssVariableNames([...composition.tokens.keys()])) {
+    const source = cssIssue.affectedToken === undefined
+      ? undefined
+      : composition.tokens.get(cssIssue.affectedToken)?.sourceLayer;
+    issues.push({ ...cssIssue, sourceLayer: source?.id, sourceLayerType: source?.type });
+  }
   return issues;
 }
