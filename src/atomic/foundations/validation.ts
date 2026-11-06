@@ -7,3 +7,12 @@ export function isPlainRecord(value: unknown): value is Record<string, unknown> 
   const prototype = Object.getPrototypeOf(value)
   return prototype === Object.prototype || prototype === null
 }
+
+/** Array iteration must not silently skip missing entries in runtime input. */
+export function isDenseArray(value: unknown): value is unknown[] {
+  if (!Array.isArray(value)) return false
+  for (let index = 0; index < value.length; index += 1) {
+    if (!Object.prototype.hasOwnProperty.call(value, index)) return false
+  }
+  return true
+}

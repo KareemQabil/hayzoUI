@@ -1,6 +1,6 @@
 import { validateContextValues } from '../context/validate'
 import type { Density, ExperienceContext, ExperienceProfileDefinition, VersionedReference } from '../context/types'
-import { EXACT_VERSION_PATTERN as VERSION_PATTERN, isPlainRecord as isRecord } from '../validation'
+import { EXACT_VERSION_PATTERN as VERSION_PATTERN, isDenseArray, isPlainRecord as isRecord } from '../validation'
 import type {
   BrandThemeDefinition,
   ContextPresetDefinition,
@@ -79,7 +79,7 @@ function validateBase(
 }
 
 function validateReferences(input: unknown, path: string): StyleAssetIssue[] {
-  if (!Array.isArray(input) || input.length === 0) {
+  if (!isDenseArray(input) || input.length === 0) {
     return [issue('invalid-list', path, 'Expected a non-empty array of versioned references.', input)]
   }
 
@@ -115,7 +115,7 @@ function validateReferences(input: unknown, path: string): StyleAssetIssue[] {
 }
 
 function validateStringList(input: unknown, path: string): StyleAssetIssue[] {
-  if (!Array.isArray(input) || input.length === 0) {
+  if (!isDenseArray(input) || input.length === 0) {
     return [issue('invalid-list', path, 'Expected a non-empty array of strings.', input)]
   }
   const issues: StyleAssetIssue[] = []
@@ -132,7 +132,7 @@ function validateEnumList<T extends string>(
   path: string,
   allowed: readonly T[],
 ): { issues: StyleAssetIssue[]; values: T[] } {
-  if (!Array.isArray(input) || input.length === 0) {
+  if (!isDenseArray(input) || input.length === 0) {
     return { issues: [issue('invalid-list', path, 'Expected a non-empty array.', input)], values: [] }
   }
 

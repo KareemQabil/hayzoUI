@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:hayzoui:schema:experience-plan-input:1",
+  "title": "HayzoUI Experience Plan Input v1",
+  "description": "Structural input validation; exact lookup, duplicate identities, layer version conflicts, and compatibility require resolveExperiencePlan.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile", "styleAssets", "appearanceMode"],
+  "properties": {
+    "profile": { "$ref": "urn:hayzoui:schema:experience-profile:1" },
+    "styleAssets": {
+      "type": "array",
+      "items": { "$ref": "urn:hayzoui:schema:style-asset:1" }
+    },
+    "appearanceMode": { "enum": ["light", "dark"] },
+    "preferenceLayers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "values"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$" },
+          "kind": { "enum": ["system-preferences", "user-preferences", "scope"] },
+          "values": { "$ref": "urn:hayzoui:schema:experience-profile:1#/definitions/contextOverrides" }
+        }
+      }
+    }
+  }
+}

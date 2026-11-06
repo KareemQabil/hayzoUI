@@ -1,6 +1,14 @@
 export { contextPresetToContextLayer } from './bridge'
 export { resolveExperienceContext } from './resolve'
 export type { ExperienceContextInput, ExperienceContextResult } from './resolve'
+export { resolveExperiencePlan } from './plan'
+export type {
+  ExperienceLayerRequest,
+  ExperiencePlan,
+  ExperiencePlanInput,
+  ExperiencePlanResult,
+  LayerRequestSource,
+} from './plan'
 export {
   isBrandThemeDefinition,
   isContextPresetDefinition,

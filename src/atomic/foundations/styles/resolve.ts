@@ -1,6 +1,6 @@
 import { profileToContextLayer, resolveContextLayers } from '../context/resolve'
 import { isExperienceProfileDefinition, validateExperienceProfile } from '../context/validate'
-import { isPlainRecord } from '../validation'
+import { isDenseArray, isPlainRecord } from '../validation'
 import type { ContextIssue, ContextLayer, ContextResolutionResult } from '../context/types'
 import { contextPresetToContextLayer } from './bridge'
 import {
@@ -54,7 +54,7 @@ export function resolveExperienceContext(input: ExperienceContextInput): Experie
   }
 
   const preferenceLayers = input.preferenceLayers === undefined ? [] : input.preferenceLayers
-  if (!Array.isArray(preferenceLayers)) {
+  if (!isDenseArray(preferenceLayers)) {
     issues.push({ code: 'invalid-context-layer', path: 'preferenceLayers', message: 'Expected an array of preference layers.' })
   } else {
     preferenceLayers.forEach((layer, index) => {

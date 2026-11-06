@@ -88,6 +88,10 @@ export type StyleAssetIssueCode =
   | 'unsupported-input-modality'
   | 'unsupported-appearance-mode'
   | 'invalid-context-layer'
+  | 'invalid-catalog'
+  | 'duplicate-asset'
+  | 'missing-asset'
+  | 'conflicting-layer-version'
 
 export interface StyleAssetIssue {
   code: StyleAssetIssueCode

@@ -1,5 +1,5 @@
 import { DEFAULT_EXPERIENCE_CONTEXT } from './defaults'
-import { isPlainRecord as isRecord } from '../validation'
+import { isDenseArray, isPlainRecord as isRecord } from '../validation'
 import { isPartialExperienceContext, validateContextValues } from './validate'
 import { CONTEXT_FIELD_NAMES, CONTEXT_LAYER_KINDS } from './types'
 import type {
@@ -90,10 +90,10 @@ export function resolveContextLayers(layers: readonly ContextLayer[] = []): Cont
   const seenIds = new Set<string>()
   const indexedLayers: IndexedLayer[] = []
 
-  if (!Array.isArray(layers)) {
+  if (!isDenseArray(layers)) {
     return {
       ok: false,
-      issues: [issue('invalid-object', 'layers', 'Expected an array of context layers.', layers)],
+      issues: [issue('invalid-object', 'layers', 'Expected a dense array of context layers.', layers)],
     }
   }
 

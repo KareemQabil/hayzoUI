@@ -163,3 +163,61 @@ The dedicated configuration runs in Node and avoids application plugins. The sco
 TypeScript configuration excludes the DOM library. See the dated review evidence in
 `docs/reviews/ATOMIC_FOUNDATIONS_VALIDATION.md` for commands actually run
 and dependency-install limitations during this change.
+
+## Exact asset lookup and layer request planning
+
+`resolveExperiencePlan` takes a profile and a caller-supplied, in-memory catalog.
+It validates every catalog entry, loads the three exact style identities, calls
+`resolveExperienceContext`, then collects token and recipe **lookup requests**.
+
+```ts
+import { resolveExperiencePlan } from './index'
+
+const result = resolveExperiencePlan({
+  profile,
+  styleAssets: [visualSystem, brandTheme, contextPreset],
+  appearanceMode: 'light',
+  preferenceLayers: [
+    { id: 'operator', kind: 'user-preferences', values: { motion: 'reduced' } },
+  ],
+})
+
+if (result.ok) {
+  // Exact asset identities, effective context/trace, operational requirements.
+  console.log(result.plan.assets, result.plan.context)
+  // Registry lookup requests with exact versions and all requesting sources.
+  console.log(result.plan.tokenLayers, result.plan.recipeLayers)
+}
+```
+
+- An asset identity includes kind, ID, and the exact version string. Different
+  versions may coexist; duplicate exact identities fail, even if payloads match.
+- Missing references fail. There is no latest-version fallback, SemVer range
+  resolution, network request, or global registry.
+- Every supplied catalog entry is validated, including unselected entries. To
+  isolate unrelated catalog failures, pass a smaller catalog explicitly.
+- Within token requests, and separately within recipe requests, an ID may have
+  only one requested version. Identical requests are deduplicated with all sources
+  retained; conflicting versions fail without a partial plan.
+- Request traversal is brand → visual system → context, preserving each asset's
+  reference order. Catalog reordering cannot change a successful plan. This is
+  loading order only; the token engine still owns composition precedence.
+- IDs stay unchanged. Dot-separated registry IDs are not silently converted to
+  token-engine layer IDs. The adapter must verify an explicit binding.
+- Plans own copies of selected references, requesting-source records, requirements,
+  and their modality lists. Context resolution already copies scalar values.
+  Editing source objects after resolution cannot change a completed plan.
+- Sparse arrays are rejected across foundation array contracts rather than allowing
+  array iteration to skip validation of missing entries.
+
+`schema/experience-plan-input.v1.schema.json` uses the existing profile and style
+asset schemas by their `$id`; register both before compiling it. It validates input
+structure only. Exact lookup, identity uniqueness, conflicting layer versions,
+locale canonicalization, and cross-asset compatibility require the runtime API.
+
+See `docs/architecture/EXPERIENCE_PLAN_ADAPTER_BOUNDARY.md` for the next integration
+boundary. A successful plan does not prove that referenced token/recipe payloads
+exist, render correctly, satisfy accessibility constraints, or have been loaded.
+
+The plan checkpoint's executed checks and limitations are recorded in
+`docs/reviews/EXPERIENCE_PLAN_VALIDATION_2026-11-06.md`.
