@@ -221,3 +221,9 @@ exist, render correctly, satisfy accessibility constraints, or have been loaded.
 
 The plan checkpoint's executed checks and limitations are recorded in
 `docs/reviews/EXPERIENCE_PLAN_VALIDATION_2026-11-06.md`.
+
+`src/atomic/integration` now provides `resolveExperienceTokens` for binding these
+requests to supplied exact token payloads and invoking a caller-supplied engine
+through its public API. Recipe collections remain pending. The live-engine evidence
+and independent engine limitations are recorded in
+`docs/reviews/EXPERIENCE_TOKEN_INTEGRATION_2026-11-06.md`.

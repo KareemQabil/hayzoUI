@@ -1,6 +1,8 @@
 # Experience plan → token/recipe adapter boundary
 
-Status: implemented foundation planning contract; token/recipe integration pending.
+Status: foundation planning and a pure token-engine port adapter are implemented.
+The token contract was executed against an external engine snapshot without merging
+the feature branches. Recipe collection execution and component rendering remain pending.
 
 ## What the foundation now provides
 
@@ -33,16 +35,22 @@ The adapter must not move token validation, precedence, or component behavior in
 foundation planning. Foundations must not import the token engine, React, DOM,
 CSS-in-JS, platform preferences, or a network registry.
 
-## Explicit unresolved mappings
+`src/atomic/integration` now implements the in-memory token binding stage. It accepts
+an exact versioned envelope, copies/freezes payload snapshots, validates ID bindings,
+and delegates to the supplied public `validateTokenLayers` / `resolveTokens` functions.
+See its README for success/failure types and executable contract tests.
+
+## Explicit mappings and remaining limits
 
 1. **Reference ID versus engine layer ID.** Foundation IDs allow dots. The reviewed
    token engine accepts narrower layer IDs. Preserve the original exact reference
-   and provide a verified binding to the loaded layer ID; do not replace dots with
-   hyphens implicitly because distinct IDs can then collide.
+   and provide `layerId` in the token envelope. The adapter checks it against
+   `payload.id` and rejects collisions. It never replaces dots with hyphens.
 2. **Reference version versus payload version.** The reviewed `TokenLayer` has no
    version field. A versioned registry envelope/binding must attest which exact
-   loaded payload satisfies the request. This contract does not require changing
-   the pure engine's data shape.
+   loaded payload satisfies the request. The implemented envelope supplies that
+   attestation without changing the engine's data shape. Payload origin/version
+   claims still belong to the producer; no cryptographic verification is implied.
 3. **Appearance/density mapping.** The plan records explicit appearance and the
    effective context. Current asset metadata contains static layer references;
    it does not define light/dark or density selectors for payloads. Any mapping must
@@ -72,6 +80,7 @@ Contract tests exercise the three existing illustrative POS/ERP/CRM compositions
 exact versions, duplicate identities, source provenance, request de-duplication,
 version conflicts, input mutation, frozen inputs, malformed data, and sparse arrays.
 
-This work does not merge the independent feature branches, load executable payloads,
-resolve CSS variables, implement recipes, render components, or claim production
+The adapter now binds supplied token payloads and invokes the actual resolver through
+its public port. This work does not merge the independent branches, perform network
+loading, generate CSS, implement recipe collections, render components, or certify
 accessibility. The other agent continues to own `src/atomic/tokens/`.

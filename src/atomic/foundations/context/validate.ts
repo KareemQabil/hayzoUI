@@ -5,6 +5,7 @@ import type {
   ContextValidationResult,
   ExperienceContext,
   ExperienceProfileDefinition,
+  VersionedReference,
 } from './types'
 
 const CONTEXT_FIELDS = new Set<string>(CONTEXT_FIELD_NAMES)
@@ -79,6 +80,11 @@ function validateReference(value: unknown, path: string): ContextIssue[] {
     issues.push(issue('invalid-profile-reference', `${path}.version`, 'Reference version must be semantic version x.y.z.', value.version))
   }
   return issues
+}
+
+/** Public guard for exact registry references used by downstream adapters. */
+export function isVersionedReference(input: unknown): input is VersionedReference {
+  return validateReference(input, 'reference').length === 0
 }
 
 /**

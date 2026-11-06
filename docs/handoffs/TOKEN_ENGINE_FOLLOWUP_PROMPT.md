@@ -6,26 +6,28 @@ Copy everything below into the agent working on the token engine.
 
 Continue HayzoUI's Atomic Token Engine on `feat/atomic-token-engine`.
 
-Review target: `b0c0874a6aeab344c3170cb1941718e6310fb361`.
+Review target: `b4fbf969fc77ad028d64d8c22cbed79ea5f1722d`.
 Read `docs/architecture/ATOMIC_LAYERED_ARCHITECTURE.md` completely before editing.
 If your branch has advanced, inspect the diff and reproduce which findings still apply.
 
-Your existing **27 tests passed** in an isolated Node/Vitest harness. Additional
+Your current **29 tests passed** against that exact exported source tree. The four
+characterization probes from the earlier review still reproduce the same behavior.
+Five live adapter contract cases also pass through your public API. Additional
 review reproduced the following issues. Fix these before expanding the engine.
+
+The exhaustive-switch TypeScript error is now fixed. The strict consumer check
+using your real public namespace with the integration port passes. Keep that fix;
+do not reopen it as an outstanding task.
 
 ## Required fixes
 
-1. **Strict TypeScript error.** `src/atomic/tokens/validation.ts` reports
-   `Property 'path' does not exist on type 'never'` in the exhaustive switch fallback.
-   Fix the typing without disabling strict checks or adding suppression comments.
-
-2. **Malformed top-level input throws.** `validateTokenLayers(null)` and
+1. **Malformed top-level input throws.** `validateTokenLayers(null)` and
    `resolveTokens({})` throw `TypeError` at runtime. Make the public validation and
    resolution boundaries accept unknown JSON input and return structured diagnostics.
    Add regressions for null, objects, strings, malformed layers, and malformed definitions.
    Preserve the no-partial-output failure contract.
 
-3. **Resolved values alias input data.** Resolve a dimension token using
+2. **Resolved values alias input data.** Resolve a dimension token using
    `const value = { value: 16, unit: 'px' }`; modifying `value.value = 99` afterwards
    changes the already-returned result. Implement detached snapshot semantics for
    resolved values and provenance. Do not mutate or freeze caller-owned objects.
@@ -33,14 +35,14 @@ review reproduced the following issues. Fix these before expanding the engine.
    snapshots are frozen. Ensure traces and generated CSS remain consistent with
    the resolved snapshot after source data is edited.
 
-4. **Generic font fallback loses its CSS semantics.**
+3. **Generic font fallback loses its CSS semantics.**
    `['Noto Sans Arabic', 'sans-serif']` currently becomes
    `"Noto Sans Arabic", "sans-serif"`. Preserve generic fallback semantics. Make
    the representation explicit if literal and generic family names need distinction;
    document any API change. Retain escaping for actual family names and reject
    unsafe strings. Test a real named font followed by an actual generic fallback.
 
-5. **Invalid shadow blur is accepted and emitted.**
+4. **Invalid shadow blur is accepted and emitted.**
    `0px 0px -2px #000` currently validates. Reject negative blur radius while
    retaining valid negative offsets and negative spread. Add meaningful cases for
    the documented supported grammar, including multi-shadow lists and inset.
@@ -68,13 +70,23 @@ review reproduced the following issues. Fix these before expanding the engine.
 
 ## Verification and delivery
 
-Run scoped tests and strict typechecking. Attempt repository checks when dependencies
-permit. The repository's frozen-lockfile install was blocked by this environment's
-minimum-release-age policy for `jsdom@31.0.0`, `lucide-react@1.69.0`, and
-`undici@8.12.4`. **Do not disable or relax that policy.** Pure TypeScript tests were
-successfully run using a separate harness with only Vitest, TypeScript, Ajv, and Node
-types; no repository dependency changes were made. Clearly distinguish isolated
-checks from the complete application's build and test suite.
+Run scoped tests and strict typechecking. Repository installation now passes the
+environment policy without exceptions. The foundation branch also fixes the legacy
+DatePicker's undeclared direct `@internationalized/date` dependency using the exact
+already-locked version; do not duplicate this unrelated fix on your engine branch.
+
+`src/atomic/integration` on the foundation branch now exports `resolveExperienceTokens`.
+It injects your public validation/resolution functions and binds exact versioned
+payload envelopes. It does not import or modify your implementation. Its copied,
+frozen input snapshots protect callers from source aliasing, but **that does not fix
+the standalone engine's snapshot contract**: the original aliasing probe still passes.
+Keep the standalone correction in scope. The light/dark, provenance, forbidden
+override, and unknown-reference adapter contract tests do not certify the font/shadow
+behavior or establish that the standalone snapshot/input contracts are fixed.
+
+See `docs/reviews/EXPERIENCE_TOKEN_INTEGRATION_2026-11-06.md` on the foundation branch
+for exact review evidence and remaining limits. Clearly separate your branch checks
+from the foundation application's full suite and build.
 
 Commit and push the finished work to `feat/atomic-token-engine`. Finish with:
 

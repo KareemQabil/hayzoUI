@@ -113,6 +113,10 @@ if (result.ok) {
 - Invalid layers fail the entire resolution. They are never silently skipped.
 - Inputs are not mutated.
 
+`isVersionedReference` is the public guard for exact registry ID/version pairs. It
+reuses profile-reference validation so downstream adapters need not duplicate those
+rules or import private foundation implementation files.
+
 ## Relationship to the master plan
 
 This module contributes to L0 contracts and the T0 foundations. It is not a replacement for the existing `src/system/locale.tsx` provider. A future React adapter can consume the resolved snapshot and expose it through context without moving these rules into React.
