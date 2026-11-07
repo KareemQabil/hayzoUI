@@ -36,6 +36,17 @@
 - **Known limits:** no focus management or ARIA bindings (platform/Claude owns those); keyboard events are abstract structs, not DOM events. Grid boundary returns clamped same position.
 - **Evidence level:** unit-verified only; no browser, screen-reader or physical-keyboard claim.
 
+## Module 4 — Typeahead (TA)
+
+- **Commit:** [`440814e2581ce7f46347c5c60cdf61a05c99c492`](https://github.com/KareemQabil/hayzoUI/commit/440814e2581ce7f46347c5c60cdf61a05c99c492).
+- **Public contract:** exact `createTypeahead({ timeoutMs?, now })` with `search` and `reset`.
+- **Tests:** 35/35 passing, including 650 fixed-seed property runs, Arabic hamza/taa marbuta/alef maqsura/diacritic/tatweel/digit tolerance, RTL-invariant cycling, timeout, reset, caching, mixed script and a 100,000-label budget.
+- **Typecheck:** repo standard `tsc -p tsconfig.json --noEmit` passed. Additional `--noUncheckedIndexedAccess` compilation of imported source is currently blocked by pre-existing errors inside read-only `src/arabic/search.ts` lines 78–80; **no errors were reported in the owned Typeahead source or tests**.
+- **Budget:** first 100,000-label index+query asserted under 5,000 ms (generous CI bound); subsequent searches scan cached normalized labels O(n), no repeated normalization.
+- **Invariants:** injected clock, no timers, no mutation, normalization from `src/arabic/search`, repeated-character cycling and accumulating prefixes, explicit key scope.
+- **Known limits:** reindex when keys array identity changes or on `reset()`; altered labels with identical keys array require reset; caller must pass post-IME committed characters.
+- **Evidence level:** unit-verified only.
+
 ## Contract change requests
 
 **SE-CR-01 (pending, non-breaking option):** The public `isSelected(state, key)` and `selectedKeys(state, scope)` APIs cannot know whether a key is disabled when `state.selected === 'all'`. Consider an *optional* disabled-key context for these selectors, or explicitly ban raw `all` outside reducer-managed state; no public signature has been changed. Claude may safely consume the published exact signatures now.
