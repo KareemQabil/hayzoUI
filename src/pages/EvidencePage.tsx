@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { BROWSER_CHECKS, BROWSER_RUN, NOT_CHECKED, UNIT_RUN, automatedFor, liveFixtureResults, type AutomatedState } from '../knowledge/evidence'
-import { Badge, DataTable, InlineMessage, SegmentedControl } from '../system'
+import { Badge, DataTable, Digits, InlineMessage, Literal, Prose, SegmentedControl } from '../system'
 import { N, Section } from '../app/ui'
 import { visibleInput } from './components/currency/shared'
 
@@ -26,12 +26,13 @@ function RunMeta({ run, label }: { run: typeof UNIT_RUN; label: string }) {
   const passed = run.results.filter((r) => r.status === 'passed').length
   return (
     <div className="grid gap-px overflow-hidden rounded-[var(--ax-radius-surface)] border border-line-2 bg-line sm:grid-cols-4">
-      {[
-        ['الأداة', run.tool],
-        ['البيئة', run.environment],
-        ['التاريخ', run.startedAt?.replace('T', ' ').slice(0, 16) + ' UTC'],
-        ['النتيجة', `${passed} / ${run.results.length} نجح`],
-      ].map(([k, v]) => (
+      {/* Tool and environment are names and versions, shown as recorded; date and result follow the numerals. */}
+      {([
+        ['الأداة', <Literal>{run.tool}</Literal>],
+        ['البيئة', <Literal>{run.environment}</Literal>],
+        ['التاريخ', <Digits>{(run.startedAt?.replace('T', ' ').slice(0, 16) ?? '') + ' UTC'}</Digits>],
+        ['النتيجة', <Digits>{`${passed} / ${run.results.length} نجح`}</Digits>],
+      ] as const).map(([k, v]) => (
         <div key={k} className="flex flex-col gap-1 bg-surface px-4 py-3">
           <span className="t-caption text-fg-2">{k}</span>
           <bdi className="t-label text-fg">{v}</bdi>
@@ -97,17 +98,18 @@ export function EvidencePage() {
           maxHeight={640}
           columns={[
             { key: 'id', header: 'المعرف', nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-mono">{r.fixture.id}</bdi> },
-            { key: 'q', header: 'المتطلب', cell: (r) => r.fixture.requirement },
+            { key: 'q', header: 'المتطلب', cell: (r) => <Prose>{r.fixture.requirement}</Prose> },
             { key: 'r', header: 'القاعدة', nowrap: true, cell: (r) => <a href={`#/rules/${r.fixture.rule}`} className="ax-mono text-link hover:underline"><bdi dir="ltr">{r.fixture.rule}</bdi></a> },
-            { key: 'in', header: 'المدخل', nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-mono">{visibleInput(r.fixture.input) || '""'}</bdi> },
-            { key: 'e', header: 'المتوقع', cell: (r) => <bdi className="ax-mono text-[12.5px] text-fg-2">{r.fixture.expected}</bdi> },
-            { key: 'a', header: 'الفعلي الآن', cell: (r) => <bdi className="ax-mono text-[12.5px]">{r.actual}</bdi> },
+            // Input, expected and actual are exact strings compared by the test: shown as written, never localized.
+            { key: 'in', header: 'المدخل', nowrap: true, cell: (r) => <Literal dir="ltr"><span className="ax-mono">{visibleInput(r.fixture.input) || '""'}</span></Literal> },
+            { key: 'e', header: 'المتوقع', cell: (r) => <Literal dir="auto"><span className="ax-mono text-[12.5px] text-fg-2">{r.fixture.expected}</span></Literal> },
+            { key: 'a', header: 'الفعلي الآن', cell: (r) => <Literal dir="auto"><span className="ax-mono text-[12.5px]">{r.actual}</span></Literal> },
             { key: 'd', header: 'عرض', cell: (r) => <Badge tone={r.pass ? 'success' : 'danger'}>{r.pass ? 'نجح' : 'فشل'}</Badge> },
             { key: 'u', header: 'آلي', cell: (r) => <AutomatedBadge state={r.automated} /> },
           ]}
         />
         <p className="mt-3 t-caption text-fg-3">
-          الحالات نفسها تُشغَّل في <bdi dir="ltr" className="ax-mono">src/arabic/arabic.test.ts</bdi> مع ست خصائص تحويلية (metamorphic) بـ٥٠٠ حالة لكل منها وبذرة ثابتة 20260314.
+          الحالات نفسها تُشغَّل في <bdi dir="ltr" className="ax-mono">src/arabic/arabic.test.ts</bdi> مع ست خصائص تحويلية (metamorphic) بـ<Digits>500</Digits> حالة لكل منها وبذرة ثابتة <Literal>20260314</Literal>.
         </p>
       </Section>
 
@@ -122,9 +124,9 @@ export function EvidencePage() {
           minWidth={860}
           columns={[
             { key: 'id', header: 'المعرف', nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-mono">{r.b.id}</bdi> },
-            { key: 'q', header: 'المتطلب', cell: (r) => r.b.requirement },
-            { key: 'm', header: 'الطريقة', cell: (r) => <span className="text-fg-2">{r.b.method}</span> },
-            { key: 'e', header: 'المتوقع', cell: (r) => <span className="text-fg-2">{r.b.expected}</span> },
+            { key: 'q', header: 'المتطلب', cell: (r) => <Prose>{r.b.requirement}</Prose> },
+            { key: 'm', header: 'الطريقة', cell: (r) => <span className="text-fg-2"><Prose>{r.b.method}</Prose></span> },
+            { key: 'e', header: 'المتوقع', cell: (r) => <span className="text-fg-2"><Prose>{r.b.expected}</Prose></span> },
             { key: 's', header: 'النتيجة', cell: (r) => <AutomatedBadge state={r.s} /> },
           ]}
         />
@@ -134,7 +136,7 @@ export function EvidencePage() {
         <ul className="flex flex-col divide-y divide-line border-y border-line">
           {NOT_CHECKED.map((n) => (
             <li key={n} className="t-body py-3 text-fg">
-              {n}
+              <Prose>{n}</Prose>
             </li>
           ))}
         </ul>

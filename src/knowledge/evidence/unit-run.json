@@ -1,913 +1,2780 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-05T20:09:21.212Z",
+  "startedAt": "2026-11-07T17:50:38.370Z",
+  "commit": "c9e7f54",
   "results": [
     {
       "id": "CI-F01",
       "name": "CI-F01 أرقام لاتينية بفاصلة عشرية نقطة",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 3
+      "durationMs": 5
     },
     {
       "id": "CI-F02",
       "name": "CI-F02 أرقام عربية مشرقية وفاصلة عشرية عربية",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "CI-F03",
       "name": "CI-F03 أرقام فارسية (عربية ممتدة)",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F04",
       "name": "CI-F04 الفاصلة الملتبسة لا تُفسَّر بصمت ويُقترح المعنى",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "CI-F05",
       "name": "CI-F05 أكثر من فاصلة عشرية مرفوض",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F06",
       "name": "CI-F06 الحقل الفارغ قيمته null وليس صفرًا",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F07",
       "name": "CI-F07 كسور أكثر من وحدة العملة الصغرى مرفوضة دون تقريب",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "CI-F08",
       "name": "CI-F08 الدينار الكويتي يقبل ثلاثة أرقام عشرية",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F09",
       "name": "CI-F09 فاصل آلاف لاتيني مع نقطة عشرية يبقى ملتبسًا مع اقتراح",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "CI-F10",
       "name": "CI-F10 فاصل الآلاف العربي «٬» في موضع صحيح",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F11",
       "name": "CI-F11 فاصل آلاف في غير موضعه مرفوض",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F12",
       "name": "CI-F12 السالب مرفوض حين لا يسمح به الحقل",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F13",
       "name": "CI-F13 رمز العملة داخل الحقل لا يُحذف بصمت",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F14",
       "name": "CI-F14 علامات الاتجاه الخفية الملصوقة لا تغيّر القيمة",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F15",
       "name": "CI-F15 تحويل دقيق للوحدات الصغرى دون عمليات عشرية عائمة",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F16",
       "name": "CI-F16 فاصلة عشرية في البداية",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F17",
       "name": "CI-F17 أكثر من ١٢ رقمًا قبل الفاصلة مرفوض",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CI-F18",
       "name": "CI-F18 علامة السالب بعد الرقم (كتابة من اليمين) مرفوضة بوضوح",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "FM-F01",
       "name": "FM-F01 العرض بأرقام لاتينية لا يغيّر القيمة المخزنة",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "FM-F02",
       "name": "FM-F02 العرض بأرقام عربية: الفاصلة العشرية «٫» هي العلامة الوحيدة الشبيهة بالفاصلة، والآلاف بمسافة رفيعة",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "FM-F03",
       "name": "FM-F03 رقم الهاتف بأرقام عربية لا يحتوي مسافة عادية تقلب ترتيب المجموعات",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "FM-F04",
       "name": "FM-F04 الصيغة الدولية للهاتف بأرقام عربية بلا مسافات عادية",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "PH-F01",
       "name": "PH-F01 رقم محمول مصري محلي",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "PH-F02",
       "name": "PH-F02 رقم محمول بأرقام عربية",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "PH-F03",
       "name": "PH-F03 رقم دولي بمسافات",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "PH-F04",
       "name": "PH-F04 رقم ناقص",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "PH-F05",
       "name": "PH-F05 بادئة غير مدعومة",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "PH-F06",
       "name": "PH-F06 حرف لاتيني يشبه الرقم ١",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SR-F06",
       "name": "SR-F06 البحث برقم الهاتف المحلي يجد الرقم المخزن بالصيغة الدولية، بأي أرقام",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SR-F07",
       "name": "SR-F07 رقمان فقط أو نص فيه حروف لا يُعامل كرقم هاتف",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SR-F01",
       "name": "SR-F01 البحث المتسامح: «احمد» يجد «أحمد Khaled»",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SR-F02",
       "name": "SR-F02 الوضع الصارم يميّز الهمزة",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SR-F03",
       "name": "SR-F03 الجزء اللاتيني من الاسم المختلط لا يتأثر بحالة الأحرف",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SR-F04",
       "name": "SR-F04 التشكيل لا يمنع المطابقة ويبقى معروضًا",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SR-F05",
       "name": "SR-F05 الأسماء المتشابهة تُعرض كتنبيه ولا تُدمج",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "PROP-01",
       "name": "PROP-01 same value in any numerals (metamorphic)",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 38
+      "durationMs": 42
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 38
+      "durationMs": 76
     },
     {
       "id": "PROP-03",
       "name": "PROP-03 parse is deterministic and canonical is a fixed point",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 14
     },
     {
       "id": "PROP-04",
       "name": "PROP-04 an ambiguous comma is never accepted silently",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 16
     },
     {
       "id": "PROP-05",
       "name": "PROP-05 tolerance only adds matches, never removes them",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 13
+      "durationMs": 19
     },
     {
       "id": "PROP-07",
       "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 52
+      "durationMs": 116
     },
     {
       "id": "PROP-06",
       "name": "PROP-06 search normalization never changes the stored name",
+      "file": "src/arabic/arabic.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "CT-01",
       "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
+      "file": "src/content/messages.test.ts",
       "status": "passed",
-      "durationMs": 6
+      "durationMs": 10
+    },
+    {
+      "id": "an",
+      "name": "an incompatible density blocks export until the experience is reset",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 235
+    },
+    {
+      "id": "direction",
+      "name": "direction overrides preserve the selected locale instead of inferring a new language",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 30
+    },
+    {
+      "id": "switching",
+      "name": "switching to CRM exports the actual English/default experience plan",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 33
+    },
+    {
+      "id": "the",
+      "name": "the published checkpoint is derived from the recorded run and follows the numerals preference",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 27
     },
     {
       "id": "SP-01",
       "name": "SP-01 at least one spec exists",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 2
     },
     {
       "id": "SP-02",
       "name": "SP-02 badge passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 4
+      "durationMs": 5
     },
     {
       "id": "SP-03",
       "name": "SP-03 badge uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 2
     },
     {
       "id": "SP-04",
       "name": "SP-04 badge follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-05",
       "name": "SP-05 badge references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 badge props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 button passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-03",
       "name": "SP-03 button uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-04",
       "name": "SP-04 button follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-05",
       "name": "SP-05 button references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-06",
       "name": "SP-06 button props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 combobox passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-03",
       "name": "SP-03 combobox uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-04",
       "name": "SP-04 combobox follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 combobox references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-06",
       "name": "SP-06 combobox props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 currency-input passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-03",
       "name": "SP-03 currency-input uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-04",
       "name": "SP-04 currency-input follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 currency-input references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-06",
       "name": "SP-06 currency-input props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 data-table passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 data-table uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-04",
       "name": "SP-04 data-table follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 data-table references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 data-table props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 date-picker passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 date-picker uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-04",
       "name": "SP-04 date-picker follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 date-picker references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 date-picker props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 dialog passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 dialog uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 dialog follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 dialog references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 dialog props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 drawer passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 drawer uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 drawer follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 drawer references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 drawer props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 empty-state passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 empty-state uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 empty-state follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 empty-state references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 empty-state props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 icon-button passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 icon-button uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 icon-button follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 icon-button references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 icon-button props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 inline-message passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 inline-message uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 inline-message follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 inline-message references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 inline-message props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 phone-input passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 phone-input uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-04",
       "name": "SP-04 phone-input follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 phone-input references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 phone-input props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 search-field passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 search-field uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 search-field follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 search-field references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 search-field props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-02",
       "name": "SP-02 segmented-control passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 segmented-control uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 segmented-control follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 segmented-control references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 segmented-control props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 select passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 select uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 select follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 select references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 select props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-02",
       "name": "SP-02 switch passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 switch uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 switch follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 switch references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 switch props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-02",
       "name": "SP-02 tabs passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 tabs uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 tabs follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 tabs references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 tabs props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 text-field passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 text-field uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-04",
       "name": "SP-04 text-field follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 text-field references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 text-field props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-02",
       "name": "SP-02 toast passes the schema",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 toast uses only closed vocabularies",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-04",
       "name": "SP-04 toast follows the prop naming contract",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-05",
       "name": "SP-05 toast references existing records and tests",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
       "durationMs": 0
     },
     {
       "id": "SP-06",
       "name": "SP-06 toast props match the implementation",
+      "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "CMP-01",
       "name": "CMP-01 TextField reports null, not \"\", when the text is cleared",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 42
+      "durationMs": 52
     },
     {
       "id": "CMP-02",
       "name": "CMP-02 empty TextField follows the UI direction; typed text resolves automatically",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
       "durationMs": 6
     },
     {
       "id": "CMP-03",
       "name": "CMP-03 first Escape clears the search (null) and does not reach the parent",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 53
+      "durationMs": 61
     },
     {
       "id": "CMP-04",
       "name": "CMP-04 uncontrolled PhoneInput keeps typed text and reports E.164",
-      "status": "passed",
-      "durationMs": 6
-    },
-    {
-      "id": "CMP-05",
-      "name": "CMP-05 uncontrolled Select starts at the first option and follows the selection",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
       "durationMs": 8
     },
     {
+      "id": "CMP-05",
+      "name": "CMP-05 uncontrolled Select starts at the first option and follows the selection",
+      "file": "src/system/components.test.tsx",
+      "status": "passed",
+      "durationMs": 12
+    },
+    {
       "id": "CMP-06",
       "name": "CMP-06 SegmentedControl arrows follow the visual direction and skip disabled options",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 18
+      "durationMs": 24
     },
     {
       "id": "CMP-07",
       "name": "CMP-07 uncontrolled Switch toggles and reports the new state",
-      "status": "passed",
-      "durationMs": 5
-    },
-    {
-      "id": "CMP-08",
-      "name": "CMP-08 Tabs: ArrowLeft is next in RTL; only the selected tab has data-selected",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
       "durationMs": 6
     },
     {
+      "id": "CMP-08",
+      "name": "CMP-08 Tabs: ArrowLeft is next in RTL; only the selected tab has data-selected",
+      "file": "src/system/components.test.tsx",
+      "status": "passed",
+      "durationMs": 8
+    },
+    {
       "id": "CMP-09",
       "name": "CMP-09 the toast stack takes dir and lang from the LocaleProvider",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
       "durationMs": 6
     },
     {
       "id": "CMP-10",
       "name": "CMP-10 toast timers pause on hover and errors never auto-dismiss",
+      "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 19
+      "durationMs": 24
     },
     {
       "id": "CT-02",
       "name": "CT-02 static numbers follow the numerals and never keep an ASCII space between digit groups",
+      "file": "src/system/locale.test.tsx",
       "status": "passed",
-      "durationMs": 26
+      "durationMs": 38
     },
     {
       "id": "CT-03",
       "name": "CT-03 the provider resolves mixedAlign to a side; AutoText takes its direction from the text",
+      "file": "src/system/locale.test.tsx",
+      "status": "passed",
+      "durationMs": 16
+    },
+    {
+      "id": "CT-04",
+      "name": "CT-04 localizeNumbers follows the numerals, from either source system, and keeps Latin names and codes",
+      "file": "src/system/locale.test.tsx",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CT-05",
+      "name": "CT-05 Prose keeps «…» literals as written and marks them for the numerals oracle",
+      "file": "src/system/locale.test.tsx",
       "status": "passed",
       "durationMs": 8
+    },
+    {
+      "id": "accepts",
+      "name": "accepts exact version 0.1.0 in runtime and schemas",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 14
+    },
+    {
+      "id": "accepts",
+      "name": "accepts exact version 1.2.3-beta.0 in runtime and schemas",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "accepts",
+      "name": "accepts exact version 1.0.0-0 in runtime and schemas",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "accepts",
+      "name": "accepts exact version 1.0.0-alpha-1 in runtime and schemas",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "accepts",
+      "name": "accepts exact version 1.0.0+build.001 in runtime and schemas",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version 01.0.0",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version 1.0.0-01",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version 1.0.0-.",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version 1.0.0-a..b",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version 1.0.0+.",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version 1.0.0+",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version ^1.0.0",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-exact or malformed version latest",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "schemas",
+      "name": "schemas and runtime reject whitespace-only names and malformed time zones",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "inherited",
+      "name": "inherited values cannot bypass validation and become context overrides",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "plain",
+      "name": "plain records without prototypes remain supported",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "unknown",
+      "name": "unknown is a valid current modality hint, never an advertised input capability",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "bridge",
+      "name": "bridge layers own a copy of their scalar environment values",
+      "file": "src/atomic/foundations/foundations.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "binds",
+      "name": "binds registry IDs explicitly and delegates the complete stack to the engine",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 46
+    },
+    {
+      "id": "token",
+      "name": "token catalog order does not affect successful binding",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 36
+    },
+    {
+      "id": "missing",
+      "name": "missing payload versions fail before invoking the engine",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "exact",
+      "name": "exact catalog versions may coexist without selecting the latest",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "duplicate",
+      "name": "duplicate exact envelopes are rejected rather than using catalog order",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "payload",
+      "name": "payload ID must match its explicit binding",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "two",
+      "name": "two reference IDs cannot silently collapse into the same engine layer ID",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "base",
+      "name": "base layers participate in engine layer ID collision checks",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "planning",
+      "name": "planning errors are returned unchanged without invoking the engine",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "engine",
+      "name": "engine validation diagnostics are preserved and resolution is not attempted",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "engine",
+      "name": "engine resolution failures expose diagnostics without partial bindings",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "exceptions",
+      "name": "exceptions in engine.validateTokenLayers are reported without partial output",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "exceptions",
+      "name": "exceptions in engine.resolveTokens are reported without partial output",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "inconsistent",
+      "name": "inconsistent resolver responses fail: {\"isValid\":true,\"issues\":[{\"code\":\"ERROR\"}],\"ids\":[]}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "inconsistent",
+      "name": "inconsistent resolver responses fail: {\"isValid\":false,\"issues\":[],\"ids\":[]}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "inconsistent",
+      "name": "inconsistent resolver responses fail: null",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "a",
+      "name": "a malformed validator response cannot bypass validation",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "source",
+      "name": "source edits cannot change the frozen layer snapshots sent to the engine",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "frozen",
+      "name": "frozen caller-owned layers also work",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed catalogs: null",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed catalogs: {}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed catalogs: \"assets\"",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed catalogs: undefined",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed base layers: null",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed base layers: {}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed base layers: undefined",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid envelopes: {\"version\":\"^1.0.0\"}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid envelopes: {\"kind\":\"recipe-layer\"}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid envelopes: {\"layerId\":\"\"}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid envelopes: {\"extra\":true}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid envelopes: {\"payload\":null}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-JSON payload data: NaN",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-JSON payload data: Infinity",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-JSON payload data: 1n",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-JSON payload data: () => null",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-JSON payload data: Sat Nov 07 2026 20:50:41 GMT+0300 (Arabian Standard Time)",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-JSON payload data: undefined",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects non-JSON payload data: undefined",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "cyclic",
+      "name": "cyclic payloads fail without calling the engine",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "accessor",
+      "name": "accessor payloads are rejected without invoking getters",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "undefined",
+      "name": "undefined optional object properties follow JSON omission semantics",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "shared",
+      "name": "shared noncyclic references are supported and copied safely",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "unknown",
+      "name": "unknown input keys and missing engine functions cannot silently pass",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "the",
+      "name": "the shared public reference guard rejects ranges and unknown properties",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "envelope",
+      "name": "envelope schema rejects invalid metadata: {\"version\":\"latest\"}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "envelope",
+      "name": "envelope schema rejects invalid metadata: {\"kind\":\"recipe-layer\"}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "envelope",
+      "name": "envelope schema rejects invalid metadata: {\"extra\":true}",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "envelope",
+      "name": "envelope schema does not pretend to validate token payload semantics",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "payload",
+      "name": "payload nesting limits return diagnostics rather than overflowing the stack",
+      "file": "src/atomic/integration/experience-tokens.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "real",
+      "name": "real engine resolves light POS values, aliases, and provenance through the adapter",
+      "file": "src/atomic/integration/token-engine.contract.test.ts",
+      "status": "passed",
+      "durationMs": 78
+    },
+    {
+      "id": "real",
+      "name": "real engine resolves dark POS values, aliases, and provenance through the adapter",
+      "file": "src/atomic/integration/token-engine.contract.test.ts",
+      "status": "passed",
+      "durationMs": 10
+    },
+    {
+      "id": "real",
+      "name": "real engine forbidden-override diagnostics survive the adapter boundary",
+      "file": "src/atomic/integration/token-engine.contract.test.ts",
+      "status": "passed",
+      "durationMs": 6
+    },
+    {
+      "id": "real",
+      "name": "real engine reports an unknown reference in an explicit base layer",
+      "file": "src/atomic/integration/token-engine.contract.test.ts",
+      "status": "passed",
+      "durationMs": 9
+    },
+    {
+      "id": "source",
+      "name": "source payload mutation cannot alter real resolved dimensions",
+      "file": "src/atomic/integration/token-engine.contract.test.ts",
+      "status": "passed",
+      "durationMs": 8
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for null instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for undefined instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for an object instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a string instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a number instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for an array of null layers instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a layer with null tokens instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a layer with object tokens instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a null definition instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a string definition instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a definition without a value instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for null deprecated metadata instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a non-array overridableBy instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a null dimension value instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a reference with a numeric target instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "validation",
+      "name": "validation returns diagnostics for a non-string path instead of throwing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for null",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for undefined",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for an object",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a string",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a number",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for an array of null layers",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a layer with null tokens",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a layer with object tokens",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a null definition",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a string definition",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a definition without a value",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for null deprecated metadata",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a non-array overridableBy",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a null dimension value",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a reference with a numeric target",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolution",
+      "name": "resolution returns an invalid result with no partial output for a non-string path",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "names",
+      "name": "names the top-level problem for non-array input",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "an",
+      "name": "an empty stack is valid and resolves nothing",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "editing",
+      "name": "editing a dimension after resolution does not change the returned value, trace, or CSS",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "detaches",
+      "name": "detaches arrays, references, override lists, and deprecation metadata",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "returns",
+      "name": "returns deeply frozen results and leaves caller-owned objects unfrozen",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "invalid",
+      "name": "invalid results are frozen snapshots too",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "keeps",
+      "name": "keeps a named font quoted and a generic fallback unquoted",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "still",
+      "name": "still escapes quotes and backslashes in real family names",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "does",
+      "name": "does not treat a family name that merely contains a generic keyword as generic",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects unsafe family strings",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "rejects",
+      "name": "rejects a negative blur radius",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects a negative blur inside a multi-shadow list",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "accepts",
+      "name": "accepts negative offsets, negative spread, inset, unitless zero, and multi-shadow lists",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects shapes outside the documented grammar",
+      "file": "src/atomic/tokens/review-regressions.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "resolves",
+      "name": "resolves a primitive token and exposes its source",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 8
+    },
+    {
+      "id": "applies",
+      "name": "applies the documented precedence independent of cross-type input order",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "accepts",
+      "name": "accepts an override explicitly permitted by the original definition",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects an override that the original definition did not authorize",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "resolves",
+      "name": "resolves direct and multi-level aliases",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "reports",
+      "name": "reports unknown references",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "detects",
+      "name": "detects a direct reference cycle and reports the complete path",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "detects",
+      "name": "detects an indirect reference cycle and reports every node",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects references whose target token has a different type",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "reports",
+      "name": "reports a cycle even when an edge also has a type mismatch",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects duplicate override permissions and unknown definition metadata",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects an override that changes the original token type",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "validates",
+      "name": "validates unsupported types, dimensions, durations, opacity, font weights, and integers",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects values outside the documented CSS subset",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validates",
+      "name": "validates every supported token value family",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "accepts",
+      "name": "accepts inclusive numeric boundaries",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects duplicate layer identifiers",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects unsupported layer types",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects duplicate token paths within one layer",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "generates",
+      "name": "generates stable CSS custom properties for resolved values",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "detects",
+      "name": "detects CSS variable naming collisions instead of overwriting",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "exposes",
+      "name": "exposes definition source, value source, alias chain, and override history",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "produces",
+      "name": "produces deterministic output for identical input",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 6
+    },
+    {
+      "id": "does",
+      "name": "does not mutate source layers or token definitions",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "composes",
+      "name": "composes light and dark themes over the same semantic foundation",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "applies",
+      "name": "applies POS touch context overrides to shared component aliases",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "composes",
+      "name": "composes visual-system and context layers independently",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "rejects",
+      "name": "rejects CSS namespace values outside lowercase kebab-case",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid token path segments",
+      "file": "src/atomic/tokens/token-engine.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-01",
+      "name": "CTX-01 accepts the complete Arabic-first project default context",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "CTX-02",
+      "name": "CTX-02 permits a partial layer without inventing missing values",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-03",
+      "name": "CTX-03 rejects a missing required field in a complete context",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-04",
+      "name": "CTX-04 rejects malformed BCP 47 locale tags",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-05",
+      "name": "CTX-05 does not accept locale as a substitute for explicit direction",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-06",
+      "name": "CTX-06 validates numbering systems and calendars independently",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-07",
+      "name": "CTX-07 validates region, time-zone shape, and ISO weekday range",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-08",
+      "name": "CTX-08 rejects unknown context fields instead of silently accepting typos",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-09",
+      "name": "CTX-09 validates every enumerated preference",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-10",
+      "name": "CTX-10 accepts the Arabic POS touch reference profile",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-11",
+      "name": "CTX-11 accepts the Arabic ERP compact and English CRM reference profiles",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-12",
+      "name": "CTX-12 rejects unversioned or malformed profile references",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-13",
+      "name": "CTX-13 rejects unrecognized profile properties",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-14",
+      "name": "CTX-14 profile references remain separate from context values",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-15",
+      "name": "CTX-15 returns explicit library defaults when no layers are supplied",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-16",
+      "name": "CTX-16 does not infer RTL from an Arabic locale",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-17",
+      "name": "CTX-17 applies layers in fixed precedence, not caller array order",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-18",
+      "name": "CTX-18 applies later layers of the same kind in caller order",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-19",
+      "name": "CTX-19 records the winning source and complete override history",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-20",
+      "name": "CTX-20 rejects duplicate layer identifiers atomically",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-21",
+      "name": "CTX-21 fails the whole resolution when any layer is invalid",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-22",
+      "name": "CTX-22 returns a provenance record for defaults and optional fields",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-23",
+      "name": "CTX-23 does not mutate layer inputs or default values",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-24",
+      "name": "CTX-24 produces stable output for the same inputs",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "CTX-25",
+      "name": "CTX-25 composes independent Arabic POS and ERP profiles without component forks",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-26",
+      "name": "CTX-26 JSON Schema accepts the proposed profile examples",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "CTX-27",
+      "name": "CTX-27 JSON Schema rejects unknown profile and context properties",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "CTX-28",
+      "name": "CTX-28 rejects unknown context layer properties",
+      "file": "src/atomic/foundations/context/context.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "resolves",
+      "name": "resolves exact assets for undefined",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 23
+    },
+    {
+      "id": "resolves",
+      "name": "resolves exact assets for undefined",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "resolves",
+      "name": "resolves exact assets for undefined",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "catalog",
+      "name": "catalog order cannot change selected assets or the resulting request order",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "chooses",
+      "name": "chooses the exact requested version when several versions coexist",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "never",
+      "name": "never substitutes an available newer version for a missing exact version",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "reports",
+      "name": "reports all missing selected identities",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "asset",
+      "name": "asset kind is part of identity, even when id and version coincide",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "wrong-kind",
+      "name": "wrong-kind assets do not satisfy a profile reference",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "duplicate",
+      "name": "duplicate exact identities fail instead of making selection depend on catalog order",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "deduplicates",
+      "name": "deduplicates identical layer requests while retaining every requesting source",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "rejects",
+      "name": "rejects conflicting exact versions in tokenLayers with provenance",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects conflicting exact versions in recipeLayers with provenance",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "token",
+      "name": "token and recipe requests have independent namespaces",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "a",
+      "name": "a context preset may omit its recipe layer references",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "passes",
+      "name": "passes runtime preferences through effective context compatibility validation",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "retains",
+      "name": "retains context provenance after successful scope overrides",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "actual",
+      "name": "actual appearance mode must be supported by the selected assets",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validates",
+      "name": "validates unselected catalog entries as well as selected entries",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "invalid",
+      "name": "invalid catalog input returns diagnostics: null",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "invalid",
+      "name": "invalid catalog input returns diagnostics: {}",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "invalid",
+      "name": "invalid catalog input returns diagnostics: \"assets\"",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "invalid",
+      "name": "invalid catalog input returns diagnostics: null",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "invalid",
+      "name": "invalid catalog input returns diagnostics: {\"kind\":\"unknown\"}",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "invalid",
+      "name": "invalid catalog input returns diagnostics: undefined",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects malformed profiles and unknown plan fields without throwing",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "schema",
+      "name": "schema and runtime reject structurally invalid plan inputs: {\"appearanceMode\":\"automatic\"}",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "schema",
+      "name": "schema and runtime reject structurally invalid plan inputs: {\"styleAssets\":[null]}",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "schema",
+      "name": "schema and runtime reject structurally invalid plan inputs: {\"preferenceLayers\":[{\"id\":\"extra\",\"kind\":\"context-preset\",\"values\":{}}]}",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "schema",
+      "name": "schema and runtime reject structurally invalid plan inputs: {\"preferenceLayers\":[{\"id\":\"operator\",\"kind\":\"user-preferences\",\"values\":{\"direciton\":\"rtl\"}}]}",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "schema",
+      "name": "schema acceptance alone does not prove reference availability",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "source",
+      "name": "source mutation cannot change a completed plan or another resolution",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "frozen",
+      "name": "frozen source graphs can be resolved without modification",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "sparse",
+      "name": "sparse arrays never bypass foundation validation",
+      "file": "src/atomic/foundations/styles/plan.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "resolves",
+      "name": "resolves the effective environment of undefined",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 9
+    },
+    {
+      "id": "resolves",
+      "name": "resolves the effective environment of undefined",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "resolves",
+      "name": "resolves the effective environment of undefined",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "validates",
+      "name": "validates density after scoped preferences and fails atomically",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "validates",
+      "name": "validates modality after user preferences",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "checks",
+      "name": "checks library defaults when neither profile nor preset specifies density",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "checks",
+      "name": "checks the actual appearance selection, beyond a nonempty mode intersection",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "preserves",
+      "name": "preserves context precedence and records the effective winning source",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "reports",
+      "name": "reports all malformed assets without accessing invalid properties",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid preference layers: null",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid preference layers: {}",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid preference layers: null",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid preference layers: {\"id\":\"extra-preset\",\"kind\":\"context-preset\",\"values\":{}}",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "rejects",
+      "name": "rejects invalid composition objects and absent appearance without throwing",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "requires",
+      "name": "requires exact asset identities and versions",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "does",
+      "name": "does not mutate inputs and produces detached deterministic context snapshots",
+      "file": "src/atomic/foundations/styles/resolve.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "STYLE-01",
+      "name": "STYLE-01 validates visual systems, brand themes, and context presets",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "STYLE-02",
+      "name": "STYLE-02 JSON Schema accepts all proposed style assets",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "STYLE-03",
+      "name": "STYLE-03 rejects unknown fields and malformed references",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-04",
+      "name": "STYLE-04 rejects duplicate references",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-05",
+      "name": "STYLE-05 rejects context defaults that violate preset capabilities",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-06",
+      "name": "STYLE-06 accepts the Arabic POS profile composition",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-07",
+      "name": "STYLE-07 accepts the Arabic ERP profile composition",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-08",
+      "name": "STYLE-08 accepts the English CRM profile composition",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-09",
+      "name": "STYLE-09 detects a mismatched asset version or identifier",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "STYLE-10",
+      "name": "STYLE-10 detects incompatible appearance modes",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-11",
+      "name": "STYLE-11 detects unsupported profile density and input modality",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
+    },
+    {
+      "id": "STYLE-12",
+      "name": "STYLE-12 converts context preset and profile into separate context layers",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "STYLE-13",
+      "name": "STYLE-13 validates the minimum target and keyboard support contract",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "STYLE-14",
+      "name": "STYLE-14 JSON Schema rejects unsupported touch and keyboard requirements",
+      "file": "src/atomic/foundations/styles/style.test.ts",
+      "status": "passed",
+      "durationMs": 0
     }
   ]
 }

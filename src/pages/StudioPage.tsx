@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { fonts, primaryPresets, typeScale, type FontKey } from '../tokens/reference'
 import { evaluateContrast, exportTheme, primaryBase, semanticColors, type Radius } from '../tokens/theme'
 import { isHex } from '../tokens/color'
-import { AutoText,
+import { AutoText, Digits,
   AmountText,
   Badge,
   Button,
@@ -82,10 +82,10 @@ const SPECIMEN: Record<keyof typeof typeScale, string> = {
   h2: 'سجل التحصيلات لشهر مارس',
   h3: 'مُحَمَّد السيد — فرع مدينة نصر',
   bodyLg: 'يقبل الحقل الأرقام العربية واللاتينية، ويرفض الفاصلة الملتبسة بدل أن يخمّن معناها.',
-  body: 'سدّد أحمد Khaled مبلغ ١ ٢٣٤٫٥٠ ج.م عن الفاتورة INV-2026-0148 بتاريخ ١٤ مارس.',
+  body: 'سدّد أحمد Khaled مبلغ 1,234.50 ج.م عن الفاتورة INV-2026-0148 بتاريخ 14 مارس.',
   label: 'رقم المحمول',
   table: 'عبد الرحمن بن عبد الله الشمري · 1,234.50',
-  caption: 'آخر تحديث منذ ٣ دقائق · بيانات اصطناعية',
+  caption: 'آخر تحديث منذ 3 دقائق · بيانات اصطناعية',
   code: "parseAmount('١٢٣٤٫٥٠', { currency: 'EGP' })",
 }
 
@@ -108,7 +108,7 @@ function TypeSpecimen() {
                 {SPECIMEN[k]}
               </code>
             ) : (
-              <span className={cls + ' text-fg'}>{SPECIMEN[k]}</span>
+              <span className={cls + ' text-fg'}><Digits>{SPECIMEN[k]}</Digits></span>
             )}
           </li>
         )
@@ -245,8 +245,8 @@ export function StudioPage() {
               columns={[
                 { key: 'p', header: 'الاستخدام', cell: (r) => r.purpose },
                 { key: 'pair', header: 'الزوج', cell: (r) => <span className="flex items-center gap-2"><Swatch color={r.fgValue} /><Swatch color={r.bgValue} /><bdi dir="ltr" className="ax-mono text-[12px] text-fg-2">{r.fg} / {r.bg}</bdi></span> },
-                { key: 'r', header: 'النسبة', numeric: true, nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-num">{r.ratio.toFixed(2)}:1</bdi> },
-                { key: 'm', header: 'الحد', numeric: true, nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-num text-fg-2">{r.min}:1</bdi> },
+                { key: 'r', header: 'النسبة', numeric: true, nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-num"><N>{`${r.ratio.toFixed(2)}:1`}</N></bdi> },
+                { key: 'm', header: 'الحد', numeric: true, nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-num text-fg-2"><N>{`${r.min}:1`}</N></bdi> },
                 { key: 's', header: 'النتيجة', cell: (r) => <Badge tone={r.passes ? 'success' : 'danger'}>{r.passes ? 'يحقق الحد' : 'أقل من الحد'}</Badge> },
               ]}
             />

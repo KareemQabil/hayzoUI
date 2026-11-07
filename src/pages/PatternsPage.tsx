@@ -13,6 +13,7 @@ import {
   tabPanelProps,
   TextField,
   type CurrencyInputHandle,
+  Prose,
 } from '../system'
 import { navigate } from '../app/router'
 import { N, RefLink, Section } from '../app/ui'
@@ -193,8 +194,8 @@ function Detail({ id }: { id: string }) {
               <ul className="flex flex-col divide-y divide-line border-y border-line">
                 {p.decisions.map((d) => (
                   <li key={d.question} className="grid gap-2 py-4 md:grid-cols-[1fr_1.3fr_auto] md:gap-6">
-                    <span className="t-label text-fg">{d.question}</span>
-                    <span className="t-body text-fg-2">{d.decision}</span>
+                    <span className="t-label text-fg"><Prose>{d.question}</Prose></span>
+                    <span className="t-body text-fg-2"><Prose>{d.decision}</Prose></span>
                     {d.rule ? <a href={`#/rules/${d.rule}`} className="ax-mono t-caption text-link hover:underline"><bdi dir="ltr">{d.rule}</bdi></a> : null}
                   </li>
                 ))}

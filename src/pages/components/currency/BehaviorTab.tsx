@@ -1,4 +1,4 @@
-import { CurrencyInput, DataTable, Kbd } from '../../../system'
+import { CurrencyInput, DataTable, Kbd, Literal } from '../../../system'
 import { N, PreviewFrame, Section } from '../../../app/ui'
 
 const ACCEPT = [
@@ -61,7 +61,7 @@ export function BehaviorTab() {
           rowKey={(r) => r.k}
           minWidth={560}
           columns={[
-            { key: 'k', header: 'المحرف', width: '9rem', cell: (r) => <bdi dir="ltr" className="font-mono text-[15px]">{r.k}</bdi> },
+            { key: 'k', header: 'المحرف', width: '9rem', cell: (r) => <Literal dir="ltr"><span className="font-mono text-[15px]">{r.k}</span></Literal> },
             { key: 'd', header: 'الوصف', cell: (r) => r.d },
             { key: 'v', header: 'المعاملة', cell: (r) => <span className={r.v.startsWith('مرفوض') ? 'text-danger' : 'text-fg'}>{r.v}</span> },
           ]}

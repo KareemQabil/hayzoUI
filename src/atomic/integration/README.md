@@ -105,16 +105,14 @@ pnpm exec tsc --noEmit --project src/atomic/integration/tsconfig.json
 pnpm exec vitest run src/atomic/integration/experience-tokens.test.ts
 ```
 
-To run against a reviewed engine commit without merging branches, export its exact
-`src/atomic/tokens` tree to a temporary directory, then provide the absolute public
-entry path:
+The engine is merged on `main`, so the five engine contract tests run by default
+against `src/atomic/tokens/index.ts` (still loaded through its public entry, never
+a mock). To check another engine snapshot instead, export its exact
+`src/atomic/tokens` tree to a temporary directory and pass the absolute entry path:
 
 ```sh
 HAYZO_TOKEN_ENGINE_ENTRY=/absolute/snapshot/src/atomic/tokens/index.ts pnpm exec vitest run src/atomic/integration/token-engine.contract.test.ts
-```
-
-Without that explicit path, the five external-engine tests are skipped. They are
-never replaced by a mock. The default unit file uses a small port implementation
+``` The default unit file uses a small port implementation
 to exercise adapter failures independently of engine behavior.
 
 Executed commands, counts, source SHA, and remaining engine findings are in

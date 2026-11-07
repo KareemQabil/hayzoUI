@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import { expect, test } from 'vitest'
 import { resolveExperienceTokens } from './index'
 import type { ExperienceTokenInput, TokenEnginePort } from './index'
@@ -13,8 +14,9 @@ interface ResolutionView {
   tokens: Record<string, { value: unknown; sourceLayer: { id: string }; originalSourceLayer: { id: string } }>
 }
 
-const entry = process.env.HAYZO_TOKEN_ENGINE_ENTRY
-const engineTest = test.skipIf(!entry)
+// Default: the engine merged into this repository. Override with an absolute entry to test another snapshot.
+const entry = process.env.HAYZO_TOKEN_ENGINE_ENTRY ?? fileURLToPath(new URL('../tokens/index.ts', import.meta.url))
+const engineTest = test
 
 async function fixture(appearance: 'light' | 'dark' = 'light') {
   // An explicit public entry from an unchanged external snapshot; no production dependency.

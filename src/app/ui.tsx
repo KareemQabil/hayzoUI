@@ -3,7 +3,7 @@ import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
 import { Badge, Icon, IconButton, LocaleProvider, useLocale, useSettings, useToast, type Dir, type IconName } from '../system'
 import { getComponent, getPattern, getRule, MATURITY, RELATIONSHIP_LABEL, type Maturity, type Relationship } from '../knowledge'
 import { buildThemeVars, type Density, type Mode } from '../tokens/theme'
-import { toDisplayDigits, type DisplayNumerals } from '../arabic'
+import { localizeNumbers, toDisplayDigits, type DisplayNumerals } from '../arabic'
 
 export async function copyText(text: string): Promise<boolean> {
   try {
@@ -129,7 +129,7 @@ export function PreviewFrame({ dir, mode, density, numerals, children, className
 
 export function N({ children }: { children: string | number }) {
   const { numerals } = useLocale()
-  return <>{toDisplayDigits(String(children), numerals)}</>
+  return <>{localizeNumbers(String(children), numerals)}</>
 }
 
 export function useMediaQuery(q: string) {

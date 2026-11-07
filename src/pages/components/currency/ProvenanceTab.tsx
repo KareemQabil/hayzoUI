@@ -1,6 +1,6 @@
 import { automatedFor, liveFixtureResults } from '../../../knowledge/evidence'
 import { getComponent, getRule, MATURITY } from '../../../knowledge'
-import { Badge, DataTable, Icon } from '../../../system'
+import { Badge, DataTable, Icon, Literal, Prose } from '../../../system'
 import { RefLink, RelationshipBadge, Section } from '../../../app/ui'
 import { visibleInput } from './shared'
 import { AutomatedBadge } from '../../EvidencePage'
@@ -82,7 +82,7 @@ export function ProvenanceTab() {
                   <a href={`#/rules/${id}`} className="t-label text-fg hover:underline">
                     {r.title}
                   </a>
-                  <span className="block t-caption text-fg-2">{r.problem}</span>
+                  <span className="block t-caption text-fg-2"><Prose>{r.problem}</Prose></span>
                 </span>
               </li>
             )
@@ -104,8 +104,8 @@ export function ProvenanceTab() {
           columns={[
             { key: 'id', header: 'المعرف', nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-mono">{r.fixture.id}</bdi> },
             { key: 'q', header: 'المتطلب', cell: (r) => r.fixture.requirement },
-            { key: 'in', header: 'المدخل', nowrap: true, cell: (r) => <bdi dir="ltr" className="ax-mono">{visibleInput(r.fixture.input) || '""'}</bdi> },
-            { key: 'a', header: 'الفعلي', cell: (r) => <bdi className="ax-mono text-[12.5px]">{r.actual}</bdi> },
+            { key: 'in', header: 'المدخل', nowrap: true, cell: (r) => <Literal dir="ltr"><span className="ax-mono">{visibleInput(r.fixture.input) || '""'}</span></Literal> },
+            { key: 'a', header: 'الفعلي', cell: (r) => <Literal dir="auto"><span className="ax-mono text-[12.5px]">{r.actual}</span></Literal> },
             { key: 'd', header: 'الآن', cell: (r) => <Badge tone={r.pass ? 'success' : 'danger'}>{r.pass ? 'نجح' : 'فشل'}</Badge> },
             { key: 'u', header: 'آلي', cell: (r) => <AutomatedBadge state={r.automated} /> },
           ]}

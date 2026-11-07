@@ -13,6 +13,8 @@ import {
   Highlight,
   IconButton,
   InlineMessage,
+  NumberText,
+  Prose,
   LtrIsland,
   PhoneInput,
   SearchField,
@@ -157,7 +159,7 @@ function Demo({ id }: { id: string }): ReactNode {
         <DataTable
           label="أصناف المخزون"
           rows={[
-            { sku: 'SKU-AB-001', name: 'زيت زيتون بكر ممتاز ١ لتر', qty: '42', price: '389.00' },
+            { sku: 'SKU-AB-001', name: 'زيت زيتون بكر ممتاز 1 لتر', qty: '42', price: '389.00' },
             { sku: 'SKU-AB-014', name: 'عسل نحل سدر', qty: '7', price: '1,250.00' },
             { sku: 'SKU-CD-220', name: 'تمر مجدول فاخر — علبة هدايا كبيرة بحجم عائلي', qty: '120', price: '95.50' },
           ]}
@@ -165,9 +167,9 @@ function Demo({ id }: { id: string }): ReactNode {
           minWidth={560}
           columns={[
             { key: 's', header: 'الرمز', nowrap: true, cell: (r) => <LtrIsland mono>{r.sku}</LtrIsland> },
-            { key: 'n', header: 'الصنف', cell: (r) => r.name },
-            { key: 'q', header: 'الكمية', numeric: true, cell: (r) => r.qty },
-            { key: 'p', header: 'السعر (ج.م)', numeric: true, cell: (r) => <bdi dir="ltr">{r.price}</bdi> },
+            { key: 'n', header: 'الصنف', cell: (r) => <Digits>{r.name}</Digits> },
+            { key: 'q', header: 'الكمية', numeric: true, cell: (r) => <NumberText>{r.qty}</NumberText> },
+            { key: 'p', header: 'السعر (ج.م)', numeric: true, cell: (r) => <bdi dir="ltr"><NumberText>{r.price}</NumberText></bdi> },
           ]}
         />
       )
@@ -223,7 +225,7 @@ export function GenericComponentPage({ record }: { record: ComponentRecord }) {
             {record.nameEn}
           </bdi>
         </div>
-        <p className="t-body-lg mt-3 max-w-[62ch] text-fg-2">{record.summary}</p>
+        <p className="t-body-lg mt-3 max-w-[62ch] text-fg-2"><Prose>{record.summary}</Prose></p>
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <MaturityBadge maturity={record.maturity} />
           <RelationshipBadge relationship={record.relationship} />
@@ -232,7 +234,7 @@ export function GenericComponentPage({ record }: { record: ComponentRecord }) {
       </header>
       {planned ? (
         <InlineMessage tone="info" title="غير مطبّق بعد" live="off">
-          هذا المكوّن في الفهرس لتوضيح بنية المنظومة فقط. لا يوجد كود ولا معاينة. {record.primitive}
+          هذا المكوّن في الفهرس لتوضيح بنية المنظومة فقط. لا يوجد كود ولا معاينة. <Prose>{record.primitive}</Prose>
         </InlineMessage>
       ) : (
         <>
@@ -248,7 +250,7 @@ export function GenericComponentPage({ record }: { record: ComponentRecord }) {
               items={[
                 ['التشريح', <span className="flex flex-wrap gap-1.5">{record.anatomy.map((a) => <Badge key={a} variant="outline"><bdi>{a}</bdi></Badge>)}</span>],
                 ['الحالات', <span className="flex flex-wrap gap-1.5">{record.states.map((a) => <Badge key={a}><bdi>{a}</bdi></Badge>)}</span>],
-                ['الـprimitive', record.primitive],
+                ['الـprimitive', <Prose>{record.primitive}</Prose>],
                 ['التطبيق', <bdi dir="ltr" className="ax-mono text-fg-2">{record.implementation}</bdi>],
                 ['يُستخدم في', record.usedIn.join('، ')],
               ]}
@@ -282,7 +284,7 @@ export function GenericComponentPage({ record }: { record: ComponentRecord }) {
           {record.limitations.length ? (
             <div>
               <p className="t-label mb-2 text-fg">قيود معروفة</p>
-              <ul className="list-disc ps-5 t-body text-fg-2">{record.limitations.map((l) => <li key={l}>{l}</li>)}</ul>
+              <ul className="list-disc ps-5 t-body text-fg-2">{record.limitations.map((l) => <li key={l}><Prose>{l}</Prose></li>)}</ul>
             </div>
           ) : null}
         </div>

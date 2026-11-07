@@ -1,4 +1,5 @@
 import { forwardRef, type ReactNode } from 'react'
+import { localizeNumbers } from '../../arabic'
 import { Icon } from '../icons'
 import { useLocale } from '../locale'
 import { textOrNull, useControllable } from '../use-controllable'
@@ -16,7 +17,7 @@ export interface SearchFieldProps {
   onValueChange?: (value: string | null) => void
   placeholder?: string
   size?: Size
-  /** Live status announced politely, e.g. "٣ نتائج". */
+  /** Live status announced politely, e.g. "3 نتائج". A string is shown in the provider's numerals. */
   status?: ReactNode
   /** Internal strings, Arabic by default. */
   labels?: Partial<SearchFieldLabels>
@@ -36,7 +37,7 @@ export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(functi
   ref,
 ) {
   const ids = useFieldIds(id)
-  const { dir } = useLocale()
+  const { dir, numerals } = useLocale()
   const labels = { ...DEFAULT_LABELS, ...labelsProp }
   const [current, setValue] = useControllable<string | null>(valueProp === '' ? null : valueProp, defaultValue === '' ? null : defaultValue, onValueChange)
   const value = current ?? ''
@@ -85,7 +86,7 @@ export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(functi
       </div>
       {status !== undefined ? (
         <p className="ax-sr" id={ids.helper} aria-live="polite">
-          {status}
+          {typeof status === 'string' ? localizeNumbers(status, numerals) : status}
         </p>
       ) : null}
     </div>

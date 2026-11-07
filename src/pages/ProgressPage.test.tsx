@@ -37,3 +37,22 @@ test('switching to CRM exports the actual English/default experience plan', () =
     context: expect.objectContaining({ locale: 'en-US', direction: 'ltr', density: 'default' }),
   }))
 })
+
+test('the published checkpoint is derived from the recorded run and follows the numerals preference', async () => {
+  const { summarizeRun, formatRunDate } = await import('./ProgressPage')
+  const { UNIT_RUN } = await import('../knowledge/evidence')
+  const { LocaleProvider } = await import('../system')
+  const run = summarizeRun(UNIT_RUN)
+  expect(run.passed).toBe(UNIT_RUN.results.filter((r) => r.status === 'passed').length)
+  expect(run.engine).toBeGreaterThan(0)
+  expect(formatRunDate('2026-11-07T10:00:00Z', 'latn')).toBe('7 نوفمبر 2026')
+  expect(formatRunDate('2026-11-07T10:00:00Z', 'arab')).toBe('٧ نوفمبر ٢٠٢٦')
+
+  const { container } = render(<LocaleProvider numerals="latn"><ProgressPage /></LocaleProvider>)
+  expect(container.querySelector('[data-evidence="passed"]')?.textContent).toBe(String(run.passed))
+  expect(container.querySelector('[data-evidence="date"]')?.textContent).toMatch(/^\d{1,2} \S+ \d{4}$/)
+  cleanup()
+  const arab = render(<LocaleProvider numerals="arab"><ProgressPage /></LocaleProvider>).container
+  expect(arab.querySelector('[data-evidence="passed"]')?.textContent).toMatch(/^[٠-٩]+$/)
+  expect(arab.querySelector('[data-evidence="date"]')?.textContent).not.toMatch(/[0-9]/)
+})

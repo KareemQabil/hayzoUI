@@ -1,6 +1,6 @@
 import { getComponent, getPattern, getResource, REVIEW, RULES } from '../knowledge'
 import { automatedFor } from '../knowledge/evidence'
-import { Badge, Button } from '../system'
+import { Badge, Button, Prose } from '../system'
 import { navigate } from '../app/router'
 import { RefLink, useMediaQuery } from '../app/ui'
 import { AutomatedBadge } from './EvidencePage'
@@ -19,24 +19,24 @@ function RuleDetail({ id }: { id: string }) {
       <dl className="mt-8 flex flex-col gap-6">
         <div>
           <dt className="t-eyebrow mb-1">المشكلة</dt>
-          <dd className="t-body-lg text-fg">{r.problem}</dd>
+          <dd className="t-body-lg text-fg"><Prose>{r.problem}</Prose></dd>
         </div>
         <div className="border-s-2 border-action ps-5">
           <dt className="t-eyebrow mb-1">التوصية</dt>
-          <dd className="t-body-lg font-medium text-fg">{r.recommendation}</dd>
+          <dd className="t-body-lg font-medium text-fg"><Prose>{r.recommendation}</Prose></dd>
         </div>
         <div>
           <dt className="t-eyebrow mb-1">السبب</dt>
-          <dd className="t-body text-fg-2">{r.rationale}</dd>
+          <dd className="t-body text-fg-2"><Prose>{r.rationale}</Prose></dd>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
             <dt className="t-eyebrow mb-1">السياق</dt>
-            <dd className="t-body text-fg-2">{r.context}</dd>
+            <dd className="t-body text-fg-2"><Prose>{r.context}</Prose></dd>
           </div>
           <div>
             <dt className="t-eyebrow mb-1">الاستثناءات</dt>
-            <dd className="t-body text-fg-2">{r.exceptions}</dd>
+            <dd className="t-body text-fg-2"><Prose>{r.exceptions}</Prose></dd>
           </div>
         </div>
         <div>

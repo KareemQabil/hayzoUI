@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { CURRENCIES, parseAmount, type AmountParseResult } from '../../../arabic'
-import { Button, CurrencyInput, Digits, SegmentedControl, Select, Switch, type CurrencyInputHandle } from '../../../system'
+import { Button, CurrencyInput, Digits, Literal, SegmentedControl, Select, Switch, type CurrencyInputHandle } from '../../../system'
 import { CodeBlock, PreviewFrame, useMediaQuery } from '../../../app/ui'
 import { generateCode, HELPER, LABELS, PAYMENT_RANGE, stateDraft, type LabSettings, type LabState } from './lab'
 import { ContractStrip, stepLabel, StatusBadge } from './shared'
@@ -63,7 +63,7 @@ export function LabTab({ settings: s, onChange }: { settings: LabSettings; onCha
       </ControlGroup>
       <ControlGroup title="اللغة والأرقام">
         <SegmentedControl label="اتجاه الواجهة" fullWidth value={s.dir} onValueChange={(v) => onChange({ dir: v, label: v === 'ltr' ? 'english' : s.label === 'english' ? 'short' : s.label })} options={[{ value: 'rtl', label: 'RTL عربي' }, { value: 'ltr', label: 'LTR' }]} />
-        <SegmentedControl label="أرقام العرض" fullWidth value={s.numerals} onValueChange={(v) => onChange({ numerals: v })} options={[{ value: 'latn', label: <bdi dir="ltr">1234.50</bdi>, ariaLabel: 'لاتينية' }, { value: 'arab', label: '١٢٣٤٫٥٠', ariaLabel: 'مشرقية' }]} />
+        <SegmentedControl label="أرقام العرض" fullWidth value={s.numerals} onValueChange={(v) => onChange({ numerals: v })} options={[{ value: 'latn', label: <Literal dir="ltr">1234.50</Literal>, ariaLabel: 'لاتينية' }, { value: 'arab', label: <Literal>١٢٣٤٫٥٠</Literal>, ariaLabel: 'مشرقية' }]} />
         <Select label="نص التسمية" size="sm" value={s.label} onValueChange={(v) => onChange({ label: v })} options={[{ value: 'short', label: 'قصير' }, { value: 'long', label: 'عربي طويل' }, { value: 'english', label: 'إنجليزي (LTR)' }]} />
       </ControlGroup>
       <ControlGroup title="القواعد">

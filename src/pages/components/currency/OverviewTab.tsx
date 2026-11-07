@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { parseAmount, type AmountParseResult } from '../../../arabic'
-import { Button, CurrencyInput, Icon, useLocale, type CurrencyInputHandle } from '../../../system'
+import { Button, CurrencyInput, Icon, Literal, useLocale, type CurrencyInputHandle } from '../../../system'
 import { RefLink, Section } from '../../../app/ui'
 import { ContractStrip, StatusBadge } from './shared'
 import { Anatomy } from './Anatomy'
@@ -34,7 +34,7 @@ export function SampleChips({ onPick }: { onPick: (t: string) => void }) {
             </>
           ) : (
             <bdi dir="ltr" className="font-mono text-[12.5px]">
-              {s.text}
+              <Literal>{s.text}</Literal>
             </bdi>
           )}
           {!s.label ? <span className="text-fg-3 text-[11.5px]">{s.note}</span> : null}

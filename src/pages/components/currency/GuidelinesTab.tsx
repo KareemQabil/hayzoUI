@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { CURRENCIES, formatAmount, parseAmount, type AmountErrorCode } from '../../../arabic'
 import { amountErrorMessage, requiredAmountMessage } from '../../../content/messages'
-import { CurrencyInput, DataTable, Digits, Icon, SegmentedControl, useLocale, type CurrencyInputHandle, type Dir } from '../../../system'
+import { CurrencyInput, DataTable, Digits, Icon, Literal, NumberText, Prose, SegmentedControl, useLocale, type CurrencyInputHandle, type Dir } from '../../../system'
 import { PreviewFrame, Section } from '../../../app/ui'
 import type { Density, Mode } from '../../../tokens/theme'
 import { visibleInput } from './shared'
@@ -89,11 +89,12 @@ function ContentTable() {
       rowKey={(x) => x.input || 'empty'}
       minWidth={720}
       columns={[
-        { key: 'in', header: 'ما كُتب', cell: (x) => <bdi dir="ltr" className="ax-mono">{x.input === '' ? '""' : visibleInput(x.input)}</bdi> },
+        // What was typed, the stored value, and the two explicit display systems are shown as written.
+        { key: 'in', header: 'ما كُتب', cell: (x) => <Literal dir="ltr"><span className="ax-mono">{x.input === '' ? '""' : visibleInput(x.input)}</span></Literal> },
         { key: 'st', header: 'النتيجة', cell: (x) => (x.r.status === 'valid' ? 'صالح' : x.r.status === 'empty' ? 'فارغ' : <span className="text-danger">مرفوض</span>) },
-        { key: 'v', header: <>التخزين <bdi dir="ltr" className="ax-mono">value</bdi></>, numeric: true, cell: (x) => <bdi dir="ltr" className="ax-mono">{x.r.minor ?? 'null'}</bdi> },
-        { key: 'l', header: 'عرض لاتيني', numeric: true, cell: (x) => (x.r.minor == null ? '—' : <bdi dir="ltr">{formatAmount(x.r.minor, { currency: 'EGP', numerals: 'latn' })}</bdi>) },
-        { key: 'a', header: 'عرض مشرقي', numeric: true, cell: (x) => (x.r.minor == null ? '—' : <bdi dir="ltr">{formatAmount(x.r.minor, { currency: 'EGP', numerals: 'arab' })}</bdi>) },
+        { key: 'v', header: <>التخزين <bdi dir="ltr" className="ax-mono">value</bdi></>, numeric: true, cell: (x) => <Literal dir="ltr"><span className="ax-mono">{x.r.minor ?? 'null'}</span></Literal> },
+        { key: 'l', header: 'عرض لاتيني', numeric: true, cell: (x) => (x.r.minor == null ? '—' : <Literal dir="ltr">{formatAmount(x.r.minor, { currency: 'EGP', numerals: 'latn' })}</Literal>) },
+        { key: 'a', header: 'عرض مشرقي', numeric: true, cell: (x) => (x.r.minor == null ? '—' : <Literal dir="ltr">{formatAmount(x.r.minor, { currency: 'EGP', numerals: 'arab' })}</Literal>) },
       ]}
     />
   )
@@ -105,7 +106,8 @@ function Mock({ text, affix = 'ج.م', error, invalid }: { text: string; affix?:
       <span className="ax-field__label">المبلغ المستلم</span>
       <div className="ax-control" data-invalid={invalid || error ? '' : undefined} data-dir="rtl">
         <span className="ax-control__input ax-currency__input ax-num flex items-center justify-end" dir="ltr" style={{ textAlign: 'right' }}>
-          {text}
+          {/* A rejected value is shown as typed; an accepted one as the field would display it. */}
+          {invalid || error ? <Literal>{text}</Literal> : <NumberText>{text}</NumberText>}
         </span>
         {affix ? <span className="ax-control__affix">{affix}</span> : null}
       </div>
@@ -135,7 +137,7 @@ function DoDont({ doTitle, doNote, doSpecimen, dontTitle, dontNote, dontSpecimen
               <Icon name={x.ok ? 'success' : 'error'} size={17} />
               {x.ok ? 'افعل' : 'لا تفعل'}: <span className="text-fg">{x.title}</span>
             </span>
-            <span className="t-body text-fg-2">{x.note}</span>
+            <span className="t-body text-fg-2"><Prose>{x.note}</Prose></span>
           </figcaption>
         </figure>
       ))}

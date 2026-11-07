@@ -68,3 +68,36 @@ export function formatCount(n: number, numerals: DisplayNumerals): string {
   const grouped = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   return numerals === 'arab' ? toDisplayDigits(grouped, 'arab').replace(/,/g, NNBSP) : grouped
 }
+
+const ANY_DIGIT_RUN = /[0-9\u0660-\u0669\u06f0-\u06f9]/
+/** A word that ends in Latin letters: «React», «Next.js», and «وVitest» (an Arabic conjunction attached). */
+const LATIN_WORD = /[A-Za-z]$/
+
+/**
+ * Numbers in running text shown in the given numerals (R-NUM-004). Source may be written with either system.
+ * Numbers that belong to Latin text keep Latin digits:
+ *   - inside a word that has an ASCII letter or starts with # — codes, rules, units, colors (CUS-0008, R-NUM-004, 16px, #284190);
+ *   - right after a Latin word — names and versions (React 18, Material Design 3, Vitest 5.1.0).
+ * A space between two digits becomes U+202F so the groups keep their order inside Arabic text (R-BIDI-003).
+ * scripts/bidi-scan.mjs (oracle 3) applies the same two exemptions when it checks the screen.
+ */
+export function localizeNumbers(text: string, numerals: DisplayNumerals): string {
+  const spaced = text.replace(/([0-9\u0660-\u0669\u06f0-\u06f9]) (?=[0-9\u0660-\u0669\u06f0-\u06f9])/g, `$1${NNBSP}`)
+  const parts = spaced.split(/(\s+)/)
+  let previous = ''
+  return parts
+    .map((part) => {
+      if (part === '' || /^\s+$/.test(part)) return part
+      const keep = !ANY_DIGIT_RUN.test(part) || /[A-Za-z]/.test(part) || /^[«(]?#/.test(part) || LATIN_WORD.test(previous)
+      previous = part
+      return keep ? part : localizeNumberWord(part, numerals)
+    })
+    .join('')
+}
+
+/** Digits and the separators between them, as formatAmount writes them: 1,234.50 ↔ ١ ٢٣٤٫٥٠. */
+function localizeNumberWord(word: string, numerals: DisplayNumerals): string {
+  const latin = normalizeDigits(word).text.replace(/(\d)٫(?=\d)/g, '$1.').replace(/(\d)٬(?=\d)/g, '$1,')
+  if (numerals === 'latn') return latin
+  return toDisplayDigits(latin.replace(/(\d),(?=\d{3}(?!\d))/g, `$1${NNBSP}`).replace(/(\d)\.(?=\d)/g, '$1٫'), 'arab')
+}

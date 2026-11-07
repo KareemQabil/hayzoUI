@@ -51,7 +51,8 @@ export function ContractStrip({ result, currency, numerals, compact = false }: {
           <span className="t-caption text-fg-2">
             <span className="font-medium text-fg">{c.k}</span> · {c.sub}
           </span>
-          <bdi dir="ltr" className={['block truncate text-[16px] leading-7', c.mono ? 'font-mono text-[14.5px]' : 'ax-num', c.muted ? 'text-fg-3' : 'text-fg', 'text-end'].join(' ')}>
+          {/* Mono cells are literal contracts (typed input, stored minor units, canonical form): shown as written. */}
+          <bdi dir="ltr" data-verbatim={c.mono ? '' : undefined} className={['block truncate text-[16px] leading-7', c.mono ? 'font-mono text-[14.5px]' : 'ax-num', c.muted ? 'text-fg-3' : 'text-fg', 'text-end'].join(' ')}>
             {c.v}
           </bdi>
         </div>

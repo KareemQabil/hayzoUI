@@ -10,7 +10,7 @@ import { PreviewFrame, Section } from '../app/ui'
 import { navigate } from '../app/router'
 import { FORCED, RENDERERS, type MatrixCase } from '../matrix/renderers'
 import { installForcedStates } from '../matrix/force-states'
-import { SegmentedControl, Select } from '../system'
+import { Digits, SegmentedControl, Select, useLocale } from '../system'
 import type { Density, Mode } from '../tokens/theme'
 
 const SPECS = import.meta.glob('../../spec/components/*.json', { eager: true, import: 'default' }) as Record<string, MatrixSpec>
@@ -65,7 +65,10 @@ export function MatrixPage({ id }: { id?: string }) {
   useEffect(installForcedStates, [])
   const density = (DENSITIES as string[]).includes(q.get('density') ?? '') ? (q.get('density') as Density) : 'default'
   const content = spec.content.includes(q.get('content') ?? '') ? q.get('content')! : spec.content[0]
-  const numerals = (renderer?.numerals?.(content) ?? (q.get('numerals') === 'arab' ? 'arab' : 'latn')) as DisplayNumerals
+  const preferred = useLocale().numerals
+  // ?numerals= pins a sheet (baselines); without it the sheet follows the person's numerals preference.
+  const asked = q.get('numerals')
+  const numerals = (renderer?.numerals?.(content) ?? (asked === 'arab' || asked === 'latn' ? asked : preferred)) as DisplayNumerals
   const set = (k: string, v: string) => {
     const next = new URLSearchParams(q)
     next.set(k, v)
@@ -94,7 +97,7 @@ export function MatrixPage({ id }: { id?: string }) {
         </div>
         <p className="t-caption text-fg-2" data-matrix-coverage={missing.length === 0 ? 'complete' : 'incomplete'}>
           {missing.length === 0
-            ? `التغطية كاملة: ${rows.length} صفوف (حالات ومتغيرات) × ${spec.content.length} متغيرات محتوى × ${COLUMNS.length} أعمدة × ${DENSITIES.length} كثافات`
+            ? <Digits>{`التغطية كاملة: ${rows.length} صفوف (حالات ومتغيرات) × ${spec.content.length} متغيرات محتوى × ${COLUMNS.length} أعمدة × ${DENSITIES.length} كثافات`}</Digits>
             : `حالات بلا renderer: ${missing.join('، ')}`}
         </p>
       </Section>

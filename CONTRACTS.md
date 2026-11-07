@@ -67,11 +67,22 @@ Supported currencies: EGP, SAR (2 decimals), KWD (3). Max 12 integer digits.
 ## Evidence
 
 - `pnpm test` — Vitest suite (fixtures, 7 seeded properties, content invariants).
-- `pnpm check:bidi` — blind scan against the dev server: every route discovered from the knowledge base × both numerals × desktop and 390px, with stress values typed into phone and amount fields; measures on screen whether digit groups are drawn in reverse. Fails on any finding. Uses local Chrome/Edge or `CHROMIUM`.
-- `pnpm evidence:unit` — runs Vitest and writes `src/knowledge/evidence/unit-run.json`.
+- `pnpm check:bidi` — blind scan against the dev server: every route discovered from the knowledge base × both numerals × desktop and 390px, with stress values typed into phone and amount fields. Three oracles, measured on screen: (1) digit groups drawn in reverse, (2) mixed-script direction and alignment, (3) every visible number in the numerals of its nearest locale provider. Fails on any finding. Uses local Chrome/Edge or `CHROMIUM`.
+- `pnpm evidence:unit` — runs Vitest and writes `src/knowledge/evidence/unit-run.json` (with each test's file); pages read counts and dates from it, never typed by hand.
 - `pnpm evidence:browser` — Playwright (playwright-core + system Chromium) against the dev server; writes `browser-run.json`.
 
 Status vocabulary: proposed · demo (live in browser) · manual · automated (from a run file) · unchecked. No manual checks are recorded in this release.
+
+## Numerals in copy (R-NUM-004)
+
+Every number a person reads follows the numerals preference of the nearest `LocaleProvider` (each provider writes `data-numerals`; the root writes it on `<html>`). Tools, in order of preference:
+
+- `Digits` — static copy with numbers; source may use either digit system. `localizeNumbers()` does the work and also converts separators inside a number (`1,234.50` ↔ `١ ٢٣٤٫٥٠`) and spaces between digit groups (U+202F).
+- `NumberText` — a number already formatted the Latin way (`87,500.00`, `42`), e.g. table cells.
+- `Prose` — prose that contains literals: numbers outside «…» follow the preference; text inside «…» is shown as written.
+- `Literal` (`data-verbatim`) — shown exactly as written: what a person typed, stored or canonical values, strings a test compares, version metadata, a numerals picker's own labels. Use sparingly.
+
+Kept Latin by rule, without markup: identifiers (a number inside a word with an ASCII letter or starting with `#`: `CUS-0008`, `R-NUM-004`, `16px`, `#284190`) and a number right after a Latin word (`React 18`, `Material Design 3`, `Vitest 5.1.0`). `check:bidi` oracle 3 applies the same exemptions; anything else in the wrong numerals fails the scan. A state-matrix sheet follows the preference unless `?numerals=` pins it.
 
 ## State matrix and visual baselines
 

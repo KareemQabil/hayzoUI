@@ -6,7 +6,7 @@
  */
 import { useState, type ReactNode } from 'react'
 import { ComboBox as AriaComboBox, Button as AriaButton, Group, Input, ListBox, ListBoxItem, Popover } from 'react-aria-components'
-import { DEFAULT_SEARCH, matchDigits, matchText, type SearchOptions } from '../../arabic'
+import { DEFAULT_SEARCH, matchDigits, matchText, numericSpaces, toDisplayDigits, type SearchOptions } from '../../arabic'
 import { AriaLocale } from '../adapter/react-aria'
 import { Icon } from '../icons'
 import { mixedAlignValue, useLocale } from '../locale'
@@ -118,6 +118,7 @@ export function Combobox(props: ComboboxProps) {
 }
 
 function ComboboxOption({ item, query, search }: { item: ComboboxItem; query: string; search: SearchOptions }) {
+  const { numerals } = useLocale()
   return (
     <ListBoxItem id={item.value} textValue={item.label} className="ax-combobox__option">
       {({ isFocused, isSelected }) => (
@@ -127,7 +128,9 @@ function ComboboxOption({ item, query, search }: { item: ComboboxItem; query: st
           </AutoText>
           {item.description ? (
             <bdi dir="ltr" className="ax-combobox__option-desc ax-num">
-              <Highlight text={item.description} ranges={query ? matchText(query, item.description, search).ranges : []} />
+              {/* Provider's numerals, and U+00A0 between phone groups (as the phone contract) so they keep their order (R-BIDI-003). Both mappings are
+                  one character for one, so the match ranges stay valid. */}
+              <Highlight text={numericSpaces(toDisplayDigits(item.description, numerals))} ranges={query ? matchText(query, item.description, search).ranges : []} />
             </bdi>
           ) : null}
           {isSelected ? <Icon name="check" size={16} className="ax-combobox__check" /> : null}

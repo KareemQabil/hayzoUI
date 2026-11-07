@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
-import { Drawer, Icon, IconButton, Kbd, SegmentedControl, useSettings } from '../system'
+import { Drawer, Icon, IconButton, Kbd, Literal, SegmentedControl, useSettings } from '../system'
 import { SearchPalette } from './SearchPalette'
 import { useMediaQuery } from './ui'
 
@@ -79,8 +79,8 @@ export function Shell({ route, children }: { route: string[]; children: ReactNod
       value={prefs.numerals}
       onValueChange={(v) => setPrefs({ numerals: v })}
       options={[
-        { value: 'latn', label: <bdi dir="ltr">123</bdi>, ariaLabel: 'أرقام لاتينية' },
-        { value: 'arab', label: '١٢٣', ariaLabel: 'أرقام عربية مشرقية' },
+        { value: 'latn', label: <Literal dir="ltr">123</Literal>, ariaLabel: 'أرقام لاتينية' },
+        { value: 'arab', label: <Literal>١٢٣</Literal>, ariaLabel: 'أرقام عربية مشرقية' },
       ]}
     />
   )

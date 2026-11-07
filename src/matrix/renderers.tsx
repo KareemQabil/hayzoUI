@@ -18,6 +18,7 @@ import {
   EmptyState,
   IconButton,
   InlineMessage,
+  NumberText,
   PhoneInput,
   SearchField,
   SegmentedControl,
@@ -396,7 +397,7 @@ export const RENDERERS: Record<string, MatrixRenderer> = {
       const columns = [
         { key: 'id', header: 'الرقم', cell: (r: Row) => <bdi dir="ltr" className="ax-mono">{r.id}</bdi>, nowrap: true },
         { key: 'name', header: 'الاسم', cell: (r: Row) => <AutoText>{r.name}</AutoText> },
-        { key: 'balance', header: 'الرصيد', cell: (r: Row) => <bdi dir="ltr" className="ax-num">{content === 'arabic-digits' ? r.balance.replace(/[0-9]/g, (d) => String.fromCodePoint(0x660 + +d)).replace(/,/g, ' ').replace('.', '٫') : r.balance}</bdi>, numeric: true, align: 'end' as const },
+        { key: 'balance', header: 'الرصيد', cell: (r: Row) => <bdi dir="ltr" className="ax-num"><NumberText>{r.balance}</NumberText></bdi>, numeric: true, align: 'end' as const },
       ]
       const s = asDefault(state)
       if (s === 'default') return <DataTable label="العملاء" columns={columns} rows={rows} rowKey={(r) => r.id} minWidth={420} />

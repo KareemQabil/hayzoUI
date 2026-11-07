@@ -4,6 +4,22 @@ import { arabicErpCompactProfile, arabicPosTouchProfile, englishCrmDefaultProfil
 import { crmResponsiveContextPreset, editorialCleanVisualSystem, erpCompactContextPreset, neutralBlueBrandTheme, posTouchContextPreset, quietEnterpriseVisualSystem } from '../atomic/foundations/styles/examples/assets'
 import { downloadJson } from '../app/ui'
 import { COMPONENTS } from '../knowledge'
+import { UNIT_RUN, type RunFile } from '../knowledge/evidence'
+import { toDisplayDigits, type DisplayNumerals } from '../arabic'
+import { useLocale } from '../system'
+
+/** Counts and date come from the recorded unit run (scripts/record-unit.mjs), never typed by hand. */
+export function summarizeRun(run: RunFile) {
+  const passed = run.results.filter((r) => r.status === 'passed').length
+  const failed = run.results.filter((r) => r.status === 'failed').length
+  const engine = run.results.filter((r) => r.file?.endsWith('token-engine.contract.test.ts') && r.status === 'passed').length
+  return { total: run.results.length, passed, failed, engine, date: run.startedAt }
+}
+
+/** «7 نوفمبر 2026» with the user's numerals; Gregorian calendar regardless of the locale default. */
+export function formatRunDate(iso: string, numerals: DisplayNumerals) {
+  return new Intl.DateTimeFormat(`ar-EG-u-ca-gregory-nu-${numerals}`, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(iso))
+}
 
 const PROFILES = {
   pos: { label: 'نقطة بيع عربية · لمس', profile: arabicPosTouchProfile, visual: quietEnterpriseVisualSystem, preset: posTouchContextPreset },
@@ -20,6 +36,9 @@ export function ProgressPage() {
   const [profileId, setProfileId] = useState<keyof typeof PROFILES>('pos')
   const [density, setDensity] = useState<Density | 'profile'>('profile')
   const [direction, setDirection] = useState<Direction | 'profile'>('profile')
+  const { numerals } = useLocale()
+  const digits = (text: string) => toDisplayDigits(text, numerals)
+  const run = summarizeRun(UNIT_RUN)
   const current = PROFILES[profileId]
   const values: Partial<ExperienceContext> = {}
   if (density !== 'profile') values.density = density
@@ -53,8 +72,8 @@ export function ProgressPage() {
         </div>
         <aside className="border-s-2 border-action ps-5">
           <p className="text-[13px] font-medium text-fg-2">آخر نقطة تحقق منشورة</p>
-          <p className="mt-1 text-[34px] font-semibold tabular-nums text-fg"><bdi dir="ltr">315</bdi> <span className="text-[15px] font-normal text-fg-2">اختبارًا ناجحًا</span></p>
-          <p className="mt-1 text-[13px] leading-7 text-fg-2">تشمل ٥ اختبارات بالمحرك الفعلي.<br />سجلّ التحقق: ٦ نوفمبر ٢٠٢٦.</p>
+          <p className="mt-1 text-[34px] font-semibold tabular-nums text-fg"><bdi dir="ltr" data-evidence="passed">{digits(String(run.passed))}</bdi> <span className="text-[15px] font-normal text-fg-2">{run.failed ? `من ${digits(String(run.total))} اختبار ناجح` : 'اختبارًا ناجحًا'}</span></p>
+          <p className="mt-1 text-[13px] leading-7 text-fg-2">تشمل <span data-evidence="engine">{digits(String(run.engine))}</span> اختبارات بالمحرك الفعلي.<br />سجلّ التحقق: <span data-evidence="date">{run.date ? formatRunDate(run.date, numerals) : '—'}</span>.</p>
           <a href={EVIDENCE} target="_blank" rel="noreferrer" className="mt-3 inline-block text-[13px] font-medium text-link underline underline-offset-4">النتائج وحدود ما اختُبر ↗</a>
         </aside>
       </header>
@@ -66,7 +85,7 @@ export function ProgressPage() {
           ['03', 'مكوّنات Atomic الجديدة', 'المرحلة التالية', 'السلوك والـrecipes ثم أول شريحة مكوّنات؛ لم تُعرض هنا كمكوّنات مكتملة.'],
         ].map(([number, title, status, body]) => (
           <article key={number} className="py-6 md:px-5 md:first:ps-0 md:last:pe-0">
-            <p className="font-mono text-[12px] text-fg-3">{number}</p>
+            <p className="font-mono text-[12px] text-fg-3">{digits(number)}</p>
             <h2 className="mt-3 text-[18px] font-semibold text-fg">{title}</h2>
             <p className="mt-2 text-[13px] font-medium text-link">{status}</p>
             <p className="mt-2 text-[14px] leading-7 text-fg-2">{body}</p>
@@ -154,13 +173,13 @@ export function ProgressPage() {
         <p className="mt-2 max-w-[76ch] text-[14px] leading-7 text-fg-2">هذه الشاشات من النظام المرجعي السابق، وتساعدنا في مقارنة السلوك والتصميم. الأساسات الذرّية الجديدة لم تستبدل تنفيذها بعد.</p>
         <div className="mt-5 grid gap-4 sm:grid-cols-3">
           {[
-            ['#/components/currency-input', 'استكشاف المكوّنات', `${COMPONENTS.length} مكوّنًا موثقًا؛ جرّب المبالغ العربية والحقول والجداول.`, 'المكوّنات ↗'],
+            ['#/components/currency-input', 'استكشاف المكوّنات', `${digits(String(COMPONENTS.length))} مكوّنًا موثقًا؛ جرّب المبالغ العربية والحقول والجداول.`, 'المكوّنات ↗'],
             ['#/studio', 'استوديو السمات', 'جرّب اللون والخط والكثافة على معاينات النظام المرجعي.', 'فتح الاستوديو ↗'],
             ['#/app', 'تطبيق العمليات', 'راجع رحلة العملاء والفواتير والتحصيل في التطبيق التجريبي.', 'تجربة التطبيق ↗'],
           ].map(([href, title, body, label]) => <a key={href} href={href} className="group rounded-[var(--ax-radius-surface)] border border-line-2 p-5 transition-colors hover:border-action focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"><h3 className="text-[18px] font-semibold text-fg">{title}</h3><p className="mt-3 text-[14px] leading-7 text-fg-2">{body}</p><span className="mt-5 inline-block text-[13px] font-medium text-link">{label}</span></a>)}
         </div>
       </section>
-      <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-[12px] leading-6 text-fg-2"><span>التالي: السلوك، recipes، وأول شريحة Atomic قابلة للمقارنة.</span><a href={`${REPO}/tree/feat/atomic-context-foundations`} target="_blank" rel="noreferrer" className="text-link underline underline-offset-4">الكود وخطة المعمارية ↗</a></footer>
+      <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-[12px] leading-6 text-fg-2"><span>التالي: السلوك، recipes، وأول شريحة Atomic قابلة للمقارنة.</span><a href={`${REPO}/tree/main/docs/architecture`} target="_blank" rel="noreferrer" className="text-link underline underline-offset-4">الكود وخطة المعمارية ↗</a></footer>
     </div>
   )
 }

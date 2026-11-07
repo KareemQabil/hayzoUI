@@ -17,7 +17,7 @@ export function ComboboxDemo() {
     <div className="flex max-w-[420px] flex-col gap-2" data-testid="combobox-demo">
       <Combobox label="العميل" items={DEMO_CUSTOMERS} value={v} onValueChange={setV} placeholder="اكتب الاسم أو رقم الهاتف" helper="جرّب «احمد» أو «محمد» أو «0101»." />
       <p className="t-caption text-fg-2">
-        القيمة المخزنة: <bdi dir="ltr" className="ax-mono" data-testid="combobox-value">{String(v)}</bdi>
+        القيمة المخزنة: <bdi dir="ltr" className="ax-mono" data-verbatim="" data-testid="combobox-value">{String(v)}</bdi>
       </p>
     </div>
   )
@@ -30,7 +30,7 @@ export function DateDemo() {
       <DatePicker label="تاريخ الاستحقاق (ميلادي)" value={v} onValueChange={setV} />
       <DatePicker label="تاريخ الاستحقاق (هجري)" calendar="islamic-umalqura" value={v} onValueChange={setV} />
       <p className="t-caption text-fg-2 sm:col-span-2">
-        القيمة المخزنة واحدة للحقلين، ميلادية بصيغة ISO: <bdi dir="ltr" className="ax-mono" data-testid="date-value">{String(v)}</bdi>
+        القيمة المخزنة واحدة للحقلين، ميلادية بصيغة ISO: <bdi dir="ltr" className="ax-mono" data-verbatim="" data-testid="date-value">{String(v)}</bdi>
       </p>
     </div>
   )
