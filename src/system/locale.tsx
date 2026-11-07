@@ -12,7 +12,7 @@ export type Dir = 'rtl' | 'ltr'
  * Where text in the other script (a Latin name in an Arabic list) is aligned:
  *   ui      — with the interface: every line starts at the container's start edge (right in RTL); default.
  *   content — with the text: each line starts on its own direction's side (Latin names on the left in RTL).
- * The text's own direction (first strong character) is the same in both; only alignment changes.
+ * The text's own direction (dominant script by words, foreign words isolated — see scriptRuns) is the same in both; only alignment changes.
  */
 export type MixedAlign = 'ui' | 'content'
 

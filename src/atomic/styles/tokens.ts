@@ -87,6 +87,16 @@ const semanticTokens: Def[] = [
   { path: 'control.font-size', type: 'dimension', value: px(15), overridableBy: [...SIZE_BY] },
   { path: 'control.label-size', type: 'dimension', value: px(14), overridableBy: [...SIZE_BY] },
   { path: 'control.help-size', type: 'dimension', value: px(13), overridableBy: [...SIZE_BY] },
+  { path: 'control.indicator-size', type: 'dimension', value: px(16), overridableBy: [...SIZE_BY] },
+  { path: 'shape.radius.indicator', type: 'dimension', value: px(4), overridableBy: [...SHAPE_BY] },
+  // Overlays (popover, tooltip, dialog, drawer).
+  { path: 'color.overlay.backdrop', type: 'color', value: '#161C2A73', overridableBy: [...COLOR_BY] },
+  { path: 'color.surface.inverse', type: 'color', value: ref('color.palette.neutral.900'), overridableBy: [...COLOR_BY] },
+  { path: 'color.text.inverse', type: 'color', value: ref('color.palette.neutral.0'), overridableBy: [...COLOR_BY] },
+  { path: 'elevation.overlay', type: 'shadow', value: '0px 4px 12px #161C2A1F, 0px 16px 40px #161C2A29', overridableBy: [...SHAPE_BY] },
+  { path: 'shape.radius.overlay', type: 'dimension', value: ref('shape.radius.control'), overridableBy: [...SHAPE_BY] },
+  { path: 'control.overlay-padding', type: 'dimension', value: px(20), overridableBy: [...SIZE_BY] },
+  { path: 'control.title-size', type: 'dimension', value: px(18), overridableBy: [...SIZE_BY] },
   { path: 'control.gap', type: 'dimension', value: px(8), overridableBy: [...SIZE_BY] },
   { path: 'control.stack-gap', type: 'dimension', value: px(6), overridableBy: [...SIZE_BY] },
   { path: 'control.target-min', type: 'dimension', value: px(24), overridableBy: [...SIZE_BY] },
@@ -187,6 +197,7 @@ export const visualEditorialLayer: TokenLayer = {
   tokens: [
     // Square corners, underlined fields with no inline padding, Naskh typography, heavier labels.
     { path: 'shape.radius.control', type: 'dimension', value: px(0), overridableBy: [] },
+    { path: 'shape.radius.indicator', type: 'dimension', value: px(0), overridableBy: [] },
     { path: 'typography.family.ui', type: 'font-family', value: ref('font.naskh'), overridableBy: [] },
     { path: 'typography.weight.label', type: 'font-weight', value: 700, overridableBy: [] },
     { path: 'typography.weight.action', type: 'font-weight', value: 700, overridableBy: [] },
@@ -206,6 +217,7 @@ export const visualSoftLayer: TokenLayer = {
     // Pill actions with soft elevation, filled borderless fields, geometric typography.
     { path: 'shape.radius.action', type: 'dimension', value: px(999), overridableBy: [] },
     { path: 'shape.radius.field', type: 'dimension', value: px(14), overridableBy: [] },
+    { path: 'shape.radius.indicator', type: 'dimension', value: px(6), overridableBy: [] },
     { path: 'typography.family.ui', type: 'font-family', value: ref('font.geometric'), overridableBy: [] },
     { path: 'elevation.action', type: 'shadow', value: '0px 1px 2px #161C2A14, 0px 4px 12px #161C2A14', overridableBy: [] },
     { path: 'color.field.surface', type: 'color', value: ref('color.surface.sunken'), overridableBy: [] },
@@ -226,6 +238,9 @@ export const contextErpLayer: TokenLayer = {
     { path: 'control.font-size', type: 'dimension', value: px(13), overridableBy: [] },
     { path: 'control.label-size', type: 'dimension', value: px(12), overridableBy: [] },
     { path: 'control.help-size', type: 'dimension', value: px(12), overridableBy: [] },
+    { path: 'control.indicator-size', type: 'dimension', value: px(14), overridableBy: [] },
+    { path: 'control.overlay-padding', type: 'dimension', value: px(14), overridableBy: [] },
+    { path: 'control.title-size', type: 'dimension', value: px(15), overridableBy: [] },
     { path: 'control.gap', type: 'dimension', value: px(6), overridableBy: [] },
     { path: 'control.stack-gap', type: 'dimension', value: px(4), overridableBy: [] },
     { path: 'control.target-min', type: 'dimension', value: px(24), overridableBy: [] },
@@ -243,6 +258,9 @@ export const contextPosLayer: TokenLayer = {
     { path: 'control.font-size', type: 'dimension', value: px(17), overridableBy: [] },
     { path: 'control.label-size', type: 'dimension', value: px(16), overridableBy: [] },
     { path: 'control.help-size', type: 'dimension', value: px(15), overridableBy: [] },
+    { path: 'control.indicator-size', type: 'dimension', value: px(22), overridableBy: [] },
+    { path: 'control.overlay-padding', type: 'dimension', value: px(24), overridableBy: [] },
+    { path: 'control.title-size', type: 'dimension', value: px(21), overridableBy: [] },
     { path: 'control.gap', type: 'dimension', value: px(10), overridableBy: [] },
     { path: 'control.stack-gap', type: 'dimension', value: px(8), overridableBy: [] },
     // WCAG 2.5.5 (AAA) target size for touch-first point of sale.

@@ -78,7 +78,7 @@ describe('experience styles (first proof)', () => {
     const a = style({ visual: 'editorial', context: 'erp', language: 'en' })
     const b = style({ visual: 'editorial', context: 'erp', language: 'en' })
     expect(a.variables).toEqual(b.variables)
-    expect(a.layers).toEqual(['hz-primitives', 'hz-semantics', 'hz-components', 'brand.neutral-blue@0.1.0', 'visual.editorial@0.1.0', 'context.erp-compact@0.1.0'])
+    expect(a.layers).toEqual(['hz-primitives', 'hz-semantics', 'hz-components', 'hz-components-choice', 'hz-components-overlay', 'brand.neutral-blue@0.1.0', 'visual.editorial@0.1.0', 'context.erp-compact@0.1.0'])
     expect(a.recipes).toEqual(['recipes.atomic-core@0.1.0'])
     expect(a.context.direction).toBe('ltr')
   })

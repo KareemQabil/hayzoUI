@@ -6,13 +6,13 @@
  * Query: #/proof?visual=quiet|editorial|soft (one section, for review and baselines).
  */
 import { useEffect, useState } from 'react'
-import { Button, ExperienceScope, TextField } from '../atomic/components'
+import { Button, Checkbox, Dialog, Drawer, ExperienceScope, Popover, RadioGroup, Switch, Tabs, TextField, Tooltip } from '../atomic/components'
 import { CONTEXTS, LANGUAGES, VISUAL_SYSTEMS, resolveExperienceStyle, type ContextId, type LanguageId, type VisualSystemId } from '../atomic/styles/experience'
 import { Digits, Literal } from '../system'
 
 const COPY = {
-  ar: { name: 'اسم العميل', nameValue: 'أحمد Khaled', email: 'البريد الإلكتروني', emailValue: 'ahmed@', emailError: 'أكمل عنوان البريد بعد علامة @.', hint: 'يظهر على الفاتورة.', save: 'حفظ العميل', cancel: 'إلغاء', remove: 'حذف', pending: 'تأكيد التحصيل', disabled: 'إرسال' },
-  en: { name: 'Customer name', nameValue: 'Sara Haddad', email: 'Email', emailValue: 'sara@', emailError: 'Complete the address after the @ sign.', hint: 'Shown on the invoice.', save: 'Save customer', cancel: 'Cancel', remove: 'Delete', pending: 'Confirm payment', disabled: 'Send' },
+  ar: { name: 'اسم العميل', nameValue: 'أحمد Khaled', email: 'البريد الإلكتروني', emailValue: 'ahmed@', emailError: 'أكمل عنوان البريد بعد علامة @.', hint: 'يظهر على الفاتورة.', save: 'حفظ العميل', cancel: 'إلغاء', remove: 'حذف', pending: 'تأكيد التحصيل', disabled: 'إرسال', notify: 'إرسال إشعار بالدفع', notifyHint: 'رسالة نصية للعميل.', terms: 'العميل وافق على الشروط', method: 'طريقة الدفع', cash: 'نقدًا', card: 'بطاقة', transfer: 'تحويل بنكي', tabs: 'بيانات العميل', tabInfo: 'البيانات', tabHistory: 'السجل', tabNotes: 'ملاحظات', info: 'بيانات العميل الأساسية.', history: 'آخر عمليات التحصيل.', notes: 'ملاحظات داخلية.', details: 'تفاصيل الرصيد', balance: 'الرصيد المستحق يُحدَّث بعد كل تحصيل.', help: 'مساعدة', helpTip: 'يحفظ البيانات دون إرسال إشعار.', remove2: 'حذف العميل', confirmTitle: 'حذف العميل نهائيًا؟', confirmBody: 'سيُحذف سجل العميل وكل ملاحظاته. لا يمكن التراجع.', confirm: 'حذف', filters: 'تصفية', filtersTitle: 'تصفية العملاء', filtersBody: 'اختر المنطقة وحالة السداد.' },
+  en: { name: 'Customer name', nameValue: 'Sara Haddad', email: 'Email', emailValue: 'sara@', emailError: 'Complete the address after the @ sign.', hint: 'Shown on the invoice.', save: 'Save customer', cancel: 'Cancel', remove: 'Delete', pending: 'Confirm payment', disabled: 'Send', notify: 'Send payment notice', notifyHint: 'Text message to the customer.', terms: 'Customer accepted the terms', method: 'Payment method', cash: 'Cash', card: 'Card', transfer: 'Bank transfer', tabs: 'Customer details', tabInfo: 'Details', tabHistory: 'History', tabNotes: 'Notes', info: 'Basic customer details.', history: 'Latest collections.', notes: 'Internal notes.', details: 'Balance details', balance: 'The balance due updates after every collection.', help: 'Help', helpTip: 'Saves without sending a notice.', remove2: 'Delete customer', confirmTitle: 'Delete this customer?', confirmBody: 'The record and all its notes will be deleted. This cannot be undone.', confirm: 'Delete', filters: 'Filters', filtersTitle: 'Filter customers', filtersBody: 'Choose a region and payment status.' },
 } as const
 
 function Specimen({ language }: { language: LanguageId }) {
@@ -20,6 +20,8 @@ function Specimen({ language }: { language: LanguageId }) {
   const [name, setName] = useState<string | null>(t.nameValue)
   // Completed saves, exposed for the browser checks (BR-AT-02): a double activation must count once.
   const [saves, setSaves] = useState(0)
+  const [confirming, setConfirming] = useState(false)
+  const [filtering, setFiltering] = useState(false)
   return (
     <div className="grid gap-4" data-saves={saves}>
       <TextField label={t.name} value={name} onValueChange={setName} description={t.hint} isRequired />
@@ -28,6 +30,20 @@ function Specimen({ language }: { language: LanguageId }) {
         <Button onPress={() => { setSaves((n) => n + 1); return new Promise((r) => setTimeout(r, 1200)) }}>{t.save}</Button>
         <Button intent="neutral" emphasis="outline">{t.cancel}</Button>
         <Button intent="danger" emphasis="ghost">{t.remove}</Button>
+      </div>
+      <Switch label={t.notify} description={t.notifyHint} defaultChecked />
+      <Checkbox label={t.terms} defaultChecked />
+      <RadioGroup label={t.method} orientation="horizontal" defaultValue="cash" options={[{ value: 'cash', label: t.cash }, { value: 'card', label: t.card }, { value: 'transfer', label: t.transfer, disabled: true }]} />
+      <Tabs label={t.tabs} items={[{ value: 'info', label: t.tabInfo, content: t.info }, { value: 'history', label: t.tabHistory, content: t.history }, { value: 'notes', label: t.tabNotes, content: t.notes, disabled: true }]} />
+      <div className="flex flex-wrap gap-2" data-proof-overlays="">
+        <Tooltip content={t.helpTip}><Button intent="neutral" emphasis="ghost" size="sm">{t.help}</Button></Tooltip>
+        <Popover title={t.details} trigger={<Button intent="neutral" emphasis="outline" size="sm">{t.details}</Button>}>{t.balance}</Popover>
+        <Button intent="danger" emphasis="outline" size="sm" onPress={() => setConfirming(true)}>{t.remove2}</Button>
+        <Button intent="neutral" emphasis="outline" size="sm" onPress={() => setFiltering(true)}>{t.filters}</Button>
+        <Dialog open={confirming} onOpenChange={setConfirming} title={t.confirmTitle} description={t.confirmBody} size="sm" footer={<><Button intent="neutral" emphasis="outline" onPress={() => setConfirming(false)}>{t.cancel}</Button><Button intent="danger" onPress={() => setConfirming(false)}>{t.confirm}</Button></>}>{null}</Dialog>
+        <Drawer open={filtering} onOpenChange={setFiltering} title={t.filtersTitle} description={t.filtersBody}>
+          <Checkbox label={t.terms} />
+        </Drawer>
       </div>
       <div className="flex flex-wrap gap-2">
         <Button isPending size="sm">{t.pending}</Button>

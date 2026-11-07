@@ -33,7 +33,17 @@ describe('mixed-script alignment', () => {
     )
     const provider = container.firstElementChild as HTMLElement
     expect(provider.style.getPropertyValue('--ax-mixed-align')).toBe('start')
-    expect(provider.querySelector('.ax-auto')?.getAttribute('dir')).toBe('auto')
+    expect(provider.querySelector('.ax-auto')?.getAttribute('dir')).toBe('ltr')
+    // Arabic-dominant with a Latin title: RTL line, «Dr.» isolated LTR with its period.
+    const { container: c2 } = render(
+      <LocaleProvider dir="rtl">
+        <AutoText>Dr. سامي الحلبي</AutoText>
+      </LocaleProvider>,
+    )
+    const el = c2.querySelector('.ax-auto') as HTMLElement
+    expect(el.getAttribute('dir')).toBe('rtl')
+    expect(el.querySelector('bdi[dir="ltr"]')?.textContent).toBe('Dr.')
+    expect(el.textContent).toBe('Dr. سامي الحلبي')
   })
 })
 

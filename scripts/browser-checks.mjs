@@ -369,9 +369,12 @@ await check('BR-MIX-01', 'Latin names in an Arabic list follow the alignment pre
       const x = e[latin]
       assert(x && arabic, `missing ${latin}`)
       if (mixedAlign === 'ui') assert(Math.abs(x.right - arabic.right) <= 1, `ui: «${latin}» ends at ${x.right}, Arabic names at ${arabic.right}`)
-      else assert(Math.abs(x.left - x.boxLeft) <= 1, `content: «${latin}» starts at ${x.left}, box at ${x.boxLeft}`)
+      // content: each line starts on its own direction's side. Arabic-dominant names («Dr. سامي الحلبي», «3M مصر»)
+      // are RTL lines (dominant-script rule), so they start on the right like the Arabic names; only «Sara Haddad» is LTR.
+      else if (latin === 'Sara Haddad') assert(Math.abs(x.left - x.boxLeft) <= 1, `content: «${latin}» starts at ${x.left}, box at ${x.boxLeft}`)
+      else assert(Math.abs(x.right - arabic.right) <= 1, `content: «${latin}» ends at ${x.right}, Arabic names at ${arabic.right}`)
     }
-    out.push(mixedAlign === 'ui' ? 'مع الواجهة: حافة واحدة' : 'مع النص: اللاتيني يسارًا')
+    out.push(mixedAlign === 'ui' ? 'مع الواجهة: حافة واحدة' : 'مع النص: اللاتيني الخالص يسارًا، والعربي الغالب يمينًا')
   }
   return out.join(' · ')
 })
@@ -403,12 +406,23 @@ await check('BR-MIX-03', 'Latin-first names keep punctuation in place: «Dr.» r
       return range.getBoundingClientRect().left
     }
     const i = n.data.indexOf('Dr.')
-    return { d: at(i), r: at(i + 1), dot: at(i + 2), dir: getComputedStyle(el).direction, node: !!node }
+    const d = at(i), r = at(i + 1), dot = at(i + 2)
+    // First Arabic letter of the name, wherever its text node is.
+    const w2 = document.createTreeWalker(el, NodeFilter.SHOW_TEXT)
+    let a = w2.nextNode()
+    while (a && !/[؀-ۿ]/.test(a.data)) a = w2.nextNode()
+    const ai = a.data.search(/[؀-ۿ]/)
+    const range = document.createRange()
+    range.setStart(a, ai)
+    range.setEnd(a, ai + 1)
+    return { d, r, dot, seen: range.getBoundingClientRect().left, dir: getComputedStyle(el).direction, node: !!node }
   })
   await ctx.close()
-  assert(r.dir === 'ltr', `direction ${r.dir}`)
+  // Dominant-script rule: an Arabic name with a Latin title is an RTL line; «Dr.» is an isolated LTR island at its start.
+  assert(r.dir === 'rtl', `direction ${r.dir}`)
   assert(r.d < r.r && r.r < r.dot, `D=${r.d} r=${r.r} .=${r.dot}`)
-  return 'D ← r ← . بالترتيب، والاتجاه ltr'
+  assert(r.d > r.seen, `«Dr.» (x=${r.d}) should be right of the Arabic name (x=${r.seen})`)
+  return '«Dr.» يمين الاسم · D ← r ← . داخله · الاتجاه rtl'
 })
 
 await check('BR-MX-01', 'every spec state × content variant has a rendered matrix cell', async () => {
@@ -509,6 +523,134 @@ await check('BR-AT-04', 'proof: no horizontal page scroll at 390px, no console e
   assert(r.sw <= r.cw, `scrollWidth ${r.sw} > ${r.cw}`)
   assert(!errors.length, 'console: ' + errors[0])
   return `${r.sw} ≤ ${r.cw}`
+})
+
+await check('BR-AT-05', 'proof: in RTL the first tab is on the right, ArrowLeft moves to the next tab and selects it', async () => {
+  const { ctx, page } = await fresh('#/proof?visual=quiet')
+  const cell = page.locator('[data-proof-cell="quiet/saas/ar"]')
+  const tabs = cell.getByRole('tab')
+  const [a, b] = [await tabs.nth(0).boundingBox(), await tabs.nth(1).boundingBox()]
+  await tabs.nth(0).focus()
+  await page.keyboard.press('ArrowLeft')
+  const after = await page.evaluate(() => ({ text: document.activeElement?.textContent, selected: document.activeElement?.getAttribute('aria-selected') }))
+  await page.keyboard.press('ArrowLeft') // the third tab is disabled: skipped, wraps to the first
+  const wrapped = await page.evaluate(() => document.activeElement?.textContent)
+  await ctx.close()
+  assert(a.x > b.x, `first tab x ${a.x} should be right of second ${b.x}`)
+  assert(after.text === 'السجل' && after.selected === 'true', JSON.stringify(after))
+  assert(wrapped === 'البيانات', 'wrapped to ' + wrapped)
+  return 'الأول يمين · ArrowLeft = التالي ويختار · المعطّل يُتخطّى'
+})
+
+await check('BR-AT-06', 'proof: native radios in RTL — ArrowLeft selects the next option; Space toggles the switch', async () => {
+  const { ctx, page } = await fresh('#/proof?visual=quiet')
+  const cell = page.locator('[data-proof-cell="quiet/saas/ar"]')
+  await cell.getByRole('radio', { name: 'نقدًا' }).focus()
+  await page.keyboard.press('ArrowLeft')
+  const radio = await page.evaluate(() => document.activeElement?.closest('label')?.textContent ?? document.activeElement?.getAttribute('aria-label') ?? document.activeElement?.id)
+  const checkedCard = await cell.getByRole('radio', { name: 'بطاقة' }).isChecked()
+  const sw = cell.getByRole('switch')
+  const before = await sw.getAttribute('aria-checked')
+  await sw.focus()
+  await page.keyboard.press('Space')
+  const after = await sw.getAttribute('aria-checked')
+  await ctx.close()
+  assert(checkedCard, 'ArrowLeft in RTL did not select «بطاقة» (focused: ' + radio + ')')
+  assert(before === 'true' && after === 'false', `switch ${before} → ${after}`)
+  return 'ArrowLeft ← بطاقة · Space يقلب المفتاح'
+})
+
+await check('BR-AT-07', 'proof: POS hit areas — checkbox, radio, switch and tabs are at least 44px in every visual system', async () => {
+  const { ctx, page } = await fresh('#/proof')
+  const small = await page.evaluate(() => [...document.querySelectorAll('[data-proof-cell*="/pos/"]')].flatMap((c) =>
+    [...c.querySelectorAll("[data-hz='checkbox'] [data-slot='control'], [data-hz='radio-group'] [data-slot='control'], [data-hz='switch'] [data-slot='control'], [role='tab']")]
+      .map((e) => ({ k: c.dataset.proofCell + ' ' + (e.getAttribute('role') ?? e.closest('[data-hz]')?.getAttribute('data-hz')), r: e.getBoundingClientRect() }))
+      .filter((x) => x.r.height < 44 || x.r.width < 44)
+      .map((x) => `${x.k} ${Math.round(x.r.width)}×${Math.round(x.r.height)}`)))
+  await ctx.close()
+  assert(!small.length, small.slice(0, 3).join(' · '))
+  return 'كل أهداف اللمس ≥ 44px في 6 خلايا POS'
+})
+
+await check('BR-AT-08', 'proof: dialog — focus lands on the safe action, Tab stays inside, Escape closes and returns focus, scroll restored', async () => {
+  const { ctx, page } = await fresh('#/proof?visual=soft')
+  const cell = page.locator('[data-proof-cell="soft/saas/ar"]')
+  const opener = cell.getByRole('button', { name: 'حذف العميل' })
+  await opener.focus()
+  await page.keyboard.press('Enter')
+  await page.waitForSelector("[data-hz='dialog'] [role='dialog']")
+  const first = await page.evaluate(() => document.activeElement?.textContent)
+  const scope = await page.evaluate(() => {
+    const p = document.querySelector("[data-hz='dialog']").closest('[data-hz-portal]')
+    return { dir: p?.getAttribute('dir'), radius: p?.style.getPropertyValue('--hz-component-dialog-radius'), overflow: getComputedStyle(document.body).overflow }
+  })
+  let escaped = 0
+  for (let i = 0; i < 8; i++) {
+    await page.keyboard.press('Tab')
+    if (!(await page.evaluate(() => !!document.activeElement?.closest("[role='dialog']")))) escaped++
+  }
+  await page.keyboard.press('Escape')
+  await page.waitForTimeout(100)
+  const after = await page.evaluate(() => ({ open: !!document.querySelector("[data-hz='dialog']"), focus: document.activeElement?.textContent, overflow: getComputedStyle(document.body).overflow }))
+  await ctx.close()
+  assert(first === 'إلغاء', 'initial focus on ' + first)
+  assert(scope.dir === 'rtl' && scope.radius && scope.overflow === 'hidden', JSON.stringify(scope))
+  assert(escaped === 0, `focus left the dialog ${escaped} times`)
+  assert(!after.open && after.focus === 'حذف العميل' && after.overflow !== 'hidden', JSON.stringify(after))
+  return 'تركيز على «إلغاء» · 8 Tab داخله · Escape يغلق ويرجع للزر · التمرير رجع'
+})
+
+await check('BR-AT-09', 'proof: drawer opens on the inline-end edge — left in Arabic, right in English', async () => {
+  const { ctx, page } = await fresh('#/proof?visual=quiet')
+  const edges = {}
+  for (const lang of ['ar', 'en']) {
+    const cell = page.locator(`[data-proof-cell="quiet/saas/${lang}"]`)
+    await cell.locator('[data-proof-overlays] button').nth(3).click()
+    await page.waitForSelector("[data-hz='drawer'] [role='dialog']")
+    await page.waitForTimeout(250)
+    edges[lang] = await page.evaluate(() => {
+      const r = document.querySelector("[data-hz='drawer'] [role='dialog']").getBoundingClientRect()
+      return { left: Math.round(r.left), right: Math.round(window.innerWidth - r.right) }
+    })
+    await page.keyboard.press('Escape')
+    await page.waitForTimeout(150)
+  }
+  await ctx.close()
+  assert(edges.ar.left <= 1 && edges.ar.right > 100, 'ar ' + JSON.stringify(edges.ar))
+  assert(edges.en.right <= 1 && edges.en.left > 100, 'en ' + JSON.stringify(edges.en))
+  return 'ar: الحافة اليسرى · en: الحافة اليمنى'
+})
+
+await check('BR-AT-10', 'proof: popover aligns to the trigger start and returns focus on Escape; tooltip shows on keyboard focus', async () => {
+  const { ctx, page } = await fresh('#/proof?visual=quiet')
+  const res = {}
+  for (const lang of ['ar', 'en']) {
+    const cell = page.locator(`[data-proof-cell="quiet/saas/${lang}"]`)
+    const trigger = cell.locator('[data-proof-overlays] button').nth(1)
+    await trigger.click()
+    await page.waitForSelector("[data-hz='popover'][role='dialog']")
+    const t = await trigger.boundingBox()
+    const p = await page.locator("[data-hz='popover'][role='dialog']").boundingBox()
+    await page.keyboard.press('Escape')
+    await page.waitForTimeout(100)
+    const back = await page.evaluate(() => document.activeElement?.closest("[data-slot='trigger']") !== null || document.activeElement?.getAttribute('aria-haspopup') !== null)
+    res[lang] = { startAligned: lang === 'ar' ? Math.abs(t.x + t.width - (p.x + p.width)) < 2 : Math.abs(t.x - p.x) < 2, below: p.y >= t.y + t.height, back }
+  }
+  const help = page.locator('[data-proof-cell="quiet/saas/ar"] [data-proof-overlays] button').first()
+  await help.focus()
+  await page.keyboard.press('Shift+Tab')
+  await page.keyboard.press('Tab')
+  await page.waitForTimeout(150)
+  const tip = await page.evaluate(() => {
+    const el = document.activeElement
+    const id = el?.getAttribute('aria-describedby')
+    const t = id && document.getElementById(id.split(' ')[0])
+    return t ? { role: t.getAttribute('role'), text: t.textContent } : null
+  })
+  await ctx.close()
+  for (const l of ['ar', 'en']) assert(res[l].startAligned && res[l].below && res[l].back, l + ' ' + JSON.stringify(res[l]))
+  assert(tip?.role === 'tooltip', 'tooltip ' + JSON.stringify(tip))
+  return 'ar: محاذاة يمين · en: محاذاة يسار · Escape يرجع للزر · التلميح بالكيبورد'
 })
 
 const run = {

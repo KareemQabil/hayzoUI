@@ -68,6 +68,7 @@ export function ProgressPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <button type="button" onClick={() => document.getElementById('experience-lab')?.scrollIntoView({ block: 'start' })} className={`${action} !border-action !bg-action !text-on-action hover:opacity-90`}>تجربة الأساسات ↓</button>
             <a href="#/proof" className={action}>{digits('الإثبات الأول: زر وحقل في 18 تركيبة ↗')}</a>
+            <a href="#/parity" className={action}>التكافؤ مع Ant Design ↗</a>
             <a href="#/app" className={action}>فتح التطبيق المرجعي ↗</a>
           </div>
         </div>

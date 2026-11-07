@@ -23,6 +23,8 @@ import {
   visualQuietLayer,
   visualSoftLayer,
 } from './tokens'
+import { componentChoiceLayer } from './tokens-choice'
+import { componentOverlayLayer } from './tokens-overlay'
 
 const V = '0.1.0'
 /** The recipe collection every visual system renders with: src/atomic/styles/recipes/*.css. */
@@ -71,7 +73,7 @@ export const LANGUAGES = {
 export type LanguageId = keyof typeof LANGUAGES
 
 /** Base token contracts shared by every experience (S0–S2). */
-export const BASE_LAYERS: readonly TokenLayer[] = [primitiveLayer, semanticLayer, componentLayer]
+export const BASE_LAYERS: readonly TokenLayer[] = [primitiveLayer, semanticLayer, componentLayer, componentChoiceLayer, componentOverlayLayer]
 
 const STYLE_ASSETS = [BRAND.asset, ...Object.values(VISUAL_SYSTEMS).map((v) => v.asset), ...Object.values(CONTEXTS).map((c) => c.asset)]
 const TOKEN_ASSETS: VersionedTokenAsset[] = [

@@ -1,0 +1,251 @@
+/*
+ * Recipe: overlays — recipes.atomic-core@0.1.0 (S3).
+ * Reads only --hz-component-{popover,tooltip,dialog,drawer}-* tokens (checked by OV-ST-01 / AT-ST-02).
+ * Anatomy
+ *   [data-hz-portal]                        portal wrapper carrying the experience scope (display: contents)
+ *   [data-hz-anchor] (data-slot=trigger)    trigger wrapper for popover/tooltip (display: contents)
+ *   [data-hz=popover] > [data-slot=title] [data-slot=body]
+ *   [data-hz=tooltip]
+ *   [data-hz=dialog|drawer] > [data-slot=backdrop] [data-slot=panel] >
+ *       [data-slot=header] > [data-slot=title] [data-slot=close] > [data-slot=close-icon]
+ *       [data-slot=description] [data-slot=body] [data-slot=footer]
+ * Variants: dialog data-size (sm|md|lg); drawer data-side (inline-start|inline-end|block-end).
+ * State: data-state="open" on mounted overlays; position (left/top) is set inline by the positioning adapter.
+ * Stacking: one recipe-private z-index for every overlay, so opening order (DOM order of portals) decides.
+ * Logical properties only; the drawer's slide direction follows [dir].
+ */
+[data-hz-portal],
+[data-hz-anchor][data-slot='trigger'] { display: contents; }
+
+/* ---------- Popover ---------- */
+[data-hz='popover'] {
+  position: fixed;
+  z-index: 1000;
+  box-sizing: border-box;
+  margin: 0;
+  max-inline-size: min(360px, calc(100vw - 16px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--hz-component-popover-gap);
+  padding: var(--hz-component-popover-padding);
+  font-family: var(--hz-component-popover-font-family);
+  font-size: var(--hz-component-popover-font-size);
+  color: var(--hz-component-popover-foreground);
+  background: var(--hz-component-popover-background);
+  border: var(--hz-component-popover-border-width) solid var(--hz-component-popover-border-color);
+  border-radius: var(--hz-component-popover-radius);
+  box-shadow: var(--hz-component-popover-shadow);
+  animation: hz-overlay-fade var(--hz-component-popover-transition-duration) var(--hz-component-popover-transition-easing);
+}
+[data-hz='popover']:not([data-positioned]) { opacity: 0; }
+[data-hz='popover']:focus-visible {
+  outline: var(--hz-component-popover-focus-width) solid var(--hz-component-popover-focus-color);
+  outline-offset: var(--hz-component-popover-focus-offset);
+}
+[data-hz='popover'] [data-slot='title'] {
+  margin: 0;
+  font-size: var(--hz-component-popover-title-size);
+  font-weight: var(--hz-component-popover-title-weight);
+}
+[data-hz='popover'] [data-slot='body'] { min-inline-size: 0; }
+
+/* ---------- Tooltip ---------- */
+[data-hz='tooltip'] {
+  position: fixed;
+  z-index: 1001;
+  box-sizing: border-box;
+  max-inline-size: min(280px, calc(100vw - 16px));
+  padding-block: var(--hz-component-tooltip-padding-block);
+  padding-inline: var(--hz-component-tooltip-padding-inline);
+  font-family: var(--hz-component-tooltip-font-family);
+  font-size: var(--hz-component-tooltip-font-size);
+  line-height: 1.4;
+  color: var(--hz-component-tooltip-foreground);
+  background: var(--hz-component-tooltip-background);
+  border-radius: var(--hz-component-tooltip-radius);
+  overflow-wrap: anywhere;
+  animation: hz-overlay-fade var(--hz-component-tooltip-transition-duration) var(--hz-component-tooltip-transition-easing);
+}
+[data-hz='tooltip']:not([data-positioned]) { opacity: 0; }
+
+/* ---------- Dialog and Drawer (shared modal anatomy) ---------- */
+[data-hz='dialog'],
+[data-hz='drawer'] {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  box-sizing: border-box;
+}
+[data-hz='dialog'] { align-items: center; justify-content: center; padding: var(--hz-component-dialog-padding); }
+
+[data-hz='dialog'] [data-slot='backdrop'],
+[data-hz='drawer'] [data-slot='backdrop'] { position: absolute; inset: 0; }
+[data-hz='dialog'] [data-slot='backdrop'] {
+  background: var(--hz-component-dialog-backdrop);
+  animation: hz-overlay-fade var(--hz-component-dialog-transition-duration) var(--hz-component-dialog-transition-easing);
+}
+[data-hz='drawer'] [data-slot='backdrop'] {
+  background: var(--hz-component-drawer-backdrop);
+  animation: hz-overlay-fade var(--hz-component-drawer-transition-duration) var(--hz-component-drawer-transition-easing);
+}
+
+[data-hz='dialog'] [data-slot='panel'] {
+  --_w: 560px;
+  position: relative;
+  box-sizing: border-box;
+  inline-size: min(var(--_w), 100%);
+  max-block-size: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hz-component-dialog-gap);
+  padding: var(--hz-component-dialog-padding);
+  font-family: var(--hz-component-dialog-font-family);
+  font-size: var(--hz-component-dialog-font-size);
+  color: var(--hz-component-dialog-foreground);
+  background: var(--hz-component-dialog-background);
+  border: var(--hz-component-dialog-border-width) solid var(--hz-component-dialog-border-color);
+  border-radius: var(--hz-component-dialog-radius);
+  box-shadow: var(--hz-component-dialog-shadow);
+  animation: hz-overlay-rise var(--hz-component-dialog-transition-duration) var(--hz-component-dialog-transition-easing);
+}
+[data-hz='dialog'][data-size='sm'] [data-slot='panel'] { --_w: 400px; }
+[data-hz='dialog'][data-size='lg'] [data-slot='panel'] { --_w: 720px; }
+
+[data-hz='drawer'] [data-slot='panel'] {
+  --_slide: translateX(100%);
+  position: relative;
+  box-sizing: border-box;
+  inline-size: min(420px, 100%);
+  block-size: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hz-component-drawer-gap);
+  padding: var(--hz-component-drawer-padding);
+  font-family: var(--hz-component-drawer-font-family);
+  font-size: var(--hz-component-drawer-font-size);
+  color: var(--hz-component-drawer-foreground);
+  background: var(--hz-component-drawer-background);
+  box-shadow: var(--hz-component-drawer-shadow);
+  animation: hz-overlay-slide var(--hz-component-drawer-transition-duration) var(--hz-component-drawer-transition-easing);
+}
+/* Sides: the flex main axis follows direction, so flex-end is the inline end in LTR and RTL alike. */
+[data-hz='drawer'][data-side='inline-end'] { justify-content: flex-end; }
+[data-hz='drawer'][data-side='inline-start'] { justify-content: flex-start; }
+[data-hz='drawer'][data-side='block-end'] { flex-direction: column; justify-content: flex-end; }
+[data-hz='drawer'][data-side='inline-end'] [data-slot='panel'] {
+  border-inline-start: var(--hz-component-drawer-border-width) solid var(--hz-component-drawer-border-color);
+  border-start-start-radius: var(--hz-component-drawer-radius);
+  border-end-start-radius: var(--hz-component-drawer-radius);
+}
+[data-hz='drawer'][data-side='inline-start'] [data-slot='panel'] {
+  --_slide: translateX(-100%);
+  border-inline-end: var(--hz-component-drawer-border-width) solid var(--hz-component-drawer-border-color);
+  border-start-end-radius: var(--hz-component-drawer-radius);
+  border-end-end-radius: var(--hz-component-drawer-radius);
+}
+[data-hz='drawer'][data-side='block-end'] [data-slot='panel'] {
+  --_slide: translateY(100%);
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: 85%;
+  border-block-start: var(--hz-component-drawer-border-width) solid var(--hz-component-drawer-border-color);
+  border-start-start-radius: var(--hz-component-drawer-radius);
+  border-start-end-radius: var(--hz-component-drawer-radius);
+}
+/* Transforms are physical: mirror the inline slides in RTL. */
+[dir='rtl'] [data-hz='drawer'][data-side='inline-end'] [data-slot='panel'] { --_slide: translateX(-100%); }
+[dir='rtl'] [data-hz='drawer'][data-side='inline-start'] [data-slot='panel'] { --_slide: translateX(100%); }
+
+/* Header, title, description, body, footer */
+[data-hz='dialog'] [data-slot='header'],
+[data-hz='drawer'] [data-slot='header'] { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--hz-component-dialog-gap); }
+[data-hz='drawer'] [data-slot='header'] { gap: var(--hz-component-drawer-gap); }
+[data-hz='dialog'] [data-slot='title'] { margin: 0; font-size: var(--hz-component-dialog-title-size); font-weight: var(--hz-component-dialog-title-weight); }
+[data-hz='drawer'] [data-slot='title'] { margin: 0; font-size: var(--hz-component-drawer-title-size); font-weight: var(--hz-component-drawer-title-weight); }
+[data-hz='dialog'] [data-slot='description'] { margin: 0; color: var(--hz-component-dialog-description-color); font-size: var(--hz-component-dialog-description-size); }
+[data-hz='drawer'] [data-slot='description'] { margin: 0; color: var(--hz-component-drawer-description-color); font-size: var(--hz-component-drawer-description-size); }
+[data-hz='dialog'] [data-slot='body'],
+[data-hz='drawer'] [data-slot='body'] { min-block-size: 0; }
+[data-hz='drawer'] [data-slot='body'] { flex: 1 1 auto; }
+[data-hz='dialog'] [data-slot='footer'],
+[data-hz='drawer'] [data-slot='footer'] { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--hz-component-dialog-gap); }
+[data-hz='drawer'] [data-slot='footer'] { gap: var(--hz-component-drawer-gap); }
+
+/* Close button */
+[data-hz='dialog'] [data-slot='close'] {
+  --_size: max(var(--hz-component-dialog-close-size), var(--hz-component-dialog-close-target-min));
+  color: var(--hz-component-dialog-close-color);
+  border-radius: var(--hz-component-dialog-close-radius);
+  outline-color: var(--hz-component-dialog-focus-color);
+  outline-width: var(--hz-component-dialog-focus-width);
+  outline-offset: var(--hz-component-dialog-focus-offset);
+}
+[data-hz='drawer'] [data-slot='close'] {
+  --_size: max(var(--hz-component-drawer-close-size), var(--hz-component-drawer-close-target-min));
+  color: var(--hz-component-drawer-close-color);
+  border-radius: var(--hz-component-drawer-close-radius);
+  outline-color: var(--hz-component-drawer-focus-color);
+  outline-width: var(--hz-component-drawer-focus-width);
+  outline-offset: var(--hz-component-drawer-focus-offset);
+}
+[data-hz='dialog'] [data-slot='close'],
+[data-hz='drawer'] [data-slot='close'] {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  inline-size: var(--_size);
+  block-size: var(--_size);
+  margin: 0;
+  margin-inline-end: calc(var(--_size) / -4);
+  margin-block-start: calc(var(--_size) / -4);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  outline-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover) {
+  [data-hz='dialog'] [data-slot='close']:hover:not(:disabled) { background: var(--hz-component-dialog-close-background-hover); }
+  [data-hz='drawer'] [data-slot='close']:hover:not(:disabled) { background: var(--hz-component-drawer-close-background-hover); }
+}
+[data-hz='dialog'] [data-slot='close']:focus-visible,
+[data-hz='drawer'] [data-slot='close']:focus-visible { outline-style: solid; }
+[data-hz='dialog'] [data-slot='close']:disabled { opacity: var(--hz-component-dialog-close-disabled-opacity); cursor: not-allowed; }
+[data-hz='drawer'] [data-slot='close']:disabled { opacity: var(--hz-component-drawer-close-disabled-opacity); cursor: not-allowed; }
+[data-hz='dialog'] [data-slot='close-icon'],
+[data-hz='drawer'] [data-slot='close-icon'] { inline-size: 1.1em; block-size: 1.1em; }
+
+[data-hz='dialog'] [data-slot='panel']:focus-visible {
+  outline: var(--hz-component-dialog-focus-width) solid var(--hz-component-dialog-focus-color);
+  outline-offset: var(--hz-component-dialog-focus-offset);
+}
+[data-hz='drawer'] [data-slot='panel']:focus-visible {
+  outline: var(--hz-component-drawer-focus-width) solid var(--hz-component-drawer-focus-color);
+  outline-offset: calc(var(--hz-component-drawer-focus-width) * -1);
+}
+
+@keyframes hz-overlay-fade { from { opacity: 0; } }
+@keyframes hz-overlay-rise { from { opacity: 0; transform: translateY(8px) scale(0.98); } }
+@keyframes hz-overlay-slide { from { transform: var(--_slide); } }
+
+/* Reduced motion — the platform preference or the experience's own setting. */
+@media (prefers-reduced-motion: reduce) {
+  [data-hz='popover'],
+  [data-hz='tooltip'],
+  [data-hz='dialog'] [data-slot='backdrop'],
+  [data-hz='dialog'] [data-slot='panel'],
+  [data-hz='drawer'] [data-slot='backdrop'],
+  [data-hz='drawer'] [data-slot='panel'] { animation: none; }
+}
+[data-motion='reduced'] [data-hz='popover'],
+[data-motion='reduced'] [data-hz='tooltip'],
+[data-motion='reduced'] [data-hz='dialog'] [data-slot='backdrop'],
+[data-motion='reduced'] [data-hz='dialog'] [data-slot='panel'],
+[data-motion='reduced'] [data-hz='drawer'] [data-slot='backdrop'],
+[data-motion='reduced'] [data-hz='drawer'] [data-slot='panel'] { animation: none; }

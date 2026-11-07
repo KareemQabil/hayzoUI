@@ -18,7 +18,7 @@ const components = ids('src/knowledge/components.ts', /^\s*id: '([a-z-]+)'/gm)
 const patterns = [...new Set(ids('src/knowledge/patterns.ts', /\bid: '(P-[A-Z-]+)'/g))]
 const tabs = ['overview', 'lab', 'guidelines', 'behavior', 'code', 'provenance']
 const routes = [
-  '#/progress', '#/proof', '#/app', '#/ecosystem', '#/evidence', '#/patterns', '#/resources', '#/rules', '#/studio',
+  '#/progress', '#/proof', '#/parity', '#/app', '#/ecosystem', '#/evidence', '#/patterns', '#/resources', '#/rules', '#/studio',
   ...tabs.map((t) => `#/components/currency-input/${t}`),
   ...components.filter((c) => c !== 'currency-input').map((c) => `#/components/${c}`),
   ...patterns.map((p) => `#/patterns/${p}`),
@@ -78,25 +78,48 @@ async function measure(page) {
 }
 
 // Oracle 2 — mixed-script text (.ax-auto, auto-direction inputs), measured on screen:
-//   own direction = first strong character · first character at the line's start (punctuation in place) ·
+//   own direction = dominant script (words vote by their own letters; RTL words >= LTR words -> rtl) ·
+//   the first run (an isolated foreign island, or the first character) at the line's start edge, and the
+//   island's first character at the island's own start (punctuation in place: «Dr.» reads D-r-. inside RTL) ·
 //   alignment per the mixedAlign preference: 'ui' = the container's start edge, 'content' = the text's own start.
 async function measureMixed(page, mixedAlign) {
   return page.evaluate((mixedAlign) => {
-    const STRONG = /[A-Za-z\u00c0-\u024f\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff]/
-    const RTL_CHAR = /[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff]/
+    // Inline copy of countStrong/wordDir/dominantDir from src/arabic/bidi-runs.ts (page.evaluate cannot import
+    // TypeScript). KEEP IN SYNC with that file.
+    const RTL_LETTER = /[\p{Script=Arabic}\p{Script=Hebrew}\p{Script=Syriac}\p{Script=Thaana}\p{Script=Nko}]/u
+    const LETTER = /\p{L}/u
+    const wordDir = (word) => {
+      let rtl = 0
+      let ltr = 0
+      for (const ch of word) {
+        if (!LETTER.test(ch)) continue
+        if (RTL_LETTER.test(ch)) rtl++
+        else ltr++
+      }
+      return rtl + ltr === 0 ? null : rtl >= ltr ? 'rtl' : 'ltr'
+    }
+    const dominantDir = (text) => {
+      let rtl = 0
+      let ltr = 0
+      for (const m of text.matchAll(/\S+/gu)) {
+        const d = wordDir(m[0])
+        if (d === 'rtl') rtl++
+        else if (d === 'ltr') ltr++
+      }
+      return rtl + ltr === 0 ? null : rtl >= ltr ? 'rtl' : 'ltr'
+    }
     const out = { checked: 0, problems: [] }
     const side = (rtl) => (rtl ? 'right' : 'left')
     for (const el of document.querySelectorAll('.ax-auto:not(.ax-auto--inline)')) {
       const text = el.textContent.trim()
-      const strong = text.match(STRONG)?.[0]
+      const expectDir = dominantDir(text)
       const box = el.getBoundingClientRect()
-      if (!strong || !box.width || el.closest('[aria-hidden="true"]')) continue
+      if (!expectDir || !box.width || el.closest('[aria-hidden="true"]')) continue
       const own = getComputedStyle(el).direction
       const parentDir = getComputedStyle(el.parentElement).direction
-      const expectDir = RTL_CHAR.test(strong) ? 'rtl' : 'ltr'
       const label = text.slice(0, 40)
       out.checked++
-      if (own !== expectDir) out.problems.push('direction ' + own + ', first strong says ' + expectDir + ': «' + label + '»')
+      if (own !== expectDir) out.problems.push('direction ' + own + ', dominant script says ' + expectDir + ': «' + label + '»')
       const range = document.createRange()
       range.selectNodeContents(el)
       const rects = [...range.getClientRects()].filter((r) => r.width)
@@ -119,8 +142,16 @@ async function measureMixed(page, mixedAlign) {
         r.setStart(node, i)
         r.setEnd(node, i + 1)
         const c = r.getBoundingClientRect()
-        const atStart = own === 'rtl' ? Math.abs(c.right - t.right) < 2 : Math.abs(c.left - t.left) < 2
-        if (!atStart) out.problems.push('first character not at the line start (' + own + '): «' + label + '»')
+        // The first run: the isolate holding the first character, if any, else that character in the line's flow.
+        const island = node.parentElement.closest('bdi')
+        const run = island && el.contains(island) ? island.getBoundingClientRect() : c
+        const atStart = own === 'rtl' ? Math.abs(run.right - t.right) < 2 : Math.abs(run.left - t.left) < 2
+        if (!atStart) out.problems.push('first run not at the line start (' + own + '): «' + label + '»')
+        if (island && el.contains(island)) {
+          const islandDir = getComputedStyle(island).direction
+          const inPlace = islandDir === 'rtl' ? Math.abs(c.right - run.right) < 2 : Math.abs(c.left - run.left) < 2
+          if (!inPlace) out.problems.push('first character not at its island start (' + islandDir + '): «' + label + '»')
+        }
       }
     }
     for (const input of document.querySelectorAll('input[dir="auto"]')) {
