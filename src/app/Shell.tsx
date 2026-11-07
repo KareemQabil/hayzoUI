@@ -13,6 +13,7 @@ export const NAV: Array<{ group: string; items: NavItem[] }> = [
   {
     group: 'المرجع',
     items: [
+      { href: '#/progress', label: 'التقدّم', match: 'progress' },
       { href: '#/components/currency-input', label: 'المكونات', match: 'components' },
       { href: '#/patterns', label: 'الأنماط', match: 'patterns' },
       { href: '#/rules', label: 'القواعد', match: 'rules' },
@@ -38,13 +39,13 @@ export const NAV: Array<{ group: string; items: NavItem[] }> = [
 
 export function Brand() {
   return (
-    <a href="#/components/currency-input" className="flex flex-none items-center gap-2.5 rounded-[var(--ax-radius-control)]" aria-label="التجربة العربية — الصفحة الرئيسية">
+    <a href="#/progress" className="flex flex-none items-center gap-2.5 rounded-[var(--ax-radius-control)]" aria-label="حيزو — الصفحة الرئيسية">
       <span aria-hidden="true" className="grid size-8 place-items-center rounded-[calc(var(--ax-radius-control)+2px)] bg-fg text-[19px] font-semibold leading-none text-surface">
-        ع
+        ح
       </span>
       <span className="flex flex-col leading-tight">
-        <span className="text-[15px] font-semibold text-fg">التجربة العربية</span>
-        <span className="text-[11px] text-fg-3">اسم عمل مؤقت · نموذج أول</span>
+        <span className="text-[15px] font-semibold text-fg">حيزو <bdi dir="ltr">HayzoUI</bdi></span>
+        <span className="text-[11px] text-fg-3">معاينة التطوير · مرجع عربي</span>
       </span>
     </a>
   )
@@ -54,9 +55,9 @@ export function Shell({ route, children }: { route: string[]; children: ReactNod
   const { theme, setTheme, prefs, setPrefs } = useSettings()
   const [searchOpen, setSearchOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const wide = useMediaQuery('(min-width: 1180px)')
+  const wide = useMediaQuery('(min-width: 1440px)')
   const searchBtn = useRef<HTMLButtonElement>(null)
-  const current = route[0] ?? 'components'
+  const current = route[0] ?? 'progress'
 
   useEffect(() => {
     const on = (e: KeyboardEvent) => {

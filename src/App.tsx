@@ -12,15 +12,19 @@ import { RulesPage } from './pages/RulesPage'
 import { EcosystemPage } from './pages/EcosystemPage'
 // The state matrix is a review tool: loaded on demand with its renderers and specs.
 const MatrixPage = lazy(() => import('./pages/MatrixPage').then((m) => ({ default: m.MatrixPage })))
+const ProgressPage = lazy(() => import('./pages/ProgressPage').then((m) => ({ default: m.ProgressPage })))
 
 function Routes() {
   const route = useRoute()
-  const [section = 'components'] = route
+  const [section = 'progress'] = route
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [section, route[1]])
   let page
   switch (section) {
+    case 'progress':
+      page = <Suspense fallback={<p className="p-8 text-fg-2">جارٍ تحميل مختبر التقدم…</p>}><ProgressPage /></Suspense>
+      break
     case 'studio':
       page = <StudioPage />
       break
@@ -59,7 +63,7 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = 'ar'
     document.documentElement.dir = 'rtl'
-    document.title = 'التجربة العربية — مرجع واجهات عربية أولًا'
+    document.title = 'HayzoUI — مختبر التقدم والواجهات العربية'
   }, [])
   return (
     <SettingsProvider>
