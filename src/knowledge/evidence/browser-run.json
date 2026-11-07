@@ -1,7 +1,7 @@
 {
   "tool": "Playwright (playwright-core 1.64.1)",
   "environment": "Chromium 156.0.8078.80 headless · win32 · 1280×900 و390×844 · reduced motion",
-  "startedAt": "2026-11-07T17:51:01.935Z",
+  "startedAt": "2026-11-07T20:09:17.328Z",
   "results": [
     {
       "id": "BR-CI-01",
@@ -140,6 +140,30 @@
       "name": "every spec state × content variant has a rendered matrix cell",
       "status": "passed",
       "detail": "19 spec · 1336 خلية"
+    },
+    {
+      "id": "BR-AT-01",
+      "name": "proof: sizes come from the context only — same in every visual system and language",
+      "status": "passed",
+      "detail": "18 خلية · ERP 32 · SaaS 40 · POS 52 (الصغير ≥ 44)"
+    },
+    {
+      "id": "BR-AT-02",
+      "name": "proof: keyboard reaches the action with a visible focus ring; Enter twice saves once",
+      "status": "passed",
+      "detail": "Tab ← Tab ← Enter Enter = حفظ واحد · aria-busy · ثم Enter = الثاني"
+    },
+    {
+      "id": "BR-AT-03",
+      "name": "proof: the same component follows the scope direction; own-direction content aligns per policy",
+      "status": "passed",
+      "detail": "ar: يمين · en: يسار · البريد ltr ومحاذاته مع الواجهة"
+    },
+    {
+      "id": "BR-AT-04",
+      "name": "proof: no horizontal page scroll at 390px, no console errors",
+      "status": "passed",
+      "detail": "390 ≤ 390"
     }
   ]
 }

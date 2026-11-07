@@ -12,6 +12,8 @@ import { RulesPage } from './pages/RulesPage'
 import { EcosystemPage } from './pages/EcosystemPage'
 // The state matrix is a review tool: loaded on demand with its renderers and specs.
 const MatrixPage = lazy(() => import('./pages/MatrixPage').then((m) => ({ default: m.MatrixPage })))
+// The atomic first proof: loaded on demand with the token engine and the atomic slice.
+const ProofPage = lazy(() => import('./pages/ProofPage').then((m) => ({ default: m.ProofPage })))
 const ProgressPage = lazy(() => import('./pages/ProgressPage').then((m) => ({ default: m.ProgressPage })))
 
 function Routes() {
@@ -24,6 +26,9 @@ function Routes() {
   switch (section) {
     case 'progress':
       page = <Suspense fallback={<p className="p-8 text-fg-2">جارٍ تحميل مختبر التقدم…</p>}><ProgressPage /></Suspense>
+      break
+    case 'proof':
+      page = <Suspense fallback={<p className="p-8 text-fg-2">جارٍ تحميل الإثبات…</p>}><ProofPage /></Suspense>
       break
     case 'studio':
       page = <StudioPage />

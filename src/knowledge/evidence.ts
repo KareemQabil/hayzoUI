@@ -54,6 +54,11 @@ export const BROWSER_CHECKS: BrowserCheck[] = [
   { id: 'BR-MIX-02', requirement: 'حقل نص فيه اسم لاتيني يتبع تفضيل المحاذاة', rule: 'R-BIDI-001', component: 'text-field', method: 'Playwright: text-align المحسوب في المصفوفة', expected: 'right مع الواجهة · start مع النص' },
   { id: 'BR-MIX-03', requirement: 'الاسم الذي يبدأ بلاتيني تبقى علامات ترقيمه في مكانها', rule: 'R-BIDI-001', component: 'combobox', method: 'Playwright: مواضع D وr و. في «Dr. سامي الحلبي»', expected: 'بالترتيب واتجاه ltr' },
   { id: 'BR-MX-01', requirement: 'كل حالة × متغير محتوى في الـspec لها خلية مرسومة في المصفوفة', component: 'currency-input', method: 'Playwright: كل spec × كل محتوى في #/matrix', expected: 'لا خلايا ناقصة ولا أخطاء console' },
+  // Atomic first proof (#/proof): the same Button and TextField in 3 visual systems × 3 contexts × ar/en.
+  { id: 'BR-AT-01', requirement: 'المقاسات من السياق وحده: نفس الارتفاع في كل نظام بصري ولغة', component: 'atomic.button', method: 'Playwright: قياس الزر والحقل في 18 خلية', expected: 'ERP 32 · SaaS 40 · POS 52، والزر الصغير في POS ≥ 44px' },
+  { id: 'BR-AT-02', requirement: 'لوحة المفاتيح تصل للإجراء بحلقة تركيز ظاهرة، والضغط المزدوج يحفظ مرة واحدة', rule: 'R-FLOW-001', component: 'atomic.button', method: 'Playwright: Tab ← Tab ← Enter Enter ← انتظار ← Enter', expected: 'حفظ واحد أثناء الانتظار مع aria-busy، ثم الثاني' },
+  { id: 'BR-AT-03', requirement: 'نفس المكوّن يتبع اتجاه النطاق، والمحتوى اللاتيني يتحاذى حسب التفضيل', rule: 'R-BIDI-001', component: 'atomic.text-field', method: 'Playwright: حواف التسمية والزر الأول وحقل البريد في ar وen', expected: 'ar يمين · en يسار · البريد ltr ومحاذاته مع الواجهة' },
+  { id: 'BR-AT-04', requirement: 'لا تمرير أفقي لصفحة الإثبات على عرض 390px', component: 'atomic.button', method: 'Playwright: scrollWidth ≤ clientWidth، وأخطاء console', expected: 'لا تجاوز ولا أخطاء' },
 ]
 
 export type AutomatedState = { state: 'passed' | 'failed' | 'not-run'; run?: RunFile; detail?: string }

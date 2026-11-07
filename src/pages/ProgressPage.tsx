@@ -6,7 +6,7 @@ import { downloadJson } from '../app/ui'
 import { COMPONENTS } from '../knowledge'
 import { UNIT_RUN, type RunFile } from '../knowledge/evidence'
 import { toDisplayDigits, type DisplayNumerals } from '../arabic'
-import { useLocale } from '../system'
+import { Digits, useLocale } from '../system'
 
 /** Counts and date come from the recorded unit run (scripts/record-unit.mjs), never typed by hand. */
 export function summarizeRun(run: RunFile) {
@@ -67,6 +67,7 @@ export function ProgressPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <button type="button" onClick={() => document.getElementById('experience-lab')?.scrollIntoView({ block: 'start' })} className={`${action} !border-action !bg-action !text-on-action hover:opacity-90`}>تجربة الأساسات ↓</button>
+            <a href="#/proof" className={action}>{digits('الإثبات الأول: زر وحقل في 18 تركيبة ↗')}</a>
             <a href="#/app" className={action}>فتح التطبيق المرجعي ↗</a>
           </div>
         </div>
@@ -82,13 +83,13 @@ export function ProgressPage() {
         {[
           ['01', 'الأساسات المستقلة', 'منفّذة وقابلة للتجربة', 'السياق، النسخ المحددة، فحص التوافق وتتبع المصادر.'],
           ['02', 'ربط محرك الـtokens', 'مختبر بعقود تشغيل فعلية', 'ربط طبقات بإصدارات محددة وتشغيل المحرك عبر واجهته العامة.'],
-          ['03', 'مكوّنات Atomic الجديدة', 'المرحلة التالية', 'السلوك والـrecipes ثم أول شريحة مكوّنات؛ لم تُعرض هنا كمكوّنات مكتملة.'],
+          ['03', 'الإثبات الأول: زر وحقل', 'مختبر في المتصفح', 'نفس المكوّنين في 3 أنظمة بصرية × 3 سياقات × العربية والإنجليزية، بلا نسخ؛ السلوك متطابق في الـ18 تركيبة.'],
         ].map(([number, title, status, body]) => (
           <article key={number} className="py-6 md:px-5 md:first:ps-0 md:last:pe-0">
             <p className="font-mono text-[12px] text-fg-3">{digits(number)}</p>
             <h2 className="mt-3 text-[18px] font-semibold text-fg">{title}</h2>
             <p className="mt-2 text-[13px] font-medium text-link">{status}</p>
-            <p className="mt-2 text-[14px] leading-7 text-fg-2">{body}</p>
+            <p className="mt-2 text-[14px] leading-7 text-fg-2"><Digits>{body}</Digits></p>
           </article>
         ))}
       </section>
@@ -179,7 +180,7 @@ export function ProgressPage() {
           ].map(([href, title, body, label]) => <a key={href} href={href} className="group rounded-[var(--ax-radius-surface)] border border-line-2 p-5 transition-colors hover:border-action focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"><h3 className="text-[18px] font-semibold text-fg">{title}</h3><p className="mt-3 text-[14px] leading-7 text-fg-2">{body}</p><span className="mt-5 inline-block text-[13px] font-medium text-link">{label}</span></a>)}
         </div>
       </section>
-      <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-[12px] leading-6 text-fg-2"><span>التالي: السلوك، recipes، وأول شريحة Atomic قابلة للمقارنة.</span><a href={`${REPO}/tree/main/docs/architecture`} target="_blank" rel="noreferrer" className="text-link underline underline-offset-4">الكود وخطة المعمارية ↗</a></footer>
+      <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-[12px] leading-6 text-fg-2"><span>التالي: نقل نمط «إضافة عميل والتحصيل» إلى المكوّنات الجديدة ومقارنته بالتطبيق المرجعي.</span><a href={`${REPO}/tree/main/docs/architecture`} target="_blank" rel="noreferrer" className="text-link underline underline-offset-4">الكود وخطة المعمارية ↗</a></footer>
     </div>
   )
 }

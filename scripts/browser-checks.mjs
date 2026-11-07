@@ -18,7 +18,10 @@ async function fresh(hash, viewport = { width: 1280, height: 900 }) {
   return { ctx, page }
 }
 
+// ONLY=BR-AT runs a subset and does not overwrite the recorded run.
+const ONLY = process.env.ONLY
 async function check(id, name, fn) {
+  if (ONLY && !id.startsWith(ONLY)) return
   try {
     const detail = await fn()
     results.push({ id, name, status: 'passed', detail })
@@ -430,6 +433,84 @@ await check('BR-MX-01', 'every spec state × content variant has a rendered matr
   return `${specs.length} spec · ${cells} خلية`
 })
 
+// Atomic first proof (#/proof): one Button and one TextField across 3 visual systems × 3 contexts × ar/en.
+const EXPECTED_HEIGHT = { erp: 32, pos: 52, saas: 40 }
+await check('BR-AT-01', 'proof: sizes come from the context only — same in every visual system and language', async () => {
+  const { ctx, page } = await fresh('#/proof')
+  const cells = await page.evaluate(() => [...document.querySelectorAll('[data-proof-cell]')].map((c) => ({
+    key: c.dataset.proofCell,
+    button: c.querySelector("[data-hz='button']").getBoundingClientRect().height,
+    small: c.querySelector("[data-hz='button'][data-size='sm']").getBoundingClientRect().height,
+    control: c.querySelector("[data-slot='control']").getBoundingClientRect().height,
+  })))
+  await ctx.close()
+  assert(cells.length === 18, cells.length + ' cells')
+  for (const c of cells) {
+    const want = EXPECTED_HEIGHT[c.key.split('/')[1]]
+    assert(Math.abs(c.button - want) < 0.5 && Math.abs(c.control - want) < 0.5, `${c.key}: button ${c.button}, field ${c.control}, want ${want}`)
+    if (c.key.includes('/pos/')) assert(c.small >= 44, `${c.key}: small button ${c.small} < 44px touch target`)
+  }
+  return '18 خلية · ERP 32 · SaaS 40 · POS 52 (الصغير ≥ 44)'
+})
+
+await check('BR-AT-02', 'proof: keyboard reaches the action with a visible focus ring; Enter twice saves once', async () => {
+  const { ctx, page } = await fresh('#/proof?visual=quiet')
+  const cell = page.locator('[data-proof-cell="quiet/saas/ar"]')
+  await cell.getByLabel(/اسم العميل/).click()
+  await page.keyboard.press('Tab')
+  await page.keyboard.press('Tab')
+  const focused = await page.evaluate(() => {
+    const el = document.activeElement
+    const cs = getComputedStyle(el)
+    return { text: el?.querySelector("[data-slot='label']")?.textContent, style: cs.outlineStyle, width: parseFloat(cs.outlineWidth) }
+  })
+  assert(focused.text === 'حفظ العميل', 'focus on ' + focused.text)
+  assert(focused.style === 'solid' && focused.width >= 2, `ring ${focused.style} ${focused.width}`)
+  await page.keyboard.press('Enter')
+  await page.keyboard.press('Enter')
+  const during = await cell.locator('[data-saves]').getAttribute('data-saves')
+  const busy = await page.evaluate(() => document.activeElement?.getAttribute('aria-busy'))
+  await page.waitForTimeout(1400)
+  await page.keyboard.press('Enter')
+  const after = await cell.locator('[data-saves]').getAttribute('data-saves')
+  await ctx.close()
+  assert(during === '1' && busy === 'true', `saves ${during}, aria-busy ${busy}`)
+  assert(after === '2', 'after settling: ' + after)
+  return 'Tab ← Tab ← Enter Enter = حفظ واحد · aria-busy · ثم Enter = الثاني'
+})
+
+await check('BR-AT-03', 'proof: the same component follows the scope direction; own-direction content aligns per policy', async () => {
+  const { ctx, page } = await fresh('#/proof?visual=editorial')
+  const m = await page.evaluate(() => Object.fromEntries(['ar', 'en'].map((l) => {
+    const c = document.querySelector(`[data-proof-cell="editorial/saas/${l}"]`)
+    const label = c.querySelector("[data-slot='label']").getBoundingClientRect()
+    const control = c.querySelector("[data-slot='control']").getBoundingClientRect()
+    const first = c.querySelector("[data-hz='button']").getBoundingClientRect()
+    const row = c.querySelector("[data-hz='button']").parentElement.getBoundingClientRect()
+    const email = c.querySelector("input[type='email']")
+    return [l, { labelAtRight: Math.abs(label.right - control.right) < 2, labelAtLeft: Math.abs(label.left - control.left) < 2, firstAtRight: Math.abs(first.right - row.right) < 2, emailAlign: getComputedStyle(email).textAlign, emailDir: email.dir }]
+  })))
+  await ctx.close()
+  assert(m.ar.labelAtRight && m.ar.firstAtRight, 'ar: ' + JSON.stringify(m.ar))
+  assert(m.en.labelAtLeft && !m.en.firstAtRight, 'en: ' + JSON.stringify(m.en))
+  assert(m.ar.emailDir === 'ltr' && m.ar.emailAlign === 'right' && m.en.emailAlign === 'left', `email ${m.ar.emailAlign}/${m.en.emailAlign}`)
+  return 'ar: يمين · en: يسار · البريد ltr ومحاذاته مع الواجهة'
+})
+
+await check('BR-AT-04', 'proof: no horizontal page scroll at 390px, no console errors', async () => {
+  const errors = []
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' })
+  const page = await ctx.newPage()
+  page.on('console', (msg) => msg.type() === 'error' && errors.push(msg.text().slice(0, 120)))
+  await page.goto(base + '#/proof', { waitUntil: 'networkidle' })
+  await page.waitForTimeout(300)
+  const r = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth }))
+  await ctx.close()
+  assert(r.sw <= r.cw, `scrollWidth ${r.sw} > ${r.cw}`)
+  assert(!errors.length, 'console: ' + errors[0])
+  return `${r.sw} ≤ ${r.cw}`
+})
+
 const run = {
   tool: `Playwright (playwright-core ${pwVersion})`,
   environment: `Chromium ${browser.version()} headless · ${process.platform} · 1280×900 و390×844 · reduced motion`,
@@ -437,5 +518,5 @@ const run = {
   results,
 }
 await browser.close()
-fs.writeFileSync('src/knowledge/evidence/browser-run.json', JSON.stringify(run, null, 2) + '\n')
+if (!ONLY) fs.writeFileSync('src/knowledge/evidence/browser-run.json', JSON.stringify(run, null, 2) + '\n')
 for (const r of results) console.log(r.status.padEnd(7), r.id, r.detail ?? '')

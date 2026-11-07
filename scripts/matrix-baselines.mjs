@@ -40,32 +40,45 @@ for (const spec of specs) {
       await page.evaluate(() => document.fonts.ready)
       await page.waitForTimeout(150)
       const shot = await page.locator(`[data-matrix="${spec.id}"]`).screenshot({ animations: 'disabled', caret: 'hide' })
-      const file = path.join(OUT, spec.id, `${content}--${density}.png`)
-      if (update || !fs.existsSync(file)) {
-        fs.writeFileSync(file, shot)
-        console.log(`${update ? 'updated' : 'created'}  ${file}`)
-        continue
-      }
-      const a = PNG.sync.read(fs.readFileSync(file))
-      const b = PNG.sync.read(shot)
-      compared++
-      if (a.width !== b.width || a.height !== b.height) {
-        failures.push(`${file}: size ${a.width}×${a.height} → ${b.width}×${b.height}`)
-        fs.writeFileSync(file.replace('.png', '.actual.png'), shot)
-        continue
-      }
-      const diff = new PNG({ width: a.width, height: a.height })
-      const n = pixelmatch(a.data, b.data, diff.data, a.width, a.height, { threshold: THRESHOLD })
-      const ratio = n / (a.width * a.height)
-      if (ratio > MAX_RATIO) {
-        failures.push(`${file}: ${n} px (${(ratio * 100).toFixed(2)}%)`)
-        fs.writeFileSync(file.replace('.png', '.diff.png'), PNG.sync.write(diff))
-        fs.writeFileSync(file.replace('.png', '.actual.png'), shot)
-      }
+      compare(path.join(OUT, spec.id, `${content}--${density}.png`), shot)
     }
   }
 }
+
+// Atomic first proof: one section per visual system, each 3 contexts × ar/en of the same Button and TextField.
+fs.mkdirSync(path.join(OUT, 'atomic-proof'), { recursive: true })
+for (const visual of ['quiet', 'editorial', 'soft']) {
+  await page.evaluate((h) => (location.hash = h), `#/proof?visual=${visual}`)
+  await page.waitForSelector(`[data-proof-visual="${visual}"] [data-proof-cell]`)
+  await page.evaluate(() => document.fonts.ready)
+  await page.waitForTimeout(200)
+  compare(path.join(OUT, 'atomic-proof', `${visual}.png`), await page.locator(`[data-proof-visual="${visual}"]`).screenshot({ animations: 'disabled', caret: 'hide' }))
+}
 await browser.close()
+
+function compare(file, shot) {
+  if (update || !fs.existsSync(file)) {
+    fs.writeFileSync(file, shot)
+    console.log(`${update ? 'updated' : 'created'}  ${file}`)
+    return
+  }
+  const a = PNG.sync.read(fs.readFileSync(file))
+  const b = PNG.sync.read(shot)
+  compared++
+  if (a.width !== b.width || a.height !== b.height) {
+    failures.push(`${file}: size ${a.width}×${a.height} → ${b.width}×${b.height}`)
+    fs.writeFileSync(file.replace('.png', '.actual.png'), shot)
+    return
+  }
+  const diff = new PNG({ width: a.width, height: a.height })
+  const n = pixelmatch(a.data, b.data, diff.data, a.width, a.height, { threshold: THRESHOLD })
+  const ratio = n / (a.width * a.height)
+  if (ratio > MAX_RATIO) {
+    failures.push(`${file}: ${n} px (${(ratio * 100).toFixed(2)}%)`)
+    fs.writeFileSync(file.replace('.png', '.diff.png'), PNG.sync.write(diff))
+    fs.writeFileSync(file.replace('.png', '.actual.png'), shot)
+  }
+}
 
 if (!update) {
   console.log(`matrix-baselines: ${compared} compared, ${failures.length} changed`)

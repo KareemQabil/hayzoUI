@@ -1,0 +1,111 @@
+/*
+ * Recipe: button — recipes.atomic-core@0.1.0 (S3).
+ * Reads only --hz-component-button-* tokens (the token contract; checked by AT-ST-02).
+ * Anatomy: [data-hz=button] > [data-slot=icon-start] [data-slot=label] [data-slot=icon-end] [data-slot=spinner]
+ * Variants: data-intent (primary|neutral|danger) × data-emphasis (solid|outline|ghost) × data-size (sm|md|lg).
+ * States: :hover, [data-pressed], :focus-visible, :disabled, [data-pending]. Logical properties only.
+ * --_x are recipe-private and never part of the public contract.
+ */
+[data-hz='button'] {
+  --_h: var(--hz-component-button-height-md);
+  --_accent: var(--hz-component-button-primary-background);
+  --_accent-hover: var(--hz-component-button-primary-background-hover);
+  --_on-accent: var(--hz-component-button-primary-foreground);
+  --_tint: var(--hz-component-button-primary-soft);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hz-component-button-gap);
+  box-sizing: border-box;
+  min-block-size: max(var(--_h), var(--hz-component-button-target-min));
+  min-inline-size: var(--hz-component-button-target-min);
+  margin: 0;
+  padding-block: 0;
+  padding-inline: var(--hz-component-button-padding-inline);
+  font-family: var(--hz-component-button-font-family);
+  font-size: var(--hz-component-button-font-size);
+  font-weight: var(--hz-component-button-font-weight);
+  line-height: 1.2;
+  white-space: nowrap;
+  border: var(--hz-component-button-border-width) solid var(--_border, transparent);
+  border-radius: var(--hz-component-button-radius);
+  background: var(--_bg, transparent);
+  color: var(--_fg, var(--_accent));
+  box-shadow: var(--_shadow, none);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition:
+    background-color var(--hz-component-button-transition-duration) var(--hz-component-button-transition-easing),
+    border-color var(--hz-component-button-transition-duration) var(--hz-component-button-transition-easing),
+    transform var(--hz-component-button-transition-duration) var(--hz-component-button-transition-easing);
+}
+
+[data-hz='button'][data-size='sm'] { --_h: var(--hz-component-button-height-sm); }
+[data-hz='button'][data-size='lg'] { --_h: var(--hz-component-button-height-lg); }
+
+[data-hz='button'][data-intent='neutral'] {
+  --_accent: var(--hz-component-button-neutral-foreground);
+  --_accent-hover: var(--hz-component-button-neutral-foreground);
+  --_tint: var(--hz-component-button-neutral-background-hover);
+}
+[data-hz='button'][data-intent='danger'] {
+  --_accent: var(--hz-component-button-danger-background);
+  --_accent-hover: var(--hz-component-button-danger-background-hover);
+  --_on-accent: var(--hz-component-button-danger-foreground);
+  --_tint: var(--hz-component-button-neutral-background-hover);
+}
+
+/* Emphasis */
+[data-hz='button'][data-emphasis='solid'] { --_bg: var(--_accent); --_fg: var(--_on-accent); --_shadow: var(--hz-component-button-shadow); }
+[data-hz='button'][data-emphasis='solid'][data-intent='neutral'] { --_bg: var(--hz-component-button-neutral-background); --_fg: var(--hz-component-button-neutral-foreground); }
+[data-hz='button'][data-emphasis='outline'] { --_border: var(--hz-component-button-neutral-border); }
+[data-hz='button'][data-emphasis='outline'][data-intent='danger'] { --_border: var(--_accent); }
+
+/* Interaction — never while disabled or pending */
+@media (hover: hover) {
+  [data-hz='button']:hover:not(:disabled):not([data-pending])[data-emphasis='solid'] { --_bg: var(--_accent-hover); }
+  [data-hz='button']:hover:not(:disabled):not([data-pending])[data-emphasis='solid'][data-intent='neutral'] { --_bg: var(--hz-component-button-neutral-background-hover); }
+  [data-hz='button']:hover:not(:disabled):not([data-pending]):not([data-emphasis='solid']) { --_bg: var(--_tint); }
+}
+[data-hz='button'][data-pressed]:not(:disabled):not([data-pending]) { transform: scale(0.98); }
+
+[data-hz='button']:focus-visible {
+  outline: var(--hz-component-button-focus-width) solid var(--hz-component-button-focus-color);
+  outline-offset: var(--hz-component-button-focus-offset);
+}
+
+[data-hz='button']:disabled {
+  opacity: var(--hz-component-button-disabled-opacity);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+[data-hz='button'][data-pending] { cursor: progress; }
+
+/* Slots */
+[data-hz='button'] [data-slot='icon-start'],
+[data-hz='button'] [data-slot='icon-end'] { display: inline-flex; flex: none; }
+[data-hz='button'] [data-slot='label'] { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; }
+[data-hz='button'] [data-slot='spinner'] {
+  flex: none;
+  inline-size: 1em;
+  block-size: 1em;
+  box-sizing: border-box;
+  border: 2px solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: 50%;
+  animation: hz-spin 0.8s linear infinite;
+}
+@keyframes hz-spin { to { transform: rotate(360deg); } }
+
+/* Reduced motion — the platform preference or the experience's own setting. */
+@media (prefers-reduced-motion: reduce) {
+  [data-hz='button'] { transition: none; }
+  [data-hz='button'][data-pressed] { transform: none; }
+  [data-hz='button'] [data-slot='spinner'] { animation-duration: 2.4s; }
+}
+[data-motion='reduced'] [data-hz='button'] { transition: none; }
+[data-motion='reduced'] [data-hz='button'][data-pressed] { transform: none; }
+[data-motion='reduced'] [data-hz='button'] [data-slot='spinner'] { animation-duration: 2.4s; }

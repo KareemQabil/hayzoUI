@@ -1,0 +1,90 @@
+/*
+ * Recipe: field (TextField) — recipes.atomic-core@0.1.0 (S3).
+ * Reads only --hz-component-field-* tokens (the token contract; checked by AT-ST-02).
+ * Anatomy: [data-hz=field] > [data-slot=label] ([data-slot=required]) · [data-slot=control] > [data-slot=input]
+ *          · [data-slot=description] · [data-slot=error] ([data-slot=error-icon])
+ * States on the root: [data-invalid], [data-disabled], [data-readonly]; focus from :focus-visible. Logical properties only.
+ */
+[data-hz='field'] {
+  display: grid;
+  gap: var(--hz-component-field-gap);
+  min-inline-size: 0;
+  font-family: var(--hz-component-field-font-family);
+}
+
+[data-hz='field'] [data-slot='label'] {
+  font-size: var(--hz-component-field-label-size);
+  font-weight: var(--hz-component-field-label-weight);
+  line-height: 1.4;
+  color: var(--hz-component-field-label-color);
+}
+[data-hz='field'] [data-slot='required'] {
+  margin-inline-start: 0.4em;
+  font-size: var(--hz-component-field-help-size);
+  font-weight: 400;
+  color: var(--hz-component-field-help-color);
+}
+
+[data-hz='field'] [data-slot='control'] {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-block-size: max(var(--hz-component-field-height), var(--hz-component-field-target-min));
+  padding-inline: var(--hz-component-field-padding-inline);
+  background: var(--hz-component-field-background);
+  border-style: solid;
+  border-color: var(--hz-component-field-border-color);
+  border-inline-width: var(--hz-component-field-border-width-inline);
+  border-block-start-width: var(--hz-component-field-border-width-block-start);
+  border-block-end-width: var(--hz-component-field-border-width-block-end);
+  border-radius: var(--hz-component-field-radius);
+  cursor: text;
+}
+
+[data-hz='field'] [data-slot='input'] {
+  flex: 1;
+  min-inline-size: 0;
+  block-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: var(--hz-component-field-font-size);
+  line-height: 1.4;
+  color: var(--hz-component-field-foreground);
+  text-align: start;
+  outline: none;
+}
+[data-hz='field'] [data-slot='input'][data-align='right'] { text-align: right; }
+[data-hz='field'] [data-slot='input'][data-align='left'] { text-align: left; }
+[data-hz='field'] [data-slot='input']::placeholder { color: var(--hz-component-field-placeholder); opacity: 1; }
+
+@media (hover: hover) {
+  [data-hz='field']:not([data-disabled]):not([data-readonly]):not([data-invalid]) [data-slot='control']:hover {
+    border-color: var(--hz-component-field-border-color-hover);
+  }
+}
+
+/* Inputs match :focus-visible whenever focused, so the ring shows for pointer and keyboard alike. */
+[data-hz='field'] [data-slot='control']:has([data-slot='input']:focus-visible) {
+  outline: var(--hz-component-field-focus-width) solid var(--hz-component-field-focus-color);
+  outline-offset: 2px;
+}
+
+[data-hz='field'][data-invalid] [data-slot='control'] { border-color: var(--hz-component-field-border-color-invalid); }
+[data-hz='field'][data-disabled] [data-slot='control'],
+[data-hz='field'][data-readonly] [data-slot='control'] { background: var(--hz-component-field-background-disabled); cursor: default; }
+[data-hz='field'][data-disabled] [data-slot='control'] { cursor: not-allowed; }
+[data-hz='field'][data-disabled] [data-slot='input'],
+[data-hz='field'][data-disabled] [data-slot='label'] { opacity: var(--hz-component-field-disabled-opacity); }
+
+[data-hz='field'] [data-slot='description'],
+[data-hz='field'] [data-slot='error'] {
+  margin: 0;
+  font-size: var(--hz-component-field-help-size);
+  line-height: 1.5;
+}
+[data-hz='field'] [data-slot='description'] { color: var(--hz-component-field-help-color); }
+[data-hz='field'] [data-slot='error'] { display: flex; align-items: flex-start; gap: 0.35em; color: var(--hz-component-field-error-color); }
+[data-hz='field'] [data-slot='error-icon'] { flex: none; inline-size: 1.15em; block-size: 1.5em; }
