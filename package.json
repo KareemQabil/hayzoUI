@@ -17,6 +17,7 @@
     "baselines:update": "node scripts/matrix-baselines.mjs --update"
   },
   "dependencies": {
+    "@internationalized/date": "3.12.4",
     "lucide-react": "^1.69.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

@@ -1,0 +1,439 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:hayzoui:schema:style-asset:1",
+  "title": "HayzoUI Layered Style Asset v1",
+  "description": "Versioned visual-system, brand-theme, and context-preset contracts. Token and recipe values live in referenced assets.",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/visualSystem"
+    },
+    {
+      "$ref": "#/definitions/brandTheme"
+    },
+    {
+      "$ref": "#/definitions/contextPreset"
+    }
+  ],
+  "definitions": {
+    "versionedReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+        }
+      }
+    },
+    "referenceList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/versionedReference"
+      }
+    },
+    "density": {
+      "enum": [
+        "compact",
+        "default",
+        "touch"
+      ]
+    },
+    "densityList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/density"
+      }
+    },
+    "appearanceMode": {
+      "enum": [
+        "light",
+        "dark"
+      ]
+    },
+    "appearanceModeList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/appearanceMode"
+      }
+    },
+    "contextOverrides": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "locale": {
+          "type": "string",
+          "pattern": "^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$"
+        },
+        "direction": {
+          "enum": [
+            "ltr",
+            "rtl"
+          ]
+        },
+        "numberingSystem": {
+          "type": "string",
+          "pattern": "^[a-z0-9]{3,8}(?:-[a-z0-9]{3,8})*$"
+        },
+        "calendar": {
+          "type": "string",
+          "pattern": "^[a-z0-9]{3,8}(?:-[a-z0-9]{3,8})*$"
+        },
+        "density": {
+          "$ref": "#/definitions/density"
+        },
+        "motion": {
+          "enum": [
+            "full",
+            "reduced"
+          ]
+        },
+        "contrast": {
+          "enum": [
+            "normal",
+            "more",
+            "forced"
+          ]
+        },
+        "inputModality": {
+          "enum": [
+            "unknown",
+            "pointer",
+            "touch",
+            "keyboard",
+            "assistive"
+          ]
+        },
+        "mixedScriptAlignment": {
+          "enum": [
+            "ui",
+            "content"
+          ]
+        },
+        "region": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "timeZone": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:UTC|GMT|[A-Za-z][A-Za-z0-9_+-]*(?:/[A-Za-z0-9_+-]+)*)$"
+        },
+        "firstDayOfWeek": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "defaultCurrency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        }
+      }
+    },
+    "assetBase": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "kind",
+        "id",
+        "version",
+        "name"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "visualSystem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/assetBase"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "principles",
+            "tokenLayers",
+            "recipeLayers",
+            "supportedAppearanceModes",
+            "supportedDensities"
+          ],
+          "properties": {
+            "schemaVersion": {
+              "const": 1
+            },
+            "kind": {
+              "const": "visual-system"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "description": {
+              "type": "string"
+            },
+            "principles": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "tokenLayers": {
+              "$ref": "#/definitions/referenceList"
+            },
+            "recipeLayers": {
+              "$ref": "#/definitions/referenceList"
+            },
+            "supportedAppearanceModes": {
+              "$ref": "#/definitions/appearanceModeList"
+            },
+            "supportedDensities": {
+              "$ref": "#/definitions/densityList"
+            }
+          }
+        }
+      ]
+    },
+    "brandTheme": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/assetBase"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tokenLayers",
+            "appearanceModes"
+          ],
+          "properties": {
+            "schemaVersion": {
+              "const": 1
+            },
+            "kind": {
+              "const": "brand-theme"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "description": {
+              "type": "string"
+            },
+            "tokenLayers": {
+              "$ref": "#/definitions/referenceList"
+            },
+            "appearanceModes": {
+              "$ref": "#/definitions/appearanceModeList"
+            }
+          }
+        }
+      ]
+    },
+    "contextPreset": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/assetBase"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "productContext",
+            "tokenLayers",
+            "supportedDensities",
+            "requirements"
+          ],
+          "properties": {
+            "schemaVersion": {
+              "const": 1
+            },
+            "kind": {
+              "const": "context-preset"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "description": {
+              "type": "string"
+            },
+            "productContext": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$"
+            },
+            "tokenLayers": {
+              "$ref": "#/definitions/referenceList"
+            },
+            "recipeLayers": {
+              "$ref": "#/definitions/referenceList"
+            },
+            "supportedDensities": {
+              "$ref": "#/definitions/densityList"
+            },
+            "requirements": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "minimumTargetSize",
+                "dataDensity",
+                "keyboardPriority",
+                "responsiveStrategy",
+                "supportedInputModalities"
+              ],
+              "properties": {
+                "minimumTargetSize": {
+                  "enum": [
+                    "standard",
+                    "touch"
+                  ]
+                },
+                "dataDensity": {
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "keyboardPriority": {
+                  "enum": [
+                    "standard",
+                    "high"
+                  ]
+                },
+                "responsiveStrategy": {
+                  "enum": [
+                    "mobile-first",
+                    "adaptive",
+                    "desktop-first"
+                  ]
+                },
+                "supportedInputModalities": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "pointer",
+                      "touch",
+                      "keyboard",
+                      "assistive"
+                    ]
+                  }
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "minimumTargetSize": {
+                        "const": "touch"
+                      }
+                    },
+                    "required": [
+                      "minimumTargetSize"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "supportedInputModalities": {
+                        "contains": {
+                          "const": "touch"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "keyboardPriority": {
+                        "const": "high"
+                      }
+                    },
+                    "required": [
+                      "keyboardPriority"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "supportedInputModalities": {
+                        "contains": {
+                          "const": "keyboard"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "environmentDefaults": {
+              "$ref": "#/definitions/contextOverrides"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:hayzoui:schema:token-asset:1",
+  "title": "HayzoUI Versioned Token Asset v1",
+  "description": "Registry envelope only. Payload identity binding and token semantics require the adapter and engine.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "kind", "id", "version", "layerId", "payload"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "token-layer" },
+    "id": { "$ref": "urn:hayzoui:schema:experience-profile:1#/definitions/versionedReference/properties/id" },
+    "version": { "$ref": "urn:hayzoui:schema:experience-profile:1#/definitions/versionedReference/properties/version" },
+    "layerId": { "type": "string", "minLength": 1 },
+    "payload": {}
+  }
+}
