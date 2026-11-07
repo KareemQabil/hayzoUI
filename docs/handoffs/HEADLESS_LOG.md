@@ -47,6 +47,17 @@
 - **Known limits:** reindex when keys array identity changes or on `reset()`; altered labels with identical keys array require reset; caller must pass post-IME committed characters.
 - **Evidence level:** unit-verified only.
 
+## Module 5 — Virtual window (VW)
+
+- **Commit:** [`f79c4e92286580030c238ac1bdae020bea13c0ee`](https://github.com/KareemQabil/hayzoUI/commit/f79c4e92286580030c238ac1bdae020bea13c0ee).
+- **Public contract:** exact `VirtualWindow`, `createSizeCache`, `computeWindow`, `scrollToIndex`, `normalizeScrollLeft`.
+- **Tests:** 44/44 passing, including 700 deterministic seeded naive-versus-Fenwick scenarios, Arabic/RTL, variable-size updates, half-open window boundaries, all alignment modes and 100,000-item/10,000-update performance assertion.
+- **Typecheck:** standard repository `tsc -p tsconfig.json --noEmit` and standalone source/tests `--strict --noUncheckedIndexedAccess` passed.
+- **Budgets:** `set/offsetOf/indexAt` O(log n) via Fenwick. CI asserts 100,000-item initial cache, 10,000 size updates, and 20,000 inverse lookups in under 5,000 ms (generous cross-CI bound).
+- **Invariants:** explicit direction; RTL negative scrollLeft normalized 0..max from inline-start; half-open [start,end) windows; scroll offsets clamped; no DOM reads.
+- **Known limits:** only negative RTL scrollLeft mode is normalized; input `count` must match the provided size cache; float sums may accumulate tiny rounding differences.
+- **Evidence level:** unit-verified only.
+
 ## Contract change requests
 
 **SE-CR-01 (pending, non-breaking option):** The public `isSelected(state, key)` and `selectedKeys(state, scope)` APIs cannot know whether a key is disabled when `state.selected === 'all'`. Consider an *optional* disabled-key context for these selectors, or explicitly ban raw `all` outside reducer-managed state; no public signature has been changed. Claude may safely consume the published exact signatures now.
