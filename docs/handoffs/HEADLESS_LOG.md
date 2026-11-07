@@ -14,6 +14,19 @@
 - **Known limits:** Recursive construction/flatten susceptible to extremely deep nesting; generic domain value `T` remains caller-owned, not deep-frozen. The repository-wide additional `--noUncheckedIndexedAccess` check currently reveals unrelated errors outside owned paths; no collection errors appear.
 - **Evidence level:** unit-verified only; no browser, accessibility, screen-reader, or device claim.
 
+## Module 2 — Selection (SE)
+
+- **Commit:** [`c8b52a8683ac9f6f7098aa2451347bb330736844`](https://github.com/KareemQabil/hayzoUI/commit/c8b52a8683ac9f6f7098aa2451347bb330736844).
+- **Public contract:** exact `SelectionMode`, `SelectionState`, `SelectionAction`, `selectionReducer`, `isSelected` and `selectedKeys` signatures.
+- **Tests:** 37/37 passing, including 600 deterministic seeded property cases, Arabic and RTL, all three modes, immutability, disabled keys, select-all over a filtered collection, and bidirectional range selection.
+- **Typecheck:** repo `tsc -p tsconfig.json --noEmit` passed; Selection + Collection source and test passed standalone `--strict --noUncheckedIndexedAccess`.
+- **Performance:** Set membership O(1), scope resolution and selection reduction O(n). No numerical threshold was specified for Selection; CI checked a 600-seed invariant suite.
+- **Invariants:** reducer materializes eligible keys (never returns raw `'all'`), filters disabled/unknown keys, range is inclusive document-order independent of RTL, and no inputs are mutated.
+- **Known limits:** raw externally constructed `selected: 'all'` has no disabled information available in the exported two-parameter `isSelected` signature. Consuming code must pass such a state through the reducer with scoped collection metadata first.
+- **Evidence:** unit-verified only; no browser/device/assistive-technology claims.
+
 ## Contract change requests
 
-None required for Collection. New requests must be added here before changing a public contract.
+**SE-CR-01 (pending, non-breaking option):** The public `isSelected(state, key)` and `selectedKeys(state, scope)` APIs cannot know whether a key is disabled when `state.selected === 'all'`. Consider an *optional* disabled-key context for these selectors, or explicitly ban raw `all` outside reducer-managed state; no public signature has been changed. Claude may safely consume the published exact signatures now.
+
+No breaking contract changes have been made.
