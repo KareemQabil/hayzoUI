@@ -58,6 +58,17 @@
 - **Known limits:** only negative RTL scrollLeft mode is normalized; input `count` must match the provided size cache; float sums may accumulate tiny rounding differences.
 - **Evidence level:** unit-verified only.
 
+## Module 6 — Table (TE)
+
+- **Commit:** [`b7e9dc20a6424df0ab2b9346dbd5039fd67a1d70`](https://github.com/KareemQabil/hayzoUI/commit/b7e9dc20a6424df0ab2b9346dbd5039fd67a1d70).
+- **Public contract:** exact `ColumnDef<R>`, `Filter`, `TableState`, `TableModel<R>`, `createTableModel`, `DEFAULT_TABLE_STATE`, `serializeTableState`, `parseTableState`; additive typed `TableError`.
+- **Tests:** 53/53 passing; entire published Headless core+data 250/250 passing. Includes 700 seeded stable-sort/property cases, explicit Arabic matching, numeric Arabic digits, money in integer minor units, trees, grouped headers, logical column pinning, column flex widths, serialization, malformed input, and a real 100,000-row filter+sort+paginate assertion.
+- **Typecheck:** standard repo `tsc -p tsconfig.json --noEmit` passed; no `--noUncheckedIndexedAccess` errors reported in owned Table files (repository-wide strict baseline still has read-only source errors).
+- **Performance budget:** **100,000-row numeric filter + stable sort + paginate <250 ms**, asserted and passed in Node/Vitest. Pipeline O(n log n) dominated by sorting; no browser performance claim.
+- **Invariants:** filter/search uses `src/arabic`; stable multi-sort and nulls-last; grouping after sorting, aggregation over filtered domain rows before paging; integer money; columns pinned at logical start/end; saved-view JSON stable and version 1.
+- **Known limits:** group-header `row: R` reuses first group member because public `TableModel<R>` does not allow an optional row; inspect `group` discriminator. Dates are canonical ISO text. Money mean rounded to nearest integer minor unit.
+- **Evidence level:** unit-verified only.
+
 ## Contract change requests
 
 **SE-CR-01 (pending, non-breaking option):** The public `isSelected(state, key)` and `selectedKeys(state, scope)` APIs cannot know whether a key is disabled when `state.selected === 'all'`. Consider an *optional* disabled-key context for these selectors, or explicitly ban raw `all` outside reducer-managed state; no public signature has been changed. Claude may safely consume the published exact signatures now.
