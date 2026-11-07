@@ -2,6 +2,7 @@ import { composeTokenLayers } from "./layers";
 import { compareTokenPaths } from "./paths";
 import { isTokenReference } from "./references";
 import { createTokenTrace } from "./provenance";
+import { deepFreeze, snapshotLayers } from "./snapshot";
 import { validateTokenLayers } from "./validation";
 import type {
   ResolvedToken,
@@ -20,23 +21,29 @@ interface ValueResolution {
 }
 
 function emptyResult(issues: readonly TokenIssue[]): TokenResolutionResult {
-  return {
+  return deepFreeze({
     isValid: false,
     tokens: {},
     traces: {},
-    issues,
-  };
+    issues: [...issues],
+  });
 }
 
 /**
  * Resolves a complete stack atomically. Invalid stacks produce no resolved
  * values; the engine never substitutes a fallback for an invalid definition.
+ *
+ * Accepts unknown input (for example parsed JSON) and reports malformed data as
+ * issues instead of throwing. The result is a detached, deeply frozen snapshot:
+ * editing the input afterwards never changes returned values, definitions,
+ * traces, or CSS generated from them, and caller-owned objects are not frozen.
  */
-export function resolveTokens(layers: readonly TokenLayer[]): TokenResolutionResult {
+export function resolveTokens(layers: unknown): TokenResolutionResult {
   const validationIssues = validateTokenLayers(layers);
   if (validationIssues.length > 0) return emptyResult(validationIssues);
 
-  const composition = composeTokenLayers(layers);
+  // validateTokenLayers accepted the input, so it is a well-formed layer stack.
+  const composition = composeTokenLayers(snapshotLayers(layers as readonly TokenLayer[]));
   if (composition.issues.length > 0) return emptyResult(composition.issues);
 
   const memo = new Map<string, ValueResolution>();
@@ -121,10 +128,10 @@ export function resolveTokens(layers: readonly TokenLayer[]): TokenResolutionRes
 
   if (defensiveIssues.length > 0) return emptyResult(defensiveIssues);
 
-  return {
+  return deepFreeze({
     isValid: true,
     tokens,
     traces,
     issues: [],
-  };
+  });
 }

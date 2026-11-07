@@ -31,6 +31,25 @@ function quoteCssString(value: string): string {
   return `"${value.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 }
 
+/**
+ * CSS generic font families (CSS Fonts 4). A list entry that equals one of these
+ * keywords, ignoring ASCII case, is emitted unquoted so it keeps its generic meaning;
+ * every other entry is a family name and is quoted and escaped.
+ */
+export const GENERIC_FONT_FAMILIES = [
+  "serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "math", "emoji", "fangsong",
+  "ui-serif", "ui-sans-serif", "ui-monospace", "ui-rounded",
+] as const;
+
+export function isGenericFontFamily(family: string): boolean {
+  const normalized = family.trim().toLowerCase();
+  return GENERIC_FONT_FAMILIES.some((generic) => generic === normalized);
+}
+
+function serializeFontFamily(family: string): string {
+  return isGenericFontFamily(family) ? family.trim().toLowerCase() : quoteCssString(family);
+}
+
 function serializeToken(token: ResolvedToken): string | undefined {
   switch (token.type) {
     case "dimension":
@@ -38,7 +57,7 @@ function serializeToken(token: ResolvedToken): string | undefined {
     case "duration":
       return isDurationValue(token.value) ? `${formatNumber(token.value.value)}${token.value.unit}` : undefined;
     case "font-family":
-      return isFontFamilyList(token.value) ? token.value.map(quoteCssString).join(", ") : undefined;
+      return isFontFamilyList(token.value) ? token.value.map(serializeFontFamily).join(", ") : undefined;
     case "font-weight":
     case "opacity":
     case "number":

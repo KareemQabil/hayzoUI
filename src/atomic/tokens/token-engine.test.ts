@@ -307,7 +307,7 @@ describe("atomic token engine", () => {
     expect(css.isValid).toBe(true);
     expect(css.variables["--hz-color-palette-blue-600"]).toBe("#2457A6");
     expect(css.variables["--hz-space-4"]).toBe("16px");
-    expect(css.variables["--hz-typography-font-family-arabic"]).toBe('"IBM Plex Sans Arabic", "sans-serif"');
+    expect(css.variables["--hz-typography-font-family-arabic"]).toBe('"IBM Plex Sans Arabic", sans-serif');
     expect(css.css).toContain("--hz-color-palette-blue-600: #2457A6;");
   });
 

@@ -54,6 +54,7 @@ References are structured objects. A reference inherits the type of its owning t
 - validateTokenLayers
 - resolveTokens
 - validateCssVariableNames, generateCssVariables, toCssVariableName
+- GENERIC_FONT_FAMILIES, isGenericFontFamily
 - createTokenTrace
 
 ## Usage
@@ -89,12 +90,12 @@ Validation is conservative and intentionally does not claim to parse the complet
 | color | #RGB, #RGBA, #RRGGBB, #RRGGBBAA, transparent, currentColor, black, white |
 | dimension | Finite numeric value plus px, rem, em, %, vh, vw, ch, ex, cm, mm, in, pt, or pc |
 | duration | Non-negative finite value plus ms or s |
-| font-family | Non-empty array of printable family names; CSS output quotes and escapes each name |
+| font-family | Non-empty array of printable strings. An entry equal to a CSS generic family (serif, sans-serif, monospace, cursive, fantasy, system-ui, math, emoji, fangsong, ui-serif, ui-sans-serif, ui-monospace, ui-rounded; ASCII case-insensitive) is emitted unquoted and lowercase; every other entry is a family name, quoted and escaped |
 | font-weight | Integer from 1 through 1000 |
 | opacity | Finite number in the inclusive range 0 through 1 |
 | number | Any finite number |
 | integer | Any safe integer |
-| shadow | none or a restricted comma-separated box-shadow subset using px/rem/em lengths and hex/basic named colors |
+| shadow | none, or a comma-separated list where each shadow is `[inset] <x> <y> [<blur> [<spread>]] <color>`. Lengths are px/rem/em or a unitless 0; offsets and spread may be negative, blur may not. Color uses the color subset above and comes last |
 | easing | linear, ease, ease-in, ease-out, ease-in-out, or cubic-bezier() with x control points in [0, 1] |
 
 Unknown token-definition and deprecation metadata keys, as well as duplicate override permissions, are rejected. Reference cycles are reported even when they also contain incompatible types.
@@ -120,7 +121,28 @@ The traces record contains serializable TokenTrace explanations keyed by token p
 
 ## Error behavior
 
-validateTokenLayers is pure and accepts unknown data, making it suitable for validating JSON-loaded token files. resolveTokens validates before resolving. If any issue exists, the result is invalid and exposes no resolved token map. There are no silent fallbacks. Issues include stable codes and relevant token, source-layer, reference-chain, or override-chain context.
+validateTokenLayers and resolveTokens both accept `unknown` (for example the result of JSON.parse) and never throw on malformed data: null, a non-array stack, non-object layers, missing or non-array tokens, and malformed definitions all come back as issues (INVALID_LAYER, INVALID_TOKEN_DEFINITION, …). resolveTokens validates before resolving. If any issue exists, the result is invalid and exposes no resolved token map. There are no silent fallbacks. Issues include stable codes and relevant token, source-layer, reference-chain, or override-chain context.
+
+### Snapshot semantics
+
+resolveTokens copies the validated stack before composing it. The returned result — values, definitions, original definitions, provenance, traces, and issues — is a detached snapshot that is **deeply frozen**. Editing the input afterwards changes nothing in a result already returned, and CSS generated from that result stays consistent with it. The engine freezes only its own copies; caller-owned layers, definitions, arrays, and value objects are never mutated or frozen. validateTokenLayers returns fresh issue objects and does not freeze them.
+
+### API changes in this revision
+
+- `validateTokenLayers(layers: unknown)` and `resolveTokens(layers: unknown)` — previously `readonly unknown[]` and `readonly TokenLayer[]`. Typed callers are unaffected.
+- Font-family generic keywords are emitted unquoted (`"Noto Sans Arabic", sans-serif`), where they were quoted before and lost their generic meaning. The representation stays `readonly string[]`. Limitation: a real family whose name equals a generic keyword cannot be expressed; CSS requires such a name to be quoted and no shipping font uses one.
+- Shadow validation is a small parser instead of a regular expression: it rejects negative blur and now accepts a unitless `0`.
+- `GENERIC_FONT_FAMILIES` and `isGenericFontFamily` are exported.
+
+## Architecture alignment and coordination
+
+**Precedence.** Architecture §6.3 lists eight resolution steps; this engine's eight layer types map onto them as follows: primitive (1), semantic + theme (2, split so a brand theme remaps semantic tokens without editing them), visual-system (3), context (4, and only for tokens whose original definition lists `context` in overridableBy), component + recipe (5), instance (8). Steps 6 and 7 — explicit variant/size and component state — are **not** separate layer types yet. At this stage a recipe layer holds flat tokens whose paths name the variant, size, or state (for example `component.button.height.md`, `component.button.background.pressed`); selecting among them is the job of the future recipe contract (§6.4), whose runtime API the architecture leaves open. The engine does not invent a precedence for variants or states, and no component implementations live here. Accessibility constraints (forced colors, reduced motion, minimum target size) are applied after resolution, per §6.3, not as layers.
+
+**Foundation asset references.** Foundation contracts reference assets and layers by exact `id` + `version`; a `TokenLayer` carries `id` + `type`. Loading a referenced asset, checking its version, and turning its payload into a TokenLayer belong to an adapter outside this pure resolver (the foundation branch's `resolveExperienceTokens` is that adapter). The engine has no registry and does not read versions.
+
+**Identifier mapping.** Foundation IDs allow lowercase slugs separated by dots or hyphens (`visual.quiet-enterprise`); layer IDs here are lowercase kebab-case only. A dotted foundation ID is therefore not a valid layer ID and cannot be passed through unchanged. The foundation adapter already handles this without guessing: each versioned token-layer envelope carries an explicit `layerId`, and the adapter rejects a payload whose `id` differs from it (`layer-id-mismatch`). No automatic dot-to-hyphen mapping is assumed. The engine reports an invalid or duplicate ID as INVALID_LAYER or DUPLICATE_LAYER_ID rather than normalizing it.
+
+**Context.** The engine consumes an explicit, already-resolved stack. It never reads React context, the DOM, media queries, or environment detection; the effective experience context (density, input modality, appearance) is resolved upstream by `resolveExperienceContext` and arrives here only as the choice of layers.
 
 ## Example stack
 

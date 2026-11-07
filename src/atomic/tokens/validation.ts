@@ -17,12 +17,8 @@ const DIMENSION_UNITS: readonly DimensionUnit[] = [
 ];
 const SAFE_COLOR = /^#(?:[\da-f]{3}|[\da-f]{4}|[\da-f]{6}|[\da-f]{8})$/i;
 const SAFE_COLOR_KEYWORDS = new Set(["transparent", "currentcolor", "black", "white"]);
-const CSS_LENGTH = "-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px|rem|em)";
-const CSS_SHADOW_COLOR = "(?:#[\\da-f]{3}|#[\\da-f]{4}|#[\\da-f]{6}|#[\\da-f]{8}|transparent|currentColor|black|white)";
-const CSS_SHADOW = new RegExp(
-  `^(?:inset\\s+)?${CSS_LENGTH}\\s+${CSS_LENGTH}(?:\\s+${CSS_LENGTH})?(?:\\s+${CSS_LENGTH})?\\s+${CSS_SHADOW_COLOR}$`,
-  "i",
-);
+/** A box-shadow length: a number with px/rem/em, or a unitless zero. Group 1 or 2 is the number. */
+const CSS_SHADOW_LENGTH = /^(-?(?:\d+(?:\.\d+)?|\.\d+))(?:px|rem|em)$|^(-?0(?:\.0+)?)$/i;
 const NUMBER = "-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)";
 const CUBIC_BEZIER = new RegExp(
   `^cubic-bezier\\(\\s*(${NUMBER})\\s*,\\s*(${NUMBER})\\s*,\\s*(${NUMBER})\\s*,\\s*(${NUMBER})\\s*\\)$`,
@@ -50,10 +46,33 @@ function isSupportedColor(value: string): boolean {
   return SAFE_COLOR.test(normalized) || SAFE_COLOR_KEYWORDS.has(normalized);
 }
 
+function shadowLength(part: string): number | undefined {
+  const match = CSS_SHADOW_LENGTH.exec(part);
+  if (!match) return undefined;
+  const value = Number(match[1] ?? match[2]);
+  return Number.isFinite(value) ? value : undefined;
+}
+
+/**
+ * One shadow of the supported subset: `[inset] <x> <y> [<blur> [<spread>]] <color>`.
+ * Offsets and spread may be negative; blur may not (CSS Backgrounds 3, box-shadow).
+ */
+function isSupportedSingleShadow(shadow: string): boolean {
+  const parts = shadow.split(/\s+/).filter((part) => part.length > 0);
+  if (parts[0]?.toLowerCase() === "inset") parts.shift();
+  const color = parts.pop();
+  if (color === undefined || !isSupportedColor(color)) return false;
+  if (parts.length < 2 || parts.length > 4) return false;
+  const lengths = parts.map(shadowLength);
+  if (lengths.some((length) => length === undefined)) return false;
+  const blur = lengths[2];
+  return blur === undefined || blur >= 0;
+}
+
 function isSupportedShadow(value: string): boolean {
   const normalized = value.trim();
   if (normalized === "none") return true;
-  return normalized.length > 0 && normalized.split(/\s*,\s*/).every((shadow) => CSS_SHADOW.test(shadow));
+  return normalized.length > 0 && normalized.split(",").every((shadow) => isSupportedSingleShadow(shadow.trim()));
 }
 
 function isSupportedEasing(value: string): boolean {
@@ -62,8 +81,8 @@ function isSupportedEasing(value: string): boolean {
 
   const match = CUBIC_BEZIER.exec(normalized);
   if (!match) return false;
-  const values = match.slice(1).map(Number);
-  return values.every(Number.isFinite) && values[0] >= 0 && values[0] <= 1 && values[2] >= 0 && values[2] <= 1;
+  const [x1 = NaN, y1 = NaN, x2 = NaN, y2 = NaN] = match.slice(1).map(Number);
+  return [x1, y1, x2, y2].every(Number.isFinite) && x1 >= 0 && x1 <= 1 && x2 >= 0 && x2 <= 1;
 }
 
 function hasValueShape(type: TokenType, value: unknown): boolean {
@@ -270,7 +289,10 @@ function validateReferenceGraph(tokens: ReadonlyMap<string, ComposedToken>): Tok
  * Validates untrusted token-layer data without browser APIs or side effects.
  * The input accepts unknown so JSON-loaded token files can be checked safely.
  */
-export function validateTokenLayers(layers: readonly unknown[]): TokenIssue[] {
+export function validateTokenLayers(layers: unknown): TokenIssue[] {
+  if (!Array.isArray(layers)) {
+    return [issue("INVALID_LAYER", "Token layers must be an array of layer objects.")];
+  }
   const issues: TokenIssue[] = [];
   const sanitizedLayers: TokenLayer[] = [];
   const seenLayerIds = new Set<string>();
