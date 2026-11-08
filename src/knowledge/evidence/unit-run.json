@@ -1,8 +1,8 @@
 {
   "tool": "Vitest 5.1.0",
   "environment": "Node v22.19.0 · win32 x64",
-  "startedAt": "2026-11-07T21:29:04.775Z",
-  "commit": "98de399",
+  "startedAt": "2026-11-08T02:35:52.884Z",
+  "commit": "8441f67",
   "results": [
     {
       "id": "CI-F01",
@@ -30,7 +30,7 @@
       "name": "CI-F04 الفاصلة الملتبسة لا تُفسَّر بصمت ويُقترح المعنى",
       "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "CI-F05",
@@ -254,28 +254,28 @@
       "name": "PROP-01 same value in any numerals (metamorphic)",
       "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 52
+      "durationMs": 60
     },
     {
       "id": "PROP-02",
       "name": "PROP-02 display(arab) and editing forms round-trip to the same minor units",
       "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 71
+      "durationMs": 105
     },
     {
       "id": "PROP-03",
       "name": "PROP-03 parse is deterministic and canonical is a fixed point",
       "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 11
+      "durationMs": 10
     },
     {
       "id": "PROP-04",
       "name": "PROP-04 an ambiguous comma is never accepted silently",
       "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 17
+      "durationMs": 18
     },
     {
       "id": "PROP-05",
@@ -289,7 +289,7 @@
       "name": "PROP-07 arab display is one bidi number run: no ASCII space, no «٬», single decimal mark",
       "file": "src/arabic/arabic.test.ts",
       "status": "passed",
-      "durationMs": 100
+      "durationMs": 112
     },
     {
       "id": "PROP-06",
@@ -345,7 +345,7 @@
       "name": "BD-07 Latin-dominant text isolates the Arabic words RTL",
       "file": "src/arabic/bidi-runs.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "BD-08",
@@ -359,35 +359,91 @@
       "name": "BD-09 over 600 random mixed strings: runs reproduce the input and isolates never split a word",
       "file": "src/arabic/bidi-runs.test.ts",
       "status": "passed",
-      "durationMs": 71
+      "durationMs": 63
     },
     {
       "id": "BD-10",
       "name": "BD-10 over 500 random single-script strings: no isolates, direction of the script",
       "file": "src/arabic/bidi-runs.test.ts",
       "status": "passed",
-      "durationMs": 27
+      "durationMs": 22
     },
     {
       "id": "CT-01",
       "name": "CT-01 messages use only the preferred digits and never an ASCII space between digits",
       "file": "src/content/messages.test.ts",
       "status": "passed",
-      "durationMs": 10
+      "durationMs": 8
+    },
+    {
+      "id": "PM-20",
+      "name": "PM-20 renders the headline and every AntD component (at least 65)",
+      "file": "src/pages/ParityPage.test.tsx",
+      "status": "passed",
+      "durationMs": 1353
+    },
+    {
+      "id": "PM-21",
+      "name": "PM-21 headline numbers are shown in Arabic-Indic digits under numerals=\"arab\"",
+      "file": "src/pages/ParityPage.test.tsx",
+      "status": "passed",
+      "durationMs": 753
+    },
+    {
+      "id": "PM-22",
+      "name": "PM-22 status and category filters narrow the list",
+      "file": "src/pages/ParityPage.test.tsx",
+      "status": "passed",
+      "durationMs": 838
+    },
+    {
+      "id": "PM-23",
+      "name": "PM-23 each component expands to its feature checklist",
+      "file": "src/pages/ParityPage.test.tsx",
+      "status": "passed",
+      "durationMs": 454
+    },
+    {
+      "id": "an",
+      "name": "an incompatible density blocks export until the experience is reset",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 280
+    },
+    {
+      "id": "direction",
+      "name": "direction overrides preserve the selected locale instead of inferring a new language",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 37
+    },
+    {
+      "id": "switching",
+      "name": "switching to CRM exports the actual English/default experience plan",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 53
+    },
+    {
+      "id": "the",
+      "name": "the published checkpoint is derived from the recorded run and follows the numerals preference",
+      "file": "src/pages/ProgressPage.test.tsx",
+      "status": "passed",
+      "durationMs": 51
     },
     {
       "id": "SP-01",
       "name": "SP-01 at least one spec exists",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 3
+      "durationMs": 4
     },
     {
       "id": "SP-02",
       "name": "SP-02 badge passes the schema",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 5
     },
     {
       "id": "SP-03",
@@ -457,7 +513,7 @@
       "name": "SP-02 combobox passes the schema",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "SP-03",
@@ -471,14 +527,14 @@
       "name": "SP-04 combobox follows the prop naming contract",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-05",
       "name": "SP-05 combobox references existing records and tests",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-06",
@@ -492,7 +548,7 @@
       "name": "SP-02 currency-input passes the schema",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "SP-03",
@@ -562,7 +618,7 @@
       "name": "SP-02 date-picker passes the schema",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-03",
@@ -737,14 +793,14 @@
       "name": "SP-02 inline-message passes the schema",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-03",
       "name": "SP-03 inline-message uses only closed vocabularies",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-04",
@@ -772,7 +828,7 @@
       "name": "SP-02 phone-input passes the schema",
       "file": "src/spec/spec.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "SP-03",
@@ -1048,67 +1104,11 @@
       "durationMs": 1
     },
     {
-      "id": "PM-20",
-      "name": "PM-20 renders the headline and every AntD component (at least 65)",
-      "file": "src/pages/ParityPage.test.tsx",
-      "status": "passed",
-      "durationMs": 1283
-    },
-    {
-      "id": "PM-21",
-      "name": "PM-21 headline numbers are shown in Arabic-Indic digits under numerals=\"arab\"",
-      "file": "src/pages/ParityPage.test.tsx",
-      "status": "passed",
-      "durationMs": 919
-    },
-    {
-      "id": "PM-22",
-      "name": "PM-22 status and category filters narrow the list",
-      "file": "src/pages/ParityPage.test.tsx",
-      "status": "passed",
-      "durationMs": 930
-    },
-    {
-      "id": "PM-23",
-      "name": "PM-23 each component expands to its feature checklist",
-      "file": "src/pages/ParityPage.test.tsx",
-      "status": "passed",
-      "durationMs": 612
-    },
-    {
-      "id": "an",
-      "name": "an incompatible density blocks export until the experience is reset",
-      "file": "src/pages/ProgressPage.test.tsx",
-      "status": "passed",
-      "durationMs": 358
-    },
-    {
-      "id": "direction",
-      "name": "direction overrides preserve the selected locale instead of inferring a new language",
-      "file": "src/pages/ProgressPage.test.tsx",
-      "status": "passed",
-      "durationMs": 44
-    },
-    {
-      "id": "switching",
-      "name": "switching to CRM exports the actual English/default experience plan",
-      "file": "src/pages/ProgressPage.test.tsx",
-      "status": "passed",
-      "durationMs": 50
-    },
-    {
-      "id": "the",
-      "name": "the published checkpoint is derived from the recorded run and follows the numerals preference",
-      "file": "src/pages/ProgressPage.test.tsx",
-      "status": "passed",
-      "durationMs": 47
-    },
-    {
       "id": "CMP-01",
       "name": "CMP-01 TextField reports null, not \"\", when the text is cleared",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 74
+      "durationMs": 70
     },
     {
       "id": "CMP-02",
@@ -1122,35 +1122,35 @@
       "name": "CMP-03 first Escape clears the search (null) and does not reach the parent",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 106
+      "durationMs": 88
     },
     {
       "id": "CMP-04",
       "name": "CMP-04 uncontrolled PhoneInput keeps typed text and reports E.164",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 13
+      "durationMs": 11
     },
     {
       "id": "CMP-05",
       "name": "CMP-05 uncontrolled Select starts at the first option and follows the selection",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 15
+      "durationMs": 18
     },
     {
       "id": "CMP-06",
       "name": "CMP-06 SegmentedControl arrows follow the visual direction and skip disabled options",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 35
+      "durationMs": 33
     },
     {
       "id": "CMP-07",
       "name": "CMP-07 uncontrolled Switch toggles and reports the new state",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 10
+      "durationMs": 9
     },
     {
       "id": "CMP-08",
@@ -1164,28 +1164,28 @@
       "name": "CMP-09 the toast stack takes dir and lang from the LocaleProvider",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 11
+      "durationMs": 8
     },
     {
       "id": "CMP-10",
       "name": "CMP-10 toast timers pause on hover and errors never auto-dismiss",
       "file": "src/system/components.test.tsx",
       "status": "passed",
-      "durationMs": 51
+      "durationMs": 29
     },
     {
       "id": "CT-02",
       "name": "CT-02 static numbers follow the numerals and never keep an ASCII space between digit groups",
       "file": "src/system/locale.test.tsx",
       "status": "passed",
-      "durationMs": 45
+      "durationMs": 41
     },
     {
       "id": "CT-03",
       "name": "CT-03 the provider resolves mixedAlign to a side; AutoText takes its direction from the text",
       "file": "src/system/locale.test.tsx",
       "status": "passed",
-      "durationMs": 23
+      "durationMs": 20
     },
     {
       "id": "CT-04",
@@ -1199,14 +1199,14 @@
       "name": "CT-05 Prose keeps «…» literals as written and marks them for the numerals oracle",
       "file": "src/system/locale.test.tsx",
       "status": "passed",
-      "durationMs": 10
+      "durationMs": 7
     },
     {
       "id": "RV-01",
       "name": "RV-01 rovingMove: direction-aware horizontal arrows, vertical arrows, Home/End, other keys null",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 6
+      "durationMs": 5
     },
     {
       "id": "RV-02",
@@ -1220,245 +1220,245 @@
       "name": "RV-03 rovingKeyDown moves DOM focus, keeps one tab stop, and ignores foreign or modified keys",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 112
+      "durationMs": 97
     },
     {
       "id": "CK-01",
       "name": "CK-01 checked/defaultChecked/onCheckedChange: uncontrolled toggles, controlled follows the owner only",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 350
+      "durationMs": 305
     },
     {
       "id": "CK-02",
       "name": "CK-02 indeterminate sets the native DOM property (exposed as mixed), survives a click while asked for, clears when not",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 123
+      "durationMs": 112
     },
     {
       "id": "CK-03",
       "name": "CK-03 field ARIA: label for, describedby = error then description, invalid only with a reason, native required",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 201
+      "durationMs": 251
     },
     {
       "id": "CK-04",
       "name": "CK-04 disabled uses the native attribute and never reports a change",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 102
+      "durationMs": 124
     },
     {
       "id": "RG-01",
       "name": "RG-01 null means none: nothing checked by default; a choice reports its value; controlled null stays empty",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 323
+      "durationMs": 331
     },
     {
       "id": "RG-02",
       "name": "RG-02 fieldset role=radiogroup named by the legend; group and option descriptions; invalid and required",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 96
+      "durationMs": 99
     },
     {
       "id": "RG-03",
       "name": "RG-03 a disabled option is native-disabled; a disabled group disables every radio",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 193
+      "durationMs": 160
     },
     {
       "id": "RG-04",
       "name": "RG-04 radios share one name (native arrow-key group); orientation is a data hook; no dir on the atom",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 98
+      "durationMs": 88
     },
     {
       "id": "SWT-01",
       "name": "SWT-01 checked/defaultChecked/onCheckedChange: uncontrolled toggles, controlled follows the owner only",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 190
+      "durationMs": 123
     },
     {
       "id": "SWT-02",
       "name": "SWT-02 a native button role=switch, named by the visible label (aria-labelledby), described, label click toggles",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 96
+      "durationMs": 61
     },
     {
       "id": "SWT-03",
       "name": "SWT-03 disabled uses the native attribute and never reports a change",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 87
+      "durationMs": 85
     },
     {
       "id": "TBS-01",
       "name": "TBS-01 ARIA wiring: tablist named, tabs ↔ panels via aria-controls/aria-labelledby, only the selected panel visible",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 108
+      "durationMs": 89
     },
     {
       "id": "TBS-02",
       "name": "TBS-02 value contract: first enabled tab by default; click selects; controlled follows the owner only",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 182
+      "durationMs": 165
     },
     {
       "id": "TBS-03",
       "name": "TBS-03 automatic activation (LTR): ArrowRight moves focus and selects, Home/End go to the ends, one tab stop",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 104
+      "durationMs": 121
     },
     {
       "id": "TBS-04",
       "name": "TBS-04 RTL follows the experience direction: ArrowLeft = next, ArrowRight = previous",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 189
+      "durationMs": 150
     },
     {
       "id": "TBS-05",
       "name": "TBS-05 disabled tabs are skipped by arrows (native disabled), and focus wraps around",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 125
+      "durationMs": 98
     },
     {
       "id": "TBS-06",
       "name": "TBS-06 manual activation: arrows move focus only; Enter/Space (native button click) selects; tab stop stays on the selection",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 105
+      "durationMs": 70
     },
     {
       "id": "TBS-07",
       "name": "TBS-07 selecting the selected tab reports nothing; a value matching no enabled tab leaves the first enabled tab as the tab stop",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 158
+      "durationMs": 118
     },
     {
       "id": "CHT-INV-01",
       "name": "CHT-INV-01 the same choice atoms and Tabs produce identical behavior DOM in all 18 compositions",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 1562
+      "durationMs": 1213
     },
     {
       "id": "CHT-01",
       "name": "CHT-01 the layer is pure aliases and resolves with no issues for every visual system × context",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 33
+      "durationMs": 27
     },
     {
       "id": "CHT-02",
       "name": "CHT-02 choice.css reads only checkbox/radio/switch/tabs component tokens, and every one exists in every composition",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 26
+      "durationMs": 24
     },
     {
       "id": "CHT-03",
       "name": "CHT-03 contexts resize the atoms: POS targets and tab height ≥ 44px; ERP denser than SaaS denser than POS",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 150
+      "durationMs": 121
     },
     {
       "id": "CHT-04",
       "name": "CHT-04 naming rule: context-varying tokens are named as sizes; visual-system-varying tokens never are (AT-ST-03 ready)",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 9
+      "durationMs": 8
     },
     {
       "id": "CHT-05",
       "name": "CHT-05 contracts match the recipe and the rendered anatomy",
       "file": "src/atomic/components/choice.test.tsx",
       "status": "passed",
-      "durationMs": 85
+      "durationMs": 63
     },
     {
       "id": "AT-BT-01",
       "name": "AT-BT-01 an async press is pending until it settles: a double click calls onPress once",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 353
+      "durationMs": 303
     },
     {
       "id": "AT-BT-05",
       "name": "AT-BT-05 under StrictMode (effects run twice) an async press still settles back to idle",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 159
+      "durationMs": 162
     },
     {
       "id": "AT-BT-02",
       "name": "AT-BT-02 disabled uses the native attribute and never calls onPress",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 120
+      "durationMs": 124
     },
     {
       "id": "AT-BT-03",
       "name": "AT-BT-03 Enter or Space on a pending button is swallowed (no second form submission)",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 111
+      "durationMs": 101
     },
     {
       "id": "AT-BT-04",
       "name": "AT-BT-04 internal strings follow the experience language, not a prop",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 99
+      "durationMs": 125
     },
     {
       "id": "AT-TF-01",
       "name": "AT-TF-01 empty is null, never an empty string; controlled and uncontrolled share one contract",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 101
+      "durationMs": 85
     },
     {
       "id": "AT-TF-02",
       "name": "AT-TF-02 label, error and description are wired; invalid only with a reason",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 190
+      "durationMs": 182
     },
     {
       "id": "AT-TF-03",
       "name": "AT-TF-03 content direction: inherited by default, explicit for always-LTR data",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 90
+      "durationMs": 75
     },
     {
       "id": "AT-INV-01",
       "name": "AT-INV-01 the same Button and TextField produce identical behavior DOM in all 18 compositions",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 1670
+      "durationMs": 1382
     },
     {
       "id": "AT-INV-02",
       "name": "AT-INV-02 the scope, not the component, carries direction, language, numerals and density",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 96
+      "durationMs": 85
     },
     {
       "id": "AT-CT-01",
@@ -1472,168 +1472,168 @@
       "name": "AT-CT-02 rendered slots are exactly the contract anatomy",
       "file": "src/atomic/components/components.test.tsx",
       "status": "passed",
-      "durationMs": 87
+      "durationMs": 70
     },
     {
       "id": "PO-01",
       "name": "PO-01 trigger ARIA; opens into a labelled non-modal dialog, portaled with the experience scope",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 480
+      "durationMs": 407
     },
     {
       "id": "PO-02",
       "name": "PO-02 Escape closes and returns focus to the trigger",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 228
+      "durationMs": 240
     },
     {
       "id": "PO-03",
       "name": "PO-03 outside press closes; pressing the trigger toggles instead of close-then-reopen",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 288
+      "durationMs": 307
     },
     {
       "id": "PO-04",
       "name": "PO-04 non-modal: no scroll lock or inert; Tab past the edges closes and continues in document order",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 269
+      "durationMs": 282
     },
     {
       "id": "PO-05",
       "name": "PO-05 works with the atomic Button as trigger (its press still fires) and in controlled mode",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 179
+      "durationMs": 148
     },
     {
       "id": "TT-01",
       "name": "TT-01 hover shows after the delay with role tooltip + aria-describedby; leaving hides after closeDelay",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 169
+      "durationMs": 137
     },
     {
       "id": "TT-02",
       "name": "TT-02 keyboard focus shows immediately; blur hides; Escape hides the tooltip only, not the dialog beneath",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 364
+      "durationMs": 281
     },
     {
       "id": "TT-03",
       "name": "TT-03 touch: no hover dependence; a press then focus does not show it",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 94
+      "durationMs": 84
     },
     {
       "id": "TT-04",
       "name": "TT-04 interactive content is rejected in development (warning); the tooltip is never focusable",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 171
+      "durationMs": 139
     },
     {
       "id": "DL-01",
       "name": "DL-01 modal dialog semantics; labelled and described; portaled carrying dir, lang, numerals, density, motion and tokens",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 178
+      "durationMs": 188
     },
     {
       "id": "DL-02",
       "name": "DL-02 focus enters the body (not the close button) and Tab / Shift+Tab are trapped",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 181
+      "durationMs": 142
     },
     {
       "id": "DL-03",
       "name": "DL-03 Escape, backdrop and the close button close it with their reasons; dismissible=false blocks all three",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 528
+      "durationMs": 377
     },
     {
       "id": "DL-04",
       "name": "DL-04 focus returns to the opener on close",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 155
+      "durationMs": 131
     },
     {
       "id": "DL-05",
       "name": "DL-05 scroll lock and inert outside while open; both restored on close",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 159
+      "durationMs": 125
     },
     {
       "id": "DL-06",
       "name": "DL-06 nested dialogs: Escape closes only the top one; focus and scope return to the outer one",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 254
+      "durationMs": 171
     },
     {
       "id": "DL-07",
       "name": "DL-07 internal strings follow the experience language; labels override them",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 315
+      "durationMs": 231
     },
     {
       "id": "DL-08",
       "name": "DL-08 under StrictMode (effects run twice) the stack, lock and focus settle to exactly one dialog and back",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 143
+      "durationMs": 121
     },
     {
       "id": "DR-01",
       "name": "DR-01 defaults to the inline-end side, as a modal dialog carrying the RTL scope",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 153
+      "durationMs": 102
     },
     {
       "id": "DR-02",
       "name": "DR-02 same focus / scroll / dismiss contract as Dialog",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 138
+      "durationMs": 105
     },
     {
       "id": "DR-03",
       "name": "DR-03 side prop: inline-start and block-end",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 272
+      "durationMs": 209
     },
     {
       "id": "OV-INV-01",
       "name": "OV-INV-01 an open Dialog and Popover produce identical behavior DOM in all 18 compositions",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 3106
+      "durationMs": 2565
     },
     {
       "id": "OV-ST-01",
       "name": "OV-ST-01 overlay.css reads only overlay component tokens, and each resolves for every visual system × context",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 27
+      "durationMs": 22
     },
     {
       "id": "OV-ST-02",
       "name": "OV-ST-02 overlay component tokens are pure aliases of semantic tokens (visual systems change them only through semantics)",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 8
+      "durationMs": 6
     },
     {
       "id": "OV-CT-01",
@@ -1647,7 +1647,7 @@
       "name": "OV-CT-02 rendered slots are within the contract anatomy",
       "file": "src/atomic/components/overlays.test.tsx",
       "status": "passed",
-      "durationMs": 160
+      "durationMs": 143
     },
     {
       "id": "accepts",
@@ -1710,7 +1710,7 @@
       "name": "rejects non-exact or malformed version 1.0.0-a..b",
       "file": "src/atomic/foundations/foundations.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "rejects",
@@ -1731,14 +1731,14 @@
       "name": "rejects non-exact or malformed version ^1.0.0",
       "file": "src/atomic/foundations/foundations.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "rejects",
       "name": "rejects non-exact or malformed version latest",
       "file": "src/atomic/foundations/foundations.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "schemas",
@@ -1773,14 +1773,14 @@
       "name": "bridge layers own a copy of their scalar environment values",
       "file": "src/atomic/foundations/foundations.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "binds",
       "name": "binds registry IDs explicitly and delegates the complete stack to the engine",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 22
+      "durationMs": 19
     },
     {
       "id": "token",
@@ -1808,28 +1808,28 @@
       "name": "duplicate exact envelopes are rejected rather than using catalog order",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "payload",
       "name": "payload ID must match its explicit binding",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "two",
       "name": "two reference IDs cannot silently collapse into the same engine layer ID",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "base",
       "name": "base layers participate in engine layer ID collision checks",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "planning",
@@ -1850,14 +1850,14 @@
       "name": "engine resolution failures expose diagnostics without partial bindings",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 2
     },
     {
       "id": "exceptions",
       "name": "exceptions in engine.validateTokenLayers are reported without partial output",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 5
     },
     {
       "id": "exceptions",
@@ -1892,14 +1892,14 @@
       "name": "a malformed validator response cannot bypass validation",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "source",
       "name": "source edits cannot change the frozen layer snapshots sent to the engine",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "frozen",
@@ -2022,7 +2022,7 @@
     },
     {
       "id": "rejects",
-      "name": "rejects non-JSON payload data: Sun Nov 08 2026 00:29:09 GMT+0300 (Arabian Standard Time)",
+      "name": "rejects non-JSON payload data: Sun Nov 08 2026 05:35:56 GMT+0300 (Arabian Standard Time)",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
       "durationMs": 1
@@ -2046,14 +2046,14 @@
       "name": "cyclic payloads fail without calling the engine",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "accessor",
       "name": "accessor payloads are rejected without invoking getters",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "undefined",
@@ -2116,91 +2116,42 @@
       "name": "payload nesting limits return diagnostics rather than overflowing the stack",
       "file": "src/atomic/integration/experience-tokens.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 3
     },
     {
       "id": "real",
       "name": "real engine resolves light POS values, aliases, and provenance through the adapter",
       "file": "src/atomic/integration/token-engine.contract.test.ts",
       "status": "passed",
-      "durationMs": 80
+      "durationMs": 57
     },
     {
       "id": "real",
       "name": "real engine resolves dark POS values, aliases, and provenance through the adapter",
       "file": "src/atomic/integration/token-engine.contract.test.ts",
       "status": "passed",
-      "durationMs": 11
+      "durationMs": 9
     },
     {
       "id": "real",
       "name": "real engine forbidden-override diagnostics survive the adapter boundary",
       "file": "src/atomic/integration/token-engine.contract.test.ts",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 6
     },
     {
       "id": "real",
       "name": "real engine reports an unknown reference in an explicit base layer",
       "file": "src/atomic/integration/token-engine.contract.test.ts",
       "status": "passed",
-      "durationMs": 12
+      "durationMs": 8
     },
     {
       "id": "source",
       "name": "source payload mutation cannot alter real resolved dimensions",
       "file": "src/atomic/integration/token-engine.contract.test.ts",
       "status": "passed",
-      "durationMs": 10
-    },
-    {
-      "id": "AT-ST-01",
-      "name": "AT-ST-01 all 18 compositions (3 visual systems × 3 contexts × ar/en) resolve with no issues",
-      "file": "src/atomic/styles/experience.test.ts",
-      "status": "passed",
-      "durationMs": 347
-    },
-    {
-      "id": "AT-ST-02",
-      "name": "AT-ST-02 recipes read only component tokens, and every one of them resolves in every composition",
-      "file": "src/atomic/styles/experience.test.ts",
-      "status": "passed",
-      "durationMs": 280
-    },
-    {
-      "id": "AT-ST-03",
-      "name": "AT-ST-03 a context changes sizes only; a visual system changes treatment only; language changes neither",
-      "file": "src/atomic/styles/experience.test.ts",
-      "status": "passed",
-      "durationMs": 58
-    },
-    {
-      "id": "AT-ST-04",
-      "name": "AT-ST-04 the three visual systems are materially different on the same component tokens",
-      "file": "src/atomic/styles/experience.test.ts",
-      "status": "passed",
-      "durationMs": 39
-    },
-    {
-      "id": "AT-ST-05",
-      "name": "AT-ST-05 POS meets the 44px touch target; ERP stays dense",
-      "file": "src/atomic/styles/experience.test.ts",
-      "status": "passed",
-      "durationMs": 82
-    },
-    {
-      "id": "AT-ST-06",
-      "name": "AT-ST-06 a context cannot change a color: the engine rejects the override",
-      "file": "src/atomic/styles/experience.test.ts",
-      "status": "passed",
-      "durationMs": 4
-    },
-    {
-      "id": "AT-ST-07",
-      "name": "AT-ST-07 resolution is deterministic and records the exact layers",
-      "file": "src/atomic/styles/experience.test.ts",
-      "status": "passed",
-      "durationMs": 32
+      "durationMs": 9
     },
     {
       "id": "PM-01",
@@ -2214,7 +2165,7 @@
       "name": "PM-02 feature ids are unique across the matrix and prefixed by their component",
       "file": "src/atomic/parity/parity.test.ts",
       "status": "passed",
-      "durationMs": 14
+      "durationMs": 12
     },
     {
       "id": "PM-03",
@@ -2228,7 +2179,7 @@
       "name": "PM-04 docs URLs are well-formed AntD component links",
       "file": "src/atomic/parity/parity.test.ts",
       "status": "passed",
-      "durationMs": 8
+      "durationMs": 4
     },
     {
       "id": "PM-05",
@@ -2242,7 +2193,7 @@
       "name": "PM-06 status and track agree: implemented rows name a track, missing rows have none",
       "file": "src/atomic/parity/parity.test.ts",
       "status": "passed",
-      "durationMs": 53
+      "durationMs": 48
     },
     {
       "id": "PM-07",
@@ -2256,7 +2207,7 @@
       "name": "PM-08 every evidence ID referenced exists somewhere in the repo",
       "file": "src/atomic/parity/parity.test.ts",
       "status": "passed",
-      "durationMs": 171
+      "durationMs": 151
     },
     {
       "id": "PM-09",
@@ -2287,6 +2238,55 @@
       "durationMs": 1
     },
     {
+      "id": "AT-ST-01",
+      "name": "AT-ST-01 all 18 compositions (3 visual systems × 3 contexts × ar/en) resolve with no issues",
+      "file": "src/atomic/styles/experience.test.ts",
+      "status": "passed",
+      "durationMs": 340
+    },
+    {
+      "id": "AT-ST-02",
+      "name": "AT-ST-02 recipes read only component tokens, and every one of them resolves in every composition",
+      "file": "src/atomic/styles/experience.test.ts",
+      "status": "passed",
+      "durationMs": 266
+    },
+    {
+      "id": "AT-ST-03",
+      "name": "AT-ST-03 a context changes sizes only; a visual system changes treatment only; language changes neither",
+      "file": "src/atomic/styles/experience.test.ts",
+      "status": "passed",
+      "durationMs": 56
+    },
+    {
+      "id": "AT-ST-04",
+      "name": "AT-ST-04 the three visual systems are materially different on the same component tokens",
+      "file": "src/atomic/styles/experience.test.ts",
+      "status": "passed",
+      "durationMs": 40
+    },
+    {
+      "id": "AT-ST-05",
+      "name": "AT-ST-05 POS meets the 44px touch target; ERP stays dense",
+      "file": "src/atomic/styles/experience.test.ts",
+      "status": "passed",
+      "durationMs": 84
+    },
+    {
+      "id": "AT-ST-06",
+      "name": "AT-ST-06 a context cannot change a color: the engine rejects the override",
+      "file": "src/atomic/styles/experience.test.ts",
+      "status": "passed",
+      "durationMs": 4
+    },
+    {
+      "id": "AT-ST-07",
+      "name": "AT-ST-07 resolution is deterministic and records the exact layers",
+      "file": "src/atomic/styles/experience.test.ts",
+      "status": "passed",
+      "durationMs": 32
+    },
+    {
       "id": "validation",
       "name": "validation returns diagnostics for null instead of throwing",
       "file": "src/atomic/tokens/review-regressions.test.ts",
@@ -2305,21 +2305,21 @@
       "name": "validation returns diagnostics for an object instead of throwing",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "validation",
       "name": "validation returns diagnostics for a string instead of throwing",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "validation",
       "name": "validation returns diagnostics for a number instead of throwing",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "validation",
@@ -2340,14 +2340,14 @@
       "name": "validation returns diagnostics for a layer with object tokens instead of throwing",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "validation",
       "name": "validation returns diagnostics for a null definition instead of throwing",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "validation",
@@ -2403,7 +2403,7 @@
       "name": "resolution returns an invalid result with no partial output for null",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "resolution",
@@ -2466,14 +2466,14 @@
       "name": "resolution returns an invalid result with no partial output for a string definition",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "resolution",
       "name": "resolution returns an invalid result with no partial output for a definition without a value",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 0
     },
     {
       "id": "resolution",
@@ -2578,7 +2578,7 @@
       "name": "rejects unsafe family strings",
       "file": "src/atomic/tokens/review-regressions.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "rejects",
@@ -2613,14 +2613,14 @@
       "name": "resolves a primitive token and exposes its source",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 8
     },
     {
       "id": "applies",
       "name": "applies the documented precedence independent of cross-type input order",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "id": "accepts",
@@ -2662,7 +2662,7 @@
       "name": "detects an indirect reference cycle and reports every node",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "rejects",
@@ -2767,21 +2767,21 @@
       "name": "produces deterministic output for identical input",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 9
+      "durationMs": 7
     },
     {
       "id": "does",
       "name": "does not mutate source layers or token definitions",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 4
     },
     {
       "id": "composes",
       "name": "composes light and dark themes over the same semantic foundation",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 4
+      "durationMs": 3
     },
     {
       "id": "applies",
@@ -2795,14 +2795,14 @@
       "name": "composes visual-system and context layers independently",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 6
     },
     {
       "id": "rejects",
       "name": "rejects CSS namespace values outside lowercase kebab-case",
       "file": "src/atomic/tokens/token-engine.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "rejects",
@@ -2812,32 +2812,179 @@
       "durationMs": 0
     },
     {
+      "id": "TE-01",
+      "name": "TE-01 text filter is Arabic-tolerant: hamza, diacritics",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 9
+    },
+    {
+      "id": "TE-02",
+      "name": "TE-02 phones match by digits in any numeral system («٠١٠» finds «+20 10 …»)",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "TE-03",
+      "name": "TE-03 global filter searches text columns; mixed Latin works",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "TE-04",
+      "name": "TE-04 «in» filter, number «range» with Arabic digits, date «range» on ISO",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "TE-05",
+      "name": "TE-05 filters combine with AND; empty queries and unknown columns are ignored, never throw",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "TE-06",
+      "name": "TE-06 Arabic collation, multi-column, stable",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 20
+    },
+    {
+      "id": "TE-07",
+      "name": "TE-07 numbers written with Arabic-Indic digits sort numerically; empty values last in both directions",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "TE-08",
+      "name": "TE-08 dates, booleans, money and custom compare",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "TE-09",
+      "name": "TE-09 a column with sortable:false ignores sort requests",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "TE-10",
+      "name": "TE-10 tree data: children visible only under expanded parents, with depth",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "TE-11",
+      "name": "TE-11 filtering a tree keeps the ancestors of a match; sorting sorts siblings",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "TE-12",
+      "name": "TE-12 duplicate keys and cycles throw a typed TableError",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "TE-13",
+      "name": "TE-13 grouping: group rows with counts, members only when the group is expanded, multi-level keys",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 3
+    },
+    {
+      "id": "TE-14",
+      "name": "TE-14 aggregates cover all filtered rows (not the page); money stays integer minor units",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "TE-15",
+      "name": "TE-15 pagination clamps the index; pageCount over visible rows",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "TE-16",
+      "name": "TE-16 order, visibility, explicit widths win, flex shares the remainder within min/max",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 2
+    },
+    {
+      "id": "TE-17",
+      "name": "TE-17 pinned columns get logical offsets from their own edge (start/end), never left/right",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "TE-18",
+      "name": "TE-18 serialize → parse round-trips; invalid input returns an error, never throws",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 5
+    },
+    {
+      "id": "TE-19",
+      "name": "TE-19 inputs are never mutated; equal inputs give equal outputs",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 1
+    },
+    {
+      "id": "TE-20",
+      "name": "TE-20 properties (600 seeded cases): sort is a permutation and ordered; filter ⊆ input; pages partition the rows",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 578
+    },
+    {
+      "id": "TE-21",
+      "name": "TE-21 budget: 100,000 rows — Arabic text filter + two-column sort + page in < 1500 ms (CI margin; budget 250 ms)",
+      "file": "src/atomic/data/table/table.test.ts",
+      "status": "passed",
+      "durationMs": 594
+    },
+    {
       "id": "OV-01",
       "name": "OV-01 the result stays inside the viewport padding whenever it can fit",
       "file": "src/atomic/behavior/overlay/overlay.test.ts",
       "status": "passed",
-      "durationMs": 116
+      "durationMs": 136
     },
     {
       "id": "OV-02",
       "name": "OV-02 RTL is the exact mirror image of LTR (all placements and alignments)",
       "file": "src/atomic/behavior/overlay/overlay.test.ts",
       "status": "passed",
-      "durationMs": 57
+      "durationMs": 84
     },
     {
       "id": "OV-03",
       "name": "OV-03 flip happens only when needed, and keeps the alignment",
       "file": "src/atomic/behavior/overlay/overlay.test.ts",
       "status": "passed",
-      "durationMs": 62
+      "durationMs": 68
     },
     {
       "id": "OV-04",
       "name": "OV-04 logical sides and alignment: inline-start is the right side in RTL; -start aligns reading-start edges",
       "file": "src/atomic/behavior/overlay/overlay.test.ts",
       "status": "passed",
-      "durationMs": 4
+      "durationMs": 8
     },
     {
       "id": "OV-05",
@@ -2851,14 +2998,14 @@
       "name": "OV-06 when neither side fits, the side with more room wins",
       "file": "src/atomic/behavior/overlay/overlay.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "OV-10",
       "name": "OV-10 initial focus goes to the first tabbable; Tab and Shift+Tab wrap inside a contained scope",
       "file": "src/atomic/behavior/overlay/overlay.test.tsx",
       "status": "passed",
-      "durationMs": 140
+      "durationMs": 124
     },
     {
       "id": "OV-11",
@@ -2872,21 +3019,21 @@
       "name": "OV-12 nested scopes: only the top one traps; releasing it resumes the lower one and restores focus",
       "file": "src/atomic/behavior/overlay/overlay.test.tsx",
       "status": "passed",
-      "durationMs": 15
+      "durationMs": 19
     },
     {
       "id": "OV-13",
       "name": "OV-13 restore never steals focus the user moved elsewhere; falls back to returnFocus when the opener is gone",
       "file": "src/atomic/behavior/overlay/overlay.test.tsx",
       "status": "passed",
-      "durationMs": 11
+      "durationMs": 12
     },
     {
       "id": "OV-20",
       "name": "OV-20 Escape dismisses only the top layer, and is consumed even when the top is not dismissible",
       "file": "src/atomic/behavior/overlay/overlay.test.tsx",
       "status": "passed",
-      "durationMs": 6
+      "durationMs": 7
     },
     {
       "id": "OV-21",
@@ -2900,14 +3047,14 @@
       "name": "OV-22 outside press dismisses only the top layer; inside and ignored elements are not outside; transient layers pass it down",
       "file": "src/atomic/behavior/overlay/overlay.test.tsx",
       "status": "passed",
-      "durationMs": 6
+      "durationMs": 5
     },
     {
       "id": "OV-23",
       "name": "OV-23 scroll lock is counted across nested modal layers and restores the exact previous styles",
       "file": "src/atomic/behavior/overlay/overlay.test.tsx",
       "status": "passed",
-      "durationMs": 16
+      "durationMs": 15
     },
     {
       "id": "OV-24",
@@ -2928,21 +3075,21 @@
       "name": "OV-26 readExperienceScope copies scope attributes and CSS variables from the nearest scope",
       "file": "src/atomic/behavior/overlay/overlay.test.tsx",
       "status": "passed",
-      "durationMs": 12
+      "durationMs": 13
     },
     {
       "id": "CTX-01",
       "name": "CTX-01 accepts the complete Arabic-first project default context",
       "file": "src/atomic/foundations/context/context.test.ts",
       "status": "passed",
-      "durationMs": 5
+      "durationMs": 4
     },
     {
       "id": "CTX-02",
       "name": "CTX-02 permits a partial layer without inventing missing values",
       "file": "src/atomic/foundations/context/context.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "CTX-03",
@@ -3012,7 +3159,7 @@
       "name": "CTX-12 rejects unversioned or malformed profile references",
       "file": "src/atomic/foundations/context/context.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CTX-13",
@@ -3082,7 +3229,7 @@
       "name": "CTX-22 returns a provenance record for defaults and optional fields",
       "file": "src/atomic/foundations/context/context.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "CTX-23",
@@ -3110,7 +3257,7 @@
       "name": "CTX-26 JSON Schema accepts the proposed profile examples",
       "file": "src/atomic/foundations/context/context.test.ts",
       "status": "passed",
-      "durationMs": 4
+      "durationMs": 3
     },
     {
       "id": "CTX-27",
@@ -3124,14 +3271,14 @@
       "name": "CTX-28 rejects unknown context layer properties",
       "file": "src/atomic/foundations/context/context.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     },
     {
       "id": "resolves",
       "name": "resolves exact assets for undefined",
       "file": "src/atomic/foundations/styles/plan.test.ts",
       "status": "passed",
-      "durationMs": 31
+      "durationMs": 27
     },
     {
       "id": "resolves",
@@ -3355,7 +3502,7 @@
       "name": "frozen source graphs can be resolved without modification",
       "file": "src/atomic/foundations/styles/plan.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 3
     },
     {
       "id": "sparse",
@@ -3369,7 +3516,7 @@
       "name": "resolves the effective environment of undefined",
       "file": "src/atomic/foundations/styles/resolve.test.ts",
       "status": "passed",
-      "durationMs": 8
+      "durationMs": 10
     },
     {
       "id": "resolves",
@@ -3418,7 +3565,7 @@
       "name": "preserves context precedence and records the effective winning source",
       "file": "src/atomic/foundations/styles/resolve.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 3
     },
     {
       "id": "reports",
@@ -3467,28 +3614,28 @@
       "name": "requires exact asset identities and versions",
       "file": "src/atomic/foundations/styles/resolve.test.ts",
       "status": "passed",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "id": "does",
       "name": "does not mutate inputs and produces detached deterministic context snapshots",
       "file": "src/atomic/foundations/styles/resolve.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 3
     },
     {
       "id": "STYLE-01",
       "name": "STYLE-01 validates visual systems, brand themes, and context presets",
       "file": "src/atomic/foundations/styles/style.test.ts",
       "status": "passed",
-      "durationMs": 7
+      "durationMs": 8
     },
     {
       "id": "STYLE-02",
       "name": "STYLE-02 JSON Schema accepts all proposed style assets",
       "file": "src/atomic/foundations/styles/style.test.ts",
       "status": "passed",
-      "durationMs": 8
+      "durationMs": 9
     },
     {
       "id": "STYLE-03",
@@ -3509,7 +3656,7 @@
       "name": "STYLE-05 rejects context defaults that violate preset capabilities",
       "file": "src/atomic/foundations/styles/style.test.ts",
       "status": "passed",
-      "durationMs": 0
+      "durationMs": 1
     },
     {
       "id": "STYLE-06",
@@ -3572,7 +3719,7 @@
       "name": "STYLE-14 JSON Schema rejects unsupported touch and keyboard requirements",
       "file": "src/atomic/foundations/styles/style.test.ts",
       "status": "passed",
-      "durationMs": 1
+      "durationMs": 0
     }
   ]
 }
