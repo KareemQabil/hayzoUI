@@ -653,6 +653,105 @@ await check('BR-AT-10', 'proof: popover aligns to the trigger start and returns 
   return 'ar: محاذاة يمين · en: محاذاة يسار · Escape يرجع للزر · التلميح بالكيبورد'
 })
 
+// Atomic Table (#/table-lab) on the headless engine.
+await check('BR-TB-01', 'table: clicking a header sorts by Arabic collation with aria-sort; a second click reverses', async () => {
+  const { ctx, page } = await fresh('#/table-lab?visual=quiet&context=saas&lang=ar')
+  const th = page.locator('th', { hasText: 'المنطقة' })
+  await th.locator('button').click()
+  const asc = await page.evaluate(() => [...document.querySelectorAll("[data-hz='table'] tbody tr")].map((r) => r.children[4]?.textContent))
+  const sortAsc = await th.getAttribute('aria-sort')
+  await th.locator('button').click()
+  const desc = await page.evaluate(() => [...document.querySelectorAll("[data-hz='table'] tbody tr")].map((r) => r.children[4]?.textContent))
+  const sortDesc = await th.getAttribute('aria-sort')
+  await ctx.close()
+  const collator = new Intl.Collator('ar-EG', { numeric: true, sensitivity: 'base' })
+  const sorted = [...asc].sort(collator.compare)
+  assert(sortAsc === 'ascending' && sortDesc === 'descending', `${sortAsc}/${sortDesc}`)
+  assert(JSON.stringify(asc) === JSON.stringify(sorted), 'not in Arabic order: ' + asc.slice(0, 4).join(' · '))
+  assert(asc[0] !== desc[0], 'descending did not reverse')
+  return `ascending: ${asc[0]} … · descending: ${desc[0]} …`
+})
+
+await check('BR-TB-02', 'table: pinned columns stay on their logical edge while the table scrolls sideways (RTL and LTR)', async () => {
+  const out = []
+  for (const lang of ['ar', 'en']) {
+    const ctx = await browser.newContext({ viewport: { width: 760, height: 900 }, reducedMotion: 'reduce' })
+    const page = await ctx.newPage()
+    await page.goto(base + `#/table-lab?visual=quiet&context=saas&lang=${lang}`, { waitUntil: 'networkidle' })
+    await page.waitForTimeout(300)
+    const m = await page.evaluate(async (lang) => {
+      const scroll = document.querySelector("[data-hz='table'] [data-slot='scroll']")
+      const id = document.querySelector("[data-hz='table'] tbody td[data-pin='start']:not([data-slot])")
+      const bal = document.querySelector("[data-hz='table'] tbody td[data-pin='end']")
+      const box = scroll.getBoundingClientRect()
+      const before = { id: id.getBoundingClientRect(), bal: bal.getBoundingClientRect() }
+      scroll.scrollLeft = lang === 'ar' ? -400 : 400
+      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))
+      const after = { id: id.getBoundingClientRect(), bal: bal.getBoundingClientRect() }
+      return { overflow: scroll.scrollWidth > scroll.clientWidth, moved: Math.abs(scroll.scrollLeft), idDelta: Math.abs(after.id.left - before.id.left), balDelta: Math.abs(after.bal.left - before.bal.left), idRight: Math.round(box.right - after.id.right), idLeft: Math.round(after.id.left - box.left), balLeft: Math.round(after.bal.left - box.left), balRight: Math.round(box.right - after.bal.right) }
+    }, lang)
+    await ctx.close()
+    assert(m.overflow && m.moved > 100, `${lang}: no horizontal overflow to test (${JSON.stringify(m)})`)
+    assert(m.idDelta < 1 && m.balDelta < 1, `${lang}: pinned cells moved ${m.idDelta}/${m.balDelta}`)
+    if (lang === 'ar') assert(m.idRight < 60 && m.balLeft < 4, 'ar edges ' + JSON.stringify(m))
+    else assert(m.idLeft < 60 && m.balRight < 4, 'en edges ' + JSON.stringify(m))
+    out.push(`${lang}: ثابتة بعد تمرير ${m.moved}px`)
+  }
+  return out.join(' · ')
+})
+
+await check('BR-TB-03', 'table: Space on a row checkbox selects it; the header box selects the page and shows mixed when partial', async () => {
+  const { ctx, page } = await fresh('#/table-lab?visual=quiet&context=saas&lang=ar')
+  const box = page.getByRole('checkbox', { name: /^تحديد CUS-0002/ })
+  await box.focus()
+  await page.keyboard.press('Space')
+  const mixed = await page.getByRole('checkbox', { name: 'تحديد كل صفوف الصفحة' }).evaluate((e) => e.indeterminate)
+  const row = await box.evaluate((e) => e.closest('tr').getAttribute('aria-selected'))
+  await page.getByRole('checkbox', { name: 'تحديد كل صفوف الصفحة' }).click()
+  const count = await page.locator('[data-lab-selected]').textContent()
+  await ctx.close()
+  assert(mixed && row === 'true', `mixed ${mixed}, aria-selected ${row}`)
+  assert(count?.startsWith('١٠'), 'selected count ' + count)
+  return 'Space يحدد · المربع العلوي mixed · تحديد الصفحة = ١٠'
+})
+
+await check('BR-TB-04', 'table: row height comes from the context (ERP 32 · SaaS 40 · POS 52) in every visual system', async () => {
+  const want = { erp: 32, saas: 40, pos: 52 }
+  const got = []
+  const { ctx, page } = await fresh('#/table-lab')
+  for (const visual of ['quiet', 'editorial', 'soft']) {
+    for (const context of ['erp', 'saas', 'pos']) {
+      await page.evaluate((h) => (location.hash = h), `#/table-lab?visual=${visual}&context=${context}&lang=ar`)
+      await page.waitForSelector(`[data-table-lab="${visual}/${context}/ar"] [data-hz='table'] tbody td`)
+      const h = await page.evaluate(() => document.querySelector("[data-hz='table'] tbody td").getBoundingClientRect().height)
+      assert(Math.abs(h - want[context]) < 0.5, `${visual}/${context}: ${h}`)
+      got.push(Math.round(h))
+    }
+  }
+  await ctx.close()
+  return `9 تركيبات · ${[...new Set(got)].join(' / ')}px`
+})
+
+await check('BR-TB-05', 'table: Arabic search filters (phone digits in any numerals); no page scroll at 390px', async () => {
+  const { ctx, page } = await fresh('#/table-lab?visual=soft&context=pos&lang=ar')
+  const phone = await page.evaluate(() => document.querySelector("[data-hz='table'] tbody tr td:nth-child(4)")?.textContent ?? '')
+  const digits = phone.replace(/[^\d٠-٩]/g, '').slice(2, 8) // national digits, Arabic-Indic as displayed
+  await page.getByRole('searchbox').fill(digits)
+  await page.waitForTimeout(200)
+  const status = await page.locator("[data-slot='page-status']").textContent()
+  const firstPhone = await page.evaluate(() => document.querySelector("[data-hz='table'] tbody tr td:nth-child(4)")?.textContent ?? '')
+  await ctx.close()
+  const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' })
+  const m = await mobile.newPage()
+  await m.goto(base + '#/table-lab?visual=quiet&context=pos&lang=ar', { waitUntil: 'networkidle' })
+  await m.waitForTimeout(300)
+  const r = await m.evaluate(() => ({ sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth }))
+  await mobile.close()
+  assert(firstPhone.replace(/[^\d٠-٩]/g, '').includes(digits), `«${digits}» → first row «${firstPhone}» (${status})`)
+  assert(r.sw <= r.cw, `390px: scrollWidth ${r.sw} > ${r.cw}`)
+  return `«${digits}» يلاقي «${firstPhone}» · ${status} · 390px بلا تمرير`
+})
+
 const run = {
   tool: `Playwright (playwright-core ${pwVersion})`,
   environment: `Chromium ${browser.version()} headless · ${process.platform} · 1280×900 و390×844 · reduced motion`,

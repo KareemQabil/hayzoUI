@@ -18,7 +18,7 @@ const components = ids('src/knowledge/components.ts', /^\s*id: '([a-z-]+)'/gm)
 const patterns = [...new Set(ids('src/knowledge/patterns.ts', /\bid: '(P-[A-Z-]+)'/g))]
 const tabs = ['overview', 'lab', 'guidelines', 'behavior', 'code', 'provenance']
 const routes = [
-  '#/progress', '#/proof', '#/parity', '#/app', '#/ecosystem', '#/evidence', '#/patterns', '#/resources', '#/rules', '#/studio',
+  '#/progress', '#/proof', '#/parity', '#/table-lab', '#/app', '#/ecosystem', '#/evidence', '#/patterns', '#/resources', '#/rules', '#/studio',
   ...tabs.map((t) => `#/components/currency-input/${t}`),
   ...components.filter((c) => c !== 'currency-input').map((c) => `#/components/${c}`),
   ...patterns.map((p) => `#/patterns/${p}`),

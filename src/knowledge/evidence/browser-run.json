@@ -1,7 +1,7 @@
 {
   "tool": "Playwright (playwright-core 1.64.1)",
   "environment": "Chromium 156.0.8078.80 headless · win32 · 1280×900 و390×844 · reduced motion",
-  "startedAt": "2026-11-07T21:14:30.977Z",
+  "startedAt": "2026-11-08T03:09:15.878Z",
   "results": [
     {
       "id": "BR-CI-01",
@@ -200,6 +200,36 @@
       "name": "proof: popover aligns to the trigger start and returns focus on Escape; tooltip shows on keyboard focus",
       "status": "passed",
       "detail": "ar: محاذاة يمين · en: محاذاة يسار · Escape يرجع للزر · التلميح بالكيبورد"
+    },
+    {
+      "id": "BR-TB-01",
+      "name": "table: clicking a header sorts by Arabic collation with aria-sort; a second click reverses",
+      "status": "passed",
+      "detail": "ascending: أسوان … · descending: المنصورة …"
+    },
+    {
+      "id": "BR-TB-02",
+      "name": "table: pinned columns stay on their logical edge while the table scrolls sideways (RTL and LTR)",
+      "status": "passed",
+      "detail": "ar: ثابتة بعد تمرير 328px · en: ثابتة بعد تمرير 343px"
+    },
+    {
+      "id": "BR-TB-03",
+      "name": "table: Space on a row checkbox selects it; the header box selects the page and shows mixed when partial",
+      "status": "passed",
+      "detail": "Space يحدد · المربع العلوي mixed · تحديد الصفحة = ١٠"
+    },
+    {
+      "id": "BR-TB-04",
+      "name": "table: row height comes from the context (ERP 32 · SaaS 40 · POS 52) in every visual system",
+      "status": "passed",
+      "detail": "9 تركيبات · 32 / 40 / 52px"
+    },
+    {
+      "id": "BR-TB-05",
+      "name": "table: Arabic search filters (phone digits in any numerals); no page scroll at 390px",
+      "status": "passed",
+      "detail": "«١٠٢١٠٥» يلاقي «+٢٠ ١٠ ٢١٠٥ ٧٢٩٣» · ١–١ من ١ · 390px بلا تمرير"
     }
   ]
 }

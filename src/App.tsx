@@ -15,6 +15,7 @@ const MatrixPage = lazy(() => import('./pages/MatrixPage').then((m) => ({ defaul
 // The atomic first proof: loaded on demand with the token engine and the atomic slice.
 const ProofPage = lazy(() => import('./pages/ProofPage').then((m) => ({ default: m.ProofPage })))
 const ParityPage = lazy(() => import('./pages/ParityPage').then((m) => ({ default: m.ParityPage })))
+const TableLabPage = lazy(() => import('./pages/TableLabPage').then((m) => ({ default: m.TableLabPage })))
 const ProgressPage = lazy(() => import('./pages/ProgressPage').then((m) => ({ default: m.ProgressPage })))
 
 function Routes() {
@@ -33,6 +34,9 @@ function Routes() {
       break
     case 'parity':
       page = <Suspense fallback={<p className="p-8 text-fg-2">جارٍ تحميل مصفوفة التكافؤ…</p>}><ParityPage /></Suspense>
+      break
+    case 'table-lab':
+      page = <Suspense fallback={<p className="p-8 text-fg-2">جارٍ تحميل معمل الجدول…</p>}><TableLabPage /></Suspense>
       break
     case 'studio':
       page = <StudioPage />

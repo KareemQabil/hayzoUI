@@ -54,6 +54,14 @@ for (const visual of ['quiet', 'editorial', 'soft']) {
   await page.waitForTimeout(200)
   compare(path.join(OUT, 'atomic-proof', `${visual}.png`), await page.locator(`[data-proof-visual="${visual}"]`).screenshot({ animations: 'disabled', caret: 'hide' }))
 }
+// Atomic Table lab: two compositions that differ in every axis (visual system, context, language).
+for (const [visual, context, lang] of [['quiet', 'erp', 'ar'], ['soft', 'pos', 'en']]) {
+  await page.evaluate((h) => (location.hash = h), `#/table-lab?visual=${visual}&context=${context}&lang=${lang}`)
+  await page.waitForSelector(`[data-table-lab="${visual}/${context}/${lang}"] [data-hz='table'] tbody td`)
+  await page.evaluate(() => document.fonts.ready)
+  await page.waitForTimeout(200)
+  compare(path.join(OUT, 'atomic-proof', `table-${visual}-${context}-${lang}.png`), await page.locator(`[data-table-lab="${visual}/${context}/${lang}"]`).screenshot({ animations: 'disabled', caret: 'hide' }))
+}
 await browser.close()
 
 function compare(file, shot) {

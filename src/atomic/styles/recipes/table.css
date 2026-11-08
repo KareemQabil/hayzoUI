@@ -1,0 +1,169 @@
+/*
+ * Recipe: table — recipes.atomic-core@0.1.0 (S3). Reads only --hz-component-table-* tokens.
+ * Anatomy: [data-hz=table] > [data-slot=toolbar]? · [data-slot=scroll] > table > caption · thead th ([data-slot=sort])
+ *          · tbody tr ([data-slot=select] [data-slot=toggle]) · tfoot ([data-slot=summary]) · [data-slot=pagination]
+ * Pinned cells get logical insets from the engine (inline style inset-inline-start/end) and position: sticky here.
+ * States: tr[data-selected], tr[data-group], [aria-busy], th[aria-sort]. Logical properties only.
+ */
+[data-hz='table'] {
+  display: grid;
+  gap: var(--hz-component-table-gap);
+  min-inline-size: 0;
+  font-family: var(--hz-component-table-font-family);
+  font-size: var(--hz-component-table-font-size);
+  color: var(--hz-component-table-foreground);
+}
+
+[data-hz='table'] [data-slot='scroll'] {
+  overflow: auto;
+  max-inline-size: 100%;
+  border: var(--hz-component-table-border-width) solid var(--hz-component-table-border-color);
+  border-radius: var(--hz-component-table-radius);
+  background: var(--hz-component-table-background);
+}
+[data-hz='table'] [data-slot='scroll']:focus-visible {
+  outline: var(--hz-component-table-focus-width) solid var(--hz-component-table-focus-color);
+  outline-offset: 2px;
+}
+
+[data-hz='table'] table {
+  inline-size: max-content;
+  min-inline-size: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+[data-hz='table'] caption[data-slot='caption'][data-hidden] {
+  position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+
+[data-hz='table'] th,
+[data-hz='table'] td {
+  box-sizing: border-box;
+  block-size: var(--hz-component-table-row-height);
+  padding-block: 0;
+  padding-inline: var(--hz-component-table-cell-padding-inline);
+  text-align: start;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-block-end: var(--hz-component-table-border-width) solid var(--hz-component-table-border-color);
+  background: var(--hz-component-table-background);
+}
+[data-hz='table'] [data-numeric] { text-align: end; font-variant-numeric: tabular-nums; }
+
+[data-hz='table'] thead th {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 2;
+  font-size: var(--hz-component-table-header-size);
+  font-weight: var(--hz-component-table-header-weight);
+  color: var(--hz-component-table-header-color);
+  background: var(--hz-component-table-header-background);
+}
+[data-hz='table'] tfoot td {
+  position: sticky;
+  inset-block-end: 0;
+  z-index: 2;
+  font-weight: var(--hz-component-table-header-weight);
+  border-block-end: 0;
+  border-block-start: var(--hz-component-table-border-width) solid var(--hz-component-table-border-color);
+  background: var(--hz-component-table-header-background);
+}
+[data-hz='table'] tbody tr:last-child td { border-block-end: 0; }
+
+/* Pinned columns: sticky on their logical edge; the engine supplies the offset. */
+[data-hz='table'] [data-pin] { position: sticky; z-index: 1; }
+[data-hz='table'] thead [data-pin],
+[data-hz='table'] tfoot [data-pin] { z-index: 3; }
+[data-hz='table'] [data-pin='start'][data-pin-edge] { border-inline-end: var(--hz-component-table-border-width) solid var(--hz-component-table-border-color); }
+[data-hz='table'] [data-pin='end'][data-pin-edge] { border-inline-start: var(--hz-component-table-border-width) solid var(--hz-component-table-border-color); }
+
+/* Rows */
+@media (hover: hover) {
+  [data-hz='table'] tbody tr:not([data-group]):hover > * { background: var(--hz-component-table-row-hover); }
+}
+[data-hz='table'] tbody tr[data-selected] > * { background: var(--hz-component-table-row-selected); }
+[data-hz='table'] tbody tr[data-group] > * { background: var(--hz-component-table-group-background); font-weight: var(--hz-component-table-header-weight); }
+
+/* Sort header button: the whole header is the target; the arrow follows the sort. */
+[data-hz='table'] [data-slot='sort'] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  max-inline-size: 100%;
+  min-block-size: var(--hz-component-table-target-min);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+[data-hz='table'] [data-numeric] [data-slot='sort'] { flex-direction: row-reverse; }
+[data-hz='table'] [data-slot='sort']:focus-visible,
+[data-hz='table'] [data-slot='toggle']:focus-visible,
+[data-hz='table'] [data-slot='select'] input:focus-visible {
+  outline: var(--hz-component-table-focus-width) solid var(--hz-component-table-focus-color);
+  outline-offset: 2px;
+}
+[data-hz='table'] [data-slot='sort-icon'] { inline-size: 0.9em; block-size: 0.9em; flex: none; opacity: 0.35; }
+[data-hz='table'] th[aria-sort='ascending'] [data-slot='sort-icon'],
+[data-hz='table'] th[aria-sort='descending'] [data-slot='sort-icon'] { opacity: 1; color: var(--hz-component-table-accent); }
+[data-hz='table'] th[aria-sort='descending'] [data-slot='sort-icon'] { transform: rotate(180deg); }
+[data-hz='table'] [data-slot='sort-rank'] { font-size: 0.75em; color: var(--hz-component-table-accent); }
+
+/* Selection and tree toggles: touch targets come from the context. */
+/* Exactly SELECT_WIDTH (table.tsx): start-pinned columns are offset by it, so any padding would make them jump. */
+[data-hz='table'] [data-slot='select'] { inline-size: 48px; min-inline-size: 48px; max-inline-size: 48px; padding-inline: 0; text-align: center; }
+[data-hz='table'] [data-slot='select'] label { display: inline-grid; place-items: center; min-inline-size: var(--hz-component-table-target-min); min-block-size: var(--hz-component-table-target-min); cursor: pointer; }
+[data-hz='table'] [data-slot='select'] input { inline-size: 1.05em; block-size: 1.05em; margin: 0; accent-color: var(--hz-component-table-accent); cursor: pointer; }
+[data-hz='table'] [data-slot='cell-content'] { display: inline-flex; align-items: center; gap: 0.35em; max-inline-size: 100%; }
+[data-hz='table'] [data-slot='toggle'] {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  min-inline-size: var(--hz-component-table-target-min);
+  min-block-size: var(--hz-component-table-target-min);
+  margin-inline-start: calc(var(--hz-component-table-target-min) / -4);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+/* The chevron points to the inline end when collapsed (mirrored in RTL) and down when expanded. */
+[data-hz='table'] [data-slot='toggle'] svg { inline-size: 0.9em; block-size: 0.9em; }
+[dir='rtl'] [data-hz='table'] [data-slot='toggle'][aria-expanded='false'] svg { scale: -1 1; }
+[data-hz='table'] [data-slot='toggle'][aria-expanded='true'] svg { transform: rotate(90deg); }
+[data-hz='table'] [data-slot='toggle-spacer'] { display: inline-block; inline-size: calc(var(--hz-component-table-target-min) * 0.75); flex: none; }
+[data-hz='table'] [data-slot='group-count'] { color: var(--hz-component-table-muted); font-weight: 400; }
+
+[data-hz='table'] [data-slot='empty'] { block-size: calc(var(--hz-component-table-row-height) * 3); text-align: center; color: var(--hz-component-table-muted); white-space: normal; }
+[data-hz='table'][aria-busy='true'] tbody { opacity: var(--hz-component-table-disabled-opacity); }
+
+/* Pagination */
+[data-hz='table'] [data-slot='pagination'] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hz-component-table-gap);
+  color: var(--hz-component-table-muted);
+}
+[data-hz='table'] [data-slot='pagination-controls'] { display: flex; align-items: center; gap: var(--hz-component-table-gap); }
+[data-hz='table'] [data-slot='page-size'] {
+  min-block-size: var(--hz-component-table-target-min);
+  padding-inline: 0.5em;
+  font: inherit;
+  color: var(--hz-component-table-foreground);
+  background: var(--hz-component-table-background);
+  border: var(--hz-component-table-border-width) solid var(--hz-component-table-border-color);
+  border-radius: var(--hz-component-table-radius);
+}
+[data-hz='table'] [data-slot='page-size']:focus-visible {
+  outline: var(--hz-component-table-focus-width) solid var(--hz-component-table-focus-color);
+  outline-offset: 2px;
+}
