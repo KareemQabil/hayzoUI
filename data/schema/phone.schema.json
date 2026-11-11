@@ -45,9 +45,71 @@
           "type": "string",
           "minLength": 1
         },
+        "preferredInternationalPrefix": {
+          "description": "Shown when internationalPrefix is a pattern with several alternatives.",
+          "type": "string",
+          "minLength": 1
+        },
         "nationalPrefix": {
           "type": "string",
           "minLength": 1
+        },
+        "nationalPrefixForParsing": {
+          "description": "Pattern of what to strip when parsing national input; when absent, nationalPrefix.",
+          "type": "string",
+          "minLength": 1
+        },
+        "nationalPrefixTransformRule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mainCountryForCode": {
+          "description": "True when this region is the main one of a calling code shared by several regions.",
+          "type": "boolean"
+        },
+        "sharesCallingCodeWith": {
+          "description": "Other regions with the same calling code.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          }
+        },
+        "leadingDigits": {
+          "description": "Pattern that tells this region apart from the others sharing its calling code.",
+          "type": "string",
+          "minLength": 1
+        },
+        "mobileNumberPortable": {
+          "description": "True when numbers can move between operators, so an operator prefix is only the original allocation.",
+          "type": "boolean"
+        },
+        "general": {
+          "description": "Any valid national significant number. Lengths are the union over numberTypes.",
+          "type": "object",
+          "properties": {
+            "pattern": {
+              "type": "string",
+              "minLength": 1
+            },
+            "possibleLengths": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "possibleLengthsLocalOnly": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "required": [
+            "pattern",
+            "possibleLengths"
+          ],
+          "additionalProperties": false
         },
         "numberTypes": {
           "description": "Keyed by type: mobile, fixedLine, tollFree, premiumRate, sharedCost, voip, uan …",
@@ -60,6 +122,13 @@
                 "minLength": 1
               },
               "possibleLengths": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "possibleLengthsLocalOnly": {
+                "description": "Lengths valid only when dialled locally, without the area code.",
                 "type": "array",
                 "items": {
                   "type": "integer"
@@ -84,6 +153,33 @@
             "additionalProperties": false
           }
         },
+        "noInternationalDialling": {
+          "description": "Numbers that cannot be dialled from abroad.",
+          "type": "object",
+          "properties": {
+            "pattern": {
+              "type": "string",
+              "minLength": 1
+            },
+            "possibleLengths": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "possibleLengthsLocalOnly": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "required": [
+            "pattern",
+            "possibleLengths"
+          ],
+          "additionalProperties": false
+        },
         "formats": {
           "type": "array",
           "items": {
@@ -105,12 +201,25 @@
                 }
               },
               "nationalPrefixFormattingRule": {
+                "description": "Replaces the first group of format in national formatting, with the national prefix resolved: \"0$1\".",
                 "type": "string",
                 "minLength": 1
               },
               "intlFormat": {
+                "description": "International format when it differs from format.",
                 "type": "string",
                 "minLength": 1
+              },
+              "nationalPrefixOptionalWhenFormatting": {
+                "type": "boolean"
+              },
+              "domesticCarrierCodeFormattingRule": {
+                "type": "string",
+                "minLength": 1
+              },
+              "nationalOnly": {
+                "description": "True when the rule must not be used for international formatting (upstream intlFormat \"NA\").",
+                "type": "boolean"
               }
             },
             "required": [
@@ -126,9 +235,25 @@
             "type": "object",
             "properties": {
               "name": {
-                "$ref": "common.schema.json#/$defs/localized"
+                "description": "Operator name. Arabic is present only when the source gives it in Arabic script; it is never translated here.",
+                "type": "object",
+                "properties": {
+                  "ar": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en"
+                ],
+                "additionalProperties": false
               },
               "prefixes": {
+                "description": "Prefixes of the national significant number (calling code removed). The longest matching prefix wins.",
                 "type": "array",
                 "items": {
                   "type": "string",

@@ -1,0 +1,142 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "EG",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/20.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "EG",
+    "callingCode": "20",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "mobileNumberPortable": true,
+    "general": {
+      "pattern": "[189]\\d{8,9}|[24-6]\\d{8}|[135]\\d{7}",
+      "possibleLengths": [
+        8,
+        9,
+        10
+      ],
+      "possibleLengthsLocalOnly": [
+        6,
+        7
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "13[23]\\d{6}|(?:15|57)\\d{6,7}|(?:2\\d|3|4[05-8]|5[05]|6[24-689]|8[2468]|9[235-7])\\d{7}",
+        "possibleLengths": [
+          8,
+          9
+        ],
+        "possibleLengthsLocalOnly": [
+          6,
+          7
+        ],
+        "example": "234567890"
+      },
+      "mobile": {
+        "pattern": "1[0-25]\\d{8}",
+        "possibleLengths": [
+          10
+        ],
+        "example": "1001234567"
+      },
+      "tollFree": {
+        "pattern": "800\\d{7}",
+        "possibleLengths": [
+          10
+        ],
+        "example": "8001234567"
+      },
+      "premiumRate": {
+        "pattern": "900\\d{7}",
+        "possibleLengths": [
+          10
+        ],
+        "example": "9001234567"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d)(\\d{7,8})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "[23]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{2})(\\d{6,7})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "1[35]|[4-6]|8[2468]|9[235-7]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{3})(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[89]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{2})(\\d{8})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "1"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Vodafone"
+        },
+        "prefixes": [
+          "10"
+        ]
+      },
+      {
+        "name": {
+          "en": "Etisalat"
+        },
+        "prefixes": [
+          "11"
+        ]
+      },
+      {
+        "name": {
+          "en": "Orange"
+        },
+        "prefixes": [
+          "12"
+        ]
+      },
+      {
+        "name": {
+          "en": "TE"
+        },
+        "prefixes": [
+          "15"
+        ]
+      }
+    ]
+  }
+}

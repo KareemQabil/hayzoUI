@@ -1,0 +1,113 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "PS",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/970.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "PS",
+    "callingCode": "970",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "general": {
+      "pattern": "[2489]2\\d{6}|(?:1\\d|5)\\d{8}",
+      "possibleLengths": [
+        8,
+        9,
+        10
+      ],
+      "possibleLengthsLocalOnly": [
+        7
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "(?:22[2-47-9]|42[45]|82[014-68]|92[3569])\\d{5}",
+        "possibleLengths": [
+          8
+        ],
+        "possibleLengthsLocalOnly": [
+          7
+        ],
+        "example": "22234567"
+      },
+      "mobile": {
+        "pattern": "5[69]\\d{7}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "599123456"
+      },
+      "tollFree": {
+        "pattern": "1800\\d{6}",
+        "possibleLengths": [
+          10
+        ],
+        "example": "1800123456"
+      },
+      "sharedCost": {
+        "pattern": "1700\\d{6}",
+        "possibleLengths": [
+          10
+        ],
+        "example": "1700123456"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d)(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[2489]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{3})(\\d{3})(\\d{3})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "5"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{4})(\\d{3})(\\d{3})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "1"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Ooredoo Group"
+        },
+        "prefixes": [
+          "56"
+        ]
+      },
+      {
+        "name": {
+          "en": "Palestine Cellular Communications"
+        },
+        "prefixes": [
+          "59"
+        ]
+      }
+    ]
+  }
+}

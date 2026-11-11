@@ -1,0 +1,114 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "TN",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/216.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "TN",
+    "callingCode": "216",
+    "internationalPrefix": "00",
+    "general": {
+      "pattern": "[2-57-9]\\d{7}",
+      "possibleLengths": [
+        8
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "81200\\d{3}|(?:3[0-2]|7\\d)\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "30010123"
+      },
+      "mobile": {
+        "pattern": "3(?:001|[12]40)\\d{4}|(?:(?:[259]\\d|4[0-8])\\d|3(?:1[1-35]|6[0-4]|91))\\d{5}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "20123456"
+      },
+      "tollFree": {
+        "pattern": "8010\\d{4}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "80101234"
+      },
+      "premiumRate": {
+        "pattern": "88\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "88123456"
+      },
+      "sharedCost": {
+        "pattern": "8[12]10\\d{4}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "81101234"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{3})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[2-57-9]"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Ooredoo"
+        },
+        "prefixes": [
+          "2",
+          "46",
+          "48"
+        ]
+      },
+      {
+        "name": {
+          "en": "Tunisie Telecom"
+        },
+        "prefixes": [
+          "4",
+          "9"
+        ]
+      },
+      {
+        "name": {
+          "en": "Watany Ettisalat"
+        },
+        "prefixes": [
+          "45"
+        ]
+      },
+      {
+        "name": {
+          "en": "Orange"
+        },
+        "prefixes": [
+          "5"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "iban-KW",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "schwifty IBAN registry",
+        "url": "https://github.com/mdomke/schwifty",
+        "version": "d407f23eae5eac2e0acd9a9db53d13ab8c78916f",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "schwifty/iban_registry/generated.json; schwifty/iban_registry/overwrite.json"
+      },
+      {
+        "name": "SWIFT IBAN Registry (copy in jschaedl/iban-validation)",
+        "url": "https://github.com/jschaedl/iban-validation",
+        "version": "release 96, February 2024 (repository commit af9987299645a8f85c703e36b6e7fed409a7fe84)",
+        "license": "SWIFT publication, facts only; repository is MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "Resource/iban_registry_202402r96.txt"
+      },
+      {
+        "name": "Wikipedia: International Bank Account Number",
+        "url": "https://en.wikipedia.org/wiki/International_Bank_Account_Number",
+        "version": "revision 1383718960 (2026-11-04)",
+        "license": "CC-BY-SA-4.0, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "IBAN formats by country"
+      },
+      {
+        "name": "ibantools",
+        "url": "https://github.com/Simplify/ibantools",
+        "version": "4.5.4",
+        "license": "MIT OR MPL-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "jsnext/ibantools.js (countrySpecs)"
+      },
+      {
+        "name": "iban.js",
+        "url": "https://github.com/arhs/iban.js",
+        "version": "0.0.14",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "iban.js"
+      },
+      {
+        "name": "php-iban registry",
+        "url": "https://github.com/globalcitizen/php-iban",
+        "version": "9dd1884d9b62235eceed0918e9538753ec5988cb",
+        "license": "LGPL-3.0, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "registry.txt"
+      }
+    ],
+    "script": "tools/extract/iban/build.mjs"
+  },
+  "data": {
+    "region": "KW",
+    "dataset": "iban",
+    "structure": {
+      "length": 30,
+      "pattern": "^KW[0-9]{2}[A-Z]{4}[A-Z0-9]{22}$",
+      "charset": "alphanumeric",
+      "checksum": {
+        "algorithm": "ISO 7064 MOD 97-10",
+        "description": "Move the first four characters to the end, replace each letter by its position in the alphabet plus 9 (A=10 … Z=35), and read the result as one number: its remainder modulo 97 must be 1. Check digits are 98 minus the remainder computed with the check digits set to 00."
+      },
+      "segments": [
+        {
+          "name": "countryCode",
+          "start": 0,
+          "length": 2,
+          "values": {
+            "characterClass": "a"
+          }
+        },
+        {
+          "name": "checkDigits",
+          "start": 2,
+          "length": 2,
+          "values": {
+            "characterClass": "n"
+          }
+        },
+        {
+          "name": "bankCode",
+          "start": 4,
+          "length": 4,
+          "values": {
+            "characterClass": "a"
+          }
+        },
+        {
+          "name": "accountNumber",
+          "start": 8,
+          "length": 22,
+          "values": {
+            "characterClass": "c"
+          }
+        }
+      ],
+      "example": "KW81CBKU0000000000001234560101"
+    },
+    "claims": [
+      {
+        "key": "swiftRegistered",
+        "value": true,
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "schwifty IBAN registry",
+            "url": "https://github.com/mdomke/schwifty",
+            "version": "d407f23eae5eac2e0acd9a9db53d13ab8c78916f",
+            "license": "MIT",
+            "retrievedAt": "2026-11-11",
+            "path": "schwifty/iban_registry/generated.json; schwifty/iban_registry/overwrite.json"
+          }
+        ],
+        "note": "Listed in the SWIFT IBAN registry extract that schwifty is generated from."
+      }
+    ],
+    "notes": "Segment start is the 0-based offset in the electronic-format IBAN (no spaces); values.characterClass uses the SWIFT classes n (digits), a (upper-case letters), c (upper-case letters and digits). Example from SWIFT registry r96, identical in php-iban and iban.js; validated with MOD 97-10 by tools/extract/iban/build.mjs."
+  }
+}

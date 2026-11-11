@@ -1,0 +1,210 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "MA",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/212.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "MA",
+    "callingCode": "212",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "mainCountryForCode": true,
+    "sharesCallingCodeWith": [
+      "EH"
+    ],
+    "leadingDigits": "[5-8]",
+    "mobileNumberPortable": true,
+    "general": {
+      "pattern": "[5-8]\\d{8}",
+      "possibleLengths": [
+        9
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "5(?:(?:18|4[0679]|5[03])\\d|2(?:[0-25-79]\\d|3[1-578]|4[02-46-8]|8[0235-9])|3(?:[0-47]\\d|5[02-9]|6[02-8]|8[014-9]|9[3-9]))\\d{5}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "520123456"
+      },
+      "mobile": {
+        "pattern": "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[016-8]\\d|2[0-8]|3[01]|5[0-5]))\\d{6}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "650123456"
+      },
+      "tollFree": {
+        "pattern": "80[0-7]\\d{6}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "801234567"
+      },
+      "premiumRate": {
+        "pattern": "89\\d{7}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "891234567"
+      },
+      "voip": {
+        "pattern": "(?:592(?:4[0-2]|93)|80[89]\\d\\d)\\d{4}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "592401234"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{4})(\\d{5})",
+        "format": "$1-$2",
+        "leadingDigits": [
+          "892"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{2})(\\d{7})",
+        "format": "$1-$2",
+        "leadingDigits": [
+          "8(?:0[0-7]|9)"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
+        "format": "$1 $2 $3 $4 $5",
+        "leadingDigits": [
+          "[5-8]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Inwi"
+        },
+        "prefixes": [
+          "60",
+          "626",
+          "627",
+          "629",
+          "630",
+          "633",
+          "634",
+          "635",
+          "638",
+          "640",
+          "646",
+          "647",
+          "680",
+          "681",
+          "687",
+          "690",
+          "695",
+          "698",
+          "699",
+          "70",
+          "71",
+          "72"
+        ]
+      },
+      {
+        "name": {
+          "en": "Maroc Telecom"
+        },
+        "prefixes": [
+          "61",
+          "622",
+          "623",
+          "624",
+          "628",
+          "636",
+          "637",
+          "639",
+          "641",
+          "642",
+          "643",
+          "648",
+          "65",
+          "661",
+          "662",
+          "666",
+          "667",
+          "668",
+          "67",
+          "682",
+          "689",
+          "696",
+          "697",
+          "75",
+          "76"
+        ]
+      },
+      {
+        "name": {
+          "en": "Orange"
+        },
+        "prefixes": [
+          "612",
+          "614",
+          "617",
+          "619",
+          "620",
+          "621",
+          "625",
+          "631",
+          "632",
+          "644",
+          "645",
+          "649",
+          "656",
+          "657",
+          "660",
+          "663",
+          "664",
+          "665",
+          "669",
+          "674",
+          "675",
+          "679",
+          "684",
+          "688",
+          "691",
+          "693",
+          "694",
+          "73",
+          "77",
+          "78"
+        ]
+      },
+      {
+        "name": {
+          "en": "Al Hourria Telecom"
+        },
+        "prefixes": [
+          "6921",
+          "6922"
+        ]
+      }
+    ]
+  }
+}

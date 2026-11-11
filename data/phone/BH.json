@@ -1,0 +1,148 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "BH",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/973.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "BH",
+    "callingCode": "973",
+    "internationalPrefix": "00",
+    "mobileNumberPortable": true,
+    "general": {
+      "pattern": "[136-9]\\d{7}",
+      "possibleLengths": [
+        8
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "(?:1(?:3[1356]|6[0156]|7\\d)\\d|6(?:1[16]\\d|500|6(?:0\\d|3[12]|44|55|7[7-9]|88)|9[69][69])|7(?:[07]\\d\\d|1(?:11|78)))\\d{4}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "17001234"
+      },
+      "mobile": {
+        "pattern": "(?:3(?:[0-79]\\d|8[0-57-9])\\d|6(?:3(?:00|33|6[16])|441|6(?:3[03-9]|[69]\\d|7[0-689])))\\d{4}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "36001234"
+      },
+      "tollFree": {
+        "pattern": "8[02369]\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "80123456"
+      },
+      "premiumRate": {
+        "pattern": "(?:87|9[0-8])\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "90123456"
+      },
+      "sharedCost": {
+        "pattern": "84\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "84123456"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{4})(\\d{4})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "[13679]|8[02-4679]"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Telecommunications Regulatory Authority"
+        },
+        "prefixes": [
+          "30",
+          "385"
+        ]
+      },
+      {
+        "name": {
+          "en": "Royal Court"
+        },
+        "prefixes": [
+          "31"
+        ]
+      },
+      {
+        "name": {
+          "en": "Batelco"
+        },
+        "prefixes": [
+          "32",
+          "38",
+          "39",
+          "64",
+          "6670",
+          "6671",
+          "6672",
+          "6673",
+          "6674",
+          "6675",
+          "6676",
+          "6678",
+          "6679"
+        ]
+      },
+      {
+        "name": {
+          "en": "STC"
+        },
+        "prefixes": [
+          "3250",
+          "33",
+          "34",
+          "35",
+          "63"
+        ]
+      },
+      {
+        "name": {
+          "en": "zain BH"
+        },
+        "prefixes": [
+          "36",
+          "37",
+          "6630",
+          "6633",
+          "6634",
+          "6635",
+          "6636",
+          "6637",
+          "6638",
+          "6639",
+          "666",
+          "669"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "SO",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/252.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "SO",
+    "callingCode": "252",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "general": {
+      "pattern": "[346-9]\\d{8}|[12679]\\d{7}|[1-5]\\d{6}|[1348]\\d{5}",
+      "possibleLengths": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "(?:1\\d|2[0-79]|3[0-46-8]|4[0-7]|5[57-9])\\d{5}|(?:[134]\\d|8[125])\\d{4}",
+        "possibleLengths": [
+          6,
+          7
+        ],
+        "example": "4012345"
+      },
+      "mobile": {
+        "pattern": "(?:(?:15|(?:3[59]|4[89]|6\\d|7[0-35-9]|8[08])\\d|9(?:0\\d|[2-9]))\\d|2(?:4\\d|8))\\d{5}|(?:[67]\\d\\d|904)\\d{5}",
+        "possibleLengths": [
+          7,
+          8,
+          9
+        ],
+        "example": "71123456"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{2})(\\d{4})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "8[125]"
+        ]
+      },
+      {
+        "pattern": "(\\d{6})",
+        "format": "$1",
+        "leadingDigits": [
+          "[134]"
+        ]
+      },
+      {
+        "pattern": "(\\d)(\\d{6})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "[15]|2[0-79]|3[0-46-8]|4[0-7]"
+        ]
+      },
+      {
+        "pattern": "(\\d{2})(\\d{5,7})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "1|28|9[2-9]"
+        ]
+      },
+      {
+        "pattern": "(\\d)(\\d{7})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "[267]|904"
+        ]
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[346-9]"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Telesom"
+        },
+        "prefixes": [
+          "24",
+          "63",
+          "73"
+        ]
+      },
+      {
+        "name": {
+          "en": "Nationlink"
+        },
+        "prefixes": [
+          "28",
+          "67",
+          "69"
+        ]
+      },
+      {
+        "name": {
+          "en": "AirSom"
+        },
+        "prefixes": [
+          "35",
+          "39",
+          "48",
+          "49"
+        ]
+      },
+      {
+        "name": {
+          "en": "Golis Telecom"
+        },
+        "prefixes": [
+          "60",
+          "70",
+          "72",
+          "90"
+        ]
+      },
+      {
+        "name": {
+          "en": "Hormuud"
+        },
+        "prefixes": [
+          "61",
+          "77",
+          "78"
+        ]
+      },
+      {
+        "name": {
+          "en": "Somtel"
+        },
+        "prefixes": [
+          "62",
+          "65",
+          "66",
+          "76",
+          "79"
+        ]
+      },
+      {
+        "name": {
+          "en": "Somali Networks"
+        },
+        "prefixes": [
+          "64",
+          "80",
+          "88"
+        ]
+      },
+      {
+        "name": {
+          "en": "SomNet"
+        },
+        "prefixes": [
+          "68"
+        ]
+      },
+      {
+        "name": {
+          "en": "Amtel"
+        },
+        "prefixes": [
+          "71",
+          "75"
+        ]
+      },
+      {
+        "name": {
+          "en": "STG"
+        },
+        "prefixes": [
+          "9"
+        ]
+      }
+    ]
+  }
+}

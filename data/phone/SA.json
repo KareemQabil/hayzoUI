@@ -1,0 +1,195 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "SA",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/966.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "SA",
+    "callingCode": "966",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "mobileNumberPortable": true,
+    "general": {
+      "pattern": "(?:[15]\\d|800|92)\\d{7}",
+      "possibleLengths": [
+        9,
+        10
+      ],
+      "possibleLengthsLocalOnly": [
+        7
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "1(?:1\\d|2[24-8]|3[35-8]|4[3-68]|6[2-5]|7[235-7])\\d{6}",
+        "possibleLengths": [
+          9
+        ],
+        "possibleLengthsLocalOnly": [
+          7
+        ],
+        "example": "112345678"
+      },
+      "mobile": {
+        "pattern": "579[0-8]\\d{5}|5(?:[013-689]\\d|7[0-8])\\d{6}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "512345678"
+      },
+      "tollFree": {
+        "pattern": "800\\d{7}",
+        "possibleLengths": [
+          10
+        ],
+        "example": "8001234567"
+      },
+      "premiumRate": {
+        "pattern": "925\\d{6}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "925012345"
+      },
+      "sharedCost": {
+        "pattern": "920\\d{6}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "920012345"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{4})(\\d{5})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "9"
+        ]
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "1"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "5"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{3})(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "8"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "STC"
+        },
+        "prefixes": [
+          "50",
+          "53",
+          "55",
+          "5735",
+          "5736",
+          "5737",
+          "5738",
+          "5739",
+          "579"
+        ]
+      },
+      {
+        "name": {
+          "en": "Salam"
+        },
+        "prefixes": [
+          "510",
+          "511"
+        ]
+      },
+      {
+        "name": {
+          "en": "Virgin"
+        },
+        "prefixes": [
+          "5150",
+          "5151",
+          "5152",
+          "5153",
+          "5154",
+          "570",
+          "571",
+          "572",
+          "5730",
+          "5731",
+          "5732",
+          "5733",
+          "5734"
+        ]
+      },
+      {
+        "name": {
+          "en": "Mobily"
+        },
+        "prefixes": [
+          "54",
+          "56"
+        ]
+      },
+      {
+        "name": {
+          "en": "Red Bull Mobile"
+        },
+        "prefixes": [
+          "574",
+          "575"
+        ]
+      },
+      {
+        "name": {
+          "en": "Lebara"
+        },
+        "prefixes": [
+          "576",
+          "577",
+          "578",
+          "5790",
+          "5791"
+        ]
+      },
+      {
+        "name": {
+          "en": "Zain"
+        },
+        "prefixes": [
+          "58",
+          "59"
+        ]
+      }
+    ]
+  }
+}

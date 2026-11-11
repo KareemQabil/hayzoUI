@@ -1,0 +1,155 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "AE",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/971.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "AE",
+    "callingCode": "971",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "general": {
+      "pattern": "(?:[4-7]\\d|9[0-689])\\d{7}|800\\d{2,9}|[2-4679]\\d{7}",
+      "possibleLengths": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "[2-4679][2-8]\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "possibleLengthsLocalOnly": [
+          7
+        ],
+        "example": "22345678"
+      },
+      "mobile": {
+        "pattern": "5[02-68]\\d{7}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "501234567"
+      },
+      "tollFree": {
+        "pattern": "400\\d{6}|800\\d{2,9}",
+        "possibleLengths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "example": "800123456"
+      },
+      "premiumRate": {
+        "pattern": "900[02]\\d{5}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "900234567"
+      },
+      "sharedCost": {
+        "pattern": "700[05]\\d{5}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "700012345"
+      },
+      "uan": {
+        "pattern": "600[25]\\d{5}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "600212345"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{3})(\\d{2,9})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "60|8"
+        ]
+      },
+      {
+        "pattern": "(\\d)(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[236]|[479][2-8]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{3})(\\d)(\\d{5})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[479]"
+        ]
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "5"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Etisalat"
+        },
+        "prefixes": [
+          "50",
+          "54",
+          "56"
+        ]
+      },
+      {
+        "name": {
+          "en": "du"
+        },
+        "prefixes": [
+          "52",
+          "55",
+          "58"
+        ]
+      },
+      {
+        "name": {
+          "en": "Virgin Mobile"
+        },
+        "prefixes": [
+          "53"
+        ]
+      }
+    ]
+  }
+}

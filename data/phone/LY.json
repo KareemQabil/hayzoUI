@@ -1,0 +1,93 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "LY",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/218.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "LY",
+    "callingCode": "218",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "general": {
+      "pattern": "[2-9]\\d{8}",
+      "possibleLengths": [
+        9
+      ],
+      "possibleLengthsLocalOnly": [
+        7
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "(?:2(?:0[56]|[1-6]\\d|7[124579]|8[124])|3(?:1\\d|2[2356])|4(?:[17]\\d|2[1-357]|5[2-4]|8[124])|5(?:[1347]\\d|2[1-469]|5[13-5]|8[1-4])|6(?:[1-479]\\d|5[2-57]|8[1-5])|7(?:[13]\\d|2[13-79])|8(?:[124]\\d|5[124]|84))\\d{6}",
+        "possibleLengths": [
+          9
+        ],
+        "possibleLengthsLocalOnly": [
+          7
+        ],
+        "example": "212345678"
+      },
+      "mobile": {
+        "pattern": "9[1-6]\\d{7}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "912345678"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{2})(\\d{7})",
+        "format": "$1-$2",
+        "leadingDigits": [
+          "[2-9]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Al-Madar"
+        },
+        "prefixes": [
+          "91",
+          "93"
+        ]
+      },
+      {
+        "name": {
+          "en": "Libyana"
+        },
+        "prefixes": [
+          "92",
+          "94"
+        ]
+      },
+      {
+        "name": {
+          "en": "Libya Telecom & Technology"
+        },
+        "prefixes": [
+          "95",
+          "96"
+        ]
+      }
+    ]
+  }
+}

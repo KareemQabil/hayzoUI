@@ -1,0 +1,181 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "IQ",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/964.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "IQ",
+    "callingCode": "964",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "general": {
+      "pattern": "(?:1|7\\d\\d)\\d{7}|[2-6]\\d{7,8}",
+      "possibleLengths": [
+        8,
+        9,
+        10
+      ],
+      "possibleLengthsLocalOnly": [
+        6,
+        7
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "1\\d{7}|(?:2[13-5]|3[02367]|4[023]|5[03]|6[026])\\d{6,7}",
+        "possibleLengths": [
+          8,
+          9
+        ],
+        "possibleLengthsLocalOnly": [
+          6,
+          7
+        ],
+        "example": "12345678"
+      },
+      "mobile": {
+        "pattern": "7[3-9]\\d{8}",
+        "possibleLengths": [
+          10
+        ],
+        "example": "7912345678"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d)(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "1"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[2-6]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{3})(\\d{3})(\\d{4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "7"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "ITPC"
+        },
+        "prefixes": [
+          "73",
+          "7491"
+        ]
+      },
+      {
+        "name": {
+          "en": "Itisaluna"
+        },
+        "prefixes": [
+          "7400",
+          "7401"
+        ]
+      },
+      {
+        "name": {
+          "en": "Kalimat"
+        },
+        "prefixes": [
+          "7435",
+          "7436"
+        ]
+      },
+      {
+        "name": {
+          "en": "Mobitel"
+        },
+        "prefixes": [
+          "7444"
+        ]
+      },
+      {
+        "name": {
+          "en": "ITC Fanoos"
+        },
+        "prefixes": [
+          "7480",
+          "7481"
+        ]
+      },
+      {
+        "name": {
+          "en": "Imam Hussien Holy Shrine"
+        },
+        "prefixes": [
+          "7494"
+        ]
+      },
+      {
+        "name": {
+          "en": "IraqTel"
+        },
+        "prefixes": [
+          "7495",
+          "7496"
+        ]
+      },
+      {
+        "name": {
+          "en": "Korek"
+        },
+        "prefixes": [
+          "75"
+        ]
+      },
+      {
+        "name": {
+          "en": "Omnnea"
+        },
+        "prefixes": [
+          "76"
+        ]
+      },
+      {
+        "name": {
+          "en": "Asiacell"
+        },
+        "prefixes": [
+          "77"
+        ]
+      },
+      {
+        "name": {
+          "en": "Zain"
+        },
+        "prefixes": [
+          "78",
+          "79"
+        ]
+      }
+    ]
+  }
+}

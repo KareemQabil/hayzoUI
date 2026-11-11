@@ -1,0 +1,145 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "OM",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/968.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "OM",
+    "callingCode": "968",
+    "internationalPrefix": "00",
+    "mobileNumberPortable": true,
+    "general": {
+      "pattern": "(?:1505|[279]\\d{3}|500)\\d{4}|800\\d{5,6}",
+      "possibleLengths": [
+        7,
+        8,
+        9
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "2[1-6]\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "23123456"
+      },
+      "mobile": {
+        "pattern": "(?:1505|90[1-9]\\d)\\d{4}|(?:7[124-9]|9[1-9])\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "92123456"
+      },
+      "tollFree": {
+        "pattern": "8007\\d{4,5}|(?:500|800[05])\\d{4}",
+        "possibleLengths": [
+          7,
+          8,
+          9
+        ],
+        "example": "80071234"
+      },
+      "premiumRate": {
+        "pattern": "900\\d{5}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "90012345"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{3})(\\d{4,6})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "[58]"
+        ]
+      },
+      {
+        "pattern": "(\\d{2})(\\d{6})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "2"
+        ]
+      },
+      {
+        "pattern": "(\\d{4})(\\d{4})",
+        "format": "$1 $2",
+        "leadingDigits": [
+          "[179]"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Ooredoo"
+        },
+        "prefixes": [
+          "1",
+          "74",
+          "78",
+          "790",
+          "791",
+          "792",
+          "793",
+          "794",
+          "795",
+          "796",
+          "94",
+          "95",
+          "96",
+          "97"
+        ]
+      },
+      {
+        "name": {
+          "en": "Omantel"
+        },
+        "prefixes": [
+          "71",
+          "72",
+          "901",
+          "902",
+          "903",
+          "904",
+          "905",
+          "906",
+          "907",
+          "908",
+          "909",
+          "91",
+          "92",
+          "93",
+          "98",
+          "99"
+        ]
+      },
+      {
+        "name": {
+          "en": "Vodafone Oman"
+        },
+        "prefixes": [
+          "75",
+          "76",
+          "77"
+        ]
+      }
+    ]
+  }
+}

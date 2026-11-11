@@ -1,0 +1,109 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "SY",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/963.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "SY",
+    "callingCode": "963",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "general": {
+      "pattern": "[1-359]\\d{8}|[1-5]\\d{7}",
+      "possibleLengths": [
+        8,
+        9
+      ],
+      "possibleLengthsLocalOnly": [
+        6,
+        7
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "(?:1(?:[1478]\\d|[2356])|21\\d|3(?:[13]\\d|4)|4[134]|5[1-3])\\d{6}|2[1-5]\\d{6}",
+        "possibleLengths": [
+          8,
+          9
+        ],
+        "possibleLengthsLocalOnly": [
+          6,
+          7
+        ],
+        "example": "112345678"
+      },
+      "mobile": {
+        "pattern": "(?:50|9[03-689])\\d{7}",
+        "possibleLengths": [
+          9
+        ],
+        "example": "944567890"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[1-4]|5[1-3]"
+        ],
+        "nationalPrefixFormattingRule": "0$1",
+        "nationalPrefixOptionalWhenFormatting": true
+      },
+      {
+        "pattern": "(\\d{3})(\\d{3})(\\d{3})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[59]"
+        ],
+        "nationalPrefixFormattingRule": "0$1",
+        "nationalPrefixOptionalWhenFormatting": true
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Rcell"
+        },
+        "prefixes": [
+          "50"
+        ]
+      },
+      {
+        "name": {
+          "en": "Syriatel"
+        },
+        "prefixes": [
+          "90",
+          "93",
+          "98",
+          "99"
+        ]
+      },
+      {
+        "name": {
+          "en": "MTN"
+        },
+        "prefixes": [
+          "94",
+          "95",
+          "96"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "iban-KM",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "schwifty IBAN registry",
+        "url": "https://github.com/mdomke/schwifty",
+        "version": "d407f23eae5eac2e0acd9a9db53d13ab8c78916f",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "schwifty/iban_registry/generated.json; schwifty/iban_registry/overwrite.json"
+      },
+      {
+        "name": "Wikipedia: International Bank Account Number",
+        "url": "https://en.wikipedia.org/wiki/International_Bank_Account_Number",
+        "version": "revision 1383718960 (2026-11-04)",
+        "license": "CC-BY-SA-4.0, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "IBAN formats by country"
+      },
+      {
+        "name": "ibantools",
+        "url": "https://github.com/Simplify/ibantools",
+        "version": "4.5.4",
+        "license": "MIT OR MPL-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "jsnext/ibantools.js (countrySpecs)"
+      },
+      {
+        "name": "php-iban registry",
+        "url": "https://github.com/globalcitizen/php-iban",
+        "version": "9dd1884d9b62235eceed0918e9538753ec5988cb",
+        "license": "LGPL-3.0, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "registry.txt"
+      }
+    ],
+    "script": "tools/extract/iban/build.mjs"
+  },
+  "data": {
+    "region": "KM",
+    "dataset": "iban",
+    "structure": {
+      "length": 27,
+      "pattern": "^KM[0-9]{2}[0-9]{23}$",
+      "charset": "digits",
+      "checksum": {
+        "algorithm": "ISO 7064 MOD 97-10",
+        "description": "Move the first four characters to the end, replace each letter by its position in the alphabet plus 9 (A=10 … Z=35), and read the result as one number: its remainder modulo 97 must be 1. Check digits are 98 minus the remainder computed with the check digits set to 00."
+      },
+      "segments": [
+        {
+          "name": "countryCode",
+          "start": 0,
+          "length": 2,
+          "values": {
+            "characterClass": "a"
+          }
+        },
+        {
+          "name": "checkDigits",
+          "start": 2,
+          "length": 2,
+          "values": {
+            "characterClass": "n"
+          }
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "swiftRegistered",
+        "value": false,
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "schwifty IBAN registry",
+            "url": "https://github.com/mdomke/schwifty",
+            "version": "d407f23eae5eac2e0acd9a9db53d13ab8c78916f",
+            "license": "MIT",
+            "retrievedAt": "2026-11-11",
+            "path": "schwifty/iban_registry/generated.json; schwifty/iban_registry/overwrite.json"
+          }
+        ],
+        "note": "Not in the SWIFT IBAN registry extract; schwifty lists the format as aspirational."
+      },
+      {
+        "key": "unofficialExample",
+        "value": "KM4600005000010010904400137",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "php-iban registry",
+            "url": "https://github.com/globalcitizen/php-iban",
+            "version": "9dd1884d9b62235eceed0918e9538753ec5988cb",
+            "license": "LGPL-3.0, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "registry.txt"
+          }
+        ],
+        "note": "Not an official example. Length 27; MOD 97-10 passes."
+      }
+    ],
+    "notes": "Segment start is the 0-based offset in the electronic-format IBAN (no spaces); values.characterClass uses the SWIFT classes n (digits), a (upper-case letters), c (upper-case letters and digits). This format is not registered with SWIFT. Treat it as a hint for display and soft validation, not as a rule. BBAN positions not assigned to a segment by the sources: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 (0-based in the BBAN). Disagreements in other libraries, recorded but not followed: bankCode position in the BBAN: php-iban has 0-5, schwifty has none; branchCode position in the BBAN: php-iban has 5-10, schwifty has none; nationalCheckDigits position in the BBAN: php-iban has 21-23, schwifty has none."
+  }
+}

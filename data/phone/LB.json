@@ -1,0 +1,154 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "LB",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/961.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "LB",
+    "callingCode": "961",
+    "internationalPrefix": "00",
+    "nationalPrefix": "0",
+    "general": {
+      "pattern": "[27-9]\\d{7}|[13-9]\\d{6}",
+      "possibleLengths": [
+        7,
+        8
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "7(?:62|8[0-6]|9[04-9])\\d{4}|(?:[14-69]\\d|2(?:[14-69]\\d|[78][1-9])|7[2-57]|8[02-9])\\d{5}",
+        "possibleLengths": [
+          7,
+          8
+        ],
+        "example": "1123456"
+      },
+      "mobile": {
+        "pattern": "(?:(?:3|81)\\d|7(?:[01]\\d|6[013-9]|8[7-9]|9[0-4]))\\d{5}",
+        "possibleLengths": [
+          7,
+          8
+        ],
+        "example": "71123456"
+      },
+      "premiumRate": {
+        "pattern": "9[01]\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "90123456"
+      },
+      "sharedCost": {
+        "pattern": "80\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "80123456"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d)(\\d{3})(\\d{3})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[13-69]|7(?:[2-57]|62|8[0-6]|9[04-9])|8[02-9]"
+        ],
+        "nationalPrefixFormattingRule": "0$1"
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{3})",
+        "format": "$1 $2 $3",
+        "leadingDigits": [
+          "[27-9]"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Touch"
+        },
+        "prefixes": [
+          "30",
+          "36",
+          "37",
+          "38",
+          "39",
+          "700",
+          "706",
+          "707",
+          "708",
+          "709",
+          "711",
+          "712",
+          "713",
+          "714",
+          "715",
+          "760",
+          "766",
+          "767",
+          "768",
+          "769",
+          "787",
+          "788",
+          "789",
+          "790",
+          "810",
+          "816",
+          "817",
+          "818",
+          "819"
+        ]
+      },
+      {
+        "name": {
+          "en": "Alfa"
+        },
+        "prefixes": [
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "701",
+          "702",
+          "703",
+          "704",
+          "705",
+          "710",
+          "716",
+          "717",
+          "718",
+          "719",
+          "761",
+          "763",
+          "764",
+          "765",
+          "791",
+          "793",
+          "794",
+          "811",
+          "812",
+          "813",
+          "814",
+          "815"
+        ]
+      }
+    ]
+  }
+}

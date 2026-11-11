@@ -1,0 +1,113 @@
+{
+  "kind": "phone",
+  "schemaVersion": 1,
+  "id": "MR",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43 (86ea33cee5c22ab7e23b3de368e7cc7fa439a2b7)",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml; resources/carrier/en/222.txt"
+      }
+    ],
+    "script": "tools/extract/phone/build.mjs"
+  },
+  "data": {
+    "region": "MR",
+    "callingCode": "222",
+    "internationalPrefix": "00",
+    "general": {
+      "pattern": "(?:[2-4]\\d\\d|800)\\d{5}",
+      "possibleLengths": [
+        8
+      ]
+    },
+    "numberTypes": {
+      "fixedLine": {
+        "pattern": "(?:25[08]|35\\d|45[1-7])\\d{5}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "35123456"
+      },
+      "mobile": {
+        "pattern": "[2-4][0-46-9]\\d{6}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "22123456"
+      },
+      "tollFree": {
+        "pattern": "800\\d{5}",
+        "possibleLengths": [
+          8
+        ],
+        "example": "80012345"
+      }
+    },
+    "formats": [
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
+        "format": "$1 $2 $3 $4",
+        "leadingDigits": [
+          "[2-48]"
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "name": {
+          "en": "Chinguitel"
+        },
+        "prefixes": [
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "26",
+          "27",
+          "28",
+          "29"
+        ]
+      },
+      {
+        "name": {
+          "en": "Mattel"
+        },
+        "prefixes": [
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "36",
+          "37",
+          "38",
+          "39"
+        ]
+      },
+      {
+        "name": {
+          "en": "Mauritel"
+        },
+        "prefixes": [
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "46",
+          "47",
+          "48",
+          "49"
+        ]
+      }
+    ]
+  }
+}
