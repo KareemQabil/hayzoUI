@@ -1,0 +1,115 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-TN",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "python-stdnum",
+        "url": "https://github.com/arthurdejong/python-stdnum",
+        "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+        "license": "LGPL-2.1-or-later, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "stdnum/tn/mf.py"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "TN",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "Matricule fiscal (MF)"
+    },
+    "structure": {
+      "length": [
+        8,
+        13
+      ],
+      "pattern": "^[0-9]{7}[A-HJ-NP-TV-Z]([APBDN][MPCNE][0-9]{3})?$",
+      "charset": "alphanumeric",
+      "segments": [
+        {
+          "name": "uniqueIdentifier",
+          "start": 0,
+          "length": 7
+        },
+        {
+          "name": "controlKey",
+          "start": 7,
+          "length": 1,
+          "description": "letter, never I, O or U"
+        },
+        {
+          "name": "vatCode",
+          "start": 8,
+          "length": 1,
+          "description": "A, P, B, D or N"
+        },
+        {
+          "name": "categoryCode",
+          "start": 9,
+          "length": 1,
+          "description": "M, P, C, N or E"
+        },
+        {
+          "name": "secondaryEstablishment",
+          "start": 10,
+          "length": 3,
+          "description": "000 for the head office; a non-zero value requires category E"
+        }
+      ],
+      "example": "0000001/A/A/M/000"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces, slashes, dots and hyphens; upper-case; left-pad the leading digits to 7.",
+      "steps": [
+        "Length is 8 (identifier + key) or 13 (full form).",
+        "First 7 characters are digits.",
+        "Character 8 is a letter other than I, O, U.",
+        "In the long form: character 9 in A/P/B/D/N, character 10 in M/P/C/N/E, last three are digits.",
+        "If the last three digits are not 000 the category code must be E.",
+        "The rule that derives the control key from the digits is not implemented by the source; treat the key as unchecked."
+      ],
+      "testVectors": [
+        {
+          "input": "0000001/A/A/M/000",
+          "valid": true,
+          "note": "synthetic; format only"
+        },
+        {
+          "input": "0000001/A/A/M/001",
+          "valid": false,
+          "note": "branch number without category E"
+        },
+        {
+          "input": "0000001U",
+          "valid": false,
+          "note": "U is not a control key"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "identifiant fiscal (7 digits + control letter), VAT code, category code, 3-digit establishment number",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "python-stdnum",
+            "url": "https://github.com/arthurdejong/python-stdnum",
+            "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+            "license": "LGPL-2.1-or-later, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "stdnum/tn/mf.py"
+          }
+        ],
+        "note": "From an open-source validator citing a Tunisian accounting blog; no official text fetched."
+      }
+    ]
+  }
+}

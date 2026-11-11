@@ -1,0 +1,75 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-DZ",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "python-stdnum",
+        "url": "https://github.com/arthurdejong/python-stdnum",
+        "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+        "license": "LGPL-2.1-or-later, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "stdnum/dz/nif.py"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "DZ",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "Numéro d’Identification Fiscale (NIF)"
+    },
+    "structure": {
+      "length": [
+        15,
+        20
+      ],
+      "pattern": "^([0-9]{15}|[0-9]{20})$",
+      "charset": "digits",
+      "example": "000000000000001"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces.",
+      "steps": [
+        "Digits only.",
+        "Length 15, or 20 when a branch or secondary establishment is identified.",
+        "No checksum is known."
+      ],
+      "testVectors": [
+        {
+          "input": "000000000000001",
+          "valid": true,
+          "note": "synthetic; format only"
+        },
+        {
+          "input": "12345",
+          "valid": false
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "15 digits, or 20 for branches/secondary establishments",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "python-stdnum",
+            "url": "https://github.com/arthurdejong/python-stdnum",
+            "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+            "license": "LGPL-2.1-or-later, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "stdnum/dz/nif.py"
+          }
+        ],
+        "note": "From an open-source validator; the DGI site was unreachable."
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "e-invoicing-TN",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "KPMG TaxNewsFlash: Tunisia, expanded e-invoicing mandate for services and goods",
+        "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tunisia-expanded-e-invoicing-mandate-services-goods.html",
+        "version": "2026-01 (read through web search summary, page not fetched)",
+        "license": "Proprietary, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "TN",
+    "dataset": "e-invoicing",
+    "claims": [
+      {
+        "key": "mandate.name",
+        "value": {
+          "en": "El Fatoora, operated by Tunisie TradeNet (TTN)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "KPMG TaxNewsFlash: Tunisia, expanded e-invoicing mandate for services and goods",
+            "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tunisia-expanded-e-invoicing-mandate-services-goods.html",
+            "version": "2026-01 (read through web search summary, page not fetched)",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.status",
+        "value": "in-force",
+        "asOf": "2026-01-01",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "KPMG TaxNewsFlash: Tunisia, expanded e-invoicing mandate for services and goods",
+            "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tunisia-expanded-e-invoicing-mandate-services-goods.html",
+            "version": "2026-01 (read through web search summary, page not fetched)",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Finance Law for 2026 (enacted 2025-12-12) extends the mandate from goods to services from 2026-01-01. Platform running since 2016."
+      },
+      {
+        "key": "document.format",
+        "value": {
+          "syntax": "TEIF (Tunisian Electronic Invoice Format), XML",
+          "qr": "reported: a signed visible electronic seal as QR code"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "KPMG TaxNewsFlash: Tunisia, expanded e-invoicing mandate for services and goods",
+            "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tunisia-expanded-e-invoicing-mandate-services-goods.html",
+            "version": "2026-01 (read through web search summary, page not fetched)",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Format details come from vendor pages found in the same search; not verified."
+      }
+    ]
+  }
+}

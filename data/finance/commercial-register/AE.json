@@ -1,0 +1,44 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "commercial-register-AE",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "UAE Ministry of Finance: UAE Electronic Invoice Mandatory Field Requirements",
+        "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoice-Mandatory-Field-Requirements.pdf",
+        "version": "published 2026-10",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "AE",
+    "dataset": "commercial-register",
+    "identifier": {
+      "en": "Commercial/trade licence number"
+    },
+    "claims": [
+      {
+        "key": "einvoice.schemeId",
+        "value": "TL",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Ministry of Finance: UAE Electronic Invoice Mandatory Field Requirements",
+            "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoice-Mandatory-Field-Requirements.pdf",
+            "version": "published 2026-10",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Trade licence is a seller legal registration identifier type in UAE e-invoices. Licences are issued per emirate and free zone; no common format was found."
+      }
+    ]
+  }
+}

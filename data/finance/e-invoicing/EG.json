@@ -1,0 +1,137 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "e-invoicing-EG",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK",
+        "url": "https://sdk.invoicing.eta.gov.eg/start/",
+        "version": "last update 2022-12-08",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Egyptian Tax Authority: home page (Arabic)",
+        "url": "https://www.eta.gov.eg/ar",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK, receipt v1.2 structure",
+        "url": "https://sdk.invoicing.eta.gov.eg/documents/receipt-v1-2/",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "EG",
+    "dataset": "e-invoicing",
+    "claims": [
+      {
+        "key": "mandate.status",
+        "value": "in-force",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK",
+            "url": "https://sdk.invoicing.eta.gov.eg/start/",
+            "version": "last update 2022-12-08",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Egyptian Tax Authority: home page (Arabic)",
+            "url": "https://www.eta.gov.eg/ar",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "ETA operates the e-invoice and e-receipt platforms and publishes their SDK; the dates and decrees that made each taxpayer group mandatory were not sourced."
+      },
+      {
+        "key": "mandate.name",
+        "value": {
+          "ar": "منظومة الفاتورة الإلكترونية",
+          "en": "eInvoicing and eReceipt"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Egyptian Tax Authority: home page (Arabic)",
+            "url": "https://www.eta.gov.eg/ar",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK",
+            "url": "https://sdk.invoicing.eta.gov.eg/start/",
+            "version": "last update 2022-12-08",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.authority",
+        "value": "Egyptian Tax Authority (ETA)",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK",
+            "url": "https://sdk.invoicing.eta.gov.eg/start/",
+            "version": "last update 2022-12-08",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "document.format",
+        "value": {
+          "syntax": "JSON or XML documents submitted over REST APIs (JSON request and response)",
+          "signature": "documents are digitally signed by the issuer with an e-seal X.509 certificate",
+          "versions": "invoice, credit note, debit note and export variants v1.0; receipts v1.2 by sector"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK",
+            "url": "https://sdk.invoicing.eta.gov.eg/start/",
+            "version": "last update 2022-12-08",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK, receipt v1.2 structure",
+            "url": "https://sdk.invoicing.eta.gov.eg/documents/receipt-v1-2/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "receipt.uuid",
+        "value": "Each e-receipt carries a UUID that the issuer computes as a SHA-256 over the receipt content, plus the UUID of the previous receipt from the same POS (empty for the first)",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Egyptian Tax Authority: eInvoicing & eReceipt SDK, receipt v1.2 structure",
+            "url": "https://sdk.invoicing.eta.gov.eg/documents/receipt-v1-2/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

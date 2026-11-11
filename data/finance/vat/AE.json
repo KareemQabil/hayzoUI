@@ -1,0 +1,202 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "vat-AE",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "UAE Ministry of Finance: Value Added Tax (VAT)",
+        "url": "https://mof.gov.ae/en/public-finance/tax/vat/",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "UAE Federal Tax Authority: VAT page (Arabic)",
+        "url": "https://tax.gov.ae/ar/taxes/Vat.aspx",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "PwC Worldwide Tax Summaries: United Arab Emirates, Corporate - Other taxes",
+        "url": "https://taxsummaries.pwc.com/united-arab-emirates/corporate/other-taxes",
+        "version": "last reviewed 2026-09-09",
+        "license": "Proprietary, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "UAE Ministry of Finance: UAE Electronic Invoicing Guidelines",
+        "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoicing-Guidelines_En.pdf",
+        "version": "published 2026-10",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "AE",
+    "dataset": "vat",
+    "claims": [
+      {
+        "key": "tax.exists",
+        "value": true,
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Ministry of Finance: Value Added Tax (VAT)",
+            "url": "https://mof.gov.ae/en/public-finance/tax/vat/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "tax.type",
+        "value": "vat",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Ministry of Finance: Value Added Tax (VAT)",
+            "url": "https://mof.gov.ae/en/public-finance/tax/vat/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "tax.localName",
+        "value": {
+          "ar": "ضريبة القيمة المضافة",
+          "en": "Value Added Tax (VAT)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Federal Tax Authority: VAT page (Arabic)",
+            "url": "https://tax.gov.ae/ar/taxes/Vat.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "UAE Ministry of Finance: Value Added Tax (VAT)",
+            "url": "https://mof.gov.ae/en/public-finance/tax/vat/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "rate.standard",
+        "value": 5,
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Ministry of Finance: Value Added Tax (VAT)",
+            "url": "https://mof.gov.ae/en/public-finance/tax/vat/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "UAE Federal Tax Authority: VAT page (Arabic)",
+            "url": "https://tax.gov.ae/ar/taxes/Vat.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Percent."
+      },
+      {
+        "key": "rate.standard.effectiveFrom",
+        "value": "2018-01-01",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Ministry of Finance: Value Added Tax (VAT)",
+            "url": "https://mof.gov.ae/en/public-finance/tax/vat/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "rates.other",
+        "value": [
+          {
+            "rate": 0,
+            "scope": "exports outside the VAT-implementing GCC states, international transport, crude oil and natural gas, first supply of residential real estate, specified health care and education"
+          },
+          {
+            "rate": null,
+            "scope": "exempt: certain financial services, subsequent supply of residential real estate, bare land, domestic passenger transport"
+          }
+        ],
+        "asOf": "2026-09-09",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: United Arab Emirates, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/united-arab-emirates/corporate/other-taxes",
+            "version": "last reviewed 2026-09-09",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "authority.name",
+        "value": {
+          "ar": "الهيئة الاتحادية للضرائب",
+          "en": "Federal Tax Authority (FTA)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Federal Tax Authority: VAT page (Arabic)",
+            "url": "https://tax.gov.ae/ar/taxes/Vat.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "UAE Ministry of Finance: UAE Electronic Invoicing Guidelines",
+            "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoicing-Guidelines_En.pdf",
+            "version": "published 2026-10",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "taxNumber.localName",
+        "value": {
+          "ar": "رقم التسجيل الضريبي",
+          "en": "Tax Registration Number (TRN)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Federal Tax Authority: VAT page (Arabic)",
+            "url": "https://tax.gov.ae/ar/taxes/Vat.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "UAE Ministry of Finance: UAE Electronic Invoicing Guidelines",
+            "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoicing-Guidelines_En.pdf",
+            "version": "published 2026-10",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

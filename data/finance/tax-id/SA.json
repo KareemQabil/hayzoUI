@@ -1,0 +1,121 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-SA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+        "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+        "version": "1.2 (2023-05-19)",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+      },
+      {
+        "name": "OECD AEOI portal: Tax Identification Numbers, Saudi Arabia (sheet supplied by the jurisdiction)",
+        "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/saudi-arabia-tin.pdf",
+        "version": "last update 2018-05-02",
+        "license": "OECD terms, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "SA",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "VAT registration number",
+      "ar": "رقم التسجيل الضريبي"
+    },
+    "structure": {
+      "length": 15,
+      "pattern": "^3[0-9]{13}3$",
+      "charset": "digits",
+      "example": "300000000000003"
+    },
+    "validation": {
+      "origin": "specification",
+      "normalize": "Remove spaces. Convert Arabic-Indic digits to ASCII.",
+      "steps": [
+        "Must be exactly 15 digits.",
+        "First digit must be 3.",
+        "Last digit must be 3.",
+        "No published checksum is applied by ZATCA business rules BR-KSA-40/44."
+      ],
+      "testVectors": [
+        {
+          "input": "300000000000003",
+          "valid": true,
+          "note": "synthetic"
+        },
+        {
+          "input": "300000000000001",
+          "valid": false,
+          "note": "last digit not 3"
+        },
+        {
+          "input": "30000000000003",
+          "valid": false,
+          "note": "14 digits"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "15 digits, first and last digit 3 (seller BT-31 and buyer BT-48 in tax invoices)",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+          }
+        ]
+      },
+      {
+        "key": "tin.structure",
+        "value": {
+          "length": 10,
+          "segments": [
+            {
+              "name": "gccMemberState",
+              "start": 0,
+              "length": 1
+            },
+            {
+              "name": "serial",
+              "start": 1,
+              "length": 8
+            },
+            {
+              "name": "checkDigit",
+              "start": 9,
+              "length": 1
+            }
+          ]
+        },
+        "asOf": "2018-05-02",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Saudi Arabia (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/saudi-arabia-tin.pdf",
+            "version": "last update 2018-05-02",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "This is the 10-digit TIN, not the 15-digit VAT number. The check-digit algorithm is not published."
+      }
+    ]
+  }
+}

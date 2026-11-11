@@ -1,0 +1,111 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-QA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "django-localflavor",
+        "url": "https://github.com/django/django-localflavor",
+        "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+        "license": "BSD-3-Clause, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "localflavor/qa/validators.py"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "QA",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "Qatar ID (QID) number"
+    },
+    "structure": {
+      "length": 11,
+      "pattern": "^[23][0-9]{10}$",
+      "charset": "digits",
+      "segments": [
+        {
+          "name": "century",
+          "start": 0,
+          "length": 1,
+          "values": {
+            "2": "1900-1999",
+            "3": "2000-2099"
+          }
+        },
+        {
+          "name": "birthYear",
+          "start": 1,
+          "length": 2
+        },
+        {
+          "name": "nationality",
+          "start": 3,
+          "length": 3,
+          "description": "ISO 3166-1 numeric country code of the holder’s nationality (634 for Qatar)"
+        },
+        {
+          "name": "serial",
+          "start": 6,
+          "length": 5
+        }
+      ],
+      "example": "29063400001"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces. Convert Arabic-Indic digits to ASCII.",
+      "steps": [
+        "Must be exactly 11 digits.",
+        "Digit 1 must be 2 or 3; birth year = (digit + 17) * 100 + next two digits.",
+        "Birth year must not be in the future.",
+        "Digits 4-6 must be a valid ISO 3166-1 numeric code.",
+        "No check digit is known."
+      ],
+      "testVectors": [
+        {
+          "input": "29063400001",
+          "valid": true,
+          "note": "synthetic: born 1990, nationality code 634"
+        },
+        {
+          "input": "19063400001",
+          "valid": false,
+          "note": "century digit 1"
+        },
+        {
+          "input": "29099900001",
+          "valid": false,
+          "note": "999 is not an ISO 3166-1 numeric code"
+        }
+      ]
+    },
+    "derivable": [
+      "birth year",
+      "nationality"
+    ],
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "11 digits: century, YY, ISO 3166-1 numeric nationality, 5-digit serial",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "django-localflavor",
+            "url": "https://github.com/django/django-localflavor",
+            "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+            "license": "BSD-3-Clause, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "localflavor/qa/validators.py"
+          }
+        ],
+        "note": "Reverse-engineered: from an open-source validator; no Ministry of Interior document was fetched. Qatar tells the OECD that citizens are identified by a personal identification number and residents by a residence permit number, without giving the format."
+      }
+    ]
+  }
+}

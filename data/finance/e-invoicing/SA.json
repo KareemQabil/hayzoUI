@@ -1,0 +1,357 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "e-invoicing-SA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "ZATCA: E-invoicing roll-out phases",
+        "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/Roll-out-phases.aspx",
+        "version": "page last updated 2026-09-01",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "ZATCA: What is e-invoicing (Fatoorah)",
+        "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/What-is-e-invoicing.aspx",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+        "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+        "version": "1.2 (2023-05-19)",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+      },
+      {
+        "name": "ZATCA: Security Features Implementation Standards",
+        "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_Security_Features_Implementation_Standards_vF.pdf",
+        "version": "1.2 (2023-05-19)",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "Section 4.1 Structure of the QR code"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "SA",
+    "dataset": "e-invoicing",
+    "claims": [
+      {
+        "key": "mandate.status",
+        "value": "in-force",
+        "asOf": "2026-09-01",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: E-invoicing roll-out phases",
+            "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/Roll-out-phases.aspx",
+            "version": "page last updated 2026-09-01",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.name",
+        "value": {
+          "en": "E-invoicing (Fatoorah)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: What is e-invoicing (Fatoorah)",
+            "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/What-is-e-invoicing.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "ZATCA writes FATOORAH in English; the Arabic name فاتورة was not captured from a fetched page."
+      },
+      {
+        "key": "mandate.authority",
+        "value": "Zakat, Tax and Customs Authority (ZATCA)",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: E-invoicing roll-out phases",
+            "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/Roll-out-phases.aspx",
+            "version": "page last updated 2026-09-01",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.phases",
+        "value": [
+          {
+            "phase": 1,
+            "name": "Generation",
+            "from": "2021-12-04",
+            "scope": "all taxpayers except non-residents, and third parties issuing tax invoices on their behalf",
+            "requirement": "generate and store tax invoices and notes through a compliant electronic solution"
+          },
+          {
+            "phase": 2,
+            "name": "Integration",
+            "from": "2023-01-01",
+            "scope": "rolled out in waves by taxpayer group; ZATCA notifies each group at least six months ahead",
+            "requirement": "integrate the solution with ZATCA systems and issue invoices in the required format"
+          }
+        ],
+        "asOf": "2026-09-01",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: E-invoicing roll-out phases",
+            "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/Roll-out-phases.aspx",
+            "version": "page last updated 2026-09-01",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "ZATCA: What is e-invoicing (Fatoorah)",
+            "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/What-is-e-invoicing.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "The wave table is an image on the ZATCA page and was not transcribed; current wave thresholds are a gap."
+      },
+      {
+        "key": "document.format",
+        "value": {
+          "syntax": "UBL 2.1 XML",
+          "semanticModel": "EN 16931 with KSA rules; precedence KSA rules > EN 16931 > UBL",
+          "types": [
+            "tax invoice (B2B)",
+            "simplified tax invoice (B2C)",
+            "credit note",
+            "debit note"
+          ]
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+          },
+          {
+            "name": "ZATCA: What is e-invoicing (Fatoorah)",
+            "url": "https://zatca.gov.sa/en/E-Invoicing/Introduction/Pages/What-is-e-invoicing.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "identifiers.seller",
+        "value": {
+          "vatNumber": "15 digits, first and last digit 3 (BT-31)",
+          "otherId": {
+            "rule": "exactly one, alphanumeric (BT-29)",
+            "schemeIds": {
+              "700": "700 number",
+              "CRN": "commercial registration number",
+              "MOM": "MOMRAH licence",
+              "MLS": "MHRSD licence",
+              "SAG": "MISA licence",
+              "OTH": "other ID"
+            }
+          }
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+          }
+        ]
+      },
+      {
+        "key": "identifiers.buyer",
+        "value": {
+          "vatNumber": "15 digits, first and last digit 3 when present and not an export (BT-48)",
+          "otherId": {
+            "schemeIds": {
+              "700": "700 number",
+              "TIN": "tax identification number",
+              "CRN": "commercial registration number",
+              "MOM": "MOMRAH licence",
+              "MLS": "MHRSD licence",
+              "SAG": "MISA licence",
+              "NAT": "national ID",
+              "GCC": "GCC ID",
+              "IQA": "iqama number",
+              "PAS": "passport ID",
+              "OTH": "other ID"
+            }
+          }
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+          }
+        ]
+      },
+      {
+        "key": "qr.required",
+        "value": "Mandatory on electronic tax invoices; printed as a QR image whose payload is a Base64 string of at most 700 characters",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Security Features Implementation Standards",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_Security_Features_Implementation_Standards_vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Section 4.1 Structure of the QR code"
+          }
+        ]
+      },
+      {
+        "key": "qr.encoding",
+        "value": {
+          "container": "TLV (tag-length-value), all fields concatenated in ascending tag order, then Base64-encoded; the QR image encodes the Base64 ASCII string",
+          "tag": "one byte holding the tag number",
+          "length": "one byte, unsigned, the number of bytes of the value (so a value cannot exceed 255 bytes)",
+          "value": "tags 1-5: UTF-8 bytes of the field text. Tag 6: the 32 raw bytes of the SHA-256 hash, as the standard words it. Tags 7-9: the byte array of the value",
+          "order": [
+            "start with an empty byte array",
+            "for each field append tag byte, length byte, value bytes",
+            "Base64-encode the whole array",
+            "render the Base64 string as a QR code"
+          ],
+          "tags": [
+            {
+              "tag": 1,
+              "field": "Seller name",
+              "from": "2021-12-04"
+            },
+            {
+              "tag": 2,
+              "field": "VAT registration number of the seller",
+              "from": "2021-12-04"
+            },
+            {
+              "tag": 3,
+              "field": "Time stamp of the invoice, ISO 8601 date and time, e.g. 2022-02-21T12:13:57Z",
+              "from": "2021-12-04"
+            },
+            {
+              "tag": 4,
+              "field": "Invoice total with VAT",
+              "from": "2021-12-04"
+            },
+            {
+              "tag": 5,
+              "field": "VAT total (business term BT-110 of the XML invoice)",
+              "from": "2021-12-04"
+            },
+            {
+              "tag": 6,
+              "field": "Hash of the XML invoice (SHA-256)",
+              "from": "2023-01-01"
+            },
+            {
+              "tag": 7,
+              "field": "ECDSA signature of the XML hash",
+              "from": "2023-01-01"
+            },
+            {
+              "tag": 8,
+              "field": "ECDSA public key extracted from the signing private key",
+              "from": "2023-01-01"
+            },
+            {
+              "tag": 9,
+              "field": "Simplified tax invoices and their notes only: ECDSA signature of the cryptographic stamp, issued by ZATCA’s technical CA (the wording in the standard is truncated; commonly read as the CA signature over the stamp’s public key)",
+              "from": "2023-01-01"
+            }
+          ]
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Security Features Implementation Standards",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_Security_Features_Implementation_Standards_vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Section 4.1 Structure of the QR code"
+          }
+        ],
+        "note": "Enforcement dates: the table prints \"from 4th December 2021\" against tags 1-5 and \"from 1st January 2023\" against tags 6-9; the row alignment in the PDF is loose, so the split at tag 5/6 follows the phase definitions. A Phase 1 receipt needs tags 1-5 only. Amount formatting (decimal places) in tags 4 and 5 is not specified in this section. In practice many implementations put the Base64 text of the hash in tag 6 rather than 32 raw bytes; test against the ZATCA SDK before shipping Phase 2 output."
+      },
+      {
+        "key": "qr.example",
+        "value": {
+          "input": {
+            "1": "Hayzo Test Co",
+            "2": "300000000000003",
+            "3": "2026-01-01T12:00:00Z",
+            "4": "115.00",
+            "5": "15.00"
+          },
+          "base64": "AQ1IYXl6byBUZXN0IENvAg8zMDAwMDAwMDAwMDAwMDMDFDIwMjYtMDEtMDFUMTI6MDA6MDBaBAYxMTUuMDAFBTE1LjAw"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "ZATCA: Security Features Implementation Standards",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_Security_Features_Implementation_Standards_vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Section 4.1 Structure of the QR code"
+          }
+        ],
+        "note": "Synthetic Phase 1 vector computed for this file from the rules above, not taken from ZATCA. An Arabic seller name is longer in bytes than in characters: the length byte counts UTF-8 bytes."
+      },
+      {
+        "key": "previousInvoiceHash",
+        "value": "Each invoice carries the SHA-256 hash of the previous invoice, computed with the same transform as the cryptographic stamp",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Security Features Implementation Standards",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_Security_Features_Implementation_Standards_vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Section 4.1 Structure of the QR code"
+          }
+        ]
+      }
+    ]
+  }
+}

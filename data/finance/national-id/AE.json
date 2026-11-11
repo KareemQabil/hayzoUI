@@ -1,0 +1,135 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-AE",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Wikipedia: National identification number",
+        "url": "https://en.wikipedia.org/wiki/National_identification_number",
+        "version": "revision 1383726986",
+        "license": "CC-BY-SA-4.0, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "django-localflavor",
+        "url": "https://github.com/django/django-localflavor",
+        "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+        "license": "BSD-3-Clause, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "localflavor/ae/validators.py"
+      },
+      {
+        "name": "UAE Ministry of Finance: UAE Electronic Invoice Mandatory Field Requirements",
+        "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoice-Mandatory-Field-Requirements.pdf",
+        "version": "published 2026-10",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "AE",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "Emirates ID number (identity number)",
+      "ar": "رقم الهوية"
+    },
+    "structure": {
+      "length": 15,
+      "pattern": "^784[0-9]{12}$",
+      "charset": "digits",
+      "segments": [
+        {
+          "name": "country",
+          "start": 0,
+          "length": 3,
+          "description": "always 784, the ISO 3166-1 numeric code of the UAE"
+        },
+        {
+          "name": "block",
+          "start": 3,
+          "length": 4,
+          "description": "Wikipedia: year of birth; django-localflavor: an identification block assigned by the authority. The sources disagree, so do not derive a birth year from it."
+        },
+        {
+          "name": "serial",
+          "start": 7,
+          "length": 7
+        },
+        {
+          "name": "checkDigit",
+          "start": 14,
+          "length": 1
+        }
+      ],
+      "example": "784-1990-0000001-0"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces and hyphens.",
+      "steps": [
+        "Must be exactly 15 digits.",
+        "Must start with 784.",
+        "Display as 784-YYYY-NNNNNNN-C.",
+        "The check-digit algorithm is not established by the sources read (Luhn is often claimed); do not reject on it."
+      ],
+      "testVectors": [
+        {
+          "input": "784-1990-0000001-0",
+          "valid": true,
+          "note": "synthetic; format only, check digit not computed"
+        },
+        {
+          "input": "785199000000010",
+          "valid": false
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "15 digits, 784-YYYY-NNNNNNN-C",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia: National identification number",
+            "url": "https://en.wikipedia.org/wiki/National_identification_number",
+            "version": "revision 1383726986",
+            "license": "CC-BY-SA-4.0, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "django-localflavor",
+            "url": "https://github.com/django/django-localflavor",
+            "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+            "license": "BSD-3-Clause, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "localflavor/ae/validators.py"
+          }
+        ],
+        "note": "No ICP (Federal Authority for Identity, Citizenship, Customs and Port Security) document was fetched. The Arabic term is from Wikipedia."
+      },
+      {
+        "key": "einvoice.schemeId",
+        "value": "EID",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Ministry of Finance: UAE Electronic Invoice Mandatory Field Requirements",
+            "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoice-Mandatory-Field-Requirements.pdf",
+            "version": "published 2026-10",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Emirates ID is an accepted seller legal registration identifier type in UAE e-invoices."
+      }
+    ]
+  }
+}

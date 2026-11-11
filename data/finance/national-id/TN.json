@@ -1,0 +1,71 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-TN",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "validator.js",
+        "url": "https://github.com/validatorjs/validator.js",
+        "version": "9ff342479591ca5a43cb30000195bcf55c1bbed9",
+        "license": "MIT, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "src/lib/isIdentityCard.js"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "TN",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "National identity card number (CIN)"
+    },
+    "structure": {
+      "length": 8,
+      "pattern": "^[0-9]{8}$",
+      "charset": "digits",
+      "example": "00000001"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces. Convert Arabic-Indic digits to ASCII.",
+      "steps": [
+        "Must be exactly 8 digits.",
+        "No checksum is known."
+      ],
+      "testVectors": [
+        {
+          "input": "00000001",
+          "valid": true,
+          "note": "synthetic; format only"
+        },
+        {
+          "input": "1234567",
+          "valid": false
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "8 digits",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "validator.js",
+            "url": "https://github.com/validatorjs/validator.js",
+            "version": "9ff342479591ca5a43cb30000195bcf55c1bbed9",
+            "license": "MIT, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "src/lib/isIdentityCard.js"
+          }
+        ],
+        "note": "From validator.js isIdentityCard(\"ar-TN\"); no official source fetched."
+      }
+    ]
+  }
+}

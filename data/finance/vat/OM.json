@@ -1,0 +1,161 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "vat-OM",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Oman Tax Authority: tax portal (Arabic)",
+        "url": "https://tms.taxoman.gov.om/portal/ar/web/taxportal/vat-tax",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "PwC Worldwide Tax Summaries: Oman, Corporate - Other taxes",
+        "url": "https://taxsummaries.pwc.com/oman/corporate/other-taxes",
+        "version": "last reviewed 2026-07-07",
+        "license": "Proprietary, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "OECD AEOI portal: Tax Identification Numbers, Oman (sheet supplied by the jurisdiction)",
+        "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/oman-tin.pdf",
+        "license": "OECD terms, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "OM",
+    "dataset": "vat",
+    "claims": [
+      {
+        "key": "tax.exists",
+        "value": true,
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: tax portal (Arabic)",
+            "url": "https://tms.taxoman.gov.om/portal/ar/web/taxportal/vat-tax",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "The Oman Tax Authority portal has a VAT section; the rate itself was read from PwC."
+      },
+      {
+        "key": "tax.type",
+        "value": "vat",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: tax portal (Arabic)",
+            "url": "https://tms.taxoman.gov.om/portal/ar/web/taxportal/vat-tax",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "tax.localName",
+        "value": {
+          "ar": "ضريبة القيمة المضافة",
+          "en": "Value Added Tax (VAT)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: tax portal (Arabic)",
+            "url": "https://tms.taxoman.gov.om/portal/ar/web/taxportal/vat-tax",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "rate.standard",
+        "value": 5,
+        "asOf": "2026-07-07",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Oman, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/oman/corporate/other-taxes",
+            "version": "last reviewed 2026-07-07",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Percent. Royal Decree 121/2020."
+      },
+      {
+        "key": "rate.standard.effectiveFrom",
+        "value": "2021-04-16",
+        "asOf": "2026-07-07",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Oman, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/oman/corporate/other-taxes",
+            "version": "last reviewed 2026-07-07",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "rates.other",
+        "value": [
+          {
+            "rate": 0,
+            "scope": "exports of goods and services, international transport, basic food items"
+          },
+          {
+            "rate": null,
+            "scope": "exempt: certain financial services, local passenger transport, education, residential rent"
+          }
+        ],
+        "asOf": "2026-07-07",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Oman, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/oman/corporate/other-taxes",
+            "version": "last reviewed 2026-07-07",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "authority.name",
+        "value": {
+          "ar": "جهاز الضرائب",
+          "en": "Oman Tax Authority"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: tax portal (Arabic)",
+            "url": "https://tms.taxoman.gov.om/portal/ar/web/taxportal/vat-tax",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Oman (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/oman-tin.pdf",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

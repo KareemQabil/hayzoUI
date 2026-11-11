@@ -1,0 +1,122 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "e-invoicing-OM",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Oman Tax Authority: e-invoicing (Fawtara) page",
+        "url": "https://tms.taxoman.gov.om/portal/web/taxportal/e-invoicing",
+        "version": "page dated 2026-10-07",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Oman Tax Authority: tax portal (Arabic)",
+        "url": "https://tms.taxoman.gov.om/portal/ar/web/taxportal/vat-tax",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "OM",
+    "dataset": "e-invoicing",
+    "claims": [
+      {
+        "key": "mandate.status",
+        "value": "announced, phased",
+        "asOf": "2026-10-07",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: e-invoicing (Fawtara) page",
+            "url": "https://tms.taxoman.gov.om/portal/web/taxportal/e-invoicing",
+            "version": "page dated 2026-10-07",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.name",
+        "value": {
+          "ar": "الفوترة الإلكترونية",
+          "en": "Fawtara"
+        },
+        "asOf": "2026-10-07",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: e-invoicing (Fawtara) page",
+            "url": "https://tms.taxoman.gov.om/portal/web/taxportal/e-invoicing",
+            "version": "page dated 2026-10-07",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Oman Tax Authority: tax portal (Arabic)",
+            "url": "https://tms.taxoman.gov.om/portal/ar/web/taxportal/vat-tax",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.authority",
+        "value": "Oman Tax Authority",
+        "asOf": "2026-10-07",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: e-invoicing (Fawtara) page",
+            "url": "https://tms.taxoman.gov.om/portal/web/taxportal/e-invoicing",
+            "version": "page dated 2026-10-07",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.phases",
+        "value": [
+          {
+            "phase": 1,
+            "name": "Pilot",
+            "scope": "selected large taxpayers"
+          },
+          {
+            "phase": 2,
+            "name": "Expansion",
+            "scope": "more medium and large companies"
+          },
+          {
+            "phase": 3,
+            "name": "SMEs onboarding",
+            "scope": "gradual adoption by SMEs"
+          },
+          {
+            "phase": 4,
+            "name": "Full rollout",
+            "scope": "all VAT-registered entities"
+          }
+        ],
+        "asOf": "2026-10-07",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Oman Tax Authority: e-invoicing (Fawtara) page",
+            "url": "https://tms.taxoman.gov.om/portal/web/taxportal/e-invoicing",
+            "version": "page dated 2026-10-07",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "The official page gives no dates for the phases. Format and QR requirements were not found on it."
+      }
+    ]
+  }
+}

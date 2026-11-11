@@ -1,0 +1,167 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-KW",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "OECD AEOI portal: Tax Identification Numbers, Kuwait (sheet supplied by the jurisdiction)",
+        "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/kuwait-tin.pdf",
+        "license": "OECD terms, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Wikipedia: National identification number",
+        "url": "https://en.wikipedia.org/wiki/National_identification_number",
+        "version": "revision 1383726986",
+        "license": "CC-BY-SA-4.0, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "django-localflavor",
+        "url": "https://github.com/django/django-localflavor",
+        "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+        "license": "BSD-3-Clause, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "localflavor/kw/utils.py"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "KW",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "Civil ID number (civil number)",
+      "ar": "الرقم المدني"
+    },
+    "structure": {
+      "length": 12,
+      "pattern": "^[123][0-9]{11}$",
+      "charset": "digits",
+      "checksum": {
+        "algorithm": "weighted mod 11",
+        "description": "Weights 2,1,6,3,7,9,10,5,8,4,2 on the first 11 digits; check = 11 - (sum mod 11)."
+      },
+      "segments": [
+        {
+          "name": "century",
+          "start": 0,
+          "length": 1,
+          "values": {
+            "1": "1800-1899",
+            "2": "1900-1999",
+            "3": "2000-2099"
+          }
+        },
+        {
+          "name": "birthDate",
+          "start": 1,
+          "length": 6,
+          "description": "YYMMDD"
+        },
+        {
+          "name": "serial",
+          "start": 7,
+          "length": 4
+        },
+        {
+          "name": "checkDigit",
+          "start": 11,
+          "length": 1
+        }
+      ],
+      "example": "290010100011"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces. Convert Arabic-Indic digits to ASCII.",
+      "steps": [
+        "Must be exactly 12 digits.",
+        "Digit 1 must be 1, 2 or 3 (century 18xx, 19xx, 20xx).",
+        "Digits 2-7 must form a real calendar date.",
+        "Multiply digits 1-11 by 2,1,6,3,7,9,10,5,8,4,2 and add up.",
+        "check = 11 - (sum mod 11); it must equal digit 12. A result of 10 or 11 can never match, so such serials are not issued."
+      ],
+      "testVectors": [
+        {
+          "input": "290010100011",
+          "valid": true,
+          "note": "synthetic: born 1990-01-01; built with the algorithm above"
+        },
+        {
+          "input": "290010100012",
+          "valid": false,
+          "note": "check digit changed"
+        },
+        {
+          "input": "490010100011",
+          "valid": false,
+          "note": "century digit 4"
+        }
+      ]
+    },
+    "derivable": [
+      "birth date"
+    ],
+    "claims": [
+      {
+        "key": "length",
+        "value": "12 digits, contains the date of birth, issued by the Public Authority for Civil Information (PACI)",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Kuwait (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/kuwait-tin.pdf",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "structure.basis",
+        "value": "century digit, YYMMDD, 4-digit serial, check digit",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia: National identification number",
+            "url": "https://en.wikipedia.org/wiki/National_identification_number",
+            "version": "revision 1383726986",
+            "license": "CC-BY-SA-4.0, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "django-localflavor",
+            "url": "https://github.com/django/django-localflavor",
+            "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+            "license": "BSD-3-Clause, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "localflavor/kw/utils.py"
+          }
+        ],
+        "note": "The Arabic term is from Wikipedia."
+      },
+      {
+        "key": "checksum.basis",
+        "value": "weights 2,1,6,3,7,9,10,5,8,4,2; 11 - (sum mod 11)",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "django-localflavor",
+            "url": "https://github.com/django/django-localflavor",
+            "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+            "license": "BSD-3-Clause, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "localflavor/kw/utils.py"
+          }
+        ],
+        "note": "Reverse-engineered: known from open-source validators, not published by PACI."
+      }
+    ]
+  }
+}

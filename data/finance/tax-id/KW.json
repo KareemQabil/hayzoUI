@@ -1,0 +1,48 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-KW",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "OECD AEOI portal: Tax Identification Numbers, Kuwait (sheet supplied by the jurisdiction)",
+        "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/kuwait-tin.pdf",
+        "license": "OECD terms, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "KW",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "Tax identification number"
+    },
+    "structure": {
+      "length": [
+        6,
+        12
+      ],
+      "charset": "digits"
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "Entities: 6-digit number issued by the Tax Department. Individuals: the 12-digit Civil ID number is used as TIN on request",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Kuwait (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/kuwait-tin.pdf",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

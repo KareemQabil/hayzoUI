@@ -1,0 +1,113 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "vat-DZ",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Kintsugi: Algeria VAT (TVA) guide",
+        "url": "https://trykintsugi.com/sales-tax-guides/africa/algeria",
+        "version": "published 2026-09-22",
+        "license": "Proprietary, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "DZ",
+    "dataset": "vat",
+    "claims": [
+      {
+        "key": "tax.exists",
+        "value": true,
+        "asOf": "2026-09-22",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Kintsugi: Algeria VAT (TVA) guide",
+            "url": "https://trykintsugi.com/sales-tax-guides/africa/algeria",
+            "version": "published 2026-09-22",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "tax.type",
+        "value": "vat",
+        "asOf": "2026-09-22",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Kintsugi: Algeria VAT (TVA) guide",
+            "url": "https://trykintsugi.com/sales-tax-guides/africa/algeria",
+            "version": "published 2026-09-22",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "rate.standard",
+        "value": 19,
+        "asOf": "2026-09-22",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Kintsugi: Algeria VAT (TVA) guide",
+            "url": "https://trykintsugi.com/sales-tax-guides/africa/algeria",
+            "version": "published 2026-09-22",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Percent. Single commercial secondary source; mfdgi.gov.dz was unreachable and PwC no longer covers Algeria. Effective date not sourced."
+      },
+      {
+        "key": "rates.other",
+        "value": [
+          {
+            "rate": 9,
+            "scope": "basic foodstuffs and listed essentials"
+          },
+          {
+            "rate": 0,
+            "scope": "exports"
+          }
+        ],
+        "asOf": "2026-09-22",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Kintsugi: Algeria VAT (TVA) guide",
+            "url": "https://trykintsugi.com/sales-tax-guides/africa/algeria",
+            "version": "published 2026-09-22",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "authority.name",
+        "value": {
+          "en": "Direction Générale des Impôts (DGI)"
+        },
+        "asOf": "2026-09-22",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Kintsugi: Algeria VAT (TVA) guide",
+            "url": "https://trykintsugi.com/sales-tax-guides/africa/algeria",
+            "version": "published 2026-09-22",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Arabic name not sourced; gap."
+      }
+    ]
+  }
+}

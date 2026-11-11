@@ -1,0 +1,96 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-MA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "python-stdnum",
+        "url": "https://github.com/arthurdejong/python-stdnum",
+        "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+        "license": "LGPL-2.1-or-later, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "stdnum/ma/ice.py"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "MA",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "Identifiant Commun de l’Entreprise (ICE)",
+      "ar": "التعريف الموحد للمقاولة"
+    },
+    "structure": {
+      "length": 15,
+      "pattern": "^[0-9]{15}$",
+      "charset": "digits",
+      "checksum": {
+        "algorithm": "mod 97",
+        "description": "The 15-digit number taken as an integer is divisible by 97 (remainder 0, unlike IBAN-style ISO 7064 MOD 97-10 which expects remainder 1)."
+      },
+      "segments": [
+        {
+          "name": "enterprise",
+          "start": 0,
+          "length": 9
+        },
+        {
+          "name": "establishment",
+          "start": 9,
+          "length": 4
+        },
+        {
+          "name": "control",
+          "start": 13,
+          "length": 2
+        }
+      ],
+      "example": "000000001000070"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces; left-pad with zeros to 15 digits.",
+      "steps": [
+        "Must be exactly 15 digits.",
+        "Interpret all 15 digits as one integer.",
+        "Valid when integer mod 97 = 0.",
+        "To compute the control digits for a 13-digit body: control = (97 - ((body * 100) mod 97)) mod 97, written with two digits."
+      ],
+      "testVectors": [
+        {
+          "input": "000000001000070",
+          "valid": true,
+          "note": "synthetic, built with the algorithm above"
+        },
+        {
+          "input": "000000001000071",
+          "valid": false,
+          "note": "control digit changed"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "15 digits: 9 enterprise, 4 establishment, 2 control; whole number divisible by 97",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "python-stdnum",
+            "url": "https://github.com/arthurdejong/python-stdnum",
+            "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+            "license": "LGPL-2.1-or-later, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "stdnum/ma/ice.py"
+          }
+        ],
+        "note": "From an open-source validator that cites ice.gov.ma guides; the official guide was not fetched. The implementation calls the ISO 7064 MOD 97-10 routine but accepts remainder 0, which its own documented example 001561191000066 confirms. The separate Identifiant Fiscal (IF) format was not researched."
+      }
+    ]
+  }
+}

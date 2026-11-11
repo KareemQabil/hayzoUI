@@ -1,0 +1,99 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-AE",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "UAE Ministry of Finance: UAE Electronic Invoicing Guidelines",
+        "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoicing-Guidelines_En.pdf",
+        "version": "published 2026-10",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "UAE Federal Tax Authority: VAT registration page, TRN verification widget",
+        "url": "https://tax.gov.ae/en/taxes/Vat/vat.topics/vat.registration.aspx",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "AE",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "Tax Registration Number (TRN)",
+      "ar": "رقم التسجيل الضريبي"
+    },
+    "structure": {
+      "length": 15,
+      "pattern": "^[0-9]{15}$",
+      "charset": "digits",
+      "segments": [
+        {
+          "name": "tin",
+          "start": 0,
+          "length": 10,
+          "description": "Tax Identification Number: the first 10 digits of the TRN; the participant identifier for e-invoicing"
+        },
+        {
+          "name": "suffix",
+          "start": 10,
+          "length": 5,
+          "description": "not described in the sources read"
+        }
+      ],
+      "example": "100000000000003"
+    },
+    "validation": {
+      "origin": "specification",
+      "normalize": "Remove spaces and hyphens.",
+      "steps": [
+        "Must be exactly 15 digits.",
+        "TIN = first 10 digits.",
+        "Peppol endpoint identifier for UAE e-invoicing = \"0235\" followed by the 10-digit TIN.",
+        "No checksum is published."
+      ],
+      "testVectors": [
+        {
+          "input": "100000000000003",
+          "valid": true,
+          "note": "synthetic; format only"
+        },
+        {
+          "input": "10000000000000",
+          "valid": false,
+          "note": "14 digits"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "TRN is 15 digits; TIN is a 10-digit identifier and the first 10 digits of the TRN; Peppol endpoint id is 0235 + TIN",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "UAE Ministry of Finance: UAE Electronic Invoicing Guidelines",
+            "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoicing-Guidelines_En.pdf",
+            "version": "published 2026-10",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "UAE Federal Tax Authority: VAT registration page, TRN verification widget",
+            "url": "https://tax.gov.ae/en/taxes/Vat/vat.topics/vat.registration.aspx",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "The FTA TRN verification widget requires a value 15 characters long."
+      }
+    ]
+  }
+}

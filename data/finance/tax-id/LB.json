@@ -1,0 +1,46 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-LB",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "OECD AEOI portal: Tax Identification Numbers, Lebanon (sheet supplied by the jurisdiction)",
+        "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/lebanon-tin.pdf",
+        "license": "OECD terms, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "LB",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "Tax identification number (TIN)"
+    },
+    "structure": {
+      "charset": "other",
+      "pattern": "^[0-9]+(-(601|603|604))?$"
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "Numeric serial without letters; no length stated. VAT-registered entities append a dash and a code: 601 for taxpayers subject to VAT, 603 and 604 for refund purposes",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Lebanon (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/lebanon-tin.pdf",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "The OECD sheet ends the code list with an ellipsis, so other suffixes may exist; the pattern above accepts only the three named."
+      }
+    ]
+  }
+}

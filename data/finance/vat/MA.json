@@ -1,0 +1,135 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "vat-MA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "PwC Worldwide Tax Summaries: Morocco, Corporate - Other taxes",
+        "url": "https://taxsummaries.pwc.com/morocco/corporate/other-taxes",
+        "version": "last reviewed 2026-04-30",
+        "license": "Proprietary, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Morocco Direction Générale des Impôts: portal (Arabic and French)",
+        "url": "https://www.tax.gov.ma/wps/portal/DGI-Ar/Accueil",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "MA",
+    "dataset": "vat",
+    "claims": [
+      {
+        "key": "tax.exists",
+        "value": true,
+        "asOf": "2026-04-30",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Morocco, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/morocco/corporate/other-taxes",
+            "version": "last reviewed 2026-04-30",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "tax.type",
+        "value": "vat",
+        "asOf": "2026-04-30",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Morocco, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/morocco/corporate/other-taxes",
+            "version": "last reviewed 2026-04-30",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "tax.localName",
+        "value": {
+          "en": "Taxe sur la valeur ajoutée (TVA)"
+        },
+        "asOf": "2026-04-30",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Morocco, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/morocco/corporate/other-taxes",
+            "version": "last reviewed 2026-04-30",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "rate.standard",
+        "value": 20,
+        "asOf": "2026-04-30",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Morocco, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/morocco/corporate/other-taxes",
+            "version": "last reviewed 2026-04-30",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Percent. PwC does not use the words \"standard rate\"; it reports that the 2024 Finance Act moves all rates to 0%, 10% and 20% over 2024-2026, with 20% the top rate."
+      },
+      {
+        "key": "rates.other",
+        "value": [
+          {
+            "rate": 10,
+            "scope": "listed operations, e.g. urban and road transport, renewable electricity, refined sugar (FY 2026)"
+          },
+          {
+            "rate": 0,
+            "scope": "exemption with credit: exports, pharmaceutical products, listed others"
+          }
+        ],
+        "asOf": "2026-04-30",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Morocco, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/morocco/corporate/other-taxes",
+            "version": "last reviewed 2026-04-30",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "authority.name",
+        "value": {
+          "ar": "المديرية العامة للضرائب",
+          "en": "Direction Générale des Impôts (DGI)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Morocco Direction Générale des Impôts: portal (Arabic and French)",
+            "url": "https://www.tax.gov.ma/wps/portal/DGI-Ar/Accueil",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

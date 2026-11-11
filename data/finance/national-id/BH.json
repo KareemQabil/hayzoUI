@@ -1,0 +1,90 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-BH",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Wikipedia: National identification number",
+        "url": "https://en.wikipedia.org/wiki/National_identification_number",
+        "version": "revision 1383726986",
+        "license": "CC-BY-SA-4.0, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "BH",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "Personal number (CPR number)",
+      "ar": "الرقم الشخصي"
+    },
+    "structure": {
+      "length": 9,
+      "pattern": "^[0-9]{9}$",
+      "charset": "digits",
+      "segments": [
+        {
+          "name": "birthYearMonth",
+          "start": 0,
+          "length": 4,
+          "description": "YYMM; a minority of numbers do not follow this layout"
+        },
+        {
+          "name": "serial",
+          "start": 4,
+          "length": 4
+        },
+        {
+          "name": "checkDigit",
+          "start": 8,
+          "length": 1
+        }
+      ],
+      "example": "900100000"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces. Convert Arabic-Indic digits to ASCII.",
+      "steps": [
+        "Must be exactly 9 digits.",
+        "Do not reject on the month part: some numbers do not follow YYMM.",
+        "The check-digit algorithm was not found in a citable source; do not check it."
+      ],
+      "testVectors": [
+        {
+          "input": "900100000",
+          "valid": true,
+          "note": "synthetic; format only, check digit not computed"
+        },
+        {
+          "input": "90010000",
+          "valid": false,
+          "note": "8 digits"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "9 digits, generally YYMMNNNNC",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia: National identification number",
+            "url": "https://en.wikipedia.org/wiki/National_identification_number",
+            "version": "revision 1383726986",
+            "license": "CC-BY-SA-4.0, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Wikipedia only; Arabic term from Wikipedia. No Information & eGovernment Authority document was fetched."
+      }
+    ]
+  }
+}

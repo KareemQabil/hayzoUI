@@ -1,0 +1,123 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-OM",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "OECD AEOI portal: Tax Identification Numbers, Oman (sheet supplied by the jurisdiction)",
+        "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/oman-tin.pdf",
+        "license": "OECD terms, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "python-stdnum",
+        "url": "https://github.com/arthurdejong/python-stdnum",
+        "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+        "license": "LGPL-2.1-or-later, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "stdnum/om/vat.py"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "OM",
+    "dataset": "tax-id",
+    "identifier": {
+      "en": "VAT identification number (VATIN)"
+    },
+    "structure": {
+      "length": 12,
+      "pattern": "^OM[0-9]{9}[0-9X]$",
+      "charset": "alphanumeric",
+      "segments": [
+        {
+          "name": "prefix",
+          "start": 0,
+          "length": 2,
+          "description": "literal OM"
+        },
+        {
+          "name": "number",
+          "start": 2,
+          "length": 9
+        },
+        {
+          "name": "checkDigit",
+          "start": 11,
+          "length": 1,
+          "description": "0-9 or X"
+        }
+      ],
+      "example": "OM100000001X"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces and hyphens, upper-case.",
+      "steps": [
+        "Must match OM + 9 digits + one of 0-9 or X.",
+        "Take the 9 digits after OM; ignore the first 4 (their weights are unknown).",
+        "Multiply the remaining 5 digits by the weights 1, 6, 3, 7, 9 and add them up.",
+        "k = (1 + sum) mod 11.",
+        "Check character = X when k is 10, otherwise the digit k."
+      ],
+      "testVectors": [
+        {
+          "input": "OM100000001X",
+          "valid": true,
+          "note": "synthetic, built with the algorithm above"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "VAT and excise TIN has 12 alphanumeric characters",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Oman (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/oman-tin.pdf",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "checksum.basis",
+        "value": "OM prefix, ten trailing characters, partial weighted mod-11 check",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "python-stdnum",
+            "url": "https://github.com/arthurdejong/python-stdnum",
+            "version": "006192e59be8ed6e08fd680256868a6c31eb2ba9",
+            "license": "LGPL-2.1-or-later, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "stdnum/om/vat.py"
+          }
+        ],
+        "note": "Reverse-engineered: the implementation states that only the weights of the last five digits are known. Treat a checksum failure as a warning, not an error."
+      },
+      {
+        "key": "tin.entity",
+        "value": "Income-tax TIN for entities is numeric, currently up to seven digits",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Oman (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/oman-tin.pdf",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

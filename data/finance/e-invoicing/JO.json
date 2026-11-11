@@ -1,0 +1,98 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "e-invoicing-JO",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Jordan Income and Sales Tax Department: home page",
+        "url": "https://www.istd.gov.jo/",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Comarch: Jordan advances with phase 2 of e-invoicing implementation",
+        "url": "https://www.comarch.com/trade-and-services/data-management/legal-regulation-changes/jordan-advances-with-phase-2-of-e-invoicing-implementation/",
+        "version": "read through web search summary, page not fetched",
+        "license": "Proprietary, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "JO",
+    "dataset": "e-invoicing",
+    "claims": [
+      {
+        "key": "mandate.name",
+        "value": {
+          "ar": "نظام الفوترة الوطني الالكتروني",
+          "en": "JoFotara (national electronic invoicing system)"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Jordan Income and Sales Tax Department: home page",
+            "url": "https://www.istd.gov.jo/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "The ISTD home page links to portal.jofotara.gov.jo."
+      },
+      {
+        "key": "mandate.authority",
+        "value": "Income and Sales Tax Department (ISTD)",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Jordan Income and Sales Tax Department: home page",
+            "url": "https://www.istd.gov.jo/",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "mandate.status",
+        "value": "in-force",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Comarch: Jordan advances with phase 2 of e-invoicing implementation",
+            "url": "https://www.comarch.com/trade-and-services/data-management/legal-regulation-changes/jordan-advances-with-phase-2-of-e-invoicing-implementation/",
+            "version": "read through web search summary, page not fetched",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "Secondary sources: system launched December 2022; phase 2 made B2B, B2G and B2C e-invoicing through JoFotara mandatory from 2025-04-01. Sources disagree on earlier dates and none is official."
+      },
+      {
+        "key": "document.format",
+        "value": {
+          "syntax": "UBL 2.1 XML",
+          "model": "clearance: the platform validates the invoice and returns a QR code to print"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Comarch: Jordan advances with phase 2 of e-invoicing implementation",
+            "url": "https://www.comarch.com/trade-and-services/data-management/legal-regulation-changes/jordan-advances-with-phase-2-of-e-invoicing-implementation/",
+            "version": "read through web search summary, page not fetched",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "From vendor summaries only."
+      }
+    ]
+  }
+}

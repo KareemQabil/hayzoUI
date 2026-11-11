@@ -1,0 +1,86 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-MA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "django-localflavor",
+        "url": "https://github.com/django/django-localflavor",
+        "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+        "license": "BSD-3-Clause, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "localflavor/ma/forms.py"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "MA",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "CNIE number (Carte nationale d’identité électronique)"
+    },
+    "structure": {
+      "length": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pattern": "^[A-Z]{1,2}[1-9][0-9]{0,6}$",
+      "charset": "alphanumeric",
+      "example": "AB123456"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces, upper-case.",
+      "steps": [
+        "One or two Latin letters, then 1 to 7 digits whose first digit is not 0.",
+        "No checksum is known."
+      ],
+      "testVectors": [
+        {
+          "input": "AB123456",
+          "valid": true,
+          "note": "synthetic"
+        },
+        {
+          "input": "A012345",
+          "valid": false,
+          "note": "digits start with 0"
+        },
+        {
+          "input": "ABC12345",
+          "valid": false,
+          "note": "three letters"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "one or two letters followed by digits, first digit non-zero",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "django-localflavor",
+            "url": "https://github.com/django/django-localflavor",
+            "version": "5.1 (commit dab72528e36b5f3883783c083cf729eb72e3a2f1)",
+            "license": "BSD-3-Clause, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "localflavor/ma/forms.py"
+          }
+        ],
+        "note": "From an open-source validator that says it mirrors cnie.ma. The validator describes the value as at most 8 characters but its pattern admits 9; the pattern is recorded as written."
+      }
+    ]
+  }
+}

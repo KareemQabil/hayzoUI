@@ -1,0 +1,55 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "vat-LY",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "PwC Worldwide Tax Summaries: Libya, Corporate - Other taxes",
+        "url": "https://taxsummaries.pwc.com/libya/corporate/other-taxes",
+        "version": "last reviewed 2026-05-31",
+        "license": "Proprietary, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "LY",
+    "dataset": "vat",
+    "claims": [
+      {
+        "key": "tax.exists",
+        "value": false,
+        "asOf": "2026-05-31",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Libya, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/libya/corporate/other-taxes",
+            "version": "last reviewed 2026-05-31",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "key": "tax.type",
+        "value": "none",
+        "asOf": "2026-05-31",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "PwC Worldwide Tax Summaries: Libya, Corporate - Other taxes",
+            "url": "https://taxsummaries.pwc.com/libya/corporate/other-taxes",
+            "version": "last reviewed 2026-05-31",
+            "license": "Proprietary, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

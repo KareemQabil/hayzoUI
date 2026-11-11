@@ -1,0 +1,38 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "tax-id-BH",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "OECD AEOI portal: Tax Identification Numbers, Bahrain (sheet supplied by the jurisdiction)",
+        "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/bahrain-tin.pdf",
+        "license": "OECD terms, facts only",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "BH",
+    "dataset": "tax-id",
+    "claims": [
+      {
+        "key": "tin.issued",
+        "value": "Bahrain reports to the OECD that it issues no TIN for CRS purposes because it has no general income tax. The format of the VAT account number issued by the NBR was not sourced",
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "OECD AEOI portal: Tax Identification Numbers, Bahrain (sheet supplied by the jurisdiction)",
+            "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/bahrain-tin.pdf",
+            "license": "OECD terms, facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      }
+    ]
+  }
+}

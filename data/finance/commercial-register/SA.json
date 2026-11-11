@@ -1,0 +1,49 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "commercial-register-SA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+        "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+        "version": "1.2 (2023-05-19)",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "SA",
+    "dataset": "commercial-register",
+    "identifier": {
+      "en": "Commercial registration number (CR) and unified \"700\" number"
+    },
+    "claims": [
+      {
+        "key": "einvoice.schemeIds",
+        "value": {
+          "700": "700 number",
+          "CRN": "commercial registration number"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+          }
+        ],
+        "note": "Both are accepted as seller and buyer identifiers in ZATCA invoices and must be alphanumeric; with several registrations the branch’s own CR is used."
+      }
+    ]
+  }
+}

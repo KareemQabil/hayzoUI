@@ -1,0 +1,141 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-SA",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "dralshehri/saudi-id-validator (luhncheck)",
+        "url": "https://github.com/dralshehri/saudi-id-validator",
+        "version": "26c4f875beb01d841ff5ebe072bf872ef3e1a9c2",
+        "license": "MIT, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "README.md; src/luhncheck/__init__.py"
+      },
+      {
+        "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+        "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+        "version": "1.2 (2023-05-19)",
+        "license": "Government publication, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "SA",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "National ID number (citizens) and Iqama number (residents)"
+    },
+    "structure": {
+      "length": 10,
+      "pattern": "^[12][0-9]{9}$",
+      "charset": "digits",
+      "checksum": {
+        "algorithm": "Luhn",
+        "description": "Standard Luhn (mod 10) over all 10 digits."
+      },
+      "segments": [
+        {
+          "name": "type",
+          "start": 0,
+          "length": 1,
+          "values": {
+            "1": "Saudi citizen (national ID)",
+            "2": "resident (iqama)"
+          }
+        },
+        {
+          "name": "serial",
+          "start": 1,
+          "length": 8
+        },
+        {
+          "name": "checkDigit",
+          "start": 9,
+          "length": 1
+        }
+      ],
+      "example": "1000000008"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces. Convert Arabic-Indic digits to ASCII.",
+      "steps": [
+        "Must be exactly 10 digits.",
+        "First digit must be 1 (citizen) or 2 (resident).",
+        "Luhn: from the rightmost digit moving left, double every second digit; subtract 9 from any result above 9; add all digits; the total must be divisible by 10."
+      ],
+      "testVectors": [
+        {
+          "input": "1000000008",
+          "valid": true,
+          "note": "synthetic citizen-type number"
+        },
+        {
+          "input": "2000000006",
+          "valid": true,
+          "note": "synthetic resident-type number"
+        },
+        {
+          "input": "1000000009",
+          "valid": false,
+          "note": "check digit changed"
+        },
+        {
+          "input": "3000000008",
+          "valid": false,
+          "note": "first digit not 1 or 2"
+        }
+      ]
+    },
+    "derivable": [
+      "holder type: citizen or resident"
+    ],
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "10 digits, first digit 1 or 2, Luhn check",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "dralshehri/saudi-id-validator (luhncheck)",
+            "url": "https://github.com/dralshehri/saudi-id-validator",
+            "version": "26c4f875beb01d841ff5ebe072bf872ef3e1a9c2",
+            "license": "MIT, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "README.md; src/luhncheck/__init__.py"
+          }
+        ],
+        "note": "Reverse-engineered: from an open-source validator by a Saudi author, not from the Ministry of Interior or Absher. ZATCA only confirms that \"NAT\" (national ID) and \"IQA\" (iqama) are accepted buyer identifier schemes, not their format. Other leading digits for other document classes are not covered."
+      },
+      {
+        "key": "einvoice.schemeIds",
+        "value": {
+          "nationalId": "NAT",
+          "iqama": "IQA",
+          "gccId": "GCC",
+          "passport": "PAS"
+        },
+        "asOf": "2026-11-11",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "ZATCA: Electronic Invoice XML Implementation Standard",
+            "url": "https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20230519_ZATCA_Electronic_Invoice_XML_Implementation_Standard_%20vF.pdf",
+            "version": "1.2 (2023-05-19)",
+            "license": "Government publication, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "Business rules BR-KSA-08, BR-KSA-14, BR-KSA-40, BR-KSA-44"
+          }
+        ],
+        "note": "Buyer identification scheme IDs (BT-46-1) in ZATCA invoices."
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "finance",
+  "schemaVersion": 1,
+  "id": "national-id-LY",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "validator.js",
+        "url": "https://github.com/validatorjs/validator.js",
+        "version": "9ff342479591ca5a43cb30000195bcf55c1bbed9",
+        "license": "MIT, facts only",
+        "retrievedAt": "2026-11-11",
+        "path": "src/lib/isIdentityCard.js"
+      }
+    ],
+    "notes": "File confidence is the lowest confidence of any claim in it; read the claims individually."
+  },
+  "data": {
+    "region": "LY",
+    "dataset": "national-id",
+    "identifier": {
+      "en": "National identity number (NIN)"
+    },
+    "structure": {
+      "length": 12,
+      "pattern": "^[12][0-9]{11}$",
+      "charset": "digits",
+      "example": "100000000001"
+    },
+    "validation": {
+      "origin": "reverse-engineered",
+      "normalize": "Remove spaces.",
+      "steps": [
+        "Must be exactly 12 digits.",
+        "First digit must be 1 or 2.",
+        "No checksum is known."
+      ],
+      "testVectors": [
+        {
+          "input": "100000000001",
+          "valid": true,
+          "note": "synthetic; format only"
+        },
+        {
+          "input": "300000000001",
+          "valid": false
+        }
+      ]
+    },
+    "claims": [
+      {
+        "key": "structure.basis",
+        "value": "12 digits, first digit 1 or 2",
+        "asOf": "2026-11-11",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "validator.js",
+            "url": "https://github.com/validatorjs/validator.js",
+            "version": "9ff342479591ca5a43cb30000195bcf55c1bbed9",
+            "license": "MIT, facts only",
+            "retrievedAt": "2026-11-11",
+            "path": "src/lib/isIdentityCard.js"
+          }
+        ],
+        "note": "From validator.js isIdentityCard(\"ar-LY\"); the meaning of the first digit is not stated there."
+      }
+    ]
+  }
+}

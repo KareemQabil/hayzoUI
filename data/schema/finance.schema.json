@@ -50,6 +50,24 @@
             "other"
           ]
         },
+        "identifier": {
+          "description": "What the identifier is called. Arabic is given only when taken from a cited source.",
+          "type": "object",
+          "properties": {
+            "ar": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "en"
+          ],
+          "additionalProperties": false
+        },
         "structure": {
           "description": "For identifiers: how the value is built and checked.",
           "type": "object",
@@ -115,6 +133,11 @@
                   },
                   "values": {
                     "type": "object"
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "English description of the segment, for use where no authoritative Arabic wording is available for `meaning`."
                   }
                 },
                 "required": [
@@ -133,10 +156,85 @@
           "required": [],
           "additionalProperties": false
         },
+        "validation": {
+          "description": "How to validate the identifier, precise enough to implement and test from this file alone.",
+          "type": "object",
+          "properties": {
+            "origin": {
+              "description": "official: published by the issuing authority. specification: stated by a regulator’s technical standard. reverse-engineered: known only from open-source validators or secondary descriptions.",
+              "enum": [
+                "official",
+                "specification",
+                "reverse-engineered"
+              ]
+            },
+            "normalize": {
+              "type": "string",
+              "minLength": 1
+            },
+            "steps": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "testVectors": {
+              "description": "Synthetic inputs only, never a real person’s or company’s number.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "valid": {
+                    "type": "boolean"
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "input",
+                  "valid"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "origin",
+            "steps"
+          ],
+          "additionalProperties": false
+        },
+        "derivable": {
+          "description": "What can be read out of a valid identifier.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
         "claims": {
           "type": "array",
           "items": {
-            "$ref": "common.schema.json#/$defs/claim"
+            "allOf": [
+              {
+                "$ref": "common.schema.json#/$defs/claim"
+              },
+              {
+                "properties": {
+                  "key": {
+                    "pattern": "^[A-Za-z][A-Za-z0-9]*(\\.[A-Za-z][A-Za-z0-9]*)*$"
+                  }
+                }
+              }
+            ]
           }
         },
         "notes": {
@@ -148,7 +246,44 @@
         "region",
         "dataset"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "vat"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "claims": {
+                "items": {
+                  "properties": {
+                    "key": {
+                      "enum": [
+                        "tax.exists",
+                        "tax.type",
+                        "tax.localName",
+                        "rate.standard",
+                        "rate.standard.effectiveFrom",
+                        "rates.other",
+                        "authority.name",
+                        "taxNumber.localName",
+                        "invoice.simplifiedThreshold"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
