@@ -1,0 +1,113 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/weekdays",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-dates-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-dates-full/main/ar*/ca-gregorian.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "weekdays",
+    "content": {
+      "keys": [
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ],
+      "days": {
+        "format": {
+          "wide": {
+            "sun": "الأحد",
+            "mon": "الاثنين",
+            "tue": "الثلاثاء",
+            "wed": "الأربعاء",
+            "thu": "الخميس",
+            "fri": "الجمعة",
+            "sat": "السبت"
+          },
+          "abbreviated": {
+            "sun": "الأحد",
+            "mon": "الاثنين",
+            "tue": "الثلاثاء",
+            "wed": "الأربعاء",
+            "thu": "الخميس",
+            "fri": "الجمعة",
+            "sat": "السبت"
+          },
+          "short": {
+            "sun": "أحد",
+            "mon": "إثنين",
+            "tue": "ثلاثاء",
+            "wed": "أربعاء",
+            "thu": "خميس",
+            "fri": "جمعة",
+            "sat": "سبت"
+          },
+          "narrow": {
+            "sun": "ح",
+            "mon": "ن",
+            "tue": "ث",
+            "wed": "ر",
+            "thu": "خ",
+            "fri": "ج",
+            "sat": "س"
+          }
+        },
+        "standAlone": {
+          "wide": {
+            "sun": "الأحد",
+            "mon": "الاثنين",
+            "tue": "الثلاثاء",
+            "wed": "الأربعاء",
+            "thu": "الخميس",
+            "fri": "الجمعة",
+            "sat": "السبت"
+          },
+          "abbreviated": {
+            "sun": "الأحد",
+            "mon": "الاثنين",
+            "tue": "الثلاثاء",
+            "wed": "الأربعاء",
+            "thu": "الخميس",
+            "fri": "الجمعة",
+            "sat": "السبت"
+          },
+          "short": {
+            "sun": "أحد",
+            "mon": "إثنين",
+            "tue": "ثلاثاء",
+            "wed": "أربعاء",
+            "thu": "خميس",
+            "fri": "جمعة",
+            "sat": "سبت"
+          },
+          "narrow": {
+            "sun": "ح",
+            "mon": "ن",
+            "tue": "ث",
+            "wed": "ر",
+            "thu": "خ",
+            "fri": "ج",
+            "sat": "س"
+          }
+        }
+      }
+    }
+  }
+}

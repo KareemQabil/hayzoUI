@@ -1,0 +1,428 @@
+{
+  "kind": "calendar",
+  "schemaVersion": 1,
+  "id": "gregory",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-dates-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-dates-full/main/{ar,en}/ca-gregorian.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/calendarPreferenceData.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/calendarData.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-localenames-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-localenames-full/main/{ar,en}/localeDisplayNames.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-bcp47",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-bcp47/bcp47/calendar.json"
+      },
+      {
+        "name": "ICU4C",
+        "url": "https://github.com/unicode-org/icu/tree/release-78.3/icu4c/source/i18n",
+        "version": "release-78.3",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "icu4c/source/i18n/gregoimp.cpp"
+      }
+    ],
+    "script": "tools/extract/calendar/build.mjs",
+    "notes": "Names, eras and preferredIn are copied from CLDR; conversion constants are read from the ICU source and asserted by the script; intl.probe, intl.caveats with figures and verification are measured on Node 22.23.4 (ICU 78.3, CLDR 48.0) and change with the runtime."
+  },
+  "data": {
+    "id": "gregory",
+    "name": {
+      "ar": "التقويم الميلادي",
+      "en": "Gregorian Calendar"
+    },
+    "type": "solar",
+    "months": [
+      {
+        "index": 1,
+        "name": {
+          "ar": "يناير",
+          "en": "January"
+        },
+        "abbreviation": {
+          "ar": "يناير",
+          "en": "Jan"
+        },
+        "days": 31
+      },
+      {
+        "index": 2,
+        "name": {
+          "ar": "فبراير",
+          "en": "February"
+        },
+        "abbreviation": {
+          "ar": "فبراير",
+          "en": "Feb"
+        },
+        "days": [
+          28,
+          29
+        ]
+      },
+      {
+        "index": 3,
+        "name": {
+          "ar": "مارس",
+          "en": "March"
+        },
+        "abbreviation": {
+          "ar": "مارس",
+          "en": "Mar"
+        },
+        "days": 31
+      },
+      {
+        "index": 4,
+        "name": {
+          "ar": "أبريل",
+          "en": "April"
+        },
+        "abbreviation": {
+          "ar": "أبريل",
+          "en": "Apr"
+        },
+        "days": 30
+      },
+      {
+        "index": 5,
+        "name": {
+          "ar": "مايو",
+          "en": "May"
+        },
+        "abbreviation": {
+          "ar": "مايو",
+          "en": "May"
+        },
+        "days": 31
+      },
+      {
+        "index": 6,
+        "name": {
+          "ar": "يونيو",
+          "en": "June"
+        },
+        "abbreviation": {
+          "ar": "يونيو",
+          "en": "Jun"
+        },
+        "days": 30
+      },
+      {
+        "index": 7,
+        "name": {
+          "ar": "يوليو",
+          "en": "July"
+        },
+        "abbreviation": {
+          "ar": "يوليو",
+          "en": "Jul"
+        },
+        "days": 31
+      },
+      {
+        "index": 8,
+        "name": {
+          "ar": "أغسطس",
+          "en": "August"
+        },
+        "abbreviation": {
+          "ar": "أغسطس",
+          "en": "Aug"
+        },
+        "days": 31
+      },
+      {
+        "index": 9,
+        "name": {
+          "ar": "سبتمبر",
+          "en": "September"
+        },
+        "abbreviation": {
+          "ar": "سبتمبر",
+          "en": "Sep"
+        },
+        "days": 30
+      },
+      {
+        "index": 10,
+        "name": {
+          "ar": "أكتوبر",
+          "en": "October"
+        },
+        "abbreviation": {
+          "ar": "أكتوبر",
+          "en": "Oct"
+        },
+        "days": 31
+      },
+      {
+        "index": 11,
+        "name": {
+          "ar": "نوفمبر",
+          "en": "November"
+        },
+        "abbreviation": {
+          "ar": "نوفمبر",
+          "en": "Nov"
+        },
+        "days": 30
+      },
+      {
+        "index": 12,
+        "name": {
+          "ar": "ديسمبر",
+          "en": "December"
+        },
+        "abbreviation": {
+          "ar": "ديسمبر",
+          "en": "Dec"
+        },
+        "days": 31
+      }
+    ],
+    "eras": [
+      {
+        "id": "ce",
+        "name": {
+          "ar": "ميلادي",
+          "en": "Anno Domini"
+        },
+        "abbreviation": {
+          "ar": "م",
+          "en": "AD"
+        },
+        "cldrIndex": 1,
+        "start": "1-01-01"
+      },
+      {
+        "id": "bce",
+        "name": {
+          "ar": "قبل الميلاد",
+          "en": "Before Christ"
+        },
+        "abbreviation": {
+          "ar": "ق.م",
+          "en": "BC"
+        },
+        "cldrIndex": 0,
+        "end": "0-12-31"
+      }
+    ],
+    "intl": {
+      "identifier": "gregory",
+      "runtimeSupport": "Node 22.23.4 (ICU 78.3, CLDR 48.0): listed by Intl.supportedValuesOf('calendar'); Intl.DateTimeFormat('ar-u-ca-gregory') resolves to \"gregory\". Temporal is not available in this runtime.",
+      "range": "The whole ECMAScript time range; Intl formats proleptic Gregorian dates (no Julian switch-over).",
+      "caveats": [
+        "Probe on Node 22.23.4 (ICU 78.3, CLDR 48.0): 0001-01-01 formats as year 1, month 1, day 1 (confirmed), i.e. the calendar is proleptic.",
+        "CLDR calls this calendar \"gregorian\"; the Unicode/BCP 47 identifier that Intl accepts and returns is \"gregory\".",
+        "Month names differ between ar locales (six name sets, see data/language/ar/gregorian-months.*.json); this file carries the names of locale \"ar\"."
+      ],
+      "probe": {
+        "runtime": {
+          "node": "22.23.4",
+          "icu": "78.3",
+          "cldr": "48.0",
+          "unicode": "17.0",
+          "tz": "2026e"
+        },
+        "inSupportedValuesOf": true,
+        "resolvedCalendar": "gregory",
+        "sample": {
+          "gregorian": "2026-11-11",
+          "ar": "11 نوفمبر 2026",
+          "en": "November 11, 2026"
+        },
+        "edges": {
+          "ECMAScript minimum time value (-271821-04-20)": "4/20/271822 BC",
+          "0001-01-01": "1/1/1 AD",
+          "ECMAScript maximum time value (+275760-09-13)": "9/13/275760 AD"
+        },
+        "temporalAvailable": false
+      }
+    },
+    "conversion": {
+      "method": "arithmetic",
+      "reference": "Proleptic Gregorian arithmetic; month lengths from ICU4C Grego::MONTH_LENGTH (gregoimp.cpp). This is the calendar of ECMAScript Date itself."
+    },
+    "cldrId": "gregorian",
+    "cldrCalendarSystem": "solar",
+    "bcp47Description": "Gregorian calendar",
+    "preferredIn": [
+      {
+        "region": "AE",
+        "rank": 1,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "BH",
+        "rank": 1,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "DJ",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "DZ",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "EG",
+        "rank": 1,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "IQ",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "JO",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "KM",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "KW",
+        "rank": 1,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "LB",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "LY",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "MA",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "MR",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "OM",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "PS",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "QA",
+        "rank": 1,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "SA",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "SD",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "SO",
+        "rank": 1,
+        "of": 1,
+        "source": "world-default"
+      },
+      {
+        "region": "SY",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "TN",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "YE",
+        "rank": 1,
+        "of": 4,
+        "source": "explicit"
+      }
+    ],
+    "dateFormats": {
+      "ar": {
+        "full": "EEEE، d MMMM y",
+        "long": "d MMMM y",
+        "medium": "dd\u200f/MM\u200f/y",
+        "short": "d\u200f/M\u200f/y"
+      }
+    },
+    "notes": "Month names and eras are those of CLDR locale ar. ar-AE differs in the alternate (variant) era names only."
+  }
+}

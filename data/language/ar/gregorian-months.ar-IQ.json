@@ -1,0 +1,339 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/gregorian-months.ar-IQ",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-dates-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-dates-full/main/ar*/ca-gregorian.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "gregorian-months",
+    "scope": [
+      "ar-IQ"
+    ],
+    "content": {
+      "calendar": "gregory",
+      "months": {
+        "format": {
+          "wide": [
+            {
+              "index": 1,
+              "name": "كانون الثاني"
+            },
+            {
+              "index": 2,
+              "name": "شباط"
+            },
+            {
+              "index": 3,
+              "name": "آذار"
+            },
+            {
+              "index": 4,
+              "name": "نيسان"
+            },
+            {
+              "index": 5,
+              "name": "أيار"
+            },
+            {
+              "index": 6,
+              "name": "حزيران"
+            },
+            {
+              "index": 7,
+              "name": "تموز"
+            },
+            {
+              "index": 8,
+              "name": "آب"
+            },
+            {
+              "index": 9,
+              "name": "أيلول"
+            },
+            {
+              "index": 10,
+              "name": "تشرين الأول"
+            },
+            {
+              "index": 11,
+              "name": "تشرين الثاني"
+            },
+            {
+              "index": 12,
+              "name": "كانون الأول"
+            }
+          ],
+          "abbreviated": [
+            {
+              "index": 1,
+              "name": "كانون الثاني"
+            },
+            {
+              "index": 2,
+              "name": "شباط"
+            },
+            {
+              "index": 3,
+              "name": "آذار"
+            },
+            {
+              "index": 4,
+              "name": "نيسان"
+            },
+            {
+              "index": 5,
+              "name": "أيار"
+            },
+            {
+              "index": 6,
+              "name": "حزيران"
+            },
+            {
+              "index": 7,
+              "name": "تموز"
+            },
+            {
+              "index": 8,
+              "name": "آب"
+            },
+            {
+              "index": 9,
+              "name": "أيلول"
+            },
+            {
+              "index": 10,
+              "name": "تشرين\u00a0الأول"
+            },
+            {
+              "index": 11,
+              "name": "تشرين الثاني"
+            },
+            {
+              "index": 12,
+              "name": "كانون الأول"
+            }
+          ],
+          "narrow": [
+            {
+              "index": 1,
+              "name": "ك"
+            },
+            {
+              "index": 2,
+              "name": "ش"
+            },
+            {
+              "index": 3,
+              "name": "آ"
+            },
+            {
+              "index": 4,
+              "name": "ن"
+            },
+            {
+              "index": 5,
+              "name": "أ"
+            },
+            {
+              "index": 6,
+              "name": "ح"
+            },
+            {
+              "index": 7,
+              "name": "ت"
+            },
+            {
+              "index": 8,
+              "name": "آ"
+            },
+            {
+              "index": 9,
+              "name": "أ"
+            },
+            {
+              "index": 10,
+              "name": "ت"
+            },
+            {
+              "index": 11,
+              "name": "ت"
+            },
+            {
+              "index": 12,
+              "name": "ك"
+            }
+          ]
+        },
+        "standAlone": {
+          "wide": [
+            {
+              "index": 1,
+              "name": "كانون الثاني"
+            },
+            {
+              "index": 2,
+              "name": "شباط"
+            },
+            {
+              "index": 3,
+              "name": "آذار"
+            },
+            {
+              "index": 4,
+              "name": "نيسان"
+            },
+            {
+              "index": 5,
+              "name": "أيار"
+            },
+            {
+              "index": 6,
+              "name": "حزيران"
+            },
+            {
+              "index": 7,
+              "name": "تموز"
+            },
+            {
+              "index": 8,
+              "name": "آب"
+            },
+            {
+              "index": 9,
+              "name": "أيلول"
+            },
+            {
+              "index": 10,
+              "name": "تشرين الأول"
+            },
+            {
+              "index": 11,
+              "name": "تشرين الثاني"
+            },
+            {
+              "index": 12,
+              "name": "كانون الأول"
+            }
+          ],
+          "abbreviated": [
+            {
+              "index": 1,
+              "name": "كانون الثاني"
+            },
+            {
+              "index": 2,
+              "name": "شباط"
+            },
+            {
+              "index": 3,
+              "name": "آذار"
+            },
+            {
+              "index": 4,
+              "name": "نيسان"
+            },
+            {
+              "index": 5,
+              "name": "أيار"
+            },
+            {
+              "index": 6,
+              "name": "حزيران"
+            },
+            {
+              "index": 7,
+              "name": "تموز"
+            },
+            {
+              "index": 8,
+              "name": "آب"
+            },
+            {
+              "index": 9,
+              "name": "أيلول"
+            },
+            {
+              "index": 10,
+              "name": "تشرين الأول"
+            },
+            {
+              "index": 11,
+              "name": "تشرين الثاني"
+            },
+            {
+              "index": 12,
+              "name": "كانون الأول"
+            }
+          ],
+          "narrow": [
+            {
+              "index": 1,
+              "name": "ك"
+            },
+            {
+              "index": 2,
+              "name": "ش"
+            },
+            {
+              "index": 3,
+              "name": "آ"
+            },
+            {
+              "index": 4,
+              "name": "ن"
+            },
+            {
+              "index": 5,
+              "name": "أ"
+            },
+            {
+              "index": 6,
+              "name": "ح"
+            },
+            {
+              "index": 7,
+              "name": "ت"
+            },
+            {
+              "index": 8,
+              "name": "آ"
+            },
+            {
+              "index": 9,
+              "name": "أ"
+            },
+            {
+              "index": 10,
+              "name": "ت"
+            },
+            {
+              "index": 11,
+              "name": "ت"
+            },
+            {
+              "index": 12,
+              "name": "ك"
+            }
+          ]
+        }
+      },
+      "invisibleCharactersInNames": [
+        "U+00A0"
+      ]
+    }
+  }
+}

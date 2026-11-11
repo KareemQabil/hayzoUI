@@ -1,0 +1,319 @@
+{
+  "kind": "calendar",
+  "schemaVersion": 1,
+  "id": "coptic",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-cal-coptic-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-cal-coptic-full/main/{ar,en}/ca-coptic.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/calendarPreferenceData.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/calendarData.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-localenames-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-localenames-full/main/{ar,en}/localeDisplayNames.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-bcp47",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-bcp47/bcp47/calendar.json"
+      },
+      {
+        "name": "ICU4C",
+        "url": "https://github.com/unicode-org/icu/tree/release-78.3/icu4c/source/i18n",
+        "version": "release-78.3",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "icu4c/source/i18n/cecal.cpp"
+      }
+    ],
+    "script": "tools/extract/calendar/build.mjs",
+    "notes": "Names, eras and preferredIn are copied from CLDR; conversion constants are read from the ICU source and asserted by the script; intl.probe, intl.caveats with figures and verification are measured on Node 22.23.4 (ICU 78.3, CLDR 48.0) and change with the runtime."
+  },
+  "data": {
+    "id": "coptic",
+    "name": {
+      "ar": "التقويم القبطي",
+      "en": "Coptic Calendar"
+    },
+    "type": "solar",
+    "months": [
+      {
+        "index": 1,
+        "name": {
+          "ar": "توت",
+          "en": "Tout"
+        },
+        "abbreviation": {
+          "ar": "توت",
+          "en": "Tout"
+        },
+        "days": 30
+      },
+      {
+        "index": 2,
+        "name": {
+          "ar": "بابه",
+          "en": "Baba"
+        },
+        "abbreviation": {
+          "ar": "بابه",
+          "en": "Baba"
+        },
+        "days": 30
+      },
+      {
+        "index": 3,
+        "name": {
+          "ar": "هاتور",
+          "en": "Hator"
+        },
+        "abbreviation": {
+          "ar": "هاتور",
+          "en": "Hator"
+        },
+        "days": 30
+      },
+      {
+        "index": 4,
+        "name": {
+          "ar": "كيهك",
+          "en": "Kiahk"
+        },
+        "abbreviation": {
+          "ar": "كيهك",
+          "en": "Kiahk"
+        },
+        "days": 30
+      },
+      {
+        "index": 5,
+        "name": {
+          "ar": "طوبة",
+          "en": "Toba"
+        },
+        "abbreviation": {
+          "ar": "طوبة",
+          "en": "Toba"
+        },
+        "days": 30
+      },
+      {
+        "index": 6,
+        "name": {
+          "ar": "أمشير",
+          "en": "Amshir"
+        },
+        "abbreviation": {
+          "ar": "أمشير",
+          "en": "Amshir"
+        },
+        "days": 30
+      },
+      {
+        "index": 7,
+        "name": {
+          "ar": "برمهات",
+          "en": "Baramhat"
+        },
+        "abbreviation": {
+          "ar": "برمهات",
+          "en": "Baramhat"
+        },
+        "days": 30
+      },
+      {
+        "index": 8,
+        "name": {
+          "ar": "برمودة",
+          "en": "Baramouda"
+        },
+        "abbreviation": {
+          "ar": "برمودة",
+          "en": "Baramouda"
+        },
+        "days": 30
+      },
+      {
+        "index": 9,
+        "name": {
+          "ar": "بشنس",
+          "en": "Bashans"
+        },
+        "abbreviation": {
+          "ar": "بشنس",
+          "en": "Bashans"
+        },
+        "days": 30
+      },
+      {
+        "index": 10,
+        "name": {
+          "ar": "بؤونة",
+          "en": "Paona"
+        },
+        "abbreviation": {
+          "ar": "بؤونة",
+          "en": "Paona"
+        },
+        "days": 30
+      },
+      {
+        "index": 11,
+        "name": {
+          "ar": "أبيب",
+          "en": "Epep"
+        },
+        "abbreviation": {
+          "ar": "أبيب",
+          "en": "Epep"
+        },
+        "days": 30
+      },
+      {
+        "index": 12,
+        "name": {
+          "ar": "مسرى",
+          "en": "Mesra"
+        },
+        "abbreviation": {
+          "ar": "مسرى",
+          "en": "Mesra"
+        },
+        "days": 30
+      },
+      {
+        "index": 13,
+        "name": {
+          "ar": "نسيئ",
+          "en": "Nasie"
+        },
+        "abbreviation": {
+          "ar": "نسيئ",
+          "en": "Nasie"
+        },
+        "days": [
+          5,
+          6
+        ]
+      }
+    ],
+    "eras": [
+      {
+        "id": "am",
+        "name": {
+          "ar": "AM",
+          "en": "Anno Martyrum"
+        },
+        "abbreviation": {
+          "ar": "AM",
+          "en": "AM"
+        },
+        "cldrIndex": 1,
+        "start": "284-08-29",
+        "arabicNameIsUntranslated": true
+      }
+    ],
+    "intl": {
+      "identifier": "coptic",
+      "runtimeSupport": "Node 22.23.4 (ICU 78.3, CLDR 48.0): listed by Intl.supportedValuesOf('calendar'); Intl.DateTimeFormat('ar-u-ca-coptic') resolves to \"coptic\". Temporal is not available in this runtime.",
+      "range": "Arithmetic, no table limit.",
+      "caveats": [
+        "CLDR 49 has no Arabic name for the era: locale ar carries the root value \"AM\"; Intl prints \"AM\" in Arabic text.",
+        "CLDR classifies the calendar system as \"other\"; `type` here is \"solar\" from its 365/366-day year (see conversion).",
+        "CLDR lists it for EG only, second after gregorian."
+      ],
+      "probe": {
+        "runtime": {
+          "node": "22.23.4",
+          "icu": "78.3",
+          "cldr": "48.0",
+          "unicode": "17.0",
+          "tz": "2026e"
+        },
+        "inSupportedValuesOf": true,
+        "resolvedCalendar": "coptic",
+        "sample": {
+          "gregorian": "2026-11-11",
+          "ar": "2 هاتور 1743 AM",
+          "en": "Hator 2, 1743 AM"
+        },
+        "edges": {
+          "ECMAScript minimum time value (-271821-04-20)": "3/24/272100 ",
+          "0001-01-01": "5/8/284 ",
+          "ECMAScript maximum time value (+275760-09-13)": "5/22/275471 AM"
+        },
+        "temporalAvailable": false
+      }
+    },
+    "conversion": {
+      "method": "arithmetic",
+      "reference": "ICU4C cecal.cpp / coptccal.cpp (release-78.3): epoch offset Julian day 1824665; with n = JD − offset, c4 = floor(n/1461), r4 = n mod 1461: year = 4·c4 + (floor(r4/365) − floor(r4/1460)); day of year = 365 if r4 = 1460, else r4 mod 365; month = floor(doy/30) + 1; day = doy mod 30 + 1. Twelve months of 30 days and a thirteenth of 5 days, 6 every fourth year.",
+      "epochJulianDay": 1824665
+    },
+    "cldrId": "coptic",
+    "cldrCalendarSystem": "other",
+    "bcp47Description": "Coptic calendar",
+    "preferredIn": [
+      {
+        "region": "EG",
+        "rank": 2,
+        "of": 5,
+        "source": "explicit"
+      }
+    ],
+    "dateFormats": {
+      "ar": {
+        "full": "EEEE، d MMMM y G",
+        "long": "d MMMM y G",
+        "medium": "dd\u200f/MM\u200f/y G",
+        "short": "d\u200f/M\u200f/y GGGGG"
+      }
+    },
+    "verification": [
+      {
+        "runtime": {
+          "node": "22.23.4",
+          "icu": "78.3",
+          "cldr": "48.0",
+          "unicode": "17.0",
+          "tz": "2026e"
+        },
+        "against": "the arithmetic above vs Intl.DateTimeFormat('en-u-ca-coptic')",
+        "from": "1800-01-01",
+        "to": "2200-12-31",
+        "daysCompared": 146462,
+        "mismatchCount": 0,
+        "mismatches": []
+      }
+    ]
+  }
+}

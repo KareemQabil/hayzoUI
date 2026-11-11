@@ -1,0 +1,82 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/list-patterns",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-misc-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-misc-full/main/ar*/listPatterns.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "list-patterns",
+    "content": {
+      "patterns": {
+        "standard": {
+          "two": "{0} و{1}",
+          "start": "{0} و{1}",
+          "middle": "{0} و{1}",
+          "end": "{0} و{1}"
+        },
+        "or": {
+          "two": "{0} أو {1}",
+          "start": "{0} أو {1}",
+          "middle": "{0} أو {1}",
+          "end": "{0} أو {1}"
+        },
+        "or-narrow": {
+          "two": "{0} أو {1}",
+          "start": "{0} أو {1}",
+          "middle": "{0} أو {1}",
+          "end": "{0} أو {1}"
+        },
+        "or-short": {
+          "two": "{0} أو {1}",
+          "start": "{0} أو {1}",
+          "middle": "{0} أو {1}",
+          "end": "{0} أو {1}"
+        },
+        "standard-narrow": {
+          "two": "{0} و{1}",
+          "start": "{0} و{1}",
+          "middle": "{0} و{1}",
+          "end": "{0} و{1}"
+        },
+        "standard-short": {
+          "two": "{0} و{1}",
+          "start": "{0} و{1}",
+          "middle": "{0} و{1}",
+          "end": "{0} و{1}"
+        },
+        "unit": {
+          "two": "{0} و{1}",
+          "start": "{0}، و{1}",
+          "middle": "{0}، و{1}",
+          "end": "{0}، و{1}"
+        },
+        "unit-narrow": {
+          "two": "{0} و{1}",
+          "start": "{0} و{1}",
+          "middle": "{0} و{1}",
+          "end": "{0} و{1}"
+        },
+        "unit-short": {
+          "two": "{0} و{1}",
+          "start": "{0}، و{1}",
+          "middle": "{0}، و{1}",
+          "end": "{0}، و{1}"
+        }
+      }
+    }
+  }
+}

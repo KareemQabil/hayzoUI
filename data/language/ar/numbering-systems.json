@@ -1,0 +1,667 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/numbering-systems",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/numberingSystems.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-numbers-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-numbers-full/main/ar*/numbers.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-localenames-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-localenames-full/main/{ar,en}/localeDisplayNames.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs",
+    "notes": "Symbols carry invisible marks (U+061C ARABIC LETTER MARK, U+200E/U+200F) exactly as CLDR ships them; `codePoints` spells each value out. symbolsNotProvided lists numbering systems for which the ar locales carry no symbols block."
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "numbering-systems",
+    "content": {
+      "systems": [
+        {
+          "id": "arab",
+          "type": "numeric",
+          "digits": [
+            "٠",
+            "١",
+            "٢",
+            "٣",
+            "٤",
+            "٥",
+            "٦",
+            "٧",
+            "٨",
+            "٩"
+          ],
+          "digitCodePoints": [
+            "U+0660",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+0668",
+            "U+0669"
+          ],
+          "name": {
+            "ar": "الأرقام العربية الهندية",
+            "en": "Arabic-Indic Digits"
+          }
+        },
+        {
+          "id": "arabext",
+          "type": "numeric",
+          "digits": [
+            "۰",
+            "۱",
+            "۲",
+            "۳",
+            "۴",
+            "۵",
+            "۶",
+            "۷",
+            "۸",
+            "۹"
+          ],
+          "digitCodePoints": [
+            "U+06F0",
+            "U+06F1",
+            "U+06F2",
+            "U+06F3",
+            "U+06F4",
+            "U+06F5",
+            "U+06F6",
+            "U+06F7",
+            "U+06F8",
+            "U+06F9"
+          ],
+          "name": {
+            "ar": "الأرقام العربية الهندية الممتدة",
+            "en": "Extended Arabic-Indic Digits"
+          }
+        },
+        {
+          "id": "latn",
+          "type": "numeric",
+          "digits": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "digitCodePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+0039"
+          ],
+          "name": {
+            "ar": "الأرقام الغربية",
+            "en": "Western Digits"
+          }
+        }
+      ],
+      "defaults": [
+        {
+          "locales": [
+            "ar",
+            "ar-AE",
+            "ar-DZ",
+            "ar-EH",
+            "ar-LY",
+            "ar-MA",
+            "ar-TN"
+          ],
+          "default": "latn",
+          "latnAlternative": "latn",
+          "native": "arab"
+        },
+        {
+          "locales": [
+            "ar-BH",
+            "ar-DJ",
+            "ar-EG",
+            "ar-ER",
+            "ar-IL",
+            "ar-IQ",
+            "ar-JO",
+            "ar-KM",
+            "ar-KW",
+            "ar-LB",
+            "ar-MR",
+            "ar-OM",
+            "ar-PS",
+            "ar-QA",
+            "ar-SA",
+            "ar-SD",
+            "ar-SO",
+            "ar-SS",
+            "ar-SY",
+            "ar-TD",
+            "ar-YE"
+          ],
+          "default": "arab",
+          "latnAlternative": "latn",
+          "native": "arab"
+        }
+      ],
+      "minimumGroupingDigits": [
+        {
+          "locales": [
+            "ar",
+            "ar-AE",
+            "ar-BH",
+            "ar-DJ",
+            "ar-DZ",
+            "ar-EG",
+            "ar-EH",
+            "ar-ER",
+            "ar-IL",
+            "ar-IQ",
+            "ar-JO",
+            "ar-KM",
+            "ar-KW",
+            "ar-LB",
+            "ar-LY",
+            "ar-MA",
+            "ar-MR",
+            "ar-OM",
+            "ar-PS",
+            "ar-QA",
+            "ar-SA",
+            "ar-SD",
+            "ar-SO",
+            "ar-SS",
+            "ar-SY",
+            "ar-TD",
+            "ar-TN",
+            "ar-YE"
+          ],
+          "value": 1
+        }
+      ],
+      "symbols": {
+        "arab": [
+          {
+            "locales": [
+              "ar",
+              "ar-AE",
+              "ar-BH",
+              "ar-DJ",
+              "ar-DZ",
+              "ar-EG",
+              "ar-EH",
+              "ar-ER",
+              "ar-IL",
+              "ar-IQ",
+              "ar-JO",
+              "ar-KM",
+              "ar-KW",
+              "ar-LB",
+              "ar-LY",
+              "ar-MA",
+              "ar-MR",
+              "ar-OM",
+              "ar-PS",
+              "ar-QA",
+              "ar-SA",
+              "ar-SD",
+              "ar-SO",
+              "ar-SS",
+              "ar-SY",
+              "ar-TD",
+              "ar-TN",
+              "ar-YE"
+            ],
+            "symbols": {
+              "decimal": {
+                "value": "٫",
+                "codePoints": [
+                  "U+066B"
+                ]
+              },
+              "group": {
+                "value": "٬",
+                "codePoints": [
+                  "U+066C"
+                ]
+              },
+              "list": {
+                "value": "؛",
+                "codePoints": [
+                  "U+061B"
+                ]
+              },
+              "percentSign": {
+                "value": "٪\u061c",
+                "codePoints": [
+                  "U+066A",
+                  "U+061C"
+                ]
+              },
+              "plusSign": {
+                "value": "\u061c+",
+                "codePoints": [
+                  "U+061C",
+                  "U+002B"
+                ]
+              },
+              "minusSign": {
+                "value": "\u061c-",
+                "codePoints": [
+                  "U+061C",
+                  "U+002D"
+                ]
+              },
+              "approximatelySign": {
+                "value": "~",
+                "codePoints": [
+                  "U+007E"
+                ]
+              },
+              "exponential": {
+                "value": "أس",
+                "codePoints": [
+                  "U+0623",
+                  "U+0633"
+                ]
+              },
+              "superscriptingExponent": {
+                "value": "×",
+                "codePoints": [
+                  "U+00D7"
+                ]
+              },
+              "perMille": {
+                "value": "؉",
+                "codePoints": [
+                  "U+0609"
+                ]
+              },
+              "infinity": {
+                "value": "∞",
+                "codePoints": [
+                  "U+221E"
+                ]
+              },
+              "nan": {
+                "value": "ليس\u00a0رقمًا",
+                "codePoints": [
+                  "U+0644",
+                  "U+064A",
+                  "U+0633",
+                  "U+00A0",
+                  "U+0631",
+                  "U+0642",
+                  "U+0645",
+                  "U+064B",
+                  "U+0627"
+                ]
+              },
+              "timeSeparator": {
+                "value": ":",
+                "codePoints": [
+                  "U+003A"
+                ]
+              }
+            }
+          }
+        ],
+        "latn": [
+          {
+            "locales": [
+              "ar",
+              "ar-AE",
+              "ar-BH",
+              "ar-DJ",
+              "ar-EG",
+              "ar-EH",
+              "ar-ER",
+              "ar-IL",
+              "ar-IQ",
+              "ar-JO",
+              "ar-KM",
+              "ar-KW",
+              "ar-OM",
+              "ar-PS",
+              "ar-QA",
+              "ar-SD",
+              "ar-SS",
+              "ar-SY",
+              "ar-TD",
+              "ar-YE"
+            ],
+            "symbols": {
+              "decimal": {
+                "value": ".",
+                "codePoints": [
+                  "U+002E"
+                ]
+              },
+              "group": {
+                "value": ",",
+                "codePoints": [
+                  "U+002C"
+                ]
+              },
+              "list": {
+                "value": ";",
+                "codePoints": [
+                  "U+003B"
+                ]
+              },
+              "percentSign": {
+                "value": "\u200e%\u200e",
+                "codePoints": [
+                  "U+200E",
+                  "U+0025",
+                  "U+200E"
+                ]
+              },
+              "plusSign": {
+                "value": "\u200e+",
+                "codePoints": [
+                  "U+200E",
+                  "U+002B"
+                ]
+              },
+              "minusSign": {
+                "value": "\u200e-",
+                "codePoints": [
+                  "U+200E",
+                  "U+002D"
+                ]
+              },
+              "approximatelySign": {
+                "value": "~",
+                "codePoints": [
+                  "U+007E"
+                ]
+              },
+              "exponential": {
+                "value": "E",
+                "codePoints": [
+                  "U+0045"
+                ]
+              },
+              "superscriptingExponent": {
+                "value": "×",
+                "codePoints": [
+                  "U+00D7"
+                ]
+              },
+              "perMille": {
+                "value": "‰",
+                "codePoints": [
+                  "U+2030"
+                ]
+              },
+              "infinity": {
+                "value": "∞",
+                "codePoints": [
+                  "U+221E"
+                ]
+              },
+              "nan": {
+                "value": "ليس\u00a0رقمًا",
+                "codePoints": [
+                  "U+0644",
+                  "U+064A",
+                  "U+0633",
+                  "U+00A0",
+                  "U+0631",
+                  "U+0642",
+                  "U+0645",
+                  "U+064B",
+                  "U+0627"
+                ]
+              },
+              "timeSeparator": {
+                "value": ":",
+                "codePoints": [
+                  "U+003A"
+                ]
+              }
+            }
+          },
+          {
+            "locales": [
+              "ar-DZ",
+              "ar-LB",
+              "ar-LY",
+              "ar-MA",
+              "ar-MR",
+              "ar-TN"
+            ],
+            "symbols": {
+              "decimal": {
+                "value": ",",
+                "codePoints": [
+                  "U+002C"
+                ]
+              },
+              "group": {
+                "value": ".",
+                "codePoints": [
+                  "U+002E"
+                ]
+              },
+              "list": {
+                "value": ";",
+                "codePoints": [
+                  "U+003B"
+                ]
+              },
+              "percentSign": {
+                "value": "\u200e%\u200e",
+                "codePoints": [
+                  "U+200E",
+                  "U+0025",
+                  "U+200E"
+                ]
+              },
+              "plusSign": {
+                "value": "\u200e+",
+                "codePoints": [
+                  "U+200E",
+                  "U+002B"
+                ]
+              },
+              "minusSign": {
+                "value": "\u200e-",
+                "codePoints": [
+                  "U+200E",
+                  "U+002D"
+                ]
+              },
+              "approximatelySign": {
+                "value": "~",
+                "codePoints": [
+                  "U+007E"
+                ]
+              },
+              "exponential": {
+                "value": "E",
+                "codePoints": [
+                  "U+0045"
+                ]
+              },
+              "superscriptingExponent": {
+                "value": "×",
+                "codePoints": [
+                  "U+00D7"
+                ]
+              },
+              "perMille": {
+                "value": "‰",
+                "codePoints": [
+                  "U+2030"
+                ]
+              },
+              "infinity": {
+                "value": "∞",
+                "codePoints": [
+                  "U+221E"
+                ]
+              },
+              "nan": {
+                "value": "ليس\u00a0رقمًا",
+                "codePoints": [
+                  "U+0644",
+                  "U+064A",
+                  "U+0633",
+                  "U+00A0",
+                  "U+0631",
+                  "U+0642",
+                  "U+0645",
+                  "U+064B",
+                  "U+0627"
+                ]
+              },
+              "timeSeparator": {
+                "value": ":",
+                "codePoints": [
+                  "U+003A"
+                ]
+              }
+            }
+          },
+          {
+            "locales": [
+              "ar-SA",
+              "ar-SO"
+            ],
+            "symbols": {
+              "decimal": {
+                "value": ".",
+                "codePoints": [
+                  "U+002E"
+                ]
+              },
+              "group": {
+                "value": ",",
+                "codePoints": [
+                  "U+002C"
+                ]
+              },
+              "list": {
+                "value": ";",
+                "codePoints": [
+                  "U+003B"
+                ]
+              },
+              "percentSign": {
+                "value": "٪",
+                "codePoints": [
+                  "U+066A"
+                ]
+              },
+              "plusSign": {
+                "value": "\u200e+",
+                "codePoints": [
+                  "U+200E",
+                  "U+002B"
+                ]
+              },
+              "minusSign": {
+                "value": "\u200e-",
+                "codePoints": [
+                  "U+200E",
+                  "U+002D"
+                ]
+              },
+              "approximatelySign": {
+                "value": "~",
+                "codePoints": [
+                  "U+007E"
+                ]
+              },
+              "exponential": {
+                "value": "E",
+                "codePoints": [
+                  "U+0045"
+                ]
+              },
+              "superscriptingExponent": {
+                "value": "×",
+                "codePoints": [
+                  "U+00D7"
+                ]
+              },
+              "perMille": {
+                "value": "‰",
+                "codePoints": [
+                  "U+2030"
+                ]
+              },
+              "infinity": {
+                "value": "∞",
+                "codePoints": [
+                  "U+221E"
+                ]
+              },
+              "nan": {
+                "value": "ليس\u00a0رقمًا",
+                "codePoints": [
+                  "U+0644",
+                  "U+064A",
+                  "U+0633",
+                  "U+00A0",
+                  "U+0631",
+                  "U+0642",
+                  "U+0645",
+                  "U+064B",
+                  "U+0627"
+                ]
+              },
+              "timeSeparator": {
+                "value": ":",
+                "codePoints": [
+                  "U+003A"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "symbolsNotProvided": [
+        "arabext"
+      ]
+    }
+  }
+}

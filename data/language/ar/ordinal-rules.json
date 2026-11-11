@@ -1,0 +1,53 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/ordinal-rules",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/ordinals.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-numbers-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-numbers-full/main/ar/numbers.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "ordinal-rules",
+    "content": {
+      "type": "ordinal",
+      "categories": [
+        {
+          "category": "other",
+          "condition": "",
+          "integerSamples": [
+            "0~15",
+            "100",
+            "1000",
+            "10000",
+            "100000",
+            "1000000"
+          ],
+          "integerSamplesOpenEnded": true
+        }
+      ],
+      "minimalPairs": {
+        "other": "اتجه\u00a0إلى\u00a0المنعطف\u00a0الـ\u00a0{0}\u00a0يمينًا."
+      }
+    }
+  }
+}

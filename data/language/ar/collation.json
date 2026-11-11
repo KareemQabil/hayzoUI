@@ -1,0 +1,385 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/collation",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr/blob/release-49/common/collation/ar.xml",
+        "version": "release-49",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "common/collation/ar.xml"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-misc-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-misc-full/main/ar/characters.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs",
+    "notes": "content.cldr is extracted from the CLDR XML (U+200E marks inside rules removed, comments dropped). content.intlProbe is measured by this script on the Node that runs it (Node 22.23.4, ICU 78.3); a different ICU can give different values, so regenerate on the same runtime for a byte-identical file."
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "collation",
+    "content": {
+      "cldr": {
+        "file": "common/collation/ar.xml",
+        "types": [
+          {
+            "type": "compat",
+            "rules": [
+              "[reorder Arab]",
+              "&ت<<ة<<<ﺔ<<<ﺓ",
+              "&ي<<ى<<<ﯨ<<<ﯩ<<<ﻰ<<<ﻯ<<<ﲐ<<<ﱝ"
+            ],
+            "presentationFormRules": {
+              "count": 0,
+              "description": "rules of the form &base=presentation-form… that make Arabic presentation forms sort identically to their decompositions; not copied",
+              "first": null
+            }
+          },
+          {
+            "type": "standard",
+            "rules": [
+              "[reorder Arab]",
+              "&[before 2]ت<<ة",
+              "&[before 2]ي<<ی<<ى",
+              "&ء<<أ<<ؤ<<إ<<ئ<<ىٕ<<ا",
+              "&ءا<<آ",
+              "&[last secondary ignorable]<<<\\u064B<<<\\u08F0<<<\\u08E7<<<\\u064C<<<\\u08F1<<<\\u08E8<<<\\u064D<<<\\u08F2<<<\\u08E9<<<\\u064E<<<\\u08E4<<<\\u08F4<<<\\u08F5<<<\\u064F<<<\\u08E5<<<\\u08FE<<<\\u0650<<<\\u08E6<<<\\u08F6<<<\\u0651<<<\\u0652<<<\\u0653<<<\\u06DF<<<\\u06E1<<<\\u065F<<<\\u0656<<<\\u0657<<<\\u0658<<<\\u08FF<<<\\u0659<<<\\u065A<<<\\u065B<<<\\u065C<<<\\u065D<<<\\u065E<<<\\u08F7<<<\\u08F8<<<\\u08FD<<<\\u08FB<<<\\u08FC<<<\\u08F9<<<\\u08FA<<<\\u0670",
+              "&'بسم الله الرحمن الرحيم'<<<﷽",
+              "&اكبر<<<ﷳ",
+              "&الله<<<ﷲ",
+              "&'جل جلاله'<<<ﷻ",
+              "&رسول<<<ﷶ",
+              "&ریال<<<﷼",
+              "&صلعم<<<ﷵ",
+              "&صلى<<<ﷹ",
+              "&'صلى الله عليه وسلم'<<<ﷺ",
+              "&صلے<<<ﷰ",
+              "&عليه<<<ﷷ",
+              "&قلے<<<ﷱ",
+              "&محمد<<<ﷴ",
+              "&وسلم<<<ﷸ"
+            ],
+            "presentationFormRules": {
+              "count": 358,
+              "description": "rules of the form &base=presentation-form… that make Arabic presentation forms sort identically to their decompositions; not copied",
+              "first": "&ء=ﺀ"
+            }
+          }
+        ],
+        "defaultType": "standard",
+        "scriptReorder": "[reorder Arab]"
+      },
+      "intlProbe": {
+        "runtime": {
+          "node": "22.23.4",
+          "icu": "78.3",
+          "cldr": "48.0",
+          "unicode": "17.0"
+        },
+        "resolved": {
+          "locale": "ar",
+          "collation": "default",
+          "sensitivity": "variant",
+          "numeric": false,
+          "ignorePunctuation": false
+        },
+        "requestedCollation": {
+          "standard": "default",
+          "compat": "compat"
+        },
+        "alphabetOrder": {
+          "input": "CLDR ar index exemplar set, reversed",
+          "sortedMatchesIndexOrder": true,
+          "sorted": [
+            "ا",
+            "ب",
+            "ت",
+            "ث",
+            "ج",
+            "ح",
+            "خ",
+            "د",
+            "ذ",
+            "ر",
+            "ز",
+            "س",
+            "ش",
+            "ص",
+            "ض",
+            "ط",
+            "ظ",
+            "ع",
+            "غ",
+            "ف",
+            "ق",
+            "ك",
+            "ل",
+            "م",
+            "ن",
+            "ه",
+            "و",
+            "ي"
+          ]
+        },
+        "arabicBeforeLatin": true,
+        "digitsBeforeLetters": true,
+        "pairs": [
+          {
+            "id": "tashkeel",
+            "what": "unvocalised vs fully vocalised",
+            "a": "كتب",
+            "b": "كَتَبَ",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": -1
+            }
+          },
+          {
+            "id": "shadda",
+            "what": "without vs with shadda",
+            "a": "مد",
+            "b": "مدّ",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": -1
+            }
+          },
+          {
+            "id": "tatweel",
+            "what": "without vs with tatweel U+0640",
+            "a": "كتب",
+            "b": "كـتب",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": 0
+            }
+          },
+          {
+            "id": "alef-hamza-above",
+            "what": "bare alef vs alef with hamza above",
+            "a": "احمد",
+            "b": "أحمد",
+            "compare": {
+              "base": 0,
+              "accent": 1,
+              "variant": 1
+            }
+          },
+          {
+            "id": "alef-hamza-below",
+            "what": "bare alef vs alef with hamza below",
+            "a": "اسلام",
+            "b": "إسلام",
+            "compare": {
+              "base": 0,
+              "accent": 1,
+              "variant": 1
+            }
+          },
+          {
+            "id": "alef-madda",
+            "what": "bare alef vs alef with madda",
+            "a": "امن",
+            "b": "آمن",
+            "compare": {
+              "base": 1,
+              "accent": 1,
+              "variant": 1
+            }
+          },
+          {
+            "id": "alef-wasla",
+            "what": "bare alef vs alef wasla U+0671",
+            "a": "اسم",
+            "b": "ٱسم",
+            "compare": {
+              "base": -1,
+              "accent": -1,
+              "variant": -1
+            }
+          },
+          {
+            "id": "alef-maqsura-yeh",
+            "what": "alef maqsura U+0649 vs yeh U+064A",
+            "a": "على",
+            "b": "علي",
+            "compare": {
+              "base": 0,
+              "accent": -1,
+              "variant": -1
+            }
+          },
+          {
+            "id": "farsi-yeh",
+            "what": "yeh U+064A vs Farsi yeh U+06CC",
+            "a": "علي",
+            "b": "علی",
+            "compare": {
+              "base": 0,
+              "accent": 1,
+              "variant": 1
+            }
+          },
+          {
+            "id": "teh-marbuta-heh",
+            "what": "teh marbuta U+0629 vs heh U+0647",
+            "a": "مدرسة",
+            "b": "مدرسه",
+            "compare": {
+              "base": -1,
+              "accent": -1,
+              "variant": -1
+            }
+          },
+          {
+            "id": "teh-marbuta-teh",
+            "what": "teh marbuta U+0629 vs teh U+062A",
+            "a": "مدرسة",
+            "b": "مدرست",
+            "compare": {
+              "base": 0,
+              "accent": -1,
+              "variant": -1
+            }
+          },
+          {
+            "id": "kaf-keheh",
+            "what": "kaf U+0643 vs keheh U+06A9",
+            "a": "كتاب",
+            "b": "کتاب",
+            "compare": {
+              "base": -1,
+              "accent": -1,
+              "variant": -1
+            }
+          },
+          {
+            "id": "waw-hamza",
+            "what": "waw vs waw with hamza above",
+            "a": "مسوول",
+            "b": "مسؤول",
+            "compare": {
+              "base": 1,
+              "accent": 1,
+              "variant": 1
+            }
+          },
+          {
+            "id": "yeh-hamza",
+            "what": "yeh vs yeh with hamza above",
+            "a": "ريس",
+            "b": "رئيس",
+            "compare": {
+              "base": 1,
+              "accent": 1,
+              "variant": 1
+            }
+          },
+          {
+            "id": "lam-alef-ligature",
+            "what": "lam + alef vs ligature U+FEFB",
+            "a": "لا",
+            "b": "ﻻ",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": 0
+            }
+          },
+          {
+            "id": "presentation-form",
+            "what": "beh vs initial presentation form U+FE91",
+            "a": "ب",
+            "b": "ﺑ",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": 0
+            }
+          },
+          {
+            "id": "arabic-indic-digits",
+            "what": "ASCII digits vs Arabic-Indic digits",
+            "a": "123",
+            "b": "١٢٣",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": 0
+            }
+          },
+          {
+            "id": "extended-digits",
+            "what": "Arabic-Indic vs Extended Arabic-Indic digits",
+            "a": "١٢٣",
+            "b": "۱۲۳",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": 0
+            }
+          },
+          {
+            "id": "rlm",
+            "what": "without vs with trailing U+200F",
+            "a": "كتب",
+            "b": "كتب\u200f",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": 0
+            }
+          },
+          {
+            "id": "zwnj",
+            "what": "without vs with U+200C",
+            "a": "كتب",
+            "b": "ك\u200cتب",
+            "compare": {
+              "base": 0,
+              "accent": 0,
+              "variant": 0
+            }
+          },
+          {
+            "id": "arabic-comma",
+            "what": "ASCII comma vs Arabic comma",
+            "a": "ا,ب",
+            "b": "ا،ب",
+            "compare": {
+              "base": -1,
+              "accent": -1,
+              "variant": -1
+            }
+          }
+        ],
+        "numeric": {
+          "default: ٢ vs ١٠": 1,
+          "numeric:true: ٢ vs ١٠": -1,
+          "numeric:true: 2 vs ١٠": -1
+        },
+        "searchUsage": {
+          "usage:search base: كتب vs كَتَبَ": 0,
+          "usage:search base: احمد vs أحمد": 0,
+          "usage:search base: على vs علي": 0,
+          "usage:search base: مدرسة vs مدرسه": 0
+        },
+        "legend": "compare values: 0 = treated as equal, -1 = a sorts first, 1 = b sorts first"
+      }
+    }
+  }
+}

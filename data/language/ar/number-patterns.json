@@ -1,0 +1,799 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/number-patterns",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-numbers-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-numbers-full/main/ar*/numbers.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "number-patterns",
+    "content": {
+      "minimumGroupingDigits": 1,
+      "numberingSystems": {
+        "arab": {
+          "decimal": {
+            "standard": "#,##0.###",
+            "compactLong": [
+              {
+                "magnitude": "1000",
+                "forms": {
+                  "zero": "0 ألف",
+                  "one": "0 ألف",
+                  "two": "0 ألف",
+                  "few": "0 آلاف",
+                  "many": "0 ألف",
+                  "other": "0 ألف"
+                }
+              },
+              {
+                "magnitude": "10000",
+                "forms": {
+                  "zero": "00 ألف",
+                  "one": "00 ألف",
+                  "two": "00 ألف",
+                  "few": "00 ألف",
+                  "many": "00 ألف",
+                  "other": "00 ألف"
+                }
+              },
+              {
+                "magnitude": "100000",
+                "forms": {
+                  "zero": "000 ألف",
+                  "one": "000 ألف",
+                  "two": "000 ألف",
+                  "few": "000 ألف",
+                  "many": "000 ألف",
+                  "other": "000 ألف"
+                }
+              },
+              {
+                "magnitude": "1000000",
+                "forms": {
+                  "zero": "0 مليون",
+                  "one": "0 مليون",
+                  "two": "0 مليون",
+                  "few": "0 ملايين",
+                  "many": "0 مليون",
+                  "other": "0 مليون"
+                }
+              },
+              {
+                "magnitude": "10000000",
+                "forms": {
+                  "zero": "00 مليون",
+                  "one": "00 مليون",
+                  "two": "00 مليون",
+                  "few": "00 ملايين",
+                  "many": "00 مليون",
+                  "other": "00 مليون"
+                }
+              },
+              {
+                "magnitude": "100000000",
+                "forms": {
+                  "zero": "000 مليون",
+                  "one": "000 مليون",
+                  "two": "000 مليون",
+                  "few": "000 مليون",
+                  "many": "000 مليون",
+                  "other": "000 مليون"
+                }
+              },
+              {
+                "magnitude": "1000000000",
+                "forms": {
+                  "zero": "0 مليار",
+                  "one": "0 مليار",
+                  "two": "0 مليار",
+                  "few": "0 مليار",
+                  "many": "0 مليار",
+                  "other": "0 مليار"
+                }
+              },
+              {
+                "magnitude": "10000000000",
+                "forms": {
+                  "zero": "00 مليار",
+                  "one": "00 مليار",
+                  "two": "00 مليار",
+                  "few": "00 مليار",
+                  "many": "00 مليار",
+                  "other": "00 مليار"
+                }
+              },
+              {
+                "magnitude": "100000000000",
+                "forms": {
+                  "zero": "000 مليار",
+                  "one": "000 مليار",
+                  "two": "000 مليار",
+                  "few": "000 مليار",
+                  "many": "000 مليار",
+                  "other": "000 مليار"
+                }
+              },
+              {
+                "magnitude": "1000000000000",
+                "forms": {
+                  "zero": "0 ترليون",
+                  "one": "0 ترليون",
+                  "two": "0 ترليون",
+                  "few": "0 ترليون",
+                  "many": "0 ترليون",
+                  "other": "0 ترليون"
+                }
+              },
+              {
+                "magnitude": "10000000000000",
+                "forms": {
+                  "zero": "00 ترليون",
+                  "one": "00 ترليون",
+                  "two": "00 ترليون",
+                  "few": "00 ترليون",
+                  "many": "00 ترليون",
+                  "other": "00 ترليون"
+                }
+              },
+              {
+                "magnitude": "100000000000000",
+                "forms": {
+                  "zero": "000 ترليون",
+                  "one": "000 ترليون",
+                  "two": "000 ترليون",
+                  "few": "000 ترليون",
+                  "many": "000 ترليون",
+                  "other": "000 ترليون"
+                }
+              }
+            ],
+            "compactShort": [
+              {
+                "magnitude": "1000",
+                "forms": {
+                  "zero": "0\u00a0ألف",
+                  "one": "0\u00a0ألف",
+                  "two": "0\u00a0ألف",
+                  "few": "0\u00a0آلاف",
+                  "many": "0\u00a0ألف",
+                  "other": "0\u00a0ألف"
+                }
+              },
+              {
+                "magnitude": "10000",
+                "forms": {
+                  "zero": "00\u00a0ألف",
+                  "one": "00\u00a0ألف",
+                  "two": "00\u00a0ألف",
+                  "few": "00\u00a0ألف",
+                  "many": "00\u00a0ألف",
+                  "other": "00\u00a0ألف"
+                }
+              },
+              {
+                "magnitude": "100000",
+                "forms": {
+                  "zero": "000\u00a0ألف",
+                  "one": "000\u00a0ألف",
+                  "two": "000\u00a0ألف",
+                  "few": "000\u00a0ألف",
+                  "many": "000\u00a0ألف",
+                  "other": "000\u00a0ألف"
+                }
+              },
+              {
+                "magnitude": "1000000",
+                "forms": {
+                  "zero": "0\u00a0مليون",
+                  "one": "0\u00a0مليون",
+                  "two": "0\u00a0مليون",
+                  "few": "0\u00a0مليون",
+                  "many": "0\u00a0مليون",
+                  "other": "0\u00a0مليون"
+                }
+              },
+              {
+                "magnitude": "10000000",
+                "forms": {
+                  "zero": "00\u00a0مليون",
+                  "one": "00\u00a0مليون",
+                  "two": "00\u00a0مليون",
+                  "few": "00\u00a0مليون",
+                  "many": "00\u00a0مليون",
+                  "other": "00\u00a0مليون"
+                }
+              },
+              {
+                "magnitude": "100000000",
+                "forms": {
+                  "zero": "000\u00a0مليون",
+                  "one": "000\u00a0مليون",
+                  "two": "000\u00a0مليون",
+                  "few": "000\u00a0مليون",
+                  "many": "000\u00a0مليون",
+                  "other": "000\u00a0مليون"
+                }
+              },
+              {
+                "magnitude": "1000000000",
+                "forms": {
+                  "zero": "0\u00a0مليار",
+                  "one": "0\u00a0مليار",
+                  "two": "0\u00a0مليار",
+                  "few": "0\u00a0مليار",
+                  "many": "0\u00a0مليار",
+                  "other": "0\u00a0مليار"
+                }
+              },
+              {
+                "magnitude": "10000000000",
+                "forms": {
+                  "zero": "00\u00a0مليار",
+                  "one": "00\u00a0مليار",
+                  "two": "00\u00a0مليار",
+                  "few": "00\u00a0مليار",
+                  "many": "00\u00a0مليار",
+                  "other": "00\u00a0مليار"
+                }
+              },
+              {
+                "magnitude": "100000000000",
+                "forms": {
+                  "zero": "000\u00a0مليار",
+                  "one": "000\u00a0مليار",
+                  "two": "000\u00a0مليار",
+                  "few": "000\u00a0مليار",
+                  "many": "000\u00a0مليار",
+                  "other": "000\u00a0مليار"
+                }
+              },
+              {
+                "magnitude": "1000000000000",
+                "forms": {
+                  "zero": "0\u00a0ترليون",
+                  "one": "0\u00a0ترليون",
+                  "two": "0\u00a0ترليون",
+                  "few": "0\u00a0ترليون",
+                  "many": "0\u00a0ترليون",
+                  "other": "0\u00a0ترليون"
+                }
+              },
+              {
+                "magnitude": "10000000000000",
+                "forms": {
+                  "zero": "00\u00a0ترليون",
+                  "one": "00\u00a0ترليون",
+                  "two": "00\u00a0ترليون",
+                  "few": "00\u00a0ترليون",
+                  "many": "00\u00a0ترليون",
+                  "other": "00\u00a0ترليون"
+                }
+              },
+              {
+                "magnitude": "100000000000000",
+                "forms": {
+                  "zero": "000\u00a0ترليون",
+                  "one": "000\u00a0ترليون",
+                  "two": "000\u00a0ترليون",
+                  "few": "000\u00a0ترليون",
+                  "many": "000\u00a0ترليون",
+                  "other": "000\u00a0ترليون"
+                }
+              }
+            ]
+          },
+          "percent": {
+            "standard": "#,##0%"
+          },
+          "scientific": {
+            "standard": "#E0"
+          },
+          "currency": {
+            "patterns": {
+              "standard": "\u200f#,##0.00\u00a0¤",
+              "standard-noCurrency": "#,##0.00",
+              "accounting": "\u200f#,##0.00\u00a0¤",
+              "accounting-noCurrency": "#,##0.00"
+            },
+            "unitPattern": {
+              "zero": "{0} {1}",
+              "one": "{0} {1}",
+              "two": "{0} {1}",
+              "few": "{0} {1}",
+              "many": "{0} {1}",
+              "other": "{0} {1}"
+            },
+            "spacing": {
+              "beforeCurrency": {
+                "currencyMatch": "[[:^S:]&[:^Z:]]",
+                "surroundingMatch": "[:digit:]",
+                "insertBetween": "\u00a0"
+              },
+              "afterCurrency": {
+                "currencyMatch": "[[:^S:]&[:^Z:]]",
+                "surroundingMatch": "[:digit:]",
+                "insertBetween": "\u00a0"
+              }
+            }
+          },
+          "misc": {
+            "approximately": "~{0}",
+            "atLeast": "+{0}",
+            "atMost": "≤{0}",
+            "range": "{0}–{1}"
+          },
+          "rational": {
+            "rationalPattern": "{1}⁄{0}",
+            "integerAndRationalPattern": "{1}\u202f{0}",
+            "integerAndRationalPattern-alt-superSub": "{1}\u202f{0}\u2060",
+            "rationalUsage": "sometimes"
+          }
+        },
+        "latn": {
+          "decimal": {
+            "standard": "#,##0.###",
+            "compactLong": [
+              {
+                "magnitude": "1000",
+                "forms": {
+                  "zero": "0 ألف",
+                  "one": "0 ألف",
+                  "two": "0 ألف",
+                  "few": "0 آلاف",
+                  "many": "0 ألف",
+                  "other": "0 ألف"
+                }
+              },
+              {
+                "magnitude": "10000",
+                "forms": {
+                  "zero": "00 ألف",
+                  "one": "00 ألف",
+                  "two": "00 ألف",
+                  "few": "00 ألف",
+                  "many": "00 ألف",
+                  "other": "00 ألف"
+                }
+              },
+              {
+                "magnitude": "100000",
+                "forms": {
+                  "zero": "000 ألف",
+                  "one": "000 ألف",
+                  "two": "000 ألف",
+                  "few": "000 ألف",
+                  "many": "000 ألف",
+                  "other": "000 ألف"
+                }
+              },
+              {
+                "magnitude": "1000000",
+                "forms": {
+                  "zero": "0 مليون",
+                  "one": "0 مليون",
+                  "two": "0 مليون",
+                  "few": "0 ملايين",
+                  "many": "0 مليون",
+                  "other": "0 مليون"
+                }
+              },
+              {
+                "magnitude": "10000000",
+                "forms": {
+                  "zero": "00 مليون",
+                  "one": "00 مليون",
+                  "two": "00 مليون",
+                  "few": "00 ملايين",
+                  "many": "00 مليون",
+                  "other": "00 مليون"
+                }
+              },
+              {
+                "magnitude": "100000000",
+                "forms": {
+                  "zero": "000 مليون",
+                  "one": "000 مليون",
+                  "two": "000 مليون",
+                  "few": "000 مليون",
+                  "many": "000 مليون",
+                  "other": "000 مليون"
+                }
+              },
+              {
+                "magnitude": "1000000000",
+                "forms": {
+                  "zero": "0 مليار",
+                  "one": "0 مليار",
+                  "two": "0 مليار",
+                  "few": "0 مليار",
+                  "many": "0 مليار",
+                  "other": "0 مليار"
+                }
+              },
+              {
+                "magnitude": "10000000000",
+                "forms": {
+                  "zero": "00 مليار",
+                  "one": "00 مليار",
+                  "two": "00 مليار",
+                  "few": "00 مليار",
+                  "many": "00 مليار",
+                  "other": "00 مليار"
+                }
+              },
+              {
+                "magnitude": "100000000000",
+                "forms": {
+                  "zero": "000 مليار",
+                  "one": "000 مليار",
+                  "two": "000 مليار",
+                  "few": "000 مليار",
+                  "many": "000 مليار",
+                  "other": "000 مليار"
+                }
+              },
+              {
+                "magnitude": "1000000000000",
+                "forms": {
+                  "zero": "0 ترليون",
+                  "one": "0 ترليون",
+                  "two": "0 ترليون",
+                  "few": "0 ترليون",
+                  "many": "0 ترليون",
+                  "other": "0 ترليون"
+                }
+              },
+              {
+                "magnitude": "10000000000000",
+                "forms": {
+                  "zero": "00 ترليون",
+                  "one": "00 ترليون",
+                  "two": "00 ترليون",
+                  "few": "00 ترليون",
+                  "many": "00 ترليون",
+                  "other": "00 ترليون"
+                }
+              },
+              {
+                "magnitude": "100000000000000",
+                "forms": {
+                  "zero": "000 ترليون",
+                  "one": "000 ترليون",
+                  "two": "000 ترليون",
+                  "few": "000 ترليون",
+                  "many": "000 ترليون",
+                  "other": "000 ترليون"
+                }
+              }
+            ],
+            "compactShort": [
+              {
+                "magnitude": "1000",
+                "forms": {
+                  "zero": "0\u00a0ألف",
+                  "one": "0\u00a0ألف",
+                  "two": "0\u00a0ألف",
+                  "few": "0\u00a0آلاف",
+                  "many": "0\u00a0ألف",
+                  "other": "0\u00a0ألف"
+                }
+              },
+              {
+                "magnitude": "10000",
+                "forms": {
+                  "zero": "00\u00a0ألف",
+                  "one": "00\u00a0ألف",
+                  "two": "00\u00a0ألف",
+                  "few": "00\u00a0ألف",
+                  "many": "00\u00a0ألف",
+                  "other": "00\u00a0ألف"
+                }
+              },
+              {
+                "magnitude": "100000",
+                "forms": {
+                  "zero": "000\u00a0ألف",
+                  "one": "000\u00a0ألف",
+                  "two": "000\u00a0ألف",
+                  "few": "000\u00a0ألف",
+                  "many": "000\u00a0ألف",
+                  "other": "000\u00a0ألف"
+                }
+              },
+              {
+                "magnitude": "1000000",
+                "forms": {
+                  "zero": "0\u00a0مليون",
+                  "one": "0\u00a0مليون",
+                  "two": "0\u00a0مليون",
+                  "few": "0\u00a0مليون",
+                  "many": "0\u00a0مليون",
+                  "other": "0\u00a0مليون"
+                }
+              },
+              {
+                "magnitude": "10000000",
+                "forms": {
+                  "zero": "00\u00a0مليون",
+                  "one": "00\u00a0مليون",
+                  "two": "00\u00a0مليون",
+                  "few": "00\u00a0مليون",
+                  "many": "00\u00a0مليون",
+                  "other": "00\u00a0مليون"
+                }
+              },
+              {
+                "magnitude": "100000000",
+                "forms": {
+                  "zero": "000\u00a0مليون",
+                  "one": "000\u00a0مليون",
+                  "two": "000\u00a0مليون",
+                  "few": "000\u00a0مليون",
+                  "many": "000\u00a0مليون",
+                  "other": "000\u00a0مليون"
+                }
+              },
+              {
+                "magnitude": "1000000000",
+                "forms": {
+                  "zero": "0\u00a0مليار",
+                  "one": "0\u00a0مليار",
+                  "two": "0\u00a0مليار",
+                  "few": "0\u00a0مليار",
+                  "many": "0\u00a0مليار",
+                  "other": "0\u00a0مليار"
+                }
+              },
+              {
+                "magnitude": "10000000000",
+                "forms": {
+                  "zero": "00\u00a0مليار",
+                  "one": "00\u00a0مليار",
+                  "two": "00\u00a0مليار",
+                  "few": "00\u00a0مليار",
+                  "many": "00\u00a0مليار",
+                  "other": "00\u00a0مليار"
+                }
+              },
+              {
+                "magnitude": "100000000000",
+                "forms": {
+                  "zero": "000\u00a0مليار",
+                  "one": "000\u00a0مليار",
+                  "two": "000\u00a0مليار",
+                  "few": "000\u00a0مليار",
+                  "many": "000\u00a0مليار",
+                  "other": "000\u00a0مليار"
+                }
+              },
+              {
+                "magnitude": "1000000000000",
+                "forms": {
+                  "zero": "0\u00a0ترليون",
+                  "one": "0\u00a0ترليون",
+                  "two": "0\u00a0ترليون",
+                  "few": "0\u00a0ترليون",
+                  "many": "0\u00a0ترليون",
+                  "other": "0\u00a0ترليون"
+                }
+              },
+              {
+                "magnitude": "10000000000000",
+                "forms": {
+                  "zero": "00\u00a0ترليون",
+                  "one": "00\u00a0ترليون",
+                  "two": "00\u00a0ترليون",
+                  "few": "00\u00a0ترليون",
+                  "many": "00\u00a0ترليون",
+                  "other": "00\u00a0ترليون"
+                }
+              },
+              {
+                "magnitude": "100000000000000",
+                "forms": {
+                  "zero": "000\u00a0ترليون",
+                  "one": "000\u00a0ترليون",
+                  "two": "000\u00a0ترليون",
+                  "few": "000\u00a0ترليون",
+                  "many": "000\u00a0ترليون",
+                  "other": "000\u00a0ترليون"
+                }
+              }
+            ]
+          },
+          "percent": {
+            "standard": "#,##0%"
+          },
+          "scientific": {
+            "standard": "#E0"
+          },
+          "currency": {
+            "patterns": {
+              "standard": "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
+              "standard-alphaNextToNumber": "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
+              "standard-noCurrency": "\u200f#,##0.00;\u200f-#,##0.00",
+              "accounting": "\u061c#,##0.00¤;(\u061c#,##0.00¤)",
+              "accounting-alphaNextToNumber": "\u061c#,##0.00\u00a0¤;(\u061c#,##0.00\u00a0¤)",
+              "accounting-noCurrency": "\u061c#,##0.00;(\u061c#,##0.00)",
+              "currencyPatternAppendISO": "{0} ¤¤"
+            },
+            "unitPattern": {
+              "other": "{0} {1}"
+            },
+            "spacing": {
+              "beforeCurrency": {
+                "currencyMatch": "[[:^S:]&[:^Z:]]",
+                "surroundingMatch": "[:digit:]",
+                "insertBetween": "\u00a0"
+              },
+              "afterCurrency": {
+                "currencyMatch": "[[:^S:]&[:^Z:]]",
+                "surroundingMatch": "[:digit:]",
+                "insertBetween": "\u00a0"
+              }
+            },
+            "compactShort": [
+              {
+                "magnitude": "1000",
+                "forms": {
+                  "zero": "\u200f0\u00a0ألف\u00a0¤",
+                  "one": "\u200f0\u00a0ألف\u00a0¤",
+                  "two": "\u200f0\u00a0ألف\u00a0¤",
+                  "few": "\u200f0\u00a0آلاف\u00a0¤",
+                  "many": "\u200f0\u00a0ألف\u00a0¤",
+                  "other": "\u200f0\u00a0ألف\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "10000",
+                "forms": {
+                  "zero": "\u200f00\u00a0ألف\u00a0¤",
+                  "one": "\u200f00\u00a0ألف\u00a0¤",
+                  "two": "\u200f00\u00a0ألف\u00a0¤",
+                  "few": "\u200f00\u00a0ألف\u00a0¤",
+                  "many": "\u200f00\u00a0ألف\u00a0¤",
+                  "other": "\u200f00\u00a0ألف\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "100000",
+                "forms": {
+                  "zero": "\u200f000\u00a0ألف\u00a0¤",
+                  "one": "\u200f000\u00a0ألف\u00a0¤",
+                  "two": "\u200f000\u00a0ألف\u00a0¤",
+                  "few": "\u200f000\u00a0ألف\u00a0¤",
+                  "many": "\u200f000\u00a0ألف\u00a0¤",
+                  "other": "\u200f000\u00a0ألف\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "1000000",
+                "forms": {
+                  "zero": "\u200f0\u00a0مليون\u00a0¤",
+                  "one": "\u200f0\u00a0مليون\u00a0¤",
+                  "two": "\u200f0\u00a0مليون\u00a0¤",
+                  "few": "\u200f0\u00a0مليون\u00a0¤",
+                  "many": "\u200f0\u00a0مليون\u00a0¤",
+                  "other": "\u200f0\u00a0مليون\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "10000000",
+                "forms": {
+                  "zero": "\u200f00\u00a0مليون\u00a0¤",
+                  "one": "\u200f00\u00a0مليون\u00a0¤",
+                  "two": "\u200f00\u00a0مليون\u00a0¤",
+                  "few": "\u200f00\u00a0مليون\u00a0¤",
+                  "many": "\u200f00\u00a0مليون\u00a0¤",
+                  "other": "\u200f00\u00a0مليون\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "100000000",
+                "forms": {
+                  "zero": "\u200f000\u00a0مليون\u00a0¤",
+                  "one": "\u200f000\u00a0مليون\u00a0¤",
+                  "two": "\u200f000\u00a0مليون\u00a0¤",
+                  "few": "\u200f000\u00a0مليون\u00a0¤",
+                  "many": "\u200f000\u00a0مليون\u00a0¤",
+                  "other": "\u200f000\u00a0مليون\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "1000000000",
+                "forms": {
+                  "zero": "\u200f0\u00a0مليار\u00a0¤",
+                  "one": "\u200f0\u00a0مليار\u00a0¤",
+                  "two": "\u200f0\u00a0مليار\u00a0¤",
+                  "few": "\u200f0\u00a0مليار\u00a0¤",
+                  "many": "\u200f0\u00a0مليار\u00a0¤",
+                  "other": "\u200f0\u00a0مليار\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "10000000000",
+                "forms": {
+                  "zero": "\u200f00\u00a0مليار\u00a0¤",
+                  "one": "\u200f00\u00a0مليار\u00a0¤",
+                  "two": "\u200f00\u00a0مليار\u00a0¤",
+                  "few": "\u200f00\u00a0مليار\u00a0¤",
+                  "many": "\u200f00\u00a0مليار\u00a0¤",
+                  "other": "\u200f00\u00a0مليار\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "100000000000",
+                "forms": {
+                  "zero": "\u200f000\u00a0مليار\u00a0¤",
+                  "one": "\u200f000\u00a0مليار\u00a0¤",
+                  "two": "\u200f000\u00a0مليار\u00a0¤",
+                  "few": "\u200f000\u00a0مليار\u00a0¤",
+                  "many": "\u200f000\u00a0مليار\u00a0¤",
+                  "other": "\u200f000\u00a0مليار\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "1000000000000",
+                "forms": {
+                  "zero": "\u200f0\u00a0ترليون\u00a0¤",
+                  "one": "\u200f0\u00a0ترليون\u00a0¤",
+                  "two": "\u200f0\u00a0ترليون\u00a0¤",
+                  "few": "\u200f0\u00a0ترليون\u00a0¤",
+                  "many": "\u200f0\u00a0ترليون\u00a0¤",
+                  "other": "\u200f0\u00a0ترليون\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "10000000000000",
+                "forms": {
+                  "zero": "\u200f00\u00a0ترليون\u00a0¤",
+                  "one": "\u200f00\u00a0ترليون\u00a0¤",
+                  "two": "\u200f00\u00a0ترليون\u00a0¤",
+                  "few": "\u200f00\u00a0ترليون\u00a0¤",
+                  "many": "\u200f00\u00a0ترليون\u00a0¤",
+                  "other": "\u200f00\u00a0ترليون\u00a0¤"
+                }
+              },
+              {
+                "magnitude": "100000000000000",
+                "forms": {
+                  "zero": "\u200f000\u00a0ترليون\u00a0¤",
+                  "one": "\u200f000\u00a0ترليون\u00a0¤",
+                  "two": "\u200f000\u00a0ترليون\u00a0¤",
+                  "few": "\u200f000\u00a0ترليون\u00a0¤",
+                  "many": "\u200f000\u00a0ترليون\u00a0¤",
+                  "other": "\u200f000\u00a0ترليون\u00a0¤"
+                }
+              }
+            ]
+          },
+          "misc": {
+            "approximately": "~{0}",
+            "atLeast": "+{0}",
+            "atMost": "≤{0}",
+            "range": "{0}–{1}"
+          },
+          "rational": {
+            "rationalPattern": "{0}⁄{1}",
+            "integerAndRationalPattern": "{0}\u202f{1}",
+            "integerAndRationalPattern-alt-superSub": "{1}\u202f{0}\u2060",
+            "rationalUsage": "sometimes"
+          }
+        }
+      }
+    }
+  }
+}

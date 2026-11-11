@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "language.schema.json",
   "title": "Language data",
-  "description": "One dataset of language knowledge (plurals, spell-out, month names, characters …). File: data/language/<lang>/<dataset>[.<scope>].json. The layer owner tightens `content` per dataset with oneOf.",
+  "description": "One dataset of language knowledge (plurals, spell-out, month names, characters …). File: data/language/<lang>/<dataset>[.<scope>].json, where <scope> is the first locale of data.scope. `content` is tightened per dataset by the allOf/if/then list under data.",
   "type": "object",
   "required": [
     "kind",
@@ -54,6 +54,8 @@
             "characters",
             "collation",
             "number-patterns",
+            "quarters",
+            "delimiters",
             "honorifics",
             "other"
           ]
@@ -75,7 +77,886 @@
         "dataset",
         "content"
       ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "plural-rules"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "type",
+                  "categories",
+                  "ranges"
+                ],
+                "properties": {
+                  "type": {
+                    "const": "cardinal"
+                  },
+                  "categories": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/$defs/pluralCategory"
+                    }
+                  },
+                  "ranges": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "start",
+                        "end",
+                        "result"
+                      ]
+                    }
+                  },
+                  "minimalPairs": {
+                    "$ref": "#/$defs/pluralForms"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "ordinal-rules"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "type",
+                  "categories"
+                ],
+                "properties": {
+                  "type": {
+                    "const": "ordinal"
+                  },
+                  "categories": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/$defs/pluralCategory"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "spellout"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "format",
+                  "ruleSetGroups",
+                  "publicRuleSets",
+                  "useFor",
+                  "checks",
+                  "gaps"
+                ],
+                "properties": {
+                  "ruleSetGroups": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "group",
+                        "file",
+                        "ruleSets"
+                      ],
+                      "properties": {
+                        "ruleSets": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "name",
+                              "private",
+                              "rules"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "pattern": "^%%?[a-z0-9-]+$"
+                              },
+                              "private": {
+                                "type": "boolean"
+                              },
+                              "rules": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "required": [
+                                    "descriptor",
+                                    "kind",
+                                    "body",
+                                    "tokens"
+                                  ],
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "descriptor": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "kind": {
+                                      "enum": [
+                                        "base",
+                                        "negative",
+                                        "fraction"
+                                      ]
+                                    },
+                                    "baseValue": {
+                                      "type": "string",
+                                      "pattern": "^[0-9]+$"
+                                    },
+                                    "radix": {
+                                      "type": "integer",
+                                      "minimum": 2
+                                    },
+                                    "divisor": {
+                                      "type": "string",
+                                      "pattern": "^[0-9]+$"
+                                    },
+                                    "body": {
+                                      "type": "string"
+                                    },
+                                    "tokens": {
+                                      "type": "array",
+                                      "items": {
+                                        "$ref": "#/$defs/rbnfToken"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gaps": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "need",
+                        "status"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "need": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "status": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "numbering-systems"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "systems",
+                  "defaults",
+                  "symbols"
+                ],
+                "properties": {
+                  "systems": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "type",
+                        "digits",
+                        "digitCodePoints"
+                      ],
+                      "properties": {
+                        "digits": {
+                          "type": "array",
+                          "minItems": 10,
+                          "maxItems": 10,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "defaults": {
+                    "$ref": "#/$defs/localeGroups"
+                  },
+                  "symbols": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "$ref": "#/$defs/localeGroups"
+                    }
+                  },
+                  "symbolsNotProvided": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "number-patterns"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "minimumGroupingDigits",
+                  "numberingSystems"
+                ],
+                "properties": {
+                  "numberingSystems": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {
+                      "type": "object",
+                      "required": [
+                        "decimal",
+                        "percent",
+                        "scientific",
+                        "currency",
+                        "misc"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "gregorian-months"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "calendar",
+                  "months"
+                ],
+                "properties": {
+                  "calendar": {
+                    "const": "gregory"
+                  },
+                  "months": {
+                    "$ref": "#/$defs/widthContexts"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "weekdays"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "keys",
+                  "days"
+                ],
+                "properties": {
+                  "days": {
+                    "$ref": "#/$defs/widthContexts"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "quarters"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "quarters"
+                ],
+                "properties": {
+                  "quarters": {
+                    "$ref": "#/$defs/widthContexts"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "day-periods"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "rules",
+                  "names"
+                ],
+                "properties": {
+                  "rules": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "period",
+                        "from",
+                        "before"
+                      ]
+                    }
+                  },
+                  "names": {
+                    "$ref": "#/$defs/widthContexts"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "date-patterns"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "calendar",
+                  "dateFormats",
+                  "dateSkeletons",
+                  "timeFormats",
+                  "timeSkeletons",
+                  "dateTimeFormats",
+                  "availableFormats",
+                  "intervalFormats"
+                ],
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "relative-time"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "fields"
+                ],
+                "properties": {
+                  "fields": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "required": [
+                        "long"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "list-patterns"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "patterns"
+                ],
+                "properties": {
+                  "patterns": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "required": [
+                        "two",
+                        "start",
+                        "middle",
+                        "end"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "units"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "categories",
+                  "widths",
+                  "durationPatterns"
+                ],
+                "properties": {
+                  "widths": {
+                    "type": "object",
+                    "required": [
+                      "long",
+                      "short",
+                      "narrow"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "delimiters"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "quotation",
+                  "orientation"
+                ],
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "characters"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "unicodeVersion",
+                  "classes",
+                  "blocks"
+                ],
+                "properties": {
+                  "classes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "selector",
+                        "count",
+                        "members"
+                      ],
+                      "properties": {
+                        "members": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/$defs/characterMember"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "blocks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "name",
+                        "start",
+                        "end",
+                        "size",
+                        "assigned"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dataset": {
+                "const": "collation"
+              }
+            },
+            "required": [
+              "dataset"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": [
+                  "cldr"
+                ],
+                "properties": {
+                  "cldr": {
+                    "type": "object",
+                    "required": [
+                      "types",
+                      "defaultType"
+                    ]
+                  },
+                  "intlProbe": {
+                    "type": "object",
+                    "required": [
+                      "runtime"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "pluralForms": {
+      "type": "object",
+      "propertyNames": {
+        "enum": [
+          "zero",
+          "one",
+          "two",
+          "few",
+          "many",
+          "other"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "pluralCategory": {
+      "type": "object",
+      "required": [
+        "category",
+        "condition"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "zero",
+            "one",
+            "two",
+            "few",
+            "many",
+            "other"
+          ]
+        },
+        "condition": {
+          "type": "string"
+        },
+        "integerSamples": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "decimalSamples": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "integerSamplesOpenEnded": {
+          "type": "boolean"
+        },
+        "decimalSamplesOpenEnded": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rbnfToken": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "text",
+            "quotient",
+            "remainder",
+            "same",
+            "optional"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "ruleSet": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decimalFormat": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rbnfToken"
+          }
+        }
+      },
       "additionalProperties": false
+    },
+    "characterMember": {
+      "type": "object",
+      "required": [
+        "codePoint",
+        "char",
+        "name",
+        "generalCategory",
+        "bidiClass"
+      ],
+      "properties": {
+        "codePoint": {
+          "type": "string",
+          "pattern": "^U\\+[0-9A-F]{4,6}$"
+        },
+        "char": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generalCategory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bidiClass": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "widthContexts": {
+      "type": "object",
+      "required": [
+        "format",
+        "standAlone"
+      ],
+      "properties": {
+        "format": {
+          "type": "object",
+          "required": [
+            "wide",
+            "abbreviated",
+            "narrow"
+          ]
+        },
+        "standAlone": {
+          "type": "object",
+          "required": [
+            "wide",
+            "abbreviated",
+            "narrow"
+          ]
+        }
+      }
+    },
+    "localeGroups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "locales"
+        ],
+        "properties": {
+          "locales": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
     }
   }
 }

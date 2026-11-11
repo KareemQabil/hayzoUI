@@ -1,0 +1,60 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/delimiters",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-misc-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-misc-full/main/ar*/delimiters.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-misc-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-misc-full/main/ar*/layout.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-misc-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-misc-full/main/ar*/characters.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "delimiters",
+    "content": {
+      "quotation": {
+        "quotationStart": "”",
+        "quotationEnd": "“",
+        "alternateQuotationStart": "’",
+        "alternateQuotationEnd": "‘"
+      },
+      "orientation": {
+        "characterOrder": "right-to-left",
+        "lineOrder": "top-to-bottom"
+      },
+      "ellipsis": {
+        "final": "{0}…",
+        "initial": "…{0}",
+        "medial": "{0}…{1}",
+        "word-final": "{0} …",
+        "word-initial": "… {0}",
+        "word-medial": "{0} … {1}"
+      }
+    }
+  }
+}

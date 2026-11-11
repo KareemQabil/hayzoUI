@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "calendar.schema.json",
   "title": "Calendar system",
-  "description": "One calendar: months, eras, how to convert, where it is official. File: data/calendar/<id>.json.",
+  "description": "One calendar: months, eras, how to convert, where it is preferred. File: data/calendar/<id>.json. Month-length tables: data/calendar/tables/<id>.json.",
   "type": "object",
   "required": [
     "kind",
@@ -31,6 +31,23 @@
       "$ref": "common.schema.json#/$defs/provenance"
     },
     "data": {
+      "type": "object",
+      "description": "A calendar system, or (when `tableOf` is present) a month-length table referenced from a system's conversion.table.",
+      "if": {
+        "required": [
+          "tableOf"
+        ]
+      },
+      "then": {
+        "$ref": "#/$defs/monthLengthTable"
+      },
+      "else": {
+        "$ref": "#/$defs/calendarSystem"
+      }
+    }
+  },
+  "$defs": {
+    "calendarSystem": {
       "type": "object",
       "properties": {
         "id": {
@@ -100,6 +117,21 @@
               },
               "abbreviation": {
                 "$ref": "common.schema.json#/$defs/localized"
+              },
+              "cldrIndex": {
+                "type": "integer"
+              },
+              "start": {
+                "type": "string",
+                "pattern": "^-?\\d{1,6}-\\d{2}-\\d{2}$"
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^-?\\d{1,6}-\\d{2}-\\d{2}$"
+              },
+              "arabicNameIsUntranslated": {
+                "type": "boolean",
+                "description": "CLDR has no Arabic value; the ar text is the inherited root/Latin string."
               }
             },
             "required": [
@@ -130,6 +162,14 @@
                 "type": "string",
                 "minLength": 1
               }
+            },
+            "probe": {
+              "type": "object",
+              "description": "What the runtime that ran the extractor does; runtime versions inside.",
+              "required": [
+                "runtime",
+                "resolvedCalendar"
+              ]
             }
           },
           "required": [
@@ -152,6 +192,10 @@
               "description": "Repo-relative path of a data table, when conversion is tabular.",
               "type": "string",
               "minLength": 1
+            },
+            "epochJulianDay": {
+              "type": "integer",
+              "description": "Julian day number of day 1 of year 1 (ICU epoch constant)."
             }
           },
           "required": [
@@ -169,6 +213,102 @@
         "notes": {
           "type": "string",
           "minLength": 1
+        },
+        "cldrId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Key of the calendar in CLDR data files (gregorian for gregory)."
+        },
+        "cldrCalendarSystem": {
+          "type": "string",
+          "minLength": 1,
+          "description": "calendarSystem in CLDR supplemental calendarData, verbatim."
+        },
+        "bcp47Description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "preferredIn": {
+          "description": "Arab League regions whose CLDR calendarPreferenceData list includes this calendar, with its 1-based rank in that list. source world-default: the region has no entry of its own and inherits 001.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "region",
+              "rank",
+              "of",
+              "source"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "region": {
+                "type": "string",
+                "pattern": "^[A-Z]{2}$"
+              },
+              "rank": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "of": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "source": {
+                "enum": [
+                  "explicit",
+                  "world-default"
+                ]
+              }
+            }
+          }
+        },
+        "dateFormats": {
+          "description": "CLDR date format patterns of this calendar per locale.",
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "verification": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "runtime",
+              "against",
+              "daysCompared",
+              "mismatchCount",
+              "mismatches"
+            ],
+            "properties": {
+              "runtime": {
+                "type": "object"
+              },
+              "against": {
+                "type": "string",
+                "minLength": 1
+              },
+              "from": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to": {
+                "type": "string",
+                "minLength": 1
+              },
+              "daysCompared": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "mismatchCount": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mismatches": {
+                "type": "array"
+              }
+            }
+          }
         }
       },
       "required": [
@@ -178,6 +318,147 @@
         "months"
       ],
       "additionalProperties": false
+    },
+    "monthLengthTable": {
+      "type": "object",
+      "required": [
+        "tableOf",
+        "firstYear",
+        "lastYear",
+        "epochJulianDay",
+        "encoding",
+        "years"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tableOf": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Calendar id this month-length table belongs to."
+        },
+        "firstYear": {
+          "type": "integer"
+        },
+        "lastYear": {
+          "type": "integer"
+        },
+        "epochJulianDay": {
+          "type": "integer"
+        },
+        "unixEpochJulianDay": {
+          "type": "integer"
+        },
+        "gregorianRange": {
+          "type": "object",
+          "required": [
+            "from",
+            "to"
+          ],
+          "properties": {
+            "from": {
+              "type": "string",
+              "pattern": "^-?\\d{1,6}-\\d{2}-\\d{2}$"
+            },
+            "to": {
+              "type": "string",
+              "pattern": "^-?\\d{1,6}-\\d{2}-\\d{2}$"
+            }
+          }
+        },
+        "encoding": {
+          "type": "object"
+        },
+        "totals": {
+          "type": "object"
+        },
+        "years": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "year",
+              "monthLengths",
+              "days",
+              "startDay",
+              "gregorianStart"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "year": {
+                "type": "integer"
+              },
+              "mask": {
+                "type": "string",
+                "pattern": "^0x[0-9A-F]{4}$"
+              },
+              "monthLengths": {
+                "type": "string",
+                "pattern": "^(29|30)( (29|30)){11}$"
+              },
+              "days": {
+                "enum": [
+                  353,
+                  354,
+                  355,
+                  356
+                ]
+              },
+              "startDay": {
+                "type": "integer"
+              },
+              "gregorianStart": {
+                "type": "string",
+                "pattern": "^-?\\d{1,6}-\\d{2}-\\d{2}$"
+              }
+            }
+          }
+        },
+        "crossChecks": {
+          "type": "object"
+        },
+        "verification": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "runtime",
+              "against",
+              "daysCompared",
+              "mismatchCount",
+              "mismatches"
+            ],
+            "properties": {
+              "runtime": {
+                "type": "object"
+              },
+              "against": {
+                "type": "string",
+                "minLength": 1
+              },
+              "from": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to": {
+                "type": "string",
+                "minLength": 1
+              },
+              "daysCompared": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "mismatchCount": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mismatches": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

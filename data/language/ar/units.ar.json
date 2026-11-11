@@ -1,0 +1,2534 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/units.ar",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-units-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-units-full/main/ar*/units.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "units",
+    "scope": [
+      "ar",
+      "ar-AE",
+      "ar-BH",
+      "ar-DJ",
+      "ar-DZ",
+      "ar-EG",
+      "ar-EH",
+      "ar-ER",
+      "ar-IL",
+      "ar-IQ",
+      "ar-JO",
+      "ar-KM",
+      "ar-KW",
+      "ar-LB",
+      "ar-LY",
+      "ar-MA",
+      "ar-MR",
+      "ar-OM",
+      "ar-PS",
+      "ar-QA",
+      "ar-SD",
+      "ar-SO",
+      "ar-SS",
+      "ar-SY",
+      "ar-TD",
+      "ar-TN",
+      "ar-YE"
+    ],
+    "content": {
+      "categories": [
+        "duration",
+        "length",
+        "mass",
+        "digital",
+        "percent"
+      ],
+      "widths": {
+        "long": {
+          "units": {
+            "concentr-percent": {
+              "gender": "feminine",
+              "displayName": "بالمائة",
+              "forms": {
+                "zero": "{0}٪",
+                "one": "{0} بالمائة",
+                "two": "{0}٪",
+                "few": "{0}٪",
+                "many": "{0}٪",
+                "other": "{0} بالمائة"
+              }
+            },
+            "concentr-permille": {
+              "gender": "masculine",
+              "displayName": "في الألف",
+              "forms": {
+                "zero": "{0} في الألف",
+                "one": "{0} في الألف",
+                "two": "{0} في الألف",
+                "few": "{0} في الألف",
+                "many": "{0} في الألف",
+                "other": "{0} في الألف"
+              }
+            },
+            "digital-petabyte": {
+              "gender": "masculine",
+              "displayName": "بيتابايت",
+              "forms": {
+                "zero": "{0} بيتابايت",
+                "one": "{0} بيتابايت",
+                "two": "{0} بيتابايت",
+                "few": "{0} بيتابايت",
+                "many": "{0} بيتابايت",
+                "other": "{0} بيتابايت"
+              }
+            },
+            "digital-terabyte": {
+              "gender": "masculine",
+              "displayName": "تيرابايت",
+              "forms": {
+                "zero": "{0} تيرابايت",
+                "one": "{0} تيرابايت",
+                "two": "{0} تيرابايت",
+                "few": "{0} تيرابايت",
+                "many": "{0} تيرابايت",
+                "other": "{0} تيرابايت"
+              }
+            },
+            "digital-terabit": {
+              "gender": "masculine",
+              "displayName": "تيرابت",
+              "forms": {
+                "zero": "{0} تيرابت",
+                "one": "{0} تيرابت",
+                "two": "{0} تيرابت",
+                "few": "{0} تيرابت",
+                "many": "{0} تيرابت",
+                "other": "{0} تيرابت"
+              }
+            },
+            "digital-gigabyte": {
+              "gender": "masculine",
+              "displayName": "غيغابايت",
+              "forms": {
+                "zero": "{0} غيغابايت",
+                "one": "{0} غيغابايت",
+                "two": "{0} غيغابايت",
+                "few": "{0} غيغابايت",
+                "many": "{0} غيغابايت",
+                "other": "{0} غيغابايت"
+              }
+            },
+            "digital-gigabit": {
+              "gender": "masculine",
+              "displayName": "غيغابت",
+              "forms": {
+                "zero": "{0} غيغابت",
+                "one": "{0} غيغابت",
+                "two": "{0} غيغابت",
+                "few": "{0} غيغابت",
+                "many": "{0} غيغابت",
+                "other": "{0} غيغابت"
+              }
+            },
+            "digital-megabyte": {
+              "gender": "masculine",
+              "displayName": "ميغابايت",
+              "forms": {
+                "zero": "{0} ميغابايت",
+                "one": "{0} ميغابايت",
+                "two": "{0} ميغابايت",
+                "few": "{0} ميغابايت",
+                "many": "{0} ميغابايت",
+                "other": "{0} ميغابايت"
+              }
+            },
+            "digital-megabit": {
+              "gender": "masculine",
+              "displayName": "ميغابت",
+              "forms": {
+                "zero": "{0} ميغابت",
+                "one": "{0} ميغابت",
+                "two": "{0} ميغابت",
+                "few": "{0} ميغابت",
+                "many": "{0} ميغابت",
+                "other": "{0} ميغابت"
+              }
+            },
+            "digital-kilobyte": {
+              "gender": "masculine",
+              "displayName": "كيلوبايت",
+              "forms": {
+                "zero": "{0} كيلوبايت",
+                "one": "{0} كيلوبايت",
+                "two": "{0} كيلوبايت",
+                "few": "{0} كيلوبايت",
+                "many": "{0} كيلوبايت",
+                "other": "{0} كيلوبايت"
+              }
+            },
+            "digital-kilobit": {
+              "gender": "masculine",
+              "displayName": "كيلوبت",
+              "forms": {
+                "zero": "{0} كيلوبت",
+                "one": "{0} كيلوبت",
+                "two": "{0} كيلوبت",
+                "few": "{0} كيلوبت",
+                "many": "{0} كيلوبت",
+                "other": "{0} كيلوبت"
+              }
+            },
+            "digital-byte": {
+              "gender": "masculine",
+              "displayName": "بايت",
+              "forms": {
+                "zero": "{0} بايت",
+                "one": "{0} بايت",
+                "two": "{0} بايت",
+                "few": "{0} بايت",
+                "many": "{0} بايت",
+                "other": "{0} بايت"
+              }
+            },
+            "digital-bit": {
+              "gender": "masculine",
+              "displayName": "بت",
+              "forms": {
+                "zero": "{0} بت",
+                "one": "{0} بت",
+                "two": "{0} بت",
+                "few": "{0} بت",
+                "many": "{0} بت",
+                "other": "{0} بت"
+              }
+            },
+            "duration-century": {
+              "gender": "masculine",
+              "displayName": "قرون",
+              "forms": {
+                "zero": "{0} قرن",
+                "one": "قرن",
+                "two": "قرنان",
+                "few": "{0} قرون",
+                "many": "{0} قرنًا",
+                "other": "{0} قرن"
+              }
+            },
+            "duration-decade": {
+              "gender": "masculine",
+              "displayName": "عقود",
+              "forms": {
+                "zero": "{0} عقد",
+                "one": "عقد",
+                "two": "عقدان",
+                "few": "{0} عقود",
+                "many": "{0} عقدًا",
+                "other": "{0} عقد"
+              }
+            },
+            "duration-year": {
+              "gender": "feminine",
+              "displayName": "سنوات",
+              "forms": {
+                "zero": "{0} سنة",
+                "one": "سنة",
+                "two": "سنتان",
+                "few": "{0} سنوات",
+                "many": "{0} سنة",
+                "other": "{0} سنة"
+              },
+              "perUnitPattern": "{0} في السنة"
+            },
+            "duration-quarter": {
+              "gender": "masculine",
+              "displayName": "أرباع",
+              "forms": {
+                "zero": "{0} ربع سنوي",
+                "one": "ربع سنوي",
+                "two": "ربعان سنويان",
+                "few": "{0} أرباع سنوية",
+                "many": "{0} ربعًا سنويًا",
+                "other": "{0} ربع سنوي"
+              },
+              "perUnitPattern": "{0} في الربع السنوي"
+            },
+            "duration-month": {
+              "gender": "masculine",
+              "displayName": "شهور",
+              "forms": {
+                "zero": "{0} شهر",
+                "one": "شهر",
+                "two": "شهران",
+                "few": "{0} أشهر",
+                "many": "{0} شهرًا",
+                "other": "{0} شهر"
+              },
+              "perUnitPattern": "{0} في الشهر"
+            },
+            "duration-week": {
+              "gender": "masculine",
+              "displayName": "أسابيع",
+              "forms": {
+                "zero": "{0} أسبوع",
+                "one": "أسبوع",
+                "two": "أسبوعان",
+                "few": "{0} أسابيع",
+                "many": "{0} أسبوعًا",
+                "other": "{0} أسبوع"
+              },
+              "perUnitPattern": "{0} في الأسبوع"
+            },
+            "duration-day": {
+              "gender": "masculine",
+              "displayName": "أيام",
+              "forms": {
+                "zero": "{0} يوم",
+                "one": "يوم",
+                "two": "يومان",
+                "few": "{0} أيام",
+                "many": "{0} يومًا",
+                "other": "{0} يوم"
+              },
+              "perUnitPattern": "{0} في اليوم"
+            },
+            "duration-day-person": {
+              "gender": "masculine",
+              "forms": {}
+            },
+            "duration-hour": {
+              "gender": "feminine",
+              "displayName": "ساعات",
+              "forms": {
+                "zero": "{0} ساعة",
+                "one": "ساعة",
+                "two": "ساعتان",
+                "few": "{0} ساعات",
+                "many": "{0} ساعة",
+                "other": "{0} ساعة"
+              },
+              "perUnitPattern": "{0} في الساعة"
+            },
+            "duration-minute": {
+              "gender": "feminine",
+              "displayName": "دقيقة",
+              "forms": {
+                "zero": "{0} دقيقة",
+                "one": "دقيقة",
+                "two": "دقيقتان",
+                "few": "{0} دقائق",
+                "many": "{0} دقيقة",
+                "other": "{0} دقيقة"
+              },
+              "perUnitPattern": "{0} كل دقيقة"
+            },
+            "duration-second": {
+              "gender": "feminine",
+              "displayName": "ثانية",
+              "forms": {
+                "zero": "{0} ثانية",
+                "one": "ثانية",
+                "two": "ثانيتان",
+                "few": "{0} ثوان",
+                "many": "{0} ثانية",
+                "other": "{0} ثانية"
+              },
+              "perUnitPattern": "{0} في الثانية"
+            },
+            "duration-millisecond": {
+              "gender": "feminine",
+              "displayName": "ملي ثانية",
+              "forms": {
+                "zero": "{0} ملي ثانية",
+                "one": "{0} ملي ثانية",
+                "two": "{0} ملي ثانية",
+                "few": "{0} ملي ثانية",
+                "many": "{0} ملي ثانية",
+                "other": "{0} ملي ثانية"
+              }
+            },
+            "duration-microsecond": {
+              "gender": "feminine",
+              "displayName": "ميكروثانية",
+              "forms": {
+                "zero": "{0} ميكروثانية",
+                "one": "{0} ميكروثانية",
+                "two": "{0} ميكروثانية",
+                "few": "{0} ميكروثانية",
+                "many": "{0} ميكروثانية",
+                "other": "{0} ميكروثانية"
+              }
+            },
+            "duration-nanosecond": {
+              "gender": "feminine",
+              "displayName": "نانو ثانية",
+              "forms": {
+                "zero": "{0} نانو ثانية",
+                "one": "{0} نانو ثانية",
+                "two": "{0} نانو ثانية",
+                "few": "{0} نانو ثانية",
+                "many": "{0} نانو ثانية",
+                "other": "{0} نانو ثانية"
+              }
+            },
+            "length-earth-radius": {
+              "displayName": "نصف قطر أرضي",
+              "forms": {
+                "zero": "{0} نصف قطر أرضي",
+                "one": "{0} نصف قطر أرضي",
+                "two": "{0} نصف قطر أرضي",
+                "few": "{0} نصف قطر أرضي",
+                "many": "{0} نصف قطر أرضي",
+                "other": "{0} نصف قطر أرضي"
+              }
+            },
+            "length-kilometer": {
+              "gender": "masculine",
+              "displayName": "كيلومتر",
+              "forms": {
+                "zero": "{0} كيلومتر",
+                "one": "{0} كيلومتر",
+                "two": "{0} كيلومتر",
+                "few": "{0} كيلومترات",
+                "many": "{0} كيلومترًا",
+                "other": "{0} كيلومتر"
+              },
+              "perUnitPattern": "{0}/كيلومتر"
+            },
+            "length-meter": {
+              "gender": "masculine",
+              "displayName": "متر",
+              "forms": {
+                "zero": "{0} متر",
+                "one": "متر",
+                "two": "{0} متر",
+                "few": "{0} أمتار",
+                "many": "{0} مترًا",
+                "other": "{0} متر"
+              },
+              "perUnitPattern": "{0} لكل متر"
+            },
+            "length-decimeter": {
+              "gender": "masculine",
+              "displayName": "ديسيمتر",
+              "forms": {
+                "zero": "{0} ديسيمتر",
+                "one": "{0} ديسيمتر",
+                "two": "{0} ديسيمتر",
+                "few": "{0} ديسيمتر",
+                "many": "{0} ديسيمتر",
+                "other": "{0} ديسيمتر"
+              }
+            },
+            "length-centimeter": {
+              "gender": "masculine",
+              "displayName": "سنتيمتر",
+              "forms": {
+                "zero": "{0} سنتيمتر",
+                "one": "{0} سنتيمتر",
+                "two": "{0} سنتيمتر",
+                "few": "{0} سنتيمتر",
+                "many": "{0} سنتيمتر",
+                "other": "{0} سنتيمتر"
+              },
+              "perUnitPattern": "{0}/سنتيمتر"
+            },
+            "length-millimeter": {
+              "gender": "masculine",
+              "displayName": "مليمتر",
+              "forms": {
+                "zero": "{0} مليمتر",
+                "one": "{0} مليمتر",
+                "two": "{0} مليمتر",
+                "few": "{0} مليمتر",
+                "many": "{0} مليمتر",
+                "other": "{0} مليمتر"
+              }
+            },
+            "length-micrometer": {
+              "gender": "masculine",
+              "displayName": "ميكرومتر",
+              "forms": {
+                "zero": "{0} ميكرومتر",
+                "one": "{0} ميكرومتر",
+                "two": "{0} ميكرومتر",
+                "few": "{0} ميكرومتر",
+                "many": "{0} ميكرومتر",
+                "other": "{0} ميكرومتر"
+              }
+            },
+            "length-nanometer": {
+              "gender": "masculine",
+              "displayName": "نانو متر",
+              "forms": {
+                "zero": "{0} نانو متر",
+                "one": "{0} نانو متر",
+                "two": "{0} نانو متر",
+                "few": "{0} نانو متر",
+                "many": "{0} نانو متر",
+                "other": "{0} نانو متر"
+              }
+            },
+            "length-picometer": {
+              "gender": "masculine",
+              "displayName": "بيكومتر",
+              "forms": {
+                "zero": "{0} بيكومتر",
+                "one": "{0} بيكومتر",
+                "two": "{0} بيكومتر",
+                "few": "{0} بيكومتر",
+                "many": "{0} بيكومتر",
+                "other": "{0} بيكومتر"
+              }
+            },
+            "length-mile": {
+              "displayName": "ميل",
+              "forms": {
+                "zero": "{0} ميل",
+                "one": "ميل",
+                "two": "ميلان",
+                "few": "{0} أميال",
+                "many": "{0} ميلاً",
+                "other": "{0} ميل"
+              }
+            },
+            "length-yard": {
+              "displayName": "ياردة",
+              "forms": {
+                "zero": "{0} ياردة",
+                "one": "ياردة",
+                "two": "{0} ياردة",
+                "few": "{0} ياردة",
+                "many": "{0} ياردة",
+                "other": "{0} ياردة"
+              }
+            },
+            "length-foot": {
+              "displayName": "قدم",
+              "forms": {
+                "zero": "{0} قدم",
+                "one": "قدم",
+                "two": "{0} قدم",
+                "few": "{0} قدم",
+                "many": "{0} قدم",
+                "other": "{0} قدم"
+              },
+              "perUnitPattern": "{0} لكل قدم"
+            },
+            "length-inch": {
+              "displayName": "بوصة",
+              "forms": {
+                "zero": "{0} بوصة",
+                "one": "{0} بوصة",
+                "two": "{0} بوصة",
+                "few": "{0} بوصة",
+                "many": "{0} بوصة",
+                "other": "{0} بوصة"
+              },
+              "perUnitPattern": "{0}/بوصة"
+            },
+            "length-milliinch": {
+              "displayName": "milli-inch",
+              "forms": {
+                "other": "{0} milli-inch"
+              }
+            },
+            "length-parsec": {
+              "displayName": "فرسخ فلكي",
+              "forms": {
+                "zero": "{0} فرسخ فلكي",
+                "one": "فرسخ فلكي",
+                "two": "{0} فرسخ فلكي",
+                "few": "{0} فرسخ فلكي",
+                "many": "{0} فرسخ فلكي",
+                "other": "{0} فرسخ فلكي"
+              }
+            },
+            "length-light-year": {
+              "displayName": "سنة ضوئية",
+              "forms": {
+                "zero": "{0} سنة ضوئية",
+                "one": "سنة ضوئية",
+                "two": "سنتان ضوئيتان",
+                "few": "{0} سنوات ضوئية",
+                "many": "{0} سنة ضوئية",
+                "other": "{0} سنة ضوئية"
+              }
+            },
+            "length-astronomical-unit": {
+              "displayName": "وحدة فلكية",
+              "forms": {
+                "zero": "{0} وحدة فلكية",
+                "one": "وحدة فلكية",
+                "two": "{0} وحدة فلكية",
+                "few": "{0} وحدة فلكية",
+                "many": "{0} وحدة فلكية",
+                "other": "{0} وحدة فلكية"
+              }
+            },
+            "length-furlong": {
+              "displayName": "فرلنغ",
+              "forms": {
+                "zero": "{0} فرلنغ",
+                "one": "{0} فرلنغ",
+                "two": "{0} فرلنغ",
+                "few": "{0} فرلنغ",
+                "many": "{0} فرلنغ",
+                "other": "{0} فرلنغ"
+              }
+            },
+            "length-fathom": {
+              "displayName": "قامة",
+              "forms": {
+                "zero": "{0} قامة",
+                "one": "{0} قامة",
+                "two": "{0} قامة",
+                "few": "{0} قامة",
+                "many": "{0} قامة",
+                "other": "{0} قامة"
+              }
+            },
+            "length-nautical-mile": {
+              "displayName": "ميل بحري",
+              "forms": {
+                "zero": "{0} ميل بحري",
+                "one": "ميل بحري",
+                "two": "{0} ميل بحري",
+                "few": "{0} ميل بحري",
+                "many": "{0} ميل بحري",
+                "other": "{0} ميل بحري"
+              }
+            },
+            "length-mile-scandinavian": {
+              "gender": "masculine",
+              "displayName": "ميل اسكندنافي",
+              "forms": {
+                "zero": "{0} ميل اسكندنافي",
+                "one": "{0} ميل اسكندنافي",
+                "two": "{0} ميل اسكندنافي",
+                "few": "{0} ميل اسكندنافي",
+                "many": "{0} ميل اسكندنافي",
+                "other": "{0} ميل اسكندنافي"
+              }
+            },
+            "length-point": {
+              "gender": "feminine",
+              "displayName": "نقطة",
+              "forms": {
+                "zero": "{0} نقطة",
+                "one": "نقطة",
+                "two": "نقطتان",
+                "few": "{0} نقاط",
+                "many": "{0} نقطة",
+                "other": "{0} نقطة"
+              }
+            },
+            "length-solar-radius": {
+              "displayName": "نصف قطر شمسي",
+              "forms": {
+                "zero": "{0} نصف قطر شمسي",
+                "one": "{0} نصف قطر شمسي",
+                "two": "{0} نصف قطر شمسي",
+                "few": "{0} نصف قطر شمسي",
+                "many": "{0} نصف قطر شمسي",
+                "other": "{0} نصف قطر شمسي"
+              }
+            },
+            "mass-tonne": {
+              "gender": "masculine",
+              "displayName": "طن متري",
+              "forms": {
+                "zero": "{0} طن متري",
+                "one": "{0} طن متري",
+                "two": "{0} طن متري",
+                "few": "{0} طن متري",
+                "many": "{0} طن متري",
+                "other": "{0} طن متري"
+              }
+            },
+            "mass-kilogram": {
+              "gender": "masculine",
+              "displayName": "كيلوغرام",
+              "forms": {
+                "zero": "{0} كيلوغرام",
+                "one": "{0} كيلوغرام",
+                "two": "{0} كيلوغرام",
+                "few": "{0} كيلوغرام",
+                "many": "{0} كيلوغرام",
+                "other": "{0} كيلوغرام"
+              },
+              "perUnitPattern": "{0}/كيلوغرام"
+            },
+            "mass-gram": {
+              "gender": "masculine",
+              "displayName": "غرام",
+              "forms": {
+                "zero": "{0} غرام",
+                "one": "غرام",
+                "two": "غرامان",
+                "few": "{0} غرامات",
+                "many": "{0} غرامًا",
+                "other": "{0} غرام"
+              },
+              "perUnitPattern": "{0}/غرام"
+            },
+            "mass-milligram": {
+              "gender": "masculine",
+              "displayName": "مليغرام",
+              "forms": {
+                "zero": "{0} مليغرام",
+                "one": "{0} مليغرام",
+                "two": "{0} مليغرام",
+                "few": "{0} مليغرام",
+                "many": "{0} مليغرام",
+                "other": "{0} مليغرام"
+              }
+            },
+            "mass-microgram": {
+              "gender": "masculine",
+              "displayName": "ميكروغرام",
+              "forms": {
+                "zero": "{0} ميكروغرام",
+                "one": "{0} ميكروغرام",
+                "two": "{0} ميكروغرام",
+                "few": "{0} ميكروغرام",
+                "many": "{0} ميكروغرام",
+                "other": "{0} ميكروغرام"
+              }
+            },
+            "mass-ton": {
+              "displayName": "طن",
+              "forms": {
+                "zero": "{0} طن",
+                "one": "{0} طن",
+                "two": "طنان",
+                "few": "{0} أطنان",
+                "many": "{0} طنًا",
+                "other": "{0} طن"
+              }
+            },
+            "mass-stone": {
+              "displayName": "ستون",
+              "forms": {
+                "zero": "{0} ستون",
+                "one": "{0} ستون",
+                "two": "{0} ستون",
+                "few": "{0} ستون",
+                "many": "{0} ستون",
+                "other": "{0} ستون"
+              }
+            },
+            "mass-pound": {
+              "displayName": "رطل",
+              "forms": {
+                "zero": "{0} رطل",
+                "one": "{0} رطل",
+                "two": "رطلان",
+                "few": "{0} رطل",
+                "many": "{0} رطلًا",
+                "other": "{0} رطل"
+              },
+              "perUnitPattern": "{0}/رطل"
+            },
+            "mass-ounce": {
+              "displayName": "أونصة",
+              "forms": {
+                "zero": "{0} أونصة",
+                "one": "{0} أونصة",
+                "two": "{0} أونصة",
+                "few": "{0} أونصة",
+                "many": "{0} أونصة",
+                "other": "{0} أونصة"
+              },
+              "perUnitPattern": "{0}/أونصة"
+            },
+            "mass-ounce-troy": {
+              "displayName": "أونصة ترويسية",
+              "forms": {
+                "zero": "{0} أونصة ترويسية",
+                "one": "{0} أونصة ترويسية",
+                "two": "{0} أونصة ترويسية",
+                "few": "{0} أونصة ترويسية",
+                "many": "{0} أونصة ترويسية",
+                "other": "{0} أونصة ترويسية"
+              }
+            },
+            "mass-carat": {
+              "gender": "masculine",
+              "displayName": "قيراط",
+              "forms": {
+                "zero": "{0} قيراط",
+                "one": "قيراط",
+                "two": "قيراطان",
+                "few": "{0} قراريط",
+                "many": "{0} قيراطًا",
+                "other": "{0} قيراط"
+              }
+            },
+            "mass-dalton": {
+              "displayName": "دالتون",
+              "forms": {
+                "zero": "{0} دالتون",
+                "one": "{0} دالتون",
+                "two": "{0} دالتون",
+                "few": "{0} دالتون",
+                "many": "{0} دالتون",
+                "other": "{0} دالتون"
+              }
+            },
+            "mass-earth-mass": {
+              "displayName": "كتلة أرضية",
+              "forms": {
+                "zero": "{0} كتلة أرضية",
+                "one": "{0} كتلة أرضية",
+                "two": "{0} كتلة أرضية",
+                "few": "{0} كتلة أرضية",
+                "many": "{0} كتلة أرضية",
+                "other": "{0} كتلة أرضية"
+              }
+            },
+            "mass-solar-mass": {
+              "displayName": "كتلة شمسية",
+              "forms": {
+                "zero": "{0} كتلة شمسية",
+                "one": "{0} كتلة شمسية",
+                "two": "{0} كتلة شمسية",
+                "few": "{0} كتلة شمسية",
+                "many": "{0} كتلة شمسية",
+                "other": "{0} كتلة شمسية"
+              }
+            },
+            "mass-grain": {
+              "displayName": "قمحة",
+              "forms": {
+                "zero": "{0} قمحة",
+                "one": "{0} قمحة",
+                "two": "{0} قمحة",
+                "few": "{0} قمحة",
+                "many": "{0} قمحة",
+                "other": "{0} قمحة"
+              }
+            },
+            "length-rod": {
+              "displayName": "rod",
+              "forms": {
+                "other": "{0}\u202frod"
+              }
+            },
+            "length-chain": {
+              "displayName": "chain",
+              "forms": {
+                "other": "{0}\u202fchain"
+              }
+            },
+            "duration-fortnight": {
+              "displayName": "fortnight",
+              "forms": {
+                "other": "{0}\u202ffw"
+              }
+            },
+            "mass-slug": {
+              "displayName": "slug",
+              "forms": {
+                "other": "{0}\u202fslug"
+              }
+            },
+            "length-rin": {
+              "displayName": "rin [JP]",
+              "forms": {
+                "other": "{0} rin [JP]"
+              }
+            },
+            "length-sun": {
+              "displayName": "sun [JP]",
+              "forms": {
+                "other": "{0} sun [JP]"
+              }
+            },
+            "length-shaku-length": {
+              "displayName": "shaku [JP]",
+              "forms": {
+                "other": "{0} shaku [JP]"
+              }
+            },
+            "length-shaku-cloth": {
+              "displayName": "shaku [cloth, JP]",
+              "forms": {
+                "other": "{0} shaku [cloth, JP]"
+              }
+            },
+            "length-ken": {
+              "displayName": "ken [JP]",
+              "forms": {
+                "other": "{0} ken [JP]"
+              }
+            },
+            "length-jo-jp": {
+              "displayName": "jo [JP]",
+              "forms": {
+                "other": "{0} jo [JP]"
+              }
+            },
+            "length-ri-jp": {
+              "displayName": "ri [JP]",
+              "forms": {
+                "other": "{0} ri [JP]"
+              }
+            },
+            "mass-fun": {
+              "displayName": "fun [JP]",
+              "forms": {
+                "other": "{0} fun [JP]"
+              }
+            },
+            "duration-night": {
+              "gender": "feminine",
+              "displayName": "ليالي",
+              "forms": {
+                "zero": "{0} ليلة",
+                "one": "ليلة",
+                "two": "ليلتان",
+                "few": "{0} ليالٍ",
+                "many": "{0} ليلةً",
+                "other": "{0} ليلة"
+              },
+              "perUnitPattern": "{0} في الليلة"
+            }
+          },
+          "per": "{0} لكل {1}",
+          "times": "{0}⋅{1}"
+        },
+        "short": {
+          "units": {
+            "concentr-percent": {
+              "displayName": "بالمائة",
+              "forms": {
+                "zero": "{0}٪",
+                "one": "{0}٪",
+                "two": "{0}٪",
+                "few": "{0}٪",
+                "many": "{0}٪",
+                "other": "{0}٪"
+              }
+            },
+            "concentr-permille": {
+              "displayName": "في الألف",
+              "forms": {
+                "zero": "{0}؉",
+                "one": "{0}؉",
+                "two": "{0}؉",
+                "few": "{0}؉",
+                "many": "{0}؉",
+                "other": "{0}؉"
+              }
+            },
+            "digital-petabyte": {
+              "displayName": "بيتابايت",
+              "forms": {
+                "zero": "{0} بيتابايت",
+                "one": "{0} بيتابايت",
+                "two": "{0} بيتابايت",
+                "few": "{0} بيتابايت",
+                "many": "{0} بيتابايت",
+                "other": "{0} بيتابايت"
+              }
+            },
+            "digital-terabyte": {
+              "displayName": "تيرابايت",
+              "forms": {
+                "zero": "{0} تيرابايت",
+                "one": "{0} تيرابايت",
+                "two": "{0} تيرابايت",
+                "few": "{0} تيرابايت",
+                "many": "{0} تيرابايت",
+                "other": "{0} تيرابايت"
+              }
+            },
+            "digital-terabit": {
+              "displayName": "تيرابت",
+              "forms": {
+                "zero": "{0} تيرابت",
+                "one": "{0} تيرابت",
+                "two": "{0} تيرابت",
+                "few": "{0} تيرابت",
+                "many": "{0} تيرابت",
+                "other": "{0} تيرابت"
+              }
+            },
+            "digital-gigabyte": {
+              "displayName": "غ.ب",
+              "forms": {
+                "zero": "{0} غ.ب",
+                "one": "{0} غ.ب",
+                "two": "{0} غ.ب",
+                "few": "{0} غ.ب",
+                "many": "{0} غ.ب",
+                "other": "{0} غ.ب"
+              }
+            },
+            "digital-gigabit": {
+              "displayName": "غيغابت",
+              "forms": {
+                "zero": "{0} غيغابت",
+                "one": "{0} غيغابت",
+                "two": "{0} غيغابت",
+                "few": "{0} غيغابت",
+                "many": "{0} غيغابت",
+                "other": "{0} غيغابت"
+              }
+            },
+            "digital-megabyte": {
+              "displayName": "ميغابايت",
+              "forms": {
+                "zero": "{0} م.ب",
+                "one": "{0} م.ب",
+                "two": "{0} م.ب",
+                "few": "{0} م.ب",
+                "many": "{0} م.ب",
+                "other": "{0} م.ب"
+              }
+            },
+            "digital-megabit": {
+              "displayName": "ميغابت",
+              "forms": {
+                "zero": "{0} ميغابت",
+                "one": "{0} ميغابت",
+                "two": "{0} ميغابت",
+                "few": "{0} ميغابت",
+                "many": "{0} ميغابت",
+                "other": "{0} ميغابت"
+              }
+            },
+            "digital-kilobyte": {
+              "displayName": "كيلوبايت",
+              "forms": {
+                "zero": "{0} كيلوبايت",
+                "one": "{0} كيلوبايت",
+                "two": "{0} كيلوبايت",
+                "few": "{0} كيلوبايت",
+                "many": "{0} كيلوبايت",
+                "other": "{0} كيلوبايت"
+              }
+            },
+            "digital-kilobit": {
+              "displayName": "كيلوبت",
+              "forms": {
+                "zero": "{0} كيلوبت",
+                "one": "{0} كيلوبت",
+                "two": "{0} كيلوبت",
+                "few": "{0} كيلوبت",
+                "many": "{0} كيلوبت",
+                "other": "{0} كيلوبت"
+              }
+            },
+            "digital-byte": {
+              "displayName": "بايت",
+              "forms": {
+                "zero": "{0} بايت",
+                "one": "{0} بايت",
+                "two": "{0} بايت",
+                "few": "{0} بايت",
+                "many": "{0} بايت",
+                "other": "{0} بايت"
+              }
+            },
+            "digital-bit": {
+              "displayName": "بت",
+              "forms": {
+                "zero": "{0} بت",
+                "one": "{0} بت",
+                "two": "{0} بت",
+                "few": "{0} بت",
+                "many": "{0} بت",
+                "other": "{0} بت"
+              }
+            },
+            "duration-century": {
+              "displayName": "قرن",
+              "forms": {
+                "zero": "{0} قرن",
+                "one": "قرن",
+                "two": "قرنان",
+                "few": "{0} قرون",
+                "many": "{0} قرنًا",
+                "other": "{0} قرن"
+              }
+            },
+            "duration-decade": {
+              "displayName": "عقد",
+              "forms": {
+                "zero": "{0} عقد",
+                "one": "عقد",
+                "two": "عقدان",
+                "few": "{0} عقود",
+                "many": "{0} عقدًا",
+                "other": "{0} عقد"
+              }
+            },
+            "duration-year": {
+              "displayName": "سنة",
+              "forms": {
+                "zero": "{0} سنة",
+                "one": "سنة واحدة",
+                "two": "سنتان",
+                "few": "{0} سنوات",
+                "many": "{0} سنة",
+                "other": "{0} سنة"
+              },
+              "perUnitPattern": "{0}/سنة"
+            },
+            "duration-quarter": {
+              "displayName": "ربع سنوي",
+              "forms": {
+                "zero": "{0} ربع",
+                "one": "ربع",
+                "two": "ربعان",
+                "few": "{0} أرباع",
+                "many": "{0} ربعًا",
+                "other": "{0} ربع"
+              },
+              "perUnitPattern": "{0}/ربع سنوي"
+            },
+            "duration-month": {
+              "displayName": "شهور",
+              "forms": {
+                "zero": "{0} شهر",
+                "one": "شهر",
+                "two": "شهران",
+                "few": "{0} أشهر",
+                "many": "{0} شهرًا",
+                "other": "{0} شهر"
+              },
+              "perUnitPattern": "{0}/ش"
+            },
+            "duration-week": {
+              "displayName": "أسبوع",
+              "forms": {
+                "zero": "{0} أسبوع",
+                "one": "أسبوع",
+                "two": "أسبوعان",
+                "few": "{0} أسابيع",
+                "many": "{0} أسبوعًا",
+                "other": "{0} أسبوع"
+              },
+              "perUnitPattern": "{0}/أ"
+            },
+            "duration-day": {
+              "displayName": "أيام",
+              "forms": {
+                "zero": "{0} يوم",
+                "one": "يوم",
+                "two": "يومان",
+                "few": "{0} أيام",
+                "many": "{0} يومًا",
+                "other": "{0} يوم"
+              },
+              "perUnitPattern": "{0}/ي"
+            },
+            "duration-hour": {
+              "displayName": "ساعة",
+              "forms": {
+                "zero": "{0} س",
+                "one": "{0} س",
+                "two": "{0} س",
+                "few": "{0} س",
+                "many": "{0} س",
+                "other": "{0} س"
+              },
+              "perUnitPattern": "{0}/س"
+            },
+            "duration-minute": {
+              "displayName": "د",
+              "forms": {
+                "zero": "{0} د",
+                "one": "{0} د",
+                "two": "{0} د",
+                "few": "{0} د",
+                "many": "{0} د",
+                "other": "{0} د"
+              },
+              "perUnitPattern": "{0}/د"
+            },
+            "duration-second": {
+              "displayName": "ثانية",
+              "forms": {
+                "zero": "{0} ث",
+                "one": "{0} ث",
+                "two": "{0} ث",
+                "few": "{0} ث",
+                "many": "{0} ث",
+                "other": "{0} ث"
+              },
+              "perUnitPattern": "{0}/ث"
+            },
+            "duration-millisecond": {
+              "displayName": "ملي ثانية",
+              "forms": {
+                "zero": "{0} ملي ث",
+                "one": "{0} ملي ث",
+                "two": "{0} ملي ث",
+                "few": "{0} ملي ث",
+                "many": "{0} ملي ث",
+                "other": "{0} ملي ث"
+              }
+            },
+            "duration-microsecond": {
+              "displayName": "م.ث.",
+              "forms": {
+                "zero": "{0} م.ث.",
+                "one": "{0} م.ث.",
+                "two": "{0} م.ث.",
+                "few": "{0} م.ث.",
+                "many": "{0} م.ث.",
+                "other": "{0} م.ث."
+              }
+            },
+            "duration-nanosecond": {
+              "displayName": "ن.ث.",
+              "forms": {
+                "zero": "{0} ن.ث.",
+                "one": "{0} ن.ث.",
+                "two": "{0} ن.ث.",
+                "few": "{0} ن.ث.",
+                "many": "{0} ن.ث.",
+                "other": "{0} ن.ث."
+              }
+            },
+            "length-earth-radius": {
+              "displayName": "نق أرضي",
+              "forms": {
+                "zero": "{0} نق أرضي",
+                "one": "{0} نق أرضي",
+                "two": "{0} نق أرضي",
+                "few": "{0} نق أرضي",
+                "many": "{0} نق أرضي",
+                "other": "{0} نق أرضي"
+              }
+            },
+            "length-kilometer": {
+              "displayName": "كم",
+              "forms": {
+                "zero": "{0} كم",
+                "one": "{0} كم",
+                "two": "{0} كم",
+                "few": "{0} كم",
+                "many": "{0} كم",
+                "other": "{0} كم"
+              },
+              "perUnitPattern": "{0}/كم"
+            },
+            "length-meter": {
+              "displayName": "م",
+              "forms": {
+                "zero": "{0} متر",
+                "one": "متر",
+                "two": "متران",
+                "few": "{0} أمتار",
+                "many": "{0} مترًا",
+                "other": "{0} متر"
+              },
+              "perUnitPattern": "{0}/م"
+            },
+            "length-decimeter": {
+              "displayName": "دسم",
+              "forms": {
+                "zero": "{0} دسم",
+                "one": "{0} دسم",
+                "two": "{0} دسم",
+                "few": "{0} دسم",
+                "many": "{0} دسم",
+                "other": "{0} دسم"
+              }
+            },
+            "length-centimeter": {
+              "displayName": "سم",
+              "forms": {
+                "zero": "{0} سم",
+                "one": "{0} سم",
+                "two": "{0} سم",
+                "few": "{0} سم",
+                "many": "{0} سم",
+                "other": "{0} سم"
+              },
+              "perUnitPattern": "{0}/سم"
+            },
+            "length-millimeter": {
+              "displayName": "مليمتر",
+              "forms": {
+                "zero": "{0} مم",
+                "one": "{0} مم",
+                "two": "{0} مم",
+                "few": "{0} مم",
+                "many": "{0} مم",
+                "other": "{0} مم"
+              }
+            },
+            "length-micrometer": {
+              "displayName": "ميكرومتر",
+              "forms": {
+                "zero": "{0} ميكرومتر",
+                "one": "{0} ميكرومتر",
+                "two": "{0} ميكرومتر",
+                "few": "{0} ميكرومتر",
+                "many": "{0} ميكرومتر",
+                "other": "{0} ميكرومتر"
+              }
+            },
+            "length-nanometer": {
+              "displayName": "نانو متر",
+              "forms": {
+                "zero": "{0} نانو متر",
+                "one": "{0} نانو متر",
+                "two": "{0} نانو متر",
+                "few": "{0} نانو متر",
+                "many": "{0} نانو متر",
+                "other": "{0} نانو متر"
+              }
+            },
+            "length-picometer": {
+              "displayName": "بيكومتر",
+              "forms": {
+                "zero": "{0} بيكومتر",
+                "one": "{0} بيكومتر",
+                "two": "{0} بيكومتر",
+                "few": "{0} بيكومتر",
+                "many": "{0} بيكومتر",
+                "other": "{0} بيكومتر"
+              }
+            },
+            "length-mile": {
+              "displayName": "ميل",
+              "forms": {
+                "zero": "{0} ميل",
+                "one": "ميل",
+                "two": "{0} ميل",
+                "few": "{0} ميل",
+                "many": "{0} ميل",
+                "other": "{0} ميل"
+              }
+            },
+            "length-yard": {
+              "displayName": "ياردة",
+              "forms": {
+                "zero": "{0} ياردة",
+                "one": "ياردة",
+                "two": "{0} ياردة",
+                "few": "{0} ياردة",
+                "many": "{0} ياردة",
+                "other": "{0} ياردة"
+              }
+            },
+            "length-foot": {
+              "displayName": "قدم",
+              "forms": {
+                "zero": "{0} قدم",
+                "one": "قدم",
+                "two": "{0} قدم",
+                "few": "{0} قدم",
+                "many": "{0} قدم",
+                "other": "{0} قدم"
+              },
+              "perUnitPattern": "{0}/قدم"
+            },
+            "length-inch": {
+              "displayName": "بوصة",
+              "forms": {
+                "zero": "{0} بوصة",
+                "one": "{0} بوصة",
+                "two": "{0} بوصة",
+                "few": "{0} بوصة",
+                "many": "{0} بوصة",
+                "other": "{0} بوصة"
+              },
+              "perUnitPattern": "{0}/بوصة"
+            },
+            "length-milliinch": {
+              "displayName": "milli-inch",
+              "forms": {
+                "other": "{0} milli-inch"
+              }
+            },
+            "length-parsec": {
+              "displayName": "فرسخ فلكي",
+              "forms": {
+                "zero": "{0} فرسخ فلكي",
+                "one": "فرسخ فلكي",
+                "two": "{0} فرسخ فلكي",
+                "few": "{0} فرسخ فلكي",
+                "many": "{0} فرسخ فلكي",
+                "other": "{0} فرسخ فلكي"
+              }
+            },
+            "length-light-year": {
+              "displayName": "سنة ضوئية",
+              "forms": {
+                "zero": "{0} سنة ضوئية",
+                "one": "سنة ضوئية",
+                "two": "سنتان ضوئيتان",
+                "few": "{0} سنوات ضوئية",
+                "many": "{0} سنة ضوئية",
+                "other": "{0} سنة ضوئية"
+              }
+            },
+            "length-astronomical-unit": {
+              "displayName": "و.ف.",
+              "forms": {
+                "zero": "{0} و.ف.",
+                "one": "{0} و.ف.",
+                "two": "{0} و.ف.",
+                "few": "{0} و.ف.",
+                "many": "{0} و.ف.",
+                "other": "{0} و.ف."
+              }
+            },
+            "length-furlong": {
+              "displayName": "فرلنغ",
+              "forms": {
+                "zero": "{0} فرلنغ",
+                "one": "{0} فرلنغ",
+                "two": "{0} فرلنغ",
+                "few": "{0} فرلنغ",
+                "many": "{0} فرلنغ",
+                "other": "{0} فرلنغ"
+              }
+            },
+            "length-fathom": {
+              "displayName": "قامة",
+              "forms": {
+                "zero": "{0} قامة",
+                "one": "{0} قامة",
+                "two": "{0} قامة",
+                "few": "{0} قامة",
+                "many": "{0} قامة",
+                "other": "{0} قامة"
+              }
+            },
+            "length-nautical-mile": {
+              "displayName": "ميل بحري",
+              "forms": {
+                "zero": "{0} ميل بحري",
+                "one": "ميل بحري",
+                "two": "{0} ميل بحري",
+                "few": "{0} ميل بحري",
+                "many": "{0} ميل بحري",
+                "other": "{0} ميل بحري"
+              }
+            },
+            "length-mile-scandinavian": {
+              "displayName": "ميل اسكندنافي",
+              "forms": {
+                "zero": "{0} ميل اسكندنافي",
+                "one": "{0} ميل اسكندنافي",
+                "two": "{0} ميل اسكندنافي",
+                "few": "{0} ميل اسكندنافي",
+                "many": "{0} ميل اسكندنافي",
+                "other": "{0} ميل اسكندنافي"
+              }
+            },
+            "length-point": {
+              "displayName": "نقطة",
+              "forms": {
+                "zero": "{0} نقطة",
+                "one": "نقطة",
+                "two": "نقطتان",
+                "few": "{0} نقاط",
+                "many": "{0} نقطة",
+                "other": "{0} نقطة"
+              }
+            },
+            "length-solar-radius": {
+              "displayName": "نق شمسي",
+              "forms": {
+                "zero": "{0} نق شمسي",
+                "one": "{0} نق شمسي",
+                "two": "{0} نق شمسي",
+                "few": "{0} نق شمسي",
+                "many": "{0} نق شمسي",
+                "other": "{0} نق شمسي"
+              }
+            },
+            "mass-tonne": {
+              "displayName": "ط.م",
+              "forms": {
+                "zero": "{0} ط.م",
+                "one": "{0} ط.م",
+                "two": "{0} ط.م",
+                "few": "{0} ط.م",
+                "many": "{0} ط.م",
+                "other": "{0} ط.م"
+              }
+            },
+            "mass-kilogram": {
+              "displayName": "كغم",
+              "forms": {
+                "zero": "{0} كغم",
+                "one": "{0} كغم",
+                "two": "{0} كغم",
+                "few": "{0} كغم",
+                "many": "{0} كغم",
+                "other": "{0} كغم"
+              },
+              "perUnitPattern": "{0}/كغم"
+            },
+            "mass-gram": {
+              "displayName": "غرام",
+              "forms": {
+                "zero": "{0} غرام",
+                "one": "غرام",
+                "two": "{0} غرام",
+                "few": "{0} غرام",
+                "many": "{0} غرام",
+                "other": "{0} غرام"
+              },
+              "perUnitPattern": "{0}/غرام"
+            },
+            "mass-milligram": {
+              "displayName": "مغم",
+              "forms": {
+                "zero": "{0} مغم",
+                "one": "{0} مغم",
+                "two": "{0} مغم",
+                "few": "{0} مغم",
+                "many": "{0} مغم",
+                "other": "{0} مغم"
+              }
+            },
+            "mass-microgram": {
+              "displayName": "مكغم",
+              "forms": {
+                "zero": "{0} مكغم",
+                "one": "{0} مكغم",
+                "two": "{0} مكغم",
+                "few": "{0} مكغم",
+                "many": "{0} مكغم",
+                "other": "{0} مكغم"
+              }
+            },
+            "mass-ton": {
+              "displayName": "طن",
+              "forms": {
+                "zero": "{0} طن",
+                "one": "{0} طن",
+                "two": "{0} طن",
+                "few": "{0} طن",
+                "many": "{0} طن",
+                "other": "{0} طن"
+              }
+            },
+            "mass-stone": {
+              "displayName": "ستون",
+              "forms": {
+                "zero": "{0} ستون",
+                "one": "{0} ستون",
+                "two": "{0} ستون",
+                "few": "{0} ستون",
+                "many": "{0} ستون",
+                "other": "{0} ستون"
+              }
+            },
+            "mass-pound": {
+              "displayName": "رطل",
+              "forms": {
+                "zero": "{0} رطل",
+                "one": "{0} رطل",
+                "two": "{0} رطل",
+                "few": "{0} رطل",
+                "many": "{0} رطل",
+                "other": "{0} رطل"
+              },
+              "perUnitPattern": "{0}/رطل"
+            },
+            "mass-ounce": {
+              "displayName": "أونصة",
+              "forms": {
+                "zero": "{0} أونصة",
+                "one": "أونصة",
+                "two": "{0} أونصة",
+                "few": "{0} أونصة",
+                "many": "{0} أونصة",
+                "other": "{0} أونصة"
+              },
+              "perUnitPattern": "{0}/أونصة"
+            },
+            "mass-ounce-troy": {
+              "displayName": "أونصة ترويسية",
+              "forms": {
+                "zero": "{0} أونصة ترويسية",
+                "one": "{0} أونصة ترويسية",
+                "two": "{0} أونصة ترويسية",
+                "few": "{0} أونصة ترويسية",
+                "many": "{0} أونصة ترويسية",
+                "other": "{0} أونصة ترويسية"
+              }
+            },
+            "mass-carat": {
+              "displayName": "قيراط",
+              "forms": {
+                "zero": "{0} قيراط",
+                "one": "{0} قيراط",
+                "two": "{0} قيراط",
+                "few": "{0} قيراط",
+                "many": "{0} قيراط",
+                "other": "{0} قيراط"
+              }
+            },
+            "mass-dalton": {
+              "displayName": "دالتون",
+              "forms": {
+                "zero": "{0} دالتون",
+                "one": "{0} دالتون",
+                "two": "{0} دالتون",
+                "few": "{0} دالتون",
+                "many": "{0} دالتون",
+                "other": "{0} دالتون"
+              }
+            },
+            "mass-earth-mass": {
+              "displayName": "كتلة أرضية",
+              "forms": {
+                "zero": "{0} كتلة أرضية",
+                "one": "{0} كتلة أرضية",
+                "two": "{0} كتلة أرضية",
+                "few": "{0} كتلة أرضية",
+                "many": "{0} كتلة أرضية",
+                "other": "{0} كتلة أرضية"
+              }
+            },
+            "mass-solar-mass": {
+              "displayName": "كتلة شمسية",
+              "forms": {
+                "zero": "{0} كتلة شمسية",
+                "one": "{0} كتلة شمسية",
+                "two": "{0} كتلة شمسية",
+                "few": "{0} كتلة شمسية",
+                "many": "{0} كتلة شمسية",
+                "other": "{0} كتلة شمسية"
+              }
+            },
+            "mass-grain": {
+              "displayName": "قمحة",
+              "forms": {
+                "zero": "{0} قمحة",
+                "one": "{0} قمحة",
+                "two": "{0} قمحة",
+                "few": "{0} قمحة",
+                "many": "{0} قمحة",
+                "other": "{0} قمحة"
+              }
+            },
+            "length-rod": {
+              "displayName": "rod",
+              "forms": {
+                "other": "{0}\u202frod"
+              }
+            },
+            "length-chain": {
+              "displayName": "chain",
+              "forms": {
+                "other": "{0}\u202fchain"
+              }
+            },
+            "duration-fortnight": {
+              "displayName": "fortnight",
+              "forms": {
+                "other": "{0}\u202ffw"
+              }
+            },
+            "mass-slug": {
+              "displayName": "slug",
+              "forms": {
+                "other": "{0}\u202fslug"
+              }
+            },
+            "length-rin": {
+              "displayName": "rin [JP]",
+              "forms": {
+                "other": "{0} rin [JP]"
+              }
+            },
+            "length-sun": {
+              "displayName": "sun [JP]",
+              "forms": {
+                "other": "{0} sun [JP]"
+              }
+            },
+            "length-shaku-length": {
+              "displayName": "shaku [JP]",
+              "forms": {
+                "other": "{0} shaku [JP]"
+              }
+            },
+            "length-shaku-cloth": {
+              "displayName": "shaku [cloth, JP]",
+              "forms": {
+                "other": "{0} shaku [cloth, JP]"
+              }
+            },
+            "length-ken": {
+              "displayName": "ken [JP]",
+              "forms": {
+                "other": "{0} ken [JP]"
+              }
+            },
+            "length-jo-jp": {
+              "displayName": "jo [JP]",
+              "forms": {
+                "other": "{0} jo [JP]"
+              }
+            },
+            "length-ri-jp": {
+              "displayName": "ri [JP]",
+              "forms": {
+                "other": "{0} ri [JP]"
+              }
+            },
+            "mass-fun": {
+              "displayName": "fun [JP]",
+              "forms": {
+                "other": "{0} fun [JP]"
+              }
+            },
+            "duration-night": {
+              "displayName": "ليلة",
+              "forms": {
+                "zero": "{0} ليلة",
+                "one": "ليلة",
+                "two": "ليلتان",
+                "few": "{0} ليالٍ",
+                "many": "{0} ليلةً",
+                "other": "{0} ليلة"
+              },
+              "perUnitPattern": "{0}/ل"
+            }
+          },
+          "per": "{0}/{1}",
+          "times": "{0}⋅{1}"
+        },
+        "narrow": {
+          "units": {
+            "concentr-percent": {
+              "displayName": "٪",
+              "forms": {
+                "zero": "{0}٪",
+                "one": "{0}٪",
+                "two": "{0}٪",
+                "few": "{0}٪",
+                "many": "{0}٪",
+                "other": "{0}٪"
+              }
+            },
+            "concentr-permille": {
+              "displayName": "؉",
+              "forms": {
+                "zero": "{0}؉",
+                "one": "{0}؉",
+                "two": "{0}؉",
+                "few": "{0}؉",
+                "many": "{0}؉",
+                "other": "{0}؉"
+              }
+            },
+            "digital-petabyte": {
+              "displayName": "بيتابايت",
+              "forms": {
+                "zero": "{0} بيتابايت",
+                "one": "{0} بيتابايت",
+                "two": "{0} بيتابايت",
+                "few": "{0} بيتابايت",
+                "many": "{0} بيتابايت",
+                "other": "{0} بيتابايت"
+              }
+            },
+            "digital-terabyte": {
+              "displayName": "ت.ب",
+              "forms": {
+                "zero": "{0} ت.ب",
+                "one": "{0} ت.ب",
+                "two": "{0} ت.ب",
+                "few": "{0} ت.ب",
+                "many": "{0} ت.ب",
+                "other": "{0} ت.ب"
+              }
+            },
+            "digital-terabit": {
+              "displayName": "ت.بت",
+              "forms": {
+                "zero": "{0} ت.بت",
+                "one": "{0} ت.بت",
+                "two": "{0} ت.بت",
+                "few": "{0} ت.بت",
+                "many": "{0} ت.بت",
+                "other": "{0} ت.بت"
+              }
+            },
+            "digital-gigabyte": {
+              "displayName": "غ.ب",
+              "forms": {
+                "zero": "{0} غ.ب",
+                "one": "{0} غ.ب",
+                "two": "{0} غ.ب",
+                "few": "{0} غ.ب",
+                "many": "{0} غ.ب",
+                "other": "{0} غ.ب"
+              }
+            },
+            "digital-gigabit": {
+              "displayName": "غ.بت",
+              "forms": {
+                "zero": "{0} غ.بت",
+                "one": "{0} غ.بت",
+                "two": "{0} غ.بت",
+                "few": "{0} غ.بت",
+                "many": "{0} غ.بت",
+                "other": "{0} غ.بت"
+              }
+            },
+            "digital-megabyte": {
+              "displayName": "م.ب",
+              "forms": {
+                "zero": "{0} م.ب",
+                "one": "{0} م.ب",
+                "two": "{0} م.ب",
+                "few": "{0} م.ب",
+                "many": "{0} م.ب",
+                "other": "{0} م.ب"
+              }
+            },
+            "digital-megabit": {
+              "displayName": "م.بت",
+              "forms": {
+                "zero": "{0} م.بت",
+                "one": "{0} م.بت",
+                "two": "{0} م.بت",
+                "few": "{0} م.بت",
+                "many": "{0} م.بت",
+                "other": "{0} م.بت"
+              }
+            },
+            "digital-kilobyte": {
+              "displayName": "ك.ب",
+              "forms": {
+                "zero": "{0} ك.ب",
+                "one": "{0} ك.ب",
+                "two": "{0} ك.ب",
+                "few": "{0} ك.ب",
+                "many": "{0} ك.ب",
+                "other": "{0} ك.ب"
+              }
+            },
+            "digital-kilobit": {
+              "displayName": "ك.بت",
+              "forms": {
+                "zero": "{0} ك.بت",
+                "one": "{0} ك.بت",
+                "two": "{0} ك.بت",
+                "few": "{0} ك.بت",
+                "many": "{0} ك.بت",
+                "other": "{0} ك.بت"
+              }
+            },
+            "digital-byte": {
+              "displayName": "ب",
+              "forms": {
+                "zero": "{0} ب",
+                "one": "{0} ب",
+                "two": "{0} ب",
+                "few": "{0} ب",
+                "many": "{0} ب",
+                "other": "{0} ب"
+              }
+            },
+            "digital-bit": {
+              "displayName": "بت",
+              "forms": {
+                "zero": "{0} بت",
+                "one": "{0} بت",
+                "two": "{0} بت",
+                "few": "{0} بت",
+                "many": "{0} بت",
+                "other": "{0} بت"
+              }
+            },
+            "duration-century": {
+              "displayName": "قرن",
+              "forms": {
+                "zero": "{0} قرن",
+                "one": "قرن",
+                "two": "قرنان",
+                "few": "{0} قرون",
+                "many": "{0} قرنًا",
+                "other": "{0} قرن"
+              }
+            },
+            "duration-decade": {
+              "displayName": "عقد",
+              "forms": {
+                "zero": "{0} عقد",
+                "one": "عقد",
+                "two": "عقدان",
+                "few": "{0} عقود",
+                "many": "{0} عقدًا",
+                "other": "{0} عقد"
+              }
+            },
+            "duration-year": {
+              "displayName": "سنة",
+              "forms": {
+                "zero": "{0} سنة",
+                "one": "{0} سنة",
+                "two": "{0} سنة",
+                "few": "{0} سنة",
+                "many": "{0} سنة",
+                "other": "{0} سنة"
+              },
+              "perUnitPattern": "{0}/سنة"
+            },
+            "duration-quarter": {
+              "displayName": "ربع",
+              "forms": {
+                "zero": "{0} ربع",
+                "one": "ربع",
+                "two": "ربعان",
+                "few": "{0} أرباع",
+                "many": "{0} ربعًا",
+                "other": "{0} ربع"
+              },
+              "perUnitPattern": "{0}/ر"
+            },
+            "duration-month": {
+              "displayName": "شهر",
+              "forms": {
+                "zero": "{0} شهر",
+                "one": "شهر",
+                "two": "شهران",
+                "few": "{0} أشهر",
+                "many": "{0} شهرًا",
+                "other": "{0} شهر"
+              },
+              "perUnitPattern": "{0}/ش"
+            },
+            "duration-week": {
+              "displayName": "أسبوع",
+              "forms": {
+                "zero": "{0} أ",
+                "one": "{0} أ",
+                "two": "{0} أ",
+                "few": "{0} أ",
+                "many": "{0} أ",
+                "other": "{0} أ"
+              },
+              "perUnitPattern": "{0}/أ"
+            },
+            "duration-day": {
+              "displayName": "يوم",
+              "forms": {
+                "zero": "{0} ي",
+                "one": "{0} ي",
+                "two": "{0} ي",
+                "few": "{0} ي",
+                "many": "{0} ي",
+                "other": "{0} ي"
+              },
+              "perUnitPattern": "{0}/ي"
+            },
+            "duration-hour": {
+              "displayName": "ساعة",
+              "forms": {
+                "zero": "{0} س",
+                "one": "{0} س",
+                "two": "{0} س",
+                "few": "{0} س",
+                "many": "{0} س",
+                "other": "{0} س"
+              },
+              "perUnitPattern": "{0}/س"
+            },
+            "duration-minute": {
+              "displayName": "د",
+              "forms": {
+                "zero": "{0} د",
+                "one": "{0} د",
+                "two": "{0} د",
+                "few": "{0} د",
+                "many": "{0} د",
+                "other": "{0} د"
+              },
+              "perUnitPattern": "{0}/د"
+            },
+            "duration-second": {
+              "displayName": "ث",
+              "forms": {
+                "zero": "{0} ث",
+                "one": "{0} ث",
+                "two": "{0} ث",
+                "few": "{0} ث",
+                "many": "{0} ث",
+                "other": "{0} ث"
+              },
+              "perUnitPattern": "{0}/ث"
+            },
+            "duration-millisecond": {
+              "displayName": "ملي ث.",
+              "forms": {
+                "zero": "{0} ملي ث",
+                "one": "{0} ملي ث",
+                "two": "{0} ملي ث",
+                "few": "{0} ملي ث",
+                "many": "{0} ملي ث",
+                "other": "{0} ملي ث"
+              }
+            },
+            "duration-microsecond": {
+              "displayName": "م.ث.",
+              "forms": {
+                "zero": "{0} م.ث.",
+                "one": "{0} م.ث.",
+                "two": "{0} م.ث.",
+                "few": "{0} م.ث.",
+                "many": "{0} م.ث.",
+                "other": "{0} م.ث."
+              }
+            },
+            "duration-nanosecond": {
+              "displayName": "ن.ث.",
+              "forms": {
+                "zero": "{0} ن.ث.",
+                "one": "{0} ن.ث.",
+                "two": "{0} ن.ث.",
+                "few": "{0} ن.ث.",
+                "many": "{0} ن.ث.",
+                "other": "{0} ن.ث."
+              }
+            },
+            "length-earth-radius": {
+              "displayName": "نق أرضي",
+              "forms": {
+                "zero": "{0} نق أرضي",
+                "one": "{0} نق أرضي",
+                "two": "{0} نق أرضي",
+                "few": "{0} نق أرضي",
+                "many": "{0} نق أرضي",
+                "other": "{0} نق أرضي"
+              }
+            },
+            "length-kilometer": {
+              "displayName": "كم",
+              "forms": {
+                "zero": "{0} كم",
+                "one": "{0} كم",
+                "two": "{0} كم",
+                "few": "{0} كم",
+                "many": "{0} كم",
+                "other": "{0} كم"
+              },
+              "perUnitPattern": "{0}/كم"
+            },
+            "length-meter": {
+              "displayName": "م",
+              "forms": {
+                "zero": "{0} م",
+                "one": "{0} م",
+                "two": "{0} م",
+                "few": "{0} م",
+                "many": "{0} م",
+                "other": "{0} م"
+              },
+              "perUnitPattern": "{0}/م"
+            },
+            "length-decimeter": {
+              "displayName": "دسم",
+              "forms": {
+                "zero": "{0} دسم",
+                "one": "{0} دسم",
+                "two": "{0} دسم",
+                "few": "{0} دسم",
+                "many": "{0} دسم",
+                "other": "{0} دسم"
+              }
+            },
+            "length-centimeter": {
+              "displayName": "سم",
+              "forms": {
+                "zero": "{0} سم",
+                "one": "{0} سم",
+                "two": "{0} سم",
+                "few": "{0} سم",
+                "many": "{0} سم",
+                "other": "{0} سم"
+              },
+              "perUnitPattern": "{0}/سم"
+            },
+            "length-millimeter": {
+              "displayName": "مم",
+              "forms": {
+                "zero": "{0} مم",
+                "one": "{0} مم",
+                "two": "{0} مم",
+                "few": "{0} مم",
+                "many": "{0} مم",
+                "other": "{0} مم"
+              }
+            },
+            "length-micrometer": {
+              "displayName": "ميكرومتر",
+              "forms": {
+                "zero": "{0} ميكرومتر",
+                "one": "{0} ميكرومتر",
+                "two": "{0} ميكرومتر",
+                "few": "{0} ميكرومتر",
+                "many": "{0} ميكرومتر",
+                "other": "{0} ميكرومتر"
+              }
+            },
+            "length-nanometer": {
+              "displayName": "نانو متر",
+              "forms": {
+                "zero": "{0} نانو متر",
+                "one": "{0} نانو متر",
+                "two": "{0} نانو متر",
+                "few": "{0} نانو متر",
+                "many": "{0} نانو متر",
+                "other": "{0} نانو متر"
+              }
+            },
+            "length-picometer": {
+              "displayName": "بيكومتر",
+              "forms": {
+                "zero": "{0} بيكومتر",
+                "one": "{0} بيكومتر",
+                "two": "{0} بيكومتر",
+                "few": "{0} بيكومتر",
+                "many": "{0} بيكومتر",
+                "other": "{0} بيكومتر"
+              }
+            },
+            "length-mile": {
+              "displayName": "ميل",
+              "forms": {
+                "zero": "{0} ميل",
+                "one": "{0} ميل",
+                "two": "{0} ميل",
+                "few": "{0} أميال",
+                "many": "{0} ميلاً",
+                "other": "{0} ميل"
+              }
+            },
+            "length-yard": {
+              "displayName": "ياردة",
+              "forms": {
+                "zero": "{0} ياردة",
+                "one": "{0} ياردة",
+                "two": "{0} ياردة",
+                "few": "{0} ياردة",
+                "many": "{0} ياردة",
+                "other": "{0} ياردة"
+              }
+            },
+            "length-foot": {
+              "displayName": "قدم",
+              "forms": {
+                "zero": "{0} قدم",
+                "one": "قدم",
+                "two": "{0} قدم",
+                "few": "{0} قدم",
+                "many": "{0} قدمًا",
+                "other": "{0} قدم"
+              },
+              "perUnitPattern": "{0}/قدم"
+            },
+            "length-inch": {
+              "displayName": "بوصة",
+              "forms": {
+                "zero": "{0} بوصة",
+                "one": "{0} بوصة",
+                "two": "{0} بوصة",
+                "few": "{0} بوصة",
+                "many": "{0} بوصة",
+                "other": "{0} بوصة"
+              },
+              "perUnitPattern": "{0}/بوصة"
+            },
+            "length-milliinch": {
+              "displayName": "milli-inch",
+              "forms": {
+                "other": "{0} milli-inch"
+              }
+            },
+            "length-parsec": {
+              "displayName": "فرسخ فلكي",
+              "forms": {
+                "zero": "{0} فرسخ فلكي",
+                "one": "فرسخ فلكي",
+                "two": "{0} فرسخ فلكي",
+                "few": "{0} فرسخ فلكي",
+                "many": "{0} فرسخ فلكي",
+                "other": "{0} فرسخ فلكي"
+              }
+            },
+            "length-light-year": {
+              "displayName": "سنة ضوئية",
+              "forms": {
+                "zero": "{0}س ض",
+                "one": "{0} س ض",
+                "two": "{0} س ض",
+                "few": "{0} س ض",
+                "many": "{0} س ض",
+                "other": "{0} س ض"
+              }
+            },
+            "length-astronomical-unit": {
+              "displayName": "و.ف.",
+              "forms": {
+                "zero": "{0} و.ف.",
+                "one": "{0} و.ف.",
+                "two": "{0} و.ف.",
+                "few": "{0} و.ف.",
+                "many": "{0} و.ف.",
+                "other": "{0} و.ف."
+              }
+            },
+            "length-furlong": {
+              "displayName": "فرلنغ",
+              "forms": {
+                "zero": "{0} فرلنغ",
+                "one": "{0} فرلنغ",
+                "two": "{0} فرلنغ",
+                "few": "{0} فرلنغ",
+                "many": "{0} فرلنغ",
+                "other": "{0} فرلنغ"
+              }
+            },
+            "length-fathom": {
+              "displayName": "قامة",
+              "forms": {
+                "zero": "{0} قامة",
+                "one": "{0} قامة",
+                "two": "{0} قامة",
+                "few": "{0} قامة",
+                "many": "{0} قامة",
+                "other": "{0} قامة"
+              }
+            },
+            "length-nautical-mile": {
+              "displayName": "ميل بحري",
+              "forms": {
+                "zero": "{0} ميل بحري",
+                "one": "ميل بحري",
+                "two": "{0} ميل بحري",
+                "few": "{0} ميل بحري",
+                "many": "{0} ميل بحري",
+                "other": "{0} ميل بحري"
+              }
+            },
+            "length-mile-scandinavian": {
+              "displayName": "ميل اسكندنافي",
+              "forms": {
+                "zero": "{0} ميل اسكندنافي",
+                "one": "{0} ميل اسكندنافي",
+                "two": "{0} ميل اسكندنافي",
+                "few": "{0} ميل اسكندنافي",
+                "many": "{0} ميل اسكندنافي",
+                "other": "{0} ميل اسكندنافي"
+              }
+            },
+            "length-point": {
+              "displayName": "نقطة",
+              "forms": {
+                "zero": "{0} نقطة",
+                "one": "نقطة",
+                "two": "نقطتان",
+                "few": "{0} نقاط",
+                "many": "{0} نقطة",
+                "other": "{0} نقطة"
+              }
+            },
+            "length-solar-radius": {
+              "displayName": "نق شمسي",
+              "forms": {
+                "zero": "{0} نق شمسي",
+                "one": "{0} نق شمسي",
+                "two": "{0} نق شمسي",
+                "few": "{0} نق شمسي",
+                "many": "{0} نق شمسي",
+                "other": "{0} نق شمسي"
+              }
+            },
+            "mass-tonne": {
+              "displayName": "ط.م",
+              "forms": {
+                "zero": "{0} ط.م",
+                "one": "{0} ط.م",
+                "two": "{0} ط.م",
+                "few": "{0} ط.م",
+                "many": "{0} ط.م",
+                "other": "{0} ط.م"
+              }
+            },
+            "mass-kilogram": {
+              "displayName": "كغ",
+              "forms": {
+                "zero": "{0} كغ",
+                "one": "{0} كغ",
+                "two": "{0} كغ",
+                "few": "{0} كغ",
+                "many": "{0} كغ",
+                "other": "{0} كغ"
+              },
+              "perUnitPattern": "{0}/كغ"
+            },
+            "mass-gram": {
+              "displayName": "غ",
+              "forms": {
+                "zero": "{0} غ",
+                "one": "{0} غ",
+                "two": "{0} غ",
+                "few": "{0} غ",
+                "many": "{0} غ",
+                "other": "{0} غ"
+              },
+              "perUnitPattern": "{0} غ"
+            },
+            "mass-milligram": {
+              "displayName": "مغم",
+              "forms": {
+                "zero": "{0} مغم",
+                "one": "{0} مغم",
+                "two": "{0} مغم",
+                "few": "{0} مغم",
+                "many": "{0} مغم",
+                "other": "{0} مغم"
+              }
+            },
+            "mass-microgram": {
+              "displayName": "مكغم",
+              "forms": {
+                "zero": "{0} مكغم",
+                "one": "{0} مكغم",
+                "two": "{0} مكغم",
+                "few": "{0} مكغم",
+                "many": "{0} مكغم",
+                "other": "{0} مكغم"
+              }
+            },
+            "mass-ton": {
+              "displayName": "طن",
+              "forms": {
+                "zero": "{0} طن",
+                "one": "{0} طن",
+                "two": "{0} طن",
+                "few": "{0} طن",
+                "many": "{0} طن",
+                "other": "{0} طن"
+              }
+            },
+            "mass-stone": {
+              "displayName": "ستون",
+              "forms": {
+                "zero": "{0} ستون",
+                "one": "{0} ستون",
+                "two": "{0} ستون",
+                "few": "{0} ستون",
+                "many": "{0} ستون",
+                "other": "{0} ستون"
+              }
+            },
+            "mass-pound": {
+              "displayName": "رطل",
+              "forms": {
+                "zero": "{0} رطل",
+                "one": "{0} رطل",
+                "two": "{0} رطل",
+                "few": "{0} رطل",
+                "many": "{0} رطل",
+                "other": "{0} رطل"
+              },
+              "perUnitPattern": "{0}/رطل"
+            },
+            "mass-ounce": {
+              "displayName": "أونصة",
+              "forms": {
+                "zero": "{0} أونصة",
+                "one": "أونصة",
+                "two": "{0} أونصة",
+                "few": "{0} أونصة",
+                "many": "{0} أونصة",
+                "other": "{0} أونصة"
+              },
+              "perUnitPattern": "{0}/أونصة"
+            },
+            "mass-ounce-troy": {
+              "displayName": "أونصة ترويسية",
+              "forms": {
+                "zero": "{0} أونصة ترويسية",
+                "one": "{0} أونصة ترويسية",
+                "two": "{0} أونصة ترويسية",
+                "few": "{0} أونصة ترويسية",
+                "many": "{0} أونصة ترويسية",
+                "other": "{0} أونصة ترويسية"
+              }
+            },
+            "mass-carat": {
+              "displayName": "قيراط",
+              "forms": {
+                "zero": "{0} قيراط",
+                "one": "{0} قيراط",
+                "two": "{0} قيراط",
+                "few": "{0} قيراط",
+                "many": "{0} قيراط",
+                "other": "{0} قيراط"
+              }
+            },
+            "mass-dalton": {
+              "displayName": "دالتون",
+              "forms": {
+                "zero": "{0} دالتون",
+                "one": "{0} دالتون",
+                "two": "{0} دالتون",
+                "few": "{0} دالتون",
+                "many": "{0} دالتون",
+                "other": "{0} دالتون"
+              }
+            },
+            "mass-earth-mass": {
+              "displayName": "كتلة أرضية",
+              "forms": {
+                "zero": "{0} كتلة أرضية",
+                "one": "{0} كتلة أرضية",
+                "two": "{0} كتلة أرضية",
+                "few": "{0} كتلة أرضية",
+                "many": "{0} كتلة أرضية",
+                "other": "{0} كتلة أرضية"
+              }
+            },
+            "mass-solar-mass": {
+              "displayName": "كتلة شمسية",
+              "forms": {
+                "zero": "{0} كتلة شمسية",
+                "one": "{0} كتلة شمسية",
+                "two": "{0} كتلة شمسية",
+                "few": "{0} كتلة شمسية",
+                "many": "{0} كتلة شمسية",
+                "other": "{0} كتلة شمسية"
+              }
+            },
+            "mass-grain": {
+              "displayName": "قمحة",
+              "forms": {
+                "zero": "{0} قمحة",
+                "one": "{0} قمحة",
+                "two": "{0} قمحة",
+                "few": "{0} قمحة",
+                "many": "{0} قمحة",
+                "other": "{0} قمحة"
+              }
+            },
+            "length-rod": {
+              "displayName": "rod",
+              "forms": {
+                "other": "{0}\u202frod"
+              }
+            },
+            "length-chain": {
+              "displayName": "chain",
+              "forms": {
+                "other": "{0}\u202fchain"
+              }
+            },
+            "duration-fortnight": {
+              "displayName": "fortnight",
+              "forms": {
+                "other": "{0}\u202ffw"
+              }
+            },
+            "mass-slug": {
+              "displayName": "slug",
+              "forms": {
+                "other": "{0}\u202fslug"
+              }
+            },
+            "length-rin": {
+              "displayName": "rin [JP]",
+              "forms": {
+                "other": "{0} rin [JP]"
+              }
+            },
+            "length-sun": {
+              "displayName": "sun [JP]",
+              "forms": {
+                "other": "{0} sun [JP]"
+              }
+            },
+            "length-shaku-length": {
+              "displayName": "shaku [JP]",
+              "forms": {
+                "other": "{0} shaku [JP]"
+              }
+            },
+            "length-shaku-cloth": {
+              "displayName": "shaku [cloth, JP]",
+              "forms": {
+                "other": "{0} shaku [cloth, JP]"
+              }
+            },
+            "length-ken": {
+              "displayName": "ken [JP]",
+              "forms": {
+                "other": "{0} ken [JP]"
+              }
+            },
+            "length-jo-jp": {
+              "displayName": "jo [JP]",
+              "forms": {
+                "other": "{0} jo [JP]"
+              }
+            },
+            "length-ri-jp": {
+              "displayName": "ri [JP]",
+              "forms": {
+                "other": "{0} ri [JP]"
+              }
+            },
+            "mass-fun": {
+              "displayName": "fun [JP]",
+              "forms": {
+                "other": "{0} fun [JP]"
+              }
+            },
+            "duration-night": {
+              "displayName": "ليلة",
+              "forms": {
+                "zero": "{0} ل",
+                "one": "{0} ل",
+                "two": "{0} ل",
+                "few": "{0} ل",
+                "many": "{0} ل",
+                "other": "{0} ل"
+              },
+              "perUnitPattern": "{0}/ل"
+            }
+          },
+          "per": "{0}/{1}",
+          "times": "{0}⋅{1}"
+        }
+      },
+      "durationPatterns": {
+        "hm": "h:mm",
+        "hms": "h:mm:ss",
+        "ms": "m:ss"
+      }
+    }
+  }
+}

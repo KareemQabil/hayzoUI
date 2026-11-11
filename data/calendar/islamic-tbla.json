@@ -1,0 +1,432 @@
+{
+  "kind": "calendar",
+  "schemaVersion": 1,
+  "id": "islamic-tbla",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-cal-islamic-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-cal-islamic-full/main/{ar,en}/ca-islamic-tbla.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/calendarPreferenceData.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/calendarData.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-localenames-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-localenames-full/main/{ar,en}/localeDisplayNames.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-bcp47",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-bcp47/bcp47/calendar.json"
+      },
+      {
+        "name": "ICU4C",
+        "url": "https://github.com/unicode-org/icu/tree/release-78.3/icu4c/source/i18n",
+        "version": "release-78.3",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "icu4c/source/i18n/islamcal.cpp"
+      }
+    ],
+    "script": "tools/extract/calendar/build.mjs",
+    "notes": "Names, eras and preferredIn are copied from CLDR; conversion constants are read from the ICU source and asserted by the script; intl.probe, intl.caveats with figures and verification are measured on Node 22.23.4 (ICU 78.3, CLDR 48.0) and change with the runtime."
+  },
+  "data": {
+    "id": "islamic-tbla",
+    "name": {
+      "ar": "التقويم الهجري (الحسابات الفلكية)",
+      "en": "Hijri Calendar (tabular, astronomical epoch)"
+    },
+    "type": "lunar",
+    "months": [
+      {
+        "index": 1,
+        "name": {
+          "ar": "محرم",
+          "en": "Muharram"
+        },
+        "abbreviation": {
+          "ar": "محرم",
+          "en": "Muh."
+        },
+        "days": 30
+      },
+      {
+        "index": 2,
+        "name": {
+          "ar": "صفر",
+          "en": "Safar"
+        },
+        "abbreviation": {
+          "ar": "صفر",
+          "en": "Saf."
+        },
+        "days": 29
+      },
+      {
+        "index": 3,
+        "name": {
+          "ar": "ربيع الأول",
+          "en": "Rabiʻ I"
+        },
+        "abbreviation": {
+          "ar": "ربيع الأول",
+          "en": "Rab. I"
+        },
+        "days": 30
+      },
+      {
+        "index": 4,
+        "name": {
+          "ar": "ربيع الآخر",
+          "en": "Rabiʻ II"
+        },
+        "abbreviation": {
+          "ar": "ربيع الآخر",
+          "en": "Rab. II"
+        },
+        "days": 29
+      },
+      {
+        "index": 5,
+        "name": {
+          "ar": "جمادى الأولى",
+          "en": "Jumada I"
+        },
+        "abbreviation": {
+          "ar": "جمادى الأولى",
+          "en": "Jum. I"
+        },
+        "days": 30
+      },
+      {
+        "index": 6,
+        "name": {
+          "ar": "جمادى الآخرة",
+          "en": "Jumada II"
+        },
+        "abbreviation": {
+          "ar": "جمادى الآخرة",
+          "en": "Jum. II"
+        },
+        "days": 29
+      },
+      {
+        "index": 7,
+        "name": {
+          "ar": "رجب",
+          "en": "Rajab"
+        },
+        "abbreviation": {
+          "ar": "رجب",
+          "en": "Raj."
+        },
+        "days": 30
+      },
+      {
+        "index": 8,
+        "name": {
+          "ar": "شعبان",
+          "en": "Shaʻban"
+        },
+        "abbreviation": {
+          "ar": "شعبان",
+          "en": "Sha."
+        },
+        "days": 29
+      },
+      {
+        "index": 9,
+        "name": {
+          "ar": "رمضان",
+          "en": "Ramadan"
+        },
+        "abbreviation": {
+          "ar": "رمضان",
+          "en": "Ram."
+        },
+        "days": 30
+      },
+      {
+        "index": 10,
+        "name": {
+          "ar": "شوال",
+          "en": "Shawwal"
+        },
+        "abbreviation": {
+          "ar": "شوال",
+          "en": "Shaw."
+        },
+        "days": 29
+      },
+      {
+        "index": 11,
+        "name": {
+          "ar": "ذو القعدة",
+          "en": "Dhuʻl-Qiʻdah"
+        },
+        "abbreviation": {
+          "ar": "ذو القعدة",
+          "en": "Dhuʻl-Q."
+        },
+        "days": 30
+      },
+      {
+        "index": 12,
+        "name": {
+          "ar": "ذو الحجة",
+          "en": "Dhuʻl-Hijjah"
+        },
+        "abbreviation": {
+          "ar": "ذو الحجة",
+          "en": "Dhuʻl-H."
+        },
+        "days": [
+          29,
+          30
+        ]
+      }
+    ],
+    "eras": [
+      {
+        "id": "ah",
+        "name": {
+          "ar": "هـ",
+          "en": "Anno Hegirae"
+        },
+        "abbreviation": {
+          "ar": "هـ",
+          "en": "AH"
+        },
+        "cldrIndex": 0,
+        "start": "622-07-18"
+      },
+      {
+        "id": "bh",
+        "name": {
+          "ar": "BH",
+          "en": "Before Hijrah"
+        },
+        "abbreviation": {
+          "ar": "BH",
+          "en": "BH"
+        },
+        "cldrIndex": 1,
+        "end": "622-07-17",
+        "arabicNameIsUntranslated": true
+      }
+    ],
+    "intl": {
+      "identifier": "islamic-tbla",
+      "runtimeSupport": "Node 22.23.4 (ICU 78.3, CLDR 48.0): listed by Intl.supportedValuesOf('calendar'); Intl.DateTimeFormat('ar-u-ca-islamic-tbla') resolves to \"islamic-tbla\". Temporal is not available in this runtime.",
+      "range": "Arithmetic, no table limit.",
+      "caveats": [
+        "Compared with islamic-civil over 1800-01-01 … 2200-12-31: 146462 of 146462 days differ (always by one day)."
+      ],
+      "probe": {
+        "runtime": {
+          "node": "22.23.4",
+          "icu": "78.3",
+          "cldr": "48.0",
+          "unicode": "17.0",
+          "tz": "2026e"
+        },
+        "inSupportedValuesOf": true,
+        "resolvedCalendar": "islamic-tbla",
+        "sample": {
+          "gregorian": "2026-11-11",
+          "ar": "1 جمادى الآخرة 1448 هـ",
+          "en": "Jumada II 1, 1448 AH"
+        },
+        "edges": {
+          "ECMAScript minimum time value (-271821-04-20)": "3/23/-280804 AH",
+          "0001-01-01": "5/19/-640 AH",
+          "ECMAScript maximum time value (+275760-09-13)": "5/24/283583 AH"
+        },
+        "temporalAvailable": false
+      }
+    },
+    "conversion": {
+      "method": "arithmetic",
+      "reference": "ICU4C islamcal.cpp (release-78.3): the islamic-civil arithmetic with epoch Julian day 1948439 (Thursday 15 July 622 Julian), so every date is one day earlier than islamic-civil.",
+      "epochJulianDay": 1948439
+    },
+    "cldrId": "islamic-tbla",
+    "cldrCalendarSystem": "lunar",
+    "bcp47Description": "Hijri calendar, tabular (intercalary years [2,5,7,10,13,16,18,21,24,26,29] - astronomical epoch)",
+    "preferredIn": [
+      {
+        "region": "AE",
+        "rank": 5,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "BH",
+        "rank": 5,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "DJ",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "DZ",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "EG",
+        "rank": 5,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "IQ",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "JO",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "KM",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "KW",
+        "rank": 5,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "LB",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "LY",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "MA",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "MR",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "OM",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "PS",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "QA",
+        "rank": 5,
+        "of": 5,
+        "source": "explicit"
+      },
+      {
+        "region": "SD",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "SY",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "TN",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      },
+      {
+        "region": "YE",
+        "rank": 4,
+        "of": 4,
+        "source": "explicit"
+      }
+    ],
+    "dateFormats": {
+      "ar": {
+        "full": "EEEE، d MMMM y G",
+        "long": "d MMMM y G",
+        "medium": "d MMM y G",
+        "short": "d\u200f/M\u200f/y GGGGG"
+      }
+    },
+    "verification": [
+      {
+        "runtime": {
+          "node": "22.23.4",
+          "icu": "78.3",
+          "cldr": "48.0",
+          "unicode": "17.0",
+          "tz": "2026e"
+        },
+        "against": "the arithmetic above vs Intl.DateTimeFormat('en-u-ca-islamic-tbla')",
+        "from": "1800-01-01",
+        "to": "2200-12-31",
+        "daysCompared": 146462,
+        "mismatchCount": 0,
+        "mismatches": []
+      }
+    ]
+  }
+}

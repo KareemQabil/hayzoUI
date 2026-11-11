@@ -1,0 +1,4420 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/characters",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "UnicodeData.txt"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "ArabicShaping.txt"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "Scripts.txt"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "ScriptExtensions.txt"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "PropList.txt"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "Blocks.txt"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "DerivedAge.txt"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/17.0.0/ucd/",
+        "version": "17.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "NameAliases.txt"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-misc-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-misc-full/main/ar*/characters.json"
+      },
+      {
+        "name": "Apache Lucene",
+        "url": "https://github.com/apache/lucene/blob/releases/lucene/10.6.0/lucene/analysis/common/src/java/org/apache/lucene/analysis/ar/ArabicNormalizer.java",
+        "version": "10.6.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "lucene/analysis/common/src/java/org/apache/lucene/analysis/ar/ArabicNormalizer.java"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs",
+    "notes": "Every class is a mechanical selection over UCD 17.0.0 properties; the selector is stated per class. `char` for invisible characters is written as a JSON escape."
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "characters",
+    "content": {
+      "unicodeVersion": "17.0.0",
+      "classes": [
+        {
+          "id": "tashkeel",
+          "selector": "General_Category=Mn ∩ CLDR ar main exemplar set",
+          "count": 9,
+          "members": [
+            {
+              "codePoint": "U+064B",
+              "char": "ً",
+              "name": "ARABIC FATHATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 27,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064C",
+              "char": "ٌ",
+              "name": "ARABIC DAMMATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 28,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064D",
+              "char": "ٍ",
+              "name": "ARABIC KASRATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 29,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064E",
+              "char": "َ",
+              "name": "ARABIC FATHA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 30,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064F",
+              "char": "ُ",
+              "name": "ARABIC DAMMA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 31,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0650",
+              "char": "ِ",
+              "name": "ARABIC KASRA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 32,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0651",
+              "char": "ّ",
+              "name": "ARABIC SHADDA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 33,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0652",
+              "char": "ْ",
+              "name": "ARABIC SUKUN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 34,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0670",
+              "char": "ٰ",
+              "name": "ARABIC LETTER SUPERSCRIPT ALEF",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 35,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            }
+          ]
+        },
+        {
+          "id": "arabic-combining-marks",
+          "selector": "General_Category in {Mn, Me} and (Script=Arabic or Script_Extensions contains Arab)",
+          "count": 121,
+          "members": [
+            {
+              "codePoint": "U+0610",
+              "char": "ؐ",
+              "name": "ARABIC SIGN SALLALLAHOU ALAYHE WASSALLAM",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0611",
+              "char": "ؑ",
+              "name": "ARABIC SIGN ALAYHE ASSALLAM",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0612",
+              "char": "ؒ",
+              "name": "ARABIC SIGN RAHMATULLAH ALAYHE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0613",
+              "char": "ؓ",
+              "name": "ARABIC SIGN RADI ALLAHOU ANHU",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0614",
+              "char": "ؔ",
+              "name": "ARABIC SIGN TAKHALLUS",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0615",
+              "char": "ؕ",
+              "name": "ARABIC SMALL HIGH TAH",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0616",
+              "char": "ؖ",
+              "name": "ARABIC SMALL HIGH LIGATURE ALEF WITH LAM WITH YEH",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0617",
+              "char": "ؗ",
+              "name": "ARABIC SMALL HIGH ZAIN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0618",
+              "char": "ؘ",
+              "name": "ARABIC SMALL FATHA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 30,
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0619",
+              "char": "ؙ",
+              "name": "ARABIC SMALL DAMMA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 31,
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+061A",
+              "char": "ؚ",
+              "name": "ARABIC SMALL KASRA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 32,
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+064B",
+              "char": "ً",
+              "name": "ARABIC FATHATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 27,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064C",
+              "char": "ٌ",
+              "name": "ARABIC DAMMATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 28,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064D",
+              "char": "ٍ",
+              "name": "ARABIC KASRATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 29,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064E",
+              "char": "َ",
+              "name": "ARABIC FATHA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 30,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064F",
+              "char": "ُ",
+              "name": "ARABIC DAMMA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 31,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0650",
+              "char": "ِ",
+              "name": "ARABIC KASRA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 32,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0651",
+              "char": "ّ",
+              "name": "ARABIC SHADDA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 33,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0652",
+              "char": "ْ",
+              "name": "ARABIC SUKUN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 34,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0653",
+              "char": "ٓ",
+              "name": "ARABIC MADDAH ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "3.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0654",
+              "char": "ٔ",
+              "name": "ARABIC HAMZA ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "3.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0655",
+              "char": "ٕ",
+              "name": "ARABIC HAMZA BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "3.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0656",
+              "char": "ٖ",
+              "name": "ARABIC SUBSCRIPT ALEF",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0657",
+              "char": "ٗ",
+              "name": "ARABIC INVERTED DAMMA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0658",
+              "char": "٘",
+              "name": "ARABIC MARK NOON GHUNNA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0659",
+              "char": "ٙ",
+              "name": "ARABIC ZWARAKAY",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+065A",
+              "char": "ٚ",
+              "name": "ARABIC VOWEL SIGN SMALL V ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+065B",
+              "char": "ٛ",
+              "name": "ARABIC VOWEL SIGN INVERTED SMALL V ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+065C",
+              "char": "ٜ",
+              "name": "ARABIC VOWEL SIGN DOT BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+065D",
+              "char": "ٝ",
+              "name": "ARABIC REVERSED DAMMA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+065E",
+              "char": "ٞ",
+              "name": "ARABIC FATHA WITH TWO DOTS",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+065F",
+              "char": "ٟ",
+              "name": "ARABIC WAVY HAMZA BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0670",
+              "char": "ٰ",
+              "name": "ARABIC LETTER SUPERSCRIPT ALEF",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 35,
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+06D6",
+              "char": "ۖ",
+              "name": "ARABIC SMALL HIGH LIGATURE SAD WITH LAM WITH ALEF MAKSURA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D7",
+              "char": "ۗ",
+              "name": "ARABIC SMALL HIGH LIGATURE QAF WITH LAM WITH ALEF MAKSURA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D8",
+              "char": "ۘ",
+              "name": "ARABIC SMALL HIGH MEEM INITIAL FORM",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D9",
+              "char": "ۙ",
+              "name": "ARABIC SMALL HIGH LAM ALEF",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06DA",
+              "char": "ۚ",
+              "name": "ARABIC SMALL HIGH JEEM",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06DB",
+              "char": "ۛ",
+              "name": "ARABIC SMALL HIGH THREE DOTS",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06DC",
+              "char": "ۜ",
+              "name": "ARABIC SMALL HIGH SEEN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06DF",
+              "char": "۟",
+              "name": "ARABIC SMALL HIGH ROUNDED ZERO",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06E0",
+              "char": "۠",
+              "name": "ARABIC SMALL HIGH UPRIGHT RECTANGULAR ZERO",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06E1",
+              "char": "ۡ",
+              "name": "ARABIC SMALL HIGH DOTLESS HEAD OF KHAH",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06E2",
+              "char": "ۢ",
+              "name": "ARABIC SMALL HIGH MEEM ISOLATED FORM",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06E3",
+              "char": "ۣ",
+              "name": "ARABIC SMALL LOW SEEN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06E4",
+              "char": "ۤ",
+              "name": "ARABIC SMALL HIGH MADDA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06E7",
+              "char": "ۧ",
+              "name": "ARABIC SMALL HIGH YEH",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06E8",
+              "char": "ۨ",
+              "name": "ARABIC SMALL HIGH NOON",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06EA",
+              "char": "۪",
+              "name": "ARABIC EMPTY CENTRE LOW STOP",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06EB",
+              "char": "۫",
+              "name": "ARABIC EMPTY CENTRE HIGH STOP",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06EC",
+              "char": "۬",
+              "name": "ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06ED",
+              "char": "ۭ",
+              "name": "ARABIC SMALL LOW MEEM",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0897",
+              "char": "ࢗ",
+              "name": "ARABIC PEPET",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "16.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0898",
+              "char": "࢘",
+              "name": "ARABIC SMALL HIGH WORD AL-JUZ",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0899",
+              "char": "࢙",
+              "name": "ARABIC SMALL LOW WORD ISHMAAM",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+089A",
+              "char": "࢚",
+              "name": "ARABIC SMALL LOW WORD IMAALA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+089B",
+              "char": "࢛",
+              "name": "ARABIC SMALL LOW WORD TASHEEL",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+089C",
+              "char": "࢜",
+              "name": "ARABIC MADDA WAAJIB",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+089D",
+              "char": "࢝",
+              "name": "ARABIC SUPERSCRIPT ALEF MOKHASSAS",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+089E",
+              "char": "࢞",
+              "name": "ARABIC DOUBLED MADDA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+089F",
+              "char": "࢟",
+              "name": "ARABIC HALF MADDA OVER MADDA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08CA",
+              "char": "࣊",
+              "name": "ARABIC SMALL HIGH FARSI YEH",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08CB",
+              "char": "࣋",
+              "name": "ARABIC SMALL HIGH YEH BARREE WITH TWO DOTS BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08CC",
+              "char": "࣌",
+              "name": "ARABIC SMALL HIGH WORD SAH",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08CD",
+              "char": "࣍",
+              "name": "ARABIC SMALL HIGH ZAH",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08CE",
+              "char": "࣎",
+              "name": "ARABIC LARGE ROUND DOT ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08CF",
+              "char": "࣏",
+              "name": "ARABIC LARGE ROUND DOT BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D0",
+              "char": "࣐",
+              "name": "ARABIC SUKUN BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D1",
+              "char": "࣑",
+              "name": "ARABIC LARGE CIRCLE BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D2",
+              "char": "࣒",
+              "name": "ARABIC LARGE ROUND DOT INSIDE CIRCLE BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D3",
+              "char": "࣓",
+              "name": "ARABIC SMALL LOW WAW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "11.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D4",
+              "char": "ࣔ",
+              "name": "ARABIC SMALL HIGH WORD AR-RUB",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D5",
+              "char": "ࣕ",
+              "name": "ARABIC SMALL HIGH SAD",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D6",
+              "char": "ࣖ",
+              "name": "ARABIC SMALL HIGH AIN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D7",
+              "char": "ࣗ",
+              "name": "ARABIC SMALL HIGH QAF",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D8",
+              "char": "ࣘ",
+              "name": "ARABIC SMALL HIGH NOON WITH KASRA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08D9",
+              "char": "ࣙ",
+              "name": "ARABIC SMALL LOW NOON WITH KASRA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08DA",
+              "char": "ࣚ",
+              "name": "ARABIC SMALL HIGH WORD ATH-THALATHA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08DB",
+              "char": "ࣛ",
+              "name": "ARABIC SMALL HIGH WORD AS-SAJDA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08DC",
+              "char": "ࣜ",
+              "name": "ARABIC SMALL HIGH WORD AN-NISF",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08DD",
+              "char": "ࣝ",
+              "name": "ARABIC SMALL HIGH WORD SAKTA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08DE",
+              "char": "ࣞ",
+              "name": "ARABIC SMALL HIGH WORD QIF",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08DF",
+              "char": "ࣟ",
+              "name": "ARABIC SMALL HIGH WORD WAQFA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E0",
+              "char": "࣠",
+              "name": "ARABIC SMALL HIGH FOOTNOTE MARKER",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E1",
+              "char": "࣡",
+              "name": "ARABIC SMALL HIGH SIGN SAFHA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E3",
+              "char": "ࣣ",
+              "name": "ARABIC TURNED DAMMA BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "8.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E4",
+              "char": "ࣤ",
+              "name": "ARABIC CURLY FATHA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E5",
+              "char": "ࣥ",
+              "name": "ARABIC CURLY DAMMA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E6",
+              "char": "ࣦ",
+              "name": "ARABIC CURLY KASRA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E7",
+              "char": "ࣧ",
+              "name": "ARABIC CURLY FATHATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E8",
+              "char": "ࣨ",
+              "name": "ARABIC CURLY DAMMATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08E9",
+              "char": "ࣩ",
+              "name": "ARABIC CURLY KASRATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08EA",
+              "char": "࣪",
+              "name": "ARABIC TONE ONE DOT ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08EB",
+              "char": "࣫",
+              "name": "ARABIC TONE TWO DOTS ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08EC",
+              "char": "࣬",
+              "name": "ARABIC TONE LOOP ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08ED",
+              "char": "࣭",
+              "name": "ARABIC TONE ONE DOT BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08EE",
+              "char": "࣮",
+              "name": "ARABIC TONE TWO DOTS BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08EF",
+              "char": "࣯",
+              "name": "ARABIC TONE LOOP BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F0",
+              "char": "ࣰ",
+              "name": "ARABIC OPEN FATHATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 27,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F1",
+              "char": "ࣱ",
+              "name": "ARABIC OPEN DAMMATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 28,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F2",
+              "char": "ࣲ",
+              "name": "ARABIC OPEN KASRATAN",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 29,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F3",
+              "char": "ࣳ",
+              "name": "ARABIC SMALL HIGH WAW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F4",
+              "char": "ࣴ",
+              "name": "ARABIC FATHA WITH RING",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F5",
+              "char": "ࣵ",
+              "name": "ARABIC FATHA WITH DOT ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F6",
+              "char": "ࣶ",
+              "name": "ARABIC KASRA WITH DOT BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F7",
+              "char": "ࣷ",
+              "name": "ARABIC LEFT ARROWHEAD ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F8",
+              "char": "ࣸ",
+              "name": "ARABIC RIGHT ARROWHEAD ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08F9",
+              "char": "ࣹ",
+              "name": "ARABIC LEFT ARROWHEAD BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08FA",
+              "char": "ࣺ",
+              "name": "ARABIC RIGHT ARROWHEAD BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08FB",
+              "char": "ࣻ",
+              "name": "ARABIC DOUBLE RIGHT ARROWHEAD ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08FC",
+              "char": "ࣼ",
+              "name": "ARABIC DOUBLE RIGHT ARROWHEAD ABOVE WITH DOT",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08FD",
+              "char": "ࣽ",
+              "name": "ARABIC RIGHT ARROWHEAD ABOVE WITH DOT",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08FE",
+              "char": "ࣾ",
+              "name": "ARABIC DAMMA WITH DOT",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08FF",
+              "char": "ࣿ",
+              "name": "ARABIC MARK SIDEWAYS NOON GHUNNA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "7.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+102E0",
+              "char": "𐋠",
+              "name": "COPTIC EPACT THOUSANDS MARK",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "7.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EFA",
+              "char": "𐻺",
+              "name": "ARABIC DOUBLE VERTICAL BAR BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "17.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EFB",
+              "char": "𐻻",
+              "name": "ARABIC SMALL LOW NOON",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "17.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EFC",
+              "char": "𐻼",
+              "name": "ARABIC COMBINING ALEF OVERLAY",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "age": "16.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EFD",
+              "char": "𐻽",
+              "name": "ARABIC SMALL LOW WORD SAKTA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "15.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EFE",
+              "char": "𐻾",
+              "name": "ARABIC SMALL LOW WORD QASR",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "15.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EFF",
+              "char": "𐻿",
+              "name": "ARABIC SMALL LOW WORD MADDA",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "15.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "tatweel",
+          "selector": "Joining_Type=C (join-causing) and (Script=Arabic or Script_Extensions contains Arab)",
+          "count": 4,
+          "members": [
+            {
+              "codePoint": "U+0640",
+              "char": "ـ",
+              "name": "ARABIC TATWEEL",
+              "generalCategory": "Lm",
+              "bidiClass": "AL",
+              "joiningType": "C",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary"
+            },
+            {
+              "codePoint": "U+0883",
+              "char": "ࢃ",
+              "name": "ARABIC TATWEEL WITH OVERSTRUCK HAMZA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "C",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0884",
+              "char": "ࢄ",
+              "name": "ARABIC TATWEEL WITH OVERSTRUCK WAW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "C",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0885",
+              "char": "ࢅ",
+              "name": "ARABIC TATWEEL WITH TWO DOTS BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "C",
+              "age": "14.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "hamza-forms",
+          "selector": "Script=Arabic, General_Category=Lo, block Arabic; canonical decomposition ends in U+0653/U+0654/U+0655, or name contains HAMZA",
+          "count": 17,
+          "members": [
+            {
+              "codePoint": "U+0621",
+              "char": "ء",
+              "name": "ARABIC LETTER HAMZA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "U",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0622",
+              "char": "آ",
+              "name": "ARABIC LETTER ALEF WITH MADDA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0627",
+                  "U+0653"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0623",
+              "char": "أ",
+              "name": "ARABIC LETTER ALEF WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0627",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0624",
+              "char": "ؤ",
+              "name": "ARABIC LETTER WAW WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0648",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0625",
+              "char": "إ",
+              "name": "ARABIC LETTER ALEF WITH HAMZA BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0627",
+                  "U+0655"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0626",
+              "char": "ئ",
+              "name": "ARABIC LETTER YEH WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+064A",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0672",
+              "char": "ٲ",
+              "name": "ARABIC LETTER ALEF WITH WAVY HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0673",
+              "char": "ٳ",
+              "name": "ARABIC LETTER ALEF WITH WAVY HAMZA BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0674",
+              "char": "ٴ",
+              "name": "ARABIC LETTER HIGH HAMZA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "U",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0675",
+              "char": "ٵ",
+              "name": "ARABIC LETTER HIGH HAMZA ALEF",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+0627",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0676",
+              "char": "ٶ",
+              "name": "ARABIC LETTER HIGH HAMZA WAW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+0648",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0677",
+              "char": "ٷ",
+              "name": "ARABIC LETTER U WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+06C7",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0678",
+              "char": "ٸ",
+              "name": "ARABIC LETTER HIGH HAMZA YEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+064A",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0681",
+              "char": "ځ",
+              "name": "ARABIC LETTER HAH WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "HAH",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C0",
+              "char": "ۀ",
+              "name": "ARABIC LETTER HEH WITH YEH ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "TEH MARBUTA",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+06D5",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C2",
+              "char": "ۂ",
+              "name": "ARABIC LETTER HEH GOAL WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "HEH GOAL",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+06C1",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D3",
+              "char": "ۓ",
+              "name": "ARABIC LETTER YEH BARREE WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "YEH BARREE",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+06D2",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "hamza-marks",
+          "selector": "combining marks U+0653..U+0655 that canonical decompositions of hamza forms end in",
+          "count": 3,
+          "members": [
+            {
+              "codePoint": "U+0653",
+              "char": "ٓ",
+              "name": "ARABIC MADDAH ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "3.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0654",
+              "char": "ٔ",
+              "name": "ARABIC HAMZA ABOVE",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 230,
+              "age": "3.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0655",
+              "char": "ٕ",
+              "name": "ARABIC HAMZA BELOW",
+              "generalCategory": "Mn",
+              "bidiClass": "NSM",
+              "combiningClass": 220,
+              "age": "3.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "alef-forms",
+          "selector": "Joining_Group=ALEF",
+          "count": 29,
+          "members": [
+            {
+              "codePoint": "U+0622",
+              "char": "آ",
+              "name": "ARABIC LETTER ALEF WITH MADDA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0627",
+                  "U+0653"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0623",
+              "char": "أ",
+              "name": "ARABIC LETTER ALEF WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0627",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0625",
+              "char": "إ",
+              "name": "ARABIC LETTER ALEF WITH HAMZA BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0627",
+                  "U+0655"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0627",
+              "char": "ا",
+              "name": "ARABIC LETTER ALEF",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0671",
+              "char": "ٱ",
+              "name": "ARABIC LETTER ALEF WASLA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0672",
+              "char": "ٲ",
+              "name": "ARABIC LETTER ALEF WITH WAVY HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0673",
+              "char": "ٳ",
+              "name": "ARABIC LETTER ALEF WITH WAVY HAMZA BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0675",
+              "char": "ٵ",
+              "name": "ARABIC LETTER HIGH HAMZA ALEF",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+0627",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0773",
+              "char": "ݳ",
+              "name": "ARABIC LETTER ALEF WITH EXTENDED ARABIC-INDIC DIGIT TWO ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0774",
+              "char": "ݴ",
+              "name": "ARABIC LETTER ALEF WITH EXTENDED ARABIC-INDIC DIGIT THREE ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0870",
+              "char": "ࡰ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED FATHA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0871",
+              "char": "ࡱ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED TOP RIGHT FATHA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0872",
+              "char": "ࡲ",
+              "name": "ARABIC LETTER ALEF WITH RIGHT MIDDLE STROKE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0873",
+              "char": "ࡳ",
+              "name": "ARABIC LETTER ALEF WITH LEFT MIDDLE STROKE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0874",
+              "char": "ࡴ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED KASRA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0875",
+              "char": "ࡵ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED BOTTOM RIGHT KASRA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0876",
+              "char": "ࡶ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED ROUND DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0877",
+              "char": "ࡷ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED RIGHT ROUND DOT",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0878",
+              "char": "ࡸ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED LEFT ROUND DOT",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0879",
+              "char": "ࡹ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED ROUND DOT BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+087A",
+              "char": "ࡺ",
+              "name": "ARABIC LETTER ALEF WITH DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+087B",
+              "char": "ࡻ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED TOP RIGHT FATHA AND DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+087C",
+              "char": "ࡼ",
+              "name": "ARABIC LETTER ALEF WITH RIGHT MIDDLE STROKE AND DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+087D",
+              "char": "ࡽ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED BOTTOM RIGHT KASRA AND DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+087E",
+              "char": "ࡾ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED TOP RIGHT FATHA AND LEFT RING",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+087F",
+              "char": "ࡿ",
+              "name": "ARABIC LETTER ALEF WITH RIGHT MIDDLE STROKE AND LEFT RING",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0880",
+              "char": "ࢀ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED BOTTOM RIGHT KASRA AND LEFT RING",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0881",
+              "char": "ࢁ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED RIGHT HAMZA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0882",
+              "char": "ࢂ",
+              "name": "ARABIC LETTER ALEF WITH ATTACHED LEFT HAMZA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "ALEF",
+              "age": "14.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "yeh-forms",
+          "selector": "Joining_Group in {YEH, FARSI YEH, YEH BARREE, YEH WITH TAIL}",
+          "count": 21,
+          "members": [
+            {
+              "codePoint": "U+0626",
+              "char": "ئ",
+              "name": "ARABIC LETTER YEH WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+064A",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+063D",
+              "char": "ؽ",
+              "name": "ARABIC LETTER FARSI YEH WITH INVERTED V",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "FARSI YEH",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+063E",
+              "char": "ؾ",
+              "name": "ARABIC LETTER FARSI YEH WITH TWO DOTS ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "FARSI YEH",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+063F",
+              "char": "ؿ",
+              "name": "ARABIC LETTER FARSI YEH WITH THREE DOTS ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "FARSI YEH",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0649",
+              "char": "ى",
+              "name": "ARABIC LETTER ALEF MAKSURA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+064A",
+              "char": "ي",
+              "name": "ARABIC LETTER YEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0678",
+              "char": "ٸ",
+              "name": "ARABIC LETTER HIGH HAMZA YEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+064A",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06CC",
+              "char": "ی",
+              "name": "ARABIC LETTER FARSI YEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "FARSI YEH",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary"
+            },
+            {
+              "codePoint": "U+06CD",
+              "char": "ۍ",
+              "name": "ARABIC LETTER YEH WITH TAIL",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "YEH WITH TAIL",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06CE",
+              "char": "ێ",
+              "name": "ARABIC LETTER YEH WITH SMALL V",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "FARSI YEH",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D0",
+              "char": "ې",
+              "name": "ARABIC LETTER E",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D1",
+              "char": "ۑ",
+              "name": "ARABIC LETTER YEH WITH THREE DOTS BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D2",
+              "char": "ے",
+              "name": "ARABIC LETTER YEH BARREE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "YEH BARREE",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D3",
+              "char": "ۓ",
+              "name": "ARABIC LETTER YEH BARREE WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "YEH BARREE",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+06D2",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0775",
+              "char": "ݵ",
+              "name": "ARABIC LETTER FARSI YEH WITH EXTENDED ARABIC-INDIC DIGIT TWO ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "FARSI YEH",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0776",
+              "char": "ݶ",
+              "name": "ARABIC LETTER FARSI YEH WITH EXTENDED ARABIC-INDIC DIGIT THREE ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "FARSI YEH",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0777",
+              "char": "ݷ",
+              "name": "ARABIC LETTER FARSI YEH WITH EXTENDED ARABIC-INDIC DIGIT FOUR BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08A8",
+              "char": "ࢨ",
+              "name": "ARABIC LETTER YEH WITH TWO DOTS BELOW AND HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08A9",
+              "char": "ࢩ",
+              "name": "ARABIC LETTER YEH WITH TWO DOTS BELOW AND DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08BA",
+              "char": "ࢺ",
+              "name": "ARABIC LETTER YEH WITH TWO DOTS BELOW AND SMALL NOON ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "9.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EC7",
+              "char": "𐻇",
+              "name": "ARABIC LETTER YEH WITH FOUR DOTS BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "YEH",
+              "age": "17.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "teh-marbuta-heh-forms",
+          "selector": "Joining_Group in {TEH MARBUTA, TEH MARBUTA GOAL, HEH, HEH GOAL, KNOTTED HEH}",
+          "count": 9,
+          "members": [
+            {
+              "codePoint": "U+0629",
+              "char": "ة",
+              "name": "ARABIC LETTER TEH MARBUTA",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "TEH MARBUTA",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0647",
+              "char": "ه",
+              "name": "ARABIC LETTER HEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "HEH",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+06BE",
+              "char": "ھ",
+              "name": "ARABIC LETTER HEH DOACHASHMEE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KNOTTED HEH",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C0",
+              "char": "ۀ",
+              "name": "ARABIC LETTER HEH WITH YEH ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "TEH MARBUTA",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+06D5",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C1",
+              "char": "ہ",
+              "name": "ARABIC LETTER HEH GOAL",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "HEH GOAL",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C2",
+              "char": "ۂ",
+              "name": "ARABIC LETTER HEH GOAL WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "HEH GOAL",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+06C1",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C3",
+              "char": "ۃ",
+              "name": "ARABIC LETTER TEH MARBUTA GOAL",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "TEH MARBUTA GOAL",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D5",
+              "char": "ە",
+              "name": "ARABIC LETTER AE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "TEH MARBUTA",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06FF",
+              "char": "ۿ",
+              "name": "ARABIC LETTER HEH WITH INVERTED V",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KNOTTED HEH",
+              "age": "4.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "kaf-forms",
+          "selector": "Joining_Group in {KAF, SWASH KAF, GAF}",
+          "count": 25,
+          "members": [
+            {
+              "codePoint": "U+063B",
+              "char": "ػ",
+              "name": "ARABIC LETTER KEHEH WITH TWO DOTS ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+063C",
+              "char": "ؼ",
+              "name": "ARABIC LETTER KEHEH WITH THREE DOTS BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0643",
+              "char": "ك",
+              "name": "ARABIC LETTER KAF",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KAF",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+06A9",
+              "char": "ک",
+              "name": "ARABIC LETTER KEHEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary"
+            },
+            {
+              "codePoint": "U+06AA",
+              "char": "ڪ",
+              "name": "ARABIC LETTER SWASH KAF",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "SWASH KAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06AB",
+              "char": "ګ",
+              "name": "ARABIC LETTER KAF WITH RING",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06AC",
+              "char": "ڬ",
+              "name": "ARABIC LETTER KAF WITH DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06AD",
+              "char": "ڭ",
+              "name": "ARABIC LETTER NG",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06AE",
+              "char": "ڮ",
+              "name": "ARABIC LETTER KAF WITH THREE DOTS BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06AF",
+              "char": "گ",
+              "name": "ARABIC LETTER GAF",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary"
+            },
+            {
+              "codePoint": "U+06B0",
+              "char": "ڰ",
+              "name": "ARABIC LETTER GAF WITH RING",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06B1",
+              "char": "ڱ",
+              "name": "ARABIC LETTER NGOEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06B2",
+              "char": "ڲ",
+              "name": "ARABIC LETTER GAF WITH TWO DOTS BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06B3",
+              "char": "ڳ",
+              "name": "ARABIC LETTER GUEH",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06B4",
+              "char": "ڴ",
+              "name": "ARABIC LETTER GAF WITH THREE DOTS ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0762",
+              "char": "ݢ",
+              "name": "ARABIC LETTER KEHEH WITH DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0763",
+              "char": "ݣ",
+              "name": "ARABIC LETTER KEHEH WITH THREE DOTS ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0764",
+              "char": "ݤ",
+              "name": "ARABIC LETTER KEHEH WITH THREE DOTS POINTING UPWARDS BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+077F",
+              "char": "ݿ",
+              "name": "ARABIC LETTER KAF WITH TWO DOTS ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KAF",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+088D",
+              "char": "ࢍ",
+              "name": "ARABIC LETTER KEHEH WITH TWO DOTS VERTICALLY BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08B0",
+              "char": "ࢰ",
+              "name": "ARABIC LETTER GAF WITH INVERTED STROKE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "7.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08B4",
+              "char": "ࢴ",
+              "name": "ARABIC LETTER KAF WITH DOT BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KAF",
+              "age": "8.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08C2",
+              "char": "ࣂ",
+              "name": "ARABIC LETTER KEHEH WITH SMALL V",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "13.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08C8",
+              "char": "ࣈ",
+              "name": "ARABIC LETTER GRAF",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "GAF",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10EC4",
+              "char": "𐻄",
+              "name": "ARABIC LETTER KAF WITH TWO DOTS VERTICALLY BELOW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "D",
+              "joiningGroup": "KAF",
+              "age": "16.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "waw-forms",
+          "selector": "Joining_Group=WAW",
+          "count": 16,
+          "members": [
+            {
+              "codePoint": "U+0624",
+              "char": "ؤ",
+              "name": "ARABIC LETTER WAW WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "decomposition": {
+                "type": "canonical",
+                "codePoints": [
+                  "U+0648",
+                  "U+0654"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0648",
+              "char": "و",
+              "name": "ARABIC LETTER WAW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": "main"
+            },
+            {
+              "codePoint": "U+0676",
+              "char": "ٶ",
+              "name": "ARABIC LETTER HIGH HAMZA WAW",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+0648",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0677",
+              "char": "ٷ",
+              "name": "ARABIC LETTER U WITH HAMZA ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "decomposition": {
+                "type": "compat",
+                "codePoints": [
+                  "U+06C7",
+                  "U+0674"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C4",
+              "char": "ۄ",
+              "name": "ARABIC LETTER WAW WITH RING",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C5",
+              "char": "ۅ",
+              "name": "ARABIC LETTER KIRGHIZ OE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C6",
+              "char": "ۆ",
+              "name": "ARABIC LETTER OE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C7",
+              "char": "ۇ",
+              "name": "ARABIC LETTER U",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C8",
+              "char": "ۈ",
+              "name": "ARABIC LETTER YU",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06C9",
+              "char": "ۉ",
+              "name": "ARABIC LETTER KIRGHIZ YU",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06CA",
+              "char": "ۊ",
+              "name": "ARABIC LETTER WAW WITH TWO DOTS ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06CB",
+              "char": "ۋ",
+              "name": "ARABIC LETTER VE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06CF",
+              "char": "ۏ",
+              "name": "ARABIC LETTER WAW WITH DOT ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "3.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0778",
+              "char": "ݸ",
+              "name": "ARABIC LETTER WAW WITH EXTENDED ARABIC-INDIC DIGIT TWO ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0779",
+              "char": "ݹ",
+              "name": "ARABIC LETTER WAW WITH EXTENDED ARABIC-INDIC DIGIT THREE ABOVE",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+08AB",
+              "char": "ࢫ",
+              "name": "ARABIC LETTER WAW WITH DOT WITHIN",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "joiningType": "R",
+              "joiningGroup": "WAW",
+              "age": "6.1",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "lam-alef-ligatures",
+          "selector": "compatibility decomposition <isolated|final> U+0644 + a code point with Joining_Group=ALEF",
+          "count": 8,
+          "members": [
+            {
+              "codePoint": "U+FEF5",
+              "char": "ﻵ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF WITH MADDA ABOVE ISOLATED FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "isolated",
+                "codePoints": [
+                  "U+0644",
+                  "U+0622"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FEF6",
+              "char": "ﻶ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF WITH MADDA ABOVE FINAL FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "final",
+                "codePoints": [
+                  "U+0644",
+                  "U+0622"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FEF7",
+              "char": "ﻷ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF WITH HAMZA ABOVE ISOLATED FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "isolated",
+                "codePoints": [
+                  "U+0644",
+                  "U+0623"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FEF8",
+              "char": "ﻸ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF WITH HAMZA ABOVE FINAL FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "final",
+                "codePoints": [
+                  "U+0644",
+                  "U+0623"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FEF9",
+              "char": "ﻹ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF WITH HAMZA BELOW ISOLATED FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "isolated",
+                "codePoints": [
+                  "U+0644",
+                  "U+0625"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FEFA",
+              "char": "ﻺ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF WITH HAMZA BELOW FINAL FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "final",
+                "codePoints": [
+                  "U+0644",
+                  "U+0625"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FEFB",
+              "char": "ﻻ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF ISOLATED FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "isolated",
+                "codePoints": [
+                  "U+0644",
+                  "U+0627"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FEFC",
+              "char": "ﻼ",
+              "name": "ARABIC LIGATURE LAM WITH ALEF FINAL FORM",
+              "generalCategory": "Lo",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "final",
+                "codePoints": [
+                  "U+0644",
+                  "U+0627"
+                ]
+              },
+              "age": "1.1",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "punctuation",
+          "selector": "General_Category P* and (Script=Arabic or Script_Extensions contains Arab)",
+          "count": 18,
+          "members": [
+            {
+              "codePoint": "U+0609",
+              "char": "؉",
+              "name": "ARABIC-INDIC PER MILLE SIGN",
+              "generalCategory": "Po",
+              "bidiClass": "ET",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+060A",
+              "char": "؊",
+              "name": "ARABIC-INDIC PER TEN THOUSAND SIGN",
+              "generalCategory": "Po",
+              "bidiClass": "ET",
+              "age": "5.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+060C",
+              "char": "،",
+              "name": "ARABIC COMMA",
+              "generalCategory": "Po",
+              "bidiClass": "CS",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+060D",
+              "char": "؍",
+              "name": "ARABIC DATE SEPARATOR",
+              "generalCategory": "Po",
+              "bidiClass": "AL",
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+061B",
+              "char": "؛",
+              "name": "ARABIC SEMICOLON",
+              "generalCategory": "Po",
+              "bidiClass": "AL",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+061D",
+              "char": "؝",
+              "name": "ARABIC END OF TEXT MARK",
+              "generalCategory": "Po",
+              "bidiClass": "AL",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+061E",
+              "char": "؞",
+              "name": "ARABIC TRIPLE DOT PUNCTUATION MARK",
+              "generalCategory": "Po",
+              "bidiClass": "AL",
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+061F",
+              "char": "؟",
+              "name": "ARABIC QUESTION MARK",
+              "generalCategory": "Po",
+              "bidiClass": "AL",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+066A",
+              "char": "٪",
+              "name": "ARABIC PERCENT SIGN",
+              "generalCategory": "Po",
+              "bidiClass": "ET",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+066B",
+              "char": "٫",
+              "name": "ARABIC DECIMAL SEPARATOR",
+              "generalCategory": "Po",
+              "bidiClass": "AN",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+066C",
+              "char": "٬",
+              "name": "ARABIC THOUSANDS SEPARATOR",
+              "generalCategory": "Po",
+              "bidiClass": "AN",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+066D",
+              "char": "٭",
+              "name": "ARABIC FIVE POINTED STAR",
+              "generalCategory": "Po",
+              "bidiClass": "AL",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06D4",
+              "char": "۔",
+              "name": "ARABIC FULL STOP",
+              "generalCategory": "Po",
+              "bidiClass": "AL",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+204F",
+              "char": "⁏",
+              "name": "REVERSED SEMICOLON",
+              "generalCategory": "Po",
+              "bidiClass": "ON",
+              "age": "3.2",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+2E41",
+              "char": "⹁",
+              "name": "REVERSED COMMA",
+              "generalCategory": "Po",
+              "bidiClass": "ON",
+              "age": "7.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FD3E",
+              "char": "﴾",
+              "name": "ORNATE LEFT PARENTHESIS",
+              "generalCategory": "Pe",
+              "bidiClass": "ON",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FD3F",
+              "char": "﴿",
+              "name": "ORNATE RIGHT PARENTHESIS",
+              "generalCategory": "Ps",
+              "bidiClass": "ON",
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+10ED0",
+              "char": "𐻐",
+              "name": "ARABIC BIBLICAL END OF VERSE",
+              "generalCategory": "Po",
+              "bidiClass": "ON",
+              "age": "17.0",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "digits",
+          "selector": "General_Category=Nd and (Script=Arabic or Script_Extensions contains Arab)",
+          "count": 20,
+          "members": [
+            {
+              "codePoint": "U+0660",
+              "char": "٠",
+              "name": "ARABIC-INDIC DIGIT ZERO",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 0,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0661",
+              "char": "١",
+              "name": "ARABIC-INDIC DIGIT ONE",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 1,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0662",
+              "char": "٢",
+              "name": "ARABIC-INDIC DIGIT TWO",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 2,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0663",
+              "char": "٣",
+              "name": "ARABIC-INDIC DIGIT THREE",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 3,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0664",
+              "char": "٤",
+              "name": "ARABIC-INDIC DIGIT FOUR",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 4,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0665",
+              "char": "٥",
+              "name": "ARABIC-INDIC DIGIT FIVE",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 5,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0666",
+              "char": "٦",
+              "name": "ARABIC-INDIC DIGIT SIX",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 6,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0667",
+              "char": "٧",
+              "name": "ARABIC-INDIC DIGIT SEVEN",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 7,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0668",
+              "char": "٨",
+              "name": "ARABIC-INDIC DIGIT EIGHT",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 8,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0669",
+              "char": "٩",
+              "name": "ARABIC-INDIC DIGIT NINE",
+              "generalCategory": "Nd",
+              "bidiClass": "AN",
+              "digitValue": 9,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F0",
+              "char": "۰",
+              "name": "EXTENDED ARABIC-INDIC DIGIT ZERO",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 0,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F1",
+              "char": "۱",
+              "name": "EXTENDED ARABIC-INDIC DIGIT ONE",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 1,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F2",
+              "char": "۲",
+              "name": "EXTENDED ARABIC-INDIC DIGIT TWO",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 2,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F3",
+              "char": "۳",
+              "name": "EXTENDED ARABIC-INDIC DIGIT THREE",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 3,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F4",
+              "char": "۴",
+              "name": "EXTENDED ARABIC-INDIC DIGIT FOUR",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 4,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F5",
+              "char": "۵",
+              "name": "EXTENDED ARABIC-INDIC DIGIT FIVE",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 5,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F6",
+              "char": "۶",
+              "name": "EXTENDED ARABIC-INDIC DIGIT SIX",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 6,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F7",
+              "char": "۷",
+              "name": "EXTENDED ARABIC-INDIC DIGIT SEVEN",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 7,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F8",
+              "char": "۸",
+              "name": "EXTENDED ARABIC-INDIC DIGIT EIGHT",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 8,
+              "age": "1.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+06F9",
+              "char": "۹",
+              "name": "EXTENDED ARABIC-INDIC DIGIT NINE",
+              "generalCategory": "Nd",
+              "bidiClass": "EN",
+              "digitValue": 9,
+              "age": "1.1",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "currency-symbols",
+          "selector": "General_Category=Sc and (Script=Arabic or Script_Extensions contains Arab)",
+          "count": 2,
+          "members": [
+            {
+              "codePoint": "U+060B",
+              "char": "؋",
+              "name": "AFGHANI SIGN",
+              "generalCategory": "Sc",
+              "bidiClass": "AL",
+              "joiningType": "U",
+              "age": "4.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+FDFC",
+              "char": "﷼",
+              "name": "RIAL SIGN",
+              "generalCategory": "Sc",
+              "bidiClass": "AL",
+              "decomposition": {
+                "type": "isolated",
+                "codePoints": [
+                  "U+0631",
+                  "U+06CC",
+                  "U+0627",
+                  "U+0644"
+                ]
+              },
+              "age": "3.2",
+              "cldrExemplar": null
+            }
+          ]
+        },
+        {
+          "id": "bidi-controls",
+          "selector": "PropList Bidi_Control",
+          "count": 12,
+          "members": [
+            {
+              "codePoint": "U+061C",
+              "char": "\u061c",
+              "name": "ARABIC LETTER MARK",
+              "generalCategory": "Cf",
+              "bidiClass": "AL",
+              "abbreviation": "ALM",
+              "age": "6.3",
+              "cldrExemplar": null,
+              "role": "mark",
+              "direction": "rtl"
+            },
+            {
+              "codePoint": "U+200E",
+              "char": "\u200e",
+              "name": "LEFT-TO-RIGHT MARK",
+              "generalCategory": "Cf",
+              "bidiClass": "L",
+              "abbreviation": "LRM",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary",
+              "role": "mark",
+              "direction": "ltr"
+            },
+            {
+              "codePoint": "U+200F",
+              "char": "\u200f",
+              "name": "RIGHT-TO-LEFT MARK",
+              "generalCategory": "Cf",
+              "bidiClass": "R",
+              "abbreviation": "RLM",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary",
+              "role": "mark",
+              "direction": "rtl"
+            },
+            {
+              "codePoint": "U+202A",
+              "char": "\u202a",
+              "name": "LEFT-TO-RIGHT EMBEDDING",
+              "generalCategory": "Cf",
+              "bidiClass": "LRE",
+              "abbreviation": "LRE",
+              "age": "1.1",
+              "cldrExemplar": null,
+              "role": "embedding",
+              "direction": "ltr"
+            },
+            {
+              "codePoint": "U+202B",
+              "char": "\u202b",
+              "name": "RIGHT-TO-LEFT EMBEDDING",
+              "generalCategory": "Cf",
+              "bidiClass": "RLE",
+              "abbreviation": "RLE",
+              "age": "1.1",
+              "cldrExemplar": null,
+              "role": "embedding",
+              "direction": "rtl"
+            },
+            {
+              "codePoint": "U+202C",
+              "char": "\u202c",
+              "name": "POP DIRECTIONAL FORMATTING",
+              "generalCategory": "Cf",
+              "bidiClass": "PDF",
+              "abbreviation": "PDF",
+              "age": "1.1",
+              "cldrExemplar": null,
+              "role": "pop-embedding-or-override"
+            },
+            {
+              "codePoint": "U+202D",
+              "char": "\u202d",
+              "name": "LEFT-TO-RIGHT OVERRIDE",
+              "generalCategory": "Cf",
+              "bidiClass": "LRO",
+              "abbreviation": "LRO",
+              "age": "1.1",
+              "cldrExemplar": null,
+              "role": "override",
+              "direction": "ltr"
+            },
+            {
+              "codePoint": "U+202E",
+              "char": "\u202e",
+              "name": "RIGHT-TO-LEFT OVERRIDE",
+              "generalCategory": "Cf",
+              "bidiClass": "RLO",
+              "abbreviation": "RLO",
+              "age": "1.1",
+              "cldrExemplar": null,
+              "role": "override",
+              "direction": "rtl"
+            },
+            {
+              "codePoint": "U+2066",
+              "char": "\u2066",
+              "name": "LEFT-TO-RIGHT ISOLATE",
+              "generalCategory": "Cf",
+              "bidiClass": "LRI",
+              "abbreviation": "LRI",
+              "joiningType": "U",
+              "age": "6.3",
+              "cldrExemplar": null,
+              "role": "isolate",
+              "direction": "ltr"
+            },
+            {
+              "codePoint": "U+2067",
+              "char": "\u2067",
+              "name": "RIGHT-TO-LEFT ISOLATE",
+              "generalCategory": "Cf",
+              "bidiClass": "RLI",
+              "abbreviation": "RLI",
+              "joiningType": "U",
+              "age": "6.3",
+              "cldrExemplar": null,
+              "role": "isolate",
+              "direction": "rtl"
+            },
+            {
+              "codePoint": "U+2068",
+              "char": "\u2068",
+              "name": "FIRST STRONG ISOLATE",
+              "generalCategory": "Cf",
+              "bidiClass": "FSI",
+              "abbreviation": "FSI",
+              "joiningType": "U",
+              "age": "6.3",
+              "cldrExemplar": null,
+              "role": "isolate",
+              "direction": "first-strong"
+            },
+            {
+              "codePoint": "U+2069",
+              "char": "\u2069",
+              "name": "POP DIRECTIONAL ISOLATE",
+              "generalCategory": "Cf",
+              "bidiClass": "PDI",
+              "abbreviation": "PDI",
+              "joiningType": "U",
+              "age": "6.3",
+              "cldrExemplar": null,
+              "role": "pop-isolate"
+            }
+          ]
+        },
+        {
+          "id": "join-controls",
+          "selector": "PropList Join_Control",
+          "count": 2,
+          "members": [
+            {
+              "codePoint": "U+200C",
+              "char": "\u200c",
+              "name": "ZERO WIDTH NON-JOINER",
+              "generalCategory": "Cf",
+              "bidiClass": "BN",
+              "abbreviation": "ZWNJ",
+              "joiningType": "U",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary"
+            },
+            {
+              "codePoint": "U+200D",
+              "char": "\u200d",
+              "name": "ZERO WIDTH JOINER",
+              "generalCategory": "Cf",
+              "bidiClass": "BN",
+              "abbreviation": "ZWJ",
+              "joiningType": "C",
+              "age": "1.1",
+              "cldrExemplar": "auxiliary"
+            }
+          ]
+        },
+        {
+          "id": "prepended-concatenation-marks",
+          "selector": "PropList Prepended_Concatenation_Mark and (Script=Arabic or Script_Extensions contains Arab)",
+          "count": 7,
+          "members": [
+            {
+              "codePoint": "U+0600",
+              "char": "\u0600",
+              "name": "ARABIC NUMBER SIGN",
+              "generalCategory": "Cf",
+              "bidiClass": "AN",
+              "joiningType": "U",
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0601",
+              "char": "\u0601",
+              "name": "ARABIC SIGN SANAH",
+              "generalCategory": "Cf",
+              "bidiClass": "AN",
+              "joiningType": "U",
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0602",
+              "char": "\u0602",
+              "name": "ARABIC FOOTNOTE MARKER",
+              "generalCategory": "Cf",
+              "bidiClass": "AN",
+              "joiningType": "U",
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0603",
+              "char": "\u0603",
+              "name": "ARABIC SIGN SAFHA",
+              "generalCategory": "Cf",
+              "bidiClass": "AN",
+              "joiningType": "U",
+              "age": "4.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0604",
+              "char": "\u0604",
+              "name": "ARABIC SIGN SAMVAT",
+              "generalCategory": "Cf",
+              "bidiClass": "AN",
+              "joiningType": "U",
+              "age": "6.1",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0890",
+              "char": "\u0890",
+              "name": "ARABIC POUND MARK ABOVE",
+              "generalCategory": "Cf",
+              "bidiClass": "AN",
+              "joiningType": "U",
+              "age": "14.0",
+              "cldrExemplar": null
+            },
+            {
+              "codePoint": "U+0891",
+              "char": "\u0891",
+              "name": "ARABIC PIASTRE MARK ABOVE",
+              "generalCategory": "Cf",
+              "bidiClass": "AN",
+              "joiningType": "U",
+              "age": "14.0",
+              "cldrExemplar": null
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "name": "Arabic",
+          "start": "U+0600",
+          "end": "U+06FF",
+          "size": 256,
+          "assigned": 256,
+          "byGeneralCategory": {
+            "Cf": 8,
+            "Lm": 3,
+            "Lo": 150,
+            "Mn": 52,
+            "Nd": 20,
+            "Po": 13,
+            "Sc": 1,
+            "Sm": 3,
+            "So": 6
+          },
+          "withDecomposition": {
+            "canonical": 8,
+            "compat": 4
+          },
+          "withoutDecomposition": 244,
+          "membersNotArabicScript": [
+            {
+              "codePoint": "U+0605",
+              "name": "ARABIC NUMBER MARK ABOVE",
+              "generalCategory": "Cf",
+              "script": "Common"
+            },
+            {
+              "codePoint": "U+06DD",
+              "name": "ARABIC END OF AYAH",
+              "generalCategory": "Cf",
+              "script": "Common"
+            }
+          ]
+        },
+        {
+          "name": "Arabic Supplement",
+          "start": "U+0750",
+          "end": "U+077F",
+          "size": 48,
+          "assigned": 48,
+          "byGeneralCategory": {
+            "Lo": 48
+          },
+          "withDecomposition": {},
+          "withoutDecomposition": 48
+        },
+        {
+          "name": "Arabic Extended-B",
+          "start": "U+0870",
+          "end": "U+089F",
+          "size": 48,
+          "assigned": 43,
+          "byGeneralCategory": {
+            "Cf": 2,
+            "Lo": 31,
+            "Mn": 9,
+            "Sk": 1
+          },
+          "withDecomposition": {},
+          "withoutDecomposition": 43
+        },
+        {
+          "name": "Arabic Extended-A",
+          "start": "U+08A0",
+          "end": "U+08FF",
+          "size": 96,
+          "assigned": 96,
+          "byGeneralCategory": {
+            "Cf": 1,
+            "Lm": 1,
+            "Lo": 41,
+            "Mn": 53
+          },
+          "withDecomposition": {},
+          "withoutDecomposition": 96,
+          "membersNotArabicScript": [
+            {
+              "codePoint": "U+08E2",
+              "name": "ARABIC DISPUTED END OF AYAH",
+              "generalCategory": "Cf",
+              "script": "Common"
+            }
+          ]
+        },
+        {
+          "name": "Arabic Presentation Forms-A",
+          "start": "U+FB50",
+          "end": "U+FDFF",
+          "size": 688,
+          "assigned": 656,
+          "byGeneralCategory": {
+            "Lo": 591,
+            "Pe": 1,
+            "Ps": 1,
+            "Sc": 1,
+            "Sk": 17,
+            "So": 45
+          },
+          "withDecomposition": {
+            "final": 201,
+            "initial": 148,
+            "isolated": 190,
+            "medial": 53
+          },
+          "withoutDecomposition": 64,
+          "noncharacters": [
+            {
+              "start": "U+FDD0",
+              "end": "U+FDEF"
+            }
+          ]
+        },
+        {
+          "name": "Arabic Presentation Forms-B",
+          "start": "U+FE70",
+          "end": "U+FEFF",
+          "size": 144,
+          "assigned": 141,
+          "byGeneralCategory": {
+            "Cf": 1,
+            "Lo": 140
+          },
+          "withDecomposition": {
+            "final": 39,
+            "initial": 23,
+            "isolated": 48,
+            "medial": 29
+          },
+          "withoutDecomposition": 2,
+          "membersNotArabicScript": [
+            {
+              "codePoint": "U+FEFF",
+              "name": "ZERO WIDTH NO-BREAK SPACE",
+              "generalCategory": "Cf",
+              "script": "Common"
+            }
+          ]
+        },
+        {
+          "name": "Arabic Extended-C",
+          "start": "U+10EC0",
+          "end": "U+10EFF",
+          "size": 64,
+          "assigned": 21,
+          "byGeneralCategory": {
+            "Lm": 1,
+            "Lo": 5,
+            "Mn": 6,
+            "Po": 1,
+            "So": 8
+          },
+          "withDecomposition": {},
+          "withoutDecomposition": 21
+        },
+        {
+          "name": "Arabic Mathematical Alphabetic Symbols",
+          "start": "U+1EE00",
+          "end": "U+1EEFF",
+          "size": 256,
+          "assigned": 143,
+          "byGeneralCategory": {
+            "Lo": 141,
+            "Sm": 2
+          },
+          "withDecomposition": {
+            "font": 141
+          },
+          "withoutDecomposition": 2
+        }
+      ],
+      "cldrExemplars": [
+        {
+          "locales": [
+            "ar",
+            "ar-AE",
+            "ar-BH",
+            "ar-DJ",
+            "ar-EG",
+            "ar-EH",
+            "ar-ER",
+            "ar-IL",
+            "ar-IQ",
+            "ar-JO",
+            "ar-KM",
+            "ar-KW",
+            "ar-OM",
+            "ar-PS",
+            "ar-QA",
+            "ar-SD",
+            "ar-SS",
+            "ar-SY",
+            "ar-TD",
+            "ar-YE"
+          ],
+          "sets": {
+            "main": "[ً ٌ ٍ َ ُ ِ ّ ْ ٰ ءأؤإئا آ ب ةت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ىي]",
+            "auxiliary": "[ـ\\u200C\\u200D\\u200E\\u200F پ چ ژ ڜ ڢ ڤ ڥ ٯ ڧ ڨ ک گ ی]",
+            "index": "[ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي]",
+            "numbers": "[\\u061C\\u200E \\- ‑ , ٫ ٬ . % ٪ ‰ ؉ + 0٠ 1١ 2٢ 3٣ 4٤ 5٥ 6٦ 7٧ 8٨ 9٩]",
+            "punctuation": "[\\- ‐‑ – — ، ؛ \\: ! ؟ . … ' \" « » ( ) \\[ \\]]",
+            "punctuationPerson": "[\\- ‐‑ ، . /]"
+          },
+          "mainCodePoints": [
+            "U+064B",
+            "U+064C",
+            "U+064D",
+            "U+064E",
+            "U+064F",
+            "U+0650",
+            "U+0651",
+            "U+0652",
+            "U+0670",
+            "U+0621",
+            "U+0623",
+            "U+0624",
+            "U+0625",
+            "U+0626",
+            "U+0627",
+            "U+0622",
+            "U+0628",
+            "U+0629",
+            "U+062A",
+            "U+062B",
+            "U+062C",
+            "U+062D",
+            "U+062E",
+            "U+062F",
+            "U+0630",
+            "U+0631",
+            "U+0632",
+            "U+0633",
+            "U+0634",
+            "U+0635",
+            "U+0636",
+            "U+0637",
+            "U+0638",
+            "U+0639",
+            "U+063A",
+            "U+0641",
+            "U+0642",
+            "U+0643",
+            "U+0644",
+            "U+0645",
+            "U+0646",
+            "U+0647",
+            "U+0648",
+            "U+0649",
+            "U+064A"
+          ],
+          "auxiliaryCodePoints": [
+            "U+0640",
+            "U+200C",
+            "U+200D",
+            "U+200E",
+            "U+200F",
+            "U+067E",
+            "U+0686",
+            "U+0698",
+            "U+069C",
+            "U+06A2",
+            "U+06A4",
+            "U+06A5",
+            "U+066F",
+            "U+06A7",
+            "U+06A8",
+            "U+06A9",
+            "U+06AF",
+            "U+06CC"
+          ]
+        },
+        {
+          "locales": [
+            "ar-DZ",
+            "ar-LB",
+            "ar-LY",
+            "ar-MR",
+            "ar-TN"
+          ],
+          "sets": {
+            "main": "[ً ٌ ٍ َ ُ ِ ّ ْ ٰ ءأؤإئا آ ب ةت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ىي]",
+            "auxiliary": "[ـ\\u200C\\u200D\\u200E\\u200F پ چ ژ ڜ ڢ ڤ ڥ ٯ ڧ ڨ ک گ ی]",
+            "index": "[ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي]",
+            "numbers": "[\\u200E \\- ‑ , . % ‰ + 0 1 2 3 4 5 6 7 8 9]",
+            "punctuation": "[\\- ‐‑ – — ، ؛ \\: ! ؟ . … ' \" « » ( ) \\[ \\]]",
+            "punctuationPerson": "[\\- ‐‑ ، . /]"
+          },
+          "mainCodePoints": [
+            "U+064B",
+            "U+064C",
+            "U+064D",
+            "U+064E",
+            "U+064F",
+            "U+0650",
+            "U+0651",
+            "U+0652",
+            "U+0670",
+            "U+0621",
+            "U+0623",
+            "U+0624",
+            "U+0625",
+            "U+0626",
+            "U+0627",
+            "U+0622",
+            "U+0628",
+            "U+0629",
+            "U+062A",
+            "U+062B",
+            "U+062C",
+            "U+062D",
+            "U+062E",
+            "U+062F",
+            "U+0630",
+            "U+0631",
+            "U+0632",
+            "U+0633",
+            "U+0634",
+            "U+0635",
+            "U+0636",
+            "U+0637",
+            "U+0638",
+            "U+0639",
+            "U+063A",
+            "U+0641",
+            "U+0642",
+            "U+0643",
+            "U+0644",
+            "U+0645",
+            "U+0646",
+            "U+0647",
+            "U+0648",
+            "U+0649",
+            "U+064A"
+          ],
+          "auxiliaryCodePoints": [
+            "U+0640",
+            "U+200C",
+            "U+200D",
+            "U+200E",
+            "U+200F",
+            "U+067E",
+            "U+0686",
+            "U+0698",
+            "U+069C",
+            "U+06A2",
+            "U+06A4",
+            "U+06A5",
+            "U+066F",
+            "U+06A7",
+            "U+06A8",
+            "U+06A9",
+            "U+06AF",
+            "U+06CC"
+          ]
+        },
+        {
+          "locales": [
+            "ar-MA"
+          ],
+          "sets": {
+            "main": "[ً ٌ ٍ َ ُ ِ ّ ْ ٰ ءأؤإئا آ ب ةت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ىي]",
+            "auxiliary": "[\\u200C\\u200D\\u200E\\u200F پ چ ژ ڜ ڢ ڤ ڥ ٯ ڧ ڨ ک ڭ گ ݣ ی]",
+            "index": "[ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي]",
+            "numbers": "[\\u200E \\- ‑ , . % ‰ + 0 1 2 3 4 5 6 7 8 9]",
+            "punctuation": "[\\- ‐‑ – — ، ؛ \\: ! ؟ . … ' \" « » ( ) \\[ \\]]",
+            "punctuationPerson": "[\\- ‐‑ ، . /]"
+          },
+          "mainCodePoints": [
+            "U+064B",
+            "U+064C",
+            "U+064D",
+            "U+064E",
+            "U+064F",
+            "U+0650",
+            "U+0651",
+            "U+0652",
+            "U+0670",
+            "U+0621",
+            "U+0623",
+            "U+0624",
+            "U+0625",
+            "U+0626",
+            "U+0627",
+            "U+0622",
+            "U+0628",
+            "U+0629",
+            "U+062A",
+            "U+062B",
+            "U+062C",
+            "U+062D",
+            "U+062E",
+            "U+062F",
+            "U+0630",
+            "U+0631",
+            "U+0632",
+            "U+0633",
+            "U+0634",
+            "U+0635",
+            "U+0636",
+            "U+0637",
+            "U+0638",
+            "U+0639",
+            "U+063A",
+            "U+0641",
+            "U+0642",
+            "U+0643",
+            "U+0644",
+            "U+0645",
+            "U+0646",
+            "U+0647",
+            "U+0648",
+            "U+0649",
+            "U+064A"
+          ],
+          "auxiliaryCodePoints": [
+            "U+200C",
+            "U+200D",
+            "U+200E",
+            "U+200F",
+            "U+067E",
+            "U+0686",
+            "U+0698",
+            "U+069C",
+            "U+06A2",
+            "U+06A4",
+            "U+06A5",
+            "U+066F",
+            "U+06A7",
+            "U+06A8",
+            "U+06A9",
+            "U+06AD",
+            "U+06AF",
+            "U+0763",
+            "U+06CC"
+          ]
+        },
+        {
+          "locales": [
+            "ar-SA",
+            "ar-SO"
+          ],
+          "sets": {
+            "main": "[ً ٌ ٍ َ ُ ِ ّ ْ ٰ ءأؤإئا آ ب ةت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ىي]",
+            "auxiliary": "[ـ\\u200C\\u200D\\u200E\\u200F پ چ ژ ڜ ڢ ڤ ڥ ٯ ڧ ڨ ک گ ی]",
+            "index": "[ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي]",
+            "numbers": "[\\u200E \\- ‑ , . ٪ ‰ + 0 1 2 3 4 5 6 7 8 9]",
+            "punctuation": "[\\- ‐‑ – — ، ؛ \\: ! ؟ . … ' \" « » ( ) \\[ \\]]",
+            "punctuationPerson": "[\\- ‐‑ ، . /]"
+          },
+          "mainCodePoints": [
+            "U+064B",
+            "U+064C",
+            "U+064D",
+            "U+064E",
+            "U+064F",
+            "U+0650",
+            "U+0651",
+            "U+0652",
+            "U+0670",
+            "U+0621",
+            "U+0623",
+            "U+0624",
+            "U+0625",
+            "U+0626",
+            "U+0627",
+            "U+0622",
+            "U+0628",
+            "U+0629",
+            "U+062A",
+            "U+062B",
+            "U+062C",
+            "U+062D",
+            "U+062E",
+            "U+062F",
+            "U+0630",
+            "U+0631",
+            "U+0632",
+            "U+0633",
+            "U+0634",
+            "U+0635",
+            "U+0636",
+            "U+0637",
+            "U+0638",
+            "U+0639",
+            "U+063A",
+            "U+0641",
+            "U+0642",
+            "U+0643",
+            "U+0644",
+            "U+0645",
+            "U+0646",
+            "U+0647",
+            "U+0648",
+            "U+0649",
+            "U+064A"
+          ],
+          "auxiliaryCodePoints": [
+            "U+0640",
+            "U+200C",
+            "U+200D",
+            "U+200E",
+            "U+200F",
+            "U+067E",
+            "U+0686",
+            "U+0698",
+            "U+069C",
+            "U+06A2",
+            "U+06A4",
+            "U+06A5",
+            "U+066F",
+            "U+06A7",
+            "U+06A8",
+            "U+06A9",
+            "U+06AF",
+            "U+06CC"
+          ]
+        }
+      ],
+      "lenientParsing": {
+        "date": {
+          "-": "[\\- ‑ . /]",
+          ":": "[\\: ∶]"
+        },
+        "general": {
+          ".": "[.．․﹒ 。｡︒]",
+          "’": "['＇’ ՚ ᾽᾿ ʼ]",
+          "%": "[%％﹪ ٪]",
+          "‰": "[‰ ؉]",
+          "$": "[\\$＄﹩]",
+          "£": "[£￡ ₤]",
+          "¥": "[¥￥]",
+          "₩": "[₩￦]",
+          "₹": "[₹ {Rp} {Rs}₨]"
+        },
+        "number": {
+          "-": "[\\-－﹣ ‑ ‒ −⁻₋ ➖]",
+          ",": "[,，﹐︐ ⹁ ، ٫ 、﹑､︑]",
+          "+": "[+＋﬩﹢⁺₊ ➕]"
+        },
+        "stricterNumber": {
+          ",": "[,，﹐︐ ⹁ ٫]",
+          ".": "[.．․﹒ ｡]"
+        }
+      },
+      "searchFoldingReference": {
+        "implementation": "Apache Lucene ArabicNormalizer (the folding behind the Lucene/Elasticsearch/Solr \"arabic_normalization\" filter)",
+        "map": [
+          {
+            "from": "U+0622",
+            "to": "U+0627",
+            "fromName": "ARABIC LETTER ALEF WITH MADDA ABOVE",
+            "toName": "ARABIC LETTER ALEF"
+          },
+          {
+            "from": "U+0623",
+            "to": "U+0627",
+            "fromName": "ARABIC LETTER ALEF WITH HAMZA ABOVE",
+            "toName": "ARABIC LETTER ALEF"
+          },
+          {
+            "from": "U+0625",
+            "to": "U+0627",
+            "fromName": "ARABIC LETTER ALEF WITH HAMZA BELOW",
+            "toName": "ARABIC LETTER ALEF"
+          },
+          {
+            "from": "U+0649",
+            "to": "U+064A",
+            "fromName": "ARABIC LETTER ALEF MAKSURA",
+            "toName": "ARABIC LETTER YEH"
+          },
+          {
+            "from": "U+0629",
+            "to": "U+0647",
+            "fromName": "ARABIC LETTER TEH MARBUTA",
+            "toName": "ARABIC LETTER HEH"
+          }
+        ],
+        "remove": [
+          {
+            "codePoint": "U+0640",
+            "name": "ARABIC TATWEEL"
+          },
+          {
+            "codePoint": "U+064B",
+            "name": "ARABIC FATHATAN"
+          },
+          {
+            "codePoint": "U+064C",
+            "name": "ARABIC DAMMATAN"
+          },
+          {
+            "codePoint": "U+064D",
+            "name": "ARABIC KASRATAN"
+          },
+          {
+            "codePoint": "U+064E",
+            "name": "ARABIC FATHA"
+          },
+          {
+            "codePoint": "U+064F",
+            "name": "ARABIC DAMMA"
+          },
+          {
+            "codePoint": "U+0650",
+            "name": "ARABIC KASRA"
+          },
+          {
+            "codePoint": "U+0651",
+            "name": "ARABIC SHADDA"
+          },
+          {
+            "codePoint": "U+0652",
+            "name": "ARABIC SUKUN"
+          }
+        ],
+        "note": "Recorded as what a deployed implementation folds, not as a rule of the language: it does not fold U+0671, U+0624, U+0626, U+06CC or U+06A9, and it removes only the eight marks listed plus tatweel."
+      }
+    }
+  }
+}

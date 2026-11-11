@@ -1,0 +1,68 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/quarters",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-dates-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-dates-full/main/ar*/ca-gregorian.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "quarters",
+    "content": {
+      "quarters": {
+        "format": {
+          "wide": {
+            "1": "الربع الأول",
+            "2": "الربع الثاني",
+            "3": "الربع الثالث",
+            "4": "الربع الرابع"
+          },
+          "abbreviated": {
+            "1": "الربع الأول",
+            "2": "الربع الثاني",
+            "3": "الربع الثالث",
+            "4": "الربع الرابع"
+          },
+          "narrow": {
+            "1": "١",
+            "2": "٢",
+            "3": "٣",
+            "4": "٤"
+          }
+        },
+        "standAlone": {
+          "wide": {
+            "1": "الربع الأول",
+            "2": "الربع الثاني",
+            "3": "الربع الثالث",
+            "4": "الربع الرابع"
+          },
+          "abbreviated": {
+            "1": "الربع الأول",
+            "2": "الربع الثاني",
+            "3": "الربع الثالث",
+            "4": "الربع الرابع"
+          },
+          "narrow": {
+            "1": "١",
+            "2": "٢",
+            "3": "٣",
+            "4": "٤"
+          }
+        }
+      }
+    }
+  }
+}

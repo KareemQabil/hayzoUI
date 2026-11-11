@@ -1,0 +1,5744 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/spellout",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-rbnf",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-rbnf/rbnf/ar.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-rbnf",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-rbnf/rbnf/ar-SpelloutRules.txt"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-rbnf",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-rbnf/rbnf/ar-OrdinalRules.txt"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs",
+    "notes": "ruleSetGroups and checks are extracted mechanically. `gaps` states what the extracted rules do not contain; each status is backed by a value in `checks` or by the rule text itself. Rule text is kept exactly as CLDR ships it, including forms a reviewer may consider errors."
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "spellout",
+    "content": {
+      "format": {
+        "description": "CLDR rule-based number format (RBNF) rule sets, parsed. Rule selection and substitution semantics are those of UTS #35 part 3, Rule-Based Number Formatting; tools/extract/language/rbnf.mjs holds a reference interpreter for the constructs used here.",
+        "ruleKinds": {
+          "base": "applies from baseValue up to the next rule",
+          "negative": "descriptor -x",
+          "fraction": "descriptor x.x (number with a fractional part)"
+        },
+        "tokenKinds": {
+          "text": "literal text",
+          "quotient": "<…< : format floor(n / divisor) with the named rule set (or the current one)",
+          "remainder": ">…> : format n mod divisor with the named rule set (or the current one); for fraction rules, the fractional digits one by one; for the negative rule, the absolute value",
+          "same": "=…= : format n itself with the named rule set or the given DecimalFormat pattern",
+          "optional": "[…] : emitted only when n is not a multiple of divisor"
+        }
+      },
+      "ruleSetGroups": [
+        {
+          "group": "OrdinalRules",
+          "file": "ar-OrdinalRules.txt",
+          "ruleSets": [
+            {
+              "name": "%digits-ordinal",
+              "private": false,
+              "rules": [
+                {
+                  "descriptor": "-x",
+                  "kind": "negative",
+                  "body": "−>>",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "−"
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "=#,##0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "#,##0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "SpelloutRules",
+          "file": "ar-SpelloutRules.txt",
+          "ruleSets": [
+            {
+              "name": "%spellout-numbering-year",
+              "private": false,
+              "rules": [
+                {
+                  "descriptor": "x.x",
+                  "kind": "fraction",
+                  "body": "=0.0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "0.0"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "=%spellout-numbering=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "ruleSet": "%spellout-numbering"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%spellout-numbering",
+              "private": false,
+              "rules": [
+                {
+                  "descriptor": "-x",
+                  "kind": "negative",
+                  "body": "ناقص >>",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ناقص "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "x.x",
+                  "kind": "fraction",
+                  "body": "<< فاصل >>",
+                  "tokens": [
+                    {
+                      "type": "quotient"
+                    },
+                    {
+                      "type": "text",
+                      "value": " فاصل "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "صفر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "صفر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "واحد",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "واحد"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "إثنان",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنان"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3",
+                  "kind": "base",
+                  "baseValue": "3",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثلاثة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثلاثة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "4",
+                  "kind": "base",
+                  "baseValue": "4",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "أربعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "أربعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "5",
+                  "kind": "base",
+                  "baseValue": "5",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "خمسة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "خمسة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "6",
+                  "kind": "base",
+                  "baseValue": "6",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ستة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ستة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "7",
+                  "kind": "base",
+                  "baseValue": "7",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "سبعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "سبعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "8",
+                  "kind": "base",
+                  "baseValue": "8",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثمانية",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثمانية"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "9",
+                  "kind": "base",
+                  "baseValue": "9",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "تسعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "تسعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "10",
+                  "kind": "base",
+                  "baseValue": "10",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "عشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إحدى عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إحدى عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إثنا عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنا عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "13",
+                  "kind": "base",
+                  "baseValue": "13",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%spellout-numbering> عشر",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "20",
+                  "kind": "base",
+                  "baseValue": "20",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]عشرون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "عشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "30",
+                  "kind": "base",
+                  "baseValue": "30",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]ثلاثون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "40",
+                  "kind": "base",
+                  "baseValue": "40",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]أربعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "أربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "50",
+                  "kind": "base",
+                  "baseValue": "50",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]خمسون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "خمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "60",
+                  "kind": "base",
+                  "baseValue": "60",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]ستون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "70",
+                  "kind": "base",
+                  "baseValue": "70",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]سبعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "سبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "80",
+                  "kind": "base",
+                  "baseValue": "80",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]ثمانون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "90",
+                  "kind": "base",
+                  "baseValue": "90",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]تسعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "تسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "100",
+                  "kind": "base",
+                  "baseValue": "100",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائة[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "200",
+                  "kind": "base",
+                  "baseValue": "200",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائتان[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائتان"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "300",
+                  "kind": "base",
+                  "baseValue": "300",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "<%spellout-numbering< مائة[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000",
+                  "kind": "base",
+                  "baseValue": "1000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألف[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000",
+                  "kind": "base",
+                  "baseValue": "2000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألفين[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألفين"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3000",
+                  "kind": "base",
+                  "baseValue": "3000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "<%spellout-numbering< آلاف[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " آلاف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11000/1000",
+                  "kind": "base",
+                  "baseValue": "11000",
+                  "radix": 1000,
+                  "divisor": "1000",
+                  "body": "<%%spellout-numbering-m< ألف[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000",
+                  "kind": "base",
+                  "baseValue": "1000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "مليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000",
+                  "kind": "base",
+                  "baseValue": "2000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "<%%spellout-numbering-m< مليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "مليار[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "<%%spellout-numbering-m< مليار[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "ترليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "<%%spellout-numbering-m< ترليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "كوادرليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "<%%spellout-numbering-m< كوادرليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000000",
+                  "body": "=#,##0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "#,##0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%spellout-cardinal-feminine",
+              "private": false,
+              "rules": [
+                {
+                  "descriptor": "-x",
+                  "kind": "negative",
+                  "body": "ناقص >>",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ناقص "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "x.x",
+                  "kind": "fraction",
+                  "body": "<< فاصل >>",
+                  "tokens": [
+                    {
+                      "type": "quotient"
+                    },
+                    {
+                      "type": "text",
+                      "value": " فاصل "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "صفر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "صفر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "واحدة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "واحدة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "إثنتان",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنتان"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3",
+                  "kind": "base",
+                  "baseValue": "3",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثلاثة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثلاثة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "4",
+                  "kind": "base",
+                  "baseValue": "4",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "أربعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "أربعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "5",
+                  "kind": "base",
+                  "baseValue": "5",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "خمسة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "خمسة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "6",
+                  "kind": "base",
+                  "baseValue": "6",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ستة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ستة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "7",
+                  "kind": "base",
+                  "baseValue": "7",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "سبعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "سبعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "8",
+                  "kind": "base",
+                  "baseValue": "8",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثمانية",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثمانية"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "9",
+                  "kind": "base",
+                  "baseValue": "9",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "تسعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "تسعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "10",
+                  "kind": "base",
+                  "baseValue": "10",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "عشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إحدى عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إحدى عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إثنتا عشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنتا عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "13",
+                  "kind": "base",
+                  "baseValue": "13",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%spellout-numbering> عشر",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "20",
+                  "kind": "base",
+                  "baseValue": "20",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]عشرون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "عشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "30",
+                  "kind": "base",
+                  "baseValue": "30",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]ثلاثون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "40",
+                  "kind": "base",
+                  "baseValue": "40",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]أربعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "أربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "50",
+                  "kind": "base",
+                  "baseValue": "50",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]خمسون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "خمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "60",
+                  "kind": "base",
+                  "baseValue": "60",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]ستون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "70",
+                  "kind": "base",
+                  "baseValue": "70",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]سبعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "سبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "80",
+                  "kind": "base",
+                  "baseValue": "80",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]ثمانون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "90",
+                  "kind": "base",
+                  "baseValue": "90",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%spellout-numbering> و]تسعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "تسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "100",
+                  "kind": "base",
+                  "baseValue": "100",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائة[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "200",
+                  "kind": "base",
+                  "baseValue": "200",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائتان[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائتان"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "300",
+                  "kind": "base",
+                  "baseValue": "300",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "<%spellout-numbering< مائة[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000",
+                  "kind": "base",
+                  "baseValue": "1000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألف[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000",
+                  "kind": "base",
+                  "baseValue": "2000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألفي[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألفي"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3000",
+                  "kind": "base",
+                  "baseValue": "3000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "<%spellout-numbering< آلاف[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " آلاف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11000/1000",
+                  "kind": "base",
+                  "baseValue": "11000",
+                  "radix": 1000,
+                  "divisor": "1000",
+                  "body": "<%%spellout-numbering-m< ألف[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000",
+                  "kind": "base",
+                  "baseValue": "1000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "مليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000",
+                  "kind": "base",
+                  "baseValue": "2000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "<%%spellout-numbering-m< مليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "مليار[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "<%%spellout-numbering-m< مليار[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "ترليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "<%%spellout-numbering-m< ترليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "كوادرليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "<%%spellout-numbering-m< كوادرليون[ و>%spellout-numbering>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-numbering"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000000",
+                  "body": "=#,##0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "#,##0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%%spellout-numbering-m",
+              "private": true,
+              "rules": [
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "صفر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "صفر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "واحد",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "واحد"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "إثنان",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنان"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3",
+                  "kind": "base",
+                  "baseValue": "3",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثلاثة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثلاثة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "4",
+                  "kind": "base",
+                  "baseValue": "4",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "أربعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "أربعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "5",
+                  "kind": "base",
+                  "baseValue": "5",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "خمسة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "خمسة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "6",
+                  "kind": "base",
+                  "baseValue": "6",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ستة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ستة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "7",
+                  "kind": "base",
+                  "baseValue": "7",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "سبعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "سبعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "8",
+                  "kind": "base",
+                  "baseValue": "8",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثمانية",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثمانية"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "9",
+                  "kind": "base",
+                  "baseValue": "9",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "تسعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "تسعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "10",
+                  "kind": "base",
+                  "baseValue": "10",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "عشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إحدى عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إحدى عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إثنا عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنا عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "13",
+                  "kind": "base",
+                  "baseValue": "13",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">> عشر",
+                  "tokens": [
+                    {
+                      "type": "remainder"
+                    },
+                    {
+                      "type": "text",
+                      "value": " عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "20",
+                  "kind": "base",
+                  "baseValue": "20",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]عشرون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "عشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "30",
+                  "kind": "base",
+                  "baseValue": "30",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]ثلاثون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "40",
+                  "kind": "base",
+                  "baseValue": "40",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]أربعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "أربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "50",
+                  "kind": "base",
+                  "baseValue": "50",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]خمسون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "خمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "60",
+                  "kind": "base",
+                  "baseValue": "60",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]ستون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "70",
+                  "kind": "base",
+                  "baseValue": "70",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]سبعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "سبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "80",
+                  "kind": "base",
+                  "baseValue": "80",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]ثمانون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "90",
+                  "kind": "base",
+                  "baseValue": "90",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]تسعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "تسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "100",
+                  "kind": "base",
+                  "baseValue": "100",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائة[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "200",
+                  "kind": "base",
+                  "baseValue": "200",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائتان[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائتان"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "300",
+                  "kind": "base",
+                  "baseValue": "300",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "<%spellout-numbering< مائة[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000",
+                  "kind": "base",
+                  "baseValue": "1000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000",
+                  "kind": "base",
+                  "baseValue": "2000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألفي[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألفي"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3000",
+                  "kind": "base",
+                  "baseValue": "3000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "<%spellout-numbering< آلاف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " آلاف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11000/1000",
+                  "kind": "base",
+                  "baseValue": "11000",
+                  "radix": 1000,
+                  "divisor": "1000",
+                  "body": "<%%spellout-numbering-m< ألف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000",
+                  "kind": "base",
+                  "baseValue": "1000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "مليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000",
+                  "kind": "base",
+                  "baseValue": "2000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "<%%spellout-numbering-m< مليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "مليار[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "<%%spellout-numbering-m< مليار[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "ترليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "<%%spellout-numbering-m< ترليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "كوادرليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "<%%spellout-numbering-m< كوادرليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000000",
+                  "body": "=#,##0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "#,##0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%spellout-cardinal-masculine",
+              "private": false,
+              "rules": [
+                {
+                  "descriptor": "-x",
+                  "kind": "negative",
+                  "body": "ناقص >>",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ناقص "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "x.x",
+                  "kind": "fraction",
+                  "body": "<%%spellout-numbering-m< فاصل >>",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " فاصل "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "صفر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "صفر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "واحد",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "واحد"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "إثنان",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنان"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3",
+                  "kind": "base",
+                  "baseValue": "3",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثلاثة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثلاثة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "4",
+                  "kind": "base",
+                  "baseValue": "4",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "أربعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "أربعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "5",
+                  "kind": "base",
+                  "baseValue": "5",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "خمسة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "خمسة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "6",
+                  "kind": "base",
+                  "baseValue": "6",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ستة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ستة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "7",
+                  "kind": "base",
+                  "baseValue": "7",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "سبعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "سبعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "8",
+                  "kind": "base",
+                  "baseValue": "8",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "ثمانية",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ثمانية"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "9",
+                  "kind": "base",
+                  "baseValue": "9",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "تسعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "تسعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "10",
+                  "kind": "base",
+                  "baseValue": "10",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "عشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إحدى عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إحدى عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "إثنا عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "إثنا عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "13",
+                  "kind": "base",
+                  "baseValue": "13",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">> عشر",
+                  "tokens": [
+                    {
+                      "type": "remainder"
+                    },
+                    {
+                      "type": "text",
+                      "value": " عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "20",
+                  "kind": "base",
+                  "baseValue": "20",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]عشرون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "عشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "30",
+                  "kind": "base",
+                  "baseValue": "30",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]ثلاثون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "40",
+                  "kind": "base",
+                  "baseValue": "40",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]أربعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "أربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "50",
+                  "kind": "base",
+                  "baseValue": "50",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]خمسون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "خمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "60",
+                  "kind": "base",
+                  "baseValue": "60",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]ستون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "70",
+                  "kind": "base",
+                  "baseValue": "70",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]سبعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "سبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "80",
+                  "kind": "base",
+                  "baseValue": "80",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]ثمانون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "ثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "90",
+                  "kind": "base",
+                  "baseValue": "90",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "[>%%spellout-numbering-m> و]تسعون",
+                  "tokens": [
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        },
+                        {
+                          "type": "text",
+                          "value": " و"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "تسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "100",
+                  "kind": "base",
+                  "baseValue": "100",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائة[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "200",
+                  "kind": "base",
+                  "baseValue": "200",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "مائتان[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مائتان"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "300",
+                  "kind": "base",
+                  "baseValue": "300",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "<%spellout-numbering< مائة[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000",
+                  "kind": "base",
+                  "baseValue": "1000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000",
+                  "kind": "base",
+                  "baseValue": "2000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "ألفي[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ألفي"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3000",
+                  "kind": "base",
+                  "baseValue": "3000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "<%spellout-numbering< آلاف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " آلاف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11000/1000",
+                  "kind": "base",
+                  "baseValue": "11000",
+                  "radix": 1000,
+                  "divisor": "1000",
+                  "body": "<%%spellout-numbering-m< ألف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000",
+                  "kind": "base",
+                  "baseValue": "1000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "مليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000",
+                  "kind": "base",
+                  "baseValue": "2000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "<%%spellout-numbering-m< مليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "مليار[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "<%%spellout-numbering-m< مليار[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "ترليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "<%%spellout-numbering-m< ترليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "كوادرليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "<%%spellout-numbering-m< كوادرليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000000",
+                  "body": "=#,##0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "#,##0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%%ordinal-ones-feminine",
+              "private": true,
+              "rules": [
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الحادية ",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الحادية "
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "=%spellout-ordinal-feminine=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "ruleSet": "%spellout-ordinal-feminine"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الحادية عشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الحادية عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "=%spellout-ordinal-feminine=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "ruleSet": "%spellout-ordinal-feminine"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%spellout-ordinal-feminine",
+              "private": false,
+              "rules": [
+                {
+                  "descriptor": "-x",
+                  "kind": "negative",
+                  "body": "ناقص >>",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ناقص "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "x.x",
+                  "kind": "fraction",
+                  "body": "<< فاصل >>",
+                  "tokens": [
+                    {
+                      "type": "quotient"
+                    },
+                    {
+                      "type": "text",
+                      "value": " فاصل "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "صفر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "صفر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الأولى",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الأولى"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الثانية",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثانية"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3",
+                  "kind": "base",
+                  "baseValue": "3",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الثالثة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثالثة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "4",
+                  "kind": "base",
+                  "baseValue": "4",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الرابعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الرابعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "5",
+                  "kind": "base",
+                  "baseValue": "5",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الخامسة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الخامسة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "6",
+                  "kind": "base",
+                  "baseValue": "6",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "السادسة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "السادسة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "7",
+                  "kind": "base",
+                  "baseValue": "7",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "السابعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "السابعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "8",
+                  "kind": "base",
+                  "baseValue": "8",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الثامنة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثامنة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "9",
+                  "kind": "base",
+                  "baseValue": "9",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "التاسعة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "التاسعة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "10",
+                  "kind": "base",
+                  "baseValue": "10",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "العاشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "العاشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الحادية عشرة",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الحادية عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">> عشرة",
+                  "tokens": [
+                    {
+                      "type": "remainder"
+                    },
+                    {
+                      "type": "text",
+                      "value": " عشرة"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "20",
+                  "kind": "base",
+                  "baseValue": "20",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "العشرون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "العشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "21",
+                  "kind": "base",
+                  "baseValue": "21",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والعشرون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والعشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "30",
+                  "kind": "base",
+                  "baseValue": "30",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الثلاثون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "31",
+                  "kind": "base",
+                  "baseValue": "31",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والثلاثون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "40",
+                  "kind": "base",
+                  "baseValue": "40",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الأربعون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الأربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "41",
+                  "kind": "base",
+                  "baseValue": "41",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والأربعون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والأربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "50",
+                  "kind": "base",
+                  "baseValue": "50",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الخمسون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الخمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "51",
+                  "kind": "base",
+                  "baseValue": "51",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والخمسون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والخمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "60",
+                  "kind": "base",
+                  "baseValue": "60",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الستون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "61",
+                  "kind": "base",
+                  "baseValue": "61",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والستون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "70",
+                  "kind": "base",
+                  "baseValue": "70",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "السبعون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "السبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "71",
+                  "kind": "base",
+                  "baseValue": "71",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والسبعون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والسبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "80",
+                  "kind": "base",
+                  "baseValue": "80",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الثمانون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "81",
+                  "kind": "base",
+                  "baseValue": "81",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والثمانون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "90",
+                  "kind": "base",
+                  "baseValue": "90",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "التسعون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "التسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "91",
+                  "kind": "base",
+                  "baseValue": "91",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-feminine> والتسعون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والتسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "100",
+                  "kind": "base",
+                  "baseValue": "100",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "المائة[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "200",
+                  "kind": "base",
+                  "baseValue": "200",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "المائتان[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المائتان"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "300",
+                  "kind": "base",
+                  "baseValue": "300",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "<%spellout-numbering< مائة[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000",
+                  "kind": "base",
+                  "baseValue": "1000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "الألف[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000",
+                  "kind": "base",
+                  "baseValue": "2000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "الألفي[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الألفي"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3000",
+                  "kind": "base",
+                  "baseValue": "3000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "<%spellout-cardinal-feminine< آلاف[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-cardinal-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " آلاف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11000/1000",
+                  "kind": "base",
+                  "baseValue": "11000",
+                  "radix": 1000,
+                  "divisor": "1000",
+                  "body": "<%spellout-cardinal-feminine< ألف[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-cardinal-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000",
+                  "kind": "base",
+                  "baseValue": "1000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "المليون[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000",
+                  "kind": "base",
+                  "baseValue": "2000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "<%spellout-cardinal-feminine< الألف[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-cardinal-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " الألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "المليار[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "<%spellout-cardinal-feminine< مليار[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-cardinal-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "ترليون[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "<%spellout-cardinal-feminine< ترليون[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-cardinal-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "كوادرليون[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "<%spellout-cardinal-feminine< كوادرليون[ و>%spellout-cardinal-feminine>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-cardinal-feminine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%spellout-cardinal-feminine"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000000",
+                  "body": "=#,##0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "#,##0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%%ordinal-ones-masculine",
+              "private": true,
+              "rules": [
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الحادي ",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الحادي "
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "=%spellout-ordinal-masculine=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "ruleSet": "%spellout-ordinal-masculine"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الحادي عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الحادي عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "=%spellout-ordinal-masculine=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "ruleSet": "%spellout-ordinal-masculine"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "%spellout-ordinal-masculine",
+              "private": false,
+              "rules": [
+                {
+                  "descriptor": "-x",
+                  "kind": "negative",
+                  "body": "ناقص >>",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ناقص "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "x.x",
+                  "kind": "fraction",
+                  "body": "<< فاصل >>",
+                  "tokens": [
+                    {
+                      "type": "quotient"
+                    },
+                    {
+                      "type": "text",
+                      "value": " فاصل "
+                    },
+                    {
+                      "type": "remainder"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "0",
+                  "kind": "base",
+                  "baseValue": "0",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "صفر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "صفر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1",
+                  "kind": "base",
+                  "baseValue": "1",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الأول",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الأول"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2",
+                  "kind": "base",
+                  "baseValue": "2",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الثاني",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثاني"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3",
+                  "kind": "base",
+                  "baseValue": "3",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الثالث",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثالث"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "4",
+                  "kind": "base",
+                  "baseValue": "4",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الرابع",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الرابع"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "5",
+                  "kind": "base",
+                  "baseValue": "5",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الخامس",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الخامس"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "6",
+                  "kind": "base",
+                  "baseValue": "6",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "السادس",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "السادس"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "7",
+                  "kind": "base",
+                  "baseValue": "7",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "السابع",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "السابع"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "8",
+                  "kind": "base",
+                  "baseValue": "8",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "الثامن",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثامن"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "9",
+                  "kind": "base",
+                  "baseValue": "9",
+                  "radix": 10,
+                  "divisor": "1",
+                  "body": "التاسع",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "التاسع"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "10",
+                  "kind": "base",
+                  "baseValue": "10",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "العاشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "العاشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11",
+                  "kind": "base",
+                  "baseValue": "11",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الحادي عشر",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الحادي عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "12",
+                  "kind": "base",
+                  "baseValue": "12",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">> عشر",
+                  "tokens": [
+                    {
+                      "type": "remainder"
+                    },
+                    {
+                      "type": "text",
+                      "value": " عشر"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "20",
+                  "kind": "base",
+                  "baseValue": "20",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "العشرون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "العشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "21",
+                  "kind": "base",
+                  "baseValue": "21",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والعشرون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والعشرون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "30",
+                  "kind": "base",
+                  "baseValue": "30",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الثلاثون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "31",
+                  "kind": "base",
+                  "baseValue": "31",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والثلاثون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والثلاثون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "40",
+                  "kind": "base",
+                  "baseValue": "40",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الأربعون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الأربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "41",
+                  "kind": "base",
+                  "baseValue": "41",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والأربعون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والأربعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "50",
+                  "kind": "base",
+                  "baseValue": "50",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الخمسون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الخمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "51",
+                  "kind": "base",
+                  "baseValue": "51",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والخمسون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والخمسون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "60",
+                  "kind": "base",
+                  "baseValue": "60",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الستون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "61",
+                  "kind": "base",
+                  "baseValue": "61",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والستون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والستون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "70",
+                  "kind": "base",
+                  "baseValue": "70",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "السبعون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "السبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "71",
+                  "kind": "base",
+                  "baseValue": "71",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والسبعون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والسبعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "80",
+                  "kind": "base",
+                  "baseValue": "80",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "الثمانون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "81",
+                  "kind": "base",
+                  "baseValue": "81",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والثمانون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والثمانون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "90",
+                  "kind": "base",
+                  "baseValue": "90",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": "التسعون",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "التسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "91",
+                  "kind": "base",
+                  "baseValue": "91",
+                  "radix": 10,
+                  "divisor": "10",
+                  "body": ">%%ordinal-ones-masculine> والتسعون",
+                  "tokens": [
+                    {
+                      "type": "remainder",
+                      "ruleSet": "%%ordinal-ones-masculine"
+                    },
+                    {
+                      "type": "text",
+                      "value": " والتسعون"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "100",
+                  "kind": "base",
+                  "baseValue": "100",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "المائة[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "200",
+                  "kind": "base",
+                  "baseValue": "200",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "المائتان[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المائتان"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "300",
+                  "kind": "base",
+                  "baseValue": "300",
+                  "radix": 10,
+                  "divisor": "100",
+                  "body": "<%spellout-numbering< مائة[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مائة"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000",
+                  "kind": "base",
+                  "baseValue": "1000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "الألف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000",
+                  "kind": "base",
+                  "baseValue": "2000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "الألفي[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "الألفي"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "3000",
+                  "kind": "base",
+                  "baseValue": "3000",
+                  "radix": 10,
+                  "divisor": "1000",
+                  "body": "<%spellout-numbering< آلاف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%spellout-numbering"
+                    },
+                    {
+                      "type": "text",
+                      "value": " آلاف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "11000/1000",
+                  "kind": "base",
+                  "baseValue": "11000",
+                  "radix": 1000,
+                  "divisor": "1000",
+                  "body": "<%%spellout-numbering-m< ألف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000",
+                  "kind": "base",
+                  "baseValue": "1000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "المليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000",
+                  "kind": "base",
+                  "baseValue": "2000000",
+                  "radix": 10,
+                  "divisor": "1000000",
+                  "body": "<%%spellout-numbering-m< الألف[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " الألف"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "المليار[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "المليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000",
+                  "radix": 10,
+                  "divisor": "1000000000",
+                  "body": "<%%spellout-numbering-m< مليار[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " مليار"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "ترليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000",
+                  "body": "<%%spellout-numbering-m< ترليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " ترليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "كوادرليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "text",
+                      "value": "كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "2000000000000000",
+                  "kind": "base",
+                  "baseValue": "2000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000",
+                  "body": "<%%spellout-numbering-m< كوادرليون[ و>%%spellout-numbering-m>]",
+                  "tokens": [
+                    {
+                      "type": "quotient",
+                      "ruleSet": "%%spellout-numbering-m"
+                    },
+                    {
+                      "type": "text",
+                      "value": " كوادرليون"
+                    },
+                    {
+                      "type": "optional",
+                      "tokens": [
+                        {
+                          "type": "text",
+                          "value": " و"
+                        },
+                        {
+                          "type": "remainder",
+                          "ruleSet": "%%spellout-numbering-m"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "descriptor": "1000000000000000000",
+                  "kind": "base",
+                  "baseValue": "1000000000000000000",
+                  "radix": 10,
+                  "divisor": "1000000000000000000",
+                  "body": "=#,##0=",
+                  "tokens": [
+                    {
+                      "type": "same",
+                      "decimalFormat": "#,##0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "publicRuleSets": [
+        "%digits-ordinal",
+        "%spellout-numbering-year",
+        "%spellout-numbering",
+        "%spellout-cardinal-feminine",
+        "%spellout-cardinal-masculine",
+        "%spellout-ordinal-feminine",
+        "%spellout-ordinal-masculine"
+      ],
+      "useFor": {
+        "cardinal-masculine": "%spellout-cardinal-masculine",
+        "cardinal-feminine": "%spellout-cardinal-feminine",
+        "ordinal-masculine": "%spellout-ordinal-masculine",
+        "ordinal-feminine": "%spellout-ordinal-feminine",
+        "numbering": "%spellout-numbering",
+        "year": "%spellout-numbering-year",
+        "digits-ordinal": "%digits-ordinal"
+      },
+      "checks": {
+        "ruleSetCount": 10,
+        "ruleCount": 264,
+        "containsCurrencyRuleSet": false,
+        "containsTanween": false,
+        "containsAnyTashkeel": false,
+        "containsOnlyPhrase": false,
+        "largestSpelledBase": "1000000000000000",
+        "fallsBackToDigitsFrom": "1000000000000000000"
+      },
+      "gaps": [
+        {
+          "id": "currency-agreement",
+          "need": "Amount in words on cheques and invoices names the currency and its subunit with number agreement (singular, dual, plural 3–10, accusative singular 11–99, singular after hundreds/thousands) and joins major and minor amounts.",
+          "status": "RBNF has no currency rule set for ar (checks.containsCurrencyRuleSet is false). The counted noun and its forms must come from the currency layer (CLDR currencies.json displayName-count-*), not from here."
+        },
+        {
+          "id": "only-phrase",
+          "need": "The closing phrase «فقط لا غير» (and the optional opening «فقط») that Arabic cheques and invoices put around the amount.",
+          "status": "Absent from RBNF (checks.containsOnlyPhrase is false). No CLDR source; needs an authored, reviewed string."
+        },
+        {
+          "id": "dual-of-counted-noun",
+          "need": "The dual of the counted noun replaces the numeral two (ريالان / ريالين), and 2000 / 2 000 000 use dual forms in the case the sentence requires.",
+          "status": "RBNF emits bare numerals only. It writes 2000 as «ألفين» in %spellout-numbering and «ألفي» in the cardinal rule sets, and has no rule for a construct-state or case choice."
+        },
+        {
+          "id": "case-and-tanween",
+          "need": "Case endings: nominative/accusative-genitive forms of tens and duals (عشرون / عشرين, مائتان / مائتين) and tanween on the counted noun after 11–99 (ريالًا).",
+          "status": "RBNF contains no tashkeel at all (checks.containsAnyTashkeel is false) and only nominative tens and hundreds."
+        },
+        {
+          "id": "gender-agreement-3-10",
+          "need": "Numerals 3–10 take the opposite gender of the counted noun; 11–19 have masculine and feminine compound forms.",
+          "status": "In CLDR 49 %spellout-cardinal-feminine uses the same words as the masculine set for 3–10 and builds 13–19 from %spellout-numbering; the words differ between the two sets only at 1, 2 and 12. Recorded as found, not corrected."
+        },
+        {
+          "id": "fractions",
+          "need": "Minor units are read as a whole number of subunits (… وخمسون قرشًا), never digit by digit.",
+          "status": "The x.x rule reads fractional digits one by one after «فاصل»; an amount-in-words implementation must split major and minor units before calling the rules."
+        },
+        {
+          "id": "scale-above-quadrillion",
+          "need": "Values of 10^18 and above.",
+          "status": "Rule sets fall back to the pattern #,##0 from 10^18."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/gregorian-months.ar-DZ",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-dates-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-dates-full/main/ar*/ca-gregorian.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "gregorian-months",
+    "scope": [
+      "ar-DZ",
+      "ar-TN"
+    ],
+    "content": {
+      "calendar": "gregory",
+      "months": {
+        "format": {
+          "wide": [
+            {
+              "index": 1,
+              "name": "جانفي"
+            },
+            {
+              "index": 2,
+              "name": "فيفري"
+            },
+            {
+              "index": 3,
+              "name": "مارس"
+            },
+            {
+              "index": 4,
+              "name": "أفريل"
+            },
+            {
+              "index": 5,
+              "name": "ماي"
+            },
+            {
+              "index": 6,
+              "name": "جوان"
+            },
+            {
+              "index": 7,
+              "name": "جويلية"
+            },
+            {
+              "index": 8,
+              "name": "أوت"
+            },
+            {
+              "index": 9,
+              "name": "سبتمبر"
+            },
+            {
+              "index": 10,
+              "name": "أكتوبر"
+            },
+            {
+              "index": 11,
+              "name": "نوفمبر"
+            },
+            {
+              "index": 12,
+              "name": "ديسمبر"
+            }
+          ],
+          "abbreviated": [
+            {
+              "index": 1,
+              "name": "جانفي"
+            },
+            {
+              "index": 2,
+              "name": "فيفري"
+            },
+            {
+              "index": 3,
+              "name": "مارس"
+            },
+            {
+              "index": 4,
+              "name": "أفريل"
+            },
+            {
+              "index": 5,
+              "name": "ماي"
+            },
+            {
+              "index": 6,
+              "name": "جوان"
+            },
+            {
+              "index": 7,
+              "name": "جويلية"
+            },
+            {
+              "index": 8,
+              "name": "أوت"
+            },
+            {
+              "index": 9,
+              "name": "سبتمبر"
+            },
+            {
+              "index": 10,
+              "name": "أكتوبر"
+            },
+            {
+              "index": 11,
+              "name": "نوفمبر"
+            },
+            {
+              "index": 12,
+              "name": "ديسمبر"
+            }
+          ],
+          "narrow": [
+            {
+              "index": 1,
+              "name": "ج"
+            },
+            {
+              "index": 2,
+              "name": "ف"
+            },
+            {
+              "index": 3,
+              "name": "م"
+            },
+            {
+              "index": 4,
+              "name": "أ"
+            },
+            {
+              "index": 5,
+              "name": "م"
+            },
+            {
+              "index": 6,
+              "name": "ج"
+            },
+            {
+              "index": 7,
+              "name": "ج"
+            },
+            {
+              "index": 8,
+              "name": "أ"
+            },
+            {
+              "index": 9,
+              "name": "س"
+            },
+            {
+              "index": 10,
+              "name": "أ"
+            },
+            {
+              "index": 11,
+              "name": "ن"
+            },
+            {
+              "index": 12,
+              "name": "د"
+            }
+          ]
+        },
+        "standAlone": {
+          "wide": [
+            {
+              "index": 1,
+              "name": "جانفي"
+            },
+            {
+              "index": 2,
+              "name": "فيفري"
+            },
+            {
+              "index": 3,
+              "name": "مارس"
+            },
+            {
+              "index": 4,
+              "name": "أفريل"
+            },
+            {
+              "index": 5,
+              "name": "ماي"
+            },
+            {
+              "index": 6,
+              "name": "جوان"
+            },
+            {
+              "index": 7,
+              "name": "جويلية"
+            },
+            {
+              "index": 8,
+              "name": "أوت"
+            },
+            {
+              "index": 9,
+              "name": "سبتمبر"
+            },
+            {
+              "index": 10,
+              "name": "أكتوبر"
+            },
+            {
+              "index": 11,
+              "name": "نوفمبر"
+            },
+            {
+              "index": 12,
+              "name": "ديسمبر"
+            }
+          ],
+          "abbreviated": [
+            {
+              "index": 1,
+              "name": "جانفي"
+            },
+            {
+              "index": 2,
+              "name": "فيفري"
+            },
+            {
+              "index": 3,
+              "name": "مارس"
+            },
+            {
+              "index": 4,
+              "name": "أفريل"
+            },
+            {
+              "index": 5,
+              "name": "ماي"
+            },
+            {
+              "index": 6,
+              "name": "جوان"
+            },
+            {
+              "index": 7,
+              "name": "جويلية"
+            },
+            {
+              "index": 8,
+              "name": "أوت"
+            },
+            {
+              "index": 9,
+              "name": "سبتمبر"
+            },
+            {
+              "index": 10,
+              "name": "أكتوبر"
+            },
+            {
+              "index": 11,
+              "name": "نوفمبر"
+            },
+            {
+              "index": 12,
+              "name": "ديسمبر"
+            }
+          ],
+          "narrow": [
+            {
+              "index": 1,
+              "name": "ج"
+            },
+            {
+              "index": 2,
+              "name": "ف"
+            },
+            {
+              "index": 3,
+              "name": "م"
+            },
+            {
+              "index": 4,
+              "name": "أ"
+            },
+            {
+              "index": 5,
+              "name": "م"
+            },
+            {
+              "index": 6,
+              "name": "ج"
+            },
+            {
+              "index": 7,
+              "name": "ج"
+            },
+            {
+              "index": 8,
+              "name": "أ"
+            },
+            {
+              "index": 9,
+              "name": "س"
+            },
+            {
+              "index": 10,
+              "name": "أ"
+            },
+            {
+              "index": 11,
+              "name": "ن"
+            },
+            {
+              "index": 12,
+              "name": "د"
+            }
+          ]
+        }
+      },
+      "invisibleCharactersInNames": []
+    }
+  }
+}

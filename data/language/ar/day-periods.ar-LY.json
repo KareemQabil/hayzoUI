@@ -1,0 +1,147 @@
+{
+  "kind": "language",
+  "schemaVersion": 1,
+  "id": "ar/day-periods.ar-LY",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-dates-full",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-dates-full/main/ar*/ca-gregorian.json"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://www.npmjs.com/package/cldr-core",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core/supplemental/dayPeriods.json"
+      }
+    ],
+    "script": "tools/extract/language/build.mjs"
+  },
+  "data": {
+    "language": "ar",
+    "dataset": "day-periods",
+    "scope": [
+      "ar-LY",
+      "ar-SA"
+    ],
+    "content": {
+      "rules": [
+        {
+          "period": "night1",
+          "from": "00:00",
+          "before": "01:00"
+        },
+        {
+          "period": "night2",
+          "from": "01:00",
+          "before": "03:00"
+        },
+        {
+          "period": "morning1",
+          "from": "03:00",
+          "before": "06:00"
+        },
+        {
+          "period": "morning2",
+          "from": "06:00",
+          "before": "12:00"
+        },
+        {
+          "period": "afternoon1",
+          "from": "12:00",
+          "before": "13:00"
+        },
+        {
+          "period": "afternoon2",
+          "from": "13:00",
+          "before": "18:00"
+        },
+        {
+          "period": "evening1",
+          "from": "18:00",
+          "before": "24:00"
+        }
+      ],
+      "names": {
+        "format": {
+          "wide": {
+            "am": "ص",
+            "pm": "م",
+            "morning1": "في الصباح",
+            "morning2": "صباحًا",
+            "afternoon1": "ظهرًا",
+            "afternoon2": "بعد الظهر",
+            "evening1": "مساءً",
+            "night1": "في المساء",
+            "night2": "ليلاً"
+          },
+          "abbreviated": {
+            "am": "ص",
+            "pm": "م",
+            "morning1": "فجرًا",
+            "morning2": "ص",
+            "afternoon1": "ظهرًا",
+            "afternoon2": "بعد الظهر",
+            "evening1": "مساءً",
+            "night1": "في المساء",
+            "night2": "ل"
+          },
+          "narrow": {
+            "am": "ص",
+            "pm": "م",
+            "morning1": "فجرًا",
+            "morning2": "صباحًا",
+            "afternoon1": "ظهرًا",
+            "afternoon2": "بعد الظهر",
+            "evening1": "مساءً",
+            "night1": "منتصف الليل",
+            "night2": "ليلاً"
+          }
+        },
+        "standAlone": {
+          "wide": {
+            "am": "صباحًا",
+            "pm": "مساءً",
+            "morning1": "فجرًا",
+            "morning2": "صباحًا",
+            "afternoon1": "ظهرًا",
+            "afternoon2": "بعد الظهر",
+            "evening1": "مساءً",
+            "night1": "منتصف الليل",
+            "night2": "ليلاً"
+          },
+          "abbreviated": {
+            "am": "ص",
+            "pm": "م",
+            "morning1": "فجرًا",
+            "morning2": "ص",
+            "afternoon1": "ظهرًا",
+            "afternoon2": "بعد الظهر",
+            "evening1": "مساءً",
+            "night1": "منتصف الليل",
+            "night2": "ليلاً"
+          },
+          "narrow": {
+            "am": "ص",
+            "pm": "م",
+            "morning1": "فجرًا",
+            "morning2": "صباحًا",
+            "afternoon1": "ظهرًا",
+            "afternoon2": "بعد الظهر",
+            "evening1": "مساءً",
+            "night1": "منتصف الليل",
+            "night2": "ليلاً"
+          }
+        }
+      }
+    }
+  }
+}
