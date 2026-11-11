@@ -1,0 +1,266 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "ag-grid",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of ag-grid/ag-grid",
+        "url": "https://github.com/ag-grid/ag-grid/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "ag-grid",
+      "name": "AG Grid",
+      "repository": "https://github.com/ag-grid/ag-grid"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/610",
+        "number": 610,
+        "title": "add support for right-to-left langauges",
+        "category": "direction-api",
+        "components": [
+          "Grid"
+        ],
+        "summary": "In 2015 the grid on a page with direction: rtl had misaligned headers and its scrollbar on the unexpected side; RTL support took a year to arrive.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2015-12-23",
+        "closedAt": "2017-01-03",
+        "daysOpen": 377,
+        "comments": 31,
+        "reactions": 5,
+        "lesson": "Header/body alignment and scrollbar side are part of the table fixtures in RTL from the first version of the table model.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/2680",
+        "number": 2680,
+        "title": "column header is not aligned with the rest of the grid when RTL mode is enabled on android",
+        "category": "scroll",
+        "components": [
+          "Grid"
+        ],
+        "summary": "On Android Chrome, with RTL enabled, the column headers were not aligned with the body columns, on the vendor's own RTL demo.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2018-10-04",
+        "closedAt": "2018-10-18",
+        "daysOpen": 14,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "investigating"
+        ],
+        "lesson": "Header and body scroll sync uses the normalised scroll adapter and is tested on mobile engines.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/2897",
+        "number": 2897,
+        "title": "Mouse scroll is very slow on RTL grid since version 20",
+        "category": "scroll",
+        "components": [
+          "Grid"
+        ],
+        "summary": "After a major release, mouse-wheel scrolling of an RTL grid became very slow, on the vendor's own demo, and took seven weeks to fix.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2019-01-19",
+        "closedAt": "2019-03-11",
+        "daysOpen": 51,
+        "comments": 9,
+        "reactions": 0,
+        "labels": [
+          "community-support",
+          "investigating"
+        ],
+        "lesson": "The RTL scroll path is exercised by performance checks as well as correctness tests; it is not a separate, slower code path.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/2914",
+        "number": 2914,
+        "title": "horizontal scroll issues in RTL",
+        "category": "scroll",
+        "components": [
+          "Grid"
+        ],
+        "summary": "With horizontal scrolling in RTL some columns' values were not rendered.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2019-01-26",
+        "closedAt": "2019-01-30",
+        "daysOpen": 4,
+        "comments": 7,
+        "reactions": 0,
+        "lesson": "Column virtualisation is property-tested for both directions (see the MUI X reports of the same defect).",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/4045",
+        "number": 4045,
+        "title": "Chrome v 85 break the scroll horizontally in RTL.",
+        "category": "scroll",
+        "components": [
+          "Grid"
+        ],
+        "summary": "A browser update (Chrome 85) broke horizontal scrolling of the grid in RTL overnight. The workaround shared in the thread takes the absolute value of scrollLeft when reading and negates it when writing, i.e. the grid had depended on a browser-specific sign convention for RTL scroll offsets.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-08-27",
+        "closedAt": "2020-08-27",
+        "daysOpen": 0,
+        "comments": 22,
+        "reactions": 3,
+        "resolution": "Patched by the vendor shortly afterwards and shipped in the next major version.",
+        "lesson": "Never branch on browser identity or assume a scrollLeft convention: detect the convention at runtime (or derive position from bounding rectangles) inside one scroll adapter that all components use.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/4145",
+        "number": 4145,
+        "title": "Right-to-left text editing issues",
+        "category": "input",
+        "components": [
+          "cell editor"
+        ],
+        "summary": "Editing text in cells of an RTL grid had caret and text-entry problems on the vendor's RTL demo.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-10-16",
+        "closedAt": "2020-11-02",
+        "daysOpen": 17,
+        "comments": 6,
+        "reactions": 0,
+        "labels": [
+          "AG-4727",
+          "investigating"
+        ],
+        "lesson": "Cell editors inherit the cell's direction and are covered by RTL typing tests (caret placement, selection with Shift+arrows).",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/4448",
+        "number": 4448,
+        "title": "RTL Charts Problem",
+        "category": "chart",
+        "components": [
+          "integrated charts"
+        ],
+        "summary": "Charts created from an RTL grid did not render correctly for RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-04-17",
+        "closedAt": "2021-05-11",
+        "daysOpen": 25,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "ag-5279",
+          "investigating"
+        ],
+        "lesson": "A chart embedded in an RTL surface is tested for legend, axis and tooltip placement.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/4711",
+        "number": 4711,
+        "title": ".ag-rtl classnames  breaks normal rtl behaviour",
+        "category": "direction-api",
+        "components": [
+          "Grid"
+        ],
+        "summary": "The grid's own RTL class names and styles interfered with the page's normal RTL behaviour when the document was already RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-10-11",
+        "closedAt": "2021-10-21",
+        "daysOpen": 10,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "waiting-for-repro"
+        ],
+        "lesson": "There is no parallel RTL class system; components follow the DOM direction through logical properties, so library RTL and page RTL cannot conflict.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/6677",
+        "number": 6677,
+        "title": "Filter horizontal resize doesn't work in RTL",
+        "category": "input",
+        "components": [
+          "filter panel"
+        ],
+        "summary": "Horizontal resizing of the filter popup did not work in RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-05-30",
+        "closedAt": "2023-06-15",
+        "daysOpen": 16,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "AG-8786"
+        ],
+        "lesson": "Every resizable surface shares one resize engine with direction input.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/6779",
+        "number": 6779,
+        "title": "Aligned Grid Horizontal scroll doesn't work in rtl mode",
+        "category": "scroll",
+        "components": [
+          "aligned grids"
+        ],
+        "summary": "With two aligned grids in RTL, horizontal scrolling of one did not move the other.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-06-18",
+        "closedAt": "2023-07-14",
+        "daysOpen": 26,
+        "comments": 1,
+        "reactions": 1,
+        "labels": [
+          "AG-8809"
+        ],
+        "lesson": "Scroll synchronisation between containers exchanges normalised inline offsets, never raw scrollLeft values.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ag-grid/ag-grid/issues/10240",
+        "number": 10240,
+        "title": "[Bug]: groupTotalRow on pinned item doesn't work at bottom but works at the top while RTL set to true",
+        "category": "scroll",
+        "components": [
+          "pinned columns"
+        ],
+        "summary": "With RTL enabled and a pinned column, a group total row at the bottom rendered an empty sticky panel and the sticky row did not work, although the same row at the top did.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-03-31",
+        "closedAt": "2025-05-06",
+        "daysOpen": 36,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "waiting-for-repro"
+        ],
+        "lesson": "Sticky rows and pinned columns compose; the fixture matrix crosses pinning × sticky rows × direction.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

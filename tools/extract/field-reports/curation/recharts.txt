@@ -1,0 +1,17 @@
+// Recharts — notes written after reading each issue. Format: see build.mjs.
+
+#263 | chart | all charts
+S: With direction: rtl on the page, chart numbers and texts were unreadable and the tooltip opened in the wrong place. Reported in 2016 and closed three years later.
+L: Charts are isolated from inherited direction: the SVG root sets its own direction and text anchoring explicitly, and tooltip coordinates are physical.
+
+#682 | chart | BarChart
+S: A team supporting Arabic countries used a CSS-flipping plugin around a stacked bar chart and found that the tooltip, the y-axis label and the order of bars were not mirrored — a chart drawn from computed coordinates is not affected by flipped CSS. Closed after two and a half years.
+L: Chart mirroring is a data-level option (reverse the category scale, move the value axis to inline-start side, anchor labels), implemented in the layout computation, with direction as an input.
+
+#4214 | keyboard | accessibilityLayer
+S: In RTL the chart's keyboard layer moves to the previous point on ArrowLeft and the next on ArrowRight, as in LTR. Open for almost three years.
+L: Keyboard traversal of data points follows the visual order of the axis: if the scale is reversed for RTL, the arrow mapping reverses with it.
+
+#7548 | numerals | axis ticks, tooltip
+S: Axis ticks, tooltips and labels always used Western digits, which is inconsistent in Arabic and Persian interfaces whose other numbers use local digits.
+L: Charts take the locale's number formatter (including the numbering system) for every number they print, by default.

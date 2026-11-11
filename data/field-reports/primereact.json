@@ -1,0 +1,163 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "primereact",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "GitHub issues of primefaces/primereact",
+        "url": "https://github.com/primefaces/primereact/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "primereact",
+      "name": "PrimeReact",
+      "repository": "https://github.com/primefaces/primereact"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/primefaces/primereact/issues/1863",
+        "number": 1863,
+        "title": "Right to left support",
+        "category": "direction-api",
+        "components": [
+          "all components"
+        ],
+        "summary": "A user could find nothing about RTL in the documentation and asked whether it was supported; the question stayed open for sixteen months and was then folded into a single tracking issue.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-03-10",
+        "closedAt": "2022-07-23",
+        "daysOpen": 500,
+        "comments": 5,
+        "reactions": 4,
+        "lesson": "The documentation states the RTL status of every component, generated from recorded test runs.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/primefaces/primereact/issues/2167",
+        "number": 2167,
+        "title": "Dropdown - Right To Left X location",
+        "category": "layout",
+        "components": [
+          "Dropdown"
+        ],
+        "summary": "With dir=\"rtl\" on the html element the dropdown's text and arrow moved to the correct sides but the clear icon did not, so it overlapped the text.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-07-07",
+        "closedAt": "2022-07-23",
+        "daysOpen": 381,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "All adornments of a field are placed by the same logical layout; none is absolutely positioned with a physical inset.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/primefaces/primereact/issues/2184",
+        "number": 2184,
+        "title": "InputText Floating Label out of position when direction is RTL",
+        "category": "layout",
+        "components": [
+          "InputText",
+          "FloatLabel"
+        ],
+        "summary": "With an RTL page direction the floating label of a text input was out of position.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-07-10",
+        "closedAt": "2022-07-23",
+        "daysOpen": 378,
+        "comments": 1,
+        "reactions": 1,
+        "lesson": "Floating labels are anchored with inset-inline-start and transform-origin on the inline-start side.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/primefaces/primereact/issues/2189",
+        "number": 2189,
+        "title": "DataTable: Buggy on Right to Left",
+        "category": "scroll",
+        "components": [
+          "DataTable",
+          "Paginator"
+        ],
+        "summary": "With dir=\"rtl\" the data table's frozen columns did not flip sides, and the paginator's arrows pointed the wrong way with broken spacing.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-07-14",
+        "closedAt": "2022-07-23",
+        "daysOpen": 374,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Frozen columns are start/end; paginator icons are mirrored.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/primefaces/primereact/issues/2191",
+        "number": 2191,
+        "title": "PanelMenu: Buggy on Right To Left",
+        "category": "mirroring",
+        "components": [
+          "PanelMenu"
+        ],
+        "summary": "With dir=\"rtl\" the panel menu had wrong spacing and its expand arrow always pointed right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-07-14",
+        "closedAt": "2022-07-23",
+        "daysOpen": 374,
+        "comments": 7,
+        "reactions": 0,
+        "lesson": "Collapsed-state chevrons are in the mirroring registry; spacing uses logical padding.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/primefaces/primereact/issues/3002",
+        "number": 3002,
+        "title": "Carousel: slider doesn't work properly with RTL",
+        "category": "value-direction",
+        "components": [
+          "Carousel"
+        ],
+        "summary": "In RTL the carousel moved its items toward the clicked navigation button instead of away from it, leaving items hidden.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-06-21",
+        "closedAt": "2022-07-23",
+        "daysOpen": 32,
+        "comments": 3,
+        "reactions": 0,
+        "lesson": "Carousel translation is direction-signed and next always reveals content toward inline-end.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/primefaces/primereact/issues/3096",
+        "number": 3096,
+        "title": "Core: Right To Left (RTL) Support",
+        "category": "direction-api",
+        "components": [
+          "all components"
+        ],
+        "summary": "The tracking issue for RTL support, into which seven component defects (carousel, dropdown, sidebar, float label, context menu, data table, panel menu) were consolidated in 2022. It is still open after more than four years; maintainers said in late 2024 that RTL would come with a future major version, as it had for the vendor's other framework libraries.",
+        "state": "open",
+        "createdAt": "2022-07-23",
+        "daysOpen": 1571,
+        "comments": 1,
+        "reactions": 0,
+        "resolution": "Open, no linked pull request or milestone.",
+        "lesson": "The clearest opening: a complete component set whose RTL support is verified, not promised.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

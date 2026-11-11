@@ -1,0 +1,174 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "dayjs",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of iamkun/dayjs",
+        "url": "https://github.com/iamkun/dayjs/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "dayjs",
+      "name": "Day.js",
+      "repository": "https://github.com/iamkun/dayjs"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/416",
+        "number": 416,
+        "title": "Non-Arabic Numerals",
+        "category": "numerals",
+        "components": [
+          "format"
+        ],
+        "summary": "A team needed to switch between Extended Arabic-Indic digits and Latin digits when formatting dates and found no option for it; the request was closed two years later.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2018-11-27",
+        "closedAt": "2021-01-03",
+        "daysOpen": 768,
+        "comments": 4,
+        "reactions": 0,
+        "lesson": "Numbering system is a per-call formatting option, independent of the locale's strings.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/1706",
+        "number": 1706,
+        "title": "Arabic numbers aren't showing for Arabic locale",
+        "category": "numerals",
+        "components": [
+          "locale ar"
+        ],
+        "summary": "With the Arabic locale the library printed Latin digits where the library it replaces printed Arabic-Indic digits, so migrating changed what users saw.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-11-19",
+        "closedAt": "2022-05-13",
+        "daysOpen": 175,
+        "comments": 2,
+        "reactions": 3,
+        "lesson": "The default numbering system for each Arabic region is taken from CLDR and documented; changing it is one explicit option, and migration guides list the difference.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/1941",
+        "number": 1941,
+        "title": "Arabic locales: Meridiem is reversed",
+        "category": "locale-strings",
+        "components": [
+          "locale ar"
+        ],
+        "summary": "In the Arabic locales the AM and PM markers were swapped: the function returned the morning letter for afternoon hours. The source looked right in an editor because the two Arabic letters and the neutral punctuation around them are displayed in bidi-reordered order.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-06-13",
+        "closedAt": "2022-06-27",
+        "daysOpen": 14,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "released"
+        ],
+        "lesson": "Arabic strings never sit inline in source code next to operators; they live in data files, one value per key, and tests assert day-period output for hours 0, 11, 12 and 23.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/2711",
+        "number": 2711,
+        "title": "12:00 am is confused with 12:00 pm in Arabic local.",
+        "category": "locale-strings",
+        "components": [
+          "locale ar"
+        ],
+        "summary": "In the Arabic locale 12:00 noon is formatted with the morning marker, so noon and midnight cannot be told apart. Open for more than two years.",
+        "state": "open",
+        "createdAt": "2024-08-18",
+        "daysOpen": 815,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Day-period selection uses hour < 12, taken from one shared function, and has boundary fixtures at 00:00 and 12:00.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/2840",
+        "number": 2840,
+        "title": "When the time zone is Asia/Tehran  The number gives the wrong month of the last year 1403",
+        "category": "calendar",
+        "components": [
+          "calendar plugin"
+        ],
+        "summary": "With the Asia/Tehran time zone the last month of year 1403 in the reporter's calendar has 29 days instead of 30, which shifts every following day by one. It is the same leap year that produced a wrong month length in a component library's date picker. Open for more than a year and a half.",
+        "state": "open",
+        "createdAt": "2025-03-12",
+        "daysOpen": 609,
+        "comments": 1,
+        "reactions": 3,
+        "lesson": "Leap-year rules of each calendar are implemented in the core and tested against reference data for known hard years (Persian 1403; Umm al-Qura month lengths), independent of time zone.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/2951",
+        "number": 2951,
+        "title": "Wrong meridiem in Arabic locale when time is 12 PM",
+        "category": "locale-strings",
+        "components": [
+          "locale ar-sa"
+        ],
+        "summary": "The same noon defect reported again for the Saudi locale: 12 PM returns the AM marker while other afternoon hours are correct. Open for a year.",
+        "state": "open",
+        "createdAt": "2025-10-31",
+        "daysOpen": 375,
+        "comments": 8,
+        "reactions": 0,
+        "lesson": "Locale variants inherit day-period logic from the base locale so that a fix reaches all of them.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/2977",
+        "number": 2977,
+        "title": "Arabic locale (ar) uses unnecessary Right-to-Left Mark (U+200F) in format L, causing incorrect date rendering",
+        "category": "bidi",
+        "components": [
+          "locale ar"
+        ],
+        "summary": "The Arabic locale's short date format embeds right-to-left marks between the numeric fields, which reorders the date when it is displayed and corrupts it when it is copied, stored or parsed. Open for a year.",
+        "state": "open",
+        "createdAt": "2025-11-20",
+        "daysOpen": 355,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "Formatted output contains no bidi control characters by default; where isolation is needed it is applied by the rendering component with markup. An opt-in exists for plain-text contexts.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/iamkun/dayjs/issues/3234",
+        "number": 3234,
+        "title": "Day predicates fail with different instance and global numeral locales",
+        "category": "numerals",
+        "components": [
+          "plugins"
+        ],
+        "summary": "With a numeral-translating plugin installed, the today/tomorrow/yesterday predicates compare formatted strings, one in the instance's digits and one in the global locale's digits, so they return false for the same day.",
+        "state": "open",
+        "createdAt": "2026-09-26",
+        "daysOpen": 45,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "Date logic never compares formatted strings; comparisons use numeric fields, and display digits are applied at the last step only.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

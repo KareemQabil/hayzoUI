@@ -1,0 +1,206 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "chartjs",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of chartjs/Chart.js",
+        "url": "https://github.com/chartjs/Chart.js/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "chartjs",
+      "name": "Chart.js",
+      "repository": "https://github.com/chartjs/Chart.js"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/chartjs/Chart.js/issues/5800",
+        "number": 5800,
+        "title": "Please Add RTL support.",
+        "category": "chart",
+        "components": [
+          "all charts"
+        ],
+        "summary": "A bare request to add RTL support that collected a dozen reactions and took fourteen months to close, when RTL options for the legend and tooltip were added.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2018-10-29",
+        "closedAt": "2020-01-09",
+        "daysOpen": 437,
+        "comments": 2,
+        "reactions": 12,
+        "labels": [
+          "type: enhancement"
+        ],
+        "lesson": "Chart RTL covers legend, tooltip, axes and labels together.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/chartjs/Chart.js/issues/6057",
+        "number": 6057,
+        "title": "onResize doesn't fire in RTL mode",
+        "category": "layout",
+        "components": [
+          "responsive"
+        ],
+        "summary": "With direction rtl on the body the chart's resize callback never fired, so responsive charts did not rescale. The resize detector relied on scroll events of hidden elements whose scroll offsets behave differently in RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2019-02-08",
+        "closedAt": "2019-02-13",
+        "daysOpen": 5,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/chartjs/Chart.js/pull/6063",
+            "title": "fix resize on rtl page",
+            "mergedAt": "2019-02-13"
+          }
+        ],
+        "lesson": "Use ResizeObserver; no scroll-position tricks whose behaviour depends on direction.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/chartjs/Chart.js/issues/7199",
+        "number": 7199,
+        "title": "right to left direction.",
+        "category": "chart",
+        "components": [
+          "all charts"
+        ],
+        "summary": "A user wanting an Arabic chart laid out right to left found only a legend direction option; nothing for the chart itself. Closed after a year.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-15",
+        "closedAt": "2021-03-17",
+        "daysOpen": 366,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "type: bug"
+        ],
+        "lesson": "Axis reversal and value-axis side are exposed as one direction option of the chart.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/chartjs/Chart.js/issues/9194",
+        "number": 9194,
+        "title": "Rtl regresssions in v3",
+        "category": "chart",
+        "components": [
+          "legend"
+        ],
+        "summary": "After a major rewrite, a legend with the RTL option was drawn off-screen and not visible at all; the rewrite had changed the RTL text helper.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-05-31",
+        "closedAt": "2021-06-01",
+        "daysOpen": 1,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/chartjs/Chart.js/pull/9199",
+            "title": "Fix rtl legend text alignment",
+            "mergedAt": "2021-06-01"
+          }
+        ],
+        "lesson": "RTL legend rendering is a pixel fixture, so a refactor cannot silently drop it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/chartjs/Chart.js/issues/9324",
+        "number": 9324,
+        "title": "Rtl regresssions in v3 - The sequel",
+        "category": "chart",
+        "components": [
+          "legend"
+        ],
+        "summary": "In the rewritten version, clicking a legend item in RTL toggled the opposite item: drawing used the RTL-adjusted positions and hit-testing did not.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-06-27",
+        "closedAt": "2021-07-10",
+        "daysOpen": 13,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/chartjs/Chart.js/pull/9340",
+            "title": "Ensure correct item is clicked when a horizontal legend is in RTL mode",
+            "mergedAt": "2021-07-01"
+          },
+          {
+            "url": "https://github.com/chartjs/Chart.js/pull/9353",
+            "title": "Adjust legend hitboxes when RTL and each item has a different size",
+            "mergedAt": "2021-07-10"
+          }
+        ],
+        "lesson": "Drawing and hit-testing share one layout result; a test clicks each legend item in RTL and asserts which series toggles.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/chartjs/Chart.js/issues/10771",
+        "number": 10771,
+        "title": "boxPadding not working properly in RTL languages",
+        "category": "chart",
+        "components": [
+          "tooltip"
+        ],
+        "summary": "In RTL the tooltip's box padding pushes the colour box outside the tooltip instead of separating it from the text. Open for four years.",
+        "state": "open",
+        "stateReason": "reopened",
+        "createdAt": "2022-10-09",
+        "daysOpen": 1493,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "type: bug"
+        ],
+        "lesson": "Every spacing option of a chart tooltip is applied on the inline-start side through one helper; tooltip layout is tested in RTL for each option.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/chartjs/Chart.js/issues/11937",
+        "number": 11937,
+        "title": "rtl options for axis and labels",
+        "category": "chart",
+        "components": [
+          "axes"
+        ],
+        "summary": "RTL is supported for legends and tooltips only; axes and labels stay LTR, which is inconsistent in RTL-language charts. Open for two years with a number of reactions.",
+        "state": "open",
+        "createdAt": "2024-10-24",
+        "daysOpen": 748,
+        "comments": 2,
+        "reactions": 11,
+        "labels": [
+          "type: enhancement"
+        ],
+        "lesson": "As for 7199: a single direction option moves the value axis and reverses the category axis.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

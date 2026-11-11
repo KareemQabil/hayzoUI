@@ -1,0 +1,260 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "radix-primitives",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "GitHub issues of radix-ui/primitives",
+        "url": "https://github.com/radix-ui/primitives/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "radix-primitives",
+      "name": "Radix Primitives",
+      "repository": "https://github.com/radix-ui/primitives"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/468",
+        "number": 468,
+        "title": "[Tabs] wrong keyboard nav on RTL layouts",
+        "category": "keyboard",
+        "components": [
+          "Tabs"
+        ],
+        "summary": "With direction: rtl applied through CSS the tabs rendered right to left, but the arrow keys still moved in LTR order, so ArrowLeft went to the tab on the right. The component had no knowledge of the layout direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-02-23",
+        "closedAt": "2021-02-25",
+        "daysOpen": 2,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "Type: Enhancement"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/radix-ui/primitives/pull/497",
+            "title": "[Tabs] Add RTL support (dir prop)",
+            "mergedAt": "2021-02-25"
+          }
+        ],
+        "lesson": "Roving focus along a horizontal axis swaps ArrowLeft/ArrowRight in RTL; the roving-focus engine requires a direction input and the generated keyboard tests assert visual-direction movement.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/749",
+        "number": 749,
+        "title": "[useDirection] Eager hook is called on every state change.",
+        "category": "direction-api",
+        "components": [
+          "DropdownMenu",
+          "useDirection"
+        ],
+        "summary": "Components discovered their direction by reading the computed style of an element, and because no default was provided the read ran on every state change, which is expensive with many instances. The approach was later replaced by an explicit provider.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-06-27",
+        "closedAt": "2022-04-11",
+        "daysOpen": 288,
+        "comments": 28,
+        "reactions": 3,
+        "fixedBy": [
+          {
+            "url": "https://github.com/radix-ui/primitives/pull/1119",
+            "title": "[DropdownMenu][ContextMenu][RadioGroup][ScrollArea][Slider][Tabs][ToggleGroup][Toolbar] Direction provider",
+            "mergedAt": "2022-04-11"
+          }
+        ],
+        "lesson": "Direction is resolved once per subtree (context seeded from the DOM, updated by an observer), never by calling getComputedStyle during render or on each state change.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/2172",
+        "number": 2172,
+        "title": "Bug: Miss-aligned positioning of Select portal content for RTL direction",
+        "category": "overlay-position",
+        "components": [
+          "Select"
+        ],
+        "summary": "When the select content was sized with the trigger-width variable, its horizontal translation was computed wrongly in RTL, so the popup was misaligned with its trigger while LTR was correct.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-05-30",
+        "closedAt": "2023-05-30",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Item-aligned and trigger-width popups compute their offset from bounding rectangles in physical coordinates; fixture: popup inline edges equal trigger inline edges in RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/2368",
+        "number": 2368,
+        "title": "Toast Dismissal Direction is stuck on LTR",
+        "category": "animation",
+        "components": [
+          "Toast"
+        ],
+        "summary": "With RTL set, a toast still slid in and swiped out toward the right. The answer was that the slide-in and swipe-out animations are the author's to adjust; the reporter made the closing animation depend on direction and closed the report.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-08-26",
+        "closedAt": "2023-08-27",
+        "daysOpen": 0,
+        "comments": 2,
+        "reactions": 0,
+        "resolution": "Closed by the reporter the next day with a workaround in their own styles.",
+        "lesson": "Swipe-to-dismiss and enter/exit motion default to the inline-end side derived from direction and can be overridden with a physical value; authors do not write per-direction keyframes.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/2378",
+        "number": 2378,
+        "title": "some components would discard  document \"dir\" if not explicitly specified.",
+        "category": "direction-api",
+        "components": [
+          "Tabs",
+          "ScrollArea"
+        ],
+        "summary": "Components such as tabs and scroll area rendered an explicit dir=\"ltr\" on their own root when no direction was passed, overriding the direction inherited from the parent element or the document. A commenter proposed returning no direction when unset so that the attribute is omitted; a maintainer closed the report six months later as lacking context.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-09-04",
+        "closedAt": "2024-03-06",
+        "daysOpen": 184,
+        "comments": 3,
+        "reactions": 0,
+        "resolution": "Closed without a change; the documented route is to wrap the app in the direction provider.",
+        "lesson": "A component never writes a dir attribute it was not given; the default is to inherit, and the internal direction value falls back to the DOM, not to a constant.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/2703",
+        "number": 2703,
+        "title": "Detect page direction automatically on text direction primitives",
+        "category": "direction-api",
+        "components": [
+          "DirectionProvider",
+          "NavigationMenu"
+        ],
+        "summary": "A team testing in Storybook toggles direction with an add-on that flips the document's direction; that works for plain HTML but not for the primitives, which need a dir prop or the direction provider. Their request to detect the page direction automatically was closed as not planned.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2024-02-14",
+        "closedAt": "2024-03-06",
+        "daysOpen": 22,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Tooling that flips dir on the document (Storybook add-ons, browser dev tools, translation proxies) is enough to put every component into RTL; a MutationObserver on the nearest dir ancestor keeps the context in sync.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/3016",
+        "number": 3016,
+        "title": "direction is not added in the html tag",
+        "category": "direction-api",
+        "components": [
+          "DirectionProvider"
+        ],
+        "summary": "A developer wrapped the app in the direction provider and expected the page to become RTL, but the provider only informs the library's components and does not set dir on any element. The report was closed as not planned after almost two years.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2024-07-14",
+        "closedAt": "2026-06-07",
+        "daysOpen": 693,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Document the two halves explicitly — the DOM attribute drives CSS, the context drives behaviour — and provide one component that sets both on an element so they cannot diverge.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/3182",
+        "number": 3182,
+        "title": "remove scrollbar does not support in RTL",
+        "category": "scroll",
+        "components": [
+          "Dialog"
+        ],
+        "summary": "With a modal open in RTL, the scroll-lock compensation moved all page elements the wrong way; it works in LTR. The fix took almost two years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-10-18",
+        "closedAt": "2026-07-19",
+        "daysOpen": 639,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "Scroll lock is direction-neutral (scrollbar-gutter or measured side); fixture: opening a dialog in RTL shifts nothing.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/3216",
+        "number": 3216,
+        "title": "[RadioGroup] RadioGroup in `form` causes page to overflow in RTL layout",
+        "category": "scroll",
+        "components": [
+          "RadioGroup"
+        ],
+        "summary": "Inside a form each radio adds an invisible native input shifted with translateX(-100%). In LTR that moves it harmlessly, but in RTL the shifted element extends past the start of the page and creates horizontal overflow, visible as empty space on mobile. It took almost two years to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-11-07",
+        "closedAt": "2026-10-12",
+        "daysOpen": 704,
+        "comments": 2,
+        "reactions": 1,
+        "lesson": "Hidden form-participation inputs are positioned with inset: 0 inside their control and clipped; nothing is moved off-screen with a physical translate. Fixture: document scrollWidth equals clientWidth in RTL with every form control rendered.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/3830",
+        "number": 3830,
+        "title": "feat(direction): auto-detect RTL from HTML document when no DirectionProvider is present",
+        "category": "direction-api",
+        "components": [
+          "DirectionProvider"
+        ],
+        "summary": "Without a provider the direction hook falls back to \"ltr\", so every component stamps dir=\"ltr\" on its elements and ignores an html element marked RTL. A proposal to auto-detect the document direction was closed as not planned.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2026-03-13",
+        "closedAt": "2026-06-07",
+        "daysOpen": 86,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Zero-configuration RTL: with dir=\"rtl\" on the document and no provider, every component behaves and renders RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/radix-ui/primitives/issues/4041",
+        "number": 4041,
+        "title": "Switch BubbleInput (position: absolute + translateX(-100%)) inflates scroll area in constrained / RTL containers",
+        "category": "scroll",
+        "components": [
+          "Switch"
+        ],
+        "summary": "The switch's hidden form input is absolutely positioned and translated by -100% on the x axis, which in RTL or tightly constrained containers enlarges the scrollable area of an ancestor.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-07-19",
+        "closedAt": "2026-07-20",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Same rule as for radios — hidden inputs stay inside the control's box; the overflow fixture covers switch, checkbox, radio, slider and select.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

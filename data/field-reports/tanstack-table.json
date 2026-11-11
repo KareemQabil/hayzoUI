@@ -1,0 +1,86 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "tanstack-table",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of TanStack/table",
+        "url": "https://github.com/TanStack/table/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "tanstack-table",
+      "name": "TanStack Table",
+      "repository": "https://github.com/TanStack/table"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/TanStack/table/issues/530",
+        "number": 530,
+        "title": "RTL Support",
+        "category": "direction-api",
+        "components": [
+          "Table"
+        ],
+        "summary": "In 2017 the table had no RTL support; the request listed what it would need — reversed column order, reversed cell content direction, swapped previous/next pagination buttons. It took eight months to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2017-10-03",
+        "closedAt": "2018-05-24",
+        "daysOpen": 233,
+        "comments": 13,
+        "reactions": 3,
+        "lesson": "The table model exposes direction, and column order, pinning sides, resize and pagination all read it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/TanStack/table/issues/4331",
+        "number": 4331,
+        "title": "RTL column resizing doesn't work",
+        "category": "input",
+        "components": [
+          "column resizing"
+        ],
+        "summary": "In RTL, column resizing worked backwards: dragging a handle toward the left shrank the column it should have widened. The headless resize logic computed the delta from pointer movement without a direction input, and the report stayed open for nineteen months until a direction option was added.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-08-22",
+        "closedAt": "2024-03-21",
+        "daysOpen": 577,
+        "comments": 7,
+        "reactions": 5,
+        "lesson": "The resize engine takes direction and applies the sign itself, so adapters cannot forget it; fixture: drag inline-end handle outward widens the column in both directions.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/TanStack/table/issues/5986",
+        "number": 5986,
+        "title": "Column Pinning in RTL document",
+        "category": "scroll",
+        "components": [
+          "column pinning"
+        ],
+        "summary": "In an RTL document, the column pinning offsets provided by the library (distance from left for start-pinned, from right for end-pinned) did not produce correct sticky positions. It was open for fifteen months.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-04-09",
+        "closedAt": "2026-07-27",
+        "daysOpen": 474,
+        "comments": 2,
+        "reactions": 1,
+        "lesson": "The table model returns pinning offsets in logical terms (inline-start/inline-end offsets) for the adapter to apply with logical insets.",
+        "confidence": "needs-review"
+      }
+    ]
+  }
+}

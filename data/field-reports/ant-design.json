@@ -1,0 +1,1106 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "ant-design",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of ant-design/ant-design",
+        "url": "https://github.com/ant-design/ant-design/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "ant-design",
+      "name": "Ant Design",
+      "repository": "https://github.com/ant-design/ant-design"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/4051",
+        "number": 4051,
+        "title": "RTL support all pages and components?",
+        "category": "direction-api",
+        "components": [
+          "all components"
+        ],
+        "summary": "A one-line question — does the library support Persian and Arabic? — became the most-reacted RTL issue of the project and stayed open for more than three years, until direction support landed with version 4.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2016-11-29",
+        "closedAt": "2020-01-02",
+        "daysOpen": 1129,
+        "comments": 45,
+        "reactions": 73,
+        "labels": [
+          "Inactive",
+          "IssueHuntFest",
+          "help wanted",
+          "👷🏻‍♂️ Someone working on it"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/19380",
+            "title": "feat: added rtl direction to all of ant-design components",
+            "mergedAt": "2020-01-02"
+          }
+        ],
+        "lesson": "Direction support cannot be retrofitted cheaply: it is designed into tokens, recipes and engines from the first commit, and the claim \"supports RTL\" is backed by a recorded test run per component.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/21585",
+        "number": 21585,
+        "title": "bug: Slider RTL style",
+        "category": "value-direction",
+        "components": [
+          "Slider"
+        ],
+        "summary": "In RTL the slider's mark labels were positioned wrongly because each label was centred with a fixed translateX(-50%), which shifts the wrong way once the offset is measured from the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-02-25",
+        "closedAt": "2020-03-13",
+        "daysOpen": 17,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl"
+        ],
+        "lesson": "Centring transforms must be written direction-neutrally (logical inset plus translate multiplied by the direction sign, or centring by layout); a slider with marks is an RTL screenshot fixture.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/21815",
+        "number": 21815,
+        "title": "Table with fixed column in RTL direction",
+        "category": "scroll",
+        "components": [
+          "Table"
+        ],
+        "summary": "A table with fixed columns in RTL showed no fixed columns at all and drew the scroll shadow in the wrong place.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-03",
+        "closedAt": "2020-03-10",
+        "daysOpen": 7,
+        "comments": 6,
+        "reactions": 0,
+        "labels": [
+          "rtl"
+        ],
+        "lesson": "Fixed columns and their edge shadows are computed in logical space (start/end) and resolved to physical sides once; shadows appear on the side where content is hidden.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/22239",
+        "number": 22239,
+        "title": "Add rtl.less for all components",
+        "category": "style-engine",
+        "components": [
+          "all components"
+        ],
+        "summary": "The first RTL implementation appended direction overrides to each component stylesheet; to make defects findable the team then split every component's RTL rules into a separate hand-maintained file, described by the author as huge and tedious work.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-16",
+        "closedAt": "2020-03-20",
+        "daysOpen": 4,
+        "comments": 18,
+        "reactions": 5,
+        "labels": [
+          "improvement",
+          "rtl"
+        ],
+        "lesson": "There is no separate RTL stylesheet. Recipes are written once with logical properties, so there is nothing to keep in sync and no override layer to fight.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/22296",
+        "number": 22296,
+        "title": "bug: Rate RTL allowHalf",
+        "category": "value-direction",
+        "components": [
+          "Rate"
+        ],
+        "summary": "With half-star rating in RTL, hovering the left half of a star selected the half value, as in LTR, although the star fills from the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-17",
+        "closedAt": "2020-04-20",
+        "daysOpen": 34,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "rtl",
+          "🐛 Bug"
+        ],
+        "lesson": "Fractional hit-testing measures the pointer from the inline-start edge of the item; half-step rating in RTL is a pointer fixture.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/22420",
+        "number": 22420,
+        "title": "input number RTL issues",
+        "category": "input",
+        "components": [
+          "InputNumber"
+        ],
+        "summary": "In RTL forms the number input's validation feedback icon landed outside the field and the tooltip appeared on the wrong side.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-19",
+        "closedAt": "2020-03-20",
+        "daysOpen": 0,
+        "comments": 9,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl"
+        ],
+        "lesson": "Adornments and feedback icons are placed with logical insets inside the field box; every field variant with feedback is rendered in RTL in the screenshot suite.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/22555",
+        "number": 22555,
+        "title": "Badge: Rtl issue with two digit",
+        "category": "bidi",
+        "components": [
+          "Badge"
+        ],
+        "summary": "A badge counter above 9 displayed its digits reversed in RTL (10 shown as 01). The animated counter renders each digit as its own element, so their order is subject to the container's direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-24",
+        "closedAt": "2020-03-27",
+        "daysOpen": 3,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "rtl",
+          "👷🏻‍♂️ Someone working on it"
+        ],
+        "resolution": "Fixed by a pull request three days later.",
+        "lesson": "Multi-element numbers (animated counters, odometers, OTP-style digit boxes) are wrapped in an LTR isolate; fixture: two- and three-digit badge in RTL.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/22580",
+        "number": 22580,
+        "title": "Select in RTL drop-down location",
+        "category": "overlay-position",
+        "components": [
+          "Select"
+        ],
+        "summary": "In RTL the select's dropdown stayed aligned to the left edge of the trigger instead of the right edge.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-25",
+        "closedAt": "2020-04-09",
+        "daysOpen": 15,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "rtl"
+        ],
+        "lesson": "Popup alignment defaults to inline-start of the anchor; placement names are logical and are resolved against the anchor's direction before collision handling.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/22635",
+        "number": 22635,
+        "title": "Carousel RTL sliding direction",
+        "category": "value-direction",
+        "components": [
+          "Carousel"
+        ],
+        "summary": "In RTL the carousel advanced in the LTR direction: choosing the next slide slid it in from the wrong side. The fix was considered to belong to the third-party slider package the carousel wraps, was left to volunteers, and the issue stayed open for more than six years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-26",
+        "closedAt": "2026-07-31",
+        "daysOpen": 2318,
+        "comments": 8,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl",
+          "🐛 Bug"
+        ],
+        "resolution": "Closed in 2026 by a change that adds an RTL prop, corrects the arrow direction and passes the direction down to the slider package.",
+        "lesson": "Carousel progression follows reading direction: next moves toward inline-end. The carousel engine is our own and direction-aware; correctness is not delegated to an LTR-only dependency.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/22659",
+        "number": 22659,
+        "title": "table-resizable-column in RTL is broken",
+        "category": "input",
+        "components": [
+          "Table"
+        ],
+        "summary": "The documented resizable-column table did not work in RTL: dragging the handle did not resize the column as expected. It stayed open for a year.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-03-27",
+        "closedAt": "2021-04-02",
+        "daysOpen": 371,
+        "comments": 6,
+        "reactions": 1,
+        "labels": [
+          "Inactive",
+          "rtl"
+        ],
+        "lesson": "Resize handles sit on the inline-end edge and drag deltas are direction-signed; a documented recipe that depends on a third-party helper is tested in RTL too.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/23210",
+        "number": 23210,
+        "title": "input number RTL",
+        "category": "input",
+        "components": [
+          "InputNumber"
+        ],
+        "summary": "In RTL the number input changed its width while typing or stepping, and its feedback icon was misplaced outside the field.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-04-13",
+        "closedAt": "2020-04-17",
+        "daysOpen": 3,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "rtl"
+        ],
+        "lesson": "Field inner layout uses logical padding reserved for adornments, so that content changes never alter the box in either direction.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/23728",
+        "number": 23728,
+        "title": "Message show in RTL site",
+        "category": "direction-api",
+        "components": [
+          "Message"
+        ],
+        "summary": "The docs site set direction through a class on the html element, so components that needed their own RTL switch inherited direction: rtl from the page without their RTL styles being active, and rendered half-mirrored.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-04-28",
+        "closedAt": "2020-04-30",
+        "daysOpen": 2,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "rtl"
+        ],
+        "lesson": "Direction has one source of truth that both CSS and behaviour read. Styles follow the DOM dir (logical properties), and the context is initialised from the DOM, so the two cannot disagree.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/24085",
+        "number": 24085,
+        "title": "Breadcrumb rtl show discuss",
+        "category": "mirroring",
+        "components": [
+          "Breadcrumb"
+        ],
+        "summary": "When RTL shipped, maintainers were unsure how a breadcrumb should render: whether the slash separator should become a backslash and in which order items run.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-05-12",
+        "closedAt": "2020-05-13",
+        "daysOpen": 1,
+        "comments": 8,
+        "reactions": 0,
+        "labels": [
+          "rtl",
+          "🗣 Discussion"
+        ],
+        "lesson": "Each directional glyph has a recorded mirroring rule decided once (slash separators do not mirror, chevron separators do; item order follows reading direction) and shared by all components.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/24441",
+        "number": 24441,
+        "title": "offset xy in RTL",
+        "category": "direction-api",
+        "components": [
+          "Badge",
+          "Tooltip"
+        ],
+        "summary": "Maintainers had to open a discussion to decide what an [x, y] offset prop means in RTL — whether positive x still moves right or moves toward the inline end.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-05-25",
+        "closedAt": "2020-06-06",
+        "daysOpen": 12,
+        "comments": 8,
+        "reactions": 0,
+        "labels": [
+          "rtl",
+          "🗣 Discussion"
+        ],
+        "lesson": "Offsets on public APIs are named for their axis (inline/block, or mainAxis/crossAxis relative to placement), and the docs state the RTL behaviour of every offset-like prop.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/26687",
+        "number": 26687,
+        "title": "The existing language pack does not support standard Arabic",
+        "category": "locale-strings",
+        "components": [
+          "LocaleProvider"
+        ],
+        "summary": "The only Arabic locale pack was tagged for Egypt, and a team serving the wider Arabic-speaking market asked for a standard Arabic pack.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-09-11",
+        "closedAt": "2020-11-17",
+        "daysOpen": 67,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "Inactive",
+          "help wanted"
+        ],
+        "lesson": "Ship a base ar message set (Modern Standard Arabic) with regional data (numerals, calendar, week start, currency) layered separately; language strings are not tied to one country.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/26692",
+        "number": 26692,
+        "title": "切换阿拉伯语言后，面包屑组件会触发RTL模式，设置ConfigProvider为ltr也无效",
+        "category": "direction-api",
+        "components": [
+          "Breadcrumb"
+        ],
+        "summary": "After switching the app language to Arabic the breadcrumb rendered RTL even though the provider was explicitly set to LTR.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-09-11",
+        "closedAt": "2020-09-11",
+        "daysOpen": 0,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "🤔 Need Reproduce"
+        ],
+        "lesson": "Direction is never inferred from the language of the message pack; an explicit direction always wins and locale only supplies the default.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/26958",
+        "number": 26958,
+        "title": "Cascader loading icon direction in RTL",
+        "category": "animation",
+        "components": [
+          "Cascader"
+        ],
+        "summary": "Maintainers asked RTL-speaking contributors whether a loading spinner should rotate counter-clockwise in RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-09-30",
+        "closedAt": "2020-10-05",
+        "daysOpen": 5,
+        "comments": 6,
+        "reactions": 0,
+        "labels": [
+          "rtl"
+        ],
+        "lesson": "The mirroring registry also covers motion: spinners and clocks keep their rotation, while linear progress and slide transitions reverse. The decision is data, not per-component judgement.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/31727",
+        "number": 31727,
+        "title": "Modal RTL Form Problem",
+        "category": "portal-direction",
+        "components": [
+          "Modal",
+          "Form"
+        ],
+        "summary": "A form inside a modal stayed LTR although the page was RTL, and the user needed repeated guidance. The modal had been opened through the imperative confirm API, to which the provider's RTL configuration was not being passed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-08-09",
+        "closedAt": "2021-08-18",
+        "daysOpen": 9,
+        "comments": 14,
+        "reactions": 0,
+        "labels": [
+          "rtl"
+        ],
+        "resolution": "Fixed nine days later by passing the direction configuration to the confirm modal's content.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/31828",
+            "title": "fix: Modal.confirm content rtl config miss",
+            "mergedAt": "2021-08-18"
+          }
+        ],
+        "lesson": "Overlays inherit direction from the element that opened them without any extra provider or configuration, including overlays opened imperatively.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/32377",
+        "number": 32377,
+        "title": "Vertical menu popup RTL",
+        "category": "overlay-position",
+        "components": [
+          "Menu"
+        ],
+        "summary": "In a vertical RTL menu the submenu popup laid out its items left to right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-10-04",
+        "closedAt": "2021-10-08",
+        "daysOpen": 4,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "rtl",
+          "🐛 Bug",
+          "👷🏻‍♂️ Someone working on it"
+        ],
+        "lesson": "A popup carries the direction of its trigger into its own root element, so nested menus are direction-correct at every level.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/35478",
+        "number": 35478,
+        "title": "Table sticky not working RTL",
+        "category": "scroll",
+        "components": [
+          "Table"
+        ],
+        "summary": "In an RTL table with sticky header, horizontal scrolling failed: the content could not be scrolled sideways unless the page was scrolled to the bottom where the native scrollbar is. The defect was in the underlying table package and the issue stayed open for more than two and a half years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-05-10",
+        "closedAt": "2024-12-30",
+        "daysOpen": 965,
+        "comments": 20,
+        "reactions": 0,
+        "labels": [
+          "Inactive",
+          "help wanted",
+          "🐛 Bug"
+        ],
+        "resolution": "Closed at the end of 2024 by a pull request, after a fix in the underlying table package.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/52176",
+            "title": "chore: bump rc-table",
+            "mergedAt": "2024-12-30"
+          }
+        ],
+        "lesson": "Sticky header, sticky summary and the synthetic sticky scrollbar all use the normalised scroll adapter and have RTL fixtures.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/37059",
+        "number": 37059,
+        "title": "RTL issue on antD Notification component",
+        "category": "direction-api",
+        "components": [
+          "Notification"
+        ],
+        "summary": "After the app was switched from LTR to RTL and back, notifications kept coming out in the earlier direction: the notification layer did not follow the provider's current direction. The report was labelled won't-resolve and closed within a day.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-08-15",
+        "closedAt": "2022-08-16",
+        "daysOpen": 1,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "🙅🏻‍♀️ WON'T RESOLVE"
+        ],
+        "lesson": "No imperative API detached from context: toasts are opened through a hook or a mounted region that reads the current direction at render time.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/39195",
+        "number": 39195,
+        "title": "RTL时Popover组件显示不正确",
+        "category": "overlay-position",
+        "components": [
+          "Popover"
+        ],
+        "summary": "In RTL, in an early version-5 release, a popover failed to locate its trigger and stretched to the page width.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-12-02",
+        "closedAt": "2022-12-06",
+        "daysOpen": 4,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl",
+          "👷🏻‍♂️ Someone working on it"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/39311",
+            "title": "style: fix Popover width in rtl mode",
+            "mergedAt": "2022-12-06"
+          }
+        ],
+        "lesson": "Overlay measurement works in physical viewport coordinates and is independent of the document direction; popover placement is run in a full matrix of placements × direction.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/39306",
+        "number": 39306,
+        "title": "Menu collapse wrong css RTL",
+        "category": "overlay-position",
+        "components": [
+          "Menu"
+        ],
+        "summary": "With RTL enabled, the popup of a collapsed inline menu was positioned with a left offset several hundred pixels off.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-12-06",
+        "closedAt": "2023-06-24",
+        "daysOpen": 200,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "Inactive",
+          "help wanted",
+          "rtl"
+        ],
+        "lesson": "Positioning code never mixes offsets measured from the left with layouts anchored to the right; all offsets are computed from bounding rectangles.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/40128",
+        "number": 40128,
+        "title": "Segmented not work in RTL mode",
+        "category": "animation",
+        "components": [
+          "Segmented"
+        ],
+        "summary": "In RTL the moving thumb of the segmented control animated to the wrong position when the selection changed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-01-10",
+        "closedAt": "2023-02-06",
+        "daysOpen": 27,
+        "comments": 6,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl",
+          "🐛 Bug"
+        ],
+        "lesson": "Moving indicators (segmented thumb, tab ink bar) are positioned from measured rectangles relative to the track, not from offsetLeft; fixture: indicator rect equals selected item rect after transition, in RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/41070",
+        "number": 41070,
+        "title": "Table fix fixed summary alignment in rtl mode",
+        "category": "scroll",
+        "components": [
+          "Table"
+        ],
+        "summary": "In RTL a fixed summary cell of a sticky table got the wrong offset, a defect located in the underlying table package.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-03-05",
+        "closedAt": "2023-03-11",
+        "daysOpen": 6,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "unconfirmed",
+          "👷🏻‍♂️ Someone working on it"
+        ],
+        "lesson": "Header, body and summary share one function for fixed-cell offsets, so RTL correctness cannot differ between rows.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/42331",
+        "number": 42331,
+        "title": "Wrong scroll position in Select drop down list in rtl (right to left)",
+        "category": "scroll",
+        "components": [
+          "Select"
+        ],
+        "summary": "In an RTL page the vertical scrollbar of the select's virtual list was drawn on the right instead of the left.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-05-13",
+        "closedAt": "2023-05-16",
+        "daysOpen": 3,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/42508",
+            "title": "fix: Select scrollbar rtl direction position",
+            "mergedAt": "2023-05-20"
+          }
+        ],
+        "lesson": "Custom scrollbars are placed at inline-end of the scroll container, which is the left edge in RTL, matching native behaviour.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/43312",
+        "number": 43312,
+        "title": "Progress RTL - wrong animation in active state",
+        "category": "animation",
+        "components": [
+          "Progress"
+        ],
+        "summary": "The active-state shimmer of a progress bar ran left to right in RTL while the bar itself fills from the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-07-01",
+        "closedAt": "2023-07-03",
+        "daysOpen": 2,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/43316",
+            "title": "style(Progress): support animation in rtl direction",
+            "mergedAt": "2023-07-03"
+          }
+        ],
+        "lesson": "Keyframe animations that travel along the inline axis have a direction-aware variant (or use a direction variable), and are listed in the motion mirroring registry.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/43918",
+        "number": 43918,
+        "title": "tree table in rtl is broken",
+        "category": "layout",
+        "components": [
+          "Table"
+        ],
+        "summary": "In an RTL tree table the expand icon was misplaced and child rows were indented toward the wrong side.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-07-31",
+        "closedAt": "2023-08-03",
+        "daysOpen": 3,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "rtl",
+          "🐛 Bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/43977",
+            "title": "fix(table): fix expand icon and column shrinking in RTL",
+            "mergedAt": "2023-08-03"
+          }
+        ],
+        "lesson": "Tree indentation uses padding-inline-start driven by level; expand toggles mirror their chevron and sit at inline-start.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/43971",
+        "number": 43971,
+        "title": "RTL Badge revert value number",
+        "category": "bidi",
+        "components": [
+          "Badge"
+        ],
+        "summary": "Three years after the first report, a badge again displayed its number reversed in RTL (25 shown as 52) after the component was restyled.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-08-02",
+        "closedAt": "2023-08-14",
+        "daysOpen": 12,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "🐛 Bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/43998",
+            "title": "fix(badge): fix badge number is rtl",
+            "mergedAt": "2023-08-14"
+          }
+        ],
+        "lesson": "A fixed RTL defect stays fixed only with a permanent fixture; the digit-order fixture for animated counters is in the regression set.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/47144",
+        "number": 47144,
+        "title": "Wrong RTL ssr style with legacyLogicalPropertiesTransformer",
+        "category": "style-engine",
+        "components": [
+          "Menu"
+        ],
+        "summary": "To support old browsers the library offers a transformer that rewrites logical properties to physical ones, and under server rendering it produces wrong styles and indentation for an Arabic page. Open for almost three years.",
+        "state": "open",
+        "createdAt": "2024-01-24",
+        "daysOpen": 1022,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "Inactive",
+          "unconfirmed"
+        ],
+        "lesson": "Logical properties are emitted as-is; no build- or run-time transform back to physical properties is offered, because such a transform cannot know the direction of each subtree.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/47488",
+        "number": 47488,
+        "title": "support for menu's subMenu \"rtl\" positioning",
+        "category": "overlay-position",
+        "components": [
+          "Menu"
+        ],
+        "summary": "In an RTL menu the submenu always attached to the left side of its parent item and offered no way to change that. It was open for two and a half years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-02-19",
+        "closedAt": "2026-09-10",
+        "daysOpen": 934,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "Inactive",
+          "improvement"
+        ],
+        "lesson": "Submenus open toward inline-end by default and flip only on collision; the side is derived from direction, never hard-coded.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/49664",
+        "number": 49664,
+        "title": "datepicker panel in RTL",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "In RTL the date picker panel showed its parts in the wrong order and the range picker's pointing arrow was missing, because a placement-specific style had no RTL counterpart.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-07-01",
+        "closedAt": "2024-07-01",
+        "daysOpen": 0,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "unconfirmed"
+        ],
+        "lesson": "Styles keyed on a physical placement class need both directions by construction: placement is a resolved data attribute and arrow styles are generated from it.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/52882",
+        "number": 52882,
+        "title": "Cascading menu arrow in Dropdown.Button does not respect RTL",
+        "category": "mirroring",
+        "components": [
+          "Dropdown"
+        ],
+        "summary": "In RTL the arrow marking a nested dropdown item pointed away from the side on which the submenu actually opened.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-02-18",
+        "closedAt": "2025-02-20",
+        "daysOpen": 1,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "help wanted",
+          "🐛 Bug"
+        ],
+        "lesson": "A submenu indicator and the submenu's opening side come from the same resolved value; fixture asserts the chevron points toward the opened submenu in both directions.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/52942",
+        "number": 52942,
+        "title": "Fixed Columns Issues in RTL Mode",
+        "category": "direction-api",
+        "components": [
+          "Table"
+        ],
+        "summary": "In RTL a column declared as fixed \"right\" appears on the left, so developers must write the opposite of what they see, and the fixed-column shadow was missing. The API mixes physical names with logical behaviour.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-02-24",
+        "closedAt": "2025-07-14",
+        "daysOpen": 140,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "6.x",
+          "Inactive",
+          "rtl",
+          "🐛 Bug"
+        ],
+        "lesson": "Column pinning takes start/end. Physical aliases, if accepted for migration, are documented as physical and are not silently reinterpreted.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/53186",
+        "number": 53186,
+        "title": "Bug Report: Persian Calendar Leap Year Issue in Ant Design DatePicker",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "With the Jalali calendar the picker showed 29 days for Esfand 1403, a leap year in which the month has 30. The picker depends on an external date library for the calendar rules; the report was closed as not planned.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-03-17",
+        "closedAt": "2025-03-23",
+        "daysOpen": 6,
+        "comments": 5,
+        "reactions": 1,
+        "labels": [
+          "🤔 Need Reproduce"
+        ],
+        "lesson": "Calendar arithmetic is owned by our core with authoritative tables or algorithms and leap-year fixtures for each calendar (Persian 1403, Umm al-Qura month lengths); correctness is not delegated to a plug-in.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/53523",
+        "number": 53523,
+        "title": "Image.PreviewGroup prev and next icons has wrong direction in RTL",
+        "category": "mirroring",
+        "components": [
+          "Image"
+        ],
+        "summary": "In RTL the previous and next buttons of the image preview group pointed in the wrong direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-04-16",
+        "closedAt": "2025-04-16",
+        "daysOpen": 0,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "unconfirmed"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/53525",
+            "title": "fix: adjust icon position for rtl",
+            "mergedAt": "2025-04-16"
+          }
+        ],
+        "lesson": "Previous/next icon pairs are obtained from one helper that returns the mirrored pair for the current direction.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/53528",
+        "number": 53528,
+        "title": "Count suffix has wrong direction in RTL",
+        "category": "bidi",
+        "components": [
+          "Input",
+          "Image"
+        ],
+        "summary": "In RTL the character counter and the image preview counter read reversed: \"2 / 10\" was displayed as \"10 / 2\", because two numbers with a neutral separator were reordered by the bidi algorithm.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-04-16",
+        "closedAt": "2025-04-16",
+        "daysOpen": 0,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "unconfirmed"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/53525",
+            "title": "fix: adjust icon position for rtl",
+            "mergedAt": "2025-04-16"
+          }
+        ],
+        "lesson": "Any \"current / total\" or \"a – b\" string is a single LTR isolate or a localised message with isolated placeholders; fixture: counter text in RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/54168",
+        "number": 54168,
+        "title": "overflow of DatePicker weekdays in Arabic language",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "With the Egyptian Arabic locale the weekday header overflowed its cells, because the Arabic weekday names used are wider than the day cells.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-06-21",
+        "closedAt": "2025-06-23",
+        "daysOpen": 2,
+        "comments": 8,
+        "reactions": 1,
+        "labels": [
+          "unconfirmed"
+        ],
+        "lesson": "Calendar column headers use the CLDR narrow or short weekday form for Arabic, and the grid is sized from the measured widest label.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/54781",
+        "number": 54781,
+        "title": "Carousel 组件在 RTL 布局下的 arrow 方向问题",
+        "category": "value-direction",
+        "components": [
+          "Carousel"
+        ],
+        "summary": "In an RTL carousel the dots followed RTL order but the next arrow stayed on the right pointing right, and pressing it moved the content the other way — three parts of one component disagreed about direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-08-28",
+        "closedAt": "2025-09-05",
+        "daysOpen": 8,
+        "comments": 2,
+        "reactions": 2,
+        "labels": [
+          "🐛 Bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/54868",
+            "title": "fix: Resolve style issues in RTL mode of Carousel components",
+            "mergedAt": "2025-09-05"
+          }
+        ],
+        "lesson": "Within a component, order, arrows, key handling and motion derive from one direction value; a consistency test fails if any part disagrees.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/56101",
+        "number": 56101,
+        "title": "Splitter collapse buttons are outside splitter in RTL",
+        "category": "layout",
+        "components": [
+          "Splitter"
+        ],
+        "summary": "In RTL the collapse buttons of a vertical splitter were flipped along the wrong axis and rendered outside the splitter, sometimes outside the viewport.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-12-06",
+        "closedAt": "2025-12-12",
+        "daysOpen": 5,
+        "comments": 3,
+        "reactions": 2,
+        "labels": [
+          "🐛 Bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/56179",
+            "title": "fix(splitter): resolve incorrect collapse behavior in RTL vertical mode",
+            "mergedAt": "2025-12-12"
+          }
+        ],
+        "lesson": "Mirroring applies to the inline axis only; a vertically oriented control must not swap anything when direction changes.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/56692",
+        "number": 56692,
+        "title": "Drawer 组件在开启 rtl 后 ant-drawer-resizable-dragger 位置错误",
+        "category": "layout",
+        "components": [
+          "Drawer"
+        ],
+        "summary": "With RTL enabled the drag handle of a resizable drawer moved to the wrong edge of the panel.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-01-21",
+        "closedAt": "2026-01-21",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 1,
+        "labels": [
+          "unconfirmed"
+        ],
+        "lesson": "A drawer's resize handle is on the edge facing the content: its position derives from the resolved physical side of the drawer, not from direction alone.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/57680",
+        "number": 57680,
+        "title": "Select doesn't work correctly in RTL mode",
+        "category": "input",
+        "components": [
+          "Select"
+        ],
+        "summary": "In RTL a multiple select with responsive tag overflow placed the text caret in the middle of the control, so typed text overlapped the tags.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-04-14",
+        "closedAt": "2026-04-14",
+        "daysOpen": 0,
+        "comments": 0,
+        "reactions": 1,
+        "labels": [
+          "unconfirmed"
+        ],
+        "lesson": "Overflow measurement for tag lists is done in logical order, and the search input always follows the last visible tag at inline-end.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/ant-design/ant-design/issues/59751",
+        "number": 59751,
+        "title": "[Form] Support logical start/end values for labelAlign to clarify RTL behavior",
+        "category": "direction-api",
+        "components": [
+          "Form"
+        ],
+        "summary": "The form's label alignment accepts \"left\" and \"right\" but maps them to start and end, so in RTL \"left\" aligns labels to the right. A request to accept start/end and say what the physical names mean was filed in 2026.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-31",
+        "closedAt": "2026-11-02",
+        "daysOpen": 2,
+        "comments": 3,
+        "reactions": 3,
+        "labels": [
+          "unconfirmed"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/ant-design/ant-design/pull/59760",
+            "title": "feat(Form): support logical label alignment",
+            "mergedAt": "2026-11-02"
+          }
+        ],
+        "lesson": "Alignment props accept start/end only; a physical name never means something logical.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+// Chart.js — notes written after reading each issue. Format: see build.mjs.
+
+#5800 | chart | all charts
+S: A bare request to add RTL support that collected a dozen reactions and took fourteen months to close, when RTL options for the legend and tooltip were added.
+L: Chart RTL covers legend, tooltip, axes and labels together.
+| needs-review
+
+#6057 | layout | responsive
+S: With direction rtl on the body the chart's resize callback never fired, so responsive charts did not rescale. The resize detector relied on scroll events of hidden elements whose scroll offsets behave differently in RTL.
+L: Use ResizeObserver; no scroll-position tricks whose behaviour depends on direction.
+| needs-review
+
+#7199 | chart | all charts
+S: A user wanting an Arabic chart laid out right to left found only a legend direction option; nothing for the chart itself. Closed after a year.
+L: Axis reversal and value-axis side are exposed as one direction option of the chart.
+
+#9194 | chart | legend
+S: After a major rewrite, a legend with the RTL option was drawn off-screen and not visible at all; the rewrite had changed the RTL text helper.
+L: RTL legend rendering is a pixel fixture, so a refactor cannot silently drop it.
+
+#9324 | chart | legend
+S: In the rewritten version, clicking a legend item in RTL toggled the opposite item: drawing used the RTL-adjusted positions and hit-testing did not.
+L: Drawing and hit-testing share one layout result; a test clicks each legend item in RTL and asserts which series toggles.
+
+#10771 | chart | tooltip
+S: In RTL the tooltip's box padding pushes the colour box outside the tooltip instead of separating it from the text. Open for four years.
+L: Every spacing option of a chart tooltip is applied on the inline-start side through one helper; tooltip layout is tested in RTL for each option.
+
+#11937 | chart | axes
+S: RTL is supported for legends and tooltips only; axes and labels stay LTR, which is inconsistent in RTL-language charts. Open for two years with a number of reactions.
+L: As for 7199: a single direction option moves the value axis and reverses the category axis.

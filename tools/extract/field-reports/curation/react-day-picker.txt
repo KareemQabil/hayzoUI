@@ -1,0 +1,47 @@
+// React DayPicker — notes written after reading each issue. Format: see build.mjs.
+
+#246 | numerals | DayPicker
+S: The picker could not render day numbers in the digits of locales such as Arabic.
+L: Day, week and year numbers are formatted with the locale's numbering system by default.
+
+#837 | keyboard | DayPicker
+S: In RTL the arrow keys moved the focused day in the direction opposite to the key.
+L: Calendar-grid navigation maps arrows to visual neighbours in both directions.
+
+#1277 | layout | DayPicker
+S: The default stylesheet's range styling — rounded ends for the first and last day — was wrong under dir="rtl", and the maintainer noted that most custom stylesheets would have the same problem.
+L: Range start/end styling uses logical radii so that any custom theme inherits correct RTL behaviour.
+
+#1288 | keyboard | DayPicker
+S: With dir="rtl" the next and previous buttons were only partially swapped: behaviour changed sides but the accessible labels did not, so the button announced as "next" went to the previous month.
+L: A navigation button's label, icon and action are one unit that is positioned by logical order; they are never swapped independently.
+
+#1289 | keyboard | DayPicker
+S: With dir="rtl" the left and right arrow keys moved focus opposite to their direction in the day grid — three years after the same defect was first fixed.
+L: The RTL keyboard tests are generated from the pattern definition and cannot be dropped in a rewrite.
+
+#1374 | calendar | DayPicker
+S: With the Arabic locale the weekday header was wrong: the reporter expected the week to read from Saturday on the right, and the header order did not match the day columns.
+L: Weekday header and day cells are produced by the same column order (first day of week from region data); fixture: Arabic (Saudi Arabia, Egypt) header order equals cell weekday order.
+| needs-review
+
+#1739 | layout | DayPicker
+S: With several months displayed and dir="rtl", the caption's navigation buttons changed their icons but not their positions.
+L: With multiple months, previous sits on the inline-start month and next on the inline-end month.
+
+#2612 | calendar | DayPicker
+S: The Jalali build with the Persian locale showed Gregorian month names transliterated into Persian (April, May …) instead of Persian calendar month names.
+L: Month names are looked up by (calendar, locale); a locale's Gregorian names are never reused for another calendar.
+
+#2748 | mirroring | DayPicker
+S: In RTL the chevron icons point the wrong way relative to their action, and the user could not find how to customise them per direction.
+L: Icon slots receive the resolved direction, and defaults are mirrored.
+
+#2842 | calendar | DayPicker
+S: With a time zone set, the Persian calendar failed to render old years (1313 in Asia/Tehran), where historical UTC offsets are not whole hours or minutes.
+L: Calendar conversion operates on civil dates (year, month, day) without passing through time-zone-dependent timestamps.
+| needs-review
+
+#3029 | calendar | DayPicker
+S: The Hijri add-on's Umm al-Qura conversion agrees with the browser's Intl implementation for every day from 2024 until 10 August 2029 and disagrees from 11 August 2029 onward.
+L: Hijri conversion is cross-checked against ICU for the full supported range in CI, and the range for which official data exists is documented, with behaviour beyond it defined.

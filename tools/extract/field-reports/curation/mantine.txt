@@ -1,0 +1,96 @@
+// Mantine — notes written after reading each issue. Format: see build.mjs.
+
+#633 | direction-api | MantineProvider
+S: RTL was applied only when the provider was first initialised; switching the direction afterwards neither added nor removed the RTL styles, because the flipping plugin was bound to a style cache created once.
+L: Direction can change at runtime at any level and every component updates; fixture: toggle direction on a mounted tree and compare with a fresh mount.
+| needs-review
+
+#1778 | value-direction | Switch
+S: With dir set to rtl the switch handle sat at an incorrect offset inside its track.
+L: Thumb position is expressed with logical alignment or a direction-signed offset; fixture: thumb rect lies within track rect in both states and directions.
+
+#2104 | overlay-position | Tooltip
+S: In RTL mode a tooltip asked to appear on the right was rendered on the left: the physical placement name was mirrored.
+L: Two vocabularies, never mixed: left/right are physical and never mirrored; start/end are logical and resolve by direction. The flip step runs after resolution, on physical coordinates.
+
+#2442 | value-direction | Carousel
+S: With the application in RTL the carousel was flipped and rendered only its first slide: the underlying carousel engine had not been told the direction.
+L: A wrapped engine must receive direction from our context automatically; fixture: carousel shows all slides and advances toward inline-end in RTL.
+| needs-review
+
+#3621 | value-direction | Carousel
+S: In RTL, pressing the carousel arrow offset the first slide by slightly more than a slide width so that the following slides drifted into view; slide offsets were computed with LTR assumptions.
+L: Slide offsets are computed from measured rects along the inline axis; fixture: after next, the snapped slide's inline-start edge equals the viewport's inline-start edge.
+| needs-review
+
+#3758 | mirroring | Pagination
+S: After a major release the pagination component showed its previous and next arrows reversed in RTL.
+L: Previous/next arrows come from the shared mirrored icon pair; the pagination RTL screenshot is a release gate.
+
+#4359 | layout | Drawer
+S: With dir=rtl a drawer positioned on the right overflowed the screen instead of sitting at the right edge.
+L: Physical side props (left/right) position by physical insets irrespective of direction; logical side props (start/end) resolve first. Both are tested in RTL.
+
+#4513 | style-engine | MantineProvider
+S: Adding the stylis RTL plugin in a server-rendered app made styles arrive late: the page first appeared unstyled and was styled after hydration, which did not happen without the plugin.
+L: RTL must not depend on a runtime style transformation; static CSS with logical properties has identical loading behaviour in both directions.
+
+#4917 | animation | Drawer
+S: In RTL the drawer's opening animation ran from the left even when the drawer sat on the right, visible on the library's own documentation.
+L: Slide transitions derive from the drawer's resolved physical side.
+
+#5002 | animation | SegmentedControl
+S: In RTL in Firefox the segmented control looked right initially, but after clicking, the sliding indicator moved to the wrong position. Closed as not planned.
+L: Indicator position is computed from getBoundingClientRect differences, which are identical across engines, never from offsetLeft, whose origin differs in RTL.
+| needs-review
+
+#5234 | value-direction | RangeSlider
+S: With dir="rtl" on the html element the range slider misbehaved, and wrapping it in a dir="ltr" container did not help — the component took its direction from the provider, not from the DOM around it.
+L: A local dir attribute on an ancestor is always honoured by behaviour as well as by styles.
+| needs-review
+
+#5505 | chart | LineChart, BarChart
+S: In RTL mode the y-axis labels of the chart components were drawn inside the plot area.
+L: Charts set explicit direction on their SVG text and reserve axis width from measured label size; the chart RTL fixture checks that tick labels do not intersect the plot rect.
+
+#6382 | bidi | PinInput
+S: In RTL the PIN input ordered its boxes right to left; the reporter argued that numeric codes must stay left to right and that only alphanumeric mode should leave the choice to the developer.
+L: Digit-sequence inputs are LTR by default in every locale, with an explicit opt-out.
+
+#6559 | input | PasswordInput
+S: A request that password fields stay left-aligned LTR on RTL pages, since passwords are typed in Latin characters, with only the visibility toggle changing side. Closed as not planned.
+L: Field types with inherently LTR content (password, email, URL, phone, code) default to dir="ltr" text with adornments still placed by the page direction; the pairing is documented and tested.
+
+#6563 | overlay-position | Notifications
+S: In RTL mode notifications appeared at a different position than the one requested by the position prop. Closed as not planned.
+L: Toast region positions are named with start/end and documented; physical names stay physical.
+| needs-review
+
+#6939 | mirroring | NavLink
+S: In RTL the chevron of a nested navigation link pointed the wrong way.
+L: Disclosure chevrons that point toward inline-end when collapsed are in the mirroring registry.
+
+#8903 | input | TextInput
+S: On an RTL page, a text input explicitly set to LTR had its left and right sections (icons, buttons) misplaced, with paddings and corner radii on the wrong sides.
+L: A field that overrides direction locally is laid out entirely by its own direction; sections are start/end relative to the field, not the page.
+
+#8935 | input | PasswordInput
+S: The fix for locally overridden direction covered inputs built on the shared base but missed the password input, which renders its wrapper differently, so its sections were still misplaced.
+L: Direction handling lives in one field primitive that every input composes, so a fix cannot miss a variant; the fixture iterates over all field components.
+
+#8991 | value-direction | Slider
+S: In RTL the labels of the slider's marks were misplaced relative to their marks.
+R: Fixed eight days later.
+L: Marks, mark labels, thumb and filled track use one value-to-position function with one direction input.
+
+#9285 | keyboard | Cascader
+S: In RTL the cascader's columns were mirrored visually but ArrowRight still opened the next column, which sits on the left, and ArrowLeft went back to the one on the right.
+L: Keys that mean "into" and "out of" a nested level are bound to inline-end and inline-start arrows, resolved by direction, in the menu engine itself.
+
+#9300 | keyboard | Menu
+S: In RTL submenus open to the left, but ArrowRight still opened them and ArrowLeft closed them, so the arrows pointed away from where focus moved. The popup placement had been mirrored and the key handling had not.
+L: Placement and key bindings for submenus are derived from the same direction value; test: the arrow key pointing at the submenu opens it.
+
+#9329 | keyboard | Calendar
+S: In an RTL calendar the day grid and header chevrons were mirrored, but ArrowRight still moved to the next day, which is on the left.
+L: Calendar-grid navigation maps ArrowLeft/ArrowRight to visual neighbours; the engine's keyboard tests run in RTL for day, month and year grids.

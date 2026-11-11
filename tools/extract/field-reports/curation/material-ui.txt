@@ -1,0 +1,179 @@
+// Material UI — notes written after reading each issue. Format: see build.mjs.
+
+#4821 | style-engine | ButtonBase
+S: In the early RTL mode, which flipped every left/right style at runtime, the ripple appeared on the opposite side of the button from where it was clicked, because the flip was applied to coordinates computed from the pointer as well as to layout styles.
+L: Blanket flipping of physical properties is not a direction strategy: values derived from pointer or measured coordinates are physical and must never pass through a mirroring transform.
+| needs-review
+
+#6874 | direction-api | all components
+S: While the library was being rewritten, RTL existed only as a partial, undocumented flipping mechanism on the old branch and had no plan at all on the new one; a maintainer opened this tracker to give it one. It took almost five months to close.
+L: The direction strategy is part of the architecture document before components are written, not a tracker opened afterwards.
+
+#10823 | direction-api | styles
+S: Custom styles only received the RTL transformation when the component opted into receiving the theme, so the same style object could be flipped in one component and not in another; the proposals discussed were to make the transform direction-invariant or always on.
+L: Direction handling must not depend on an opt-in flag per component or per style sheet; with logical properties there is no transform to opt into.
+
+#13137 | direction-api | Slider
+S: A team that had run the library in RTL for months without trouble found the slider broken after following the RTL guide. The report was closed not by a change to the slider but by rewriting the guide to be clearer: RTL needs several separate setup steps, and a component fails when one is missing.
+L: RTL has one switch. A component cannot end up half-configured because one of several setup steps (DOM attribute, theme flag, style plugin) was missed.
+
+#14085 | layout | Stepper
+S: In RTL the connector lines of a horizontal stepper were drawn in the wrong place relative to the step icons.
+L: Connectors between items are positioned with logical insets relative to the item they follow; a horizontal stepper is an RTL screenshot fixture.
+| needs-review
+
+#15955 | value-direction | LinearProgress
+S: After a major upgrade the determinate and buffer variants of the linear progress bar still filled left to right in RTL. The bar is moved with transforms, which a property-flipping plugin does not touch.
+L: Progress fill is expressed so that it follows direction without a flip step (inline-size or a direction-signed transform origin); every variant, including indeterminate, has an RTL fixture.
+| needs-review
+
+#15994 | overlay-position | Tooltip
+S: After a major upgrade, tooltips in RTL appeared at the wrong position, visible on the library's own documentation site in RTL mode.
+R: Closed the next day by a batch of documentation fixes.
+L: Styles written by the positioning engine are physical and exempt from any direction handling; placement names are flipped before positioning, coordinates never after. The docs site in RTL is part of the screenshot suite.
+
+#16670 | scroll | Modal
+S: When a modal locked page scroll in RTL, absolutely and fixed-positioned content jumped sideways; the helper class that compensates for the removed scrollbar corrected LTR pages only.
+L: Scroll-lock compensation must add padding on the side where the scrollbar actually was, determined by measuring, and apply the same correction to registered fixed elements.
+
+#18853 | keyboard | TreeView
+S: In an RTL tree view the left and right arrow keys kept their LTR meaning, so the key pointing toward a node's children collapsed it instead of expanding it.
+L: In trees ArrowRight/ArrowLeft swap in RTL: the key pointing toward the children expands, the opposite one collapses. The tree-model engine takes direction and its generated keyboard tests cover both.
+
+#20193 | mirroring | Pagination
+S: In RTL the pagination items were ordered correctly but the previous/next arrowheads pointed the wrong way.
+L: Previous/next/first/last icons are mirrored whenever item order is mirrored; order and glyph come from the same helper.
+
+#20954 | value-direction | Rating
+S: With half-star precision in RTL the partial star was drawn on the wrong star, and the reporter added that star ratings in their RTL market are shown left to right anyway. Closed without a fix.
+L: Value-axis components expose an explicit direction override independent of text direction, and fractional fill is clipped from the inline-start edge of the correct item.
+
+#22540 | overlay-position | Popper
+S: In RTL only, certain margins and heights on html, body and the root element made poppers compute a wrong position.
+L: Overlay positioning is tested with non-zero body margin and a scrollable document in RTL, where the document's scroll origin differs from LTR.
+| needs-review
+
+#22726 | mirroring | SvgIcon, Icon
+S: Directional icons such as back and forward arrows are not mirrored in an RTL app. Maintainers judged per-icon mirroring hard to maintain, cited the small share of RTL users, and after four years closed the request without a fix.
+R: Closed in 2024 without a change; the suggested workarounds are import aliases or a CSS scaleX(-1) rule under a dir=rtl selector.
+L: Every icon in our set carries a mirroring rule (mirror, keep, or swap for a named counterpart) in data, and the icon component applies it from the resolved direction with no author effort.
+
+#23489 | scroll | Modal
+S: Opening a modal on an RTL page shifts the content, because the scrollbar compensation is always added as padding on the right while the page scrollbar in RTL is on the left. Open for six years.
+L: Scroll lock reserves the gutter with scrollbar-gutter or measures on which side the scrollbar sits; it never assumes padding-right. Fixture: no layout shift of body content when a dialog opens in RTL.
+
+#24897 | input | TextField
+S: An outlined text field forced to LTR for numeric entry inside an RTL page drew its outline notch and label on mismatched sides in Firefox. The field's own direction and the theme direction disagreed.
+L: A field's decorations (label, notch, adornments) follow the field's own resolved direction, so a locally LTR field inside an RTL page is fully consistent; fixture: dir="ltr" phone or number field inside an RTL form.
+| needs-review
+
+#24899 | style-engine | Grid
+S: With the newer styling engine, RTL flipping broke rules inside nested selectors, so the grid's negative margins pushed content out of its card. The defect was in the third-party flipping plugin.
+L: Do not depend on a CSS-rewriting plugin for correctness; a recipe is valid in both directions as written, so no rewriting step exists that could mishandle a selector.
+
+#25336 | style-engine | Drawer
+S: With the alternative styling engine and its RTL plugin, a temporary drawer slid in from the wrong side, while it worked with the default engine. The component swapped its anchor for RTL itself and also emitted explicit left/right overrides, which the flipping plugin then processed again.
+R: Fixed in eight days: the RTL-adjusted anchor is now used only for the slide direction and the explicit left/right overrides were removed.
+L: Exactly one layer resolves direction. Components resolve logical sides to physical ones and the style layer does not transform them again; the result must not depend on which CSS engine is in use.
+
+#26450 | animation | Tabs
+S: In RTL the tab indicator animated in from the far left, as in LTR, because its start position was always expressed as a left offset initialised to zero.
+L: Indicator geometry is stored relative to the inline-start edge of the track, so its initial position and animation origin are correct in both directions.
+
+#27858 | overlay-position | Tooltip
+S: In a pre-release of a major version the tooltip arrow in RTL was no longer centred on the tooltip — a regression from the previous major version.
+L: Arrow offsets produced by the positioning engine are applied as physical values; tooltip arrow alignment is a screenshot fixture for every placement in RTL.
+
+#28138 | direction-api | ThemeProvider, CacheProvider
+S: After the move to a new styling engine, direction lived in two places — the theme and the style cache holding the flipping plugin — so nested RTL and LTR regions, which worked in the previous version, could no longer be mixed: everything under one cache was flipped.
+L: Nested direction is a supported case: a subtree can switch direction with a single provider or a dir attribute, and nothing global (style cache, plugin, body attribute) has to be reconfigured.
+
+#28326 | value-direction | LinearProgress, Switch
+S: A team needed the linear progress bar and switch to stay left-to-right inside an RTL theme and found no supported way. Maintainers agreed that the right behaviour depends on context — media players keep LTR in Arabic — and that it should be configurable; the issue is still open after five years.
+R: Still open; the workaround is wrapping the component in a nested LTR theme provider.
+L: Components with a value axis (progress, slider, switch, rating, media timeline) accept a direction override that is independent of text direction, with documented defaults per component.
+
+#28409 | input | TextareaAutosize
+S: On iPhone, a textarea with Persian RTL content in the autosizing variant would not accept a space at the end of a line, while the plain text field did. The cause was traced to an external factor in how the hidden measuring element and the browser handle trailing whitespace.
+L: Auto-sizing must mirror direction, white-space and font settings into its measurement and must never write back to the textarea's value or selection; fixture: typing a trailing space in RTL on iOS.
+| needs-review
+
+#30207 | scroll | Tabs
+S: Scrollable tabs did not scroll with the arrow buttons in RTL, in two major versions and on the documentation site. Maintainers could not pin down a cause — browser differences in scroll offsets were suspected — and the reporter closed the issue after publishing a replacement component.
+R: Closed by the reporter without a fix in the library.
+L: All horizontal scrolling goes through one adapter that normalises scrollLeft across browsers and directions, and scroll buttons are tested in RTL in every supported browser engine.
+
+#31272 | scroll | Tabs
+S: On Android Chrome, scrollable tabs in RTL jumped to a wrong position after scrolling and selecting a tab; desktop browsers did not show it.
+L: The RTL scroll fixtures run on a mobile Chromium profile as well, since scroll offset conventions have differed between engines and versions.
+| needs-review
+
+#31561 | direction-api | createTheme
+S: Setting the direction in the theme, as the guide instructed, had no effect in a nested setup, and it took seven months to resolve.
+L: A direction set on the provider is observable on every descendant component; a test asserts that the documented one-line setup really flips a representative component.
+| needs-review
+
+#31847 | locale-strings | LocalizationProvider
+S: Arabic strings were being contributed per country, and a contributor asked for a single Modern Standard Arabic locale instead, since the written interface language is shared across the region. Open for more than four years.
+L: Interface strings are keyed by language (ar) and regional formatting is separate data; adding a country never requires duplicating translations.
+
+#32022 | portal-direction | Dialog
+S: Text fields that were correctly RTL on the page rendered LTR once placed inside a dialog. The dialog is rendered in a portal on the body, outside the element that carried the direction; the report was resolved by amending the RTL guide.
+R: Closed by an update of the RTL guide, not by a change to the dialog.
+L: A portal container sets dir from the opener's direction context; fixture: a field inside a dialog under a non-root RTL container is RTL.
+
+#32198 | style-engine | system
+S: A request to support and internally adopt CSS logical properties, which would make the RTL flipping plugin unnecessary. Open for four and a half years with no implementation.
+L: Recipes and tokens use logical properties exclusively; a lint rule rejects physical left/right properties and values in component styles.
+
+#32794 | overlay-position | Snackbar
+S: A snackbar anchored horizontally to "left" did not move to the other side in RTL, although the documentation said it would.
+L: Anchor origins for toasts are start/end; whether a physical value is ever reinterpreted is stated once and tested.
+
+#33563 | style-engine | sx, Box
+S: The escape hatch that tells the RTL plugin not to flip a declaration did not work in the inline style prop, so a deliberate direction: ltr was turned into rtl. It took a year to resolve.
+L: A system that needs an escape hatch from its own transform will leak; with logical properties, physical declarations mean what they say and nothing needs opting out.
+
+#33981 | animation | Drawer
+S: In RTL a side-anchored drawer slid across the whole screen while opening and closing instead of entering from its own edge, because the slide transition computed its off-screen offset for the unflipped side.
+L: Enter/exit transitions take the resolved physical side of the surface as input; fixture: the drawer's first animation frame is adjacent to its anchor edge in RTL.
+| needs-review
+
+#35169 | bidi | TablePagination
+S: On an RTL page with untranslated labels, the row range "21–30 of 100" is displayed with its parts reordered. The English label has no strong RTL characters, so the numbers and the word are arranged by the bidi algorithm in the RTL paragraph. Open for four years.
+R: Still open; using a fully translated RTL locale displays correctly.
+L: Number ranges are bidi-isolated wherever they appear, so the rendering is correct whatever the surrounding language; fixture: range label in an RTL paragraph with Latin and with Arabic text.
+
+#38004 | layout | Tabs
+S: With direction rtl in the theme, the tab indicator is misplaced when the tab list overflows on small screens. Open for more than three years.
+L: Indicator position is computed from element rectangles relative to the scroll container's content box and includes the normalised scroll offset.
+| needs-review
+
+#38909 | direction-api | ListItemText
+S: With the app configured as LTR, list item text still aligned to the right when the content was Hebrew, unlike other components.
+L: Text alignment is start/end against the resolved direction of the component, and is never taken from the script of the content.
+| needs-review
+
+#39296 | mirroring | Tabs
+S: Custom icons supplied through slots for the tab scroll buttons are ignored in RTL, where the component swaps start and end and falls back to its default icons. Open for three years.
+L: Customisation slots are named start/end and are honoured identically in both directions; mirroring swaps which slot is used, never whether it is used.
+| needs-review
+
+#40299 | style-engine | AvatarGroup
+S: The avatar group's spacing prop applied its overlap margin on the left in both directions, so custom spacing was wrong in RTL.
+R: Fixed a month later by refactoring the component's spacing logic.
+L: Values computed at runtime from props use logical properties (margin-inline-start); they do not rely on a later flip step.
+
+#40308 | animation | LinearProgress
+S: The indeterminate variant of the linear progress bar does not run in the expected direction in RTL although the other variants do. Open for almost three years with a number of reactions.
+L: Keyframe animations along the inline axis are authored once with a direction multiplier variable; fixture: indeterminate progress travels toward inline-end.
+
+#45193 | direction-api | Chip
+S: When only part of an app was RTL, chips with delete or avatar adornments in the LTR part were misaligned: the global flipping applied to all styles while the DOM direction differed per region. Closed as not planned.
+L: Mixed-direction pages are a first-class case: each subtree's styles follow its own dir, which only logical properties can do.
+| needs-review
+
+#47368 | style-engine | all components
+S: A 2025 proposal to move the components' internals to CSS logical properties was declined: because the library's RTL relies on a flipping plugin, the change would be breaking and would force a painful migration on existing apps.
+R: Closed as not planned by a maintainer.
+L: The choice between physical-plus-flip and logical properties is irreversible once users depend on it; we start logical.

@@ -1,0 +1,280 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "react-day-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of gpbl/react-day-picker",
+        "url": "https://github.com/gpbl/react-day-picker/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "react-day-picker",
+      "name": "React DayPicker",
+      "repository": "https://github.com/gpbl/react-day-picker"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/246",
+        "number": 246,
+        "title": "Support locales like Arabic with different representation of numerals",
+        "category": "numerals",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "The picker could not render day numbers in the digits of locales such as Arabic.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2017-01-06",
+        "closedAt": "2017-02-14",
+        "daysOpen": 39,
+        "comments": 4,
+        "reactions": 0,
+        "lesson": "Day, week and year numbers are formatted with the locale's numbering system by default.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/837",
+        "number": 837,
+        "title": "RTL keyboard handling issues",
+        "category": "keyboard",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "In RTL the arrow keys moved the focused day in the direction opposite to the key.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2018-12-03",
+        "closedAt": "2019-02-21",
+        "daysOpen": 80,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Calendar-grid navigation maps arrows to visual neighbours in both directions.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/1277",
+        "number": 1277,
+        "title": "Default stylesheet doesn't handle ranges for dir=\"rtl\"",
+        "category": "layout",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "The default stylesheet's range styling — rounded ends for the first and last day — was wrong under dir=\"rtl\", and the maintainer noted that most custom stylesheets would have the same problem.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-11-05",
+        "closedAt": "2021-11-23",
+        "daysOpen": 18,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "i18n"
+        ],
+        "lesson": "Range start/end styling uses logical radii so that any custom theme inherits correct RTL behaviour.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/1288",
+        "number": 1288,
+        "title": "Navigation buttons with wrong aria labels on rtl direction",
+        "category": "keyboard",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "With dir=\"rtl\" the next and previous buttons were only partially swapped: behaviour changed sides but the accessible labels did not, so the button announced as \"next\" went to the previous month.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-11-24",
+        "closedAt": "2021-11-30",
+        "daysOpen": 6,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "need more info"
+        ],
+        "lesson": "A navigation button's label, icon and action are one unit that is positioned by logical order; they are never swapped independently.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/1289",
+        "number": 1289,
+        "title": "Arrows not moving in the right direction?",
+        "category": "keyboard",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "With dir=\"rtl\" the left and right arrow keys moved focus opposite to their direction in the day grid — three years after the same defect was first fixed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-11-24",
+        "closedAt": "2021-11-27",
+        "daysOpen": 3,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "need more info"
+        ],
+        "lesson": "The RTL keyboard tests are generated from the pattern definition and cannot be dropped in a rewrite.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/1374",
+        "number": 1374,
+        "title": "v7: Direction of arabic days is wrong",
+        "category": "calendar",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "With the Arabic locale the weekday header was wrong: the reporter expected the week to read from Saturday on the right, and the header order did not match the day columns.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-12-27",
+        "closedAt": "2022-03-26",
+        "daysOpen": 89,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "v7"
+        ],
+        "lesson": "Weekday header and day cells are produced by the same column order (first day of week from region data); fixture: Arabic (Saudi Arabia, Egypt) header order equals cell weekday order.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/1739",
+        "number": 1739,
+        "title": "Caption buttons are inverted when using dir=\"rtl\"",
+        "category": "layout",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "With several months displayed and dir=\"rtl\", the caption's navigation buttons changed their icons but not their positions.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-03-30",
+        "closedAt": "2023-04-09",
+        "daysOpen": 10,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "accessibility",
+          "bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/gpbl/react-day-picker/pull/1744",
+            "title": "fix: caption buttons inverted when using RTL and multiple months",
+            "mergedAt": "2023-04-09"
+          }
+        ],
+        "lesson": "With multiple months, previous sits on the inline-start month and next on the inline-end month.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/2612",
+        "number": 2612,
+        "title": "Incorrect Jalali Month Names in react-day-picker",
+        "category": "calendar",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "The Jalali build with the Persian locale showed Gregorian month names transliterated into Persian (April, May …) instead of Persian calendar month names.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-12-03",
+        "closedAt": "2024-12-15",
+        "daysOpen": 12,
+        "comments": 8,
+        "reactions": 1,
+        "fixedBy": [
+          {
+            "url": "https://github.com/gpbl/react-day-picker/pull/2624",
+            "title": "fix(jalali): defaults calendar to `faIR` locale and RTL direction",
+            "mergedAt": "2024-12-15"
+          }
+        ],
+        "lesson": "Month names are looked up by (calendar, locale); a locale's Gregorian names are never reused for another calendar.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/2748",
+        "number": 2748,
+        "title": "The icon's left and right directions are reversed in RTL (right-to-left) mode",
+        "category": "mirroring",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "In RTL the chevron icons point the wrong way relative to their action, and the user could not find how to customise them per direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-04-25",
+        "closedAt": "2025-04-25",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Icon slots receive the resolved direction, and defaults are mirrored.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/2842",
+        "number": 2842,
+        "title": "`timeZone` prop breaks Persian calendar rendering for old years (e.g. 1313) in `Asia/Tehran`",
+        "category": "calendar",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "With a time zone set, the Persian calendar failed to render old years (1313 in Asia/Tehran), where historical UTC offsets are not whole hours or minutes.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-10-14",
+        "closedAt": "2025-12-17",
+        "daysOpen": 64,
+        "comments": 3,
+        "reactions": 1,
+        "labels": [
+          "time zone"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/gpbl/react-day-picker/pull/2879",
+            "title": "feat: add experimental `noonSafe` prop for timezone offsets",
+            "mergedAt": "2025-12-17"
+          }
+        ],
+        "lesson": "Calendar conversion operates on civil dates (year, month, day) without passing through time-zone-dependent timestamps.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/gpbl/react-day-picker/issues/3029",
+        "number": 3029,
+        "title": "@daypicker/hijri: Umm al-Qura dates disagree with ICU's islamic-umalqura from 2029-08-11",
+        "category": "calendar",
+        "components": [
+          "DayPicker"
+        ],
+        "summary": "The Hijri add-on's Umm al-Qura conversion agrees with the browser's Intl implementation for every day from 2024 until 10 August 2029 and disagrees from 11 August 2029 onward.",
+        "state": "open",
+        "createdAt": "2026-10-31",
+        "daysOpen": 10,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "Hijri conversion is cross-checked against ICU for the full supported range in CI, and the range for which official data exists is documented, with behaviour beyond it defined.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

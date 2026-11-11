@@ -1,0 +1,30 @@
+// PrimeReact — notes written after reading each issue. Format: see build.mjs.
+
+#1863 | direction-api | all components
+S: A user could find nothing about RTL in the documentation and asked whether it was supported; the question stayed open for sixteen months and was then folded into a single tracking issue.
+L: The documentation states the RTL status of every component, generated from recorded test runs.
+
+#2167 | layout | Dropdown
+S: With dir="rtl" on the html element the dropdown's text and arrow moved to the correct sides but the clear icon did not, so it overlapped the text.
+L: All adornments of a field are placed by the same logical layout; none is absolutely positioned with a physical inset.
+
+#2184 | layout | InputText, FloatLabel
+S: With an RTL page direction the floating label of a text input was out of position.
+L: Floating labels are anchored with inset-inline-start and transform-origin on the inline-start side.
+
+#2189 | scroll | DataTable, Paginator
+S: With dir="rtl" the data table's frozen columns did not flip sides, and the paginator's arrows pointed the wrong way with broken spacing.
+L: Frozen columns are start/end; paginator icons are mirrored.
+
+#2191 | mirroring | PanelMenu
+S: With dir="rtl" the panel menu had wrong spacing and its expand arrow always pointed right.
+L: Collapsed-state chevrons are in the mirroring registry; spacing uses logical padding.
+
+#3002 | value-direction | Carousel
+S: In RTL the carousel moved its items toward the clicked navigation button instead of away from it, leaving items hidden.
+L: Carousel translation is direction-signed and next always reveals content toward inline-end.
+
+#3096 | direction-api | all components
+S: The tracking issue for RTL support, into which seven component defects (carousel, dropdown, sidebar, float label, context menu, data table, panel menu) were consolidated in 2022. It is still open after more than four years; maintainers said in late 2024 that RTL would come with a future major version, as it had for the vendor's other framework libraries.
+R: Open, no linked pull request or milestone.
+L: The clearest opening: a complete component set whose RTL support is verified, not promised.

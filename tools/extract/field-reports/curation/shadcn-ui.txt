@@ -1,0 +1,83 @@
+// shadcn/ui — notes written after reading each issue. Format: see build.mjs.
+
+#530 | direction-api | all components
+S: The copy-paste components did not support RTL layouts: their utility classes used physical left/right spacing and positioning, so under dir="rtl" paddings, icons and close buttons stayed on the LTR side. It gathered thirty reactions, stayed open for over a year and was closed carrying the stale label.
+L: Distributed source uses logical utilities only (ms/me/ps/pe/start/end); a registry check rejects a component containing a physical horizontal class.
+
+#1434 | direction-api | ScrollArea
+S: The scroll area placed its scrollbar as for LTR unless a direction was passed explicitly, ignoring the parent's direction, because the underlying primitive defaults to ltr.
+L: Wrappers do not inherit an LTR default from a dependency: direction falls back to the DOM, and the scroll area fixture checks the scrollbar is at inline-end with only dir="rtl" on an ancestor.
+
+#1919 | style-engine | all components
+S: A contributor pointed out that border, margin and padding classes throughout the components were physical and proposed switching to the start/end variants to remove per-project rework for Arabic users.
+L: Logical utilities are the only spelling in recipes; physical ones are reserved for values that are physical by nature (pointer coordinates, measured overlay positions).
+
+#4426 | calendar | Calendar
+S: To get a Jalali date picker users had to replace the bundled calendar code themselves, because the pinned version of the underlying day-picker library had no support for non-Gregorian calendars.
+L: Non-Gregorian calendars are a parameter of the calendar-grid engine, not a different component or a fork of the Gregorian one.
+
+#5776 | direction-api | all components
+S: Both foundations of the kit — the primitives and the utility CSS framework — support RTL, yet most components did not, so every new project started by patching them. It took sixteen months to close.
+L: RTL support of the parts does not add up to RTL support of the whole; each composed component is tested in RTL itself.
+
+#6493 | style-engine | all components
+S: A request to replace physical margin and padding with logical properties across the components gathered support for a year and was then closed as not planned; a later release addressed RTL through a code transform at install time instead.
+L: Logical properties are in the source of truth; no transform step is needed and none can drift.
+| needs-review
+
+#7280 | layout | Sidebar
+S: With dir="rtl" the inset variant of the sidebar applied its margin on the wrong side, as if LTR. Closed as not planned after sixteen months, having gone stale.
+L: Composite layouts (sidebar, inset, rail) use logical margins and logical side props; the app-shell pattern has an RTL screenshot fixture.
+
+#7699 | typography | Calendar
+S: In the Persian calendar example the day numbers do not look vertically centred in their cells, because Persian digits sit differently relative to the line box than Latin digits. Closed as not planned after going stale.
+L: Centring of numerals in fixed cells is verified per digit system and per font; day cells use measured font metrics (or text-box trimming) and the calendar has screenshots with arab, arabext and latn digits.
+
+#7978 | layout | Sheet, Dialog
+S: The close button of the sheet and dialog is placed at a fixed physical corner regardless of text direction, so in RTL it sits where the title starts. The request for direction-aware placement was closed as not planned after going stale.
+L: Dismiss buttons are positioned at inline-end/block-start with logical insets.
+
+#8198 | value-direction | Switch
+S: When the app language changed between Arabic and English the switch thumb only ever travelled in one physical direction, so in one of the two languages the on position was on the wrong side.
+L: Switch thumb travel is expressed with logical alignment (or a direction-signed translate); fixture: thumb is at inline-end when checked, in both directions and after a live direction change.
+
+#8305 | calendar | Calendar
+S: In the Persian calendar example the month dropdown listed Gregorian month names, because the wrapper's default month formatter always formats with the Gregorian calendar.
+L: Every formatter inside a calendar component receives the calendar system; a test renders each caption layout in each calendar and checks month names against locale data.
+
+#8454 | portal-direction | Dialog, AlertDialog
+S: A dialog given dir="rtl" kept left-aligned text and LTR header and footer order, because its styles use physical alignment classes. Open for over a year.
+L: A dir attribute on any overlay root fully mirrors its content; overlay recipes contain no physical alignment.
+
+#9233 | scroll | DropdownMenu
+S: On an RTL document, opening a dropdown menu briefly shows scrollbars and shifts the layout, with different symptoms for modal and non-modal menus.
+L: Positioned overlays start hidden at a neutral in-viewport position until measured, so that an unpositioned popup can never extend the scrollable area on the inline-start side in RTL.
+| needs-review
+
+#9515 | layout | Form
+S: In the RTL documentation itself a "forgot password" link stayed on the LTR side because it was pushed with a physical auto margin.
+L: Auto margins used for pushing are margin-inline-start/end: auto; the lint for physical classes also runs on examples and docs.
+
+#9519 | animation | Drawer
+S: In RTL a drawer set to open from the right or left is placed on the correct side but its animation starts from the opposite side.
+L: Position and motion of a sliding surface derive from one resolved physical side.
+
+#9734 | style-engine | CLI
+S: The command that migrates installed components to RTL-safe classes is not idempotent: running it twice duplicates the RTL classes in class strings.
+L: Converting physical classes to logical ones after the fact is an error-prone codemod; where we offer one for migration from other kits it must be idempotent and tested by running twice.
+
+#10274 | value-direction | Switch
+S: The switch thumb is moved with a positive translate-x when checked, which also moves it to the right in RTL, i.e. the wrong way.
+L: No recipe encodes horizontal travel as an unsigned physical translate; fixture as for the switch above.
+
+#10493 | style-engine | CLI
+S: With the RTL option enabled, the install-time transformer re-emitted string literals incorrectly and corrupted any class string containing a double quote, producing invalid source that failed to compile.
+L: Source shipped to users is correct as authored; no install-time rewriting stands between the registry and the user's project.
+
+#11201 | bidi | InputOTP
+S: In RTL the one-time-code slots and the typed digits flow right to left, although numeric codes are read left to right in every locale.
+L: Digit-sequence inputs (OTP, PIN, card number, IBAN, phone) force an LTR slot order and LTR typing direction regardless of document direction; fixture: first typed digit lands in the leftmost slot under dir="rtl".
+
+#12475 | style-engine | CLI
+S: The RTL transform maps most physical classes to logical ones but leaves value-less corner and border shorthands (rounded-l, rounded-r) physical, so some corners stay unmirrored.
+L: A class-rewriting approach needs a complete map and will miss cases; authoring with logical radii (start-start, end-end) removes the category.

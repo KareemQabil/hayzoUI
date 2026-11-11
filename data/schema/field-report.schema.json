@@ -64,6 +64,11 @@
                 "type": "string",
                 "format": "uri"
               },
+              "number": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Issue number in the library's tracker."
+              },
               "title": {
                 "type": "string",
                 "minLength": 1
@@ -82,8 +87,14 @@
                   "scroll",
                   "animation",
                   "locale-strings",
-                  "other"
-                ]
+                  "other",
+                  "value-direction",
+                  "portal-direction",
+                  "chart",
+                  "style-engine",
+                  "direction-api"
+                ],
+                "description": "Defect class. overlay-position: anchored popups placed or flipped on the wrong side. value-direction: sliders, progress, ranges, carousels, steppers, ratings whose value axis does not follow direction. keyboard: arrow/Home/End keys not swapped. mirroring: icons and glyphs not mirrored or wrongly mirrored. portal-direction: content rendered outside the tree loses dir or the direction context. scroll: scrollbars, scrollLeft, sticky and pinned columns, virtualisation. input: caret, alignment, masks, number and segmented fields. numerals: digit systems and number/date formatting. calendar: calendar grids, pickers, Hijri/Jalali systems. chart: axes, legends, tooltips in charts. animation: transitions and indicators moving the wrong way. style-engine: physical CSS properties, flipping plugins, specificity and build-time RTL transforms. direction-api: how direction is declared, detected, nested or switched. bidi: mixed-direction text, isolation, punctuation, truncation. layout: static placement of parts (padding, alignment, order). typography: fonts, line height, letter spacing, shaping. locale-strings: missing or untranslated built-in strings."
               },
               "components": {
                 "type": "array",
@@ -102,6 +113,74 @@
                   "closed",
                   "unknown"
                 ]
+              },
+              "stateReason": {
+                "enum": [
+                  "completed",
+                  "not_planned",
+                  "duplicate",
+                  "reopened"
+                ],
+                "description": "GitHub's reason for the current state, when it records one."
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date"
+              },
+              "closedAt": {
+                "type": "string",
+                "format": "date"
+              },
+              "daysOpen": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Days from creation to close; for an open issue, days from creation to the retrieval date of the file's source."
+              },
+              "comments": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "reactions": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Total reactions on the issue body."
+              },
+              "labels": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "resolution": {
+                "type": "string",
+                "minLength": 1,
+                "description": "How it ended, in our words: fixed and how, declined and why, worked around, or still waiting."
+              },
+              "fixedBy": {
+                "type": "array",
+                "description": "Merged pull requests of the same repository whose title or body names this issue after a closing keyword (closes/fixes/resolves #n). Found mechanically from the pull-request search; absent when none was found, which does not mean the issue was not fixed.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "mergedAt": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "url"
+                  ],
+                  "additionalProperties": false
+                }
               },
               "lesson": {
                 "type": "string",

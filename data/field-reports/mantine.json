@@ -1,0 +1,513 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "mantine",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of mantinedev/mantine",
+        "url": "https://github.com/mantinedev/mantine/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "mantine",
+      "name": "Mantine",
+      "repository": "https://github.com/mantinedev/mantine"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/633",
+        "number": 633,
+        "title": "RTL Support: it works only on initialization",
+        "category": "direction-api",
+        "components": [
+          "MantineProvider"
+        ],
+        "summary": "RTL was applied only when the provider was first initialised; switching the direction afterwards neither added nor removed the RTL styles, because the flipping plugin was bound to a style cache created once.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-01-08",
+        "closedAt": "2022-01-13",
+        "daysOpen": 5,
+        "comments": 2,
+        "reactions": 0,
+        "lesson": "Direction can change at runtime at any level and every component updates; fixture: toggle direction on a mounted tree and compare with a fresh mount.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/1778",
+        "number": 1778,
+        "title": "Switch component handle has incorrect offset when `dir: 'rtl'` is set",
+        "category": "value-direction",
+        "components": [
+          "Switch"
+        ],
+        "summary": "With dir set to rtl the switch handle sat at an incorrect offset inside its track.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-07-12",
+        "closedAt": "2022-07-19",
+        "daysOpen": 7,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Thumb position is expressed with logical alignment or a direction-signed offset; fixture: thumb rect lies within track rect in both states and directions.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/2104",
+        "number": 2104,
+        "title": "Tooltip position not working correctly with RTL",
+        "category": "overlay-position",
+        "components": [
+          "Tooltip"
+        ],
+        "summary": "In RTL mode a tooltip asked to appear on the right was rendered on the left: the physical placement name was mirrored.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-08-13",
+        "closedAt": "2022-08-18",
+        "daysOpen": 5,
+        "comments": 8,
+        "reactions": 0,
+        "labels": [
+          "Fixed in patch"
+        ],
+        "lesson": "Two vocabularies, never mixed: left/right are physical and never mirrored; start/end are logical and resolve by direction. The flip step runs after resolution, on physical coordinates.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/2442",
+        "number": 2442,
+        "title": "incompatible support for RTL with Carousel",
+        "category": "value-direction",
+        "components": [
+          "Carousel"
+        ],
+        "summary": "With the application in RTL the carousel was flipped and rendered only its first slide: the underlying carousel engine had not been told the direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-09-14",
+        "closedAt": "2022-09-14",
+        "daysOpen": 0,
+        "comments": 3,
+        "reactions": 0,
+        "lesson": "A wrapped engine must receive direction from our context automatically; fixture: carousel shows all slides and advances toward inline-end in RTL.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/3621",
+        "number": 3621,
+        "title": "Carousel sliding in rtl mode problem",
+        "category": "value-direction",
+        "components": [
+          "Carousel"
+        ],
+        "summary": "In RTL, pressing the carousel arrow offset the first slide by slightly more than a slide width so that the following slides drifted into view; slide offsets were computed with LTR assumptions.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-02-27",
+        "closedAt": "2023-02-28",
+        "daysOpen": 1,
+        "comments": 2,
+        "reactions": 0,
+        "lesson": "Slide offsets are computed from measured rects along the inline axis; fixture: after next, the snapped slide's inline-start edge equals the viewport's inline-start edge.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/3758",
+        "number": 3758,
+        "title": "v6: reversed pagination arrows in RTL",
+        "category": "mirroring",
+        "components": [
+          "Pagination"
+        ],
+        "summary": "After a major release the pagination component showed its previous and next arrows reversed in RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-03-12",
+        "closedAt": "2023-03-17",
+        "daysOpen": 5,
+        "comments": 0,
+        "reactions": 0,
+        "fixedBy": [
+          {
+            "url": "https://github.com/mantinedev/mantine/pull/3809",
+            "title": "[@mantine/core] Pagination: Fixed reversed pagination arrows in RTL",
+            "mergedAt": "2023-03-17"
+          }
+        ],
+        "lesson": "Previous/next arrows come from the shared mirrored icon pair; the pagination RTL screenshot is a release gate.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/4359",
+        "number": 4359,
+        "title": "Drawer position doesn't work well when dir=rtl && position='right'",
+        "category": "layout",
+        "components": [
+          "Drawer"
+        ],
+        "summary": "With dir=rtl a drawer positioned on the right overflowed the screen instead of sitting at the right edge.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-06-05",
+        "closedAt": "2023-06-06",
+        "daysOpen": 1,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Physical side props (left/right) position by physical insets irrespective of direction; logical side props (start/end) resolve first. Both are tested in RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/4513",
+        "number": 4513,
+        "title": "Mantine style is not immediately applying while using stylis-plugin-rtl",
+        "category": "style-engine",
+        "components": [
+          "MantineProvider"
+        ],
+        "summary": "Adding the stylis RTL plugin in a server-rendered app made styles arrive late: the page first appeared unstyled and was styled after hydration, which did not happen without the plugin.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-07-07",
+        "closedAt": "2023-09-05",
+        "daysOpen": 60,
+        "comments": 2,
+        "reactions": 0,
+        "lesson": "RTL must not depend on a runtime style transformation; static CSS with logical properties has identical loading behaviour in both directions.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/4917",
+        "number": 4917,
+        "title": "Drawer animation direction doesn't change in rtl",
+        "category": "animation",
+        "components": [
+          "Drawer"
+        ],
+        "summary": "In RTL the drawer's opening animation ran from the left even when the drawer sat on the right, visible on the library's own documentation.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-09-28",
+        "closedAt": "2023-10-02",
+        "daysOpen": 4,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "Fixed in patch"
+        ],
+        "lesson": "Slide transitions derive from the drawer's resolved physical side.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/5002",
+        "number": 5002,
+        "title": "Horizontal SegmentedControl is broken with right-to-left layout",
+        "category": "animation",
+        "components": [
+          "SegmentedControl"
+        ],
+        "summary": "In RTL in Firefox the segmented control looked right initially, but after clicking, the sliding indicator moved to the wrong position. Closed as not planned.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2023-10-09",
+        "closedAt": "2023-10-10",
+        "daysOpen": 1,
+        "comments": 4,
+        "reactions": 0,
+        "lesson": "Indicator position is computed from getBoundingClientRect differences, which are identical across engines, never from offsetLeft, whose origin differs in RTL.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/5234",
+        "number": 5234,
+        "title": "Bug in @mantine/core RangeSlider Component with dir:rtl in HTML Tag",
+        "category": "value-direction",
+        "components": [
+          "RangeSlider"
+        ],
+        "summary": "With dir=\"rtl\" on the html element the range slider misbehaved, and wrapping it in a dir=\"ltr\" container did not help — the component took its direction from the provider, not from the DOM around it.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-11-11",
+        "closedAt": "2023-11-12",
+        "daysOpen": 1,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "A local dir attribute on an ancestor is always honoured by behaviour as well as by styles.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/5505",
+        "number": 5505,
+        "title": "Y-axis in RTL charts",
+        "category": "chart",
+        "components": [
+          "LineChart",
+          "BarChart"
+        ],
+        "summary": "In RTL mode the y-axis labels of the chart components were drawn inside the plot area.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-01-03",
+        "closedAt": "2024-01-09",
+        "daysOpen": 6,
+        "comments": 1,
+        "reactions": 1,
+        "labels": [
+          "Fixed in patch"
+        ],
+        "lesson": "Charts set explicit direction on their SVG text and reserve axis width from measured label size; the chart RTL fixture checks that tick labels do not intersect the plot rect.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/6382",
+        "number": 6382,
+        "title": "PinInput component in RTL",
+        "category": "bidi",
+        "components": [
+          "PinInput"
+        ],
+        "summary": "In RTL the PIN input ordered its boxes right to left; the reporter argued that numeric codes must stay left to right and that only alphanumeric mode should leave the choice to the developer.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-06-13",
+        "closedAt": "2024-07-02",
+        "daysOpen": 19,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "Fixed in patch"
+        ],
+        "lesson": "Digit-sequence inputs are LTR by default in every locale, with an explicit opt-out.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/6559",
+        "number": 6559,
+        "title": "Issues with the PasswordInput component on mobile and in RTL",
+        "category": "input",
+        "components": [
+          "PasswordInput"
+        ],
+        "summary": "A request that password fields stay left-aligned LTR on RTL pages, since passwords are typed in Latin characters, with only the visibility toggle changing side. Closed as not planned.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2024-07-20",
+        "closedAt": "2024-08-07",
+        "daysOpen": 18,
+        "comments": 2,
+        "reactions": 0,
+        "lesson": "Field types with inherently LTR content (password, email, URL, phone, code) default to dir=\"ltr\" text with adornments still placed by the page direction; the pairing is documented and tested.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/6563",
+        "number": 6563,
+        "title": "Wrong notification position in rtl mode",
+        "category": "overlay-position",
+        "components": [
+          "Notifications"
+        ],
+        "summary": "In RTL mode notifications appeared at a different position than the one requested by the position prop. Closed as not planned.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2024-07-21",
+        "closedAt": "2024-08-07",
+        "daysOpen": 17,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Toast region positions are named with start/end and documented; physical names stay physical.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/6939",
+        "number": 6939,
+        "title": "Nested NavLink - chevron rtl wrong direction",
+        "category": "mirroring",
+        "components": [
+          "NavLink"
+        ],
+        "summary": "In RTL the chevron of a nested navigation link pointed the wrong way.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-10-03",
+        "closedAt": "2024-10-17",
+        "daysOpen": 14,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "Fixed in patch"
+        ],
+        "lesson": "Disclosure chevrons that point toward inline-end when collapsed are in the mirroring registry.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/8903",
+        "number": 8903,
+        "title": "rightsection missplace of ltr input on rtl page",
+        "category": "input",
+        "components": [
+          "TextInput"
+        ],
+        "summary": "On an RTL page, a text input explicitly set to LTR had its left and right sections (icons, buttons) misplaced, with paddings and corner radii on the wrong sides.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-05-16",
+        "closedAt": "2026-05-26",
+        "daysOpen": 10,
+        "comments": 0,
+        "reactions": 0,
+        "fixedBy": [
+          {
+            "url": "https://github.com/mantinedev/mantine/pull/8905",
+            "title": "[@mantine/core] Input: Fix sections misplaced when `dir` overrides parent direction (#8903)",
+            "mergedAt": "2026-05-26"
+          }
+        ],
+        "lesson": "A field that overrides direction locally is laid out entirely by its own direction; sections are start/end relative to the field, not the page.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/8935",
+        "number": 8935,
+        "title": "PasswordInput: sections misplaced when `dir` overrides parent direction",
+        "category": "input",
+        "components": [
+          "PasswordInput"
+        ],
+        "summary": "The fix for locally overridden direction covered inputs built on the shared base but missed the password input, which renders its wrapper differently, so its sections were still misplaced.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-06-02",
+        "closedAt": "2026-06-10",
+        "daysOpen": 9,
+        "comments": 0,
+        "reactions": 0,
+        "fixedBy": [
+          {
+            "url": "https://github.com/mantinedev/mantine/pull/8936",
+            "title": "[@mantine/core] PasswordInput: Fix sections misplaced when `dir` overrides parent direction",
+            "mergedAt": "2026-06-10"
+          }
+        ],
+        "lesson": "Direction handling lives in one field primitive that every input composes, so a fix cannot miss a variant; the fixture iterates over all field components.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/8991",
+        "number": 8991,
+        "title": "Slider marks RTL position",
+        "category": "value-direction",
+        "components": [
+          "Slider"
+        ],
+        "summary": "In RTL the labels of the slider's marks were misplaced relative to their marks.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-06-20",
+        "closedAt": "2026-06-28",
+        "daysOpen": 8,
+        "comments": 0,
+        "reactions": 0,
+        "resolution": "Fixed eight days later.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mantinedev/mantine/pull/8996",
+            "title": "Fix Slider mark labels in RTL",
+            "mergedAt": "2026-06-28"
+          }
+        ],
+        "lesson": "Marks, mark labels, thumb and filled track use one value-to-position function with one direction input.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/9285",
+        "number": 9285,
+        "title": "[@mantine/core] Cascader: ArrowLeft/ArrowRight are not mirrored in RTL",
+        "category": "keyboard",
+        "components": [
+          "Cascader"
+        ],
+        "summary": "In RTL the cascader's columns were mirrored visually but ArrowRight still opened the next column, which sits on the left, and ArrowLeft went back to the one on the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-13",
+        "closedAt": "2026-10-17",
+        "daysOpen": 4,
+        "comments": 1,
+        "reactions": 0,
+        "fixedBy": [
+          {
+            "url": "https://github.com/mantinedev/mantine/pull/9286",
+            "title": "[@mantine/core] Cascader: Fix ArrowLeft and ArrowRight not being mirrored in RTL",
+            "mergedAt": "2026-10-17"
+          }
+        ],
+        "lesson": "Keys that mean \"into\" and \"out of\" a nested level are bound to inline-end and inline-start arrows, resolved by direction, in the menu engine itself.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/9300",
+        "number": 9300,
+        "title": "[@mantine/core] Menu: ArrowLeft/ArrowRight are not mirrored in RTL submenus",
+        "category": "keyboard",
+        "components": [
+          "Menu"
+        ],
+        "summary": "In RTL submenus open to the left, but ArrowRight still opened them and ArrowLeft closed them, so the arrows pointed away from where focus moved. The popup placement had been mirrored and the key handling had not.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-19",
+        "closedAt": "2026-10-25",
+        "daysOpen": 7,
+        "comments": 0,
+        "reactions": 0,
+        "fixedBy": [
+          {
+            "url": "https://github.com/mantinedev/mantine/pull/9302",
+            "title": "[@mantine/core] Menu: Fix ArrowLeft and ArrowRight not being mirrored in RTL submenus",
+            "mergedAt": "2026-10-25"
+          }
+        ],
+        "lesson": "Placement and key bindings for submenus are derived from the same direction value; test: the arrow key pointing at the submenu opens it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mantinedev/mantine/issues/9329",
+        "number": 9329,
+        "title": "[@mantine/dates] Calendar: ArrowLeft/ArrowRight are not mirrored in RTL",
+        "category": "keyboard",
+        "components": [
+          "Calendar"
+        ],
+        "summary": "In an RTL calendar the day grid and header chevrons were mirrored, but ArrowRight still moved to the next day, which is on the left.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-26",
+        "closedAt": "2026-11-04",
+        "daysOpen": 9,
+        "comments": 0,
+        "reactions": 0,
+        "fixedBy": [
+          {
+            "url": "https://github.com/mantinedev/mantine/pull/9330",
+            "title": "[@mantine/dates] Calendar: Fix ArrowLeft and ArrowRight not being mirrored in RTL",
+            "mergedAt": "2026-11-04"
+          }
+        ],
+        "lesson": "Calendar-grid navigation maps ArrowLeft/ArrowRight to visual neighbours; the engine's keyboard tests run in RTL for day, month and year grids.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

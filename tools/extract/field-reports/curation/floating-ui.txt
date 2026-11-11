@@ -1,0 +1,34 @@
+// Floating UI — notes written after reading each issue. Format: see build.mjs.
+
+#976 | overlay-position | core
+S: With direction: rtl and overflow: scroll on the body the scrollbar is on the left, and a tooltip placed bottom-end was shifted to the right by the scrollbar's width, because the scrollbar offset was not included for RTL.
+L: Viewport and clipping-rectangle computation accounts for a scrollbar at the inline-start physical edge in RTL; fixture: overlay alignment with a classic (non-overlay) scrollbar in RTL.
+
+#1530 | overlay-position | placement
+S: Placement names were purely physical, so a "-start" alignment did not follow the writing direction; the library changed alignment to be logical — a breaking change — after a long discussion.
+L: Placement is two logical terms (side and alignment); inline sides are resolved by direction before the collision logic runs on physical rectangles. The resolution rule is specified and tested once.
+| needs-review
+
+#2374 | overlay-position | arrow
+S: With the document direction set to rtl the arrow middleware returned x/y coordinates that put the arrow in the wrong place.
+L: Arrow coordinates are physical offsets inside the popup and must be applied with physical properties (left/top), never with inset-inline-start; this is one of the listed exemptions from the logical-properties rule.
+| needs-review
+
+#3115 | keyboard | useListNavigation
+S: In a grid with both orientations, RTL list navigation moved focus to the right when ArrowLeft was pressed; RTL handling did not cover grid navigation.
+R: Fixed the next day.
+L: The direction mapping of arrow keys is applied in the shared key resolver, before orientation-specific logic, so grids and lists cannot differ.
+
+#3200 | overlay-position | core
+S: With the fixed strategy in RTL, when the document itself overflows and its scrollbar is on the left, the floating element was misaligned by the scrollbar's width.
+L: Same class as the 2020 report: scrollbar-side handling needs a fixture for each positioning strategy (absolute and fixed).
+
+#3221 | overlay-position | native popover
+S: With the native popover API (top layer) the computed position was wrong after switching to RTL; closed as not planned with a workaround.
+L: Top-layer elements are positioned against the viewport with physical coordinates, and the popup resets any inherited logical insets; fixture: native popover, RTL.
+| needs-review
+
+#3418 | overlay-position | native popover
+S: The same top-layer defect reported again: with a native popover in RTL, a position applied through transform was wrong after a direction change.
+L: Positions applied with transform assume a known origin; set the base inset explicitly with physical left: 0; top: 0 so that the origin is the same in both directions.
+| needs-review

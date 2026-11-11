@@ -1,0 +1,111 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "recharts",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "GitHub issues of recharts/recharts",
+        "url": "https://github.com/recharts/recharts/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "recharts",
+      "name": "Recharts",
+      "repository": "https://github.com/recharts/recharts"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/recharts/recharts/issues/263",
+        "number": 263,
+        "title": "Fix direction: rtl problem",
+        "category": "chart",
+        "components": [
+          "all charts"
+        ],
+        "summary": "With direction: rtl on the page, chart numbers and texts were unreadable and the tooltip opened in the wrong place. Reported in 2016 and closed three years later.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2016-09-21",
+        "closedAt": "2019-10-16",
+        "daysOpen": 1120,
+        "comments": 9,
+        "reactions": 5,
+        "labels": [
+          "enhancement"
+        ],
+        "lesson": "Charts are isolated from inherited direction: the SVG root sets its own direction and text anchoring explicitly, and tooltip coordinates are physical.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/recharts/recharts/issues/682",
+        "number": 682,
+        "title": "Stacked bar chart RTL support",
+        "category": "chart",
+        "components": [
+          "BarChart"
+        ],
+        "summary": "A team supporting Arabic countries used a CSS-flipping plugin around a stacked bar chart and found that the tooltip, the y-axis label and the order of bars were not mirrored — a chart drawn from computed coordinates is not affected by flipped CSS. Closed after two and a half years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2017-05-09",
+        "closedAt": "2019-12-03",
+        "daysOpen": 937,
+        "comments": 2,
+        "reactions": 7,
+        "lesson": "Chart mirroring is a data-level option (reverse the category scale, move the value axis to inline-start side, anchor labels), implemented in the layout computation, with direction as an input.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/recharts/recharts/issues/4214",
+        "number": 4214,
+        "title": "Problem with accessibilityLayer in RTL",
+        "category": "keyboard",
+        "components": [
+          "accessibilityLayer"
+        ],
+        "summary": "In RTL the chart's keyboard layer moves to the previous point on ArrowLeft and the next on ArrowRight, as in LTR. Open for almost three years.",
+        "state": "open",
+        "createdAt": "2024-02-21",
+        "daysOpen": 993,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "accessibility",
+          "enhancement"
+        ],
+        "lesson": "Keyboard traversal of data points follows the visual order of the axis: if the scale is reversed for RTL, the arrow mapping reverses with it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/recharts/recharts/issues/7548",
+        "number": 7548,
+        "title": "Add locale support for number formatting (Arabic/Persian numerals) in charts",
+        "category": "numerals",
+        "components": [
+          "axis ticks",
+          "tooltip"
+        ],
+        "summary": "Axis ticks, tooltips and labels always used Western digits, which is inconsistent in Arabic and Persian interfaces whose other numbers use local digits.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-07-12",
+        "closedAt": "2026-08-25",
+        "daysOpen": 44,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Charts take the locale's number formatter (including the numbering system) for every number they print, by default.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

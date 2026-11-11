@@ -1,0 +1,99 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "moment-hijri",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of xsoh/moment-hijri",
+        "url": "https://github.com/xsoh/moment-hijri/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "moment-hijri",
+      "name": "moment-hijri",
+      "repository": "https://github.com/xsoh/moment-hijri"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/xsoh/moment-hijri/issues/31",
+        "number": 31,
+        "title": "Simply including moment-hijri into the project sets global locale for moment to ar-sa",
+        "category": "direction-api",
+        "components": [
+          "locale"
+        ],
+        "summary": "Merely importing the plugin switched the host library's global locale to Saudi Arabic, because it registers its month names by updating — and thereby activating — a locale. Reported in 2018 and closed as not planned in 2025.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2018-03-27",
+        "closedAt": "2025-11-01",
+        "daysOpen": 2776,
+        "comments": 2,
+        "reactions": 0,
+        "lesson": "Calendar support has no import-time side effects and no global locale state; calendar and locale are arguments.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/xsoh/moment-hijri/issues/47",
+        "number": 47,
+        "title": "Format to iD/iM/iYYYY - gives arabic text not English",
+        "category": "locale-strings",
+        "components": [
+          "format"
+        ],
+        "summary": "Formatting a Hijri date with numeric tokens produced Arabic text for a user who wanted Latin output, with no documented way to choose. Open for more than seven years.",
+        "state": "open",
+        "createdAt": "2019-02-18",
+        "daysOpen": 2823,
+        "comments": 2,
+        "reactions": 0,
+        "lesson": "Calendar, language and numbering system are independent: a Hijri date can be formatted in English with Latin digits, or in Arabic with either digit set.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/xsoh/moment-hijri/issues/79",
+        "number": 79,
+        "title": "Shawwal month not return from moment hijri (2022)",
+        "category": "calendar",
+        "components": [
+          "conversion"
+        ],
+        "summary": "In 2022 the plugin returned Ramadan as the name of the current month when it was Shawwal, for that year only. Open since.",
+        "state": "open",
+        "createdAt": "2022-05-12",
+        "daysOpen": 1643,
+        "comments": 4,
+        "reactions": 0,
+        "lesson": "Month boundaries come from the official Umm al-Qura table and are tested for every month of every covered year against a reference implementation (ICU islamic-umalqura).",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/xsoh/moment-hijri/issues/105",
+        "number": 105,
+        "title": "Hijri month lengths differ from official Umm al-Qura data in 760 entries, incl. an impossible 28-day month",
+        "category": "calendar",
+        "components": [
+          "conversion"
+        ],
+        "summary": "The embedded Umm al-Qura month-length table disagrees with the official Saudi calendar in 760 of 1,740 entries for 1356–1500 AH and contains an impossible 28-day month.",
+        "state": "open",
+        "createdAt": "2026-08-02",
+        "daysOpen": 101,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Our Hijri table is extracted by script from an authoritative source with provenance, validated (every month 29 or 30 days, year lengths 354 or 355), and cross-checked against ICU.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

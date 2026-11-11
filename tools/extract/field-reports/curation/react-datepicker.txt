@@ -1,0 +1,31 @@
+// React Datepicker — notes written after reading each issue. Format: see build.mjs.
+
+#1271 | calendar | DatePicker
+S: With a Hebrew or Arabic locale the calendar still ran its weekdays and dates from the left, and no prop changed it. Open for nineteen months, closed as won't fix.
+L: A calendar grid follows direction automatically.
+
+#1320 | calendar | DatePicker
+S: A one-line question about plans for the Hijri calendar; closed as won't fix a year and a half later.
+L: Hijri is built in.
+
+#1531 | layout | DatePicker
+S: In RTL the clear button sat on top of the input's text, since it is absolutely positioned on the right.
+L: Clear and other adornments use logical insets and reserve logical padding.
+| needs-review
+
+#1663 | keyboard | DatePicker
+S: With an RTL locale the left arrow key acted as right and vice versa in the calendar. Closed as won't fix.
+L: Arrow-key mirroring is part of the calendar-grid engine.
+
+#2336 | mirroring | DatePicker
+S: A user could not invert the month navigation arrows for an RTL language; wrapping the picker in a dir="rtl" element did not do it. Closed as won't fix.
+L: The dir of any ancestor is enough for previous/next to swap sides and mirror.
+
+#3330 | calendar | DatePicker
+S: In a Hijri setup, selecting one of the last days of a month and navigating skipped a month. Closed as won't fix.
+L: Month navigation in non-Gregorian calendars adds months in that calendar's arithmetic, clamping the day, and is tested at 29/30-day boundaries.
+| needs-review
+
+#3738 | direction-api | DatePicker
+S: A request for an RTL prop to adapt styles and keyboard shortcuts, with ten reactions, was closed as stale after more than two and a half years.
+L: Same opening as elsewhere: an RTL-correct, Hijri-capable date picker.

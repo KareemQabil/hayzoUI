@@ -1,0 +1,10 @@
+// Headless UI — notes written after reading each issue. Format: see build.mjs.
+
+#1756 | value-direction | Switch
+S: Under dir="rtl" the switch's thumb moved out of its track, because the documented styling translates the thumb by a positive physical amount when checked.
+L: Example and recipe code for a switch never uses an unsigned physical translate.
+| needs-review
+
+#3020 | keyboard | Tabs
+S: Keyboard navigation between tabs did not follow RTL: arrow keys moved in LTR order on an RTL page.
+L: Roving focus reads direction; test: in RTL ArrowLeft moves to the next tab.

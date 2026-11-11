@@ -1,0 +1,1364 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "mui-x",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of mui/mui-x",
+        "url": "https://github.com/mui/mui-x/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "mui-x",
+      "name": "MUI X",
+      "repository": "https://github.com/mui/mui-x"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/mui/mui-x/issues/230",
+        "number": 230,
+        "title": "[data grid] Support RTL",
+        "category": "direction-api",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "The data grid shipped without any right-to-left support: switching the docs to RTL broke the layout outright. The maintainers parked the request until it gathered votes, treating RTL as an infrequent requirement, and it became the most-reacted RTL issue in the tracker before it was closed two and a half years later.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-08-29",
+        "closedAt": "2023-02-06",
+        "daysOpen": 891,
+        "comments": 14,
+        "reactions": 52,
+        "labels": [
+          "scope: data grid",
+          "type: new feature",
+          "umbrella",
+          "waiting for 👍"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/6580",
+            "title": "[DataGrid] Support RTL",
+            "mergedAt": "2023-02-06"
+          }
+        ],
+        "lesson": "RTL is a launch requirement of every component, tested from the first release; no component may ship with direction support deferred to demand.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/3435",
+        "number": 3435,
+        "title": "DataGrid header cells not scrolling in RTL containers",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "Inside an RTL container the grid body scrolled horizontally but the column headers stayed put, so headers and cells no longer lined up. It was open for fourteen months, until RTL support for the grid as a whole landed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-12-14",
+        "closedAt": "2023-02-06",
+        "daysOpen": 419,
+        "comments": 8,
+        "reactions": 21,
+        "labels": [
+          "scope: data grid",
+          "type: new feature"
+        ],
+        "resolution": "Closed by the pull request that added RTL support to the data grid.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/6580",
+            "title": "[DataGrid] Support RTL",
+            "mergedAt": "2023-02-06"
+          }
+        ],
+        "lesson": "Header/body scroll synchronisation must use a normalised inline scroll position (distance from inline-start), never raw scrollLeft, and has an RTL test with overflowing columns.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/4954",
+        "number": 4954,
+        "title": "DataGrid - Resizing Columns when RTL mode",
+        "category": "input",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "Dragging a column separator in RTL made the column run away to its maximum width instead of following the pointer.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-05-21",
+        "closedAt": "2022-06-01",
+        "daysOpen": 11,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "design",
+          "plan: Pro",
+          "scope: data grid",
+          "type: bug"
+        ],
+        "resolution": "Fixed eleven days later by a pull request for column resizing in RTL.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/4989",
+            "title": "[DataGridPro] Fix column resizing in RTL mode",
+            "mergedAt": "2022-06-01"
+          }
+        ],
+        "lesson": "Pointer-driven resize must multiply the horizontal delta by the direction sign; column resize has an RTL pointer test in both drag directions.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/4990",
+        "number": 4990,
+        "title": "[DataGrid] Keyboard navigation in RTL mode",
+        "category": "keyboard",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "In an RTL grid ArrowLeft moved focus to the cell on the right and ArrowRight to the cell on the left. Cell navigation mapped arrow keys to column index changes without consulting direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-05-24",
+        "closedAt": "2023-02-06",
+        "daysOpen": 258,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "accessibility",
+          "scope: data grid",
+          "type: new feature"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/6580",
+            "title": "[DataGrid] Support RTL",
+            "mergedAt": "2023-02-06"
+          }
+        ],
+        "lesson": "Grid navigation maps ArrowLeft/ArrowRight to visual left/right: in RTL ArrowLeft goes to the next column index. The grid-navigation engine takes direction as an input and the generated keyboard tests run in both directions.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/5063",
+        "number": 5063,
+        "title": "[DataGridPro] Column Pinning in RTL mode",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "With pinned columns in RTL, some columns were simply not visible. It stayed open for eight months, until RTL support for the grid landed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-05-31",
+        "closedAt": "2023-02-06",
+        "daysOpen": 251,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "feature: Rendering layout",
+          "scope: data grid",
+          "type: new feature"
+        ],
+        "resolution": "Closed by the pull request that added RTL support to the data grid.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/6580",
+            "title": "[DataGrid] Support RTL",
+            "mergedAt": "2023-02-06"
+          }
+        ],
+        "lesson": "Pinned columns are defined as inline-start/inline-end; their offsets are computed in logical space and resolved to physical edges once, at the end.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/5290",
+        "number": 5290,
+        "title": "[pickers] Usage with various calendars (Hijri, Hebrew, Chinese, ...)",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "A user who needed a Hijri picker found that the only documented route was the moment-based adapter, a library its own authors recommend against for new projects; nothing explained how to use other calendar systems with the modern adapters.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-06-22",
+        "closedAt": "2022-06-27",
+        "daysOpen": 5,
+        "comments": 2,
+        "reactions": 1,
+        "labels": [
+          "docs",
+          "l10n",
+          "scope: pickers"
+        ],
+        "lesson": "Calendar systems (Hijri Umm al-Qura, tabular Islamic, Persian, Hebrew) are first-class in the core date layer with no third-party date library required, and each is documented with a working example.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/5330",
+        "number": 5330,
+        "title": "Week days name in jalali calendar",
+        "category": "calendar",
+        "components": [
+          "DateCalendar"
+        ],
+        "summary": "With the Jalali adapter the weekday header showed the Persian convention of one letter and digits (ش, ۱, ۲ …), produced by blindly taking the first character of the weekday name. Users could not configure a different weekday format.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-06-27",
+        "closedAt": "2022-08-04",
+        "daysOpen": 38,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "duplicate",
+          "l10n",
+          "scope: pickers"
+        ],
+        "lesson": "Weekday headers come from locale data (CLDR narrow/short/abbreviated forms) and the width is selectable; never derive a label by truncating a longer string.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/5561",
+        "number": 5561,
+        "title": "[pickers] Time in DateTimePickerToolbar is backwards in RTL theme",
+        "category": "bidi",
+        "components": [
+          "DateTimePicker"
+        ],
+        "summary": "In an RTL theme the mobile date-time toolbar displayed the time as minutes:hours. The time picker's toolbar already had RTL handling but the date-time toolbar, a separate implementation, lacked it; the user workaround was to reverse the flex row holding hour, separator and minute.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-07-21",
+        "closedAt": "2022-10-26",
+        "daysOpen": 97,
+        "comments": 10,
+        "reactions": 0,
+        "labels": [
+          "good first issue",
+          "l10n",
+          "scope: pickers"
+        ],
+        "resolution": "Fixed by a pull request after three months.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/6636",
+            "title": "[DateTimePicker] Fix toolbar time order when `theme.direction.rtl=true`",
+            "mergedAt": "2022-10-26"
+          }
+        ],
+        "lesson": "Composite numeric values rendered as several elements (time, date segments, ranges) are wrapped in one LTR isolate by a shared primitive, so that no toolbar or cell can implement its own ordering.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/7037",
+        "number": 7037,
+        "title": "[data grid] Fluid column width (flex) not responsive when adding dir=\"rtl\" to HTML tag.",
+        "category": "layout",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "With dir=\"rtl\" on the html element, flex-sized columns stopped responding to container resizes. The fluid width calculation behaved differently once the document direction changed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-11-29",
+        "closedAt": "2022-12-16",
+        "daysOpen": 17,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "feature: Rendering layout",
+          "scope: data grid",
+          "type: bug"
+        ],
+        "lesson": "Size measurement and column width distribution must be direction-independent; the resize observer path is tested under dir=\"rtl\" on the document root.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/8284",
+        "number": 8284,
+        "title": "Fields components ways reverse in RTL",
+        "category": "keyboard",
+        "components": [
+          "DateField"
+        ],
+        "summary": "In an RTL date field, pressing the left arrow moved the selection to the section on the right. Section navigation followed the logical order of sections while the sections were laid out in the opposite visual order.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-03-19",
+        "closedAt": "2023-04-05",
+        "daysOpen": 17,
+        "comments": 11,
+        "reactions": 0,
+        "labels": [
+          "feature: Keyboard editing",
+          "l10n",
+          "scope: pickers"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/8490",
+            "title": "[fields] Fix RTL navigation",
+            "mergedAt": "2023-04-05"
+          }
+        ],
+        "lesson": "In segmented fields ArrowLeft always moves to the segment visually on the left; the segment order used for navigation is the rendered visual order, computed after bidi layout of the format.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/8665",
+        "number": 8665,
+        "title": "[data grid] Table pagination arrows are reversed in RTL",
+        "category": "mirroring",
+        "components": [
+          "DataGrid",
+          "TablePagination"
+        ],
+        "summary": "In an RTL grid the pagination previous/next chevrons pointed the wrong way. The app had set only the dir attribute; the icons follow the theme direction, which requires a separate theme setup, and the grid's RTL documentation was out of date. Treated as a support question.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-04-04",
+        "closedAt": "2023-10-05",
+        "daysOpen": 184,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "docs",
+          "i18n",
+          "scope: data grid"
+        ],
+        "resolution": "Closed after six months when the RTL documentation was updated.",
+        "lesson": "There is one source of direction. Directional icons pick their glyph from the same resolved direction as layout, so a half-configured setup cannot produce mismatched arrows.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/8727",
+        "number": 8727,
+        "title": "[pickers] Wrong direction inside sections",
+        "category": "bidi",
+        "components": [
+          "DateField"
+        ],
+        "summary": "On one customer's on-premises environment a dd/MM/yyyy field rendered every section reversed (3202/40/32) while the same build displayed correctly elsewhere. The cause was not established before the report was closed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-04-23",
+        "closedAt": "2023-09-16",
+        "daysOpen": 146,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "l10n",
+          "scope: pickers",
+          "status: waiting for author",
+          "support: commercial"
+        ],
+        "lesson": "A field's displayed order must not depend on environment defaults: each segment is isolated with markup (dir and unicode-bidi: isolate), and the stored and copied value stays plain text.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/8985",
+        "number": 8985,
+        "title": "[pickers] Support jalali / jalaali adapters with persian digits",
+        "category": "numerals",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "With the Jalali adapter and the Persian locale, some year tokens threw a missing-metadata error and others rendered the year as 0NaN. The field's digit handling assumed every token is known to the adapter and that formatted digits are ASCII. It stayed open for more than three years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-05-14",
+        "closedAt": "2026-09-11",
+        "daysOpen": 1216,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: new feature"
+        ],
+        "lesson": "Segment parsing and formatting must be defined per calendar and per numbering system from data, with a table-driven test of every token × calendar × numbering system; unknown combinations fail at build time, never as NaN in the UI.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/9317",
+        "number": 9317,
+        "title": "[pickers] Using mui-pickers keyboardatepicker/keyboardatetimepicker, if giving direction:\"rtl\" then date format \"dd/MMM/yyyy\" giving wrong date format as \"MMM/yyyy/dd\"",
+        "category": "bidi",
+        "components": [
+          "DateField"
+        ],
+        "summary": "With direction rtl a field using the format dd/MMM/yyyy displayed its parts in the wrong order (month/year/day), and adding a time made it worse. Maintainers attributed it to the tokens being joined by slashes without spaces, so that the bidi algorithm treats the run as one block; their workaround is to separate tokens with spaces. Open for more than three years.",
+        "state": "open",
+        "createdAt": "2023-06-09",
+        "daysOpen": 1250,
+        "comments": 21,
+        "reactions": 3,
+        "labels": [
+          "scope: pickers"
+        ],
+        "resolution": "Still open; a related Arabic-digit parsing defect is to be split into its own issue.",
+        "lesson": "A date field renders its segments in the same visual order as the locale's formatted date string for every separator style; that reference comparison is a fixture, with slash, dash, dot and space separated patterns.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/9545",
+        "number": 9545,
+        "title": "Incorrect Arabic characters when exporting data as CSV UTF-8 in datagrid",
+        "category": "other",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "After an upgrade, CSV export of Arabic data opened in Excel as mojibake. The export no longer told Excel that the file is UTF-8.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-07-02",
+        "closedAt": "2023-07-05",
+        "daysOpen": 3,
+        "comments": 9,
+        "reactions": 0,
+        "labels": [
+          "scope: data grid"
+        ],
+        "lesson": "CSV export writes a UTF-8 byte-order mark by default (Excel needs it for Arabic) and the export has a fixture with Arabic text that is checked byte for byte.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/9989",
+        "number": 9989,
+        "title": "Date Picker Arrow Switcher on RTL - Wrong Order",
+        "category": "mirroring",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "In an RTL calendar the previous and next month buttons appeared in swapped positions relative to the direction their arrows pointed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-08-10",
+        "closedAt": "2023-08-11",
+        "daysOpen": 1,
+        "comments": 0,
+        "reactions": 2,
+        "labels": [
+          "scope: pickers",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/10003",
+            "title": "[pickers] Fix month switcher RTL",
+            "mergedAt": "2023-08-11"
+          }
+        ],
+        "lesson": "Previous/next controls are placed by logical order (previous at inline-start) and their arrows mirrored together; position and glyph are derived from the same direction value and tested as a pair.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/10790",
+        "number": 10790,
+        "title": "[pickers] `DateCalendar` week day label are not understandable with the hebrew locale",
+        "category": "calendar",
+        "components": [
+          "DateCalendar"
+        ],
+        "summary": "With the Hebrew locale the weekday header became unreadable after an update: the default label is the first letter of the short weekday name, which is not meaningful in Hebrew. Maintainers doubted a better default exists and pointed to the formatter override, or to hard-coding the seven labels for the locale.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-10-24",
+        "closedAt": "2023-10-26",
+        "daysOpen": 2,
+        "comments": 6,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "status: waiting for author",
+          "type: regression"
+        ],
+        "resolution": "Closed in two days with the override as the answer.",
+        "lesson": "Never derive a label by truncating a localised name. Weekday labels use the locale's own narrow or short forms from CLDR, and the fixture set includes Arabic and Hebrew.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/11488",
+        "number": 11488,
+        "title": "[DateTimePicker] PickerField shows `0NaN` for year portion of formatted input field value when using Eastern Arabic numerals",
+        "category": "numerals",
+        "components": [
+          "DateTimePicker"
+        ],
+        "summary": "With a locale that formats digits as Eastern Arabic numerals, the year section of the field rendered as 0NaN while the other sections showed Arabic-Indic digits; a maintainer confirmed that the section formatting was at fault.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-12-22",
+        "closedAt": "2024-01-12",
+        "daysOpen": 21,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: bug"
+        ],
+        "resolution": "Fixed three weeks later.",
+        "lesson": "Every internal digit round-trip (format then parse) goes through a numbering-system-aware conversion; no parseInt or Number on locale-formatted text. Fixture: field value under arab, arabext and latn digits.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/11525",
+        "number": 11525,
+        "title": "[pickers] `MultiSectionDigitalClock` incorrect RTL behavior",
+        "category": "bidi",
+        "components": [
+          "MultiSectionDigitalClock"
+        ],
+        "summary": "In RTL the digital clock's columns were swapped so that minutes came before hours, opposite to how a time is read in Arabic and Hebrew UIs. A first fix was reported incomplete and the issue stayed open six months.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-12-27",
+        "closedAt": "2024-06-20",
+        "daysOpen": 176,
+        "comments": 10,
+        "reactions": 0,
+        "labels": [
+          "good first issue",
+          "scope: pickers",
+          "type: bug"
+        ],
+        "lesson": "Time columns (hours, minutes, seconds, day period) keep the order of the locale's time pattern; hour-minute order does not flip with direction.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/12118",
+        "number": 12118,
+        "title": "[charts] labels are incorrect in RTL",
+        "category": "chart",
+        "components": [
+          "PieChart",
+          "ChartsLegend"
+        ],
+        "summary": "In RTL the chart legend text overlapped the colour marks and the legend stayed on the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-02-18",
+        "closedAt": "2024-03-08",
+        "daysOpen": 19,
+        "comments": 3,
+        "reactions": 1,
+        "labels": [
+          "l10n",
+          "scope: charts",
+          "type: bug"
+        ],
+        "resolution": "Fixed by a pull request for the RTL legend.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/12175",
+            "title": "[charts] Fix RTL legend",
+            "mergedAt": "2024-03-08"
+          }
+        ],
+        "lesson": "Chart legends are laid out with direction-aware offsets: mark precedes label in reading order, text-anchor is chosen from direction, and legend placement uses start/end.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/12438",
+        "number": 12438,
+        "title": "[data grid] Broken horizontal scroll in RTL mode",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "After a major release, scrolling an RTL grid horizontally beyond the first viewport rendered no columns at all.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-03-13",
+        "closedAt": "2024-03-29",
+        "daysOpen": 16,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "scope: data grid",
+          "type: regression",
+          "v7.x"
+        ],
+        "resolution": "Fixed within sixteen days.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/12583",
+            "title": "[DataGrid] Fix RTL mode",
+            "mergedAt": "2024-03-29"
+          }
+        ],
+        "lesson": "The virtualiser receives a normalised inline offset (0 at inline-start, increasing toward inline-end) from a single scroll adapter; virtualised horizontal scroll in RTL is a regression fixture.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/13613",
+        "number": 13613,
+        "title": "[charts] labels on YAxis have wrong position when direction is RTL on barchart and line chart",
+        "category": "chart",
+        "components": [
+          "BarChart",
+          "LineChart"
+        ],
+        "summary": "With RTL enabled the y-axis tick labels were drawn over the axis line instead of beside it, while the legend behaved correctly.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-06-24",
+        "closedAt": "2024-06-25",
+        "daysOpen": 1,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "l10n",
+          "scope: charts",
+          "type: bug"
+        ],
+        "resolution": "Fixed the next day by adding RTL support for the y-axis.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/13614",
+            "title": "[charts] Support RTL for y-axis",
+            "mergedAt": "2024-06-25"
+          }
+        ],
+        "lesson": "Chart text must set direction and text-anchor explicitly for every label; decide per chart whether axes mirror, and never let inherited direction move SVG text on its own.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/14245",
+        "number": 14245,
+        "title": "[data grid] Pinned columns are broken in RTL mode",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "In RTL, pinned columns stopped sticking and some columns disappeared — a regression in a release that reworked pinning. It was fixed, reported again as unresolved, and regressed again in a later major version.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-08-17",
+        "closedAt": "2024-09-16",
+        "daysOpen": 30,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "feature: Column pinning",
+          "l10n",
+          "plan: Pro",
+          "scope: data grid",
+          "type: regression"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/14586",
+            "title": "[DataGridPro] Fix pinned columns in RTL mode",
+            "mergedAt": "2024-09-16"
+          }
+        ],
+        "lesson": "Pinned-column behaviour in RTL is a permanent visual and behavioural regression fixture (scroll to both ends, check pinned cells stay and nothing is clipped); it runs on every release.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/14289",
+        "number": 14289,
+        "title": "[data grid] Overlays aren't sticky in RTL mode",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "The grid's loading and no-rows overlays did not stay in view in RTL when the grid was scrolled horizontally, while they did in LTR. It took two years to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-08-22",
+        "closedAt": "2026-09-07",
+        "daysOpen": 747,
+        "comments": 9,
+        "reactions": 1,
+        "labels": [
+          "i18n",
+          "scope: data grid",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/23492",
+            "title": "[DataGrid] Keep overlays sticky in RTL mode",
+            "mergedAt": "2026-09-07"
+          }
+        ],
+        "lesson": "Anything positioned sticky along the inline axis uses inset-inline-start/end, and each sticky layer has an RTL scroll test.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/14458",
+        "number": 14458,
+        "title": "[pickers] Keyboard editing date field with Eastern Arabic numbers fails parsing when using Luxon and Dayjs",
+        "category": "numerals",
+        "components": [
+          "DateField"
+        ],
+        "summary": "With an Arabic locale under Luxon or Day.js, pressing arrow up/down on a section produced a value mixing ASCII and Eastern Arabic digits that the library could not parse back, so the field went invalid. Open for more than two years.",
+        "state": "open",
+        "createdAt": "2024-09-02",
+        "daysOpen": 799,
+        "comments": 5,
+        "reactions": 3,
+        "labels": [
+          "i18n",
+          "scope: pickers",
+          "type: bug"
+        ],
+        "lesson": "Field editing keeps a numeric model per segment and formats for display only; it never re-parses its own display string, and it accepts typed digits of any numbering system.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/14953",
+        "number": 14953,
+        "title": "[data grid] Pinned columns are broken in RTL mode (re-opening)",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "Reopening of the pinned-columns-in-RTL defect: after the announced fix the columns were still broken on a clean install, and the report stayed open for almost two more years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-10-14",
+        "closedAt": "2026-09-03",
+        "daysOpen": 689,
+        "comments": 21,
+        "reactions": 1,
+        "labels": [
+          "feature: Column pinning",
+          "scope: data grid",
+          "type: bug"
+        ],
+        "lesson": "A fix for an RTL defect is accepted only with a fixture that fails before and passes after; fixtures run against the published package, not only the workspace.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/15650",
+        "number": 15650,
+        "title": "[pickers] Add Support for Arabic (ar) Locale in @mui/x-date-pickers",
+        "category": "locale-strings",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "The pickers shipped locale packs for many languages but no Arabic one, so teams building for Arabic had to hand-write every toolbar title, button label and aria label. Still open after almost two years.",
+        "state": "open",
+        "createdAt": "2024-11-28",
+        "daysOpen": 712,
+        "comments": 6,
+        "reactions": 2,
+        "labels": [
+          "l10n",
+          "scope: pickers"
+        ],
+        "lesson": "Arabic strings for every built-in message (visible and aria) ship in the first release and are the source locale; a build check fails when any message key lacks an Arabic value.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/16094",
+        "number": 16094,
+        "title": "[charts] Add `RTL` support for legend",
+        "category": "chart",
+        "components": [
+          "ChartsLegend"
+        ],
+        "summary": "The reworked legend used left/right positions and a gradient that did not follow direction, so in RTL the legend sat on the wrong side and the colour scale ran opposite to its labels.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-01-07",
+        "closedAt": "2025-01-10",
+        "daysOpen": 3,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "scope: charts",
+          "type: enhancement",
+          "v8.x"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/16115",
+            "title": "[charts] Support `rtl` for gradient legend",
+            "mergedAt": "2025-01-10"
+          }
+        ],
+        "lesson": "Public placement values are start/end; continuous colour legends reverse together with their labels in RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/16987",
+        "number": 16987,
+        "title": "[charts] dots highlights places are incorrect in RTL",
+        "category": "chart",
+        "components": [
+          "LineChart"
+        ],
+        "summary": "With dir=rtl the hover highlight dots of a line chart were drawn away from the data points.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-03-16",
+        "closedAt": "2025-03-18",
+        "daysOpen": 2,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "scope: charts",
+          "type: bug"
+        ],
+        "resolution": "Fixed two days later.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/16994",
+            "title": "[charts] Fix line highlight position with RTL",
+            "mergedAt": "2025-03-18"
+          }
+        ],
+        "lesson": "Pointer-to-data mapping and highlight positions in charts use physical coordinates from bounding rectangles and are tested under dir=rtl.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/17047",
+        "number": 17047,
+        "title": "[pickers] maxDigitNumber error on AdapterJalali in Jalali calendar system",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "The Jalali date-fns adapter crashed the field with a missing-metadata error for the yyyy token, and the official docs demo crashed the same way. Token metadata had been updated for the Gregorian adapters only.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-03-20",
+        "closedAt": "2025-03-21",
+        "daysOpen": 1,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "feature: Keyboard editing",
+          "scope: pickers",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/17051",
+            "title": "[fields] Improve the check for year in `doesSectionFormatHaveLeadingZeros`",
+            "mergedAt": "2025-03-21"
+          }
+        ],
+        "lesson": "Non-Gregorian calendars run through the same test matrix as Gregorian on every change; documentation examples for Hijri and Persian calendars are executed in CI.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/17651",
+        "number": 17651,
+        "title": "[pickers] Broken shortcuts layout in RTL mode",
+        "category": "layout",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "The shortcuts panel of the picker layout rendered broken in RTL after a refactor, while LTR was fine.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-05-02",
+        "closedAt": "2025-07-17",
+        "daysOpen": 76,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: regression"
+        ],
+        "lesson": "Grid-template-based layouts must be written with logical placement and verified by an RTL screenshot for every layout variant.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/18274",
+        "number": 18274,
+        "title": "[data grid] RTL language in MUI DataGrid with infinite scroll breaks layout",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "A data grid with infinite scrolling broke its layout when the app direction was RTL; the cause turned out to be column virtualisation in RTL when the viewport is wider than the grid. It needed more than five months and a long thread to resolve.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-06-07",
+        "closedAt": "2025-11-20",
+        "daysOpen": 166,
+        "comments": 27,
+        "reactions": 0,
+        "labels": [
+          "scope: data grid",
+          "support: premium standard",
+          "type: bug"
+        ],
+        "resolution": "Fixed by a pull request to RTL virtualisation.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/20409",
+            "title": "[Data Grid] Fix RTL virtualization to display columns when viewport width is larger than the grid",
+            "mergedAt": "2025-11-20"
+          }
+        ],
+        "lesson": "Virtualised range computation is tested in RTL for grids narrower than, equal to and wider than the viewport, and together with infinite loading.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/18972",
+        "number": 18972,
+        "title": "[pickers] MuiPickersLayout-toolbar is overlapping the Calendar in RTL MobileDatePicker variant",
+        "category": "layout",
+        "components": [
+          "MobileDatePicker"
+        ],
+        "summary": "In RTL the mobile picker's toolbar overlapped the calendar, reproducible in the library's own RTL documentation example.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-07-29",
+        "closedAt": "2025-07-31",
+        "daysOpen": 2,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: bug"
+        ],
+        "lesson": "The documented RTL example of each component is itself a screenshot test.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/19103",
+        "number": 19103,
+        "title": "[pickers] RTL not applied correctly for Calendar Systems examples (works in v7.x but broken in latest version)",
+        "category": "direction-api",
+        "components": [
+          "DateCalendar"
+        ],
+        "summary": "After a major version the calendar-systems examples stayed LTR even with RTL enabled, although the previous version mirrored correctly — the direction was no longer reaching the component.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-08-10",
+        "closedAt": "2025-08-22",
+        "daysOpen": 12,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: regression"
+        ],
+        "lesson": "Direction is resolved through one context with a DOM fallback, and a test asserts that every component reflects a direction change made at the provider.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/19578",
+        "number": 19578,
+        "title": "[data grid] Last columns not rendering or disappearing when scrolling in RTL mode",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "In an RTL grid, scrolling to the far inline end left the last columns unrendered, and scrolling vertically from there made them disappear. Marked as a duplicate of the pinned/virtualised column defects.",
+        "state": "closed",
+        "stateReason": "duplicate",
+        "createdAt": "2025-09-15",
+        "closedAt": "2025-09-26",
+        "daysOpen": 11,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "duplicate",
+          "l10n",
+          "scope: data grid",
+          "type: bug"
+        ],
+        "lesson": "Virtualised range computation is property-tested: for any scroll offset in either direction the rendered range covers the viewport.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/20125",
+        "number": 20125,
+        "title": "[data grid] Missing Arabic translation and RTL support in the displayed rows label",
+        "category": "bidi",
+        "components": [
+          "DataGrid",
+          "TablePagination"
+        ],
+        "summary": "In an Arabic grid the row-range label read \"of 5 5-1\": the word \"of\" was untranslated and the numeric range was reordered by the bidi algorithm inside an RTL paragraph.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-10-28",
+        "closedAt": "2025-11-04",
+        "daysOpen": 7,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "good first issue",
+          "l10n",
+          "scope: data grid",
+          "support: pro standard"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/20185",
+            "title": "[l10n] Improve Arabic (ar-SD) locale",
+            "mergedAt": "2025-11-04"
+          }
+        ],
+        "lesson": "Range strings come from a locale message with placeholders, and each number or range is wrapped in a bidi isolate; the Arabic rendering of \"1–5 of 5\" is a text fixture.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/20724",
+        "number": 20724,
+        "title": "[data grid] Column pinning broken in RTL mode",
+        "category": "scroll",
+        "components": [
+          "DataGrid"
+        ],
+        "summary": "A later regression of column pinning in RTL: pinned cells let unpinned content show through and overflow while scrolling.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-12-19",
+        "closedAt": "2026-02-20",
+        "daysOpen": 63,
+        "comments": 3,
+        "reactions": 1,
+        "labels": [
+          "feature: Column pinning",
+          "i18n",
+          "plan: Pro",
+          "scope: data grid",
+          "type: regression"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/21371",
+            "title": "[DataGrid] Remove double rtl inversion logic for columns pinning",
+            "mergedAt": "2026-02-20"
+          }
+        ],
+        "lesson": "Pinned cells get an opaque background and inline-edge offsets from the same logical model in both directions; the RTL pinning fixture checks overlap by hit-testing, not only by position.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/21866",
+        "number": 21866,
+        "title": "[scheduler] RTL support",
+        "category": "direction-api",
+        "components": [
+          "Scheduler"
+        ],
+        "summary": "The new scheduler/event calendar was released for preview with no RTL support: time axis, event bars, navigation and labels all assumed LTR, and users asked for it by pointing at competitors that have it.",
+        "state": "open",
+        "createdAt": "2026-03-26",
+        "daysOpen": 230,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "scope: scheduler",
+          "type: new feature"
+        ],
+        "lesson": "Time-axis components define their axis direction explicitly (inline-start = earlier) and are built RTL-first.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/22728",
+        "number": 22728,
+        "title": "[pickers] AdapterMomentHijri.getDaysInMonth returns the Gregorian month length",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "The Hijri adapter overrode every date computation except the month length, so it inherited the Gregorian number of days for a Hijri month, giving wrong day grids at month ends.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-06-10",
+        "closedAt": "2026-06-15",
+        "daysOpen": 5,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/22774",
+            "title": "[pickers] Fix AdapterMomentHijri.getDaysInMonth returning the Gregorian month length",
+            "mergedAt": "2026-06-15"
+          }
+        ],
+        "lesson": "A calendar implementation is validated against a complete conformance suite (month lengths, year lengths, start/end of month) per calendar system, so an un-overridden Gregorian fallback cannot pass.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/22964",
+        "number": 22964,
+        "title": "[pickers] AdapterMomentHijri normalDateWithWeekday uses the Gregorian day token",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "One of the Hijri adapter's default formats combined a Gregorian day token with a Hijri month token and dropped the weekday its name promised.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-06-26",
+        "closedAt": "2026-06-26",
+        "daysOpen": 0,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/22972",
+            "title": "[pickers] Use the Hijri day token in `AdapterMomentHijri` `normalDateWithWeekday`",
+            "mergedAt": "2026-06-26"
+          }
+        ],
+        "lesson": "Date format patterns are generated from locale/calendar data, and a lint rejects any pattern that mixes fields of two calendars.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/22965",
+        "number": 22965,
+        "title": "[pickers] AdapterMomentHijri and AdapterMomentJalaali use Gregorian day tokens in date formats",
+        "category": "calendar",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "The Hijri and Jalali adapters used plain day and month tokens in several formats, which the underlying libraries interpret as Gregorian, so headers showed Gregorian values next to Hijri or Jalali years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-06-26",
+        "closedAt": "2026-06-26",
+        "daysOpen": 0,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/22974",
+            "title": "[pickers] Use calendar day tokens in `AdapterMomentHijri` and `AdapterMomentJalaali` formats",
+            "mergedAt": "2026-06-26"
+          }
+        ],
+        "lesson": "A formatted date draws every field from one calendar; fixture: full, medium and short dates for 1 Muharram and 30 Dhu al-Hijjah in each supported calendar.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/23493",
+        "number": 23493,
+        "title": "Issue with security scanning: Bidirectional characters in bundled MUI code are being flagged as a security vulnerability",
+        "category": "bidi",
+        "components": [
+          "DatePicker"
+        ],
+        "summary": "A customer's security scanner flagged the published bundle for bidirectional characters, the class of character used in trojan-source attacks. The maintainer found no bidi control characters in the code and attributed the hits to right-to-left script text in the bundled locale files; the report went stale and was closed.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2026-09-03",
+        "closedAt": "2026-09-29",
+        "daysOpen": 26,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "scope: pickers",
+          "stale",
+          "status: waiting for author",
+          "support: premium standard"
+        ],
+        "resolution": "Closed as not planned with no change.",
+        "lesson": "Arabic strings ship as data files separate from executable code, and the build asserts that no bidi control character appears anywhere in published output, so the statement \"contains none\" is a tested guarantee we can give to security reviews.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/23888",
+        "number": 23888,
+        "title": "[scheduler] Use logical names for direction-dependent public API",
+        "category": "direction-api",
+        "components": [
+          "Scheduler"
+        ],
+        "summary": "While adding RTL, the team found a public class and slot name that encoded a physical side (\"left\" toolbar element) and had to rename it before stable, because in RTL that element sits on the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-15",
+        "closedAt": "2026-10-20",
+        "daysOpen": 5,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "on hold",
+          "scope: scheduler",
+          "type: new feature"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/23897",
+            "title": "[scheduler] Rename `headerToolbarLeftElement` to `headerToolbarStart`",
+            "mergedAt": "2026-10-20"
+          }
+        ],
+        "lesson": "No public prop, slot, class or CSS variable name contains left/right for something that follows direction; names are start/end from the first release.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/23889",
+        "number": 23889,
+        "title": "[scheduler] Detect text direction and pass it to the timeline virtualizer",
+        "category": "direction-api",
+        "components": [
+          "Scheduler"
+        ],
+        "summary": "Nothing in the scheduler read the text direction; the headless packages had no way to receive it and the virtualiser was not told about RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-15",
+        "closedAt": "2026-10-20",
+        "daysOpen": 5,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "on hold",
+          "scope: scheduler",
+          "type: new feature"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/23898",
+            "title": "[scheduler] Detect the text direction and pass it to the timeline virtualizer",
+            "mergedAt": "2026-10-20"
+          }
+        ],
+        "lesson": "Engines take direction as an explicit input from the adapter layer; an engine that positions or navigates along the inline axis cannot be constructed without it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/23894",
+        "number": 23894,
+        "title": "[scheduler] Mirror arrow key navigation in RTL",
+        "category": "keyboard",
+        "components": [
+          "Scheduler"
+        ],
+        "summary": "In the scheduler's calendar grid and timeline, ArrowLeft always moved to the previous column, which in RTL is visually on the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-15",
+        "closedAt": "2026-10-23",
+        "daysOpen": 8,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "on hold",
+          "scope: scheduler",
+          "type: new feature"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/23954",
+            "title": "[scheduler] Mirror arrow key navigation in RTL",
+            "mergedAt": "2026-10-23"
+          }
+        ],
+        "lesson": "Arrow-key mirroring lives in the shared grid-navigation engine so that a new component inherits it instead of re-implementing it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/23895",
+        "number": 23895,
+        "title": "[scheduler] Mirror navigation icons and popup positioning in RTL",
+        "category": "overlay-position",
+        "components": [
+          "Scheduler"
+        ],
+        "summary": "Navigation chevrons were not flipped in RTL, and the event dialog and anchored toolbar were positioned with an inline left offset and a default side of \"left\", so in RTL the dialog could open off-screen.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-15",
+        "closedAt": "2026-10-23",
+        "daysOpen": 8,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "on hold",
+          "scope: scheduler",
+          "type: new feature"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/mui-x/pull/23955",
+            "title": "[scheduler] Mirror navigation icons, popups and dialogs in RTL",
+            "mergedAt": "2026-10-23"
+          }
+        ],
+        "lesson": "Anchored overlays are placed by the shared positioning engine with logical sides; no component sets style.left by hand.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/23906",
+        "number": 23906,
+        "title": "[scheduler] Support a local `dir` in portaled content",
+        "category": "portal-direction",
+        "components": [
+          "Scheduler"
+        ],
+        "summary": "With dir=\"rtl\" set only on a container, the scheduler's popovers, dialog and drawers — rendered in document.body — came out LTR, while icons following the theme direction were RTL. The request to support a local direction in portaled content was declined; the documented requirement is to put dir on the body.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2026-10-16",
+        "closedAt": "2026-10-16",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "on hold",
+          "scope: scheduler",
+          "type: new feature"
+        ],
+        "lesson": "Every portal root receives dir (and lang) from the direction context of the element that opened it, so a locally RTL subtree works without touching the document.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/mui-x/issues/23980",
+        "number": 23980,
+        "title": "[scheduler] Support drag auto-scroll toward the inline end in RTL",
+        "category": "scroll",
+        "components": [
+          "Scheduler"
+        ],
+        "summary": "While dragging in the RTL timeline, auto-scroll worked toward the right edge but not toward the left (inline-end) edge, because the third-party auto-scroller only scrolls left while scrollLeft is positive and RTL scroll offsets are negative.",
+        "state": "open",
+        "createdAt": "2026-10-23",
+        "daysOpen": 19,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "on hold",
+          "scope: scheduler",
+          "type: bug"
+        ],
+        "lesson": "Drag auto-scroll uses the normalised scroll adapter and is tested toward both inline edges in RTL; third-party helpers that read scrollLeft directly are not used.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+// Chakra UI — notes written after reading each issue. Format: see build.mjs.
+
+#517 | direction-api | all components
+S: A user needing RTL asked whether it was planned and how to help; the library had no RTL support and the request stayed open for ten months until logical style props arrived.
+L: RTL is present from the first release, so that no early adopter builds on physical props that later have to be migrated.
+| needs-review
+
+#3638 | value-direction | Switch, NumberInput
+S: In RTL the switch thumb travelled outside its track when toggled and the number input's stepper buttons were laid out wrongly.
+L: Thumb travel and stepper placement use logical alignment; fixture: thumb rect stays inside the track rect in RTL for both states.
+| needs-review
+
+#3755 | layout | Select
+S: The native select's dropdown icon stayed on the right in RTL, overlapping the start of the text, because it was absolutely positioned with a physical right inset.
+L: Field indicators are positioned with inset-inline-end; no physical inset appears in field recipes.
+| needs-review
+
+#4701 | layout | InputGroup
+S: With dir="rtl" on the html element, input left/right elements stayed on their physical sides while the input's padding followed direction, so adornments covered the text.
+L: Adornment slots are start/end, and the padding reserved for them uses the same logical side; names with left/right are not offered for direction-following slots.
+| needs-review
+
+#4796 | layout | ButtonGroup
+S: In an attached button group the rounded outer corners and squared inner corners were swapped in RTL, because the radii were removed with physical corner properties on first and last child.
+L: Attached groups use logical corner radii (start-start, end-end …); fixture: outer corners of an attached group are rounded in RTL.
+| needs-review
+
+#5235 | animation | Tabs
+S: After switching from LTR to RTL the tab indicator stayed at its old position, since it was positioned from a measured left offset that was not recomputed for the new direction.
+L: Measured indicator geometry is recomputed when direction changes (direction is a dependency of the measurement), and is stored relative to inline-start.
+| needs-review
+
+#9526 | layout | AbsoluteCenter
+S: In an RTL parent the absolute-centre helper did not centre its child: it combined a logical inline inset of 50% with a physical translate of -50%, which moves the element the wrong way in RTL.
+L: Centring never mixes a logical inset with a physical translate; use inset: 0 with margin auto or place-items, or multiply the translate by the direction sign.
+| needs-review
+
+#9614 | direction-api | Tabs, LocaleProvider
+S: On a page with dir="rtl" some components, tabs among them, behaved as LTR unless a locale provider was added, because the underlying state machines default their direction to ltr.
+L: The DOM direction is the default; a provider is needed only to override it.
+
+#9615 | mirroring | Breadcrumb
+S: On an RTL page the breadcrumb's chevron separator pointed right, i.e. backwards.
+L: Chevron separators are mirrored via the icon mirroring registry; the breadcrumb is an RTL screenshot fixture.
+
+#9982 | value-direction | RatingGroup
+S: With half ratings in RTL the half-filled star was highlighted on the wrong half.
+L: Partial fills are clipped from the inline-start edge; fixture: value 3.5 in RTL fills the right half of the fourth star.
+
+#10006 | layout | Select
+S: In RTL the select's indicator group (clear button, chevron) was misaligned inside the trigger.
+L: Trigger internals are laid out with logical insets and gaps only.
+| needs-review
+
+#10471 | style-engine | HoverCard
+S: On RTL pages the arrow tip of the hover card showed its border on the wrong edges, because the arrow is a rotated square styled with logical border sides: the logical side flips with direction while the rotation does not.
+L: Logical properties are wrong for geometry that is physical by construction: rotated arrows, shadows with offsets and anything positioned by measured coordinates use physical properties, exempted explicitly from the lint.

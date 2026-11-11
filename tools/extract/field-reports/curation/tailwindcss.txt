@@ -1,0 +1,25 @@
+// Tailwind CSS — notes written after reading each issue. Format: see build.mjs.
+
+#949 | style-engine | utilities
+S: In 2019 a contributor proposed utilities for CSS logical properties, pointing out that left/right in margin, padding and border only make sense for left-to-right horizontal writing. The proposal drew many reactions and was closed weeks later; logical utilities arrived in the framework years afterwards.
+L: Our utility and token names are logical from day one (inline-start/end), since later addition leaves an ecosystem of physical classes that then needs codemods.
+| needs-review
+
+#2017 | style-engine | space-x
+S: The space-between utilities add a margin on a fixed physical side of every child but the first, so under RTL the gap lands on the wrong side: one item touches its neighbour and an extra gap appears at the edge.
+L: Spacing between siblings is done with gap, never with per-child physical margins.
+| needs-review
+
+#5792 | style-engine | space-x
+S: With dir="rtl", the first space between elements was missing when using the space-between utilities; the report, like several near-identical ones over three years, was closed by pointing to a manual reverse modifier that authors must add per direction.
+L: A layout primitive must not need a per-direction modifier from the author; Stack and Group use gap.
+| needs-review
+
+#7179 | style-engine | divide-x
+S: Divider utilities draw a border on a fixed physical side of each child, so in an RTL flex row the dividers do not fall between the items.
+L: Separators between items are drawn with logical borders (border-inline-start on every item but the first) or as separate elements.
+| needs-review
+
+#14305 | direction-api | rtl variant
+S: The rtl: and ltr: variants match on an ancestor's dir attribute value, so they do not apply inside dir="auto", where the browser resolves the direction from the content.
+L: Direction-dependent styles rely on logical properties and the :dir() pseudo-class, which follow the resolved direction, not on [dir=rtl] attribute selectors; dir="auto" content is a fixture.

@@ -1,0 +1,78 @@
+// React Spectrum / React Aria — notes written after reading each issue. Format: see build.mjs.
+
+#1880 | bidi | NumberField
+S: A user entering signed numbers in Arabic-Indic digits saw the plus or minus sign on the right of the digits (٣٢-) and expected it on the left. Maintainers answered that the right-hand placement is correct for Arabic and only renders properly in a real RTL context, and the reporter agreed.
+R: Closed by the reporter the next day with no code change.
+L: Sign, percent and currency placement come from the locale's CLDR number pattern and are tested in both paragraph directions; the docs state what users should expect, because expectations differ even among Arabic readers.
+
+#2315 | value-direction | Slider
+S: The slider hooks took their direction only from the locale provider, so a slider could not be given a direction of its own; the request for a direction parameter stayed open more than two and a half years.
+L: Every engine with a value axis accepts an explicit direction argument that overrides the ambient one.
+
+#2921 | keyboard | ColorArea
+S: In the two-dimensional colour area, Home and End moved the thumb the same physical way in RTL and LTR locales, unlike sliders, where they follow direction.
+L: Home/End (and PageUp/PageDown where horizontal) follow the same direction mapping as the arrow keys, from one shared key-mapping table used by all engines.
+
+#3026 | keyboard | TableView
+S: Resizable table columns needed separate RTL work: arrow keys had to expand or shrink a column according to its visual direction, and the team noted that switching the CSS to logical properties alone did not make resizing correct.
+L: Logical CSS fixes layout only. Every pointer- and key-driven geometric interaction (resize, drag, slide) needs its own direction handling in the engine and its own RTL test.
+
+#3114 | numerals | NumberField
+S: Clearing a number field, typing only spaces and pressing the stepper button made the value come back in Eastern Arabic digits although the locale was not Arabic: the parser guessed the numbering system from input that contained no digits.
+L: The numbering system of a field is fixed by locale or prop; input in another digit system is accepted and normalised, but empty or ambiguous input never changes the output numbering system.
+| needs-review
+
+#3757 | calendar | Calendar
+S: Gregorian-to-Persian conversion mapped a run of consecutive Gregorian days to the 30th of the same Persian month, i.e. the conversion was wrong for part of the year. It took sixteen months to fix.
+L: Calendar conversions are verified by exhaustive round-trip tests over a multi-century range for every calendar, and against reference tables.
+
+#3862 | numerals | NumberField
+S: Typing only a comma into a number field and leaving it turned the displayed value into digits of another numbering system, unreadable to the user, because the comma was matched to a locale that uses it and the numbering system was switched. It took more than three years to close.
+L: Separator characters alone never select a numbering system or locale; parsing is anchored to the field's configured locale first.
+| needs-review
+
+#4711 | bidi | DateField, TimeField, DatePicker
+S: For Arabic and Hebrew the date and time fields displayed their segments in an order different from the string the platform's date formatter produces in an RTL element. The maintainer traced it to the field and its segments being flex items: the Unicode bidi algorithm has to run over the whole field, not segment by segment. It took nineteen months to fix.
+R: Fixed by a pull request in 2025.
+L: Segments of a date/time field are inline participants of a single bidi paragraph, never flex or grid items, so their visual order equals the rendering of the locale's formatted string; fixture: per locale, compare segment x-order with the reference string order.
+
+#4896 | keyboard | ActionGroup, Tabs
+S: In RTL locales the left/right arrow keys were swapped for horizontal groups as intended, but the swap was also applied in vertical orientation, where ArrowDown and ArrowRight then moved in opposite directions. Three years to close.
+L: The arrow-key mapping is a function of (orientation, direction): the swap applies to the left/right pair only; the mapping table is unit-tested for all four combinations.
+
+#5960 | calendar | Calendar
+S: In the Persian calendar some months were displayed starting with day 30 — the last day of the previous month leaked in — for an entire year following a leap year.
+L: Month boundaries are tested around leap years for each calendar; fixture: first cell of every month of Persian 1403–1405 is day 1.
+
+#6469 | direction-api | I18nProvider
+S: Direction can only be derived from the locale; a team that wanted to set it explicitly (to test RTL layouts without translating, for instance) asked for a direction prop, and the request was closed as not planned after twenty months.
+L: Direction, language, numbering system and calendar are independent inputs of the locale context; each has a default derived from the locale and each can be set explicitly.
+
+#6623 | numerals | NumberField
+S: The number parser accepted Latin, Arabic-Indic and Han decimal digits only, so users typing with other keyboards' native digits could not enter numbers.
+L: Digit recognition is generated from Unicode data for all decimal digit systems in CLDR, not a hand-picked list; arab and arabext (Persian/Urdu) are both covered.
+
+#6985 | direction-api | i18n
+S: The function that decides whether a locale is RTL was internal, so server-rendered code had no way to obtain a locale's direction without a client-side hook.
+L: Locale-to-direction lookup is a pure exported function of the core, usable on the server to emit dir on the root element.
+
+#8583 | portal-direction | Popover
+S: A popover rendered from inside a dir="rtl" container did not inherit that direction and came out LTR, while the select and combobox triggering it were RTL. Direction is taken from the locale provider, not the DOM, and the report was closed as not planned.
+L: Portaled content takes dir from the trigger's resolved direction; DOM-level dir on an ancestor is honoured without a provider.
+| needs-review
+
+#10112 | value-direction | Slider
+S: Media sliders such as an audio progress bar stay left-to-right in RTL interfaces; to get that, a team wraps the slider in a provider with a fake English locale. Open.
+L: The slider has a direction prop; a media-timeline preset fixes it to LTR, without touching locale.
+
+#10875 | numerals | NumberField
+S: Entering only a period in a percentage field and blurring could switch the displayed digits and the percent sign to Arabic although the locale had not changed — the same class of defect as the comma case fixed earlier, left over for another character.
+L: Fix classes, not instances: the parser's numbering-system inference is removed for punctuation-only input, with a fixture for every separator character.
+
+#10936 | numerals | NumberParser
+S: For locales that use Arabic-Indic digits together with Latin-style or Arabic comma separators (Sindhi is one), parsing the formatter's own output returns wrong numbers: grouping and decimal separators are confused. Open.
+L: Parsing must round-trip formatting for every locale/numbering-system pair in CLDR — a generated property test: parse(format(x)) = x.
+
+#10954 | direction-api | I18nProvider
+S: An app that keeps a left-to-right layout while using an Arabic locale for strings, dates and numbers cannot express that: everything that reads the locale's direction (arrow-key swaps, start/end placement) turns RTL. A second request for a direction override was opened in 2026.
+L: As above — direction is an explicit dimension of the locale context, never inferred irrevocably from the language tag.

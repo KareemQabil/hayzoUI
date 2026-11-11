@@ -1,0 +1,31 @@
+// date-fns — notes written after reading each issue. Format: see build.mjs. Only issues about Arabic/Hijri formatting.
+
+#977 | calendar | calendar systems
+S: A request for the Jalali calendar, open since 2018 with a help-wanted label; the library is Gregorian-only and other calendars live in forks.
+L: Calendar systems are a dimension of our date core, not a fork per calendar: Gregorian, Umm al-Qura, tabular Islamic and Persian share one API.
+| needs-review
+
+#1740 | calendar | calendar systems
+S: A request for a Hijri calendar, noting that the older moment ecosystem had one; it was closed after twenty months as a support question, without the feature.
+L: Hijri (Umm al-Qura) dates are in the core with authoritative month-length data.
+
+#1927 | bidi | parse
+S: Arabic localised date strings copied from a real web page could not be parsed; the strings contain an invisible directional override character, which the reporter could not even paste into the issue. Open for more than six years.
+L: Parsers strip or ignore bidi control characters (U+200E/F, U+202A–E, U+2066–9, U+061C) and accept both the Arabic comma and Arabic-Indic digits; fixture strings include each control character.
+
+#2203 | numerals | format
+S: Month and weekday names were localised for Arabic, but day and year numbers were always Latin digits, with no option for locale numerals. Open for more than five years.
+L: The numbering system is an explicit formatting option with a locale default (arab for ar-SA/ar-EG contexts where chosen, latn for ar-AE/Maghreb), applied to every numeric field.
+
+#2262 | locale-strings | locales
+S: A generic Arabic locale was referenced but commented out, so only Algerian, Moroccan and Saudi variants existed, and users asked for Modern Standard Arabic. It took nine months.
+L: A base ar locale always exists; regional variants extend it.
+
+#2700 | numerals | format
+S: A second request to let locales output numerals other than Latin digits, open for five years with no decision.
+L: As above; digit substitution is done in the formatter, never by post-processing the output string.
+
+#3380 | locale-strings | locales
+S: The time format patterns of the Arabic locale differ from the CLDR patterns for Arabic. Open for more than three years with no response.
+L: Format patterns are generated from CLDR for each locale and never hand-maintained; a test compares our output with Intl for a fixed set of dates.
+| needs-review

@@ -1,0 +1,15 @@
+// TanStack Table — notes written after reading each issue. Format: see build.mjs.
+
+#530 | direction-api | Table
+S: In 2017 the table had no RTL support; the request listed what it would need — reversed column order, reversed cell content direction, swapped previous/next pagination buttons. It took eight months to close.
+L: The table model exposes direction, and column order, pinning sides, resize and pagination all read it.
+
+#4331 | input | column resizing
+S: In RTL, column resizing worked backwards: dragging a handle toward the left shrank the column it should have widened. The headless resize logic computed the delta from pointer movement without a direction input, and the report stayed open for nineteen months until a direction option was added.
+L: The resize engine takes direction and applies the sign itself, so adapters cannot forget it; fixture: drag inline-end handle outward widens the column in both directions.
+| needs-review
+
+#5986 | scroll | column pinning
+S: In an RTL document, the column pinning offsets provided by the library (distance from left for start-pinned, from right for end-pinned) did not produce correct sticky positions. It was open for fifteen months.
+L: The table model returns pinning offsets in logical terms (inline-start/inline-end offsets) for the adapter to apply with logical insets.
+| needs-review

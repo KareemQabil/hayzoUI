@@ -1,0 +1,469 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "shadcn-ui",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of shadcn-ui/ui",
+        "url": "https://github.com/shadcn-ui/ui/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "shadcn-ui",
+      "name": "shadcn/ui",
+      "repository": "https://github.com/shadcn-ui/ui"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/530",
+        "number": 530,
+        "title": "Support for RTL",
+        "category": "direction-api",
+        "components": [
+          "all components"
+        ],
+        "summary": "The copy-paste components did not support RTL layouts: their utility classes used physical left/right spacing and positioning, so under dir=\"rtl\" paddings, icons and close buttons stayed on the LTR side. It gathered thirty reactions, stayed open for over a year and was closed carrying the stale label.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-06-03",
+        "closedAt": "2024-06-29",
+        "daysOpen": 393,
+        "comments": 15,
+        "reactions": 30,
+        "labels": [
+          "Stale"
+        ],
+        "lesson": "Distributed source uses logical utilities only (ms/me/ps/pe/start/end); a registry check rejects a component containing a physical horizontal class.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/1434",
+        "number": 1434,
+        "title": "Scroll area is not compatible with \"rtl\" dirrections",
+        "category": "direction-api",
+        "components": [
+          "ScrollArea"
+        ],
+        "summary": "The scroll area placed its scrollbar as for LTR unless a direction was passed explicitly, ignoring the parent's direction, because the underlying primitive defaults to ltr.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-09-03",
+        "closedAt": "2024-02-18",
+        "daysOpen": 168,
+        "comments": 1,
+        "reactions": 1,
+        "lesson": "Wrappers do not inherit an LTR default from a dependency: direction falls back to the DOM, and the scroll area fixture checks the scrollbar is at inline-end with only dir=\"rtl\" on an ancestor.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/1919",
+        "number": 1919,
+        "title": "Using `-start` and `-end` properties for better RTL support",
+        "category": "style-engine",
+        "components": [
+          "all components"
+        ],
+        "summary": "A contributor pointed out that border, margin and padding classes throughout the components were physical and proposed switching to the start/end variants to remove per-project rework for Arabic users.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-11-09",
+        "closedAt": "2023-12-22",
+        "daysOpen": 42,
+        "comments": 6,
+        "reactions": 0,
+        "lesson": "Logical utilities are the only spelling in recipes; physical ones are reserved for values that are physical by nature (pointer coordinates, measured overlay positions).",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/4426",
+        "number": 4426,
+        "title": "[feat]:  How to use shadcn date picker for jalali calendar",
+        "category": "calendar",
+        "components": [
+          "Calendar"
+        ],
+        "summary": "To get a Jalali date picker users had to replace the bundled calendar code themselves, because the pinned version of the underlying day-picker library had no support for non-Gregorian calendars.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-07-26",
+        "closedAt": "2024-08-30",
+        "daysOpen": 35,
+        "comments": 3,
+        "reactions": 1,
+        "labels": [
+          "Stale",
+          "area: request"
+        ],
+        "lesson": "Non-Gregorian calendars are a parameter of the calendar-grid engine, not a different component or a fork of the Gregorian one.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/5776",
+        "number": 5776,
+        "title": "[bug]: RTL Direction  is not supported",
+        "category": "direction-api",
+        "components": [
+          "all components"
+        ],
+        "summary": "Both foundations of the kit — the primitives and the utility CSS framework — support RTL, yet most components did not, so every new project started by patching them. It took sixteen months to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-11-08",
+        "closedAt": "2026-03-04",
+        "daysOpen": 480,
+        "comments": 9,
+        "reactions": 7,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "RTL support of the parts does not add up to RTL support of the whole; each composed component is tested in RTL itself.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/6493",
+        "number": 6493,
+        "title": "[feat]: Use Logical Properties Instead of Left/Right for Better RTL Support",
+        "category": "style-engine",
+        "components": [
+          "all components"
+        ],
+        "summary": "A request to replace physical margin and padding with logical properties across the components gathered support for a year and was then closed as not planned; a later release addressed RTL through a code transform at install time instead.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-01-29",
+        "closedAt": "2026-02-06",
+        "daysOpen": 373,
+        "comments": 2,
+        "reactions": 9,
+        "labels": [
+          "area: request",
+          "stale?"
+        ],
+        "lesson": "Logical properties are in the source of truth; no transform step is needed and none can drift.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/7280",
+        "number": 7280,
+        "title": "[bug]: Side bar rightside on rtl layout margin",
+        "category": "layout",
+        "components": [
+          "Sidebar"
+        ],
+        "summary": "With dir=\"rtl\" the inset variant of the sidebar applied its margin on the wrong side, as if LTR. Closed as not planned after sixteen months, having gone stale.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-04-26",
+        "closedAt": "2026-08-29",
+        "daysOpen": 491,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "stale?"
+        ],
+        "lesson": "Composite layouts (sidebar, inset, rail) use logical margins and logical side props; the app-shell pattern has an RTL screenshot fixture.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/7699",
+        "number": 7699,
+        "title": "[bug]: Text in Persian / Hijri / Jalali Calendar cells isn't centered",
+        "category": "typography",
+        "components": [
+          "Calendar"
+        ],
+        "summary": "In the Persian calendar example the day numbers do not look vertically centred in their cells, because Persian digits sit differently relative to the line box than Latin digits. Closed as not planned after going stale.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-06-27",
+        "closedAt": "2026-09-04",
+        "daysOpen": 435,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "stale?"
+        ],
+        "lesson": "Centring of numerals in fixed cells is verified per digit system and per font; day cells use measured font metrics (or text-box trimming) and the calendar has screenshots with arab, arabext and latn digits.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/7978",
+        "number": 7978,
+        "title": "[feat]: Dynamic Close Button Placement Based on Text Direction (dir)",
+        "category": "layout",
+        "components": [
+          "Sheet",
+          "Dialog"
+        ],
+        "summary": "The close button of the sheet and dialog is placed at a fixed physical corner regardless of text direction, so in RTL it sits where the title starts. The request for direction-aware placement was closed as not planned after going stale.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-08-07",
+        "closedAt": "2026-09-07",
+        "daysOpen": 396,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "area: request",
+          "stale?"
+        ],
+        "lesson": "Dismiss buttons are positioned at inline-end/block-start with logical insets.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/8198",
+        "number": 8198,
+        "title": "[bug]: the directions of the switch",
+        "category": "value-direction",
+        "components": [
+          "Switch"
+        ],
+        "summary": "When the app language changed between Arabic and English the switch thumb only ever travelled in one physical direction, so in one of the two languages the on position was on the wrong side.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-09-11",
+        "closedAt": "2026-10-04",
+        "daysOpen": 388,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "stale?"
+        ],
+        "lesson": "Switch thumb travel is expressed with logical alignment (or a direction-signed translate); fixture: thumb is at inline-end when checked, in both directions and after a live direction change.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/8305",
+        "number": 8305,
+        "title": "[bug]: Month Dropdown Shows Gregorian Months in Persian / Jalali Calendar",
+        "category": "calendar",
+        "components": [
+          "Calendar"
+        ],
+        "summary": "In the Persian calendar example the month dropdown listed Gregorian month names, because the wrapper's default month formatter always formats with the Gregorian calendar.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-09-28",
+        "closedAt": "2026-10-06",
+        "daysOpen": 374,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "stale?"
+        ],
+        "lesson": "Every formatter inside a calendar component receives the calendar system; a test renders each caption layout in each calendar and checks month names against locale data.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/8454",
+        "number": 8454,
+        "title": "[bug]: Dialog and AlertDialog components don't respect dir attribute for RTL layouts",
+        "category": "portal-direction",
+        "components": [
+          "Dialog",
+          "AlertDialog"
+        ],
+        "summary": "A dialog given dir=\"rtl\" kept left-aligned text and LTR header and footer order, because its styles use physical alignment classes. Open for over a year.",
+        "state": "open",
+        "createdAt": "2025-10-14",
+        "daysOpen": 392,
+        "comments": 1,
+        "reactions": 1,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "A dir attribute on any overlay root fully mirrors its content; overlay recipes contain no physical alignment.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/9233",
+        "number": 9233,
+        "title": "[bug]: Dropdown Menu causes scrollbar flash and layout shift in RTL (Base UI)",
+        "category": "scroll",
+        "components": [
+          "DropdownMenu"
+        ],
+        "summary": "On an RTL document, opening a dropdown menu briefly shows scrollbars and shifts the layout, with different symptoms for modal and non-modal menus.",
+        "state": "open",
+        "createdAt": "2025-12-30",
+        "daysOpen": 315,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "Positioned overlays start hidden at a neutral in-viewport position until measured, so that an unpositioned popup can never extend the scrollable area on the inline-start side in RTL.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/9515",
+        "number": 9515,
+        "title": "[bug]: RTL docs: Login form “Password reset” link isn’t flipped",
+        "category": "layout",
+        "components": [
+          "Form"
+        ],
+        "summary": "In the RTL documentation itself a \"forgot password\" link stayed on the LTR side because it was pushed with a physical auto margin.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-02-01",
+        "closedAt": "2026-02-04",
+        "daysOpen": 3,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/shadcn-ui/ui/pull/9541",
+            "title": "fix(rtl): use logical margin for password link alignment",
+            "mergedAt": "2026-02-04"
+          }
+        ],
+        "lesson": "Auto margins used for pushing are margin-inline-start/end: auto; the lint for physical classes also runs on examples and docs.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/9519",
+        "number": 9519,
+        "title": "[bug]: Drawer RTL: Animation starts from wrong side when direction=right",
+        "category": "animation",
+        "components": [
+          "Drawer"
+        ],
+        "summary": "In RTL a drawer set to open from the right or left is placed on the correct side but its animation starts from the opposite side.",
+        "state": "open",
+        "createdAt": "2026-02-02",
+        "daysOpen": 282,
+        "comments": 1,
+        "reactions": 1,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "Position and motion of a sliding surface derive from one resolved physical side.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/9734",
+        "number": 9734,
+        "title": "[bug]: shadcn migrate rtl is not idempotent — re-running duplicates RTL classes",
+        "category": "style-engine",
+        "components": [
+          "CLI"
+        ],
+        "summary": "The command that migrates installed components to RTL-safe classes is not idempotent: running it twice duplicates the RTL classes in class strings.",
+        "state": "open",
+        "createdAt": "2026-02-25",
+        "daysOpen": 258,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "Converting physical classes to logical ones after the fact is an error-prone codemod; where we offer one for migration from other kits it must be idempotent and tested by running twice.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/10274",
+        "number": 10274,
+        "title": "Switch thumb moves in the wrong direction in RTL layouts",
+        "category": "value-direction",
+        "components": [
+          "Switch"
+        ],
+        "summary": "The switch thumb is moved with a positive translate-x when checked, which also moves it to the right in RTL, i.e. the wrong way.",
+        "state": "open",
+        "createdAt": "2026-04-02",
+        "daysOpen": 222,
+        "comments": 1,
+        "reactions": 1,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "No recipe encodes horizontal travel as an unsigned physical translate; fixture as for the switch above.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/10493",
+        "number": 10493,
+        "title": "[bug] transform-rtl emits unescaped inner double quotes, corrupting className strings",
+        "category": "style-engine",
+        "components": [
+          "CLI"
+        ],
+        "summary": "With the RTL option enabled, the install-time transformer re-emitted string literals incorrectly and corrupted any class string containing a double quote, producing invalid source that failed to compile.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-04-25",
+        "closedAt": "2026-05-27",
+        "daysOpen": 32,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/shadcn-ui/ui/pull/10495",
+            "title": "fix(transform-rtl): preserve quotes in transformed className literals",
+            "mergedAt": "2026-05-27"
+          }
+        ],
+        "lesson": "Source shipped to users is correct as authored; no install-time rewriting stands between the registry and the user's project.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/11201",
+        "number": 11201,
+        "title": "[bug]:  InputOTP component slots and digits are reversed in Right-to-Left (RTL) layouts",
+        "category": "bidi",
+        "components": [
+          "InputOTP"
+        ],
+        "summary": "In RTL the one-time-code slots and the typed digits flow right to left, although numeric codes are read left to right in every locale.",
+        "state": "open",
+        "createdAt": "2026-07-16",
+        "daysOpen": 117,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "Digit-sequence inputs (OTP, PIN, card number, IBAN, phone) force an LTR slot order and LTR typing direction regardless of document direction; fixture: first typed digit lands in the leftmost slot under dir=\"rtl\".",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/shadcn-ui/ui/issues/12475",
+        "number": 12475,
+        "title": "[bug]: RTL transform leaves `rounded-l`, `rounded-r` and other corner classes without a value as physical classes",
+        "category": "style-engine",
+        "components": [
+          "CLI"
+        ],
+        "summary": "The RTL transform maps most physical classes to logical ones but leaves value-less corner and border shorthands (rounded-l, rounded-r) physical, so some corners stay unmirrored.",
+        "state": "open",
+        "createdAt": "2026-10-25",
+        "daysOpen": 17,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "A class-rewriting approach needs a complete map and will miss cases; authoring with logical radii (start-start, end-end) removes the category.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

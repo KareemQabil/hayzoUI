@@ -1,0 +1,35 @@
+// Day.js — notes written after reading each issue. Format: see build.mjs. Only issues about Arabic/Hijri formatting.
+
+#416 | numerals | format
+S: A team needed to switch between Extended Arabic-Indic digits and Latin digits when formatting dates and found no option for it; the request was closed two years later.
+L: Numbering system is a per-call formatting option, independent of the locale's strings.
+
+#1706 | numerals | locale ar
+S: With the Arabic locale the library printed Latin digits where the library it replaces printed Arabic-Indic digits, so migrating changed what users saw.
+L: The default numbering system for each Arabic region is taken from CLDR and documented; changing it is one explicit option, and migration guides list the difference.
+
+#1941 | locale-strings | locale ar
+S: In the Arabic locales the AM and PM markers were swapped: the function returned the morning letter for afternoon hours. The source looked right in an editor because the two Arabic letters and the neutral punctuation around them are displayed in bidi-reordered order.
+L: Arabic strings never sit inline in source code next to operators; they live in data files, one value per key, and tests assert day-period output for hours 0, 11, 12 and 23.
+
+#2711 | locale-strings | locale ar
+S: In the Arabic locale 12:00 noon is formatted with the morning marker, so noon and midnight cannot be told apart. Open for more than two years.
+L: Day-period selection uses hour < 12, taken from one shared function, and has boundary fixtures at 00:00 and 12:00.
+
+#2951 | locale-strings | locale ar-sa
+S: The same noon defect reported again for the Saudi locale: 12 PM returns the AM marker while other afternoon hours are correct. Open for a year.
+L: Locale variants inherit day-period logic from the base locale so that a fix reaches all of them.
+
+#2977 | bidi | locale ar
+S: The Arabic locale's short date format embeds right-to-left marks between the numeric fields, which reorders the date when it is displayed and corrupts it when it is copied, stored or parsed. Open for a year.
+L: Formatted output contains no bidi control characters by default; where isolation is needed it is applied by the rendering component with markup. An opt-in exists for plain-text contexts.
+| needs-review
+
+#3234 | numerals | plugins
+S: With a numeral-translating plugin installed, the today/tomorrow/yesterday predicates compare formatted strings, one in the instance's digits and one in the global locale's digits, so they return false for the same day.
+L: Date logic never compares formatted strings; comparisons use numeric fields, and display digits are applied at the last step only.
+
+#2840 | calendar | calendar plugin
+S: With the Asia/Tehran time zone the last month of year 1403 in the reporter's calendar has 29 days instead of 30, which shifts every following day by one. It is the same leap year that produced a wrong month length in a component library's date picker. Open for more than a year and a half.
+L: Leap-year rules of each calendar are implemented in the core and tested against reference data for known hard years (Persian 1403; Umm al-Qura month lengths), independent of time zone.
+| needs-review

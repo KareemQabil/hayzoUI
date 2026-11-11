@@ -1,0 +1,262 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "base-ui",
+  "provenance": {
+    "method": "researched",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "GitHub issues of mui/base-ui",
+        "url": "https://github.com/mui/base-ui/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "base-ui",
+      "name": "Base UI",
+      "repository": "https://github.com/mui/base-ui"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/mui/base-ui/issues/59",
+        "number": 59,
+        "title": "[tabs] Missing reference for RTL keyboard navigation direction",
+        "category": "keyboard",
+        "components": [
+          "Tabs"
+        ],
+        "summary": "The tabs' direction prop was documented as affecting only text direction although it also reverses keyboard navigation, and the accessibility section did not mention RTL at all. It took almost a year to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-12-25",
+        "closedAt": "2024-12-06",
+        "daysOpen": 347,
+        "comments": 6,
+        "reactions": 0,
+        "labels": [
+          "component: tabs",
+          "docs"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/base-ui/pull/931",
+            "title": "[internal] Add DirectionProvider",
+            "mergedAt": "2024-12-06"
+          }
+        ],
+        "lesson": "The keyboard contract of each pattern documents its RTL variant, generated from the same pattern data that generates the tests.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/base-ui/issues/831",
+        "number": 831,
+        "title": "[internal] Use a `DirectionProvider` to configure text direction (RTL/LTR)",
+        "category": "direction-api",
+        "components": [
+          "DirectionProvider"
+        ],
+        "summary": "The team settled the RTL setup as two separate steps the developer must keep in sync: a provider that configures component behaviour and a dir attribute in the HTML that drives styling.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-11-19",
+        "closedAt": "2024-12-06",
+        "daysOpen": 17,
+        "comments": 12,
+        "reactions": 1,
+        "labels": [
+          "internal"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/base-ui/pull/931",
+            "title": "[internal] Add DirectionProvider",
+            "mergedAt": "2024-12-06"
+          }
+        ],
+        "lesson": "Behaviour and style direction come from one declaration: our provider renders (or is given) the element carrying dir, and with no provider the engines read the DOM.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/base-ui/issues/951",
+        "number": 951,
+        "title": "[menu] Support logical `side` prop",
+        "category": "overlay-position",
+        "components": [
+          "Menu"
+        ],
+        "summary": "Alignment of a positioned menu was direction-aware but its side was physical only, so an RTL submenu needed a manual side={isRtl ? 'left' : 'right'}; logical sides were added once a direction provider existed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-12-04",
+        "closedAt": "2024-12-10",
+        "daysOpen": 6,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "component: menu"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/base-ui/pull/950",
+            "title": "[Positioner] Support logical values for `side` prop",
+            "mergedAt": "2024-12-10"
+          }
+        ],
+        "lesson": "Sides and alignments are both available in logical form (inline-start/inline-end) from the first version of the positioner, and logical is the default for submenus.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/base-ui/issues/1189",
+        "number": 1189,
+        "title": "[scroll area] Does not read `DirectionProvider` for `rtl`",
+        "category": "direction-api",
+        "components": [
+          "ScrollArea"
+        ],
+        "summary": "After the provider was introduced, the scroll area still determined direction with a computed-style check on mount and ignored the provider.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-12-20",
+        "closedAt": "2025-01-02",
+        "daysOpen": 13,
+        "comments": 0,
+        "reactions": 1,
+        "labels": [
+          "component: scroll area",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/base-ui/pull/1194",
+            "title": "[ScrollArea] Read `DirectionProvider` and use logical positioning CSS props",
+            "mergedAt": "2025-01-02"
+          }
+        ],
+        "lesson": "A single hook supplies direction to every component; a test enumerates all components and asserts each responds to the provider.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/base-ui/issues/3041",
+        "number": 3041,
+        "title": "Should `DirectionProvider` set `dir` attribute on portalled elements (e.g. `Tooltip.Popup`)?",
+        "category": "portal-direction",
+        "components": [
+          "Tooltip",
+          "Popover"
+        ],
+        "summary": "A developer who wrapped part of an app in the RTL provider expected portalled popups of that part to be RTL, but the provider does not set dir on anything, so content portalled to the body follows the document.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-10-22",
+        "closedAt": "2025-11-04",
+        "daysOpen": 12,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "i18n"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/base-ui/pull/3082",
+            "title": "[direction provider] Provide `useDirection` hook",
+            "mergedAt": "2025-11-04"
+          }
+        ],
+        "lesson": "Portalled popups get dir from the provider of their trigger, covering the case of an RTL region in an LTR document.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/base-ui/issues/4718",
+        "number": 4718,
+        "title": "[number field] Persian digit keyboard input is silently blocked",
+        "category": "numerals",
+        "components": [
+          "NumberField"
+        ],
+        "summary": "Typing digits with a Persian keyboard layout into the number field did nothing: the key filter rejected Extended Arabic-Indic digits before parsing, although Arabic-Indic and full-width digits were accepted.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-05-01",
+        "closedAt": "2026-05-01",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "component: number field",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/base-ui/pull/4719",
+            "title": "[number field] Allow Persian digits in keyboard input",
+            "mergedAt": "2026-05-01"
+          }
+        ],
+        "lesson": "Input filtering and parsing share one digit table generated from Unicode data; fixture: typing ۱۲۳ (arabext), ١٢٣ (arab) and 123 all produce 123.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/base-ui/issues/5635",
+        "number": 5635,
+        "title": "[visuallyHidden] Physical `left: 0` makes the hidden input overflow the document in RTL",
+        "category": "scroll",
+        "components": [
+          "Checkbox",
+          "Radio",
+          "Switch"
+        ],
+        "summary": "The visually-hidden form input is positioned with a physical left: 0; under dir=\"rtl\" that pixel lies beyond the inline-start edge of the scroll origin and counts as scrollable overflow, so the page gains a one-pixel horizontal scrollbar. In LTR the same pixel falls on the non-scrollable side, which is why it went unnoticed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-09-04",
+        "closedAt": "2026-09-16",
+        "daysOpen": 12,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "scope: all components",
+          "type: bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/mui/base-ui/pull/5661",
+            "title": "[utils] Prevent visuallyHidden from overflowing in RTL",
+            "mergedAt": "2026-09-16"
+          }
+        ],
+        "lesson": "Visually hidden elements are anchored with inset-inline-start: 0 inside a positioned ancestor; the overflow fixture asserts no document scrollbar in RTL with every hidden-input component mounted.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/mui/base-ui/issues/5717",
+        "number": 5717,
+        "title": "[FocusGuard] visuallyHidden margin: -1px creates document scrollbars under dir=\"rtl\"",
+        "category": "scroll",
+        "components": [
+          "FocusGuard"
+        ],
+        "summary": "Focus guards use a visually-hidden style with a -1px margin and fixed positioning at the physical top-left; under dir=\"rtl\" the negative margin pushes them into scrollable overflow and document scrollbars appear while a popup is open.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-09-14",
+        "closedAt": "2026-09-16",
+        "daysOpen": 3,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "scope: all components",
+          "type: bug"
+        ],
+        "lesson": "The visually-hidden style is one shared, RTL-tested utility with no negative margins and no physical offsets.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

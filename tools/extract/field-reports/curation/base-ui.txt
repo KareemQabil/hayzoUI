@@ -1,0 +1,33 @@
+// Base UI — notes written after reading each issue. Format: see build.mjs.
+
+#59 | keyboard | Tabs
+S: The tabs' direction prop was documented as affecting only text direction although it also reverses keyboard navigation, and the accessibility section did not mention RTL at all. It took almost a year to close.
+L: The keyboard contract of each pattern documents its RTL variant, generated from the same pattern data that generates the tests.
+
+#831 | direction-api | DirectionProvider
+S: The team settled the RTL setup as two separate steps the developer must keep in sync: a provider that configures component behaviour and a dir attribute in the HTML that drives styling.
+L: Behaviour and style direction come from one declaration: our provider renders (or is given) the element carrying dir, and with no provider the engines read the DOM.
+
+#1189 | direction-api | ScrollArea
+S: After the provider was introduced, the scroll area still determined direction with a computed-style check on mount and ignored the provider.
+L: A single hook supplies direction to every component; a test enumerates all components and asserts each responds to the provider.
+
+#3041 | portal-direction | Tooltip, Popover
+S: A developer who wrapped part of an app in the RTL provider expected portalled popups of that part to be RTL, but the provider does not set dir on anything, so content portalled to the body follows the document.
+L: Portalled popups get dir from the provider of their trigger, covering the case of an RTL region in an LTR document.
+
+#4718 | numerals | NumberField
+S: Typing digits with a Persian keyboard layout into the number field did nothing: the key filter rejected Extended Arabic-Indic digits before parsing, although Arabic-Indic and full-width digits were accepted.
+L: Input filtering and parsing share one digit table generated from Unicode data; fixture: typing ۱۲۳ (arabext), ١٢٣ (arab) and 123 all produce 123.
+
+#5635 | scroll | Checkbox, Radio, Switch
+S: The visually-hidden form input is positioned with a physical left: 0; under dir="rtl" that pixel lies beyond the inline-start edge of the scroll origin and counts as scrollable overflow, so the page gains a one-pixel horizontal scrollbar. In LTR the same pixel falls on the non-scrollable side, which is why it went unnoticed.
+L: Visually hidden elements are anchored with inset-inline-start: 0 inside a positioned ancestor; the overflow fixture asserts no document scrollbar in RTL with every hidden-input component mounted.
+
+#5717 | scroll | FocusGuard
+S: Focus guards use a visually-hidden style with a -1px margin and fixed positioning at the physical top-left; under dir="rtl" the negative margin pushes them into scrollable overflow and document scrollbars appear while a popup is open.
+L: The visually-hidden style is one shared, RTL-tested utility with no negative margins and no physical offsets.
+
+#951 | overlay-position | Menu
+S: Alignment of a positioned menu was direction-aware but its side was physical only, so an RTL submenu needed a manual side={isRtl ? 'left' : 'right'}; logical sides were added once a direction provider existed.
+L: Sides and alignments are both available in logical form (inline-start/inline-end) from the first version of the positioner, and logical is the default for submenus.

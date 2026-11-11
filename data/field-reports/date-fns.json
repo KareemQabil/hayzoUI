@@ -1,0 +1,165 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "date-fns",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of date-fns/date-fns",
+        "url": "https://github.com/date-fns/date-fns/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "date-fns",
+      "name": "date-fns",
+      "repository": "https://github.com/date-fns/date-fns"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/date-fns/date-fns/issues/977",
+        "number": 977,
+        "title": "Jalali Calendar",
+        "category": "calendar",
+        "components": [
+          "calendar systems"
+        ],
+        "summary": "A request for the Jalali calendar, open since 2018 with a help-wanted label; the library is Gregorian-only and other calendars live in forks.",
+        "state": "open",
+        "createdAt": "2018-11-07",
+        "daysOpen": 2926,
+        "comments": 13,
+        "reactions": 8,
+        "labels": [
+          "✋ Help wanted",
+          "🎉 Feature"
+        ],
+        "lesson": "Calendar systems are a dimension of our date core, not a fork per calendar: Gregorian, Umm al-Qura, tabular Islamic and Persian share one API.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns/issues/1740",
+        "number": 1740,
+        "title": "Hijri calendar",
+        "category": "calendar",
+        "components": [
+          "calendar systems"
+        ],
+        "summary": "A request for a Hijri calendar, noting that the older moment ecosystem had one; it was closed after twenty months as a support question, without the feature.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-04-24",
+        "closedAt": "2022-01-08",
+        "daysOpen": 624,
+        "comments": 9,
+        "reactions": 0,
+        "labels": [
+          "🙇‍♂️ Support"
+        ],
+        "lesson": "Hijri (Umm al-Qura) dates are in the core with authoritative month-length data.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns/issues/1927",
+        "number": 1927,
+        "title": "Can't parse arabic localized dates",
+        "category": "bidi",
+        "components": [
+          "parse"
+        ],
+        "summary": "Arabic localised date strings copied from a real web page could not be parsed; the strings contain an invisible directional override character, which the reporter could not even paste into the issue. Open for more than six years.",
+        "state": "open",
+        "createdAt": "2020-08-29",
+        "daysOpen": 2264,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "Parsers strip or ignore bidi control characters (U+200E/F, U+202A–E, U+2066–9, U+061C) and accept both the Arabic comma and Arabic-Indic digits; fixture strings include each control character.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns/issues/2203",
+        "number": 2203,
+        "title": "Change dates to local numerals",
+        "category": "numerals",
+        "components": [
+          "format"
+        ],
+        "summary": "Month and weekday names were localised for Arabic, but day and year numbers were always Latin digits, with no option for locale numerals. Open for more than five years.",
+        "state": "open",
+        "createdAt": "2021-02-16",
+        "daysOpen": 2093,
+        "comments": 3,
+        "reactions": 2,
+        "labels": [
+          "🙏 Feature request"
+        ],
+        "lesson": "The numbering system is an explicit formatting option with a locale default (arab for ar-SA/ar-EG contexts where chosen, latn for ar-AE/Maghreb), applied to every numeric field.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns/issues/2262",
+        "number": 2262,
+        "title": "`ar` locale is missing",
+        "category": "locale-strings",
+        "components": [
+          "locales"
+        ],
+        "summary": "A generic Arabic locale was referenced but commented out, so only Algerian, Moroccan and Saudi variants existed, and users asked for Modern Standard Arabic. It took nine months.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-02-28",
+        "closedAt": "2021-11-18",
+        "daysOpen": 263,
+        "comments": 5,
+        "reactions": 6,
+        "labels": [
+          "🌏 I18n"
+        ],
+        "lesson": "A base ar locale always exists; regional variants extend it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns/issues/2700",
+        "number": 2700,
+        "title": "Allow diff digits numerals based on locale",
+        "category": "numerals",
+        "components": [
+          "format"
+        ],
+        "summary": "A second request to let locales output numerals other than Latin digits, open for five years with no decision.",
+        "state": "open",
+        "createdAt": "2021-10-17",
+        "daysOpen": 1851,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "As above; digit substitution is done in the formatter, never by post-processing the output string.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns/issues/3380",
+        "number": 3380,
+        "title": "Arabic time format is incorrect",
+        "category": "locale-strings",
+        "components": [
+          "locales"
+        ],
+        "summary": "The time format patterns of the Arabic locale differ from the CLDR patterns for Arabic. Open for more than three years with no response.",
+        "state": "open",
+        "createdAt": "2023-03-24",
+        "daysOpen": 1327,
+        "comments": 0,
+        "reactions": 0,
+        "lesson": "Format patterns are generated from CLDR for each locale and never hand-maintained; a test compares our output with Intl for a fixed set of dates.",
+        "confidence": "needs-review"
+      }
+    ]
+  }
+}

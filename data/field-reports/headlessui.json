@@ -1,0 +1,67 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "headlessui",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of tailwindlabs/headlessui",
+        "url": "https://github.com/tailwindlabs/headlessui/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "headlessui",
+      "name": "Headless UI",
+      "repository": "https://github.com/tailwindlabs/headlessui"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/tailwindlabs/headlessui/issues/1756",
+        "number": 1756,
+        "title": "Headless UI Switch Going Out of Flow on RTL",
+        "category": "value-direction",
+        "components": [
+          "Switch"
+        ],
+        "summary": "Under dir=\"rtl\" the switch's thumb moved out of its track, because the documented styling translates the thumb by a positive physical amount when checked.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-08-10",
+        "closedAt": "2022-08-11",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "Example and recipe code for a switch never uses an unsigned physical translate.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/tailwindlabs/headlessui/issues/3020",
+        "number": 3020,
+        "title": "Add RTL support to Tabs",
+        "category": "keyboard",
+        "components": [
+          "Tabs"
+        ],
+        "summary": "Keyboard navigation between tabs did not follow RTL: arrow keys moved in LTR order on an RTL page.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-03-01",
+        "closedAt": "2024-03-19",
+        "daysOpen": 18,
+        "comments": 2,
+        "reactions": 0,
+        "lesson": "Roving focus reads direction; test: in RTL ArrowLeft moves to the next tab.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

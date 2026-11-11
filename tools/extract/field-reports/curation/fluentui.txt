@@ -1,0 +1,99 @@
+// Fluent UI — notes written after reading each issue. Format: see build.mjs.
+
+#2285 | mirroring | Icon
+S: The design guidance said directional icons should mirror in RTL, but the icon font classes did not, in a product as large as Outlook on the web. It took ten months to close.
+L: Mirroring is a property of each icon recorded in data and applied by the icon component.
+
+#3903 | style-engine | mergeStyles
+S: Styles were flipped according to a direction value captured by the styling library, so switching the html element's direction at runtime did not change already generated styles such as padding-left.
+L: Generated CSS is direction-agnostic (logical properties); nothing is baked at generation time, so a runtime switch needs no regeneration.
+| needs-review
+
+#5438 | keyboard | FocusZone
+S: In a bidirectional focus zone in RTL, arrow keys did not move focus correctly between items.
+L: Two-dimensional focus movement applies the RTL swap to the horizontal pair only; table-driven tests cover every orientation in both directions.
+| needs-review
+
+#7966 | direction-api | utilities
+S: The library's RTL logic assumed the direction was declared on the html element; applications that set dir on the body or on a region were not recognised.
+L: Direction is resolved from the nearest ancestor with a dir attribute (or the provider), never from document.documentElement alone.
+
+#9029 | overlay-position | Dropdown
+S: In an RTL context, when a dropdown's list did not fit, it was always shifted to the right side even when only the left had room.
+L: Collision handling evaluates both physical sides symmetrically; fixture: anchor near each viewport edge in RTL.
+
+#10900 | value-direction | ColorPicker
+S: The colour sliders and the colour rectangle made no RTL adjustments; maintainers judged gradient direction less meaningful to users than other directional UI and closed the request after more than two years as not on the roadmap.
+L: For each value-axis component the RTL behaviour is a recorded decision (mirror or keep), implemented consistently for pointer, keys and visuals.
+
+#11352 | mirroring | Icon
+S: Authors had to pick the left or right variant of an icon by hand after checking the direction; a request for automatic flipping stayed open for seventeen months and was closed without one.
+L: The icon API takes the logical icon (e.g. chevron-forward) and resolves the glyph.
+
+#13708 | layout | SplitButton
+S: In RTL the split button's divider and borders were on the wrong sides, and the report sat for almost a year before being soft-closed.
+L: Split and attached controls use logical borders and radii; screenshot fixture in RTL.
+
+#14352 | chart | charting
+S: The axes of the charting package ignored RTL.
+L: Charts decide axis mirroring explicitly (y-axis at inline-start, x increasing toward inline-end for categorical data, time axes by policy) and test it.
+
+#15795 | style-engine | Stack
+S: Horizontal gaps between stack items were wrong in RTL; an earlier report of the same defect had been closed without the cause being addressed. The stack emulated gaps with margins on one physical side.
+L: Stack uses the gap property; no margin emulation.
+| needs-review
+
+#17389 | input | DetailsList
+S: With dir="rtl", dragging a column header's resize handle changed the width in the opposite direction.
+L: Resize deltas are direction-signed in the shared resize engine.
+
+#19304 | input | TextField
+S: Typing a long Arabic string into an LTR text field did not keep the caret in view the way Latin text does: the field did not scroll with the text.
+L: Text inputs set dir="auto" (or the content's direction) where user content may be either direction, and the fixture types long RTL text into an LTR field and checks the caret stays visible.
+| needs-review
+
+#19754 | overlay-position | Menu
+S: With the provider set to RTL, the new menu component's nested submenus were positioned incorrectly.
+L: Submenu side derives from direction through the shared positioning engine.
+
+#19766 | layout | Dialog
+S: With RTL text direction the dialog's parts were misplaced, visible on the documentation site; the report was open for more than a year and soft-closed.
+L: Documentation examples are rendered in RTL in CI screenshots.
+| needs-review
+
+#20622 | overlay-position | Popover, Tooltip
+S: In RTL the arrow of popovers and tooltips disappeared for the logical "before" and "after" positions.
+L: Arrow placement is computed after logical positions are resolved to physical sides; fixture: arrow visible and pointing at the anchor for all placements × directions.
+
+#24984 | layout | Modal
+S: With RTL direction the modal's close button stayed on the right.
+L: Dismiss buttons sit at inline-end.
+
+#25624 | mirroring | Icon
+S: In the newer icon package, icons such as an expand-left panel icon had to be swapped by hand for their right-hand counterpart in RTL; a request for automatic mirroring was soft-closed after ten months.
+L: The mirroring rule supports both transforms (flip) and swaps to a named counterpart.
+
+#25680 | layout | AvatarGroup
+S: The pie variant of the avatar group, which clips and overlaps avatars into one circle, broke under dir="rtl".
+L: Clip paths and overlaps that are geometric use physical values and are checked in RTL so they are not flipped by accident.
+| needs-review
+
+#28452 | style-engine | Accordion
+S: Icon spacing in the web-component accordion differed between LTR and RTL because physical padding and margin properties were used. Open for more than three years.
+L: Lint rule: no physical inline properties in component styles.
+
+#28914 | value-direction | Slider
+S: The web-component slider does not flip in RTL whether dir is set on the slider or on a parent. Open for more than three years.
+L: Slider direction is resolved from the DOM and tested with dir on the element and on an ancestor.
+
+#28935 | keyboard | Tabs
+S: Keyboard navigation of the web-component tabs is not flipped in RTL. Open for more than three years.
+L: Roving-focus direction is covered by generated tests for every component using the engine.
+
+#30801 | animation | Drawer
+S: With the direction set to RTL the drawer animated from left to right. It took six months to fix.
+L: Drawer motion derives from the resolved physical side.
+
+#33592 | value-direction | Slider
+S: A second report that the web-component slider renders left to right under RTL, filed sixteen months after the first, which was still open.
+L: An open RTL defect in a core input is a release blocker, not backlog.

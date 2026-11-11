@@ -1,0 +1,18 @@
+// moment-hijri — notes written after reading each issue. Format: see build.mjs.
+
+#31 | direction-api | locale
+S: Merely importing the plugin switched the host library's global locale to Saudi Arabic, because it registers its month names by updating — and thereby activating — a locale. Reported in 2018 and closed as not planned in 2025.
+L: Calendar support has no import-time side effects and no global locale state; calendar and locale are arguments.
+
+#47 | locale-strings | format
+S: Formatting a Hijri date with numeric tokens produced Arabic text for a user who wanted Latin output, with no documented way to choose. Open for more than seven years.
+L: Calendar, language and numbering system are independent: a Hijri date can be formatted in English with Latin digits, or in Arabic with either digit set.
+
+#79 | calendar | conversion
+S: In 2022 the plugin returned Ramadan as the name of the current month when it was Shawwal, for that year only. Open since.
+L: Month boundaries come from the official Umm al-Qura table and are tested for every month of every covered year against a reference implementation (ICU islamic-umalqura).
+| needs-review
+
+#105 | calendar | conversion
+S: The embedded Umm al-Qura month-length table disagrees with the official Saudi calendar in 760 of 1,740 entries for 1356–1500 AH and contains an impossible 28-day month.
+L: Our Hijri table is extracted by script from an authoritative source with provenance, validated (every month 29 or 30 days, year lengths 354 or 355), and cross-checked against ICU.

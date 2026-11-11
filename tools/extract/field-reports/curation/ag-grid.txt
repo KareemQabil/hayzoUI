@@ -1,0 +1,53 @@
+// AG Grid — notes written after reading each issue. Format: see build.mjs.
+
+#610 | direction-api | Grid
+S: In 2015 the grid on a page with direction: rtl had misaligned headers and its scrollbar on the unexpected side; RTL support took a year to arrive.
+L: Header/body alignment and scrollbar side are part of the table fixtures in RTL from the first version of the table model.
+
+#2680 | scroll | Grid
+S: On Android Chrome, with RTL enabled, the column headers were not aligned with the body columns, on the vendor's own RTL demo.
+L: Header and body scroll sync uses the normalised scroll adapter and is tested on mobile engines.
+| needs-review
+
+#2897 | scroll | Grid
+S: After a major release, mouse-wheel scrolling of an RTL grid became very slow, on the vendor's own demo, and took seven weeks to fix.
+L: The RTL scroll path is exercised by performance checks as well as correctness tests; it is not a separate, slower code path.
+| needs-review
+
+#2914 | scroll | Grid
+S: With horizontal scrolling in RTL some columns' values were not rendered.
+L: Column virtualisation is property-tested for both directions (see the MUI X reports of the same defect).
+| needs-review
+
+#4045 | scroll | Grid
+S: A browser update (Chrome 85) broke horizontal scrolling of the grid in RTL overnight. The workaround shared in the thread takes the absolute value of scrollLeft when reading and negates it when writing, i.e. the grid had depended on a browser-specific sign convention for RTL scroll offsets.
+R: Patched by the vendor shortly afterwards and shipped in the next major version.
+L: Never branch on browser identity or assume a scrollLeft convention: detect the convention at runtime (or derive position from bounding rectangles) inside one scroll adapter that all components use.
+
+#4145 | input | cell editor
+S: Editing text in cells of an RTL grid had caret and text-entry problems on the vendor's RTL demo.
+L: Cell editors inherit the cell's direction and are covered by RTL typing tests (caret placement, selection with Shift+arrows).
+| needs-review
+
+#4448 | chart | integrated charts
+S: Charts created from an RTL grid did not render correctly for RTL.
+L: A chart embedded in an RTL surface is tested for legend, axis and tooltip placement.
+| needs-review
+
+#4711 | direction-api | Grid
+S: The grid's own RTL class names and styles interfered with the page's normal RTL behaviour when the document was already RTL.
+L: There is no parallel RTL class system; components follow the DOM direction through logical properties, so library RTL and page RTL cannot conflict.
+| needs-review
+
+#6677 | input | filter panel
+S: Horizontal resizing of the filter popup did not work in RTL.
+L: Every resizable surface shares one resize engine with direction input.
+
+#6779 | scroll | aligned grids
+S: With two aligned grids in RTL, horizontal scrolling of one did not move the other.
+L: Scroll synchronisation between containers exchanges normalised inline offsets, never raw scrollLeft values.
+| needs-review
+
+#10240 | scroll | pinned columns
+S: With RTL enabled and a pinned column, a group total row at the bottom rendered an empty sticky panel and the sticky row did not work, although the same row at the top did.
+L: Sticky rows and pinned columns compose; the fixture matrix crosses pinning × sticky rows × direction.

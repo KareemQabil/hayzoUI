@@ -1,0 +1,214 @@
+// MUI X — notes written after reading each issue. Format: see build.mjs.
+
+#230 | direction-api | DataGrid
+S: The data grid shipped without any right-to-left support: switching the docs to RTL broke the layout outright. The maintainers parked the request until it gathered votes, treating RTL as an infrequent requirement, and it became the most-reacted RTL issue in the tracker before it was closed two and a half years later.
+L: RTL is a launch requirement of every component, tested from the first release; no component may ship with direction support deferred to demand.
+
+#3435 | scroll | DataGrid
+S: Inside an RTL container the grid body scrolled horizontally but the column headers stayed put, so headers and cells no longer lined up. It was open for fourteen months, until RTL support for the grid as a whole landed.
+R: Closed by the pull request that added RTL support to the data grid.
+L: Header/body scroll synchronisation must use a normalised inline scroll position (distance from inline-start), never raw scrollLeft, and has an RTL test with overflowing columns.
+
+#4954 | input | DataGrid
+S: Dragging a column separator in RTL made the column run away to its maximum width instead of following the pointer.
+R: Fixed eleven days later by a pull request for column resizing in RTL.
+L: Pointer-driven resize must multiply the horizontal delta by the direction sign; column resize has an RTL pointer test in both drag directions.
+
+#4990 | keyboard | DataGrid
+S: In an RTL grid ArrowLeft moved focus to the cell on the right and ArrowRight to the cell on the left. Cell navigation mapped arrow keys to column index changes without consulting direction.
+L: Grid navigation maps ArrowLeft/ArrowRight to visual left/right: in RTL ArrowLeft goes to the next column index. The grid-navigation engine takes direction as an input and the generated keyboard tests run in both directions.
+
+#5063 | scroll | DataGrid
+S: With pinned columns in RTL, some columns were simply not visible. It stayed open for eight months, until RTL support for the grid landed.
+R: Closed by the pull request that added RTL support to the data grid.
+L: Pinned columns are defined as inline-start/inline-end; their offsets are computed in logical space and resolved to physical edges once, at the end.
+
+#5290 | calendar | DatePicker
+S: A user who needed a Hijri picker found that the only documented route was the moment-based adapter, a library its own authors recommend against for new projects; nothing explained how to use other calendar systems with the modern adapters.
+L: Calendar systems (Hijri Umm al-Qura, tabular Islamic, Persian, Hebrew) are first-class in the core date layer with no third-party date library required, and each is documented with a working example.
+
+#5330 | calendar | DateCalendar
+S: With the Jalali adapter the weekday header showed the Persian convention of one letter and digits (ش, ۱, ۲ …), produced by blindly taking the first character of the weekday name. Users could not configure a different weekday format.
+L: Weekday headers come from locale data (CLDR narrow/short/abbreviated forms) and the width is selectable; never derive a label by truncating a longer string.
+
+#5561 | bidi | DateTimePicker
+S: In an RTL theme the mobile date-time toolbar displayed the time as minutes:hours. The time picker's toolbar already had RTL handling but the date-time toolbar, a separate implementation, lacked it; the user workaround was to reverse the flex row holding hour, separator and minute.
+R: Fixed by a pull request after three months.
+L: Composite numeric values rendered as several elements (time, date segments, ranges) are wrapped in one LTR isolate by a shared primitive, so that no toolbar or cell can implement its own ordering.
+
+#7037 | layout | DataGrid
+S: With dir="rtl" on the html element, flex-sized columns stopped responding to container resizes. The fluid width calculation behaved differently once the document direction changed.
+L: Size measurement and column width distribution must be direction-independent; the resize observer path is tested under dir="rtl" on the document root.
+| needs-review
+
+#8284 | keyboard | DateField
+S: In an RTL date field, pressing the left arrow moved the selection to the section on the right. Section navigation followed the logical order of sections while the sections were laid out in the opposite visual order.
+L: In segmented fields ArrowLeft always moves to the segment visually on the left; the segment order used for navigation is the rendered visual order, computed after bidi layout of the format.
+
+#8665 | mirroring | DataGrid, TablePagination
+S: In an RTL grid the pagination previous/next chevrons pointed the wrong way. The app had set only the dir attribute; the icons follow the theme direction, which requires a separate theme setup, and the grid's RTL documentation was out of date. Treated as a support question.
+R: Closed after six months when the RTL documentation was updated.
+L: There is one source of direction. Directional icons pick their glyph from the same resolved direction as layout, so a half-configured setup cannot produce mismatched arrows.
+
+#8727 | bidi | DateField
+S: On one customer's on-premises environment a dd/MM/yyyy field rendered every section reversed (3202/40/32) while the same build displayed correctly elsewhere. The cause was not established before the report was closed.
+L: A field's displayed order must not depend on environment defaults: each segment is isolated with markup (dir and unicode-bidi: isolate), and the stored and copied value stays plain text.
+| needs-review
+
+#8985 | numerals | DatePicker
+S: With the Jalali adapter and the Persian locale, some year tokens threw a missing-metadata error and others rendered the year as 0NaN. The field's digit handling assumed every token is known to the adapter and that formatted digits are ASCII. It stayed open for more than three years.
+L: Segment parsing and formatting must be defined per calendar and per numbering system from data, with a table-driven test of every token × calendar × numbering system; unknown combinations fail at build time, never as NaN in the UI.
+| needs-review
+
+#9317 | bidi | DateField
+S: With direction rtl a field using the format dd/MMM/yyyy displayed its parts in the wrong order (month/year/day), and adding a time made it worse. Maintainers attributed it to the tokens being joined by slashes without spaces, so that the bidi algorithm treats the run as one block; their workaround is to separate tokens with spaces. Open for more than three years.
+R: Still open; a related Arabic-digit parsing defect is to be split into its own issue.
+L: A date field renders its segments in the same visual order as the locale's formatted date string for every separator style; that reference comparison is a fixture, with slash, dash, dot and space separated patterns.
+
+#9545 | other | DataGrid
+S: After an upgrade, CSV export of Arabic data opened in Excel as mojibake. The export no longer told Excel that the file is UTF-8.
+L: CSV export writes a UTF-8 byte-order mark by default (Excel needs it for Arabic) and the export has a fixture with Arabic text that is checked byte for byte.
+| needs-review
+
+#9989 | mirroring | DatePicker
+S: In an RTL calendar the previous and next month buttons appeared in swapped positions relative to the direction their arrows pointed.
+L: Previous/next controls are placed by logical order (previous at inline-start) and their arrows mirrored together; position and glyph are derived from the same direction value and tested as a pair.
+
+#10790 | calendar | DateCalendar
+S: With the Hebrew locale the weekday header became unreadable after an update: the default label is the first letter of the short weekday name, which is not meaningful in Hebrew. Maintainers doubted a better default exists and pointed to the formatter override, or to hard-coding the seven labels for the locale.
+R: Closed in two days with the override as the answer.
+L: Never derive a label by truncating a localised name. Weekday labels use the locale's own narrow or short forms from CLDR, and the fixture set includes Arabic and Hebrew.
+
+#11488 | numerals | DateTimePicker
+S: With a locale that formats digits as Eastern Arabic numerals, the year section of the field rendered as 0NaN while the other sections showed Arabic-Indic digits; a maintainer confirmed that the section formatting was at fault.
+R: Fixed three weeks later.
+L: Every internal digit round-trip (format then parse) goes through a numbering-system-aware conversion; no parseInt or Number on locale-formatted text. Fixture: field value under arab, arabext and latn digits.
+
+#11525 | bidi | MultiSectionDigitalClock
+S: In RTL the digital clock's columns were swapped so that minutes came before hours, opposite to how a time is read in Arabic and Hebrew UIs. A first fix was reported incomplete and the issue stayed open six months.
+L: Time columns (hours, minutes, seconds, day period) keep the order of the locale's time pattern; hour-minute order does not flip with direction.
+
+#12118 | chart | PieChart, ChartsLegend
+S: In RTL the chart legend text overlapped the colour marks and the legend stayed on the right.
+R: Fixed by a pull request for the RTL legend.
+L: Chart legends are laid out with direction-aware offsets: mark precedes label in reading order, text-anchor is chosen from direction, and legend placement uses start/end.
+
+#12438 | scroll | DataGrid
+S: After a major release, scrolling an RTL grid horizontally beyond the first viewport rendered no columns at all.
+R: Fixed within sixteen days.
+L: The virtualiser receives a normalised inline offset (0 at inline-start, increasing toward inline-end) from a single scroll adapter; virtualised horizontal scroll in RTL is a regression fixture.
+
+#13613 | chart | BarChart, LineChart
+S: With RTL enabled the y-axis tick labels were drawn over the axis line instead of beside it, while the legend behaved correctly.
+R: Fixed the next day by adding RTL support for the y-axis.
+L: Chart text must set direction and text-anchor explicitly for every label; decide per chart whether axes mirror, and never let inherited direction move SVG text on its own.
+
+#14245 | scroll | DataGrid
+S: In RTL, pinned columns stopped sticking and some columns disappeared — a regression in a release that reworked pinning. It was fixed, reported again as unresolved, and regressed again in a later major version.
+L: Pinned-column behaviour in RTL is a permanent visual and behavioural regression fixture (scroll to both ends, check pinned cells stay and nothing is clipped); it runs on every release.
+
+#14289 | scroll | DataGrid
+S: The grid's loading and no-rows overlays did not stay in view in RTL when the grid was scrolled horizontally, while they did in LTR. It took two years to close.
+L: Anything positioned sticky along the inline axis uses inset-inline-start/end, and each sticky layer has an RTL scroll test.
+
+#14458 | numerals | DateField
+S: With an Arabic locale under Luxon or Day.js, pressing arrow up/down on a section produced a value mixing ASCII and Eastern Arabic digits that the library could not parse back, so the field went invalid. Open for more than two years.
+L: Field editing keeps a numeric model per segment and formats for display only; it never re-parses its own display string, and it accepts typed digits of any numbering system.
+
+#14953 | scroll | DataGrid
+S: Reopening of the pinned-columns-in-RTL defect: after the announced fix the columns were still broken on a clean install, and the report stayed open for almost two more years.
+L: A fix for an RTL defect is accepted only with a fixture that fails before and passes after; fixtures run against the published package, not only the workspace.
+
+#15650 | locale-strings | DatePicker
+S: The pickers shipped locale packs for many languages but no Arabic one, so teams building for Arabic had to hand-write every toolbar title, button label and aria label. Still open after almost two years.
+L: Arabic strings for every built-in message (visible and aria) ship in the first release and are the source locale; a build check fails when any message key lacks an Arabic value.
+
+#16094 | chart | ChartsLegend
+S: The reworked legend used left/right positions and a gradient that did not follow direction, so in RTL the legend sat on the wrong side and the colour scale ran opposite to its labels.
+L: Public placement values are start/end; continuous colour legends reverse together with their labels in RTL.
+
+#16987 | chart | LineChart
+S: With dir=rtl the hover highlight dots of a line chart were drawn away from the data points.
+R: Fixed two days later.
+L: Pointer-to-data mapping and highlight positions in charts use physical coordinates from bounding rectangles and are tested under dir=rtl.
+
+#17047 | calendar | DatePicker
+S: The Jalali date-fns adapter crashed the field with a missing-metadata error for the yyyy token, and the official docs demo crashed the same way. Token metadata had been updated for the Gregorian adapters only.
+L: Non-Gregorian calendars run through the same test matrix as Gregorian on every change; documentation examples for Hijri and Persian calendars are executed in CI.
+
+#17651 | layout | DatePicker
+S: The shortcuts panel of the picker layout rendered broken in RTL after a refactor, while LTR was fine.
+L: Grid-template-based layouts must be written with logical placement and verified by an RTL screenshot for every layout variant.
+| needs-review
+
+#18274 | scroll | DataGrid
+S: A data grid with infinite scrolling broke its layout when the app direction was RTL; the cause turned out to be column virtualisation in RTL when the viewport is wider than the grid. It needed more than five months and a long thread to resolve.
+R: Fixed by a pull request to RTL virtualisation.
+L: Virtualised range computation is tested in RTL for grids narrower than, equal to and wider than the viewport, and together with infinite loading.
+
+#18972 | layout | MobileDatePicker
+S: In RTL the mobile picker's toolbar overlapped the calendar, reproducible in the library's own RTL documentation example.
+L: The documented RTL example of each component is itself a screenshot test.
+| needs-review
+
+#19103 | direction-api | DateCalendar
+S: After a major version the calendar-systems examples stayed LTR even with RTL enabled, although the previous version mirrored correctly — the direction was no longer reaching the component.
+L: Direction is resolved through one context with a DOM fallback, and a test asserts that every component reflects a direction change made at the provider.
+| needs-review
+
+#19578 | scroll | DataGrid
+S: In an RTL grid, scrolling to the far inline end left the last columns unrendered, and scrolling vertically from there made them disappear. Marked as a duplicate of the pinned/virtualised column defects.
+L: Virtualised range computation is property-tested: for any scroll offset in either direction the rendered range covers the viewport.
+
+#20125 | bidi | DataGrid, TablePagination
+S: In an Arabic grid the row-range label read "of 5 5-1": the word "of" was untranslated and the numeric range was reordered by the bidi algorithm inside an RTL paragraph.
+L: Range strings come from a locale message with placeholders, and each number or range is wrapped in a bidi isolate; the Arabic rendering of "1–5 of 5" is a text fixture.
+
+#20724 | scroll | DataGrid
+S: A later regression of column pinning in RTL: pinned cells let unpinned content show through and overflow while scrolling.
+L: Pinned cells get an opaque background and inline-edge offsets from the same logical model in both directions; the RTL pinning fixture checks overlap by hit-testing, not only by position.
+
+#21866 | direction-api | Scheduler
+S: The new scheduler/event calendar was released for preview with no RTL support: time axis, event bars, navigation and labels all assumed LTR, and users asked for it by pointing at competitors that have it.
+L: Time-axis components define their axis direction explicitly (inline-start = earlier) and are built RTL-first.
+
+#22728 | calendar | DatePicker
+S: The Hijri adapter overrode every date computation except the month length, so it inherited the Gregorian number of days for a Hijri month, giving wrong day grids at month ends.
+L: A calendar implementation is validated against a complete conformance suite (month lengths, year lengths, start/end of month) per calendar system, so an un-overridden Gregorian fallback cannot pass.
+
+#22964 | calendar | DatePicker
+S: One of the Hijri adapter's default formats combined a Gregorian day token with a Hijri month token and dropped the weekday its name promised.
+L: Date format patterns are generated from locale/calendar data, and a lint rejects any pattern that mixes fields of two calendars.
+
+#22965 | calendar | DatePicker
+S: The Hijri and Jalali adapters used plain day and month tokens in several formats, which the underlying libraries interpret as Gregorian, so headers showed Gregorian values next to Hijri or Jalali years.
+L: A formatted date draws every field from one calendar; fixture: full, medium and short dates for 1 Muharram and 30 Dhu al-Hijjah in each supported calendar.
+
+#23493 | bidi | DatePicker
+S: A customer's security scanner flagged the published bundle for bidirectional characters, the class of character used in trojan-source attacks. The maintainer found no bidi control characters in the code and attributed the hits to right-to-left script text in the bundled locale files; the report went stale and was closed.
+R: Closed as not planned with no change.
+L: Arabic strings ship as data files separate from executable code, and the build asserts that no bidi control character appears anywhere in published output, so the statement "contains none" is a tested guarantee we can give to security reviews.
+
+#23888 | direction-api | Scheduler
+S: While adding RTL, the team found a public class and slot name that encoded a physical side ("left" toolbar element) and had to rename it before stable, because in RTL that element sits on the right.
+L: No public prop, slot, class or CSS variable name contains left/right for something that follows direction; names are start/end from the first release.
+
+#23889 | direction-api | Scheduler
+S: Nothing in the scheduler read the text direction; the headless packages had no way to receive it and the virtualiser was not told about RTL.
+L: Engines take direction as an explicit input from the adapter layer; an engine that positions or navigates along the inline axis cannot be constructed without it.
+
+#23894 | keyboard | Scheduler
+S: In the scheduler's calendar grid and timeline, ArrowLeft always moved to the previous column, which in RTL is visually on the right.
+L: Arrow-key mirroring lives in the shared grid-navigation engine so that a new component inherits it instead of re-implementing it.
+
+#23895 | overlay-position | Scheduler
+S: Navigation chevrons were not flipped in RTL, and the event dialog and anchored toolbar were positioned with an inline left offset and a default side of "left", so in RTL the dialog could open off-screen.
+L: Anchored overlays are placed by the shared positioning engine with logical sides; no component sets style.left by hand.
+
+#23906 | portal-direction | Scheduler
+S: With dir="rtl" set only on a container, the scheduler's popovers, dialog and drawers — rendered in document.body — came out LTR, while icons following the theme direction were RTL. The request to support a local direction in portaled content was declined; the documented requirement is to put dir on the body.
+L: Every portal root receives dir (and lang) from the direction context of the element that opened it, so a locally RTL subtree works without touching the document.
+
+#23980 | scroll | Scheduler
+S: While dragging in the RTL timeline, auto-scroll worked toward the right edge but not toward the left (inline-end) edge, because the third-party auto-scroller only scrolls left while scrollLeft is positive and RTL scroll offsets are negative.
+L: Drag auto-scroll uses the normalised scroll adapter and is tested toward both inline edges in RTL; third-party helpers that read scrollLeft directly are not used.

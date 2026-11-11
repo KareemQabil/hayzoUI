@@ -1,0 +1,187 @@
+// Ant Design — notes written after reading each issue. Format: see build.mjs.
+
+#4051 | direction-api | all components
+S: A one-line question — does the library support Persian and Arabic? — became the most-reacted RTL issue of the project and stayed open for more than three years, until direction support landed with version 4.
+L: Direction support cannot be retrofitted cheaply: it is designed into tokens, recipes and engines from the first commit, and the claim "supports RTL" is backed by a recorded test run per component.
+
+#21585 | value-direction | Slider
+S: In RTL the slider's mark labels were positioned wrongly because each label was centred with a fixed translateX(-50%), which shifts the wrong way once the offset is measured from the right.
+L: Centring transforms must be written direction-neutrally (logical inset plus translate multiplied by the direction sign, or centring by layout); a slider with marks is an RTL screenshot fixture.
+
+#21815 | scroll | Table
+S: A table with fixed columns in RTL showed no fixed columns at all and drew the scroll shadow in the wrong place.
+L: Fixed columns and their edge shadows are computed in logical space (start/end) and resolved to physical sides once; shadows appear on the side where content is hidden.
+| needs-review
+
+#22239 | style-engine | all components
+S: The first RTL implementation appended direction overrides to each component stylesheet; to make defects findable the team then split every component's RTL rules into a separate hand-maintained file, described by the author as huge and tedious work.
+L: There is no separate RTL stylesheet. Recipes are written once with logical properties, so there is nothing to keep in sync and no override layer to fight.
+
+#22296 | value-direction | Rate
+S: With half-star rating in RTL, hovering the left half of a star selected the half value, as in LTR, although the star fills from the right.
+L: Fractional hit-testing measures the pointer from the inline-start edge of the item; half-step rating in RTL is a pointer fixture.
+
+#22420 | input | InputNumber
+S: In RTL forms the number input's validation feedback icon landed outside the field and the tooltip appeared on the wrong side.
+L: Adornments and feedback icons are placed with logical insets inside the field box; every field variant with feedback is rendered in RTL in the screenshot suite.
+
+#22555 | bidi | Badge
+S: A badge counter above 9 displayed its digits reversed in RTL (10 shown as 01). The animated counter renders each digit as its own element, so their order is subject to the container's direction.
+R: Fixed by a pull request three days later.
+L: Multi-element numbers (animated counters, odometers, OTP-style digit boxes) are wrapped in an LTR isolate; fixture: two- and three-digit badge in RTL.
+| needs-review
+
+#22580 | overlay-position | Select
+S: In RTL the select's dropdown stayed aligned to the left edge of the trigger instead of the right edge.
+L: Popup alignment defaults to inline-start of the anchor; placement names are logical and are resolved against the anchor's direction before collision handling.
+
+#22635 | value-direction | Carousel
+S: In RTL the carousel advanced in the LTR direction: choosing the next slide slid it in from the wrong side. The fix was considered to belong to the third-party slider package the carousel wraps, was left to volunteers, and the issue stayed open for more than six years.
+R: Closed in 2026 by a change that adds an RTL prop, corrects the arrow direction and passes the direction down to the slider package.
+L: Carousel progression follows reading direction: next moves toward inline-end. The carousel engine is our own and direction-aware; correctness is not delegated to an LTR-only dependency.
+
+#22659 | input | Table
+S: The documented resizable-column table did not work in RTL: dragging the handle did not resize the column as expected. It stayed open for a year.
+L: Resize handles sit on the inline-end edge and drag deltas are direction-signed; a documented recipe that depends on a third-party helper is tested in RTL too.
+| needs-review
+
+#23210 | input | InputNumber
+S: In RTL the number input changed its width while typing or stepping, and its feedback icon was misplaced outside the field.
+L: Field inner layout uses logical padding reserved for adornments, so that content changes never alter the box in either direction.
+| needs-review
+
+#23728 | direction-api | Message
+S: The docs site set direction through a class on the html element, so components that needed their own RTL switch inherited direction: rtl from the page without their RTL styles being active, and rendered half-mirrored.
+L: Direction has one source of truth that both CSS and behaviour read. Styles follow the DOM dir (logical properties), and the context is initialised from the DOM, so the two cannot disagree.
+
+#24085 | mirroring | Breadcrumb
+S: When RTL shipped, maintainers were unsure how a breadcrumb should render: whether the slash separator should become a backslash and in which order items run.
+L: Each directional glyph has a recorded mirroring rule decided once (slash separators do not mirror, chevron separators do; item order follows reading direction) and shared by all components.
+
+#24441 | direction-api | Badge, Tooltip
+S: Maintainers had to open a discussion to decide what an [x, y] offset prop means in RTL — whether positive x still moves right or moves toward the inline end.
+L: Offsets on public APIs are named for their axis (inline/block, or mainAxis/crossAxis relative to placement), and the docs state the RTL behaviour of every offset-like prop.
+
+#26687 | locale-strings | LocaleProvider
+S: The only Arabic locale pack was tagged for Egypt, and a team serving the wider Arabic-speaking market asked for a standard Arabic pack.
+L: Ship a base ar message set (Modern Standard Arabic) with regional data (numerals, calendar, week start, currency) layered separately; language strings are not tied to one country.
+
+#26692 | direction-api | Breadcrumb
+S: After switching the app language to Arabic the breadcrumb rendered RTL even though the provider was explicitly set to LTR.
+L: Direction is never inferred from the language of the message pack; an explicit direction always wins and locale only supplies the default.
+| needs-review
+
+#26958 | animation | Cascader
+S: Maintainers asked RTL-speaking contributors whether a loading spinner should rotate counter-clockwise in RTL.
+L: The mirroring registry also covers motion: spinners and clocks keep their rotation, while linear progress and slide transitions reverse. The decision is data, not per-component judgement.
+
+#31727 | portal-direction | Modal, Form
+S: A form inside a modal stayed LTR although the page was RTL, and the user needed repeated guidance. The modal had been opened through the imperative confirm API, to which the provider's RTL configuration was not being passed.
+R: Fixed nine days later by passing the direction configuration to the confirm modal's content.
+L: Overlays inherit direction from the element that opened them without any extra provider or configuration, including overlays opened imperatively.
+
+#32377 | overlay-position | Menu
+S: In a vertical RTL menu the submenu popup laid out its items left to right.
+L: A popup carries the direction of its trigger into its own root element, so nested menus are direction-correct at every level.
+| needs-review
+
+#35478 | scroll | Table
+S: In an RTL table with sticky header, horizontal scrolling failed: the content could not be scrolled sideways unless the page was scrolled to the bottom where the native scrollbar is. The defect was in the underlying table package and the issue stayed open for more than two and a half years.
+R: Closed at the end of 2024 by a pull request, after a fix in the underlying table package.
+L: Sticky header, sticky summary and the synthetic sticky scrollbar all use the normalised scroll adapter and have RTL fixtures.
+
+#37059 | direction-api | Notification
+S: After the app was switched from LTR to RTL and back, notifications kept coming out in the earlier direction: the notification layer did not follow the provider's current direction. The report was labelled won't-resolve and closed within a day.
+L: No imperative API detached from context: toasts are opened through a hook or a mounted region that reads the current direction at render time.
+| needs-review
+
+#39195 | overlay-position | Popover
+S: In RTL, in an early version-5 release, a popover failed to locate its trigger and stretched to the page width.
+L: Overlay measurement works in physical viewport coordinates and is independent of the document direction; popover placement is run in a full matrix of placements × direction.
+
+#39306 | overlay-position | Menu
+S: With RTL enabled, the popup of a collapsed inline menu was positioned with a left offset several hundred pixels off.
+L: Positioning code never mixes offsets measured from the left with layouts anchored to the right; all offsets are computed from bounding rectangles.
+| needs-review
+
+#40128 | animation | Segmented
+S: In RTL the moving thumb of the segmented control animated to the wrong position when the selection changed.
+L: Moving indicators (segmented thumb, tab ink bar) are positioned from measured rectangles relative to the track, not from offsetLeft; fixture: indicator rect equals selected item rect after transition, in RTL.
+
+#41070 | scroll | Table
+S: In RTL a fixed summary cell of a sticky table got the wrong offset, a defect located in the underlying table package.
+L: Header, body and summary share one function for fixed-cell offsets, so RTL correctness cannot differ between rows.
+
+#42331 | scroll | Select
+S: In an RTL page the vertical scrollbar of the select's virtual list was drawn on the right instead of the left.
+L: Custom scrollbars are placed at inline-end of the scroll container, which is the left edge in RTL, matching native behaviour.
+
+#43312 | animation | Progress
+S: The active-state shimmer of a progress bar ran left to right in RTL while the bar itself fills from the right.
+L: Keyframe animations that travel along the inline axis have a direction-aware variant (or use a direction variable), and are listed in the motion mirroring registry.
+
+#43918 | layout | Table
+S: In an RTL tree table the expand icon was misplaced and child rows were indented toward the wrong side.
+L: Tree indentation uses padding-inline-start driven by level; expand toggles mirror their chevron and sit at inline-start.
+
+#43971 | bidi | Badge
+S: Three years after the first report, a badge again displayed its number reversed in RTL (25 shown as 52) after the component was restyled.
+L: A fixed RTL defect stays fixed only with a permanent fixture; the digit-order fixture for animated counters is in the regression set.
+
+#47144 | style-engine | Menu
+S: To support old browsers the library offers a transformer that rewrites logical properties to physical ones, and under server rendering it produces wrong styles and indentation for an Arabic page. Open for almost three years.
+L: Logical properties are emitted as-is; no build- or run-time transform back to physical properties is offered, because such a transform cannot know the direction of each subtree.
+
+#47488 | overlay-position | Menu
+S: In an RTL menu the submenu always attached to the left side of its parent item and offered no way to change that. It was open for two and a half years.
+L: Submenus open toward inline-end by default and flip only on collision; the side is derived from direction, never hard-coded.
+
+#49664 | calendar | DatePicker
+S: In RTL the date picker panel showed its parts in the wrong order and the range picker's pointing arrow was missing, because a placement-specific style had no RTL counterpart.
+L: Styles keyed on a physical placement class need both directions by construction: placement is a resolved data attribute and arrow styles are generated from it.
+| needs-review
+
+#52882 | mirroring | Dropdown
+S: In RTL the arrow marking a nested dropdown item pointed away from the side on which the submenu actually opened.
+L: A submenu indicator and the submenu's opening side come from the same resolved value; fixture asserts the chevron points toward the opened submenu in both directions.
+
+#52942 | direction-api | Table
+S: In RTL a column declared as fixed "right" appears on the left, so developers must write the opposite of what they see, and the fixed-column shadow was missing. The API mixes physical names with logical behaviour.
+L: Column pinning takes start/end. Physical aliases, if accepted for migration, are documented as physical and are not silently reinterpreted.
+
+#53186 | calendar | DatePicker
+S: With the Jalali calendar the picker showed 29 days for Esfand 1403, a leap year in which the month has 30. The picker depends on an external date library for the calendar rules; the report was closed as not planned.
+L: Calendar arithmetic is owned by our core with authoritative tables or algorithms and leap-year fixtures for each calendar (Persian 1403, Umm al-Qura month lengths); correctness is not delegated to a plug-in.
+| needs-review
+
+#53523 | mirroring | Image
+S: In RTL the previous and next buttons of the image preview group pointed in the wrong direction.
+L: Previous/next icon pairs are obtained from one helper that returns the mirrored pair for the current direction.
+
+#53528 | bidi | Input, Image
+S: In RTL the character counter and the image preview counter read reversed: "2 / 10" was displayed as "10 / 2", because two numbers with a neutral separator were reordered by the bidi algorithm.
+L: Any "current / total" or "a – b" string is a single LTR isolate or a localised message with isolated placeholders; fixture: counter text in RTL.
+
+#54168 | calendar | DatePicker
+S: With the Egyptian Arabic locale the weekday header overflowed its cells, because the Arabic weekday names used are wider than the day cells.
+L: Calendar column headers use the CLDR narrow or short weekday form for Arabic, and the grid is sized from the measured widest label.
+
+#54781 | value-direction | Carousel
+S: In an RTL carousel the dots followed RTL order but the next arrow stayed on the right pointing right, and pressing it moved the content the other way — three parts of one component disagreed about direction.
+L: Within a component, order, arrows, key handling and motion derive from one direction value; a consistency test fails if any part disagrees.
+
+#56101 | layout | Splitter
+S: In RTL the collapse buttons of a vertical splitter were flipped along the wrong axis and rendered outside the splitter, sometimes outside the viewport.
+L: Mirroring applies to the inline axis only; a vertically oriented control must not swap anything when direction changes.
+
+#56692 | layout | Drawer
+S: With RTL enabled the drag handle of a resizable drawer moved to the wrong edge of the panel.
+L: A drawer's resize handle is on the edge facing the content: its position derives from the resolved physical side of the drawer, not from direction alone.
+
+#57680 | input | Select
+S: In RTL a multiple select with responsive tag overflow placed the text caret in the middle of the control, so typed text overlapped the tags.
+L: Overflow measurement for tag lists is done in logical order, and the search input always follows the last visible tag at inline-end.
+
+#59751 | direction-api | Form
+S: The form's label alignment accepts "left" and "right" but maps them to start and end, so in RTL "left" aligns labels to the right. A request to accept start/end and say what the physical names mean was filed in 2026.
+L: Alignment props accept start/end only; a physical name never means something logical.

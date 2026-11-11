@@ -1,0 +1,463 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "react-spectrum",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of adobe/react-spectrum",
+        "url": "https://github.com/adobe/react-spectrum/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "react-spectrum",
+      "name": "React Spectrum / React Aria",
+      "repository": "https://github.com/adobe/react-spectrum"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/1880",
+        "number": 1880,
+        "title": "NumberField positivity/negativity sign should be to the left of the number instead of the right when inputting arabic numerals",
+        "category": "bidi",
+        "components": [
+          "NumberField"
+        ],
+        "summary": "A user entering signed numbers in Arabic-Indic digits saw the plus or minus sign on the right of the digits (٣٢-) and expected it on the left. Maintainers answered that the right-hand placement is correct for Arabic and only renders properly in a real RTL context, and the reporter agreed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-05-06",
+        "closedAt": "2021-05-07",
+        "daysOpen": 1,
+        "comments": 2,
+        "reactions": 0,
+        "resolution": "Closed by the reporter the next day with no code change.",
+        "lesson": "Sign, percent and currency placement come from the locale's CLDR number pattern and are tested in both paragraph directions; the docs state what users should expect, because expectations differ even among Arabic readers.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/2315",
+        "number": 2315,
+        "title": "@react-aria/slider: allow `direction` to be passed as a parameter in useSlider and useSliderThumb",
+        "category": "value-direction",
+        "components": [
+          "Slider"
+        ],
+        "summary": "The slider hooks took their direction only from the locale provider, so a slider could not be given a direction of its own; the request for a direction parameter stayed open more than two and a half years.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-09-10",
+        "closedAt": "2024-04-11",
+        "daysOpen": 945,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "waiting on author"
+        ],
+        "lesson": "Every engine with a value axis accepts an explicit direction argument that overrides the ambient one.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/2921",
+        "number": 2921,
+        "title": "Changing locale on ColorArea doesn't change direction thumb moves with home/end key",
+        "category": "keyboard",
+        "components": [
+          "ColorArea"
+        ],
+        "summary": "In the two-dimensional colour area, Home and End moved the thumb the same physical way in RTL and LTR locales, unlike sliders, where they follow direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-03-04",
+        "closedAt": "2022-03-17",
+        "daysOpen": 14,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "ColorArea"
+        ],
+        "lesson": "Home/End (and PageUp/PageDown where horizontal) follow the same direction mapping as the arrow keys, from one shared key-mapping table used by all engines.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/3026",
+        "number": 3026,
+        "title": "Column resizing followup - task: Support RTL",
+        "category": "keyboard",
+        "components": [
+          "TableView"
+        ],
+        "summary": "Resizable table columns needed separate RTL work: arrow keys had to expand or shrink a column according to its visual direction, and the team noted that switching the CSS to logical properties alone did not make resizing correct.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-04-11",
+        "closedAt": "2022-07-01",
+        "daysOpen": 81,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "TableView"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/adobe/react-spectrum/pull/3258",
+            "title": "Resizer keyboard",
+            "mergedAt": "2022-07-01"
+          }
+        ],
+        "lesson": "Logical CSS fixes layout only. Every pointer- and key-driven geometric interaction (resize, drag, slide) needs its own direction handling in the engine and its own RTL test.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/3114",
+        "number": 3114,
+        "title": "Number-Field Eastern Arabic Number format",
+        "category": "numerals",
+        "components": [
+          "NumberField"
+        ],
+        "summary": "Clearing a number field, typing only spaces and pressing the stepper button made the value come back in Eastern Arabic digits although the locale was not Arabic: the parser guessed the numbering system from input that contained no digits.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-05-10",
+        "closedAt": "2022-05-11",
+        "daysOpen": 1,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "bug"
+        ],
+        "lesson": "The numbering system of a field is fixed by locale or prop; input in another digit system is accepted and normalised, but empty or ambiguous input never changes the output numbering system.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/3757",
+        "number": 3757,
+        "title": "Gregorian -> Persian Calendar date conversion is occasionally inaccurate",
+        "category": "calendar",
+        "components": [
+          "Calendar"
+        ],
+        "summary": "Gregorian-to-Persian conversion mapped a run of consecutive Gregorian days to the 30th of the same Persian month, i.e. the conversion was wrong for part of the year. It took sixteen months to fix.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-11-16",
+        "closedAt": "2024-03-28",
+        "daysOpen": 498,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "bug",
+          "help wanted"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/adobe/react-spectrum/pull/6118",
+            "title": "Fix Persian/Gregorian calendar conversion",
+            "mergedAt": "2024-03-28"
+          }
+        ],
+        "lesson": "Calendar conversions are verified by exhaustive round-trip tests over a multi-century range for every calendar, and against reference tables.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/3862",
+        "number": 3862,
+        "title": "NumberField - Comma as the first character displays unreadable values",
+        "category": "numerals",
+        "components": [
+          "NumberField"
+        ],
+        "summary": "Typing only a comma into a number field and leaving it turned the displayed value into digits of another numbering system, unreadable to the user, because the comma was matched to a locale that uses it and the numbering system was switched. It took more than three years to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-12-19",
+        "closedAt": "2026-03-17",
+        "daysOpen": 1184,
+        "comments": 5,
+        "reactions": 1,
+        "labels": [
+          "bug"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/adobe/react-spectrum/pull/8592",
+            "title": "feat: NumberParser assorted bug fixes",
+            "mergedAt": "2026-03-17"
+          }
+        ],
+        "lesson": "Separator characters alone never select a numbering system or locale; parsing is anchored to the field's configured locale first.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/4711",
+        "number": 4711,
+        "title": "Incorrect date / time segment order in several components, for RTL languages",
+        "category": "bidi",
+        "components": [
+          "DateField",
+          "TimeField",
+          "DatePicker"
+        ],
+        "summary": "For Arabic and Hebrew the date and time fields displayed their segments in an order different from the string the platform's date formatter produces in an RTL element. The maintainer traced it to the field and its segments being flex items: the Unicode bidi algorithm has to run over the whole field, not segment by segment. It took nineteen months to fix.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-06-26",
+        "closedAt": "2025-01-29",
+        "daysOpen": 582,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "DatePicker"
+        ],
+        "resolution": "Fixed by a pull request in 2025.",
+        "fixedBy": [
+          {
+            "url": "https://github.com/adobe/react-spectrum/pull/7423",
+            "title": "fix:  correctly format date/time in RTL",
+            "mergedAt": "2025-01-29"
+          }
+        ],
+        "lesson": "Segments of a date/time field are inline participants of a single bidi paragraph, never flex or grid items, so their visual order equals the rendering of the locale's formatted string; fixture: per locale, compare segment x-order with the reference string order.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/4896",
+        "number": 4896,
+        "title": "ActionGroup's ArrowRight/Left focus navigation is incorrectly flipped in orientation=\"vertical\" + RTL locales",
+        "category": "keyboard",
+        "components": [
+          "ActionGroup",
+          "Tabs"
+        ],
+        "summary": "In RTL locales the left/right arrow keys were swapped for horizontal groups as intended, but the swap was also applied in vertical orientation, where ArrowDown and ArrowRight then moved in opposite directions. Three years to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2023-08-10",
+        "closedAt": "2026-08-18",
+        "daysOpen": 1104,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "ActionGroup",
+          "Tabs",
+          "accessibility",
+          "bug",
+          "internationalization"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/adobe/react-spectrum/pull/10467",
+            "title": "fix(actiongroup,tabs): keep ArrowLeft/Right consistent in RTL vertical orientation",
+            "mergedAt": "2026-08-18"
+          }
+        ],
+        "lesson": "The arrow-key mapping is a function of (orientation, direction): the swap applies to the left/right pair only; the mapping table is unit-tested for all four combinations.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/5960",
+        "number": 5960,
+        "title": "Some months in the Persian Calendar show the 30th as the first day of the month",
+        "category": "calendar",
+        "components": [
+          "Calendar"
+        ],
+        "summary": "In the Persian calendar some months were displayed starting with day 30 — the last day of the previous month leaked in — for an entire year following a leap year.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-02-27",
+        "closedAt": "2024-03-28",
+        "daysOpen": 30,
+        "comments": 1,
+        "reactions": 2,
+        "labels": [
+          "Calendar",
+          "bug",
+          "help wanted"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/adobe/react-spectrum/pull/6118",
+            "title": "Fix Persian/Gregorian calendar conversion",
+            "mergedAt": "2024-03-28"
+          }
+        ],
+        "lesson": "Month boundaries are tested around leap years for each calendar; fixture: first cell of every month of Persian 1403–1405 is day 1.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/6469",
+        "number": 6469,
+        "title": "Ability to manually set direction to RTL",
+        "category": "direction-api",
+        "components": [
+          "I18nProvider"
+        ],
+        "summary": "Direction can only be derived from the locale; a team that wanted to set it explicitly (to test RTL layouts without translating, for instance) asked for a direction prop, and the request was closed as not planned after twenty months.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2024-05-30",
+        "closedAt": "2026-02-12",
+        "daysOpen": 623,
+        "comments": 3,
+        "reactions": 0,
+        "lesson": "Direction, language, numbering system and calendar are independent inputs of the locale context; each has a default derived from the locale and each can be set explicitly.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/6623",
+        "number": 6623,
+        "title": "Extended IME support for `@internationalized/number`",
+        "category": "numerals",
+        "components": [
+          "NumberField"
+        ],
+        "summary": "The number parser accepted Latin, Arabic-Indic and Han decimal digits only, so users typing with other keyboards' native digits could not enter numbers.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-06-26",
+        "closedAt": "2026-03-19",
+        "daysOpen": 631,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "enhancement"
+        ],
+        "lesson": "Digit recognition is generated from Unicode data for all decimal digit systems in CLDR, not a hand-picked list; arab and arabext (Persian/Urdu) are both covered.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/6985",
+        "number": 6985,
+        "title": "Expose `isRTL` utility function",
+        "category": "direction-api",
+        "components": [
+          "i18n"
+        ],
+        "summary": "The function that decides whether a locale is RTL was internal, so server-rendered code had no way to obtain a locale's direction without a client-side hook.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-09-02",
+        "closedAt": "2025-07-25",
+        "daysOpen": 326,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "enhancement",
+          "good first issue"
+        ],
+        "lesson": "Locale-to-direction lookup is a pure exported function of the core, usable on the server to emit dir on the root element.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/8583",
+        "number": 8583,
+        "title": "Popover doesn't respect dir document attribute",
+        "category": "portal-direction",
+        "components": [
+          "Popover"
+        ],
+        "summary": "A popover rendered from inside a dir=\"rtl\" container did not inherit that direction and came out LTR, while the select and combobox triggering it were RTL. Direction is taken from the locale provider, not the DOM, and the report was closed as not planned.",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "createdAt": "2025-07-19",
+        "closedAt": "2025-08-20",
+        "daysOpen": 33,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "waiting on author"
+        ],
+        "lesson": "Portaled content takes dir from the trigger's resolved direction; DOM-level dir on an ancestor is honoured without a provider.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/10112",
+        "number": 10112,
+        "title": "Support passing in direction to useSlider for media controls",
+        "category": "value-direction",
+        "components": [
+          "Slider"
+        ],
+        "summary": "Media sliders such as an audio progress bar stay left-to-right in RTL interfaces; to get that, a team wraps the slider in a provider with a fake English locale. Open.",
+        "state": "open",
+        "createdAt": "2026-05-26",
+        "daysOpen": 168,
+        "comments": 7,
+        "reactions": 0,
+        "lesson": "The slider has a direction prop; a media-timeline preset fixes it to LTR, without touching locale.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/10875",
+        "number": 10875,
+        "title": "NumberField switches to Arabic numbering after entering only a period in percentage fields",
+        "category": "numerals",
+        "components": [
+          "NumberField"
+        ],
+        "summary": "Entering only a period in a percentage field and blurring could switch the displayed digits and the percent sign to Arabic although the locale had not changed — the same class of defect as the comma case fixed earlier, left over for another character.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2026-10-27",
+        "closedAt": "2026-11-05",
+        "daysOpen": 8,
+        "comments": 0,
+        "reactions": 0,
+        "fixedBy": [
+          {
+            "url": "https://github.com/adobe/react-spectrum/pull/10876",
+            "title": "fix: preserve numbering system for separator-only input",
+            "mergedAt": "2026-11-05"
+          }
+        ],
+        "lesson": "Fix classes, not instances: the parser's numbering-system inference is removed for punctuation-only input, with a fixture for every separator character.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/10936",
+        "number": 10936,
+        "title": "@internationalized/number: NumberParser misparses Arabic-digit numbers that use . , or ، (sd parses ١٬٢٣٤.٥ as 12345)",
+        "category": "numerals",
+        "components": [
+          "NumberParser"
+        ],
+        "summary": "For locales that use Arabic-Indic digits together with Latin-style or Arabic comma separators (Sindhi is one), parsing the formatter's own output returns wrong numbers: grouping and decimal separators are confused. Open.",
+        "state": "open",
+        "createdAt": "2026-11-07",
+        "daysOpen": 3,
+        "comments": 3,
+        "reactions": 0,
+        "lesson": "Parsing must round-trip formatting for every locale/numbering-system pair in CLDR — a generated property test: parse(format(x)) = x.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/adobe/react-spectrum/issues/10954",
+        "number": 10954,
+        "title": "I18nProvider: allow a direction prop that overrides the locale's derived text direction",
+        "category": "direction-api",
+        "components": [
+          "I18nProvider"
+        ],
+        "summary": "An app that keeps a left-to-right layout while using an Arabic locale for strings, dates and numbers cannot express that: everything that reads the locale's direction (arrow-key swaps, start/end placement) turns RTL. A second request for a direction override was opened in 2026.",
+        "state": "open",
+        "createdAt": "2026-11-10",
+        "daysOpen": 0,
+        "comments": 1,
+        "reactions": 0,
+        "lesson": "As above — direction is an explicit dimension of the locale context, never inferred irrevocably from the language tag.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}

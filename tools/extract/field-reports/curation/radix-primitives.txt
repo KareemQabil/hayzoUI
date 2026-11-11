@@ -1,0 +1,47 @@
+// Radix Primitives — notes written after reading each issue. Format: see build.mjs.
+
+#468 | keyboard | Tabs
+S: With direction: rtl applied through CSS the tabs rendered right to left, but the arrow keys still moved in LTR order, so ArrowLeft went to the tab on the right. The component had no knowledge of the layout direction.
+L: Roving focus along a horizontal axis swaps ArrowLeft/ArrowRight in RTL; the roving-focus engine requires a direction input and the generated keyboard tests assert visual-direction movement.
+
+#749 | direction-api | DropdownMenu, useDirection
+S: Components discovered their direction by reading the computed style of an element, and because no default was provided the read ran on every state change, which is expensive with many instances. The approach was later replaced by an explicit provider.
+L: Direction is resolved once per subtree (context seeded from the DOM, updated by an observer), never by calling getComputedStyle during render or on each state change.
+
+#2172 | overlay-position | Select
+S: When the select content was sized with the trigger-width variable, its horizontal translation was computed wrongly in RTL, so the popup was misaligned with its trigger while LTR was correct.
+L: Item-aligned and trigger-width popups compute their offset from bounding rectangles in physical coordinates; fixture: popup inline edges equal trigger inline edges in RTL.
+
+#2368 | animation | Toast
+S: With RTL set, a toast still slid in and swiped out toward the right. The answer was that the slide-in and swipe-out animations are the author's to adjust; the reporter made the closing animation depend on direction and closed the report.
+R: Closed by the reporter the next day with a workaround in their own styles.
+L: Swipe-to-dismiss and enter/exit motion default to the inline-end side derived from direction and can be overridden with a physical value; authors do not write per-direction keyframes.
+
+#2378 | direction-api | Tabs, ScrollArea
+S: Components such as tabs and scroll area rendered an explicit dir="ltr" on their own root when no direction was passed, overriding the direction inherited from the parent element or the document. A commenter proposed returning no direction when unset so that the attribute is omitted; a maintainer closed the report six months later as lacking context.
+R: Closed without a change; the documented route is to wrap the app in the direction provider.
+L: A component never writes a dir attribute it was not given; the default is to inherit, and the internal direction value falls back to the DOM, not to a constant.
+
+#3016 | direction-api | DirectionProvider
+S: A developer wrapped the app in the direction provider and expected the page to become RTL, but the provider only informs the library's components and does not set dir on any element. The report was closed as not planned after almost two years.
+L: Document the two halves explicitly — the DOM attribute drives CSS, the context drives behaviour — and provide one component that sets both on an element so they cannot diverge.
+
+#3182 | scroll | Dialog
+S: With a modal open in RTL, the scroll-lock compensation moved all page elements the wrong way; it works in LTR. The fix took almost two years.
+L: Scroll lock is direction-neutral (scrollbar-gutter or measured side); fixture: opening a dialog in RTL shifts nothing.
+
+#3216 | scroll | RadioGroup
+S: Inside a form each radio adds an invisible native input shifted with translateX(-100%). In LTR that moves it harmlessly, but in RTL the shifted element extends past the start of the page and creates horizontal overflow, visible as empty space on mobile. It took almost two years to close.
+L: Hidden form-participation inputs are positioned with inset: 0 inside their control and clipped; nothing is moved off-screen with a physical translate. Fixture: document scrollWidth equals clientWidth in RTL with every form control rendered.
+
+#3830 | direction-api | DirectionProvider
+S: Without a provider the direction hook falls back to "ltr", so every component stamps dir="ltr" on its elements and ignores an html element marked RTL. A proposal to auto-detect the document direction was closed as not planned.
+L: Zero-configuration RTL: with dir="rtl" on the document and no provider, every component behaves and renders RTL.
+
+#4041 | scroll | Switch
+S: The switch's hidden form input is absolutely positioned and translated by -100% on the x axis, which in RTL or tightly constrained containers enlarges the scrollable area of an ancestor.
+L: Same rule as for radios — hidden inputs stay inside the control's box; the overflow fixture covers switch, checkbox, radio, slider and select.
+
+#2703 | direction-api | DirectionProvider, NavigationMenu
+S: A team testing in Storybook toggles direction with an add-on that flips the document's direction; that works for plain HTML but not for the primitives, which need a dir prop or the direction provider. Their request to detect the page direction automatically was closed as not planned.
+L: Tooling that flips dir on the document (Storybook add-ons, browser dev tools, translation proxies) is enough to put every component into RTL; a MutationObserver on the nearest dir ancestor keeps the context in sync.

@@ -1,0 +1,624 @@
+{
+  "kind": "field-report",
+  "schemaVersion": 1,
+  "id": "fluentui",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "GitHub issues of microsoft/fluentui",
+        "url": "https://github.com/microsoft/fluentui/issues",
+        "version": "GitHub REST API 2022-11-28, state as of 2026-11-11",
+        "license": "GitHub Terms of Service (user content; only facts and our own summaries are kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/field-reports/build.mjs",
+    "notes": "URL, number, title, state, dates, counts and labels are copied from the API response of each issue. Category, components, summary, resolution and lesson are written by the researcher (tools/extract/field-reports/curation) after reading the issue body returned by the search API and, for the issues listed in docs/research/field-reports.md, the full thread. daysOpen of an open issue is measured to the retrieval date. fixedBy is filled mechanically from merged pull requests that name the issue after a closing keyword. Reports marked needs-review state a cause that the researcher inferred from the symptom without a confirming statement in the issue."
+  },
+  "data": {
+    "library": {
+      "id": "fluentui",
+      "name": "Fluent UI",
+      "repository": "https://github.com/microsoft/fluentui"
+    },
+    "reports": [
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/2285",
+        "number": 2285,
+        "title": "Directional icon fonts in IconClassNames are not mirrored in RTL",
+        "category": "mirroring",
+        "components": [
+          "Icon"
+        ],
+        "summary": "The design guidance said directional icons should mirror in RTL, but the icon font classes did not, in a product as large as Outlook on the web. It took ten months to close.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2017-07-21",
+        "closedAt": "2018-05-18",
+        "daysOpen": 301,
+        "comments": 8,
+        "reactions": 1,
+        "labels": [
+          "Status: No Recent Activity",
+          "Type: Bug :bug:"
+        ],
+        "lesson": "Mirroring is a property of each icon recorded in data and applied by the icon component.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/3903",
+        "number": 3903,
+        "title": "mergeStyles: Switching html direction to rtl doesn't change style direction",
+        "category": "style-engine",
+        "components": [
+          "mergeStyles"
+        ],
+        "summary": "Styles were flipped according to a direction value captured by the styling library, so switching the html element's direction at runtime did not change already generated styles such as padding-left.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2018-02-06",
+        "closedAt": "2018-04-06",
+        "daysOpen": 58,
+        "comments": 5,
+        "reactions": 1,
+        "labels": [
+          "Area: Accessibility",
+          "Type: Bug :bug:"
+        ],
+        "lesson": "Generated CSS is direction-agnostic (logical properties); nothing is baked at generation time, so a runtime switch needs no regeneration.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/5438",
+        "number": 5438,
+        "title": "FocusZone: bidirectional not working correctly in RTL",
+        "category": "keyboard",
+        "components": [
+          "FocusZone"
+        ],
+        "summary": "In a bidirectional focus zone in RTL, arrow keys did not move focus correctly between items.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2018-07-03",
+        "closedAt": "2018-10-02",
+        "daysOpen": 91,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "Component: FocusZone",
+          "Type: Bug :bug:"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/microsoft/fluentui/pull/6485",
+            "title": "FocusZone: check for RTL and do correct top to bottom comparisons",
+            "mergedAt": "2018-10-02"
+          }
+        ],
+        "lesson": "Two-dimensional focus movement applies the RTL swap to the horizontal pair only; table-driven tests cover every orientation in both directions.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/7966",
+        "number": 7966,
+        "title": "Support dir=RTL tag on elements other than HTML",
+        "category": "direction-api",
+        "components": [
+          "utilities"
+        ],
+        "summary": "The library's RTL logic assumed the direction was declared on the html element; applications that set dir on the body or on a region were not recognised.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2019-02-12",
+        "closedAt": "2019-02-14",
+        "daysOpen": 1,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "Package: utilities",
+          "Type: Bug :bug:"
+        ],
+        "lesson": "Direction is resolved from the nearest ancestor with a dir attribute (or the provider), never from document.documentElement alone.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/9029",
+        "number": 9029,
+        "title": "Positioning issue of Dropdown's options list in RTL context",
+        "category": "overlay-position",
+        "components": [
+          "Dropdown"
+        ],
+        "summary": "In an RTL context, when a dropdown's list did not fit, it was always shifted to the right side even when only the left had room.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2019-05-09",
+        "closedAt": "2019-05-15",
+        "daysOpen": 5,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "Component: Dropdown"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/microsoft/fluentui/pull/9041",
+            "title": "Fix positioning issue of Dropdown's options list",
+            "mergedAt": "2019-05-14"
+          }
+        ],
+        "lesson": "Collision handling evaluates both physical sides symmetrically; fixture: anchor near each viewport edge in RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/10900",
+        "number": 10900,
+        "title": "ColorPicker: full RTL support?",
+        "category": "value-direction",
+        "components": [
+          "ColorPicker"
+        ],
+        "summary": "The colour sliders and the colour rectangle made no RTL adjustments; maintainers judged gradient direction less meaningful to users than other directional UI and closed the request after more than two years as not on the roadmap.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2019-10-18",
+        "closedAt": "2022-02-04",
+        "daysOpen": 841,
+        "comments": 2,
+        "reactions": 1,
+        "labels": [
+          "Area: RTL",
+          "Component: ColorPicker",
+          "Resolution: Soft Close",
+          "Status: Not on Roadmap",
+          "Type: Feature"
+        ],
+        "lesson": "For each value-axis component the RTL behaviour is a recorded decision (mirror or keep), implemented consistently for pointer, keys and visuals.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/11352",
+        "number": 11352,
+        "title": "Feature request: Global function to automatically flip icons on RTL",
+        "category": "mirroring",
+        "components": [
+          "Icon"
+        ],
+        "summary": "Authors had to pick the left or right variant of an icon by hand after checking the direction; a request for automatic flipping stayed open for seventeen months and was closed without one.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2019-12-02",
+        "closedAt": "2021-04-26",
+        "daysOpen": 511,
+        "comments": 3,
+        "reactions": 2,
+        "labels": [
+          "Area: Icons",
+          "Area: Theming",
+          "Component: Icon",
+          "Needs: Backlog review",
+          "Resolution: Soft Close",
+          "Type: Feature"
+        ],
+        "lesson": "The icon API takes the logical icon (e.g. chevron-forward) and resolves the glyph.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/13708",
+        "number": 13708,
+        "title": "RTL split button style messed up",
+        "category": "layout",
+        "components": [
+          "SplitButton"
+        ],
+        "summary": "In RTL the split button's divider and borders were on the wrong sides, and the report sat for almost a year before being soft-closed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-06-19",
+        "closedAt": "2021-05-24",
+        "daysOpen": 339,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "Area: RTL",
+          "Component: Button",
+          "Priority 2: Normal",
+          "Resolution: Soft Close",
+          "Type: Bug :bug:"
+        ],
+        "lesson": "Split and attached controls use logical borders and radii; screenshot fixture in RTL.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/14352",
+        "number": 14352,
+        "title": "The axis of the charts needs to support RTL",
+        "category": "chart",
+        "components": [
+          "charting"
+        ],
+        "summary": "The axes of the charting package ignored RTL.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-08-05",
+        "closedAt": "2020-08-28",
+        "daysOpen": 23,
+        "comments": 4,
+        "reactions": 0,
+        "labels": [
+          "Area: RTL",
+          "Fluent UI react (v8)",
+          "Package: charting",
+          "Status: Fixed",
+          "Type: Bug :bug:"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/microsoft/fluentui/pull/14584",
+            "title": "added rtl support for all the Cartesian charts",
+            "mergedAt": "2020-08-28"
+          }
+        ],
+        "lesson": "Charts decide axis mirroring explicitly (y-axis at inline-start, x increasing toward inline-end for categorical data, time axes by policy) and test it.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/15795",
+        "number": 15795,
+        "title": "Wrong horizontal gaps between Stack items in RTL mode",
+        "category": "style-engine",
+        "components": [
+          "Stack"
+        ],
+        "summary": "Horizontal gaps between stack items were wrong in RTL; an earlier report of the same defect had been closed without the cause being addressed. The stack emulated gaps with margins on one physical side.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2020-10-30",
+        "closedAt": "2021-04-26",
+        "daysOpen": 178,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "Area: RTL",
+          "Component: Stack",
+          "Fluent UI react (v8)",
+          "Needs: Investigation",
+          "Resolution: Soft Close"
+        ],
+        "lesson": "Stack uses the gap property; no margin emulation.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/17389",
+        "number": 17389,
+        "title": "Resize details list column in RTL cause the column width to change in the opposite direction",
+        "category": "input",
+        "components": [
+          "DetailsList"
+        ],
+        "summary": "With dir=\"rtl\", dragging a column header's resize handle changed the width in the opposite direction.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-03-12",
+        "closedAt": "2021-09-03",
+        "daysOpen": 175,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "Component: DetailsList",
+          "Fluent UI react (v8)",
+          "Needs: Investigation",
+          "Resolution: Soft Close"
+        ],
+        "lesson": "Resize deltas are direction-signed in the shared resize engine.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/19304",
+        "number": 19304,
+        "title": "Typing long RTL text in a LTR Text Field doesn't scroll with the text like if you typed LTR text",
+        "category": "input",
+        "components": [
+          "TextField"
+        ],
+        "summary": "Typing a long Arabic string into an LTR text field did not keep the caret in view the way Latin text does: the field did not scroll with the text.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-08-07",
+        "closedAt": "2021-09-10",
+        "daysOpen": 35,
+        "comments": 2,
+        "reactions": 0,
+        "labels": [
+          "Component: TextField",
+          "Needs: Author Feedback",
+          "Status: No Recent Activity"
+        ],
+        "lesson": "Text inputs set dir=\"auto\" (or the content's direction) where user content may be either direction, and the fixture types long RTL text into an LTR field and checks the caret stays visible.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/19754",
+        "number": 19754,
+        "title": "(react-menu) - Menu does not support RTL",
+        "category": "overlay-position",
+        "components": [
+          "Menu"
+        ],
+        "summary": "With the provider set to RTL, the new menu component's nested submenus were positioned incorrectly.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-09-10",
+        "closedAt": "2021-09-14",
+        "daysOpen": 4,
+        "comments": 1,
+        "reactions": 0,
+        "labels": [
+          "Area: RTL",
+          "Component: Menu",
+          "Fluent UI react-components (v9)",
+          "Needs: Triage :mag:"
+        ],
+        "lesson": "Submenu side derives from direction through the shared positioning engine.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/19766",
+        "number": 19766,
+        "title": "Fluent Dialog not behaving correctly for RTL direction",
+        "category": "layout",
+        "components": [
+          "Dialog"
+        ],
+        "summary": "With RTL text direction the dialog's parts were misplaced, visible on the documentation site; the report was open for more than a year and soft-closed.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-09-13",
+        "closedAt": "2022-10-24",
+        "daysOpen": 406,
+        "comments": 6,
+        "reactions": 0,
+        "labels": [
+          "Area: RTL",
+          "Component: Dialog",
+          "Fluent UI react (v8)",
+          "Issue Pinged",
+          "Needs: Attention",
+          "Needs: Repro",
+          "Resolution: Soft Close",
+          "🧐 Under investigation"
+        ],
+        "lesson": "Documentation examples are rendered in RTL in CI screenshots.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/20622",
+        "number": 20622,
+        "title": "Popover, Tooltip: RTL arrow positioning broken",
+        "category": "overlay-position",
+        "components": [
+          "Popover",
+          "Tooltip"
+        ],
+        "summary": "In RTL the arrow of popovers and tooltips disappeared for the logical \"before\" and \"after\" positions.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2021-11-16",
+        "closedAt": "2021-12-02",
+        "daysOpen": 16,
+        "comments": 0,
+        "reactions": 0,
+        "labels": [
+          "Area: RTL",
+          "Component: Popover",
+          "Fluent UI react-components (v9)",
+          "Priority 2: Normal",
+          "Status: Fixed",
+          "Type: Bug :bug:"
+        ],
+        "lesson": "Arrow placement is computed after logical positions are resolved to physical sides; fixture: arrow visible and pointing at the anchor for all placements × directions.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/24984",
+        "number": 24984,
+        "title": "[Bug]: Modal close icon (x) should be placed on the left for RTL",
+        "category": "layout",
+        "components": [
+          "Modal"
+        ],
+        "summary": "With RTL direction the modal's close button stayed on the right.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-09-27",
+        "closedAt": "2022-09-28",
+        "daysOpen": 0,
+        "comments": 3,
+        "reactions": 0,
+        "labels": [
+          "Needs: Triage :mag:"
+        ],
+        "lesson": "Dismiss buttons sit at inline-end.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/25624",
+        "number": 25624,
+        "title": "[Feature]: Auto mirror icons in Fluent UI 9/react-icons 2",
+        "category": "mirroring",
+        "components": [
+          "Icon"
+        ],
+        "summary": "In the newer icon package, icons such as an expand-left panel icon had to be swapped by hand for their right-hand counterpart in RTL; a request for automatic mirroring was soft-closed after ten months.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-11-10",
+        "closedAt": "2023-09-19",
+        "daysOpen": 313,
+        "comments": 8,
+        "reactions": 0,
+        "labels": [
+          "Fluent UI react-components (v9)",
+          "Partner Ask",
+          "Resolution: Soft Close",
+          "Type: Feature"
+        ],
+        "lesson": "The mirroring rule supports both transforms (flip) and swaps to a named counterpart.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/25680",
+        "number": 25680,
+        "title": "[Bug]: AvatarGroup pie variant breaking in dir=\"rtl\"",
+        "category": "layout",
+        "components": [
+          "AvatarGroup"
+        ],
+        "summary": "The pie variant of the avatar group, which clips and overlaps avatars into one circle, broke under dir=\"rtl\".",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2022-11-15",
+        "closedAt": "2022-11-29",
+        "daysOpen": 14,
+        "comments": 1,
+        "reactions": 1,
+        "labels": [
+          "Component: Avatar",
+          "Fluent UI react-components (v9)",
+          "Status: Fixed"
+        ],
+        "lesson": "Clip paths and overlaps that are geometric use physical values and are checked in RTL so they are not flipped by accident.",
+        "confidence": "needs-review"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/28452",
+        "number": 28452,
+        "title": "[Bug]: fluent-accordion icons spacing broken in RTL",
+        "category": "style-engine",
+        "components": [
+          "Accordion"
+        ],
+        "summary": "Icon spacing in the web-component accordion differed between LTR and RTL because physical padding and margin properties were used. Open for more than three years.",
+        "state": "open",
+        "stateReason": "reopened",
+        "createdAt": "2023-07-06",
+        "daysOpen": 1223,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "Fluent UI WC (v3)",
+          "Resolution: Soft Close",
+          "web-components"
+        ],
+        "lesson": "Lint rule: no physical inline properties in component styles.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/28914",
+        "number": 28914,
+        "title": "[Bug]: fluent-slider does not flip in RTL",
+        "category": "value-direction",
+        "components": [
+          "Slider"
+        ],
+        "summary": "The web-component slider does not flip in RTL whether dir is set on the slider or on a parent. Open for more than three years.",
+        "state": "open",
+        "stateReason": "reopened",
+        "createdAt": "2023-08-20",
+        "daysOpen": 1178,
+        "comments": 8,
+        "reactions": 0,
+        "labels": [
+          "Fluent UI WC (v3)",
+          "Resolution: Soft Close",
+          "web-components"
+        ],
+        "lesson": "Slider direction is resolved from the DOM and tested with dir on the element and on an ancestor.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/28935",
+        "number": 28935,
+        "title": "[Bug]: fluent-tabs keyboard navigation is not flipped in RTL",
+        "category": "keyboard",
+        "components": [
+          "Tabs"
+        ],
+        "summary": "Keyboard navigation of the web-component tabs is not flipped in RTL. Open for more than three years.",
+        "state": "open",
+        "stateReason": "reopened",
+        "createdAt": "2023-08-21",
+        "daysOpen": 1177,
+        "comments": 7,
+        "reactions": 0,
+        "labels": [
+          "Fluent UI WC (v3)",
+          "Resolution: Soft Close",
+          "web-components"
+        ],
+        "lesson": "Roving-focus direction is covered by generated tests for every component using the engine.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/30801",
+        "number": 30801,
+        "title": "[Bug]: Drawer animation wrong direction in RTL languages",
+        "category": "animation",
+        "components": [
+          "Drawer"
+        ],
+        "summary": "With the direction set to RTL the drawer animated from left to right. It took six months to fix.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2024-03-18",
+        "closedAt": "2024-09-13",
+        "daysOpen": 179,
+        "comments": 3,
+        "reactions": 1,
+        "labels": [
+          "Component: Drawer",
+          "Fluent UI react-components (v9)",
+          "Needs: Discussion",
+          "Needs: Prototyping",
+          "Status: In PR"
+        ],
+        "fixedBy": [
+          {
+            "url": "https://github.com/microsoft/fluentui/pull/32813",
+            "title": "fix(react-drawer): add correct animation direction when RTL",
+            "mergedAt": "2024-09-13"
+          }
+        ],
+        "lesson": "Drawer motion derives from the resolved physical side.",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://github.com/microsoft/fluentui/issues/33592",
+        "number": 33592,
+        "title": "[Bug]: Fluent Slider is not honoring RTL direction",
+        "category": "value-direction",
+        "components": [
+          "Slider"
+        ],
+        "summary": "A second report that the web-component slider renders left to right under RTL, filed sixteen months after the first, which was still open.",
+        "state": "closed",
+        "stateReason": "completed",
+        "createdAt": "2025-01-09",
+        "closedAt": "2025-08-12",
+        "daysOpen": 215,
+        "comments": 5,
+        "reactions": 0,
+        "labels": [
+          "Fluent UI WC (v3)",
+          "Resolution: Soft Close",
+          "Type: Bug :bug:",
+          "web-components"
+        ],
+        "lesson": "An open RTL defect in a core input is a release blocker, not backlog.",
+        "confidence": "verified"
+      }
+    ]
+  }
+}
