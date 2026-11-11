@@ -1,0 +1,75 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-NUM-007",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-NUM-007",
+    "title": {
+      "ar": "المعرّفات تحتفظ بأرقامها كما كُتبت",
+      "en": "Identifiers keep the digits they were written with"
+    },
+    "statement": {
+      "ar": "أرقام الفواتير والطلبات ورموز المنتجات والإصدارات والمقاسات التقنية ليست كميات: تُعرض بالأرقام التي خُزنت بها (لاتينية غالبًا) ولا تخضع لتفضيل أرقام العرض. الكميات والمبالغ والهواتف والتواريخ وحدها تتبع التفضيل.",
+      "en": "Invoice and order numbers, product codes, versions and technical sizes are not quantities: they are displayed in the digits they were stored with (usually Latin) and do not follow the display-numerals preference. Only quantities, amounts, phones and dates do."
+    },
+    "rationale": {
+      "ar": "المعرّف يُنسخ ويُملى ويُطابق في أنظمة أخرى؛ تغيير شكله يكسر المطابقة والبحث.",
+      "en": "An identifier is copied, dictated and matched in other systems; changing its shape breaks matching and search."
+    },
+    "area": "numerals",
+    "severity": "must",
+    "appliesTo": [
+      "numerals-localize",
+      "table",
+      "badge"
+    ],
+    "checks": [
+      "numerals-in-copy cases tagged kept-latin are unchanged under numerals=arab.",
+      "A value typed as an identifier is rendered by a component that never converts digits.",
+      "Searching for an identifier typed in Arabic-Indic digits still finds it (digits are folded in comparison only)."
+    ],
+    "related": [
+      "R-NUM-004",
+      "R-BIDI-008"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Numbers and characters"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "6.1.4 Arabic number in other uses"
+      }
+    ],
+    "fixtures": [
+      "numerals-in-copy"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-A11Y-002",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance. Owner's source note: WAI-ARIA Authoring Practices — Dialog (Modal)."
+  },
+  "data": {
+    "id": "R-A11Y-002",
+    "title": {
+      "ar": "سلوك التركيز في الحوارات",
+      "en": "Focus behaviour in dialogs"
+    },
+    "statement": {
+      "ar": "ادخل بالتركيز إلى أول حقل، واحبسه داخل الحوار، وأغلق بـ Escape ما لم يكن هناك إرسال جارٍ، وأعد التركيز إلى العنصر الذي فتح الحوار.",
+      "en": "Move focus to the first field, trap it inside the dialog, close on Escape unless a submission is in progress, and return focus to the element that opened the dialog."
+    },
+    "rationale": {
+      "ar": "مستخدم لوحة المفاتيح وقارئ الشاشة يحتاج إلى معرفة مكانه دائمًا.",
+      "en": "A keyboard or screen-reader user always needs to know where they are."
+    },
+    "area": "accessibility",
+    "severity": "must",
+    "appliesTo": [
+      "dialog",
+      "drawer"
+    ],
+    "checks": [
+      "After opening, document.activeElement is inside the dialog.",
+      "Tab and Shift+Tab from the last and first focusable elements stay inside the dialog.",
+      "Escape closes the dialog when idle and does nothing while a submission is pending.",
+      "After closing, focus is on the element that opened the dialog."
+    ],
+    "related": [
+      "R-FLOW-001"
+    ],
+    "problem": {
+      "ar": "حوارات تفتح والتركيز خلفها، أو تُغلق ويضيع التركيز إلى أعلى الصفحة.",
+      "en": "Dialogs open with focus left behind them, or close and drop focus at the top of the page."
+    },
+    "context": {
+      "ar": "Dialog وDrawer.",
+      "en": "Dialog and drawer."
+    },
+    "exceptions": {
+      "ar": "أثناء الإرسال يُعطَّل الإغلاق لتجنّب ضياع حالة العملية.",
+      "en": "Closing is disabled during submission so the state of the operation is not lost."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide: Dialog (Modal) pattern",
+        "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+      }
+    ]
+  }
+}

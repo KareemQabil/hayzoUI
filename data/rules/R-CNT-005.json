@@ -1,0 +1,73 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-CNT-005",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "48.0 (as shipped in ICU 78.3 with Node 22.23.4; plural rules compared with cldr-json main on 2026-11-11)",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-CNT-005",
+    "title": {
+      "ar": "لا تُركَّب الجمل من قطع",
+      "en": "Sentences are not assembled from pieces"
+    },
+    "statement": {
+      "ar": "الرسالة جملة كاملة فيها مواضع للمتغيرات. لا تضم كلمات أو أجزاء جمل برمجيًا، ولا تُلحق «ال» أو لاحقة بمتغير، ولا تفترض ترتيب الكلمات. المتغيرات النصية تُعزل اتجاهيًا، والأعداد والتواريخ تدخل منسَّقة.",
+      "en": "A message is a whole sentence with placeholders. Do not join words or sentence fragments in code, do not attach «ال» or a suffix to a variable, and do not assume word order. Text variables are bidi-isolated; numbers and dates go in formatted."
+    },
+    "rationale": {
+      "ar": "العربية تطابق العدد والمعدود والصفة والفعل في الجنس والعدد والإعراب، والترتيب يختلف عن الإنجليزية. القطع المركبة صحيحة في لغة واحدة فقط.",
+      "en": "Arabic agrees number, counted noun, adjective and verb in gender, number and case, and its word order differs from English. Assembled fragments are correct in one language only."
+    },
+    "area": "content",
+    "severity": "must",
+    "appliesTo": [
+      "messages"
+    ],
+    "checks": [
+      "No source file concatenates a translated string with another string or variable to form displayed text (lint: string concatenation or template literal around a message call).",
+      "Every placeholder that receives user text is rendered through an isolating element or FSI…PDI.",
+      "No message value starts or ends with a space."
+    ],
+    "related": [
+      "R-CNT-004",
+      "R-BIDI-005"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "section": "Text inserted into a template"
+      },
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "section": "MessageFormat plural and select"
+      }
+    ],
+    "fixtures": [
+      "plural-agreement",
+      "mixed-direction"
+    ]
+  }
+}

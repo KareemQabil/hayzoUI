@@ -1,0 +1,87 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-014",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Unicode Bidirectional Algorithm basics",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/uba-basics",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Microsoft Learn, Globalization: Text directionality",
+        "url": "https://learn.microsoft.com/en-us/globalization/fonts-layout/text-directionality",
+        "version": "page read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-014",
+    "title": {
+      "ar": "اعرف فئات الأرقام قبل اختيار الفاصل",
+      "en": "Know the number classes before choosing a separator"
+    },
+    "statement": {
+      "ar": "عند تنسيق أي عدد اختر فواصله بحيث يبقى مقطعًا واحدًا: مع الأرقام اللاتينية (EN) النقطة والفاصلة والنقطتان والشرطة المائلة بين رقمين تبقيه موحدًا، ومع الأرقام العربية (AN) لا يبقيه موحدًا إلا فاصل من فئة CS بين رقمين. ما عدا ذلك يُعزل.",
+      "en": "When formatting any number choose separators that keep it one run: with Latin digits (EN) a dot, comma, colon or slash between two digits keeps it together; with Arabic-Indic digits (AN) only a single CS-class separator between two digits does. Anything else is isolated."
+    },
+    "rationale": {
+      "ar": "الأرقام اللاتينية فئتها EN والعربية المشرقية AN والفارسية EN. الفواصل ES (+ و-) وCS (, . : / والمسافة غير القاطعة) تنضم إلى العدد فقط إذا كانت مفردة بين رقمين من الفئة نفسها (W4)، وعلامات ET (% والعملات و°) تنضم إلى EN فقط (W5). وبعد حرف عربي تتحول EN إلى AN (W2).",
+      "en": "Latin digits are class EN, Arabic-Indic digits AN, Persian digits EN. Separators ES (+ and -) and CS (, . : / and no-break space) join a number only when single between two digits of the same class (W4); terminators ET (%, currency signs, °) join only EN (W5). After an Arabic letter EN becomes AN (W2)."
+    },
+    "area": "bidi",
+    "severity": "should",
+    "appliesTo": [
+      "number-format",
+      "date-format",
+      "phone-format"
+    ],
+    "checks": [
+      "Every string produced by a number, date, time or phone formatter resolves to one contiguous visual run for its digits and separators in an RTL paragraph, or is emitted inside an LTR isolate.",
+      "mixed-direction MX-036 and MX-037: a range in Arabic-Indic digits is drawn as two number runs with the separator between them (no island).",
+      "mixed-direction MX-040: U+066A after Arabic-Indic digits is drawn on the left of the number in an RTL paragraph."
+    ],
+    "related": [
+      "R-BIDI-003",
+      "R-NUM-009"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "3.2 Table 4 Bidirectional Character Types; 3.3.4 W2, W4, W5, W7"
+      },
+      {
+        "name": "W3C Internationalization: Unicode Bidirectional Algorithm basics",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/uba-basics",
+        "section": "Numbers"
+      },
+      {
+        "name": "Microsoft Learn, Globalization: Text directionality",
+        "url": "https://learn.microsoft.com/en-us/globalization/fonts-layout/text-directionality",
+        "section": "Weak characters"
+      }
+    ],
+    "fixtures": [
+      "mixed-direction",
+      "formatting-harvested"
+    ]
+  }
+}

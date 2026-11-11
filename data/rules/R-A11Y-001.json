@@ -1,0 +1,62 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-A11Y-001",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-A11Y-001",
+    "title": {
+      "ar": "لكل زر أيقوني اسم عربي مسموع",
+      "en": "Every icon button has an audible Arabic name"
+    },
+    "statement": {
+      "ar": "اجعل خاصية label إلزامية في IconButton، وخذ النصوص الداخلية الافتراضية للمكونات من رسائل اللغة.",
+      "en": "Make the label property mandatory on icon buttons, and take the default internal strings of components from the locale messages."
+    },
+    "rationale": {
+      "ar": "قارئ الشاشة يعلن الاسم المتاح فقط؛ الأيقونة وحدها لا اسم لها.",
+      "en": "A screen reader announces only the accessible name; an icon alone has none."
+    },
+    "area": "accessibility",
+    "severity": "must",
+    "appliesTo": [
+      "icon-button",
+      "dialog",
+      "search-field"
+    ],
+    "checks": [
+      "Every element with role button whose content is only an icon has a non-empty accessible name.",
+      "With lang=ar no default accessible name supplied by a component consists only of Latin letters.",
+      "The icon-button type makes label a required property (compile-time check)."
+    ],
+    "problem": {
+      "ar": "أزرار «X» و«⋯» تُقرأ «button» أو «Close» بالإنجليزية في واجهة عربية.",
+      "en": "Buttons showing \"X\" and \"⋯\" are read as \"button\" or as \"Close\" in English inside an Arabic interface."
+    },
+    "context": {
+      "ar": "كل الأزرار الأيقونية.",
+      "en": "All icon buttons."
+    },
+    "exceptions": {
+      "ar": "لا توجد.",
+      "en": "None."
+    },
+    "origin": "harvested",
+    "status": "proposed"
+  }
+}

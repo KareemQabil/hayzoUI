@@ -1,0 +1,410 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "mixed-text-runs-harvested",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/bidi-runs.test.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Every expect() on a literal in BD-01…BD-08 is copied by script; the bracket notation of the test helper is converted to structured runs. Case ids are the test id plus a letter."
+  },
+  "data": {
+    "purpose": "The owner's decision for free text of unknown script (names, company names): the line direction is the script of the majority of words, and every run of the other script is one isolated island. Each case gives the direction and the runs to wrap.",
+    "appliesTo": [
+      "text-direction",
+      "auto-text"
+    ],
+    "cases": [
+      {
+        "id": "BD-01a",
+        "input": {
+          "text": "Dr. سامي الحلبي"
+        },
+        "expected": {
+          "dir": "rtl",
+          "runs": [
+            {
+              "text": "Dr.",
+              "isolate": "ltr"
+            },
+            {
+              "text": " سامي الحلبي",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "rtl"
+        ],
+        "note": "Latin-first Arabic name is RTL with «Dr.» isolated, period attached",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-01",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-02a",
+        "input": {
+          "text": "3M مصر"
+        },
+        "expected": {
+          "dir": "rtl",
+          "runs": [
+            {
+              "text": "3M",
+              "isolate": "ltr"
+            },
+            {
+              "text": " مصر",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "rtl"
+        ],
+        "note": "«3M مصر» is RTL with «3M» isolated",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-02",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-03a",
+        "input": {
+          "text": "محمد (Mido) السيد"
+        },
+        "expected": {
+          "dir": "rtl",
+          "runs": [
+            {
+              "text": "محمد (",
+              "isolate": null
+            },
+            {
+              "text": "Mido",
+              "isolate": "ltr"
+            },
+            {
+              "text": ") السيد",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "rtl"
+        ],
+        "note": "parentheses stay outside the island around «Mido»",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-03",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-04a",
+        "input": {
+          "text": "أحمد Khaled"
+        },
+        "expected": {
+          "dir": "rtl",
+          "runs": [
+            {
+              "text": "أحمد ",
+              "isolate": null
+            },
+            {
+              "text": "Khaled",
+              "isolate": "ltr"
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "rtl"
+        ],
+        "note": "Arabic-dominant name with a Latin word: RTL, «Khaled» isolated",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-04",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-05a",
+        "input": {
+          "text": "Sara Haddad"
+        },
+        "expected": {
+          "dir": "ltr",
+          "runs": [
+            {
+              "text": "Sara Haddad",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "ltr"
+        ],
+        "note": "all-Latin is LTR with no isolates; all-Arabic is RTL with no isolates",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-05",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-05b",
+        "input": {
+          "text": "سامي الحلبي"
+        },
+        "expected": {
+          "dir": "rtl",
+          "runs": [
+            {
+              "text": "سامي الحلبي",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "rtl"
+        ],
+        "note": "all-Latin is LTR with no isolates; all-Arabic is RTL with no isolates",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-05",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-06a",
+        "input": {
+          "text": "Ahmed K. الحلبي محمود"
+        },
+        "expected": {
+          "dir": "rtl",
+          "runs": [
+            {
+              "text": "Ahmed K.",
+              "isolate": "ltr"
+            },
+            {
+              "text": " الحلبي محمود",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "rtl"
+        ],
+        "note": "consecutive Latin words form one island, spaces between them included",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-06",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-06b",
+        "input": {
+          "text": "شركة iPhone 15 Pro مصر"
+        },
+        "expected": {
+          "dir": "rtl",
+          "runs": [
+            {
+              "text": "شركة ",
+              "isolate": null
+            },
+            {
+              "text": "iPhone 15 Pro",
+              "isolate": "ltr"
+            },
+            {
+              "text": " مصر",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "rtl"
+        ],
+        "note": "consecutive Latin words form one island, spaces between them included",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-06",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-07a",
+        "input": {
+          "text": "Mohamed Ali Hassan سامي"
+        },
+        "expected": {
+          "dir": "ltr",
+          "runs": [
+            {
+              "text": "Mohamed Ali Hassan ",
+              "isolate": null
+            },
+            {
+              "text": "سامي",
+              "isolate": "rtl"
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "ltr"
+        ],
+        "note": "Latin-dominant text isolates the Arabic words RTL",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-07",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-08a",
+        "input": {
+          "text": "ab سم"
+        },
+        "expected": {
+          "dir": "rtl"
+        },
+        "tags": [
+          "direction-only",
+          "rtl"
+        ],
+        "note": "words vote (a tie goes RTL); no strong letters keeps the surrounding direction",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-08",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-08b",
+        "input": {
+          "text": "Mohamed Abdelrahman سم"
+        },
+        "expected": {
+          "dir": "ltr"
+        },
+        "tags": [
+          "direction-only",
+          "ltr"
+        ],
+        "note": "words vote (a tie goes RTL); no strong letters keeps the surrounding direction",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-08",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-08c",
+        "input": {
+          "text": "Abdelrahman سم سم"
+        },
+        "expected": {
+          "dir": "rtl"
+        },
+        "tags": [
+          "direction-only",
+          "rtl"
+        ],
+        "note": "words vote (a tie goes RTL); no strong letters keeps the surrounding direction",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-08",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-08d",
+        "input": {
+          "text": "123 - 456"
+        },
+        "expected": {
+          "dir": null,
+          "runs": [
+            {
+              "text": "123 - 456",
+              "isolate": null
+            }
+          ]
+        },
+        "tags": [
+          "runs",
+          "no-direction"
+        ],
+        "note": "words vote (a tie goes RTL); no strong letters keeps the surrounding direction",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-08",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-08e",
+        "input": {
+          "text": ""
+        },
+        "expected": {
+          "dir": null,
+          "runs": []
+        },
+        "tags": [
+          "runs",
+          "no-direction"
+        ],
+        "note": "words vote (a tie goes RTL); no strong letters keeps the surrounding direction",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-08",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-08f",
+        "input": {
+          "text": "٣، ٤"
+        },
+        "expected": {
+          "dir": null
+        },
+        "tags": [
+          "direction-only",
+          "no-direction"
+        ],
+        "note": "words vote (a tie goes RTL); no strong letters keeps the surrounding direction",
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-08",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      }
+    ],
+    "inputShape": "{ text }",
+    "expectedShape": "{ dir: \"rtl\" | \"ltr\" | null, runs?: [{ text, isolate: \"ltr\" | \"rtl\" | null }] } — runs concatenate to the input; isolate names the direction of the <bdi> to wrap the run in. dir null means no strong letters: keep the surrounding direction.",
+    "rules": [
+      "R-BIDI-001"
+    ]
+  }
+}

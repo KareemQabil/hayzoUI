@@ -1,0 +1,73 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-LAYOUT-007",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/",
+        "version": "Working Draft 2025-12-04",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material Design 2: Bidirectionality",
+        "url": "https://m2.material.io/design/usability/bidirectionality.html",
+        "version": "not machine-readable on 2026-11-11 (JavaScript-only page); cited from prior knowledge",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-LAYOUT-007",
+    "title": {
+      "ar": "الحركة والتحويلات والظلال تعرف الاتجاه",
+      "en": "Motion, transforms and shadows know the direction"
+    },
+    "statement": {
+      "ar": "كل translateX وموضع بداية الانزلاق والتدرج اللوني الأفقي والظل المزاح أفقيًا يُضرب في معامل الاتجاه. الدرج الجانبي يدخل من جهة البداية، والانتقال إلى الصفحة التالية يتحرك نحو النهاية.",
+      "en": "Every translateX, slide origin, horizontal gradient and horizontally offset shadow is multiplied by a direction factor. A side drawer enters from the start side, and a forward page transition moves toward the end."
+    },
+    "rationale": {
+      "ar": "الخصائص المنطقية لا تغطي التحويلات والحركة، فتبقى الحركة بالاتجاه القديم بعد قلب التخطيط.",
+      "en": "Logical properties do not cover transforms and animation, so motion keeps its old direction after the layout flips."
+    },
+    "area": "layout",
+    "severity": "must",
+    "appliesTo": [
+      "recipes",
+      "motion",
+      "drawer",
+      "toast",
+      "carousel"
+    ],
+    "checks": [
+      "No transform with a non-zero horizontal translation appears in CSS without a direction variable or a paired [dir] rule.",
+      "In RTL a start-side drawer's first animation frame is beyond the right edge.",
+      "Horizontal gradients and offset shadows that indicate scroll or elevation direction are mirrored in RTL."
+    ],
+    "related": [
+      "R-LAYOUT-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/",
+        "section": "1 Introduction"
+      },
+      {
+        "name": "Material Design 2: Bidirectionality",
+        "url": "https://m2.material.io/design/usability/bidirectionality.html",
+        "section": "Mirroring layout"
+      }
+    ]
+  }
+}

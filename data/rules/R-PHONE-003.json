@@ -1,0 +1,58 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-PHONE-003",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "version": "living standard, read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-PHONE-003",
+    "title": {
+      "ar": "حقل الهاتف: لوحة أرقام واتجاه LTR وبلد ظاهر",
+      "en": "Phone field: digit keyboard, LTR direction, visible country"
+    },
+    "statement": {
+      "ar": "حقل الهاتف يستخدم type=\"tel\" وinputmode=\"tel\" وautocomplete=\"tel\"، واتجاهه LTR، ويعرض البلد المحدد ورمزه خارج النص القابل للتحرير. عند التركيز يُعرض الرقم بلا تجميع.",
+      "en": "A phone field uses type=\"tel\", inputmode=\"tel\" and autocomplete=\"tel\", has LTR direction, and shows the selected country and its code outside the editable text. On focus the number is shown ungrouped."
+    },
+    "rationale": {
+      "ar": "لوحة الهاتف تمنع معظم الأخطاء قبل وقوعها. والتجميع أثناء التحرير يحرّك المؤشر ويجعل الحذف غير متوقع.",
+      "en": "The telephone keypad prevents most errors before they happen. Grouping while editing moves the caret and makes deletion unpredictable."
+    },
+    "area": "phone",
+    "severity": "must",
+    "appliesTo": [
+      "phone-input"
+    ],
+    "checks": [
+      "The input element has type tel, inputmode tel, an autocomplete token starting with tel, and computed direction ltr.",
+      "While focused the field value contains no grouping characters.",
+      "The country selector has an accessible name and the dial code is not part of the input value."
+    ],
+    "related": [
+      "R-INPUT-003",
+      "R-BIDI-009"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "section": "Telephone state; inputmode; Autofill"
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-LAYOUT-010",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/",
+        "version": "Working Draft 2025-12-04",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-LAYOUT-010",
+    "title": {
+      "ar": "مواضع العناصر العائمة منطقية",
+      "en": "Overlay placement is logical"
+    },
+    "statement": {
+      "ar": "القوائم المنسدلة والتلميحات والنوافذ المنبثقة تُحدَّد مواضعها بقيم منطقية (start، end) تُحوَّل إلى جهات فيزيائية بحسب اتجاه العنصر المرجعي. والعنصر المنقول خارج الشجرة (portal) يحمل اتجاه ولغة وأرقام السياق الذي فتحه.",
+      "en": "Menus, tooltips and popovers are placed with logical values (start, end) resolved to physical sides by the direction of the anchor. An element portaled out of the tree carries the direction, language and numerals of the scope that opened it."
+    },
+    "rationale": {
+      "ar": "العنصر المنقول إلى نهاية المستند يفقد سياق والده، فيظهر بقالب LTR أو بأرقام مختلفة عن الصفحة.",
+      "en": "An element moved to the end of the document loses its parent's context and appears LTR or with numerals different from the page."
+    },
+    "area": "layout",
+    "severity": "must",
+    "appliesTo": [
+      "anchored-position",
+      "overlay-layers",
+      "menu",
+      "tooltip",
+      "dialog",
+      "toast"
+    ],
+    "checks": [
+      "Placement options are named with start/end; in RTL \"bottom-start\" aligns the overlay's right edge with the anchor's right edge.",
+      "Every portaled root element has the same dir, lang and data-numerals as the scope of its trigger.",
+      "A submenu in RTL opens to the left of its parent item."
+    ],
+    "related": [
+      "R-LAYOUT-001",
+      "R-A11Y-003"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/"
+      },
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir",
+        "section": "Inheritance of direction"
+      }
+    ]
+  }
+}

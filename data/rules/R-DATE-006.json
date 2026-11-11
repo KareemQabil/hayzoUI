@@ -1,0 +1,60 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-DATE-006",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "48.0 (as shipped in ICU 78.3 with Node 22.23.4; plural rules compared with cldr-json main on 2026-11-11)",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-DATE-006",
+    "title": {
+      "ar": "أسماء الأشهر من منطقة القارئ",
+      "en": "Month names come from the reader's region"
+    },
+    "statement": {
+      "ar": "أسماء الأشهر الميلادية بالعربية تختلف بين المناطق (نوفمبر، تشرين الثاني، نونبر). خذها من بيانات اللغة والمنطقة، ولا تكتبها في نص ثابت.",
+      "en": "Gregorian month names in Arabic differ between regions (نوفمبر, تشرين الثاني, نونبر). Take them from locale data; never hard-code them."
+    },
+    "rationale": {
+      "ar": "القارئ في الشام والعراق لا يستعمل الأسماء المعرَّبة عن الإنجليزية في الكتابة الرسمية، والمغرب له صيغه.",
+      "en": "Readers in the Levant and Iraq do not use the names borrowed from English in formal writing, and Morocco has its own forms."
+    },
+    "area": "date",
+    "severity": "should",
+    "appliesTo": [
+      "date-format",
+      "calendar-grid"
+    ],
+    "checks": [
+      "dates format cases: the long form for ar-EG, ar-JO and ar-MA on 2026-11-11 contains three different month names.",
+      "No component or message contains a literal Arabic month name."
+    ],
+    "related": [
+      "R-DATE-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "section": "dates months (ar, ar-JO, ar-MA …)"
+      }
+    ],
+    "fixtures": [
+      "dates"
+    ]
+  }
+}

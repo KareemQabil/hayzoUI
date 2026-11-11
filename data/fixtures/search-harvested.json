@@ -1,0 +1,252 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "search-harvested",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/fixtures.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/search.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "id, requirement and rule are copied by script; structured input and expected values are transcribed by hand from the body of each run() (harvest-overlay.mjs). The tolerance table is transcribed from src/arabic/search.ts."
+  },
+  "data": {
+    "purpose": "The owner's search cases under arabic.search.v1: tolerant and strict text matching with highlight ranges on the original string, digit matching for phones, and the similar-name warning.",
+    "appliesTo": [
+      "search-match",
+      "search-field",
+      "combobox",
+      "table"
+    ],
+    "cases": [
+      {
+        "id": "SR-F06",
+        "input": {
+          "operation": "matchDigits",
+          "queries": [
+            "0101",
+            "٠١٠١",
+            "01012345678"
+          ],
+          "target": "+20 10 1234 5678"
+        },
+        "expected": {
+          "match": [
+            true,
+            true,
+            true
+          ]
+        },
+        "tags": [
+          "search",
+          "structured-by-hand"
+        ],
+        "note": "Searching by the local phone number finds the number stored in international form, in any digits — البحث برقم الهاتف المحلي يجد الرقم المخزن بالصيغة الدولية، بأي أرقام. Source label: input «0101 · ٠١٠١ · 01012345678 → +20\u00a010\u00a01234\u00a05678», expected «مطابق ×3».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts SR-F06",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "SR-F07",
+        "input": {
+          "operation": "matchDigits",
+          "queries": [
+            "01",
+            "احمد 010"
+          ],
+          "target": "+20 10 1234 5678"
+        },
+        "expected": {
+          "match": [
+            false,
+            false
+          ]
+        },
+        "tags": [
+          "search",
+          "structured-by-hand"
+        ],
+        "note": "Two digits only, or text containing letters, is not treated as a phone number — رقمان فقط أو نص فيه حروف لا يُعامل كرقم هاتف. Source label: input «01 · احمد 010 → +20\u00a010\u00a01234\u00a05678», expected «غير مطابق ×2».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts SR-F07",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "SR-F01",
+        "input": {
+          "operation": "matchText",
+          "query": "احمد",
+          "target": "أحمد Khaled",
+          "tolerance": "default"
+        },
+        "expected": {
+          "match": true
+        },
+        "tags": [
+          "search",
+          "structured-by-hand"
+        ],
+        "note": "Tolerant search: «احمد» finds «أحمد Khaled» — البحث المتسامح: «احمد» يجد «أحمد Khaled». Source label: input «احمد → أحمد Khaled», expected «مطابق».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts SR-F01",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "SR-F02",
+        "input": {
+          "operation": "matchText",
+          "query": "احمد",
+          "target": "أحمد Khaled",
+          "tolerance": "strict"
+        },
+        "expected": {
+          "match": false
+        },
+        "tags": [
+          "search",
+          "structured-by-hand"
+        ],
+        "note": "Strict mode distinguishes hamza — الوضع الصارم يميّز الهمزة. Source label: input «احمد → أحمد Khaled (صارم)», expected «غير مطابق».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts SR-F02",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "SR-F03",
+        "input": {
+          "operation": "matchText",
+          "query": "khaled",
+          "target": "أحمد Khaled",
+          "tolerance": "default"
+        },
+        "expected": {
+          "match": true,
+          "rangesUtf16": [
+            [
+              5,
+              11
+            ]
+          ]
+        },
+        "tags": [
+          "search",
+          "structured-by-hand"
+        ],
+        "note": "The Latin part of a mixed name is case-insensitive — الجزء اللاتيني من الاسم المختلط لا يتأثر بحالة الأحرف. Source label: input «khaled → أحمد Khaled», expected «مطابق · [5,11)».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts SR-F03",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "SR-F04",
+        "input": {
+          "operation": "matchText",
+          "query": "محمد",
+          "target": "مُحَمَّد السيد",
+          "tolerance": "default"
+        },
+        "expected": {
+          "match": true,
+          "rangesUtf16": [
+            [
+              0,
+              8
+            ]
+          ]
+        },
+        "tags": [
+          "search",
+          "structured-by-hand"
+        ],
+        "note": "Diacritics do not prevent a match and stay displayed — التشكيل لا يمنع المطابقة ويبقى معروضًا. Source label: input «محمد → مُحَمَّد السيد», expected «مطابق · [0,8)».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts SR-F04",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "SR-F05",
+        "input": {
+          "operation": "similarNames",
+          "name": "ايمان عبدالرحمن",
+          "records": [
+            "إيمان عبد الرحمن",
+            "إيناس عبد الرحيم"
+          ]
+        },
+        "expected": {
+          "similar": [
+            "إيمان عبد الرحمن"
+          ]
+        },
+        "tags": [
+          "search",
+          "structured-by-hand"
+        ],
+        "note": "Similar names are shown as a warning and are not merged — الأسماء المتشابهة تُعرض كتنبيه ولا تُدمج. Source label: input «ايمان عبدالرحمن ↔ إيمان عبد الرحمن», expected «تنبيه · ١ سجل مشابه».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts SR-F05",
+        "rules": [
+          "R-SRCH-002"
+        ]
+      }
+    ],
+    "inputShape": "{ operation: matchText | matchDigits | similarNames, … }",
+    "expectedShape": "matchText: { match, rangesUtf16? } with [start, end) UTF-16 offsets in the target; matchDigits: { match: boolean per query }; similarNames: { similar: names reported }.",
+    "rules": [
+      "R-SRCH-001",
+      "R-SRCH-002"
+    ],
+    "shared": {
+      "tolerance": {
+        "default": {
+          "hamza": true,
+          "alefMaqsura": false,
+          "taaMarbuta": false,
+          "ignoreSpaces": false
+        },
+        "strict": {
+          "hamza": false,
+          "alefMaqsura": false,
+          "taaMarbuta": false,
+          "ignoreSpaces": false
+        },
+        "duplicateCheck": {
+          "hamza": true,
+          "alefMaqsura": true,
+          "taaMarbuta": true,
+          "ignoreSpaces": true
+        },
+        "always": "case-folding, digits to ASCII, removal of U+064B–U+065F, U+0670 and U+0640, whitespace runs collapsed"
+      }
+    }
+  }
+}

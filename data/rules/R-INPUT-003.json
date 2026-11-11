@@ -1,0 +1,77 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-INPUT-003",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "version": "living standard, read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-INPUT-003",
+    "title": {
+      "ar": "لوحة المفاتيح المناسبة عبر inputmode لا type=number",
+      "en": "The right keyboard via inputmode, not type=number"
+    },
+    "statement": {
+      "ar": "الحقول الرقمية تستخدم type=\"text\" مع inputmode المناسب (numeric للأعداد الصحيحة والرموز، decimal للمبالغ، tel للهواتف) وautocomplete الملائم. لا تستخدم type=\"number\".",
+      "en": "Numeric fields use type=\"text\" with the appropriate inputmode (numeric for integers and codes, decimal for amounts, tel for phones) and a fitting autocomplete. Do not use type=\"number\"."
+    },
+    "rationale": {
+      "ar": "type=number يرفض الأرقام العربية المشرقية والفاصلة «٫» في معظم المتصفحات ويعيد قيمة فارغة دون تفسير، ويغيّر القيمة بعجلة الفأرة، ويحذف الأصفار البادئة. ولوحة الأرقام على الهاتف قد تُظهر أرقامًا مشرقية بحسب إعدادات الجهاز فيجب قبولها.",
+      "en": "type=number rejects Arabic-Indic digits and the \"٫\" separator in most browsers and returns an empty value with no explanation, changes the value on mouse wheel and drops leading zeros. A phone's numeric keypad may produce Arabic-Indic digits depending on device settings, so they must be accepted."
+    },
+    "area": "input",
+    "severity": "must",
+    "appliesTo": [
+      "numeric-input",
+      "currency-input",
+      "phone-input",
+      "segmented-input"
+    ],
+    "checks": [
+      "No component renders input[type=number].",
+      "Amount fields have inputmode=\"decimal\"; integer, OTP and card fields inputmode=\"numeric\"; phone fields inputmode=\"tel\".",
+      "One-time-code fields have autocomplete=\"one-time-code\".",
+      "Typing ١٢٣ in every numeric field is accepted (R-NUM-001)."
+    ],
+    "related": [
+      "R-NUM-001",
+      "R-PHONE-003"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "section": "Input modalities: the inputmode attribute; Number state"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "1.3.5 Identify Input Purpose"
+      }
+    ],
+    "fixtures": [
+      "amounts"
+    ]
+  }
+}

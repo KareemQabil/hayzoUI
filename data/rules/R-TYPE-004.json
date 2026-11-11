@@ -1,0 +1,100 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-TYPE-004",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "version": "Candidate Recommendation Draft 2026-08-14",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Fonts Module Level 4",
+        "url": "https://www.w3.org/TR/css-fonts-4/",
+        "version": "Working Draft 2026-11-04",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-TYPE-004",
+    "title": {
+      "ar": "لا تحويل لحالة الأحرف ولا مائل مصطنع للعربية",
+      "en": "No case transforms and no synthetic italics for Arabic"
+    },
+    "statement": {
+      "ar": "لا تعتمد على الأحرف الكبيرة للتمييز: العربية بلا حالة أحرف، وtext-transform: uppercase يغيّر اللاتيني وحده داخل النص المختلط. لا تستخدم المائل ولا الغامق المصطنعين مع العربية؛ التمييز بالوزن الحقيقي أو اللون أو الحجم.",
+      "en": "Do not rely on capitals for emphasis: Arabic has no case, and text-transform: uppercase changes only the Latin inside mixed text. Do not use synthetic italic or synthetic bold with Arabic; emphasise with a real weight, colour or size."
+    },
+    "rationale": {
+      "ar": "تسمية بأحرف كبيرة صغيرة الحجم تصير في العربية نصًا صغيرًا بلا تمييز. والإمالة الآلية تشوّه الحروف المتصلة، ولا تقليد للمائل في الكتابة العربية.",
+      "en": "A small all-caps label becomes, in Arabic, small text with no emphasis. Automatic slanting distorts joined letters, and Arabic writing has no italic tradition."
+    },
+    "area": "typography",
+    "severity": "must",
+    "appliesTo": [
+      "tokens",
+      "text",
+      "button",
+      "badge"
+    ],
+    "checks": [
+      "No style applied to elements with Arabic text declares text-transform other than none.",
+      "font-synthesis is none (or weight and style are not synthesised) for Arabic font families.",
+      "Every weight used with an Arabic family exists as a real face in the font record.",
+      "A style that pairs uppercase with a small size has an Arabic variant with a larger size or heavier weight."
+    ],
+    "related": [
+      "R-TYPE-008"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "section": "text-transform"
+      },
+      {
+        "name": "CSS Fonts Module Level 4",
+        "url": "https://www.w3.org/TR/css-fonts-4/",
+        "section": "font-synthesis"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Controls: balancing Latin capitals with RTL scripts"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "4.1 Fonts & font styles"
+      }
+    ],
+    "fixtures": [
+      "names"
+    ]
+  }
+}

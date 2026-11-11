@@ -1,0 +1,145 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "formatting-harvested",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/fixtures.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/amount.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/phone.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "id, requirement, rule and the expected string are copied by script; the structured input is transcribed by hand from the body of each run() (harvest-overlay.mjs)."
+  },
+  "data": {
+    "purpose": "The owner's display-format cases: an amount or phone number to the exact string shown, including which space character joins digit groups (U+202F in amounts, U+00A0 in phones) so the groups keep their order under the bidi algorithm.",
+    "appliesTo": [
+      "money-format",
+      "phone-format"
+    ],
+    "cases": [
+      {
+        "id": "FM-F01",
+        "input": {
+          "operation": "formatAmount",
+          "minor": 123450,
+          "currency": "EGP",
+          "numerals": "latn"
+        },
+        "expected": {
+          "text": "1,234.50"
+        },
+        "tags": [
+          "format",
+          "structured-by-hand"
+        ],
+        "note": "Displaying with Latin digits does not change the stored value — العرض بأرقام لاتينية لا يغيّر القيمة المخزنة. Source label: input «123450 (minor)», expected «1,234.50».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts FM-F01",
+        "rules": [
+          "R-NUM-004"
+        ]
+      },
+      {
+        "id": "FM-F02",
+        "input": {
+          "operation": "formatAmount",
+          "minor": 123450,
+          "currency": "EGP",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "١\u202f٢٣٤٫٥٠"
+        },
+        "tags": [
+          "format",
+          "structured-by-hand"
+        ],
+        "note": "Arabic-Indic display: the decimal separator is the only comma-like mark, thousands use a narrow no-break space — العرض بأرقام عربية: الفاصلة العشرية «٫» هي العلامة الوحيدة الشبيهة بالفاصلة، والآلاف بمسافة رفيعة. Source label: input «123450 (minor)», expected «١\u202f٢٣٤٫٥٠».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts FM-F02",
+        "rules": [
+          "R-BIDI-003"
+        ]
+      },
+      {
+        "id": "FM-F03",
+        "input": {
+          "operation": "formatPhoneNational",
+          "e164": "+201012345678",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "٠١٠\u00a0١٢٣٤\u00a0٥٦٧٨",
+          "mustNotContain": [
+            "U+0020"
+          ]
+        },
+        "tags": [
+          "format",
+          "structured-by-hand"
+        ],
+        "note": "A phone number in Arabic-Indic digits contains no ordinary space that would reverse the group order — رقم الهاتف بأرقام عربية لا يحتوي مسافة عادية تقلب ترتيب المجموعات. Source label: input «+201012345678 (arab)», expected «٠١٠\u00a0١٢٣٤\u00a0٥٦٧٨».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts FM-F03",
+        "rules": [
+          "R-BIDI-003"
+        ]
+      },
+      {
+        "id": "FM-F04",
+        "input": {
+          "operation": "formatPhoneInternational",
+          "e164": "+201012345678",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "+٢٠\u00a0١٠\u00a0١٢٣٤\u00a0٥٦٧٨"
+        },
+        "tags": [
+          "format",
+          "structured-by-hand"
+        ],
+        "note": "The international phone form in Arabic-Indic digits has no ordinary spaces — الصيغة الدولية للهاتف بأرقام عربية بلا مسافات عادية. Source label: input «+201012345678 (arab, intl)», expected «+٢٠\u00a0١٠\u00a0١٢٣٤\u00a0٥٦٧٨».",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts FM-F04",
+        "rules": [
+          "R-BIDI-003"
+        ]
+      }
+    ],
+    "inputShape": "{ operation, minor | e164, currency?, numerals }",
+    "expectedShape": "{ text } exact string (code points matter: U+00A0 and U+202F are written as escapes), optionally mustNotContain.",
+    "rules": [
+      "R-NUM-004",
+      "R-BIDI-003"
+    ]
+  }
+}

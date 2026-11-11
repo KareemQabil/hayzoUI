@@ -1,0 +1,82 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-NUM-009",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Microsoft Learn, Globalization: Format numbers",
+        "url": "https://learn.microsoft.com/en-us/globalization/locale/number-formatting",
+        "version": "page read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-NUM-009",
+    "title": {
+      "ar": "الفواصل تتبع نظام الأرقام لا اللغة",
+      "en": "Separators follow the numeral system, not the language"
+    },
+    "statement": {
+      "ar": "الفاصلة العشرية تتبع نظام أرقام العرض: «.» مع اللاتينية و«٫» مع العربية المشرقية. لا تُستخدم الفاصلة العربية «،» ولا الفاصلة اللاتينية «,» علامة عشرية في العرض. فاصل الآلاف يُختار وفق R-BIDI-003.",
+      "en": "The decimal mark follows the display numeral system: \".\" with Latin digits and \"٫\" (U+066B) with Arabic-Indic. Neither the Arabic comma \"،\" nor the Latin comma is used as a decimal mark in display. The grouping separator is chosen under R-BIDI-003."
+    },
+    "rationale": {
+      "ar": "للأرقام العربية المشرقية فاصلتان مخصصتان (U+066B وU+066C). استخدام «،» (علامة ترقيم نصية) يخلط العدد بالجملة، وخلط «.» مع الأرقام المشرقية يشبه الصفر «٠».",
+      "en": "Arabic-Indic digits have two dedicated separators (U+066B, U+066C). Using \"،\" (a text punctuation mark) confuses the number with the sentence, and a \".\" among Arabic-Indic digits resembles the zero \"٠\"."
+    },
+    "area": "numerals",
+    "severity": "must",
+    "appliesTo": [
+      "number-format",
+      "money-format"
+    ],
+    "checks": [
+      "A number formatted with numerals=arab contains U+066B as its only decimal mark and no U+002E, U+002C or U+060C.",
+      "A number formatted with numerals=latn contains no U+066B or U+066C.",
+      "formatting-harvested FM-F01 and FM-F02 pass."
+    ],
+    "examples": [
+      {
+        "good": "١٢٫٥",
+        "bad": "١٢.٥",
+        "note": "The dot is easily read as a zero beside Arabic-Indic digits."
+      }
+    ],
+    "related": [
+      "R-BIDI-003",
+      "R-NUM-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "6.1.3 Formatting of Numerals"
+      },
+      {
+        "name": "Microsoft Learn, Globalization: Format numbers",
+        "url": "https://learn.microsoft.com/en-us/globalization/locale/number-formatting",
+        "section": "Decimal separation; Number grouping and separation"
+      }
+    ],
+    "fixtures": [
+      "formatting-harvested",
+      "numerals-in-copy"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-007",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Unicode Bidirectional Algorithm basics",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/uba-basics",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-007",
+    "title": {
+      "ar": "علامة الترقيم تتبع جملتها لا المقطع المجاور",
+      "en": "Punctuation follows its sentence, not the neighbouring run"
+    },
+    "statement": {
+      "ar": "حدود العزل تضم ما ينتمي إلى المقطع فقط: «C++» و«Node.js» و«report.pdf» كاملة داخل العزل، ونقطة نهاية الجملة العربية وعلامة الاستفهام خارجه.",
+      "en": "The isolate boundary contains only what belongs to the run: \"C++\", \"Node.js\" and \"report.pdf\" are wholly inside, while the Arabic sentence's full stop or question mark stays outside."
+    },
+    "rationale": {
+      "ar": "علامات الترقيم محايدة: تأخذ اتجاه ما يحيط بها، وعند طرف مقطع لاتيني في فقرة عربية تأخذ اتجاه الفقرة فتقفز إلى الجهة الأخرى من الكلمة (N1 وN2). العزل الصحيح الحدود يحسم الانتماء.",
+      "en": "Punctuation is neutral: it takes the direction of its surroundings, and at the edge of a Latin run in an Arabic paragraph it takes the paragraph direction and jumps to the other side of the word (N1, N2). An isolate with the right boundaries settles which side it belongs to."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "bidi-isolate",
+      "text"
+    ],
+    "checks": [
+      "For mixed-direction cases tagged punctuation-after-latin, the island range ends before sentence punctuation and the isolated visual order matches expected.isolated.",
+      "In the isolated rendering of MX-010 the run \"C++\" is contiguous and drawn left to right.",
+      "An automatic isolation helper never places a closing bracket or quote inside an island unless its opening partner is inside too."
+    ],
+    "related": [
+      "R-BIDI-004",
+      "R-BIDI-010"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "3.3.5 N1, N2"
+      },
+      {
+        "name": "W3C Internationalization: Unicode Bidirectional Algorithm basics",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/uba-basics",
+        "section": "Neutral characters"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "section": "Punctuation at the end of an opposite-direction phrase"
+      }
+    ],
+    "fixtures": [
+      "mixed-direction"
+    ]
+  }
+}

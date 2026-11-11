@@ -1,0 +1,279 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "properties-harvested",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/arabic.test.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/content/messages.test.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/bidi-runs.test.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/data/table/table.test.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Transcribed by hand from the test bodies (harvest-overlay.mjs); the script only wraps them: the prose is the researcher's reading of the tests."
+  },
+  "data": {
+    "purpose": "Invariants the owner checked with seeded random inputs. Each case states the invariant and its generator so the L1 suites can re-create it; there is no single input.",
+    "appliesTo": [
+      "money-parse",
+      "money-format",
+      "phone-format",
+      "search-match",
+      "text-direction",
+      "table-model",
+      "messages"
+    ],
+    "cases": [
+      {
+        "id": "PROP-01",
+        "input": {
+          "invariant": "For a random amount (0 ≤ minor < 1e9, EGP), the ungrouped editing form written in Latin digits, in Arabic-Indic digits with U+066B, and in Extended Arabic-Indic digits all parse to the same minor units.",
+          "cases": 500,
+          "seed": 20260314,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/arabic.test.ts PROP-01",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "PROP-02",
+        "input": {
+          "invariant": "For a random amount (0 ≤ minor < 1e11) in EGP and KWD, both the editing form and the grouped display form in Arabic-Indic digits parse back to the same minor units.",
+          "cases": 500,
+          "seed": 20260315,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/arabic.test.ts PROP-02",
+        "rules": [
+          "R-NUM-004",
+          "R-BIDI-003"
+        ]
+      },
+      {
+        "id": "PROP-03",
+        "input": {
+          "invariant": "Parsing is deterministic and the canonical string is a fixed point: parse(canonical(parse(x))) has the same canonical string (SAR).",
+          "cases": 500,
+          "seed": 20260316,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/arabic.test.ts PROP-03",
+        "rules": [
+          "R-NUM-003"
+        ]
+      },
+      {
+        "id": "PROP-04",
+        "input": {
+          "invariant": "For random integers a < 99999 and b < 999, the input \"a,b\" is invalid and yields no value.",
+          "cases": 500,
+          "seed": 20260317,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/arabic.test.ts PROP-04",
+        "rules": [
+          "R-NUM-002"
+        ]
+      },
+      {
+        "id": "PROP-05",
+        "input": {
+          "invariant": "For a random 2–4 character substring of a name, a strict match implies a tolerant match: tolerance only adds matches.",
+          "cases": 500,
+          "seed": 20260318,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/arabic.test.ts PROP-05",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "PROP-06",
+        "input": {
+          "invariant": "Normalising a name for search leaves the stored string unchanged.",
+          "cases": 1
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/arabic.test.ts PROP-06",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      },
+      {
+        "id": "PROP-07",
+        "input": {
+          "invariant": "An amount displayed in Arabic-Indic digits (EGP, KWD; |minor| < 1e14, 10% negative) matches ^-?[٠-٩]+(U+202F[٠-٩]{3})*(٫[٠-٩]+)?$ and parses back to the same value; a random Egyptian mobile number displayed in Arabic-Indic digits (national and international form) contains no U+0020 and parses back to the same E.164 value.",
+          "cases": 500,
+          "seed": 20260319,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/arabic.test.ts PROP-07",
+        "rules": [
+          "R-BIDI-003"
+        ]
+      },
+      {
+        "id": "CT-01",
+        "input": {
+          "invariant": "For every amount error code × currency (EGP, SAR, KWD) and every phone error code, under each display numerals setting: the message contains no digit of the other system, and never a digit, one or more U+0020, then a digit.",
+          "cases": 76
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/content/messages.test.ts CT-01",
+        "rules": [
+          "R-NUM-004",
+          "R-BIDI-003"
+        ]
+      },
+      {
+        "id": "BD-09",
+        "input": {
+          "invariant": "For random mixed strings of 1–7 Arabic, Latin and neutral words (optionally wrapped in parentheses, guillemets or an opening quote): the runs concatenate to the input, an isolate never has the line direction, never starts or ends inside a word, has no leading or trailing space, and no run is empty.",
+          "cases": 600,
+          "seed": 20261107,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-09",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "BD-10",
+        "input": {
+          "invariant": "For random single-script strings (Arabic + neutrals, Latin + neutrals): no run is isolated and the direction, when there is one, is that of the script.",
+          "cases": 500,
+          "seed": 7,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/arabic/bidi-runs.test.ts BD-10",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "TE-20",
+        "input": {
+          "invariant": "For random tables of 1–40 rows: sorting is an ordered permutation of the rows, a text filter returns a subset of the input whose count equals the reported filtered count, and the pages of any page size partition the rows in order.",
+          "cases": 600,
+          "seed": 20261108,
+          "generator": "mulberry32"
+        },
+        "expected": {
+          "holds": true
+        },
+        "tags": [
+          "property",
+          "transcribed-by-hand"
+        ],
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-20",
+        "rules": [
+          "R-SRCH-001"
+        ]
+      }
+    ],
+    "inputShape": "{ invariant (prose), cases, seed?, generator? }",
+    "expectedShape": "{ holds: true }"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-A11Y-004",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Unicode Bidirectional Algorithm basics",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/uba-basics",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-A11Y-004",
+    "title": {
+      "ar": "ترتيب المصدر هو ترتيب القراءة",
+      "en": "Source order is reading order"
+    },
+    "statement": {
+      "ar": "ترتيب العناصر في DOM هو الترتيب المنطقي للقراءة في الاتجاهين. لا تُنشئ مظهر RTL بعكس ترتيب العناصر (row-reverse، order، float) ولا بكتابة النص معكوسًا أو بترتيب بصري.",
+      "en": "The order of elements in the DOM is the logical reading order in both directions. Do not create an RTL appearance by reversing element order (row-reverse, order, float) or by writing text reversed or in visual order."
+    },
+    "rationale": {
+      "ar": "قارئ الشاشة ومفتاح Tab يتبعان المصدر. التخطيط المعكوس بصريًا يجعل التنقل يسير من النهاية إلى البداية.",
+      "en": "Screen readers and the Tab key follow the source. A visually reversed layout makes navigation run from the end to the start."
+    },
+    "area": "accessibility",
+    "severity": "must",
+    "appliesTo": [
+      "layout",
+      "recipes"
+    ],
+    "checks": [
+      "The sequence of focusable elements in DOM order equals their visual order along the inline axis from start to end, in both directions.",
+      "No style uses flex-direction: row-reverse or order to produce the RTL layout.",
+      "No text node contains Arabic stored in visual order (presentation forms U+FE70–U+FEFF outside test data)."
+    ],
+    "related": [
+      "R-LAYOUT-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "1.3.2 Meaningful Sequence; 2.4.3 Focus Order"
+      },
+      {
+        "name": "W3C Internationalization: Unicode Bidirectional Algorithm basics",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/uba-basics",
+        "section": "Logical order"
+      }
+    ],
+    "fixtures": [
+      "text-stress"
+    ]
+  }
+}

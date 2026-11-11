@@ -1,0 +1,74 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-LAYOUT-009",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "version": "Candidate Recommendation Draft 2026-08-14",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-LAYOUT-009",
+    "title": {
+      "ar": "المحاذاة إلى البداية، والفقرة الطويلة بحسب لغتها",
+      "en": "Align to the start; a long paragraph by its own language"
+    },
+    "statement": {
+      "ar": "نص الواجهة يُحاذى إلى start. عناصر القائمة الواحدة تتحاذى كلها إلى حافة واحدة ولو كان بعضها بلغة أخرى. الفقرة الطويلة (ثلاثة أسطر فأكثر) بلغة معاكسة للاتجاه تُحاذى بحسب لغتها.",
+      "en": "Interface text is aligned to start. The items of one list all align to the same edge even when some are in another script. A long paragraph (three lines or more) in the opposite-direction language is aligned according to its own language."
+    },
+    "rationale": {
+      "ar": "قائمة تتبدل حافتها من عنصر إلى آخر صعبة المسح؛ وفقرة لاتينية محاذاة إلى اليمين تُخفي بدايات أسطرها.",
+      "en": "A list whose edge changes from item to item is hard to scan; a Latin paragraph aligned right hides the beginnings of its lines."
+    },
+    "area": "layout",
+    "severity": "must",
+    "appliesTo": [
+      "text",
+      "list",
+      "table"
+    ],
+    "checks": [
+      "No component style uses text-align: left or right.",
+      "In an RTL list containing \"Sara Haddad\" between Arabic names, every item's text box starts at the same inline-start edge (the owner's mixedAlign \"ui\" default).",
+      "A block with dir=\"ltr\" and three or more lines inside an RTL page has text-align: start resolved to left."
+    ],
+    "related": [
+      "R-BIDI-005"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Text alignment"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "section": "text-align"
+      }
+    ],
+    "fixtures": [
+      "names"
+    ]
+  }
+}

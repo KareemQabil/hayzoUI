@@ -1,0 +1,62 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-MONEY-005",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Microsoft Learn, Globalization: Format numbers",
+        "url": "https://learn.microsoft.com/en-us/globalization/locale/number-formatting",
+        "version": "page read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-MONEY-005",
+    "title": {
+      "ar": "حساب المال بأعداد صحيحة وتقريب معلن",
+      "en": "Money arithmetic in integers, rounding stated"
+    },
+    "statement": {
+      "ar": "كل جمع وضرب وتوزيع وضريبة يُحسب على الوحدات الصغرى الصحيحة. حيث يلزم التقريب (ضريبة، توزيع، تقريب نقدي) يُذكر أسلوبه ويُعرض أثره، ومجموع الأجزاء يساوي الكل دائمًا.",
+      "en": "Every sum, multiplication, split and tax is computed on integer minor units. Where rounding is unavoidable (tax, allocation, cash rounding) its mode is stated and its effect shown, and the parts always add up to the whole."
+    },
+    "rationale": {
+      "ar": "الأعداد العائمة لا تمثل الكسور العشرية بدقة، والفروق الصغيرة تتراكم في الفواتير وتخالف ما يحسبه المحاسب يدويًا.",
+      "en": "Floating-point numbers cannot represent decimal fractions exactly; small differences accumulate in invoices and contradict what an accountant computes by hand."
+    },
+    "area": "money",
+    "severity": "must",
+    "appliesTo": [
+      "money-math",
+      "table"
+    ],
+    "checks": [
+      "Table aggregates of money columns are integers (table-harvested rows: the balance sum is 8973499).",
+      "Splitting an amount into n parts returns integers whose sum equals the amount.",
+      "Every rounding call names its mode; no Math.round on a major-unit value appears in money code."
+    ],
+    "related": [
+      "R-NUM-003",
+      "R-MONEY-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Microsoft Learn, Globalization: Format numbers",
+        "url": "https://learn.microsoft.com/en-us/globalization/locale/number-formatting"
+      }
+    ],
+    "fixtures": [
+      "table-harvested",
+      "amounts"
+    ]
+  }
+}

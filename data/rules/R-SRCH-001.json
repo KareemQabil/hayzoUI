@@ -1,0 +1,73 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-SRCH-001",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-SRCH-001",
+    "title": {
+      "ar": "بحث متسامح مع الهمزة دون تعديل الأسماء",
+      "en": "Hamza-tolerant search that never edits names"
+    },
+    "statement": {
+      "ar": "طبّع الهمزات والتشكيل عند المطابقة، وأبقِ التظليل على النص الأصلي، واجعل التسامح خيارًا ظاهرًا يمكن إيقافه.",
+      "en": "Normalise hamza forms and diacritics when matching, keep the highlight on the original text, and make the tolerance a visible option that can be switched off."
+    },
+    "rationale": {
+      "ar": "التطبيع يحدث في المقارنة فقط. الاسم المخزن يخص صاحبه ولا يُصحَّح نيابة عنه.",
+      "en": "Normalisation happens in the comparison only. The stored name belongs to its owner and is not corrected on their behalf."
+    },
+    "area": "search",
+    "severity": "must",
+    "appliesTo": [
+      "search-field",
+      "table",
+      "combobox"
+    ],
+    "checks": [
+      "With default tolerance «احمد» matches «أحمد Khaled»; with strict matching it does not.",
+      "«khaled» matches «أحمد Khaled» and the highlighted range is UTF-16 [5,11) of the original string.",
+      "«محمد» matches «مُحَمَّد السيد» and the highlighted range [0,8) covers the diacritics.",
+      "Normalising a name for search never mutates the stored string.",
+      "Any query that matches strictly also matches with tolerance (tolerance only adds matches).",
+      "A digit query of at least three digits, in any numeral system, matches a phone stored as \"+20 10 1234 5678\"; two digits or a query with letters does not use digit matching."
+    ],
+    "related": [
+      "R-SRCH-002"
+    ],
+    "problem": {
+      "ar": "يكتب الناس «احمد» ويبحثون عن «أحمد»، فلا يجدون العميل ويضيفونه مرة ثانية.",
+      "en": "People type «احمد» and search for «أحمد», do not find the customer and add them a second time."
+    },
+    "context": {
+      "ar": "البحث في أسماء العملاء.",
+      "en": "Searching customer names."
+    },
+    "exceptions": {
+      "ar": "البحث في الوثائق الدينية أو اللغوية قد يتطلب مطابقة حرفية.",
+      "en": "Search in religious or linguistic documents may require literal matching."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "fixtures": [
+      "search-harvested",
+      "search-pairs",
+      "table-harvested"
+    ]
+  }
+}

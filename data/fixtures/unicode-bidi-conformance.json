@@ -1,0 +1,102 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "unicode-bidi-conformance",
+  "provenance": {
+    "method": "derived",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "version": "18.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "The two files stay at unicode.org; sizes, hashes and case counts were measured on the copies downloaded on 2026-11-11. \"cases\" counts one test per input line and paragraph direction, as run by tools/extract/rules/uax9-conformance.mjs. The Unicode License V3 permits copying and redistribution with the notice; the files are left upstream only to keep the repository small.",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Where the Unicode conformance tests for the Bidirectional Algorithm live, so the L1 harness can download and run them against its own implementation. They test levels and reordering through rule L2 on a single line; shaping, mirroring glyphs (L4) and line breaking are out of their scope.",
+    "appliesTo": [
+      "bidi-resolve"
+    ],
+    "cases": [
+      {
+        "id": "BidiTest",
+        "input": {
+          "file": "BidiTest.txt",
+          "url": "https://www.unicode.org/Public/18.0.0/ucd/BidiTest.txt",
+          "sha256": "9af2f882a4ab50912e388f069a673b94eacd82fa6d07d20a3ff7f3c759e905aa"
+        },
+        "expected": {
+          "cases": 770241,
+          "failures": 0
+        },
+        "tags": [
+          "external",
+          "conformance"
+        ],
+        "note": "Reference run: tools/extract/rules/lib/uax9.mjs passes all 770241 cases.",
+        "origin": "Unicode Character Database 18.0.0"
+      },
+      {
+        "id": "BidiCharacterTest",
+        "input": {
+          "file": "BidiCharacterTest.txt",
+          "url": "https://www.unicode.org/Public/18.0.0/ucd/BidiCharacterTest.txt",
+          "sha256": "045b24d2c8ab066951bd32fe8c6b4de34647f72b5b1c7df0265f24ab53573e01"
+        },
+        "expected": {
+          "cases": 91707,
+          "failures": 0
+        },
+        "tags": [
+          "external",
+          "conformance"
+        ],
+        "note": "Reference run: tools/extract/rules/lib/uax9.mjs passes all 91707 cases.",
+        "origin": "Unicode Character Database 18.0.0"
+      }
+    ],
+    "inputShape": "{ file, url, sha256 }",
+    "expectedShape": "{ cases: number of tests the file yields, failures: 0 }",
+    "rules": [
+      "R-BIDI-012"
+    ],
+    "externalFiles": [
+      {
+        "name": "BidiTest.txt",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/BidiTest.txt",
+        "version": "18.0.0 (2026-02-03)",
+        "license": "Unicode-3.0",
+        "bytes": 7959988,
+        "lines": 497590,
+        "cases": 770241,
+        "sha256": "9af2f882a4ab50912e388f069a673b94eacd82fa6d07d20a3ff7f3c759e905aa",
+        "format": "Lines of bidi classes with a bitset of paragraph directions (1 auto, 2 LTR, 4 RTL), grouped under @Levels and @Reorder lines. No bracket pairs; B only as the last character.",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "BidiCharacterTest.txt",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/BidiCharacterTest.txt",
+        "version": "18.0.0 (2026-02-03)",
+        "license": "Unicode-3.0",
+        "bytes": 6880771,
+        "lines": 96465,
+        "cases": 91707,
+        "sha256": "045b24d2c8ab066951bd32fe8c6b4de34647f72b5b1c7df0265f24ab53573e01",
+        "format": "code points ; paragraph direction (0 LTR, 1 RTL, 2 auto) ; resolved paragraph level ; levels (x = removed by X9) ; visual order. Covers paired brackets (N0) and the UAX #9 examples.",
+        "retrievedAt": "2026-11-11"
+      }
+    ]
+  }
+}

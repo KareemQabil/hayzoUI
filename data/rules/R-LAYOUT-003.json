@@ -1,0 +1,87 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-LAYOUT-003",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "CSS Writing Modes Level 4",
+        "url": "https://www.w3.org/TR/css-writing-modes-4/",
+        "version": "Candidate Recommendation 2019-07-30",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Overflow Module Level 3",
+        "url": "https://www.w3.org/TR/css-overflow-3/",
+        "version": "Working Draft 2025-10-07",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/",
+        "version": "Working Draft 2025-12-04",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-LAYOUT-003",
+    "title": {
+      "ar": "التمرير الأفقي يبدأ من بداية الاتجاه",
+      "en": "Horizontal scrolling starts at the direction's start"
+    },
+    "statement": {
+      "ar": "الحاويات المتمررة أفقيًا (جداول، ألسنة، شرائح) تبدأ عند حافة البداية (اليمين في RTL)، وحسابات الموضع تعتمد على الإزاحة المنطقية لا على scrollLeft الخام. وشريط التمرير الرأسي يُترك في الموضع الذي يختاره المتصفح.",
+      "en": "Horizontally scrolling containers (tables, tabs, carousels) start at the start edge (the right in RTL), and position arithmetic uses a logical offset rather than raw scrollLeft. The vertical scrollbar is left where the browser puts it."
+    },
+    "rationale": {
+      "ar": "في RTL تكون scrollLeft صفرًا عند اليمين وسالبة باتجاه اليسار. الكود الذي يفترض قيمًا موجبة يجعل أزرار التمرير تعمل عكسًا وظلال الحواف تظهر في الجهة الخطأ.",
+      "en": "In RTL scrollLeft is zero at the right and negative toward the left. Code that assumes positive values makes scroll buttons work backwards and edge shadows appear on the wrong side."
+    },
+    "area": "layout",
+    "severity": "must",
+    "appliesTo": [
+      "table",
+      "tabs",
+      "carousel",
+      "virtual-list"
+    ],
+    "checks": [
+      "On first render in RTL the first item of a scroller is adjacent to the right edge.",
+      "Pressing the \"scroll toward end\" control in RTL decreases scrollLeft.",
+      "The start-edge shadow is on the right in RTL when scrolled away from the start.",
+      "Pinned columns use inline-start/inline-end offsets (table model: start and end, never left and right)."
+    ],
+    "related": [
+      "R-LAYOUT-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "CSS Writing Modes Level 4",
+        "url": "https://www.w3.org/TR/css-writing-modes-4/",
+        "section": "2.1 direction"
+      },
+      {
+        "name": "CSS Overflow Module Level 3",
+        "url": "https://www.w3.org/TR/css-overflow-3/",
+        "section": "Scrolling and clipping; scroll origin"
+      },
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/"
+      }
+    ],
+    "fixtures": [
+      "table-harvested"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-SRCH-002",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-SRCH-002",
+    "title": {
+      "ar": "نبّه على التشابه ولا تدمج الهويات",
+      "en": "Warn about similarity; never merge identities"
+    },
+    "statement": {
+      "ar": "عند إضافة عميل، اعرض السجلات المتشابهة مع رقم الهاتف لتمييزها، وأعطِ الخيارين: فتح الموجود أو الإضافة كعميل جديد.",
+      "en": "When adding a customer, show the similar records with their phone number to tell them apart, and give both options: open the existing one or add as a new customer."
+    },
+    "rationale": {
+      "ar": "الدمج الآلي يخلط حسابات مالية لأشخاص مختلفين، والضرر يصعب إصلاحه.",
+      "en": "Automatic merging mixes the financial accounts of different people, and the damage is hard to undo."
+    },
+    "area": "search",
+    "severity": "must",
+    "appliesTo": [
+      "form",
+      "inline-message"
+    ],
+    "checks": [
+      "Looking up «ايمان عبدالرحمن» among [«إيمان عبد الرحمن», «إيناس عبد الرحيم»] reports exactly one similar record.",
+      "A similarity hit produces a warning with two actions (open existing, add new) and never changes or links records by itself.",
+      "The similar record is shown with a second distinguishing field (phone)."
+    ],
+    "related": [
+      "R-SRCH-001"
+    ],
+    "problem": {
+      "ar": "«إيمان عبد الرحمن» و«ايمان عبدالرحمن» قد يكونان شخصين مختلفين.",
+      "en": "«إيمان عبد الرحمن» and «ايمان عبدالرحمن» may be two different people."
+    },
+    "context": {
+      "ar": "إضافة العملاء.",
+      "en": "Adding customers."
+    },
+    "exceptions": {
+      "ar": "لا توجد.",
+      "en": "None."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "fixtures": [
+      "search-harvested",
+      "names"
+    ]
+  }
+}

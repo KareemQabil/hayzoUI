@@ -1,0 +1,73 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-TYPE-006",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "version": "Candidate Recommendation Draft 2026-08-14",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-TYPE-006",
+    "title": {
+      "ar": "لا ضبط كامل للسطور في الواجهة",
+      "en": "No full justification in interface text"
+    },
+    "statement": {
+      "ar": "نص الواجهة يُحاذى إلى البداية. إن لزم الضبط الكامل في نص طويل فبتمديد المسافات بين الكلمات أو بالكشيدة التي يدعمها الخط، لا بالمباعدة بين الحروف، ولا تُدرج محارف التطويل (U+0640) في البيانات لتحقيقه.",
+      "en": "Interface text is start-aligned. If long text must be justified, do it by stretching inter-word spaces or with kashida the font supports, never by letter-spacing, and never by inserting tatweel characters (U+0640) into the data."
+    },
+    "rationale": {
+      "ar": "الضبط في العربية يتم تقليديًا بإطالة الوصلات، وأغلب محركات العرض لا تنفذه فتوسّع المسافات حتى تتشكل أنهار بيضاء في الأعمدة الضيقة.",
+      "en": "Arabic justification is traditionally done by elongating connections; most engines do not implement it and widen spaces until rivers form in narrow columns."
+    },
+    "area": "typography",
+    "severity": "should",
+    "appliesTo": [
+      "text",
+      "tokens"
+    ],
+    "checks": [
+      "No component style declares text-align: justify.",
+      "Where justify is used, text-justify is inter-word or auto and letter-spacing is 0.",
+      "No message string contains U+0640 except where the tatweel is the content."
+    ],
+    "related": [
+      "R-TYPE-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "7.2 Text alignment & justification; 7.2.5 Kashida; 7.2.6 Tatweel"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "section": "text-justify"
+      }
+    ],
+    "fixtures": [
+      "text-stress"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-008",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-008",
+    "title": {
+      "ar": "الهواتف والرموز والمعرّفات وحدات LTR معزولة",
+      "en": "Phone numbers, codes and identifiers are isolated LTR units"
+    },
+    "statement": {
+      "ar": "اعرض رقم الهاتف ورمز المنتج ورقم الطلب ورمز التحقق والنطاق والمدى الرقمي والعدد الموقَّع كوحدة واحدة معزولة باتجاه LTR، أيًّا كان اتجاه الصفحة.",
+      "en": "Render a phone number, product code, order number, verification code, domain, numeric range or signed number as one isolated LTR unit whatever the page direction."
+    },
+    "rationale": {
+      "ar": "هذه سلاسل لها ترتيب داخلي ثابت. في فقرة عربية تُعاد ترتيب أجزائها عند كل فاصل محايد: «+20 10 1234» تُعرض مجموعاتها معكوسة، و«10–20» تصير «20–10»، وإشارة السالب تنتقل إلى يمين الرقم.",
+      "en": "These strings have a fixed internal order. In an Arabic paragraph their parts are reordered at every neutral separator: the groups of \"+20 10 1234\" appear reversed, \"10–20\" becomes \"20–10\", and a minus sign moves to the right of the number."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "text",
+      "table",
+      "badge",
+      "phone-format"
+    ],
+    "checks": [
+      "mixed-direction cases tagged phone, code, range, negative or version: the rendered order equals expected.isolated.visualOrder.",
+      "A component that displays a phone number or identifier outputs an element with dir=\"ltr\" that isolates.",
+      "In an RTL table, a cell of identifiers is start-aligned and its characters are in logical order from left to right."
+    ],
+    "related": [
+      "R-BIDI-001",
+      "R-BIDI-003",
+      "R-PHONE-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "3.3.4 W1–W7 (EN, AN, ES, CS, ET); 3.3.5"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Numbers and characters"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/"
+      }
+    ],
+    "fixtures": [
+      "mixed-direction"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-002",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance. Owner's source note: Material Design 2 — Bidirectionality (إرشاد قديم، يُقيَّم حسب السياق)."
+  },
+  "data": {
+    "id": "R-BIDI-002",
+    "title": {
+      "ar": "اعكس الأيقونات الاتجاهية فقط",
+      "en": "Mirror directional icons only"
+    },
+    "statement": {
+      "ar": "سجّل لكل أيقونة سلوك المرآة (auto أو never). الأسهم والأشكال ‹ › تتبع الاتجاه؛ الأشياء المادية والرموز العالمية لا.",
+      "en": "Record a mirroring behaviour for every icon (auto or never). Arrows and chevrons follow the direction; physical objects and universal symbols do not."
+    },
+    "rationale": {
+      "ar": "المرآة تخص ما يعبّر عن التقدم في اتجاه القراءة: التالي والسابق والرجوع.",
+      "en": "Mirroring belongs to what expresses progress in the reading direction: next, previous and back."
+    },
+    "area": "icons",
+    "severity": "must",
+    "appliesTo": [
+      "icon",
+      "button",
+      "icon-button"
+    ],
+    "checks": [
+      "Every icon in the registry declares mirror: auto or never; an icon without the field fails the build.",
+      "In dir=rtl an icon with mirror=auto is drawn with a horizontal flip and one with mirror=never has an identity transform.",
+      "Check, search, close, plus and media-play icons are registered as never."
+    ],
+    "problem": {
+      "ar": "عكس كل الأيقونات يقلب رموزًا لا اتجاه لها (العدسة، السماعة، علامة الصح) ويشوه معناها.",
+      "en": "Mirroring every icon flips symbols that have no direction (magnifier, speaker, check mark) and distorts their meaning."
+    },
+    "context": {
+      "ar": "سجل الأيقونات في النظام.",
+      "en": "The system's icon registry."
+    },
+    "exceptions": {
+      "ar": "أيقونات التشغيل الإعلامي تبقى كما هي غالبًا؛ يُراجع كل رمز في سياقه.",
+      "en": "Media playback icons usually stay as they are; each symbol is reviewed in its context."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Material Design 2: Bidirectionality",
+        "url": "https://m2.material.io/design/usability/bidirectionality.html"
+      }
+    ]
+  }
+}

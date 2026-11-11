@@ -1,0 +1,88 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-INPUT-001",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Microsoft Learn, Globalization: Text directionality",
+        "url": "https://learn.microsoft.com/en-us/globalization/fonts-layout/text-directionality",
+        "version": "page read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-INPUT-001",
+    "title": {
+      "ar": "المؤشر والتحديد من المنصة لا من رسمنا",
+      "en": "Caret and selection come from the platform, not from our drawing"
+    },
+    "statement": {
+      "ar": "في الحقول النصية اترك حركة المؤشر والتحديد والحذف للمتصفح. لا ترسم مؤشرًا أو تحديدًا مخصصًا، ولا تحسب المواضع بعدد المحارف. أي معالجة للقيمة أثناء الكتابة تحفظ موضع المؤشر بوحدات العناقيد.",
+      "en": "In text fields leave caret movement, selection and deletion to the browser. Do not draw a custom caret or selection and do not compute positions by counting characters. Any processing of the value while typing preserves the caret position in grapheme-cluster units."
+    },
+    "rationale": {
+      "ar": "في النص المختلط التحديد المنطقي المتصل يظهر بصريًا قطعتين، والمؤشر له موضعان عند حد الاتجاه. والحذف الخلفي في العربية يزيل آخر علامة تشكيل أولًا. إعادة تنفيذ ذلك تنتج أخطاء لا تُحصى.",
+      "en": "In mixed text a contiguous logical selection is visually two pieces, and the caret has two positions at a direction boundary. Backspace in Arabic removes the last mark first. Re-implementing this yields endless errors."
+    },
+    "area": "input",
+    "severity": "must",
+    "appliesTo": [
+      "text-input",
+      "numeric-input",
+      "segmented-input"
+    ],
+    "checks": [
+      "No field component renders its own caret or selection element.",
+      "After an input transformation (digit conversion, space replacement) the caret is after the same grapheme as before; verified by typing in the middle of each text-stress and amounts string.",
+      "Deleting from the end of text-stress TS-050 with Backspace removes one code point per press until the base letter (platform behaviour is not intercepted).",
+      "Selection APIs are called with UTF-16 offsets that lie on grapheme boundaries."
+    ],
+    "related": [
+      "R-BIDI-003"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "5.2 Grapheme/word segmentation & selection"
+      },
+      {
+        "name": "Microsoft Learn, Globalization: Text directionality",
+        "url": "https://learn.microsoft.com/en-us/globalization/fonts-layout/text-directionality",
+        "section": "Implications for caret movement"
+      },
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "3.4 Reordering Resolved Levels"
+      }
+    ],
+    "fixtures": [
+      "text-stress",
+      "mixed-direction"
+    ]
+  }
+}

@@ -1,0 +1,1713 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "plural-agreement",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "48.0 (as shipped in ICU 78.3 with Node 22.23.4; plural rules compared with cldr-json main on 2026-11-11)",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "Categories are computed from the CLDR plural rule for ar (zero: n = 0; one: n = 1; two: n = 2; few: n % 100 = 3..10; many: n % 100 = 11..99; other) and agree with Intl.PluralRules in ICU 78.3 / CLDR 48 for every count. The Arabic noun forms are the researcher's wording, in the nominative, unvocalised, and need a native reviewer; numbers are written in Latin digits because display numerals are a separate preference.",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Counts with a noun, tagged with the CLDR plural category, to test that messages use all six Arabic forms: none, singular, dual, plural for 3–10, singular accusative for 11–99, singular for hundreds and thousands — and that 101, 102, 103 follow their last two digits.",
+    "appliesTo": [
+      "plural-select",
+      "messages"
+    ],
+    "cases": [
+      {
+        "id": "PL-file-0",
+        "input": {
+          "count": 0,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "zero",
+          "text": "لا ملفات"
+        },
+        "tags": [
+          "zero",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-1",
+        "input": {
+          "count": 1,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "one",
+          "text": "ملف واحد"
+        },
+        "tags": [
+          "one",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-2",
+        "input": {
+          "count": 2,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "two",
+          "text": "ملفان"
+        },
+        "tags": [
+          "two",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-3",
+        "input": {
+          "count": 3,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "few",
+          "text": "3 ملفات"
+        },
+        "tags": [
+          "few",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-4",
+        "input": {
+          "count": 4,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "few",
+          "text": "4 ملفات"
+        },
+        "tags": [
+          "few",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-10",
+        "input": {
+          "count": 10,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "few",
+          "text": "10 ملفات"
+        },
+        "tags": [
+          "few",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-11",
+        "input": {
+          "count": 11,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "11 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-12",
+        "input": {
+          "count": 12,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "12 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-19",
+        "input": {
+          "count": 19,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "19 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-20",
+        "input": {
+          "count": 20,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "20 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-21",
+        "input": {
+          "count": 21,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "21 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-50",
+        "input": {
+          "count": 50,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "50 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-99",
+        "input": {
+          "count": 99,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "99 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-100",
+        "input": {
+          "count": 100,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "100 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-101",
+        "input": {
+          "count": 101,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "101 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-102",
+        "input": {
+          "count": 102,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "102 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-103",
+        "input": {
+          "count": 103,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "few",
+          "text": "103 ملفات"
+        },
+        "tags": [
+          "few",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-110",
+        "input": {
+          "count": 110,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "few",
+          "text": "110 ملفات"
+        },
+        "tags": [
+          "few",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-111",
+        "input": {
+          "count": 111,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "111 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-199",
+        "input": {
+          "count": 199,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "199 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-200",
+        "input": {
+          "count": 200,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "200 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-201",
+        "input": {
+          "count": 201,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "201 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-202",
+        "input": {
+          "count": 202,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "202 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-203",
+        "input": {
+          "count": 203,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "few",
+          "text": "203 ملفات"
+        },
+        "tags": [
+          "few",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-300",
+        "input": {
+          "count": 300,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "300 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-1000",
+        "input": {
+          "count": 1000,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1000 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-1001",
+        "input": {
+          "count": 1001,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1001 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-1002",
+        "input": {
+          "count": 1002,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1002 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-1003",
+        "input": {
+          "count": 1003,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "few",
+          "text": "1003 ملفات"
+        },
+        "tags": [
+          "few",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-1011",
+        "input": {
+          "count": 1011,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "many",
+          "text": "1011 ملفًا"
+        },
+        "tags": [
+          "many",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-2000",
+        "input": {
+          "count": 2000,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "2000 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-file-1000000",
+        "input": {
+          "count": 1000000,
+          "noun": "file"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1000000 ملف"
+        },
+        "tags": [
+          "other",
+          "file"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-0",
+        "input": {
+          "count": 0,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "zero",
+          "text": "لا رسائل"
+        },
+        "tags": [
+          "zero",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-1",
+        "input": {
+          "count": 1,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "one",
+          "text": "رسالة واحدة"
+        },
+        "tags": [
+          "one",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-2",
+        "input": {
+          "count": 2,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "two",
+          "text": "رسالتان"
+        },
+        "tags": [
+          "two",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-3",
+        "input": {
+          "count": 3,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "few",
+          "text": "3 رسائل"
+        },
+        "tags": [
+          "few",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-4",
+        "input": {
+          "count": 4,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "few",
+          "text": "4 رسائل"
+        },
+        "tags": [
+          "few",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-10",
+        "input": {
+          "count": 10,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "few",
+          "text": "10 رسائل"
+        },
+        "tags": [
+          "few",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-11",
+        "input": {
+          "count": 11,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "11 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-12",
+        "input": {
+          "count": 12,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "12 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-19",
+        "input": {
+          "count": 19,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "19 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-20",
+        "input": {
+          "count": 20,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "20 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-21",
+        "input": {
+          "count": 21,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "21 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-50",
+        "input": {
+          "count": 50,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "50 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-99",
+        "input": {
+          "count": 99,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "99 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-100",
+        "input": {
+          "count": 100,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "100 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-101",
+        "input": {
+          "count": 101,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "101 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-102",
+        "input": {
+          "count": 102,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "102 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-103",
+        "input": {
+          "count": 103,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "few",
+          "text": "103 رسائل"
+        },
+        "tags": [
+          "few",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-110",
+        "input": {
+          "count": 110,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "few",
+          "text": "110 رسائل"
+        },
+        "tags": [
+          "few",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-111",
+        "input": {
+          "count": 111,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "111 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-199",
+        "input": {
+          "count": 199,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "199 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-200",
+        "input": {
+          "count": 200,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "200 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-201",
+        "input": {
+          "count": 201,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "201 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-202",
+        "input": {
+          "count": 202,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "202 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-203",
+        "input": {
+          "count": 203,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "few",
+          "text": "203 رسائل"
+        },
+        "tags": [
+          "few",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-300",
+        "input": {
+          "count": 300,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "300 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-1000",
+        "input": {
+          "count": 1000,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1000 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-1001",
+        "input": {
+          "count": 1001,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1001 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-1002",
+        "input": {
+          "count": 1002,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1002 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-1003",
+        "input": {
+          "count": 1003,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "few",
+          "text": "1003 رسائل"
+        },
+        "tags": [
+          "few",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-1011",
+        "input": {
+          "count": 1011,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "many",
+          "text": "1011 رسالة"
+        },
+        "tags": [
+          "many",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-2000",
+        "input": {
+          "count": 2000,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "2000 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-message-1000000",
+        "input": {
+          "count": 1000000,
+          "noun": "message"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1000000 رسالة"
+        },
+        "tags": [
+          "other",
+          "message"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-0",
+        "input": {
+          "count": 0,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "zero",
+          "text": "لا أيام"
+        },
+        "tags": [
+          "zero",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-1",
+        "input": {
+          "count": 1,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "one",
+          "text": "يوم واحد"
+        },
+        "tags": [
+          "one",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-2",
+        "input": {
+          "count": 2,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "two",
+          "text": "يومان"
+        },
+        "tags": [
+          "two",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-3",
+        "input": {
+          "count": 3,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "few",
+          "text": "3 أيام"
+        },
+        "tags": [
+          "few",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-4",
+        "input": {
+          "count": 4,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "few",
+          "text": "4 أيام"
+        },
+        "tags": [
+          "few",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-10",
+        "input": {
+          "count": 10,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "few",
+          "text": "10 أيام"
+        },
+        "tags": [
+          "few",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-11",
+        "input": {
+          "count": 11,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "11 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-12",
+        "input": {
+          "count": 12,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "12 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-19",
+        "input": {
+          "count": 19,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "19 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-20",
+        "input": {
+          "count": 20,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "20 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-21",
+        "input": {
+          "count": 21,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "21 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-50",
+        "input": {
+          "count": 50,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "50 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-99",
+        "input": {
+          "count": 99,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "99 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-100",
+        "input": {
+          "count": 100,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "100 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-101",
+        "input": {
+          "count": 101,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "101 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-102",
+        "input": {
+          "count": 102,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "102 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-103",
+        "input": {
+          "count": 103,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "few",
+          "text": "103 أيام"
+        },
+        "tags": [
+          "few",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-110",
+        "input": {
+          "count": 110,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "few",
+          "text": "110 أيام"
+        },
+        "tags": [
+          "few",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-111",
+        "input": {
+          "count": 111,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "111 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-199",
+        "input": {
+          "count": 199,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "199 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-200",
+        "input": {
+          "count": 200,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "200 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-201",
+        "input": {
+          "count": 201,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "201 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-202",
+        "input": {
+          "count": 202,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "202 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-203",
+        "input": {
+          "count": 203,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "few",
+          "text": "203 أيام"
+        },
+        "tags": [
+          "few",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-300",
+        "input": {
+          "count": 300,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "300 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-1000",
+        "input": {
+          "count": 1000,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1000 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-1001",
+        "input": {
+          "count": 1001,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1001 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-1002",
+        "input": {
+          "count": 1002,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1002 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-1003",
+        "input": {
+          "count": 1003,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "few",
+          "text": "1003 أيام"
+        },
+        "tags": [
+          "few",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-1011",
+        "input": {
+          "count": 1011,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "many",
+          "text": "1011 يومًا"
+        },
+        "tags": [
+          "many",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-2000",
+        "input": {
+          "count": 2000,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "2000 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-day-1000000",
+        "input": {
+          "count": 1000000,
+          "noun": "day"
+        },
+        "expected": {
+          "category": "other",
+          "text": "1000000 يوم"
+        },
+        "tags": [
+          "other",
+          "day"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-decimal-0.5",
+        "input": {
+          "count": 0.5,
+          "written": "0.5"
+        },
+        "expected": {
+          "category": "other"
+        },
+        "tags": [
+          "other",
+          "decimal"
+        ],
+        "note": "Category only: the wording of a noun after a fraction is not settled here.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-decimal-1.0",
+        "input": {
+          "count": 1,
+          "written": "1.0"
+        },
+        "expected": {
+          "category": "one"
+        },
+        "tags": [
+          "one",
+          "decimal"
+        ],
+        "note": "Category only: the wording of a noun after a fraction is not settled here.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-decimal-1.5",
+        "input": {
+          "count": 1.5,
+          "written": "1.5"
+        },
+        "expected": {
+          "category": "other"
+        },
+        "tags": [
+          "other",
+          "decimal"
+        ],
+        "note": "Category only: the wording of a noun after a fraction is not settled here.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-decimal-2.0",
+        "input": {
+          "count": 2,
+          "written": "2.0"
+        },
+        "expected": {
+          "category": "two"
+        },
+        "tags": [
+          "two",
+          "decimal"
+        ],
+        "note": "Category only: the wording of a noun after a fraction is not settled here.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-decimal-2.5",
+        "input": {
+          "count": 2.5,
+          "written": "2.5"
+        },
+        "expected": {
+          "category": "other"
+        },
+        "tags": [
+          "other",
+          "decimal"
+        ],
+        "note": "Category only: the wording of a noun after a fraction is not settled here.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PL-decimal-10.5",
+        "input": {
+          "count": 10.5,
+          "written": "10.5"
+        },
+        "expected": {
+          "category": "other"
+        },
+        "tags": [
+          "other",
+          "decimal"
+        ],
+        "note": "Category only: the wording of a noun after a fraction is not settled here.",
+        "origin": "authored for this project (synthetic)"
+      }
+    ],
+    "inputShape": "{ count, noun: key into shared.nouns } or { count, written } for fractions",
+    "expectedShape": "{ category: CLDR plural category for ar, text?: the phrase built from the noun's form for that category }",
+    "rules": [
+      "R-CNT-004",
+      "R-CNT-005"
+    ],
+    "shared": {
+      "nouns": {
+        "file": {
+          "en": "file",
+          "forms": {
+            "zero": "لا ملفات",
+            "one": "ملف واحد",
+            "two": "ملفان",
+            "few": "{n} ملفات",
+            "many": "{n} ملفًا",
+            "other": "{n} ملف"
+          }
+        },
+        "message": {
+          "en": "message",
+          "forms": {
+            "zero": "لا رسائل",
+            "one": "رسالة واحدة",
+            "two": "رسالتان",
+            "few": "{n} رسائل",
+            "many": "{n} رسالة",
+            "other": "{n} رسالة"
+          }
+        },
+        "day": {
+          "en": "day",
+          "forms": {
+            "zero": "لا أيام",
+            "one": "يوم واحد",
+            "two": "يومان",
+            "few": "{n} أيام",
+            "many": "{n} يومًا",
+            "other": "{n} يوم"
+          }
+        }
+      },
+      "rule": {
+        "zero": "n = 0",
+        "one": "n = 1",
+        "two": "n = 2",
+        "few": "n % 100 = 3..10",
+        "many": "n % 100 = 11..99",
+        "other": "everything else, including fractions"
+      },
+      "note": "The dual and sound plural change with grammatical case (ملفان / ملفين); a message catalogue needs the form that fits its sentence, not only the category."
+    }
+  }
+}

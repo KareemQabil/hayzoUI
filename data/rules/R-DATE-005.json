@@ -1,0 +1,75 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-DATE-005",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "48.0 (as shipped in ICU 78.3 with Node 22.23.4; plural rules compared with cldr-json main on 2026-11-11)",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "ICU (via Node.js Intl)",
+        "url": "https://github.com/unicode-org/icu",
+        "version": "ICU 78.3, CLDR 48.0, tzdata 2026e, Node 22.23.4",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-DATE-005",
+    "title": {
+      "ar": "سمِّ التقويم الهجري المستخدم ولا تحسب أشهره بقاعدة",
+      "en": "Name the Hijri variant in use; do not compute its months by rule"
+    },
+    "statement": {
+      "ar": "حدّد أي تقويم هجري تعرضه (أم القرى، المدني الحسابي…) باسمه. أطوال الأشهر تؤخذ من الجدول: لا تفترض تناوب 30 و29 ولا تُجرِ حسابًا على الأيام خارج التحويل إلى الميلادي. ونبّه إلى أن الإعلان الرسمي قد يختلف يومًا.",
+      "en": "State which Hijri calendar is displayed (Umm al-Qura, tabular civil…) by name. Month lengths come from the table: do not assume alternating 30 and 29, and do no day arithmetic except through conversion to Gregorian. Warn that an official announcement may differ by a day."
+    },
+    "rationale": {
+      "ar": "التقاويم الهجرية المختلفة تعطي تواريخ مختلفة لليوم نفسه، وأم القرى جدولي تصدره جهة رسمية وله نطاق سنوات محدود.",
+      "en": "Different Hijri calendars give different dates for the same day; Umm al-Qura is a table issued by an authority and covers a limited range of years."
+    },
+    "area": "date",
+    "severity": "must",
+    "appliesTo": [
+      "date-convert",
+      "calendar-grid",
+      "date-field"
+    ],
+    "checks": [
+      "dates cases tagged calendars-differ: the three variants disagree; the UI labels which one is shown.",
+      "dates DT-months-1447 and DT-months-1448: the grid shows exactly the listed number of days in each month.",
+      "Adding one month to the 30th of a 30-day month lands on a valid day of the next month (29 or 30).",
+      "A date outside the table's range is reported as unsupported, not extrapolated silently."
+    ],
+    "related": [
+      "R-DATE-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "section": "calendar identifiers islamic-umalqura, islamic-civil, islamic-tbla"
+      },
+      {
+        "name": "ICU (via Node.js Intl)",
+        "url": "https://github.com/unicode-org/icu",
+        "section": "Islamic calendar implementations"
+      }
+    ],
+    "fixtures": [
+      "dates"
+    ]
+  }
+}

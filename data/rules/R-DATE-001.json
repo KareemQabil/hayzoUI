@@ -1,0 +1,76 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-DATE-001",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "48.0 (as shipped in ICU 78.3 with Node 22.23.4; plural rules compared with cldr-json main on 2026-11-11)",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-DATE-001",
+    "title": {
+      "ar": "التقويم بُعد مستقل عن اللغة",
+      "en": "The calendar is a dimension independent of language"
+    },
+    "statement": {
+      "ar": "لا تستنتج التقويم من اللغة ولا من الاتجاه. التقويم (ميلادي، هجري أم القرى…) تفضيل صريح له قيمة افتراضية من المنطقة، ويمكن عرض التاريخين معًا.",
+      "en": "Do not infer the calendar from the language or the direction. The calendar (Gregorian, Hijri Umm al-Qura…) is an explicit preference with a regional default, and both dates may be shown together."
+    },
+    "rationale": {
+      "ar": "معظم البلدان العربية تستخدم الميلادي في المعاملات، والسعودية تستخدم التقويمين. «عربي» لا يعني «هجري».",
+      "en": "Most Arab countries use the Gregorian calendar for transactions, and Saudi Arabia uses both. \"Arabic\" does not mean \"Hijri\"."
+    },
+    "area": "date",
+    "severity": "must",
+    "appliesTo": [
+      "locale-provider",
+      "date-format",
+      "date-field",
+      "calendar-grid"
+    ],
+    "checks": [
+      "The locale model has calendar as a field separate from language, direction and numerals.",
+      "With lang=ar fixed, switching calendar changes displayed dates and nothing else (dates cases tagged format: same stored date, 4 renderings per locale).",
+      "No code path selects a calendar by testing the language tag's primary subtag."
+    ],
+    "related": [
+      "R-NUM-004",
+      "R-DATE-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "section": "supplemental calendarPreferenceData"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "6.1 Data formats & numbers"
+      }
+    ],
+    "fixtures": [
+      "dates"
+    ]
+  }
+}

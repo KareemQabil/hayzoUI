@@ -1,0 +1,59 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-FLOW-002",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-FLOW-002",
+    "title": {
+      "ar": "العملية المالية تحمل مفتاح عدم تكرار",
+      "en": "A financial operation carries an idempotency key"
+    },
+    "statement": {
+      "ar": "كل إرسال ينشئ أثرًا ماليًا أو لا رجعة فيه يحمل معرّفًا فريدًا يُنشأ عند فتح النموذج ويُعاد استعماله عند إعادة المحاولة، حتى لا تُنفَّذ العملية مرتين إذا انقطع الاتصال بعد الإرسال.",
+      "en": "Every submission that creates a financial or irreversible effect carries a unique identifier created when the form opens and reused on retry, so the operation is not executed twice if the connection drops after sending."
+    },
+    "rationale": {
+      "ar": "حراسة الزر تمنع الضغط المزدوج، لكنها لا تمنع إعادة المحاولة بعد مهلة انتهت والطلب الأول قد نُفّذ.",
+      "en": "Guarding the button prevents a double press, but not a retry after a timeout when the first request did succeed."
+    },
+    "area": "flow",
+    "severity": "must",
+    "appliesTo": [
+      "form",
+      "button"
+    ],
+    "checks": [
+      "Two submissions of the same form instance (submit, simulated timeout, retry) send the same idempotency key.",
+      "A new form instance sends a different key.",
+      "The retry action after a failure reuses the preserved input (R-CNT-001)."
+    ],
+    "related": [
+      "R-FLOW-001",
+      "R-CNT-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "3.3.4 Error Prevention (Legal, Financial, Data)"
+      }
+    ]
+  }
+}

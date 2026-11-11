@@ -1,0 +1,78 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-TYPE-003",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "CSS Overflow Module Level 3",
+        "url": "https://www.w3.org/TR/css-overflow-3/",
+        "version": "Working Draft 2025-10-07",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-TYPE-003",
+    "title": {
+      "ar": "القص عند نهاية القراءة وبحدود العناقيد",
+      "en": "Truncate at the reading end, on grapheme boundaries"
+    },
+    "statement": {
+      "ar": "النص المقصوص يُقطع عند نهايته في اتجاه قراءته وتظهر علامة الحذف هناك (يسار السطر في نص عربي). القص البرمجي يتم عند حدود عنقود كتابي ولا يفصل حرفًا عن تشكيله ولا يشطر عزلًا اتجاهيًا. والنص الكامل متاح دائمًا.",
+      "en": "Truncated text is cut at its end in reading direction and the ellipsis appears there (the left of the line for Arabic). Programmatic truncation cuts on a grapheme-cluster boundary, never separates a letter from its marks and never splits a directional isolate. The full text is always available."
+    },
+    "rationale": {
+      "ar": "text-overflow يقص عند طرف نهاية السطر بحسب اتجاه الحاوية؛ فإن كان اتجاه الحاوية غير اتجاه النص ظهر الحذف عند بداية النص. والقص بعدد وحدات UTF-16 يشطر الإيموجي والحرف عن علاماته.",
+      "en": "text-overflow clips at the line's end edge according to the container's direction; if that differs from the text's direction the ellipsis appears at the start of the text. Cutting by UTF-16 units splits emoji and separates letters from their marks."
+    },
+    "area": "typography",
+    "severity": "must",
+    "appliesTo": [
+      "truncate",
+      "text",
+      "table",
+      "badge"
+    ],
+    "checks": [
+      "A truncated Arabic line in an RTL container has its ellipsis at the left edge and its first word at the right edge.",
+      "truncate(text, n) for every text-stress and names case returns a prefix whose grapheme count is at most n and which ends on a cluster boundary.",
+      "A truncated element exposes the full text (title, tooltip or expansion) and its accessible name is the full text.",
+      "Truncating mixed-direction strings does not leave an unbalanced isolate."
+    ],
+    "related": [
+      "R-BIDI-005"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "CSS Overflow Module Level 3",
+        "url": "https://www.w3.org/TR/css-overflow-3/",
+        "section": "text-overflow"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "5.2 Grapheme/word segmentation & selection"
+      }
+    ],
+    "fixtures": [
+      "text-stress",
+      "names",
+      "mixed-direction"
+    ]
+  }
+}

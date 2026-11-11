@@ -1,0 +1,74 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-010",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "version": "18.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-010",
+    "title": {
+      "ar": "الأقواس وعلامات التنصيص حول نص معاكس تبقى خارج العزل",
+      "en": "Brackets and quotes around opposite-direction text stay outside the isolate"
+    },
+    "statement": {
+      "ar": "حين يحيط قوسان أو علامتا تنصيص بمقطع لاتيني داخل جملة عربية، اعزل المحتوى وحده واترك القوسين للجملة حتى ينعكس شكلهما في موضعه. لا تعتمد على إقران الأقواس في الخوارزمية وحده.",
+      "en": "When brackets or quotation marks surround a Latin run inside an Arabic sentence, isolate the content only and leave the pair to the sentence so that their glyphs mirror in place. Do not rely on the algorithm's bracket pairing alone."
+    },
+    "rationale": {
+      "ar": "القاعدة N0 تعالج الأقواس المزدوجة فقط، وفي حدود 63 مستوى، ولا تشمل علامات التنصيص المستقيمة ولا «». وأي قوس داخل العزل لا يرى شريكه خارجه.",
+      "en": "Rule N0 handles paired brackets only, up to 63 levels deep, and does not cover straight quotes or guillemets. A bracket inside an isolate cannot see its partner outside."
+    },
+    "area": "bidi",
+    "severity": "should",
+    "appliesTo": [
+      "bidi-isolate",
+      "text"
+    ],
+    "checks": [
+      "mixed-direction cases tagged parentheses, quotes or brackets render as expected.isolated.",
+      "In MX-021 both parentheses are in expected.plain.mirrored: at an odd level the glyph is the mirrored one.",
+      "An isolation helper splits «(Mido)» as \"(\", island \"Mido\", \")\" (mixed-text-runs-harvested BD-03a)."
+    ],
+    "related": [
+      "R-BIDI-007"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "3.1.3 BD14–BD16; 3.3.5 N0; 3.4 L4"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "section": "BidiBrackets.txt, BidiMirroring.txt"
+      }
+    ],
+    "fixtures": [
+      "mixed-direction",
+      "mixed-text-runs-harvested"
+    ]
+  }
+}

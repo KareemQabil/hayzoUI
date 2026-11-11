@@ -1,0 +1,70 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-TYPE-001",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance. Owner's source note: Google Design — Modernizing Arabic typography."
+  },
+  "data": {
+    "id": "R-TYPE-001",
+    "title": {
+      "ar": "لا تباعد بين الأحرف العربية",
+      "en": "No letter-spacing between Arabic letters"
+    },
+    "statement": {
+      "ar": "لا تستخدم letter-spacing في أي نمط يُطبَّق على العربية. اختر ارتفاع الأسطر بعد عرض نص مشكول فعلًا.",
+      "en": "Do not use letter-spacing in any style applied to Arabic. Choose line height after rendering real vocalised text."
+    },
+    "rationale": {
+      "ar": "العربية خط متصل؛ التوسيع يتم بالكشيدة أو اختيار الخط، لا بالتباعد.",
+      "en": "Arabic is a joined script; widening is done with kashida or by choosing a typeface, not with spacing."
+    },
+    "area": "typography",
+    "severity": "must",
+    "appliesTo": [
+      "tokens",
+      "text"
+    ],
+    "checks": [
+      "The computed letter-spacing of every element whose text contains an Arabic letter is 0 (normal).",
+      "No typography token used for Arabic defines a non-zero letter-spacing.",
+      "A line of fully vocalised text does not overlap the lines above and below it at the token line height."
+    ],
+    "problem": {
+      "ar": "خاصية letter-spacing تفصل الحروف المتصلة وتكسر شكل الكلمة.",
+      "en": "The letter-spacing property separates joined letters and breaks the shape of the word."
+    },
+    "context": {
+      "ar": "كل الأنماط الطباعية.",
+      "en": "All typographic styles."
+    },
+    "exceptions": {
+      "ar": "الرموز اللاتينية الكبيرة (مثل الاختصارات) في عنصر منفصل.",
+      "en": "Large Latin symbols (such as abbreviations) in a separate element."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Google Design: Modernizing Arabic typography & type design",
+        "url": "https://design.google/library/modernizing-arabic-typography-type-design"
+      }
+    ],
+    "fixtures": [
+      "text-stress"
+    ]
+  }
+}

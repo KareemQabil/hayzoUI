@@ -1,0 +1,78 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-PHONE-001",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-PHONE-001",
+    "title": {
+      "ar": "خزّن E.164 واعرض بتنسيق البلد داخل عزل LTR",
+      "en": "Store E.164; display in the country's format inside an LTR isolate"
+    },
+    "statement": {
+      "ar": "القيمة المخزنة لرقم الهاتف هي صيغة E.164 فقط (+ ثم أرقام لاتينية). العرض بالتنسيق المحلي أو الدولي، بأرقام التفضيل، داخل عزل LTR، بمجموعات يضمّها U+00A0.",
+      "en": "The stored value of a phone number is E.164 only (+ followed by Latin digits). It is displayed in national or international format, in the preferred numerals, inside an LTR isolate, with groups joined by U+00A0."
+    },
+    "rationale": {
+      "ar": "صيغة واحدة للتخزين تجعل المطابقة والاتصال والبحث ممكنة أيًّا كان ما كتبه المستخدم. والعرض مسألة منفصلة.",
+      "en": "One storage form makes matching, dialling and search possible whatever the person typed. Display is a separate matter."
+    },
+    "area": "phone",
+    "severity": "must",
+    "appliesTo": [
+      "phone-parse",
+      "phone-format",
+      "phone-input"
+    ],
+    "checks": [
+      "Every stored phone value matches ^\\+[1-9][0-9]{6,14}$.",
+      "formatting-harvested FM-F03 and FM-F04: display strings contain no U+0020.",
+      "The element displaying a phone number isolates with direction ltr.",
+      "The tel: link of a displayed number uses the E.164 value."
+    ],
+    "related": [
+      "R-BIDI-003",
+      "R-BIDI-008"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "3.3.4 W4"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Numbers and characters"
+      }
+    ],
+    "fixtures": [
+      "phones-harvested",
+      "phone-inputs",
+      "formatting-harvested"
+    ]
+  }
+}

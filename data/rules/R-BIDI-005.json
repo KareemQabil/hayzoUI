@@ -1,0 +1,91 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-005",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "version": "living standard, read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-005",
+    "title": {
+      "ar": "النص مجهول الاتجاه يُعزل ويُحدَّد اتجاهه من محتواه",
+      "en": "Text of unknown direction is isolated and takes its direction from its content"
+    },
+    "statement": {
+      "ar": "كل نص يأتي من مستخدم أو من بيانات (اسم، عنوان، تعليق، اسم ملف) يُعرض داخل عزل يحدد اتجاهه من النص نفسه (bdi أو dir=\"auto\")، لا من اتجاه الواجهة ولا من لغتها.",
+      "en": "Any text that comes from a person or from data (a name, a title, a comment, a file name) is rendered in an isolate whose direction is taken from the text itself (bdi or dir=\"auto\"), not from the interface direction or language."
+    },
+    "rationale": {
+      "ar": "القالب لا يعرف لغة ما سيُدرج فيه. دون عزل، اسم لاتيني في جملة عربية يسحب معه الأرقام والأقواس المجاورة. تحديد الاتجاه بأول حرف قوي (P2 وP3) هو ما تنفذه المتصفحات؛ وله حالات فشل معروفة حين يبدأ نص عربي بكلمة لاتينية، ولذلك تُختبر بدائل مثل قاعدة «الغالب» التي اقترحها صاحب المشروع.",
+      "en": "A template cannot know the language of what is inserted into it. Without isolation a Latin name in an Arabic sentence drags neighbouring numbers and brackets with it. First-strong detection (P2, P3) is what browsers implement; it has known failures when Arabic text starts with a Latin word, which is why alternatives such as the owner's dominant-script rule are tested."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "text",
+      "table",
+      "list",
+      "avatar",
+      "toast"
+    ],
+    "checks": [
+      "Every interpolated value in a message is wrapped in an element that isolates (bdi or dir=\"auto\") or in FSI…PDI when the output is plain text.",
+      "Rendering «أضاف {name} تعليقًا» with name \"Sara (admin)\" gives the visual order of mixed-direction MX-103 isolated.",
+      "A table cell holding user text has dir=\"auto\" or uses the auto-text component.",
+      "The direction chosen for a name equals expected.dominantDirection (or firstStrongDirection, per the adopted rule) in the names set."
+    ],
+    "related": [
+      "R-BIDI-001",
+      "R-BIDI-004"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "3.3.1 P2, P3; 2.4 FSI"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "section": "Text of unknown direction: bdi and dir=auto"
+      },
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "section": "The dir attribute; The bdi element"
+      }
+    ],
+    "fixtures": [
+      "mixed-direction",
+      "names",
+      "mixed-text-runs-harvested"
+    ]
+  }
+}

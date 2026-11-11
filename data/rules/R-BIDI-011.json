@@ -1,0 +1,84 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-011",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Internationalization: How to use Unicode controls for bidi text",
+        "url": "https://www.w3.org/International/questions/qa-bidi-unicode-controls",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-011",
+    "title": {
+      "ar": "الاتجاه يُعبَّر عنه بالترميز لا بمحارف خفية في البيانات",
+      "en": "Direction is expressed in markup, not by invisible characters in data"
+    },
+    "statement": {
+      "ar": "لا تخزّن محارف التحكم بالاتجاه في قاعدة البيانات ولا في ملفات الترجمة لإصلاح عرض. استخدم الترميز (dir وbdi) حيث يوجد ترميز، واقصر المحارف (FSI/LRI/RLI…PDI) على المخرجات النصية الصرفة مثل عنوان الصفحة والإشعارات وخاصية title، وأغلق كل ما تفتحه.",
+      "en": "Do not store bidi control characters in the database or in translation files to fix a display. Use markup (dir, bdi) wherever markup exists, and keep the characters (FSI/LRI/RLI…PDI) for plain-text outputs such as the page title, notifications and the title attribute, closing everything you open."
+    },
+    "rationale": {
+      "ar": "المحارف الخفية تنتقل مع النسخ واللصق، وتُفسد البحث والمقارنة والطول، ولا يراها من يراجع النص. الترميز ينتهي أثره بنهاية العنصر.",
+      "en": "Invisible characters travel with copy and paste, break search, comparison and length, and are unseen by whoever reviews the text. Markup ends its effect with the element."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "messages",
+      "storage",
+      "text"
+    ],
+    "checks": [
+      "No message catalogue entry and no stored record contains a bidi control character, except entries flagged as plain-text targets.",
+      "In every plain-text output, isolate initiators and PDI are balanced.",
+      "Copying a displayed phone number or amount to the clipboard yields a string without bidi control characters."
+    ],
+    "related": [
+      "R-BIDI-004",
+      "R-BIDI-006"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Internationalization: How to use Unicode controls for bidi text",
+        "url": "https://www.w3.org/International/questions/qa-bidi-unicode-controls"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "section": "Use markup rather than control characters"
+      },
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "2.7 Markup and Formatting Characters"
+      }
+    ],
+    "fixtures": [
+      "text-stress"
+    ]
+  }
+}

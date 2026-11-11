@@ -1,0 +1,65 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-CNT-001",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-CNT-001",
+    "title": {
+      "ar": "رسالة الخطأ تشرح وتحفظ وتقترح ما يمكن فعله",
+      "en": "An error message explains, preserves, and says what can be done"
+    },
+    "statement": {
+      "ar": "قل ما فشل، وما لم يحدث (لم يُسجَّل أي تحصيل)، وأن المدخلات باقية، واعرض فقط الإجراءات التي يدعمها النظام فعلًا.",
+      "en": "Say what failed, what did not happen (no collection was recorded), that the input is still there, and offer only the actions the system really supports."
+    },
+    "rationale": {
+      "ar": "الشخص يحتاج إلى معرفة حالة أمواله وبياناته قبل أن يقرر.",
+      "en": "The person needs to know the state of their money and data before deciding."
+    },
+    "area": "content",
+    "severity": "must",
+    "appliesTo": [
+      "inline-message",
+      "toast",
+      "form"
+    ],
+    "checks": [
+      "Every error message key has a text that names the failed operation; no message equals a generic \"an error occurred\" string.",
+      "After a failed submission every field still holds the value it had before submitting.",
+      "Each action offered in a failure message is bound to a handler."
+    ],
+    "related": [
+      "R-FLOW-001"
+    ],
+    "problem": {
+      "ar": "رسائل مثل «حدث خطأ» لا تقول ماذا حدث ولا ما الذي حُفظ.",
+      "en": "Messages like \"an error occurred\" say neither what happened nor what was saved."
+    },
+    "context": {
+      "ar": "كل حالات الفشل.",
+      "en": "Every failure state."
+    },
+    "exceptions": {
+      "ar": "لا توجد.",
+      "en": "None."
+    },
+    "origin": "harvested",
+    "status": "proposed"
+  }
+}

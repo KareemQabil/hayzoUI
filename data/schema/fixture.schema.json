@@ -60,7 +60,8 @@
                 "items": {
                   "type": "string",
                   "minLength": 1
-                }
+                },
+                "description": "`needs-expected` marks a case whose correct outcome is not settled; such a case has no `expected`."
               },
               "note": {
                 "type": "string",
@@ -69,6 +70,13 @@
               "origin": {
                 "type": "string",
                 "minLength": 1
+              },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^R-[A-Z][A-Z0-9]*-[0-9]{3}$"
+                }
               }
             },
             "required": [
@@ -77,6 +85,94 @@
             ],
             "additionalProperties": false
           }
+        },
+        "inputShape": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What `input` holds in every case of this set."
+        },
+        "expectedShape": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What `expected` holds, and under which contract or reference it is correct."
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^R-[A-Z][A-Z0-9]*-[0-9]{3}$"
+          },
+          "description": "Rules the set gives evidence for."
+        },
+        "tagVocabulary": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Meaning of each tag used in the set."
+        },
+        "externalFiles": {
+          "description": "Conformance files that stay upstream and are fetched by the harness, never copied here.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "license": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "lines": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cases": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "format": {
+                "type": "string",
+                "minLength": 1
+              },
+              "retrievedAt": {
+                "type": "string",
+                "format": "date"
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name",
+              "url",
+              "license"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "shared": {
+          "description": "Data every case of the set refers to (for example the rows a table case filters), stated once."
         }
       },
       "required": [

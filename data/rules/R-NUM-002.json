@@ -1,0 +1,69 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-NUM-002",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-NUM-002",
+    "title": {
+      "ar": "لا تفسّر الفاصلة الملتبسة بصمت",
+      "en": "Never interpret an ambiguous comma silently"
+    },
+    "statement": {
+      "ar": "ارفض الفاصلة «,» و«،» في المبالغ، واشرح السبب، واعرض التفسيرات الممكنة كخيارات صريحة يختار منها الشخص.",
+      "en": "Reject \",\" and \"،\" in amounts, explain why, and offer the possible readings as explicit choices the person picks from."
+    },
+    "rationale": {
+      "ar": "الخطأ في مبلغ مالي أخطر من سؤال إضافي. الحقل لا يملك سياقًا كافيًا ليقرر نيابة عن الشخص.",
+      "en": "An error in a monetary amount is worse than one more question. The field does not have enough context to decide for the person."
+    },
+    "area": "numerals",
+    "severity": "must",
+    "appliesTo": [
+      "currency-input",
+      "numeric-input"
+    ],
+    "checks": [
+      "Parsing \"1234,50\" returns invalid with code ambiguous-comma, a null value, and a suggestion whose canonical form is \"1234.50\".",
+      "Parsing \"1,234.50\" returns invalid with code ambiguous-comma and the suggestion \"1234.50\".",
+      "For random a,b the input \"a,b\" is never accepted and never yields a value (property).",
+      "\"1.2.3\" is rejected as multiple-decimal; \"12٬34\" as invalid-grouping; \"50 ج.م\" as invalid-character; \"50-\" as sign-position."
+    ],
+    "related": [
+      "R-NUM-001"
+    ],
+    "problem": {
+      "ar": "«1234,50» قد تعني ألفًا ومئتين وأربعة وثلاثين وخمسين قرشًا، أو رقمًا أخطأ كاتبه في فاصل الآلاف. حذف الفاصلة يغيّر المبلغ مئة ضعف.",
+      "en": "\"1234,50\" may mean one thousand two hundred thirty-four and fifty hundredths, or a number whose writer misplaced the thousands separator. Deleting the comma changes the amount a hundredfold."
+    },
+    "context": {
+      "ar": "المبالغ في سياقات عربية تختلط فيها اصطلاحات إقليمية وأوروبية.",
+      "en": "Amounts in Arabic contexts where regional and European conventions mix."
+    },
+    "exceptions": {
+      "ar": "نماذج مخصصة لسوق واحد معروف الاصطلاح قد تقبل فاصل الآلاف بعد مراجعة واختبار.",
+      "en": "A form built for a single market with a known convention may accept a thousands separator after review and testing."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "fixtures": [
+      "amounts-harvested",
+      "amounts"
+    ]
+  }
+}

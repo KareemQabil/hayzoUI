@@ -1,0 +1,89 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-TYPE-009",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "version": "Candidate Recommendation Draft 2026-08-14",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-TYPE-009",
+    "title": {
+      "ar": "تعديل المستخدم لتباعد النص لا يُفقد محتوى",
+      "en": "User text-spacing overrides lose no content"
+    },
+    "statement": {
+      "ar": "حين يفرض المستخدم ارتفاع سطر 1.5 وتباعد فقرات وكلمات أكبر، لا يُقص نص ولا يتراكب. لا تحدد ارتفاعات ثابتة لحاويات النص. أما تباعد الحروف المفروض فيفصل الحروف العربية بحكم الخط، وليس للواجهة أن تمنعه ولا أن تبني عليه.",
+      "en": "When a person imposes line height 1.5 and larger paragraph and word spacing, no text is clipped or overlapped. Do not give text containers fixed heights. Imposed letter-spacing does separate Arabic letters, by the nature of the script; the interface neither blocks it nor depends on it."
+    },
+    "rationale": {
+      "ar": "معيار 1.4.12 يطلب ألا يضيع محتوى عند تعديل التباعد. قيمه وُضعت للكتابات غير المتصلة؛ في العربية يبقى الالتزام بعدم القص، ولا يُطلب أن يبقى الشكل سليمًا تحت تباعد الحروف.",
+      "en": "Criterion 1.4.12 requires that no content is lost when spacing is overridden. Its values were set for non-joining scripts; for Arabic the duty not to clip remains, and intact shaping under letter-spacing is not required."
+    },
+    "area": "typography",
+    "severity": "must",
+    "appliesTo": [
+      "text",
+      "button",
+      "input",
+      "table",
+      "tokens"
+    ],
+    "checks": [
+      "With line-height 1.5, paragraph spacing 2em and word-spacing 0.16em forced on all elements, no element's scroll size exceeds its client size because of text.",
+      "No text container has a fixed block size in px.",
+      "The component styles themselves set no letter-spacing on Arabic text (R-TYPE-001)."
+    ],
+    "related": [
+      "R-TYPE-001",
+      "R-TYPE-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "1.4.12 Text Spacing"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "7.3 Text spacing; 4.3 Cursive text"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "section": "letter-spacing (cursive scripts)"
+      }
+    ],
+    "fixtures": [
+      "text-stress"
+    ]
+  }
+}

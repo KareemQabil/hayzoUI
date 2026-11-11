@@ -1,0 +1,72 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-ICON-001",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material Design 2: Bidirectionality",
+        "url": "https://m2.material.io/design/usability/bidirectionality.html",
+        "version": "not machine-readable on 2026-11-11 (JavaScript-only page); cited from prior knowledge",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-ICON-001",
+    "title": {
+      "ar": "اعكس ما يدل على الاتجاه والتقدم فقط",
+      "en": "Mirror only what denotes direction and progress"
+    },
+    "statement": {
+      "ar": "تُعكس الأيقونات التي تمثل اتجاه القراءة أو التقدم أو التراجع أو ترتيب عناصر: الرجوع والتالي والأسهم التنقلية، المسافة البادئة، القوائم، الإرسال، التراجع والإعادة، مؤشر التوسيع. ولا تُعكس: علامة الصح، الساعة وما يدور باتجاه عقاربها، التشغيل الإعلامي، الشعارات، الأيقونات التي تحمل حروفًا أو أرقامًا، والأشياء المادية التي لا اتجاه لها.",
+      "en": "Mirror icons that represent reading direction, forward or backward movement, or the order of items: back, next and navigation arrows, indent, lists, send, undo and redo, the disclosure chevron. Do not mirror: the check mark, the clock and anything that turns clockwise, media playback, logos, icons that contain letters or digits, and physical objects with no direction."
+    },
+    "rationale": {
+      "ar": "ما يتحرك مع اتجاه القراءة يُفهم تقدمًا. أما الوقت فيدور في اتجاه واحد في كل مكان، وشريط التشغيل يمثل اتجاه الشريط لا القراءة، وعكس الشعار يشوهه.",
+      "en": "What moves with the reading direction is understood as forward. Time, however, turns one way everywhere, a playback control represents the tape rather than reading, and a flipped logo is a damaged logo."
+    },
+    "area": "icons",
+    "severity": "must",
+    "appliesTo": [
+      "icon",
+      "icon-registry"
+    ],
+    "checks": [
+      "Every icon record has mirror: auto | never and, for auto, the reason category (navigation, text-direction, order, motion).",
+      "Icons whose name matches check, clock, play, pause, refresh-clockwise, logo or contains a glyph are never.",
+      "In dir=rtl the back icon points to the right and the next icon to the left.",
+      "An icon that contains a slash, badge or question mark is reviewed: the record states whether the component is flipped."
+    ],
+    "related": [
+      "R-BIDI-002",
+      "R-ICON-003"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Interface icons; Controls"
+      },
+      {
+        "name": "Material Design 2: Bidirectionality",
+        "url": "https://m2.material.io/design/usability/bidirectionality.html",
+        "section": "Mirroring icons; when not to mirror"
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-TYPE-008",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-TYPE-008",
+    "title": {
+      "ar": "وازن حجم العربية بجوار اللاتينية",
+      "en": "Balance the size of Arabic beside Latin"
+    },
+    "statement": {
+      "ar": "في السطر الواحد يُضبط حجم الخط العربي أو اللاتيني حتى يتقارب الارتفاع البصري للحروف، ويُتحقق من أصغر حجم مستعمل بنص عربي فيه نقاط وتشكيل.",
+      "en": "On one line, the Arabic or the Latin size is adjusted until the optical height of the letters is close, and the smallest size in use is verified with Arabic text that has dots and marks."
+    },
+    "rationale": {
+      "ar": "بالحجم الاسمي نفسه تبدو العربية أصغر من اللاتينية خاصة بجوار الأحرف الكبيرة، وتتلاصق النقاط في الأحجام الصغيرة.",
+      "en": "At the same nominal size Arabic looks smaller than Latin, especially beside capitals, and dots merge at small sizes."
+    },
+    "area": "typography",
+    "severity": "should",
+    "appliesTo": [
+      "tokens",
+      "fonts"
+    ],
+    "checks": [
+      "The type scale records, per font pair, the ratio applied to Arabic (or Latin) and the measured heights that justify it.",
+      "The smallest text token renders ب ت ث ي with distinguishable dot counts at 1x device pixel ratio."
+    ],
+    "related": [
+      "R-TYPE-005"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Controls: visually balance adjacent Latin and RTL scripts"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "4.1 Fonts & font styles"
+      }
+    ]
+  }
+}

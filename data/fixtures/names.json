@@ -1,0 +1,3911 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "names",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "version": "18.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "ICU (via Node.js Intl)",
+        "url": "https://github.com/unicode-org/icu",
+        "version": "ICU 78.3, CLDR 48.0, tzdata 2026e, Node 22.23.4",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/search.ts"
+      }
+    ],
+    "notes": "Synthetic names composed by the researcher from common given and family names; not records of real people. The expected values are computed: lengths and grapheme clusters by ICU (Intl.Segmenter), directions from UCD bidi classes, search keys by a re-implementation of the owner's arabic.search.v1 normalisation (lib/contracts.mjs). The choice and spelling of the names is from model knowledge and needs a native reviewer.",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Arabic personal names that stress an interface: compound names written joined and apart, particles, very long full names, vocalised names, spelling variants of one name, mixed Arabic and Latin, initials and honorific prefixes. Use it for truncation and wrapping, avatar initials, direction of free text, sorting, search and duplicate warnings. Every name must be stored and displayed exactly as typed.",
+    "appliesTo": [
+      "text-direction",
+      "search-match",
+      "avatar",
+      "table",
+      "text-field"
+    ],
+    "cases": [
+      {
+        "id": "NM-001",
+        "input": {
+          "text": "عبد الله",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبد الله",
+            "default": "عبد الله",
+            "duplicateCheck": "عبدالله"
+          }
+        },
+        "tags": [
+          "compound",
+          "abd",
+          "group:abdullah"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-002",
+        "input": {
+          "text": "عبدالله",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبدالله",
+            "default": "عبدالله",
+            "duplicateCheck": "عبدالله"
+          }
+        },
+        "tags": [
+          "compound",
+          "abd",
+          "joined",
+          "group:abdullah"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-003",
+        "input": {
+          "text": "عبد اللّه",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0651",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبد الله",
+            "default": "عبد الله",
+            "duplicateCheck": "عبدالله"
+          }
+        },
+        "tags": [
+          "compound",
+          "abd",
+          "tashkeel",
+          "group:abdullah"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-004",
+        "input": {
+          "text": "عبد الرحمن",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 10,
+          "utf16Length": 10,
+          "graphemes": 10,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبد الرحمن",
+            "default": "عبد الرحمن",
+            "duplicateCheck": "عبدالرحمن"
+          }
+        },
+        "tags": [
+          "compound",
+          "abd",
+          "group:abdulrahman"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-005",
+        "input": {
+          "text": "عبدالرحمن",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 9,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبدالرحمن",
+            "default": "عبدالرحمن",
+            "duplicateCheck": "عبدالرحمن"
+          }
+        },
+        "tags": [
+          "compound",
+          "abd",
+          "joined",
+          "group:abdulrahman"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-006",
+        "input": {
+          "text": "عبد  الرحمن",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبد الرحمن",
+            "default": "عبد الرحمن",
+            "duplicateCheck": "عبدالرحمن"
+          }
+        },
+        "tags": [
+          "compound",
+          "abd",
+          "double-space",
+          "group:abdulrahman"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-007",
+        "input": {
+          "text": "أبو بكر",
+          "codePoints": [
+            "U+0623",
+            "U+0628",
+            "U+0648",
+            "U+0020",
+            "U+0628",
+            "U+0643",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أبو بكر",
+            "default": "ابو بكر",
+            "duplicateCheck": "ابوبكر"
+          }
+        },
+        "tags": [
+          "compound",
+          "kunya",
+          "group:abubakr"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-008",
+        "input": {
+          "text": "ابو بكر",
+          "codePoints": [
+            "U+0627",
+            "U+0628",
+            "U+0648",
+            "U+0020",
+            "U+0628",
+            "U+0643",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ابو بكر",
+            "default": "ابو بكر",
+            "duplicateCheck": "ابوبكر"
+          }
+        },
+        "tags": [
+          "compound",
+          "kunya",
+          "hamza-variant",
+          "group:abubakr"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-009",
+        "input": {
+          "text": "أبوبكر",
+          "codePoints": [
+            "U+0623",
+            "U+0628",
+            "U+0648",
+            "U+0628",
+            "U+0643",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 6,
+          "utf16Length": 6,
+          "graphemes": 6,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أبوبكر",
+            "default": "ابوبكر",
+            "duplicateCheck": "ابوبكر"
+          }
+        },
+        "tags": [
+          "compound",
+          "kunya",
+          "joined",
+          "group:abubakr"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-010",
+        "input": {
+          "text": "أم أيمن",
+          "codePoints": [
+            "U+0623",
+            "U+0645",
+            "U+0020",
+            "U+0623",
+            "U+064A",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أم أيمن",
+            "default": "ام ايمن",
+            "duplicateCheck": "امايمن"
+          }
+        },
+        "tags": [
+          "compound",
+          "kunya"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-011",
+        "input": {
+          "text": "نور الدين",
+          "codePoints": [
+            "U+0646",
+            "U+0648",
+            "U+0631",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+064A",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 9,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "نور الدين",
+            "default": "نور الدين",
+            "duplicateCheck": "نورالدين"
+          }
+        },
+        "tags": [
+          "compound",
+          "din",
+          "group:nureddin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-012",
+        "input": {
+          "text": "نورالدين",
+          "codePoints": [
+            "U+0646",
+            "U+0648",
+            "U+0631",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+064A",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "نورالدين",
+            "default": "نورالدين",
+            "duplicateCheck": "نورالدين"
+          }
+        },
+        "tags": [
+          "compound",
+          "din",
+          "joined",
+          "group:nureddin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-013",
+        "input": {
+          "text": "سيف الإسلام",
+          "codePoints": [
+            "U+0633",
+            "U+064A",
+            "U+0641",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0625",
+            "U+0633",
+            "U+0644",
+            "U+0627",
+            "U+0645"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "سيف الإسلام",
+            "default": "سيف الاسلام",
+            "duplicateCheck": "سيفالاسلام"
+          }
+        },
+        "tags": [
+          "compound"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-014",
+        "input": {
+          "text": "محيي الدين",
+          "codePoints": [
+            "U+0645",
+            "U+062D",
+            "U+064A",
+            "U+064A",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+064A",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 10,
+          "utf16Length": 10,
+          "graphemes": 10,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محيي الدين",
+            "default": "محيي الدين",
+            "duplicateCheck": "محييالدين"
+          }
+        },
+        "tags": [
+          "compound",
+          "din",
+          "double-yaa"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-015",
+        "input": {
+          "text": "جاد الله",
+          "codePoints": [
+            "U+062C",
+            "U+0627",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "جاد الله",
+            "default": "جاد الله",
+            "duplicateCheck": "جادالله"
+          }
+        },
+        "tags": [
+          "compound"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-016",
+        "input": {
+          "text": "عبد ربه",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0631",
+            "U+0628",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبد ربه",
+            "default": "عبد ربه",
+            "duplicateCheck": "عبدربه"
+          }
+        },
+        "tags": [
+          "compound",
+          "abd"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-017",
+        "input": {
+          "text": "ذو الفقار",
+          "codePoints": [
+            "U+0630",
+            "U+0648",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0641",
+            "U+0642",
+            "U+0627",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 9,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ذو الفقار",
+            "default": "ذو الفقار",
+            "duplicateCheck": "ذوالفقار"
+          }
+        },
+        "tags": [
+          "compound"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-020",
+        "input": {
+          "text": "خالد بن ماجد العتيبي",
+          "codePoints": [
+            "U+062E",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+0020",
+            "U+0645",
+            "U+0627",
+            "U+062C",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0639",
+            "U+062A",
+            "U+064A",
+            "U+0628",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 20,
+          "utf16Length": 20,
+          "graphemes": 20,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "خالد بن ماجد العتيبي",
+            "default": "خالد بن ماجد العتيبي",
+            "duplicateCheck": "خالدبنماجدالعتيبي"
+          }
+        },
+        "tags": [
+          "particle",
+          "bin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-021",
+        "input": {
+          "text": "فاطمة بنت علي الهاشمي",
+          "codePoints": [
+            "U+0641",
+            "U+0627",
+            "U+0637",
+            "U+0645",
+            "U+0629",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+062A",
+            "U+0020",
+            "U+0639",
+            "U+0644",
+            "U+064A",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0647",
+            "U+0627",
+            "U+0634",
+            "U+0645",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 21,
+          "utf16Length": 21,
+          "graphemes": 21,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "فاطمة بنت علي الهاشمي",
+            "default": "فاطمة بنت علي الهاشمي",
+            "duplicateCheck": "فاطمهبنتعليالهاشمي"
+          }
+        },
+        "tags": [
+          "particle",
+          "bint"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-022",
+        "input": {
+          "text": "سالم آل حمدان",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0644",
+            "U+0645",
+            "U+0020",
+            "U+0622",
+            "U+0644",
+            "U+0020",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0627",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "سالم آل حمدان",
+            "default": "سالم ال حمدان",
+            "duplicateCheck": "سالمالحمدان"
+          }
+        },
+        "tags": [
+          "particle",
+          "aal",
+          "group:aal-hamdan"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-023",
+        "input": {
+          "text": "سالم ال حمدان",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0644",
+            "U+0645",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0020",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0627",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "سالم ال حمدان",
+            "default": "سالم ال حمدان",
+            "duplicateCheck": "سالمالحمدان"
+          }
+        },
+        "tags": [
+          "particle",
+          "aal",
+          "hamza-variant",
+          "group:aal-hamdan"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-024",
+        "input": {
+          "text": "سالم الحمدان",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0644",
+            "U+0645",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0627",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 12,
+          "utf16Length": 12,
+          "graphemes": 12,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "سالم الحمدان",
+            "default": "سالم الحمدان",
+            "duplicateCheck": "سالمالحمدان"
+          }
+        },
+        "tags": [
+          "particle",
+          "article",
+          "group:aal-hamdan"
+        ],
+        "note": "Article «الـ» attached: a different family name from «آل حمدان», yet the duplicate-check key is the same.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-025",
+        "input": {
+          "text": "ابن حازم",
+          "codePoints": [
+            "U+0627",
+            "U+0628",
+            "U+0646",
+            "U+0020",
+            "U+062D",
+            "U+0627",
+            "U+0632",
+            "U+0645"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ابن حازم",
+            "default": "ابن حازم",
+            "duplicateCheck": "ابنحازم"
+          }
+        },
+        "tags": [
+          "particle",
+          "ibn"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-026",
+        "input": {
+          "text": "منى أبو العلا",
+          "codePoints": [
+            "U+0645",
+            "U+0646",
+            "U+0649",
+            "U+0020",
+            "U+0623",
+            "U+0628",
+            "U+0648",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0639",
+            "U+0644",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "منى أبو العلا",
+            "default": "منى ابو العلا",
+            "duplicateCheck": "منيابوالعلا"
+          }
+        },
+        "tags": [
+          "particle",
+          "abu",
+          "family"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-027",
+        "input": {
+          "text": "يوسف بن علي",
+          "codePoints": [
+            "U+064A",
+            "U+0648",
+            "U+0633",
+            "U+0641",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+0020",
+            "U+0639",
+            "U+0644",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "يوسف بن علي",
+            "default": "يوسف بن علي",
+            "duplicateCheck": "يوسفبنعلي"
+          }
+        },
+        "tags": [
+          "particle",
+          "bin",
+          "family"
+        ],
+        "note": "«بن علي» as a family name, common in the Maghreb.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-028",
+        "input": {
+          "text": "محمد ولد أحمد",
+          "codePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+0648",
+            "U+0644",
+            "U+062F",
+            "U+0020",
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محمد ولد أحمد",
+            "default": "محمد ولد احمد",
+            "duplicateCheck": "محمدولداحمد"
+          }
+        },
+        "tags": [
+          "particle",
+          "ould"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-029",
+        "input": {
+          "text": "الـمنصور",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0640",
+            "U+0645",
+            "U+0646",
+            "U+0635",
+            "U+0648",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "المنصور",
+            "default": "المنصور",
+            "duplicateCheck": "المنصور"
+          }
+        },
+        "tags": [
+          "particle",
+          "article",
+          "tatweel"
+        ],
+        "note": "Article typed with a tatweel, as on forms that print «الـ».",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-030",
+        "input": {
+          "text": "بو خالد",
+          "codePoints": [
+            "U+0628",
+            "U+0648",
+            "U+0020",
+            "U+062E",
+            "U+0627",
+            "U+0644",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "بو خالد",
+            "default": "بو خالد",
+            "duplicateCheck": "بوخالد"
+          }
+        },
+        "tags": [
+          "particle",
+          "bu"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-031",
+        "input": {
+          "text": "عائشة بنت عبد الله بن سعيد",
+          "codePoints": [
+            "U+0639",
+            "U+0627",
+            "U+0626",
+            "U+0634",
+            "U+0629",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+062A",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+0020",
+            "U+0633",
+            "U+0639",
+            "U+064A",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 26,
+          "utf16Length": 26,
+          "graphemes": 26,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عائشة بنت عبد الله بن سعيد",
+            "default": "عايشة بنت عبد الله بن سعيد",
+            "duplicateCheck": "عايشهبنتعبداللهبنسعيد"
+          }
+        },
+        "tags": [
+          "particle",
+          "bint",
+          "bin",
+          "compound"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-035",
+        "input": {
+          "text": "محمد عبد الرحمن إبراهيم عبد اللطيف السيد أبو النجا الشرقاوي",
+          "codePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0646",
+            "U+0020",
+            "U+0625",
+            "U+0628",
+            "U+0631",
+            "U+0627",
+            "U+0647",
+            "U+064A",
+            "U+0645",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0637",
+            "U+064A",
+            "U+0641",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0633",
+            "U+064A",
+            "U+062F",
+            "U+0020",
+            "U+0623",
+            "U+0628",
+            "U+0648",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0646",
+            "U+062C",
+            "U+0627",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0634",
+            "U+0631",
+            "U+0642",
+            "U+0627",
+            "U+0648",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 59,
+          "utf16Length": 59,
+          "graphemes": 59,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محمد عبد الرحمن إبراهيم عبد اللطيف السيد أبو النجا الشرقاوي",
+            "default": "محمد عبد الرحمن ابراهيم عبد اللطيف السيد ابو النجا الشرقاوي",
+            "duplicateCheck": "محمدعبدالرحمنابراهيمعبداللطيفالسيدابوالنجاالشرقاوي"
+          }
+        },
+        "tags": [
+          "long"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-036",
+        "input": {
+          "text": "عبد العزيز بن عبد الرحمن بن عبد اللطيف بن إبراهيم الدوسري",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0639",
+            "U+0632",
+            "U+064A",
+            "U+0632",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0646",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0637",
+            "U+064A",
+            "U+0641",
+            "U+0020",
+            "U+0628",
+            "U+0646",
+            "U+0020",
+            "U+0625",
+            "U+0628",
+            "U+0631",
+            "U+0627",
+            "U+0647",
+            "U+064A",
+            "U+0645",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+0648",
+            "U+0633",
+            "U+0631",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 57,
+          "utf16Length": 57,
+          "graphemes": 57,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبد العزيز بن عبد الرحمن بن عبد اللطيف بن إبراهيم الدوسري",
+            "default": "عبد العزيز بن عبد الرحمن بن عبد اللطيف بن ابراهيم الدوسري",
+            "duplicateCheck": "عبدالعزيزبنعبدالرحمنبنعبداللطيفبنابراهيمالدوسري"
+          }
+        },
+        "tags": [
+          "long",
+          "particle",
+          "bin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-037",
+        "input": {
+          "text": "نور الهدى مصطفى كمال الدين عبد المقصود",
+          "codePoints": [
+            "U+0646",
+            "U+0648",
+            "U+0631",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0647",
+            "U+062F",
+            "U+0649",
+            "U+0020",
+            "U+0645",
+            "U+0635",
+            "U+0637",
+            "U+0641",
+            "U+0649",
+            "U+0020",
+            "U+0643",
+            "U+0645",
+            "U+0627",
+            "U+0644",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+064A",
+            "U+0646",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0645",
+            "U+0642",
+            "U+0635",
+            "U+0648",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 38,
+          "utf16Length": 38,
+          "graphemes": 38,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "نور الهدى مصطفى كمال الدين عبد المقصود",
+            "default": "نور الهدى مصطفى كمال الدين عبد المقصود",
+            "duplicateCheck": "نورالهديمصطفيكمالالدينعبدالمقصود"
+          }
+        },
+        "tags": [
+          "long",
+          "compound"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-038",
+        "input": {
+          "text": "Mohamed Abdelrahman Ibrahim Abdellatif Elsayed Abouelnaga Elsharkawy",
+          "codePoints": [
+            "U+004D",
+            "U+006F",
+            "U+0068",
+            "U+0061",
+            "U+006D",
+            "U+0065",
+            "U+0064",
+            "U+0020",
+            "U+0041",
+            "U+0062",
+            "U+0064",
+            "U+0065",
+            "U+006C",
+            "U+0072",
+            "U+0061",
+            "U+0068",
+            "U+006D",
+            "U+0061",
+            "U+006E",
+            "U+0020",
+            "U+0049",
+            "U+0062",
+            "U+0072",
+            "U+0061",
+            "U+0068",
+            "U+0069",
+            "U+006D",
+            "U+0020",
+            "U+0041",
+            "U+0062",
+            "U+0064",
+            "U+0065",
+            "U+006C",
+            "U+006C",
+            "U+0061",
+            "U+0074",
+            "U+0069",
+            "U+0066",
+            "U+0020",
+            "U+0045",
+            "U+006C",
+            "U+0073",
+            "U+0061",
+            "U+0079",
+            "U+0065",
+            "U+0064",
+            "U+0020",
+            "U+0041",
+            "U+0062",
+            "U+006F",
+            "U+0075",
+            "U+0065",
+            "U+006C",
+            "U+006E",
+            "U+0061",
+            "U+0067",
+            "U+0061",
+            "U+0020",
+            "U+0045",
+            "U+006C",
+            "U+0073",
+            "U+0068",
+            "U+0061",
+            "U+0072",
+            "U+006B",
+            "U+0061",
+            "U+0077",
+            "U+0079"
+          ]
+        },
+        "expected": {
+          "codePoints": 68,
+          "utf16Length": 68,
+          "graphemes": 68,
+          "firstStrongDirection": "ltr",
+          "dominantDirection": "ltr",
+          "searchKeys": {
+            "strict": "mohamed abdelrahman ibrahim abdellatif elsayed abouelnaga elsharkawy",
+            "default": "mohamed abdelrahman ibrahim abdellatif elsayed abouelnaga elsharkawy",
+            "duplicateCheck": "mohamedabdelrahmanibrahimabdellatifelsayedabouelnagaelsharkawy"
+          }
+        },
+        "tags": [
+          "long",
+          "latin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-040",
+        "input": {
+          "text": "مُحَمَّد",
+          "codePoints": [
+            "U+0645",
+            "U+064F",
+            "U+062D",
+            "U+064E",
+            "U+0645",
+            "U+064E",
+            "U+0651",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محمد",
+            "default": "محمد",
+            "duplicateCheck": "محمد"
+          }
+        },
+        "tags": [
+          "tashkeel",
+          "variant",
+          "group:muhammad"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-041",
+        "input": {
+          "text": "محمّد",
+          "codePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+0651",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محمد",
+            "default": "محمد",
+            "duplicateCheck": "محمد"
+          }
+        },
+        "tags": [
+          "tashkeel",
+          "shadda-only",
+          "variant",
+          "group:muhammad"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-042",
+        "input": {
+          "text": "محمد",
+          "codePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محمد",
+            "default": "محمد",
+            "duplicateCheck": "محمد"
+          }
+        },
+        "tags": [
+          "variant",
+          "group:muhammad"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-043",
+        "input": {
+          "text": "مـحـمـد",
+          "codePoints": [
+            "U+0645",
+            "U+0640",
+            "U+062D",
+            "U+0640",
+            "U+0645",
+            "U+0640",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محمد",
+            "default": "محمد",
+            "duplicateCheck": "محمد"
+          }
+        },
+        "tags": [
+          "tatweel",
+          "variant",
+          "group:muhammad"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-044",
+        "input": {
+          "text": "عَلِيّ",
+          "codePoints": [
+            "U+0639",
+            "U+064E",
+            "U+0644",
+            "U+0650",
+            "U+064A",
+            "U+0651"
+          ]
+        },
+        "expected": {
+          "codePoints": 6,
+          "utf16Length": 6,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "علي",
+            "default": "علي",
+            "duplicateCheck": "علي"
+          }
+        },
+        "tags": [
+          "tashkeel"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-045",
+        "input": {
+          "text": "عُمَر",
+          "codePoints": [
+            "U+0639",
+            "U+064F",
+            "U+0645",
+            "U+064E",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عمر",
+            "default": "عمر",
+            "duplicateCheck": "عمر"
+          }
+        },
+        "tags": [
+          "tashkeel",
+          "group:omar-amr"
+        ],
+        "note": "عُمَر and عَمْرو are different names; without marks and the final waw «عمر» is ambiguous.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-046",
+        "input": {
+          "text": "عَمْرو",
+          "codePoints": [
+            "U+0639",
+            "U+064E",
+            "U+0645",
+            "U+0652",
+            "U+0631",
+            "U+0648"
+          ]
+        },
+        "expected": {
+          "codePoints": 6,
+          "utf16Length": 6,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عمرو",
+            "default": "عمرو",
+            "duplicateCheck": "عمرو"
+          }
+        },
+        "tags": [
+          "tashkeel",
+          "silent-waw",
+          "group:omar-amr"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-047",
+        "input": {
+          "text": "هُدًى",
+          "codePoints": [
+            "U+0647",
+            "U+064F",
+            "U+062F",
+            "U+064B",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "هدى",
+            "default": "هدى",
+            "duplicateCheck": "هدي"
+          }
+        },
+        "tags": [
+          "tashkeel",
+          "tanween"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-050",
+        "input": {
+          "text": "أحمد",
+          "codePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أحمد",
+            "default": "احمد",
+            "duplicateCheck": "احمد"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza",
+          "group:ahmad"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-051",
+        "input": {
+          "text": "احمد",
+          "codePoints": [
+            "U+0627",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "احمد",
+            "default": "احمد",
+            "duplicateCheck": "احمد"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza",
+          "group:ahmad"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-052",
+        "input": {
+          "text": "إيمان",
+          "codePoints": [
+            "U+0625",
+            "U+064A",
+            "U+0645",
+            "U+0627",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "إيمان",
+            "default": "ايمان",
+            "duplicateCheck": "ايمان"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza",
+          "group:iman"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-053",
+        "input": {
+          "text": "ايمان",
+          "codePoints": [
+            "U+0627",
+            "U+064A",
+            "U+0645",
+            "U+0627",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ايمان",
+            "default": "ايمان",
+            "duplicateCheck": "ايمان"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza",
+          "group:iman"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-054",
+        "input": {
+          "text": "آمنة",
+          "codePoints": [
+            "U+0622",
+            "U+0645",
+            "U+0646",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "آمنة",
+            "default": "امنة",
+            "duplicateCheck": "امنه"
+          }
+        },
+        "tags": [
+          "variant",
+          "madda",
+          "taa-marbuta",
+          "group:amina"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-055",
+        "input": {
+          "text": "امنة",
+          "codePoints": [
+            "U+0627",
+            "U+0645",
+            "U+0646",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "امنة",
+            "default": "امنة",
+            "duplicateCheck": "امنه"
+          }
+        },
+        "tags": [
+          "variant",
+          "madda",
+          "taa-marbuta",
+          "group:amina"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-056",
+        "input": {
+          "text": "آمنه",
+          "codePoints": [
+            "U+0622",
+            "U+0645",
+            "U+0646",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "آمنه",
+            "default": "امنه",
+            "duplicateCheck": "امنه"
+          }
+        },
+        "tags": [
+          "variant",
+          "madda",
+          "taa-marbuta",
+          "group:amina"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-057",
+        "input": {
+          "text": "آمنة",
+          "codePoints": [
+            "U+0627",
+            "U+0653",
+            "U+0645",
+            "U+0646",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "امنة",
+            "default": "امنة",
+            "duplicateCheck": "امنه"
+          }
+        },
+        "tags": [
+          "variant",
+          "madda",
+          "decomposed",
+          "group:amina"
+        ],
+        "note": "Alef + combining madda (U+0627 U+0653): canonically equal to U+0622.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-058",
+        "input": {
+          "text": "هبة",
+          "codePoints": [
+            "U+0647",
+            "U+0628",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "هبة",
+            "default": "هبة",
+            "duplicateCheck": "هبه"
+          }
+        },
+        "tags": [
+          "variant",
+          "taa-marbuta",
+          "group:heba"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-059",
+        "input": {
+          "text": "هبه",
+          "codePoints": [
+            "U+0647",
+            "U+0628",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "هبه",
+            "default": "هبه",
+            "duplicateCheck": "هبه"
+          }
+        },
+        "tags": [
+          "variant",
+          "taa-marbuta",
+          "group:heba"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-060",
+        "input": {
+          "text": "فاطمة",
+          "codePoints": [
+            "U+0641",
+            "U+0627",
+            "U+0637",
+            "U+0645",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "فاطمة",
+            "default": "فاطمة",
+            "duplicateCheck": "فاطمه"
+          }
+        },
+        "tags": [
+          "variant",
+          "taa-marbuta",
+          "group:fatima"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-061",
+        "input": {
+          "text": "فاطمه",
+          "codePoints": [
+            "U+0641",
+            "U+0627",
+            "U+0637",
+            "U+0645",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "فاطمه",
+            "default": "فاطمه",
+            "duplicateCheck": "فاطمه"
+          }
+        },
+        "tags": [
+          "variant",
+          "taa-marbuta",
+          "group:fatima"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-062",
+        "input": {
+          "text": "يحيى",
+          "codePoints": [
+            "U+064A",
+            "U+062D",
+            "U+064A",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "يحيى",
+            "default": "يحيى",
+            "duplicateCheck": "يحيي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:yahya"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-063",
+        "input": {
+          "text": "يحيي",
+          "codePoints": [
+            "U+064A",
+            "U+062D",
+            "U+064A",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "يحيي",
+            "default": "يحيي",
+            "duplicateCheck": "يحيي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:yahya"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-064",
+        "input": {
+          "text": "مصطفى",
+          "codePoints": [
+            "U+0645",
+            "U+0635",
+            "U+0637",
+            "U+0641",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "مصطفى",
+            "default": "مصطفى",
+            "duplicateCheck": "مصطفي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:mustafa"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-065",
+        "input": {
+          "text": "مصطفي",
+          "codePoints": [
+            "U+0645",
+            "U+0635",
+            "U+0637",
+            "U+0641",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "مصطفي",
+            "default": "مصطفي",
+            "duplicateCheck": "مصطفي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:mustafa"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-066",
+        "input": {
+          "text": "ليلى",
+          "codePoints": [
+            "U+0644",
+            "U+064A",
+            "U+0644",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ليلى",
+            "default": "ليلى",
+            "duplicateCheck": "ليلي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:layla"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-067",
+        "input": {
+          "text": "ليلي",
+          "codePoints": [
+            "U+0644",
+            "U+064A",
+            "U+0644",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ليلي",
+            "default": "ليلي",
+            "duplicateCheck": "ليلي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:layla"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-068",
+        "input": {
+          "text": "مؤمن",
+          "codePoints": [
+            "U+0645",
+            "U+0624",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "مؤمن",
+            "default": "مومن",
+            "duplicateCheck": "مومن"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza-on-waw",
+          "group:mumin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-069",
+        "input": {
+          "text": "مومن",
+          "codePoints": [
+            "U+0645",
+            "U+0648",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "مومن",
+            "default": "مومن",
+            "duplicateCheck": "مومن"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza-on-waw",
+          "group:mumin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-070",
+        "input": {
+          "text": "هانئ",
+          "codePoints": [
+            "U+0647",
+            "U+0627",
+            "U+0646",
+            "U+0626"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "هانئ",
+            "default": "هاني",
+            "duplicateCheck": "هاني"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza-on-yaa",
+          "group:hani"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-071",
+        "input": {
+          "text": "هاني",
+          "codePoints": [
+            "U+0647",
+            "U+0627",
+            "U+0646",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "هاني",
+            "default": "هاني",
+            "duplicateCheck": "هاني"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza-on-yaa",
+          "group:hani"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-072",
+        "input": {
+          "text": "إسراء",
+          "codePoints": [
+            "U+0625",
+            "U+0633",
+            "U+0631",
+            "U+0627",
+            "U+0621"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "إسراء",
+            "default": "اسرا",
+            "duplicateCheck": "اسرا"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza",
+          "final-hamza",
+          "group:israa"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-073",
+        "input": {
+          "text": "اسراء",
+          "codePoints": [
+            "U+0627",
+            "U+0633",
+            "U+0631",
+            "U+0627",
+            "U+0621"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "اسراء",
+            "default": "اسرا",
+            "duplicateCheck": "اسرا"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza",
+          "final-hamza",
+          "group:israa"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-074",
+        "input": {
+          "text": "إسرا",
+          "codePoints": [
+            "U+0625",
+            "U+0633",
+            "U+0631",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "إسرا",
+            "default": "اسرا",
+            "duplicateCheck": "اسرا"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza",
+          "final-hamza",
+          "group:israa"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-075",
+        "input": {
+          "text": "سارة",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0631",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "سارة",
+            "default": "سارة",
+            "duplicateCheck": "ساره"
+          }
+        },
+        "tags": [
+          "variant",
+          "taa-marbuta",
+          "group:sara"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-076",
+        "input": {
+          "text": "ساره",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0631",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ساره",
+            "default": "ساره",
+            "duplicateCheck": "ساره"
+          }
+        },
+        "tags": [
+          "variant",
+          "taa-marbuta",
+          "group:sara"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-077",
+        "input": {
+          "text": "سارا",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0631",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "سارا",
+            "default": "سارا",
+            "duplicateCheck": "سارا"
+          }
+        },
+        "tags": [
+          "variant",
+          "group:sara"
+        ],
+        "note": "A third spelling that no tolerance level of arabic.search.v1 folds.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-078",
+        "input": {
+          "text": "علي",
+          "codePoints": [
+            "U+0639",
+            "U+0644",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "علي",
+            "default": "علي",
+            "duplicateCheck": "علي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:ali"
+        ],
+        "note": "Typed «على» by writers who do not dot the final yaa; «على» is also the preposition.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-079",
+        "input": {
+          "text": "على",
+          "codePoints": [
+            "U+0639",
+            "U+0644",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "على",
+            "default": "على",
+            "duplicateCheck": "علي"
+          }
+        },
+        "tags": [
+          "variant",
+          "alef-maqsura",
+          "group:ali"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-080",
+        "input": {
+          "text": "علی",
+          "codePoints": [
+            "U+0639",
+            "U+0644",
+            "U+06CC"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "علی",
+            "default": "علی",
+            "duplicateCheck": "علی"
+          }
+        },
+        "tags": [
+          "variant",
+          "persian-yeh",
+          "group:ali"
+        ],
+        "note": "Final U+06CC FARSI YEH from a Persian or Urdu keyboard: looks like «على» in final position.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-081",
+        "input": {
+          "text": "رؤى",
+          "codePoints": [
+            "U+0631",
+            "U+0624",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "رؤى",
+            "default": "روى",
+            "duplicateCheck": "روي"
+          }
+        },
+        "tags": [
+          "variant",
+          "hamza-on-waw",
+          "alef-maqsura"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-082",
+        "input": {
+          "text": "طه",
+          "codePoints": [
+            "U+0637",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 2,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "طه",
+            "default": "طه",
+            "duplicateCheck": "طه"
+          }
+        },
+        "tags": [
+          "short"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-083",
+        "input": {
+          "text": "مي",
+          "codePoints": [
+            "U+0645",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 2,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "مي",
+            "default": "مي",
+            "duplicateCheck": "مي"
+          }
+        },
+        "tags": [
+          "short"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-090",
+        "input": {
+          "text": "أحمد Khaled",
+          "codePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+004B",
+            "U+0068",
+            "U+0061",
+            "U+006C",
+            "U+0065",
+            "U+0064"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أحمد khaled",
+            "default": "احمد khaled",
+            "duplicateCheck": "احمدkhaled"
+          }
+        },
+        "tags": [
+          "mixed"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-091",
+        "input": {
+          "text": "Sara حداد",
+          "codePoints": [
+            "U+0053",
+            "U+0061",
+            "U+0072",
+            "U+0061",
+            "U+0020",
+            "U+062D",
+            "U+062F",
+            "U+0627",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 9,
+          "firstStrongDirection": "ltr",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "sara حداد",
+            "default": "sara حداد",
+            "duplicateCheck": "saraحداد"
+          }
+        },
+        "tags": [
+          "mixed",
+          "latin-first"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-092",
+        "input": {
+          "text": "Dr. سامي الحلبي",
+          "codePoints": [
+            "U+0044",
+            "U+0072",
+            "U+002E",
+            "U+0020",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062D",
+            "U+0644",
+            "U+0628",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 15,
+          "utf16Length": 15,
+          "graphemes": 15,
+          "firstStrongDirection": "ltr",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "dr. سامي الحلبي",
+            "default": "dr. سامي الحلبي",
+            "duplicateCheck": "dr.ساميالحلبي"
+          }
+        },
+        "tags": [
+          "mixed",
+          "latin-first",
+          "honorific"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-093",
+        "input": {
+          "text": "محمد (Mido) السيد",
+          "codePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+0028",
+            "U+004D",
+            "U+0069",
+            "U+0064",
+            "U+006F",
+            "U+0029",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0633",
+            "U+064A",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 17,
+          "utf16Length": 17,
+          "graphemes": 17,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "محمد (mido) السيد",
+            "default": "محمد (mido) السيد",
+            "duplicateCheck": "محمد(mido)السيد"
+          }
+        },
+        "tags": [
+          "mixed",
+          "parentheses"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-094",
+        "input": {
+          "text": "Mohamed Ali Hassan سامي",
+          "codePoints": [
+            "U+004D",
+            "U+006F",
+            "U+0068",
+            "U+0061",
+            "U+006D",
+            "U+0065",
+            "U+0064",
+            "U+0020",
+            "U+0041",
+            "U+006C",
+            "U+0069",
+            "U+0020",
+            "U+0048",
+            "U+0061",
+            "U+0073",
+            "U+0073",
+            "U+0061",
+            "U+006E",
+            "U+0020",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 23,
+          "utf16Length": 23,
+          "graphemes": 23,
+          "firstStrongDirection": "ltr",
+          "dominantDirection": "ltr",
+          "searchKeys": {
+            "strict": "mohamed ali hassan سامي",
+            "default": "mohamed ali hassan سامي",
+            "duplicateCheck": "mohamedalihassanسامي"
+          }
+        },
+        "tags": [
+          "mixed",
+          "latin-dominant"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-095",
+        "input": {
+          "text": "سامي الحلبي (Sami Al-Halabi)",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062D",
+            "U+0644",
+            "U+0628",
+            "U+064A",
+            "U+0020",
+            "U+0028",
+            "U+0053",
+            "U+0061",
+            "U+006D",
+            "U+0069",
+            "U+0020",
+            "U+0041",
+            "U+006C",
+            "U+002D",
+            "U+0048",
+            "U+0061",
+            "U+006C",
+            "U+0061",
+            "U+0062",
+            "U+0069",
+            "U+0029"
+          ]
+        },
+        "expected": {
+          "codePoints": 28,
+          "utf16Length": 28,
+          "graphemes": 28,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "سامي الحلبي (sami al-halabi)",
+            "default": "سامي الحلبي (sami al-halabi)",
+            "duplicateCheck": "ساميالحلبي(samial-halabi)"
+          }
+        },
+        "tags": [
+          "mixed",
+          "parentheses",
+          "transliteration"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-096",
+        "input": {
+          "text": "أحمد K.",
+          "codePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+004B",
+            "U+002E"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أحمد k.",
+            "default": "احمد k.",
+            "duplicateCheck": "احمدk."
+          }
+        },
+        "tags": [
+          "mixed",
+          "initial"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-097",
+        "input": {
+          "text": "Sara Haddad",
+          "codePoints": [
+            "U+0053",
+            "U+0061",
+            "U+0072",
+            "U+0061",
+            "U+0020",
+            "U+0048",
+            "U+0061",
+            "U+0064",
+            "U+0064",
+            "U+0061",
+            "U+0064"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "ltr",
+          "dominantDirection": "ltr",
+          "searchKeys": {
+            "strict": "sara haddad",
+            "default": "sara haddad",
+            "duplicateCheck": "sarahaddad"
+          }
+        },
+        "tags": [
+          "latin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-098",
+        "input": {
+          "text": "Nour El-Din O'Brien",
+          "codePoints": [
+            "U+004E",
+            "U+006F",
+            "U+0075",
+            "U+0072",
+            "U+0020",
+            "U+0045",
+            "U+006C",
+            "U+002D",
+            "U+0044",
+            "U+0069",
+            "U+006E",
+            "U+0020",
+            "U+004F",
+            "U+0027",
+            "U+0042",
+            "U+0072",
+            "U+0069",
+            "U+0065",
+            "U+006E"
+          ]
+        },
+        "expected": {
+          "codePoints": 19,
+          "utf16Length": 19,
+          "graphemes": 19,
+          "firstStrongDirection": "ltr",
+          "dominantDirection": "ltr",
+          "searchKeys": {
+            "strict": "nour el-din o'brien",
+            "default": "nour el-din o'brien",
+            "duplicateCheck": "nourel-dino'brien"
+          }
+        },
+        "tags": [
+          "latin",
+          "hyphen",
+          "apostrophe"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-100",
+        "input": {
+          "text": "م. ع. السيد",
+          "codePoints": [
+            "U+0645",
+            "U+002E",
+            "U+0020",
+            "U+0639",
+            "U+002E",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0633",
+            "U+064A",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "م. ع. السيد",
+            "default": "م. ع. السيد",
+            "duplicateCheck": "م.ع.السيد"
+          }
+        },
+        "tags": [
+          "initial"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-101",
+        "input": {
+          "text": "م.ع. السيد",
+          "codePoints": [
+            "U+0645",
+            "U+002E",
+            "U+0639",
+            "U+002E",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0633",
+            "U+064A",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 10,
+          "utf16Length": 10,
+          "graphemes": 10,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "م.ع. السيد",
+            "default": "م.ع. السيد",
+            "duplicateCheck": "م.ع.السيد"
+          }
+        },
+        "tags": [
+          "initial",
+          "no-space"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-102",
+        "input": {
+          "text": "A. M. Hassan",
+          "codePoints": [
+            "U+0041",
+            "U+002E",
+            "U+0020",
+            "U+004D",
+            "U+002E",
+            "U+0020",
+            "U+0048",
+            "U+0061",
+            "U+0073",
+            "U+0073",
+            "U+0061",
+            "U+006E"
+          ]
+        },
+        "expected": {
+          "codePoints": 12,
+          "utf16Length": 12,
+          "graphemes": 12,
+          "firstStrongDirection": "ltr",
+          "dominantDirection": "ltr",
+          "searchKeys": {
+            "strict": "a. m. hassan",
+            "default": "a. m. hassan",
+            "duplicateCheck": "a.m.hassan"
+          }
+        },
+        "tags": [
+          "initial",
+          "latin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-103",
+        "input": {
+          "text": "ع. م.",
+          "codePoints": [
+            "U+0639",
+            "U+002E",
+            "U+0020",
+            "U+0645",
+            "U+002E"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "ع. م.",
+            "default": "ع. م.",
+            "duplicateCheck": "ع.م."
+          }
+        },
+        "tags": [
+          "initial",
+          "only-initials"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-110",
+        "input": {
+          "text": "د. سامي الحلبي",
+          "codePoints": [
+            "U+062F",
+            "U+002E",
+            "U+0020",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062D",
+            "U+0644",
+            "U+0628",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 14,
+          "utf16Length": 14,
+          "graphemes": 14,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "د. سامي الحلبي",
+            "default": "د. سامي الحلبي",
+            "duplicateCheck": "د.ساميالحلبي"
+          }
+        },
+        "tags": [
+          "honorific"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-111",
+        "input": {
+          "text": "د/ سامي الحلبي",
+          "codePoints": [
+            "U+062F",
+            "U+002F",
+            "U+0020",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+062D",
+            "U+0644",
+            "U+0628",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 14,
+          "utf16Length": 14,
+          "graphemes": 14,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "د/ سامي الحلبي",
+            "default": "د/ سامي الحلبي",
+            "duplicateCheck": "د/ساميالحلبي"
+          }
+        },
+        "tags": [
+          "honorific",
+          "slash"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-112",
+        "input": {
+          "text": "م. خالد منصور",
+          "codePoints": [
+            "U+0645",
+            "U+002E",
+            "U+0020",
+            "U+062E",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+0020",
+            "U+0645",
+            "U+0646",
+            "U+0635",
+            "U+0648",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "م. خالد منصور",
+            "default": "م. خالد منصور",
+            "duplicateCheck": "م.خالدمنصور"
+          }
+        },
+        "tags": [
+          "honorific"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-113",
+        "input": {
+          "text": "م/ خالد منصور",
+          "codePoints": [
+            "U+0645",
+            "U+002F",
+            "U+0020",
+            "U+062E",
+            "U+0627",
+            "U+0644",
+            "U+062F",
+            "U+0020",
+            "U+0645",
+            "U+0646",
+            "U+0635",
+            "U+0648",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "م/ خالد منصور",
+            "default": "م/ خالد منصور",
+            "duplicateCheck": "م/خالدمنصور"
+          }
+        },
+        "tags": [
+          "honorific",
+          "slash"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-114",
+        "input": {
+          "text": "أ. منى عبد الفتاح",
+          "codePoints": [
+            "U+0623",
+            "U+002E",
+            "U+0020",
+            "U+0645",
+            "U+0646",
+            "U+0649",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0641",
+            "U+062A",
+            "U+0627",
+            "U+062D"
+          ]
+        },
+        "expected": {
+          "codePoints": 17,
+          "utf16Length": 17,
+          "graphemes": 17,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أ. منى عبد الفتاح",
+            "default": "ا. منى عبد الفتاح",
+            "duplicateCheck": "ا.منيعبدالفتاح"
+          }
+        },
+        "tags": [
+          "honorific",
+          "compound"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-115",
+        "input": {
+          "text": "أ.د. هالة مؤمن",
+          "codePoints": [
+            "U+0623",
+            "U+002E",
+            "U+062F",
+            "U+002E",
+            "U+0020",
+            "U+0647",
+            "U+0627",
+            "U+0644",
+            "U+0629",
+            "U+0020",
+            "U+0645",
+            "U+0624",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 14,
+          "utf16Length": 14,
+          "graphemes": 14,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أ.د. هالة مؤمن",
+            "default": "ا.د. هالة مومن",
+            "duplicateCheck": "ا.د.هالهمومن"
+          }
+        },
+        "tags": [
+          "honorific",
+          "double"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-116",
+        "input": {
+          "text": "الحاج محمود",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+062D",
+            "U+0627",
+            "U+062C",
+            "U+0020",
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+0648",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "الحاج محمود",
+            "default": "الحاج محمود",
+            "duplicateCheck": "الحاجمحمود"
+          }
+        },
+        "tags": [
+          "honorific",
+          "word"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-117",
+        "input": {
+          "text": "الشيخ/ ناصر",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0634",
+            "U+064A",
+            "U+062E",
+            "U+002F",
+            "U+0020",
+            "U+0646",
+            "U+0627",
+            "U+0635",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 11,
+          "graphemes": 11,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "الشيخ/ ناصر",
+            "default": "الشيخ/ ناصر",
+            "duplicateCheck": "الشيخ/ناصر"
+          }
+        },
+        "tags": [
+          "honorific",
+          "word",
+          "slash"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-118",
+        "input": {
+          "text": "السيدة/ ليلى حسن",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0633",
+            "U+064A",
+            "U+062F",
+            "U+0629",
+            "U+002F",
+            "U+0020",
+            "U+0644",
+            "U+064A",
+            "U+0644",
+            "U+0649",
+            "U+0020",
+            "U+062D",
+            "U+0633",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 16,
+          "utf16Length": 16,
+          "graphemes": 16,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "السيدة/ ليلى حسن",
+            "default": "السيدة/ ليلى حسن",
+            "duplicateCheck": "السيده/ليليحسن"
+          }
+        },
+        "tags": [
+          "honorific",
+          "word",
+          "slash"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-120",
+        "input": {
+          "text": "  أحمد  ",
+          "codePoints": [
+            "U+0020",
+            "U+0020",
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+0020"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أحمد",
+            "default": "احمد",
+            "duplicateCheck": "احمد"
+          }
+        },
+        "tags": [
+          "whitespace",
+          "untrimmed"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-121",
+        "input": {
+          "text": "عبد\u00a0الله",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+00A0",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "عبد الله",
+            "default": "عبد الله",
+            "duplicateCheck": "عبدالله"
+          }
+        },
+        "tags": [
+          "whitespace",
+          "nbsp",
+          "compound",
+          "group:abdullah"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-122",
+        "input": {
+          "text": "پریسا",
+          "codePoints": [
+            "U+067E",
+            "U+0631",
+            "U+06CC",
+            "U+0633",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "پریسا",
+            "default": "پریسا",
+            "duplicateCheck": "پریسا"
+          }
+        },
+        "tags": [
+          "persian"
+        ],
+        "note": "Persian name with U+067E and U+06CC.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-123",
+        "input": {
+          "text": "علی\u200cرضا",
+          "codePoints": [
+            "U+0639",
+            "U+0644",
+            "U+06CC",
+            "U+200C",
+            "U+0631",
+            "U+0636",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 6,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "علی\u200cرضا",
+            "default": "علی\u200cرضا",
+            "duplicateCheck": "علی\u200cرضا"
+          }
+        },
+        "tags": [
+          "persian",
+          "zwnj"
+        ],
+        "note": "Persian compound name written with U+200C ZERO WIDTH NON-JOINER.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "NM-124",
+        "input": {
+          "text": "أحمد\u200f",
+          "codePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+200F"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "firstStrongDirection": "rtl",
+          "dominantDirection": "rtl",
+          "searchKeys": {
+            "strict": "أحمد\u200f",
+            "default": "احمد\u200f",
+            "duplicateCheck": "احمد"
+          }
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "group:ahmad"
+        ],
+        "note": "Name pasted with a trailing U+200F.",
+        "origin": "authored for this project (synthetic)"
+      }
+    ],
+    "inputShape": "{ text, codePoints }",
+    "expectedShape": "{ codePoints, utf16Length, graphemes (extended grapheme clusters), firstStrongDirection (what dir=\"auto\" gives), dominantDirection (the owner's words-vote rule; differs from first-strong for Latin-first Arabic names), searchKeys: the comparison key at each tolerance level of arabic.search.v1 — two names with the same duplicateCheck key must raise a similar-record warning and are never merged }. No expected value for how a name is split into parts: that is not decidable from the string.",
+    "rules": [
+      "R-SRCH-001",
+      "R-SRCH-002",
+      "R-SRCH-003",
+      "R-BIDI-001",
+      "R-BIDI-005",
+      "R-TYPE-004",
+      "R-CNT-006"
+    ],
+    "tagVocabulary": {
+      "group:<name>": "spellings a person may use for the same name (or, where the note says so, names easily confused)"
+    },
+    "shared": {
+      "groups": {
+        "abdullah": {
+          "members": [
+            "NM-001",
+            "NM-002",
+            "NM-003",
+            "NM-121"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "abdulrahman": {
+          "members": [
+            "NM-004",
+            "NM-005",
+            "NM-006"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "abubakr": {
+          "members": [
+            "NM-007",
+            "NM-008",
+            "NM-009"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "nureddin": {
+          "members": [
+            "NM-011",
+            "NM-012"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "aal-hamdan": {
+          "members": [
+            "NM-022",
+            "NM-023",
+            "NM-024"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "muhammad": {
+          "members": [
+            "NM-040",
+            "NM-041",
+            "NM-042",
+            "NM-043"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 1
+        },
+        "omar-amr": {
+          "members": [
+            "NM-045",
+            "NM-046"
+          ],
+          "distinctDuplicateKeys": 2,
+          "distinctDefaultKeys": 2
+        },
+        "ahmad": {
+          "members": [
+            "NM-050",
+            "NM-051",
+            "NM-124"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "iman": {
+          "members": [
+            "NM-052",
+            "NM-053"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 1
+        },
+        "amina": {
+          "members": [
+            "NM-054",
+            "NM-055",
+            "NM-056",
+            "NM-057"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "heba": {
+          "members": [
+            "NM-058",
+            "NM-059"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "fatima": {
+          "members": [
+            "NM-060",
+            "NM-061"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "yahya": {
+          "members": [
+            "NM-062",
+            "NM-063"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "mustafa": {
+          "members": [
+            "NM-064",
+            "NM-065"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "layla": {
+          "members": [
+            "NM-066",
+            "NM-067"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 2
+        },
+        "mumin": {
+          "members": [
+            "NM-068",
+            "NM-069"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 1
+        },
+        "hani": {
+          "members": [
+            "NM-070",
+            "NM-071"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 1
+        },
+        "israa": {
+          "members": [
+            "NM-072",
+            "NM-073",
+            "NM-074"
+          ],
+          "distinctDuplicateKeys": 1,
+          "distinctDefaultKeys": 1
+        },
+        "sara": {
+          "members": [
+            "NM-075",
+            "NM-076",
+            "NM-077"
+          ],
+          "distinctDuplicateKeys": 2,
+          "distinctDefaultKeys": 3
+        },
+        "ali": {
+          "members": [
+            "NM-078",
+            "NM-079",
+            "NM-080"
+          ],
+          "distinctDuplicateKeys": 2,
+          "distinctDefaultKeys": 3
+        }
+      }
+    }
+  }
+}

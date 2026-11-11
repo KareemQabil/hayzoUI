@@ -1,0 +1,1346 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "search-pairs",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/search.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      }
+    ],
+    "notes": "Pairs written by hand; the three verdicts are those of the owner's arabic.search.v1 at its three tolerance levels, cross-checked against a re-implementation (lib/contracts.mjs). Tags false-positive-risk, v1-gap and out-of-scope are the researcher's reading of where the contract over- or under-matches.",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Query/target pairs with the verdict at each tolerance level, including the pairs where a level is wrong: tolerance that joins two different words (false-positive-risk) and equivalences the contract does not cover (v1-gap). Use it to test the matcher and to decide the default level per field.",
+    "appliesTo": [
+      "search-match",
+      "search-field",
+      "combobox",
+      "table"
+    ],
+    "cases": [
+      {
+        "id": "SP-001",
+        "input": {
+          "query": "احمد",
+          "target": "أحمد",
+          "queryCodePoints": [
+            "U+0627",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-002",
+        "input": {
+          "query": "أحمد",
+          "target": "احمد",
+          "queryCodePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0627",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-003",
+        "input": {
+          "query": "اسامه",
+          "target": "أسامة",
+          "queryCodePoints": [
+            "U+0627",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0623",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "taa-marbuta"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-004",
+        "input": {
+          "query": "فاطمه",
+          "target": "فاطمة",
+          "queryCodePoints": [
+            "U+0641",
+            "U+0627",
+            "U+0637",
+            "U+0645",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0641",
+            "U+0627",
+            "U+0637",
+            "U+0645",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "taa-marbuta"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-005",
+        "input": {
+          "query": "مصطفي",
+          "target": "مصطفى",
+          "queryCodePoints": [
+            "U+0645",
+            "U+0635",
+            "U+0637",
+            "U+0641",
+            "U+064A"
+          ],
+          "targetCodePoints": [
+            "U+0645",
+            "U+0635",
+            "U+0637",
+            "U+0641",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "alef-maqsura"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-006",
+        "input": {
+          "query": "علي",
+          "target": "على",
+          "queryCodePoints": [
+            "U+0639",
+            "U+0644",
+            "U+064A"
+          ],
+          "targetCodePoints": [
+            "U+0639",
+            "U+0644",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "alef-maqsura",
+          "false-positive-risk"
+        ],
+        "note": "The name «علي» and the preposition «على».",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-007",
+        "input": {
+          "query": "محمد",
+          "target": "مُحَمَّد",
+          "queryCodePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0645",
+            "U+064F",
+            "U+062D",
+            "U+064E",
+            "U+0645",
+            "U+064E",
+            "U+0651",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "diacritics"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-008",
+        "input": {
+          "query": "مُحَمَّد",
+          "target": "محمد",
+          "queryCodePoints": [
+            "U+0645",
+            "U+064F",
+            "U+062D",
+            "U+064E",
+            "U+0645",
+            "U+064E",
+            "U+0651",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "diacritics"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-009",
+        "input": {
+          "query": "عَلَم",
+          "target": "عِلْم",
+          "queryCodePoints": [
+            "U+0639",
+            "U+064E",
+            "U+0644",
+            "U+064E",
+            "U+0645"
+          ],
+          "targetCodePoints": [
+            "U+0639",
+            "U+0650",
+            "U+0644",
+            "U+0652",
+            "U+0645"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "diacritics",
+          "false-positive-risk"
+        ],
+        "note": "Flag and knowledge: different words, the same letters. Diacritics are folded at every level, strict included.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-010",
+        "input": {
+          "query": "عبدالله",
+          "target": "عبد الله",
+          "queryCodePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "spaces"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-011",
+        "input": {
+          "query": "عبد الله",
+          "target": "عبدالله",
+          "queryCodePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "spaces"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-012",
+        "input": {
+          "query": "عبد  الله",
+          "target": "عبد الله",
+          "queryCodePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "spaces",
+          "double-space"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-013",
+        "input": {
+          "query": "جميـل",
+          "target": "جميل",
+          "queryCodePoints": [
+            "U+062C",
+            "U+0645",
+            "U+064A",
+            "U+0640",
+            "U+0644"
+          ],
+          "targetCodePoints": [
+            "U+062C",
+            "U+0645",
+            "U+064A",
+            "U+0644"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "tatweel"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-014",
+        "input": {
+          "query": "KHALED",
+          "target": "أحمد Khaled",
+          "queryCodePoints": [
+            "U+004B",
+            "U+0048",
+            "U+0041",
+            "U+004C",
+            "U+0045",
+            "U+0044"
+          ],
+          "targetCodePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+004B",
+            "U+0068",
+            "U+0061",
+            "U+006C",
+            "U+0065",
+            "U+0064"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "case"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-015",
+        "input": {
+          "query": "١٢٣",
+          "target": "طلب 123",
+          "queryCodePoints": [
+            "U+0661",
+            "U+0662",
+            "U+0663"
+          ],
+          "targetCodePoints": [
+            "U+0637",
+            "U+0644",
+            "U+0628",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "digits"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-016",
+        "input": {
+          "query": "۰۱۰",
+          "target": "010 1234",
+          "queryCodePoints": [
+            "U+06F0",
+            "U+06F1",
+            "U+06F0"
+          ],
+          "targetCodePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "digits",
+          "arabext"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-017",
+        "input": {
+          "query": "مومن",
+          "target": "مؤمن",
+          "queryCodePoints": [
+            "U+0645",
+            "U+0648",
+            "U+0645",
+            "U+0646"
+          ],
+          "targetCodePoints": [
+            "U+0645",
+            "U+0624",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-018",
+        "input": {
+          "query": "هاني",
+          "target": "هانئ",
+          "queryCodePoints": [
+            "U+0647",
+            "U+0627",
+            "U+0646",
+            "U+064A"
+          ],
+          "targetCodePoints": [
+            "U+0647",
+            "U+0627",
+            "U+0646",
+            "U+0626"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-019",
+        "input": {
+          "query": "رايد",
+          "target": "رائد",
+          "queryCodePoints": [
+            "U+0631",
+            "U+0627",
+            "U+064A",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0631",
+            "U+0627",
+            "U+0626",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-020",
+        "input": {
+          "query": "سال",
+          "target": "سأل",
+          "queryCodePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0644"
+          ],
+          "targetCodePoints": [
+            "U+0633",
+            "U+0623",
+            "U+0644"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "false-positive-risk"
+        ],
+        "note": "Flowed and asked.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-021",
+        "input": {
+          "query": "قران",
+          "target": "قرآن",
+          "queryCodePoints": [
+            "U+0642",
+            "U+0631",
+            "U+0627",
+            "U+0646"
+          ],
+          "targetCodePoints": [
+            "U+0642",
+            "U+0631",
+            "U+0622",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "madda"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-022",
+        "input": {
+          "query": "ماء",
+          "target": "ما",
+          "queryCodePoints": [
+            "U+0645",
+            "U+0627",
+            "U+0621"
+          ],
+          "targetCodePoints": [
+            "U+0645",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "false-positive-risk"
+        ],
+        "note": "Water and the particle «ما»: a standalone hamza is dropped by hamza tolerance.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-023",
+        "input": {
+          "query": "ال",
+          "target": "آل",
+          "queryCodePoints": [
+            "U+0627",
+            "U+0644"
+          ],
+          "targetCodePoints": [
+            "U+0622",
+            "U+0644"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "madda",
+          "false-positive-risk"
+        ],
+        "note": "The definite article and the family particle.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-024",
+        "input": {
+          "query": "منه",
+          "target": "منة",
+          "queryCodePoints": [
+            "U+0645",
+            "U+0646",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0645",
+            "U+0646",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "taa-marbuta",
+          "false-positive-risk"
+        ],
+        "note": "«منه» (from him) and the name «منة».",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-025",
+        "input": {
+          "query": "كره",
+          "target": "كرة",
+          "queryCodePoints": [
+            "U+0643",
+            "U+0631",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0643",
+            "U+0631",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "taa-marbuta",
+          "false-positive-risk"
+        ],
+        "note": "Hated and ball.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-026",
+        "input": {
+          "query": "ايمان عبدالرحمن",
+          "target": "إيمان عبد الرحمن",
+          "queryCodePoints": [
+            "U+0627",
+            "U+064A",
+            "U+0645",
+            "U+0627",
+            "U+0646",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0646"
+          ],
+          "targetCodePoints": [
+            "U+0625",
+            "U+064A",
+            "U+0645",
+            "U+0627",
+            "U+0646",
+            "U+0020",
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "spaces"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-027",
+        "input": {
+          "query": "الاسكندريه",
+          "target": "الإسكندرية",
+          "queryCodePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0627",
+            "U+0633",
+            "U+0643",
+            "U+0646",
+            "U+062F",
+            "U+0631",
+            "U+064A",
+            "U+0647"
+          ],
+          "targetCodePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0625",
+            "U+0633",
+            "U+0643",
+            "U+0646",
+            "U+062F",
+            "U+0631",
+            "U+064A",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "taa-marbuta"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-028",
+        "input": {
+          "query": "ابوبكر",
+          "target": "أبو بكر",
+          "queryCodePoints": [
+            "U+0627",
+            "U+0628",
+            "U+0648",
+            "U+0628",
+            "U+0643",
+            "U+0631"
+          ],
+          "targetCodePoints": [
+            "U+0623",
+            "U+0628",
+            "U+0648",
+            "U+0020",
+            "U+0628",
+            "U+0643",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "hamza",
+          "spaces"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-029",
+        "input": {
+          "query": "د.سامي",
+          "target": "د. سامي",
+          "queryCodePoints": [
+            "U+062F",
+            "U+002E",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A"
+          ],
+          "targetCodePoints": [
+            "U+062F",
+            "U+002E",
+            "U+0020",
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "spaces",
+          "honorific"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-030",
+        "input": {
+          "query": "abdel rahman",
+          "target": "Abdelrahman",
+          "queryCodePoints": [
+            "U+0061",
+            "U+0062",
+            "U+0064",
+            "U+0065",
+            "U+006C",
+            "U+0020",
+            "U+0072",
+            "U+0061",
+            "U+0068",
+            "U+006D",
+            "U+0061",
+            "U+006E"
+          ],
+          "targetCodePoints": [
+            "U+0041",
+            "U+0062",
+            "U+0064",
+            "U+0065",
+            "U+006C",
+            "U+0072",
+            "U+0061",
+            "U+0068",
+            "U+006D",
+            "U+0061",
+            "U+006E"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "spaces",
+          "case",
+          "latin"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-031",
+        "input": {
+          "query": "سيد",
+          "target": "السيد",
+          "queryCodePoints": [
+            "U+0633",
+            "U+064A",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0633",
+            "U+064A",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "substring",
+          "article"
+        ],
+        "note": "Matching is by substring: the query without the article finds the word with it.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-032",
+        "input": {
+          "query": "السيد",
+          "target": "سيد",
+          "queryCodePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0633",
+            "U+064A",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0633",
+            "U+064A",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": false
+        },
+        "tags": [
+          "substring",
+          "article"
+        ],
+        "note": "The reverse does not match at any level.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-033",
+        "input": {
+          "query": "حمد",
+          "target": "محمد أحمد حمدي",
+          "queryCodePoints": [
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ],
+          "targetCodePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "substring"
+        ],
+        "note": "A short query matches inside three different names.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-034",
+        "input": {
+          "query": "",
+          "target": "أحمد",
+          "queryCodePoints": [],
+          "targetCodePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "strict": true,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "empty-query"
+        ],
+        "note": "An empty query matches everything.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-035",
+        "input": {
+          "query": "Mohamed",
+          "target": "Mohammed",
+          "queryCodePoints": [
+            "U+004D",
+            "U+006F",
+            "U+0068",
+            "U+0061",
+            "U+006D",
+            "U+0065",
+            "U+0064"
+          ],
+          "targetCodePoints": [
+            "U+004D",
+            "U+006F",
+            "U+0068",
+            "U+0061",
+            "U+006D",
+            "U+006D",
+            "U+0065",
+            "U+0064"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": false
+        },
+        "tags": [
+          "latin",
+          "transliteration",
+          "out-of-scope"
+        ],
+        "note": "Transliteration variants are not folded at any level.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-036",
+        "input": {
+          "query": "علی",
+          "target": "علي",
+          "queryCodePoints": [
+            "U+0639",
+            "U+0644",
+            "U+06CC"
+          ],
+          "targetCodePoints": [
+            "U+0639",
+            "U+0644",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": false
+        },
+        "tags": [
+          "persian-yeh",
+          "v1-gap"
+        ],
+        "note": "U+06CC FARSI YEH typed for U+064A: not folded at any level of arabic.search.v1, although the two look the same in the middle of a word.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-037",
+        "input": {
+          "query": "کریم",
+          "target": "كريم",
+          "queryCodePoints": [
+            "U+06A9",
+            "U+0631",
+            "U+06CC",
+            "U+0645"
+          ],
+          "targetCodePoints": [
+            "U+0643",
+            "U+0631",
+            "U+064A",
+            "U+0645"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": false
+        },
+        "tags": [
+          "persian-kaf",
+          "persian-yeh",
+          "v1-gap"
+        ],
+        "note": "U+06A9 KEHEH and U+06CC typed on a Persian or Urdu layout.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-038",
+        "input": {
+          "query": "آمنة",
+          "target": "آمنة",
+          "queryCodePoints": [
+            "U+0627",
+            "U+0653",
+            "U+0645",
+            "U+0646",
+            "U+0629"
+          ],
+          "targetCodePoints": [
+            "U+0622",
+            "U+0645",
+            "U+0646",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": true,
+          "duplicateCheck": true
+        },
+        "tags": [
+          "unicode-normalisation",
+          "v1-gap"
+        ],
+        "note": "Decomposed alef + madda against the precomposed letter: canonically equal, yet strict does not match because the contract does not normalise to NFC.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-039",
+        "input": {
+          "query": "ﻻ",
+          "target": "لا",
+          "queryCodePoints": [
+            "U+FEFB"
+          ],
+          "targetCodePoints": [
+            "U+0644",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": false
+        },
+        "tags": [
+          "presentation-form",
+          "v1-gap"
+        ],
+        "note": "Lam-alef presentation form U+FEFB against the two letters.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "SP-040",
+        "input": {
+          "query": "سارا",
+          "target": "سارة",
+          "queryCodePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0631",
+            "U+0627"
+          ],
+          "targetCodePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0631",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "strict": false,
+          "default": false,
+          "duplicateCheck": false
+        },
+        "tags": [
+          "variant",
+          "out-of-scope"
+        ],
+        "note": "A different spelling of the same name; no level folds alef with taa marbuta.",
+        "origin": "authored for this project (synthetic)"
+      }
+    ],
+    "inputShape": "{ query, target, queryCodePoints, targetCodePoints }",
+    "expectedShape": "{ strict, default, duplicateCheck }: whether the query matches the target (substring match on normalised text) at each level of arabic.search.v1.",
+    "rules": [
+      "R-SRCH-001",
+      "R-SRCH-002",
+      "R-SRCH-003",
+      "R-SRCH-004",
+      "R-SRCH-005"
+    ],
+    "tagVocabulary": {
+      "false-positive-risk": "the pair are different words or names; a match at this level is a known cost of the tolerance",
+      "v1-gap": "a person would expect a match (or a strict match) that arabic.search.v1 does not give",
+      "out-of-scope": "not an orthographic variant; no normalisation level should claim it"
+    },
+    "shared": {
+      "levels": {
+        "always": "case folding; digits to ASCII; U+064B–U+065F, U+0670 and U+0640 removed; whitespace runs collapsed",
+        "strict": {
+          "hamza": false,
+          "alefMaqsura": false,
+          "taaMarbuta": false,
+          "ignoreSpaces": false
+        },
+        "default": {
+          "hamza": true,
+          "alefMaqsura": false,
+          "taaMarbuta": false,
+          "ignoreSpaces": false
+        },
+        "duplicateCheck": {
+          "hamza": true,
+          "alefMaqsura": true,
+          "taaMarbuta": true,
+          "ignoreSpaces": true
+        }
+      }
+    }
+  }
+}

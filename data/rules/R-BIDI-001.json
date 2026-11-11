@@ -1,0 +1,76 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-001",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance. Owner's source note: Unicode UAX #9."
+  },
+  "data": {
+    "id": "R-BIDI-001",
+    "title": {
+      "ar": "اعزل البيانات اللاتينية داخل النص العربي",
+      "en": "Isolate Latin data inside Arabic text"
+    },
+    "statement": {
+      "ar": "اعرض الهواتف والرموز والروابط والكود داخل عنصر معزول باتجاه LTR (bdi dir=\"ltr\")، واحذف علامات الاتجاه الخفية من المدخلات الرقمية لأنها لا تحمل قيمة.",
+      "en": "Render phones, codes, links and code inside an isolated LTR element (bdi dir=\"ltr\"), and strip invisible direction marks from numeric input because they carry no value."
+    },
+    "rationale": {
+      "ar": "خوارزمية الاتجاه الثنائي (UAX #9) تعيد ترتيب المقاطع المتجاورة؛ العزل يمنع تأثيرها على ما حولها.",
+      "en": "The Unicode Bidirectional Algorithm (UAX #9) reorders adjacent runs; isolation stops a run from affecting what surrounds it."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "text",
+      "table",
+      "phone-input",
+      "currency-input"
+    ],
+    "checks": [
+      "Every phone number, code, URL, e-mail address and code sample rendered inside RTL text has an ancestor (within the text block) that establishes a bidi isolate with direction ltr.",
+      "Parsing \"\\u200f1234.50\" as an amount yields the same value as \"1234.50\".",
+      "No stored numeric value contains U+200E, U+200F, U+061C, U+202A–U+202E or U+2066–U+2069."
+    ],
+    "related": [
+      "R-BIDI-003"
+    ],
+    "problem": {
+      "ar": "أرقام الهواتف ورموز المنتجات والبريد تنقلب أجزاؤها أو تقفز علامات الترقيم حولها في سياق RTL.",
+      "en": "Phone numbers, product codes and e-mail addresses have their parts swapped, or punctuation jumps around them, in an RTL context."
+    },
+    "context": {
+      "ar": "كل نص مختلط الاتجاه.",
+      "en": "All mixed-direction text."
+    },
+    "exceptions": {
+      "ar": "الأسماء المختلطة مثل «أحمد Khaled» تبقى في اتجاه الفقرة مع dir=\"auto\".",
+      "en": "Mixed names such as «أحمد Khaled» stay in the paragraph direction with dir=\"auto\"."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html"
+      }
+    ],
+    "fixtures": [
+      "amounts-harvested",
+      "mixed-direction"
+    ]
+  }
+}

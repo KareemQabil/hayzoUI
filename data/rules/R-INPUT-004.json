@@ -1,0 +1,85 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-INPUT-004",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "version": "living standard, read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-INPUT-004",
+    "title": {
+      "ar": "اتجاه الحقل من نوع بياناته",
+      "en": "A field's direction comes from its data type"
+    },
+    "statement": {
+      "ar": "لكل حقل اتجاه محتوى معلن: النص الحر auto (يتبع ما يُكتب)، والأرقام والهواتف والبريد والروابط والرموز ltr، والنص العربي المعروف rtl. النص التوضيحي داخل الحقل (placeholder) يتبع لغة الواجهة.",
+      "en": "Every field has a declared content direction: free text auto (follows what is typed), numbers, phones, e-mail, URLs and codes ltr, known-Arabic text rtl. The placeholder follows the interface language."
+    },
+    "rationale": {
+      "ar": "حقل نص حر ثابت على RTL يعرض اسمًا لاتينيًا بعلامات ترقيمه في الجهة الخطأ، وحقل مبلغ RTL يُظهر السالب بعد الرقم.",
+      "en": "A free-text field fixed to RTL shows a Latin name with its punctuation on the wrong side, and an RTL amount field shows the minus after the number."
+    },
+    "area": "input",
+    "severity": "must",
+    "appliesTo": [
+      "text-field",
+      "text-input",
+      "numeric-input"
+    ],
+    "checks": [
+      "Free-text inputs and textareas have dir=\"auto\"; numeric, phone, e-mail, URL and code inputs have computed direction ltr.",
+      "An empty dir=\"auto\" field in an RTL page shows its placeholder right-aligned in Arabic.",
+      "The field's start-aligned adornments (icon, prefix) stay at the interface start whatever the content direction."
+    ],
+    "related": [
+      "R-BIDI-009",
+      "R-BIDI-005"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "section": "The dir attribute (auto)"
+      },
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir",
+        "section": "Form fields"
+      },
+      {
+        "name": "W3C Internationalization: Inline markup and bidirectional text in HTML",
+        "url": "https://www.w3.org/International/articles/inline-bidi-markup/"
+      }
+    ],
+    "fixtures": [
+      "names",
+      "mixed-direction"
+    ]
+  }
+}

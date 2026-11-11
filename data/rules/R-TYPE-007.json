@@ -1,0 +1,87 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-TYPE-007",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "version": "Candidate Recommendation Draft 2026-08-14",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-TYPE-007",
+    "title": {
+      "ar": "الكلمة الطويلة تنكسر ولا تُخرج التخطيط عن حدوده",
+      "en": "A long word wraps instead of breaking the layout"
+    },
+    "statement": {
+      "ar": "كل حاوية نص تتحمل سلسلة بلا مسافات (رابط، رقم، كلمة ممدودة بالكشيدة) دون تمرير أفقي ولا تمدد للعمود: overflow-wrap: anywhere أو قص معلن. لا تُستخدم الواصلة لقطع الكلمات العربية.",
+      "en": "Every text container tolerates a string with no spaces (a URL, a number, a word stretched with tatweel) without horizontal scrolling or column growth: overflow-wrap: anywhere, or declared truncation. Hyphens are not used to break Arabic words."
+    },
+    "rationale": {
+      "ar": "العربية لا تُقطع كلماتها بواصلة. وعند الكسر الاضطراري يعيد المحرك تشكيل الحرفين على جانبي القطع، وهو مقبول للسلاسل غير اللغوية.",
+      "en": "Arabic words are not hyphenated. On an emergency break the engine reshapes the letters on each side, which is acceptable for non-linguistic strings."
+    },
+    "area": "typography",
+    "severity": "must",
+    "appliesTo": [
+      "text",
+      "table",
+      "toast",
+      "dialog"
+    ],
+    "checks": [
+      "With text-stress TS-001…TS-005 as content, no component makes the page scroll horizontally at 320 CSS px width.",
+      "hyphens is manual or none for Arabic text.",
+      "A table column with TS-002 keeps its declared width."
+    ],
+    "related": [
+      "R-TYPE-003"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "7.1 Line breaking & hyphenation"
+      },
+      {
+        "name": "CSS Text Module Level 3",
+        "url": "https://www.w3.org/TR/css-text-3/",
+        "section": "overflow-wrap; hyphens"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "1.4.10 Reflow"
+      }
+    ],
+    "fixtures": [
+      "text-stress"
+    ]
+  }
+}

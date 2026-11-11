@@ -1,0 +1,72 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-NUM-001",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-NUM-001",
+    "title": {
+      "ar": "اقبل كل أنظمة الأرقام في الإدخال",
+      "en": "Accept every numeral system on input"
+    },
+    "statement": {
+      "ar": "اقبل الأرقام اللاتينية والمشرقية والفارسية، وحوّلها صراحة إلى صيغة قياسية قبل التحقق. اعرض التحويل في واجهات الشرح لا في واجهة العميل.",
+      "en": "Accept Latin, Arabic-Indic and Extended Arabic-Indic (Persian) digits, and convert them explicitly to a canonical form before validation. Show the conversion in explanatory tooling, not in the customer-facing interface."
+    },
+    "rationale": {
+      "ar": "ما يكتبه المستخدم بلوحة مفاتيحه المعتادة مدخل صحيح. رفضه يحمّله عبء التحويل ويزيد الأخطاء.",
+      "en": "What a person types with their usual keyboard is valid input. Rejecting it puts the conversion burden on them and causes errors."
+    },
+    "area": "numerals",
+    "severity": "must",
+    "appliesTo": [
+      "numeric-input",
+      "currency-input",
+      "phone-input"
+    ],
+    "checks": [
+      "Parsing \"1234.50\", \"١٢٣٤٫٥٠\" and \"۱۲۳۴٫۵۰\" as an EGP amount yields the same value, 123450 minor units.",
+      "A phone field accepts \"٠١٠١٢٣٤٥٦٧٨\" and stores the same E.164 value as for \"01012345678\".",
+      "For any amount, the forms written in latn, arab and arabext digits parse to identical minor units (metamorphic property).",
+      "No keystroke of U+0660–U+0669 or U+06F0–U+06F9 in a numeric field is dropped or produces a validation error by itself."
+    ],
+    "related": [
+      "R-NUM-004"
+    ],
+    "problem": {
+      "ar": "لوحات المفاتيح العربية تكتب أرقامًا مشرقية («٠-٩») أو فارسية («۰-۹»)، وكثير من الحقول ترفضها أو تحذفها دون إشعار.",
+      "en": "Arabic keyboards type Arabic-Indic digits (٠-٩) or Persian digits (۰-۹), and many fields reject them or delete them without notice."
+    },
+    "context": {
+      "ar": "الحقول الرقمية والمالية وأرقام الهواتف في هذا النموذج.",
+      "en": "Numeric, monetary and phone fields."
+    },
+    "exceptions": {
+      "ar": "الحقول التي تطابق معرّفات خارجية حرفيًا (مثل رموز SKU) تُحفظ كما كُتبت.",
+      "en": "Fields that must match external identifiers literally (such as SKU codes) are stored as typed."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "fixtures": [
+      "amounts-harvested",
+      "phones-harvested",
+      "amounts",
+      "phone-inputs"
+    ]
+  }
+}

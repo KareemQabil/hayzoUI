@@ -1,0 +1,75 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-INPUT-006",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "version": "living standard, read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-INPUT-006",
+    "title": {
+      "ar": "احترم التركيب والتصحيح الآلي",
+      "en": "Respect composition and autocorrect"
+    },
+    "statement": {
+      "ar": "لا تعالج القيمة ولا تتحقق منها أثناء جلسة تركيب (بين compositionstart وcompositionend). عطّل التصحيح الآلي والتكبير الآلي والتدقيق الإملائي في حقول الأسماء والرموز والبريد، واضبط lang على الحقل ليختار النظام لوحة المفاتيح والقاموس.",
+      "en": "Do not process or validate the value during a composition session (between compositionstart and compositionend). Turn off autocorrect, autocapitalise and spellcheck in name, code and e-mail fields, and set lang on the field so the system chooses the keyboard and dictionary."
+    },
+    "rationale": {
+      "ar": "لوحات المفاتيح على الهواتف والإملاء الصوتي وبعض التخطيطات تُدخل النص تركيبًا؛ تعديل القيمة في منتصفه يكرر الحروف أو يُسقطها. والتصحيح الآلي يغيّر الأسماء العربية إلى كلمات شائعة.",
+      "en": "Phone keyboards, dictation and some layouts enter text by composition; changing the value midway duplicates or drops letters. Autocorrect changes Arabic names into common words."
+    },
+    "area": "input",
+    "severity": "must",
+    "appliesTo": [
+      "text-input",
+      "numeric-input",
+      "combobox",
+      "typeahead"
+    ],
+    "checks": [
+      "Input handlers return early while event.isComposing is true and run once at compositionend.",
+      "Name, code and e-mail inputs have autocorrect=\"off\", autocapitalize=\"none\" and spellcheck=\"false\".",
+      "Typing a name with a mobile Arabic keyboard in a combobox does not duplicate characters (automated with composition events)."
+    ],
+    "related": [
+      "R-INPUT-001"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "section": "autocapitalize; spellcheck"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "3.1.2 Language of Parts"
+      }
+    ],
+    "fixtures": [
+      "names"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-006",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: How to use Unicode controls for bidi text",
+        "url": "https://www.w3.org/International/questions/qa-bidi-unicode-controls",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-006",
+    "title": {
+      "ar": "نظّف محارف التحكم بالاتجاه في المدخلات المنظمة وحيّدها في النص الحر",
+      "en": "Strip bidi control characters from structured input and neutralise them in free text"
+    },
+    "statement": {
+      "ar": "احذف محارف التحكم بالاتجاه الاثني عشر من القيم المنظمة (أرقام، هواتف، رموز، بريد، روابط) قبل التحقق والتخزين. في النص الحر أبقها كما كُتبت لكن اعرض النص داخل عزل حتى لا يتسرب أثرها إلى ما بعده.",
+      "en": "Remove the twelve bidi control characters from structured values (numbers, phones, codes, e-mail, URLs) before validation and storage. In free text keep them as typed but render the text inside an isolate so their effect cannot leak into what follows."
+    },
+    "rationale": {
+      "ar": "النسخ من تطبيقات المراسلة وصفحات الويب يجلب علامات غير مرئية. في قيمة منظمة لا تحمل معنى وتُفشل المطابقة. وفي النص الحر يمكن استعمال RLO لإظهار امتداد ملف غير حقيقي، وتجاوز غير مغلق يقلب نص الواجهة الذي يليه؛ العزل يُنهي أثره عند حدود العنصر.",
+      "en": "Copying from messaging applications and web pages brings invisible marks. In a structured value they carry no meaning and break matching. In free text an RLO can display a false file extension, and an unterminated override reverses the interface text after it; an isolate ends its effect at the element boundary."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "sanitize",
+      "text-field",
+      "numeric-input",
+      "phone-input",
+      "text"
+    ],
+    "checks": [
+      "After parsing, no stored number, phone, code, e-mail or URL contains U+200E, U+200F, U+061C, U+202A–U+202E or U+2066–U+2069.",
+      "Amount cases tagged bidi-control parse to the same value as the string without the controls.",
+      "For text-stress cases with unbalanced: true, the text following the element in the same block keeps its own order (the element isolates).",
+      "A file name containing U+202E is displayed with a visible warning or with the control shown, never silently reordered."
+    ],
+    "related": [
+      "R-BIDI-001",
+      "R-INPUT-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "section": "2 Directional Formatting Characters; 5.2 Retaining BNs and Explicit Formatting Characters"
+      },
+      {
+        "name": "W3C Internationalization: How to use Unicode controls for bidi text",
+        "url": "https://www.w3.org/International/questions/qa-bidi-unicode-controls",
+        "section": "When to use control characters"
+      }
+    ],
+    "fixtures": [
+      "text-stress",
+      "amounts",
+      "phone-inputs"
+    ]
+  }
+}

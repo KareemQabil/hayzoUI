@@ -1,0 +1,76 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-LAYOUT-006",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide",
+        "url": "https://www.w3.org/WAI/ARIA/apg/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "version": "page read 2026-11-11",
+        "license": "Proprietary (© Apple Inc.; cited and re-expressed, no text kept)",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-LAYOUT-006",
+    "title": {
+      "ar": "مفاتيح الأسهم تتبع ما يُرى",
+      "en": "Arrow keys follow what is seen"
+    },
+    "statement": {
+      "ar": "في العناصر الأفقية (ألسنة، قوائم أفقية، شرائح، منزلقات، شبكة التقويم) يحرّك مفتاح السهم الأيسر التركيز أو القيمة بصريًا إلى اليسار: أي إلى العنصر التالي في RTL. Home وEnd يذهبان إلى أول عنصر وآخره منطقيًا.",
+      "en": "In horizontal widgets (tabs, menubars, carousels, sliders, the calendar grid) the left arrow key moves focus or value visually to the left: that is, to the next item in RTL. Home and End go to the logically first and last item."
+    },
+    "rationale": {
+      "ar": "المستخدم يضغط السهم نحو الجهة التي يريدها على الشاشة. ربط «يمين» بـ«التالي» في كل اتجاه يجعل لوحة المفاتيح تعاكس العرض.",
+      "en": "A person presses the arrow toward the side they want on screen. Binding \"right\" to \"next\" in every direction makes the keyboard contradict the display."
+    },
+    "area": "layout",
+    "severity": "must",
+    "appliesTo": [
+      "roving-focus",
+      "tabs",
+      "menu",
+      "slider",
+      "calendar-grid",
+      "grid-navigation",
+      "tree-model"
+    ],
+    "checks": [
+      "In RTL ArrowLeft on tab n focuses tab n+1 and ArrowRight focuses tab n−1.",
+      "In RTL ArrowLeft on a slider increases its value.",
+      "In RTL ArrowLeft in a calendar grid moves to the next day.",
+      "In a tree in RTL, ArrowLeft expands a closed node and ArrowRight collapses it.",
+      "Every keyboard test of a horizontal pattern has an RTL variant."
+    ],
+    "related": [
+      "R-LAYOUT-004"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide",
+        "url": "https://www.w3.org/WAI/ARIA/apg/",
+        "section": "Keyboard interaction notes for tabs, slider, tree view, grid"
+      },
+      {
+        "name": "Apple Human Interface Guidelines: Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "section": "Controls"
+      }
+    ]
+  }
+}

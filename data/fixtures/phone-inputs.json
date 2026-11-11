@@ -1,0 +1,1146 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "phone-inputs",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/phone.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      }
+    ],
+    "notes": "Egyptian cases are written under the owner's arabic.phone.eg.v1 (mobile numbers only) and cross-checked against a re-implementation (lib/contracts.mjs). The numbers are placeholders (digit sequences such as 1234 5678), not subscribers. Cases for other countries give only the E.164 string that removing formatting yields; whether the number is valid is the phone layer's data.",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Phone numbers as people type and paste them: Arabic-Indic and Persian digits, spaces, dashes, dots, parentheses, +, 00, with and without the leading zero, with pasted direction marks. Each Egyptian case gives the E.164 value or the rejection. Extends phones-harvested.",
+    "appliesTo": [
+      "phone-parse",
+      "phone-input"
+    ],
+    "cases": [
+      {
+        "id": "PI-001",
+        "input": {
+          "text": "۰۱۰۱۲۳۴۵۶۷۸",
+          "codePoints": [
+            "U+06F0",
+            "U+06F1",
+            "U+06F0",
+            "U+06F1",
+            "U+06F2",
+            "U+06F3",
+            "U+06F4",
+            "U+06F5",
+            "U+06F6",
+            "U+06F7",
+            "U+06F8"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "arabext",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-002",
+        "input": {
+          "text": "010 1234 5678",
+          "codePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "spaces",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-003",
+        "input": {
+          "text": "010-1234-5678",
+          "codePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+002D",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002D",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "dashes",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-004",
+        "input": {
+          "text": "(010) 1234 5678",
+          "codePoints": [
+            "U+0028",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0029",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "parentheses",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-005",
+        "input": {
+          "text": "010.1234.5678",
+          "codePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+002E",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002E",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "dots",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-006",
+        "input": {
+          "text": "+201012345678",
+          "codePoints": [
+            "U+002B",
+            "U+0032",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "plus",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-007",
+        "input": {
+          "text": "+٢٠ ١٠ ١٢٣٤ ٥٦٧٨",
+          "codePoints": [
+            "U+002B",
+            "U+0662",
+            "U+0660",
+            "U+0020",
+            "U+0661",
+            "U+0660",
+            "U+0020",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+0020",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+0668"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "plus",
+          "arab",
+          "spaces",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-008",
+        "input": {
+          "text": "00201012345678",
+          "codePoints": [
+            "U+0030",
+            "U+0030",
+            "U+0032",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "double-zero",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-009",
+        "input": {
+          "text": "٠٠٢٠١٠١٢٣٤٥٦٧٨",
+          "codePoints": [
+            "U+0660",
+            "U+0660",
+            "U+0662",
+            "U+0660",
+            "U+0661",
+            "U+0660",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+0668"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "double-zero",
+          "arab",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-010",
+        "input": {
+          "text": "201012345678",
+          "codePoints": [
+            "U+0032",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "country-code-no-plus",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-011",
+        "input": {
+          "text": "1012345678",
+          "codePoints": [
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "no-leading-zero",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-012",
+        "input": {
+          "text": "+2001012345678",
+          "codePoints": [
+            "U+002B",
+            "U+0032",
+            "U+0030",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-long"
+        },
+        "tags": [
+          "plus",
+          "trunk-zero-kept",
+          "EG"
+        ],
+        "note": "Country code followed by the national trunk zero: a common typing mistake, rejected by this contract rather than repaired.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-013",
+        "input": {
+          "text": "\u200f01012345678",
+          "codePoints": [
+            "U+200F",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-014",
+        "input": {
+          "text": "\u200e+20 10 1234 5678\u200e",
+          "codePoints": [
+            "U+200E",
+            "U+002B",
+            "U+0032",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+200E"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "plus",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-015",
+        "input": {
+          "text": "\u202a+20 10 1234 5678\u202c",
+          "codePoints": [
+            "U+202A",
+            "U+002B",
+            "U+0032",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+202C"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "plus",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-016",
+        "input": {
+          "text": "٠١٠\u00a0١٢٣٤\u00a0٥٦٧٨",
+          "codePoints": [
+            "U+0660",
+            "U+0661",
+            "U+0660",
+            "U+00A0",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+00A0",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+0668"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "nbsp",
+          "arab",
+          "EG"
+        ],
+        "note": "The display form must parse back.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-017",
+        "input": {
+          "text": "010\u202f1234\u202f5678",
+          "codePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+202F",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+202F",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "nnbsp",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-018",
+        "input": {
+          "text": " 01012345678 ",
+          "codePoints": [
+            "U+0020",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+0020"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "whitespace",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-019",
+        "input": {
+          "text": "0101234567٨",
+          "codePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0668"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "mixed-digit-systems",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-020",
+        "input": {
+          "text": "010123456789",
+          "codePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+0039"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-long"
+        },
+        "tags": [
+          "length",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-021",
+        "input": {
+          "text": "02 2345 6789",
+          "codePoints": [
+            "U+0030",
+            "U+0032",
+            "U+0020",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0020",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+0039"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-short"
+        },
+        "tags": [
+          "landline",
+          "EG"
+        ],
+        "note": "A Cairo landline: arabic.phone.eg.v1 covers mobile numbers only. The phone layer decides what a full plan accepts.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-022",
+        "input": {
+          "text": "+966501234567",
+          "codePoints": [
+            "U+002B",
+            "U+0039",
+            "U+0036",
+            "U+0036",
+            "U+0035",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-prefix"
+        },
+        "tags": [
+          "other-country",
+          "EG"
+        ],
+        "note": "A Saudi number in a field limited to Egypt.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-023",
+        "input": {
+          "text": "010-1234-567O",
+          "codePoints": [
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+002D",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002D",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+004F"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "look-alike",
+          "EG"
+        ],
+        "note": "Latin capital O typed for zero.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-024",
+        "input": {
+          "text": "٠١٠ ١٢٣٤ ٥٦٧٨ تحويلة 12",
+          "codePoints": [
+            "U+0660",
+            "U+0661",
+            "U+0660",
+            "U+0020",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+0020",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+0668",
+            "U+0020",
+            "U+062A",
+            "U+062D",
+            "U+0648",
+            "U+064A",
+            "U+0644",
+            "U+0629",
+            "U+0020",
+            "U+0031",
+            "U+0032"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "extension",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-025",
+        "input": {
+          "text": "++201012345678",
+          "codePoints": [
+            "U+002B",
+            "U+002B",
+            "U+0032",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "plus",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-026",
+        "input": {
+          "text": "٠١٠/١٢٣٤/٥٦٧٨",
+          "codePoints": [
+            "U+0660",
+            "U+0661",
+            "U+0660",
+            "U+002F",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+002F",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+0668"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "slash",
+          "EG"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-027",
+        "input": {
+          "text": "+20 (0) 10 1234 5678",
+          "codePoints": [
+            "U+002B",
+            "U+0032",
+            "U+0030",
+            "U+0020",
+            "U+0028",
+            "U+0030",
+            "U+0029",
+            "U+0020",
+            "U+0031",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ],
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-long"
+        },
+        "tags": [
+          "plus",
+          "trunk-zero-kept",
+          "parentheses",
+          "EG"
+        ],
+        "note": "The \"(0)\" convention.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-040",
+        "input": {
+          "text": "+966 50 123 4567",
+          "codePoints": [
+            "U+002B",
+            "U+0039",
+            "U+0036",
+            "U+0036",
+            "U+0020",
+            "U+0035",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0020",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "region": "SA"
+        },
+        "expected": {
+          "e164": "+966501234567"
+        },
+        "tags": [
+          "plus",
+          "spaces",
+          "format-only",
+          "SA"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-041",
+        "input": {
+          "text": "+971-50-123-4567",
+          "codePoints": [
+            "U+002B",
+            "U+0039",
+            "U+0037",
+            "U+0031",
+            "U+002D",
+            "U+0035",
+            "U+0030",
+            "U+002D",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+002D",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "region": "AE"
+        },
+        "expected": {
+          "e164": "+971501234567"
+        },
+        "tags": [
+          "plus",
+          "dashes",
+          "format-only",
+          "AE"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-042",
+        "input": {
+          "text": "+٩٦٦ ٥٠ ١٢٣ ٤٥٦٧",
+          "codePoints": [
+            "U+002B",
+            "U+0669",
+            "U+0666",
+            "U+0666",
+            "U+0020",
+            "U+0665",
+            "U+0660",
+            "U+0020",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0020",
+            "U+0664",
+            "U+0665",
+            "U+0666",
+            "U+0667"
+          ],
+          "region": "SA"
+        },
+        "expected": {
+          "e164": "+966501234567"
+        },
+        "tags": [
+          "plus",
+          "arab",
+          "format-only",
+          "SA"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-043",
+        "input": {
+          "text": "00966501234567",
+          "codePoints": [
+            "U+0030",
+            "U+0030",
+            "U+0039",
+            "U+0036",
+            "U+0036",
+            "U+0035",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "region": "SA"
+        },
+        "tags": [
+          "double-zero",
+          "SA",
+          "needs-expected"
+        ],
+        "note": "Whether 00 is the international prefix depends on where the person dials from.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-044",
+        "input": {
+          "text": "٠٥٠١٢٣٤٥٦٧",
+          "codePoints": [
+            "U+0660",
+            "U+0665",
+            "U+0660",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+0665",
+            "U+0666",
+            "U+0667"
+          ],
+          "region": "SA"
+        },
+        "tags": [
+          "leading-zero",
+          "arab",
+          "SA",
+          "needs-expected"
+        ],
+        "note": "National format: needs the numbering plan of the selected country.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-045",
+        "input": {
+          "text": "0501234567",
+          "codePoints": [
+            "U+0030",
+            "U+0035",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "region": "AE"
+        },
+        "tags": [
+          "leading-zero",
+          "AE",
+          "needs-expected"
+        ],
+        "note": "The same digits are a valid national mobile number in more than one country.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "PI-046",
+        "input": {
+          "text": "966501234567",
+          "codePoints": [
+            "U+0039",
+            "U+0036",
+            "U+0036",
+            "U+0035",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "region": "SA"
+        },
+        "tags": [
+          "country-code-no-plus",
+          "SA",
+          "needs-expected"
+        ],
+        "origin": "authored for this project (synthetic)"
+      }
+    ],
+    "inputShape": "{ text, codePoints, region: the country the field is set to }",
+    "expectedShape": "EG — valid: { status, e164 }; invalid: { status, error } (arabic.phone.eg.v1). Other regions tagged format-only: { e164 } obtained by removing formatting, with no claim of validity. Absent for needs-expected cases.",
+    "rules": [
+      "R-NUM-001",
+      "R-PHONE-001",
+      "R-PHONE-002",
+      "R-PHONE-003",
+      "R-BIDI-006"
+    ],
+    "tagVocabulary": {
+      "format-only": "expected value is the cleaned string, not a validity verdict",
+      "needs-expected": "the answer depends on the numbering plan held by the phone layer"
+    }
+  }
+}

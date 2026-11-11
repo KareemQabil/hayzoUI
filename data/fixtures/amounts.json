@@ -1,0 +1,1790 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "amounts",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/amount.ts"
+      }
+    ],
+    "notes": "Inputs and expectations written by hand under the owner's contract arabic.amount.v1 and cross-checked against a re-implementation of that contract (lib/contracts.mjs); the two agree on every case that has an expectation. The contract itself is the owner's and still marked draft; it knows only EGP, SAR and KWD. Percent inputs have no contract and carry no expectation.",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Typed and pasted amounts in every shape people produce: three numeral systems, both decimal marks, every grouping separator, signs, leading zeros, currency symbols, invisible characters. Each case gives the integer minor-unit value or the rejection the parser must return. Extends amounts-harvested.",
+    "appliesTo": [
+      "money-parse",
+      "currency-input",
+      "numeric-input"
+    ],
+    "cases": [
+      {
+        "id": "AM-001",
+        "input": {
+          "text": "0",
+          "codePoints": [
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 0,
+          "canonical": "0.00"
+        },
+        "tags": [
+          "zero",
+          "latn"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-002",
+        "input": {
+          "text": "000123",
+          "codePoints": [
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 12300,
+          "canonical": "123.00"
+        },
+        "tags": [
+          "leading-zeros",
+          "latn"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-003",
+        "input": {
+          "text": "007.50",
+          "codePoints": [
+            "U+0030",
+            "U+0030",
+            "U+0037",
+            "U+002E",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 750,
+          "canonical": "7.50"
+        },
+        "tags": [
+          "leading-zeros",
+          "latn"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-004",
+        "input": {
+          "text": "0000000000000001",
+          "codePoints": [
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0031"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 100,
+          "canonical": "1.00"
+        },
+        "tags": [
+          "leading-zeros"
+        ],
+        "note": "Sixteen characters but one significant digit: leading zeros do not count toward the 12-digit limit.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-005",
+        "input": {
+          "text": "1234.",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002E"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123400,
+          "canonical": "1234.00"
+        },
+        "tags": [
+          "trailing-decimal",
+          "latn"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-006",
+        "input": {
+          "text": "٫٥",
+          "codePoints": [
+            "U+066B",
+            "U+0665"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 50,
+          "canonical": "0.50"
+        },
+        "tags": [
+          "leading-decimal",
+          "arab"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-007",
+        "input": {
+          "text": "١٢٣٤٫٥",
+          "codePoints": [
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+066B",
+            "U+0665"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "arab",
+          "arabic-decimal"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-008",
+        "input": {
+          "text": "۱۲۳۴.۵۰",
+          "codePoints": [
+            "U+06F1",
+            "U+06F2",
+            "U+06F3",
+            "U+06F4",
+            "U+002E",
+            "U+06F5",
+            "U+06F0"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "arabext",
+          "dot-decimal"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-009",
+        "input": {
+          "text": "١٢34.٥0",
+          "codePoints": [
+            "U+0661",
+            "U+0662",
+            "U+0033",
+            "U+0034",
+            "U+002E",
+            "U+0665",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "mixed-digit-systems"
+        ],
+        "note": "Digits of two systems in one number are accepted by the contract.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-010",
+        "input": {
+          "text": "١٢٣٤.٥٠",
+          "codePoints": [
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+002E",
+            "U+0665",
+            "U+0660"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "arab",
+          "dot-decimal"
+        ],
+        "note": "Arabic-Indic digits with an ASCII dot, as typed on many phone keyboards.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-011",
+        "input": {
+          "text": "1234٫50",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+066B",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "latn",
+          "arabic-decimal"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-012",
+        "input": {
+          "text": "0.01",
+          "codePoints": [
+            "U+0030",
+            "U+002E",
+            "U+0030",
+            "U+0031"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 1,
+          "canonical": "0.01"
+        },
+        "tags": [
+          "minor-unit"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-013",
+        "input": {
+          "text": "0.1",
+          "codePoints": [
+            "U+0030",
+            "U+002E",
+            "U+0031"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 10,
+          "canonical": "0.10"
+        },
+        "tags": [
+          "minor-unit"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-014",
+        "input": {
+          "text": "0.001",
+          "codePoints": [
+            "U+0030",
+            "U+002E",
+            "U+0030",
+            "U+0030",
+            "U+0031"
+          ],
+          "currency": "KWD",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 1,
+          "canonical": "0.001"
+        },
+        "tags": [
+          "minor-unit",
+          "three-decimals"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-015",
+        "input": {
+          "text": "50.0",
+          "codePoints": [
+            "U+0035",
+            "U+0030",
+            "U+002E",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 5000,
+          "canonical": "50.00"
+        },
+        "tags": [
+          "trailing-zeros"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-016",
+        "input": {
+          "text": "50.000",
+          "codePoints": [
+            "U+0035",
+            "U+0030",
+            "U+002E",
+            "U+0030",
+            "U+0030",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-many-fraction-digits"
+        },
+        "tags": [
+          "trailing-zeros"
+        ],
+        "note": "Extra fraction digits are rejected even when they are zeros.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-017",
+        "input": {
+          "text": "12.345",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+002E",
+            "U+0033",
+            "U+0034",
+            "U+0035"
+          ],
+          "currency": "SAR",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-many-fraction-digits"
+        },
+        "tags": [
+          "minor-unit"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-018",
+        "input": {
+          "text": "12.3456",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+002E",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036"
+          ],
+          "currency": "KWD",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-many-fraction-digits"
+        },
+        "tags": [
+          "minor-unit",
+          "three-decimals"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-019",
+        "input": {
+          "text": "999999999999.99",
+          "codePoints": [
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+0039",
+            "U+002E",
+            "U+0039",
+            "U+0039"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 99999999999999,
+          "canonical": "999999999999.99"
+        },
+        "tags": [
+          "limit"
+        ],
+        "note": "Largest accepted EGP amount: 12 integer digits.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-020",
+        "input": {
+          "text": "1000000000000",
+          "codePoints": [
+            "U+0031",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-large"
+        },
+        "tags": [
+          "limit"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-021",
+        "input": {
+          "text": " 50 ",
+          "codePoints": [
+            "U+0020",
+            "U+0035",
+            "U+0030",
+            "U+0020"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 5000,
+          "canonical": "50.00"
+        },
+        "tags": [
+          "whitespace"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-030",
+        "input": {
+          "text": "١٬٢٣٤٬٥٦٧٫٨٩",
+          "codePoints": [
+            "U+0661",
+            "U+066C",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+066C",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+066B",
+            "U+0668",
+            "U+0669"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123456789,
+          "canonical": "1234567.89"
+        },
+        "tags": [
+          "grouping",
+          "arabic-thousands",
+          "arab"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-031",
+        "input": {
+          "text": "1 234 567.89",
+          "codePoints": [
+            "U+0031",
+            "U+0020",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+002E",
+            "U+0038",
+            "U+0039"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123456789,
+          "canonical": "1234567.89"
+        },
+        "tags": [
+          "grouping",
+          "space"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-032",
+        "input": {
+          "text": "1\u00a0234.50",
+          "codePoints": [
+            "U+0031",
+            "U+00A0",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002E",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "grouping",
+          "nbsp"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-033",
+        "input": {
+          "text": "١\u202f٢٣٤٫٥٠",
+          "codePoints": [
+            "U+0661",
+            "U+202F",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+066B",
+            "U+0665",
+            "U+0660"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "grouping",
+          "nnbsp",
+          "arab"
+        ],
+        "note": "The display form of the owner's formatter must parse back.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-034",
+        "input": {
+          "text": "1\u2009234",
+          "codePoints": [
+            "U+0031",
+            "U+2009",
+            "U+0032",
+            "U+0033",
+            "U+0034"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123400,
+          "canonical": "1234.00"
+        },
+        "tags": [
+          "grouping",
+          "thin-space"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-035",
+        "input": {
+          "text": "12 34",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+0020",
+            "U+0033",
+            "U+0034"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-grouping"
+        },
+        "tags": [
+          "grouping",
+          "space"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-036",
+        "input": {
+          "text": "1 2345",
+          "codePoints": [
+            "U+0031",
+            "U+0020",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-grouping"
+        },
+        "tags": [
+          "grouping",
+          "space"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-037",
+        "input": {
+          "text": "1234 567",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-grouping"
+        },
+        "tags": [
+          "grouping",
+          "space"
+        ],
+        "note": "The first group has four digits.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-038",
+        "input": {
+          "text": "1.234 5",
+          "codePoints": [
+            "U+0031",
+            "U+002E",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035"
+          ],
+          "currency": "KWD",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-grouping"
+        },
+        "tags": [
+          "grouping",
+          "space"
+        ],
+        "note": "A grouping separator inside the fraction.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-039",
+        "input": {
+          "text": "1٬234 567",
+          "codePoints": [
+            "U+0031",
+            "U+066C",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123456700,
+          "canonical": "1234567.00"
+        },
+        "tags": [
+          "grouping",
+          "mixed-separators"
+        ],
+        "note": "Two different grouping separators in one number are accepted when every group is valid.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-040",
+        "input": {
+          "text": "١٢٣٤،٥٠",
+          "codePoints": [
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+060C",
+            "U+0665",
+            "U+0660"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "1234.50"
+          ]
+        },
+        "tags": [
+          "comma",
+          "arabic-comma",
+          "arab"
+        ],
+        "note": "The Arabic comma U+060C is the key next to the digits on Arabic layouts.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-041",
+        "input": {
+          "text": "1,234",
+          "codePoints": [
+            "U+0031",
+            "U+002C",
+            "U+0032",
+            "U+0033",
+            "U+0034"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "1234.00"
+          ]
+        },
+        "tags": [
+          "comma"
+        ],
+        "note": "As a decimal comma it would have three fraction digits, which EGP does not allow; only the grouping reading is offered.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-042",
+        "input": {
+          "text": "1,234",
+          "codePoints": [
+            "U+0031",
+            "U+002C",
+            "U+0032",
+            "U+0033",
+            "U+0034"
+          ],
+          "currency": "KWD",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "1.234",
+            "1234.000"
+          ]
+        },
+        "tags": [
+          "comma",
+          "three-decimals"
+        ],
+        "note": "In a three-decimal currency both readings are valid: 1.234 or 1234.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-043",
+        "input": {
+          "text": "1,234,567",
+          "codePoints": [
+            "U+0031",
+            "U+002C",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002C",
+            "U+0035",
+            "U+0036",
+            "U+0037"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "1234567.00"
+          ]
+        },
+        "tags": [
+          "comma"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-044",
+        "input": {
+          "text": "1.234,56",
+          "codePoints": [
+            "U+0031",
+            "U+002E",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002C",
+            "U+0035",
+            "U+0036"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma"
+        },
+        "tags": [
+          "comma",
+          "european"
+        ],
+        "note": "European convention: no reading is offered under this contract.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-045",
+        "input": {
+          "text": "12,5",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+002C",
+            "U+0035"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "12.50"
+          ]
+        },
+        "tags": [
+          "comma"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-046",
+        "input": {
+          "text": "1٫2.3",
+          "codePoints": [
+            "U+0031",
+            "U+066B",
+            "U+0032",
+            "U+002E",
+            "U+0033"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "multiple-decimal"
+        },
+        "tags": [
+          "decimal"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-050",
+        "input": {
+          "text": "-50",
+          "codePoints": [
+            "U+002D",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "valid",
+          "minor": -5000,
+          "canonical": "-50.00"
+        },
+        "tags": [
+          "negative"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-051",
+        "input": {
+          "text": "−50",
+          "codePoints": [
+            "U+2212",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "valid",
+          "minor": -5000,
+          "canonical": "-50.00"
+        },
+        "tags": [
+          "negative",
+          "minus-sign"
+        ],
+        "note": "U+2212 MINUS SIGN.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-052",
+        "input": {
+          "text": "-0",
+          "codePoints": [
+            "U+002D",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 0,
+          "canonical": "0.00"
+        },
+        "tags": [
+          "negative",
+          "zero"
+        ],
+        "note": "Negative zero is zero.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-053",
+        "input": {
+          "text": "-0",
+          "codePoints": [
+            "U+002D",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "negative-not-allowed"
+        },
+        "tags": [
+          "negative",
+          "zero"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-054",
+        "input": {
+          "text": "+50",
+          "codePoints": [
+            "U+002B",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 5000,
+          "canonical": "50.00"
+        },
+        "tags": [
+          "plus"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-055",
+        "input": {
+          "text": "٥٠-",
+          "codePoints": [
+            "U+0665",
+            "U+0660",
+            "U+002D"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "sign-position"
+        },
+        "tags": [
+          "negative",
+          "trailing-sign",
+          "arab"
+        ],
+        "note": "A trailing minus is rejected even when negatives are allowed.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-056",
+        "input": {
+          "text": "- 50",
+          "codePoints": [
+            "U+002D",
+            "U+0020",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "valid",
+          "minor": -5000,
+          "canonical": "-50.00"
+        },
+        "tags": [
+          "negative",
+          "whitespace"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-057",
+        "input": {
+          "text": "--50",
+          "codePoints": [
+            "U+002D",
+            "U+002D",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "negative"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-058",
+        "input": {
+          "text": "(50)",
+          "codePoints": [
+            "U+0028",
+            "U+0035",
+            "U+0030",
+            "U+0029"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "negative",
+          "accounting"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-059",
+        "input": {
+          "text": "-",
+          "codePoints": [
+            "U+002D"
+          ],
+          "currency": "EGP",
+          "allowNegative": true
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "no-digits"
+        },
+        "tags": [
+          "negative"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-060",
+        "input": {
+          "text": "١٢٣٤٫٥٠ ج.م",
+          "codePoints": [
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+066B",
+            "U+0665",
+            "U+0660",
+            "U+0020",
+            "U+062C",
+            "U+002E",
+            "U+0645"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "currency-symbol"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-061",
+        "input": {
+          "text": "EGP 50",
+          "codePoints": [
+            "U+0045",
+            "U+0047",
+            "U+0050",
+            "U+0020",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "currency-code"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-062",
+        "input": {
+          "text": "$50",
+          "codePoints": [
+            "U+0024",
+            "U+0035",
+            "U+0030"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "currency-symbol"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-063",
+        "input": {
+          "text": "1e3",
+          "codePoints": [
+            "U+0031",
+            "U+0065",
+            "U+0033"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "exponent"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-064",
+        "input": {
+          "text": "٫",
+          "codePoints": [
+            "U+066B"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "no-digits"
+        },
+        "tags": [
+          "decimal"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-065",
+        "input": {
+          "text": "   ",
+          "codePoints": [
+            "U+0020",
+            "U+0020",
+            "U+0020"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "empty",
+          "minor": null
+        },
+        "tags": [
+          "whitespace",
+          "empty"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-066",
+        "input": {
+          "text": "\u200f",
+          "codePoints": [
+            "U+200F"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "empty",
+          "minor": null
+        },
+        "tags": [
+          "bidi-control",
+          "empty"
+        ],
+        "note": "Only an invisible mark: empty, not an error.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-067",
+        "input": {
+          "text": "1\u200b234",
+          "codePoints": [
+            "U+0031",
+            "U+200B",
+            "U+0032",
+            "U+0033",
+            "U+0034"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "invisible"
+        ],
+        "note": "U+200B is not a bidi control and not a separator under this contract.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-068",
+        "input": {
+          "text": "１２３",
+          "codePoints": [
+            "U+FF11",
+            "U+FF12",
+            "U+FF13"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "other-numeral-system"
+        ],
+        "note": "Fullwidth digits: outside the three systems of arabic.amount.v1.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-069",
+        "input": {
+          "text": "१२३",
+          "codePoints": [
+            "U+0967",
+            "U+0968",
+            "U+0969"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "other-numeral-system"
+        ],
+        "note": "Devanagari digits: outside the three systems of arabic.amount.v1.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-070",
+        "input": {
+          "text": "\u200f١٢٣٤٫٥٠\u200e",
+          "codePoints": [
+            "U+200F",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+066B",
+            "U+0665",
+            "U+0660",
+            "U+200E"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "arab"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-071",
+        "input": {
+          "text": "\u20661234.50\u2069",
+          "codePoints": [
+            "U+2066",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002E",
+            "U+0035",
+            "U+0030",
+            "U+2069"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123450,
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-072",
+        "input": {
+          "text": "\u202b1,234.50\u202c",
+          "codePoints": [
+            "U+202B",
+            "U+0031",
+            "U+002C",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002E",
+            "U+0035",
+            "U+0030",
+            "U+202C"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "1234.50"
+          ]
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "comma"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-073",
+        "input": {
+          "text": "\u061c٥٠",
+          "codePoints": [
+            "U+061C",
+            "U+0665",
+            "U+0660"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 5000,
+          "canonical": "50.00"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "arab"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-074",
+        "input": {
+          "text": "12\u200f34",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+200F",
+            "U+0033",
+            "U+0034"
+          ],
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "minor": 123400,
+          "canonical": "1234.00"
+        },
+        "tags": [
+          "bidi-control",
+          "inside-number"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-080",
+        "input": {
+          "text": "50%",
+          "codePoints": [
+            "U+0035",
+            "U+0030",
+            "U+0025"
+          ],
+          "kind": "percent",
+          "allowNegative": false
+        },
+        "tags": [
+          "percent",
+          "needs-expected"
+        ],
+        "note": "Percent field: is the sign accepted and stripped, or rejected?",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-081",
+        "input": {
+          "text": "٥٠٪",
+          "codePoints": [
+            "U+0665",
+            "U+0660",
+            "U+066A"
+          ],
+          "kind": "percent",
+          "allowNegative": false
+        },
+        "tags": [
+          "percent",
+          "arab",
+          "needs-expected"
+        ],
+        "note": "U+066A ARABIC PERCENT SIGN after Arabic-Indic digits.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-082",
+        "input": {
+          "text": "%50",
+          "codePoints": [
+            "U+0025",
+            "U+0035",
+            "U+0030"
+          ],
+          "kind": "percent",
+          "allowNegative": false
+        },
+        "tags": [
+          "percent",
+          "percent-first",
+          "needs-expected"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-083",
+        "input": {
+          "text": "50 %",
+          "codePoints": [
+            "U+0035",
+            "U+0030",
+            "U+0020",
+            "U+0025"
+          ],
+          "kind": "percent",
+          "allowNegative": false
+        },
+        "tags": [
+          "percent",
+          "whitespace",
+          "needs-expected"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-084",
+        "input": {
+          "text": "-5%",
+          "codePoints": [
+            "U+002D",
+            "U+0035",
+            "U+0025"
+          ],
+          "kind": "percent",
+          "allowNegative": true
+        },
+        "tags": [
+          "percent",
+          "negative",
+          "needs-expected"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "AM-085",
+        "input": {
+          "text": "12٫5٪",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+066B",
+            "U+0035",
+            "U+066A"
+          ],
+          "kind": "percent",
+          "allowNegative": false
+        },
+        "tags": [
+          "percent",
+          "arab",
+          "decimal",
+          "needs-expected"
+        ],
+        "origin": "authored for this project (synthetic)"
+      }
+    ],
+    "inputShape": "{ text, codePoints, currency (ISO 4217) or kind: \"percent\", allowNegative }",
+    "expectedShape": "Under arabic.amount.v1 — valid: { status, minor: integer minor units, canonical }; empty: { status, minor: null }; invalid: { status, error, suggestions?: canonical strings offered to the person }. Absent for needs-expected cases.",
+    "rules": [
+      "R-NUM-001",
+      "R-NUM-002",
+      "R-NUM-003",
+      "R-NUM-005",
+      "R-NUM-006",
+      "R-MONEY-001",
+      "R-MONEY-002",
+      "R-MONEY-005",
+      "R-BIDI-006"
+    ],
+    "tagVocabulary": {
+      "needs-expected": "no contract decides the outcome yet",
+      "latn": "ASCII digits",
+      "arab": "Arabic-Indic digits U+0660–U+0669",
+      "arabext": "Extended Arabic-Indic digits U+06F0–U+06F9"
+    }
+  }
+}

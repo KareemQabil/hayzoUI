@@ -1,0 +1,677 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "numerals-in-copy",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/digits.ts"
+      }
+    ],
+    "notes": "Sentences written by hand around the examples the owner lists in CONTRACTS.md (\"Numerals in copy\"); expectations cross-checked against a re-implementation of that rule (lib/contracts.mjs).",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Numbers inside running interface text shown in the reader's preferred numerals: quantities, amounts, phones and dates follow the preference; identifiers and numbers that belong to a Latin name keep Latin digits.",
+    "appliesTo": [
+      "numerals-localize",
+      "text"
+    ],
+    "cases": [
+      {
+        "id": "NC-001",
+        "input": {
+          "text": "لديك 3 رسائل",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "لديك ٣ رسائل",
+          "codePoints": [
+            "U+0644",
+            "U+062F",
+            "U+064A",
+            "U+0643",
+            "U+0020",
+            "U+0663",
+            "U+0020",
+            "U+0631",
+            "U+0633",
+            "U+0627",
+            "U+0626",
+            "U+0644"
+          ]
+        },
+        "tags": [
+          "quantity"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-002",
+        "input": {
+          "text": "لديك ٣ رسائل",
+          "numerals": "latn"
+        },
+        "expected": {
+          "text": "لديك 3 رسائل",
+          "codePoints": [
+            "U+0644",
+            "U+062F",
+            "U+064A",
+            "U+0643",
+            "U+0020",
+            "U+0033",
+            "U+0020",
+            "U+0631",
+            "U+0633",
+            "U+0627",
+            "U+0626",
+            "U+0644"
+          ]
+        },
+        "tags": [
+          "quantity"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-003",
+        "input": {
+          "text": "المبلغ 1,234.50",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "المبلغ ١\u202f٢٣٤٫٥٠",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0645",
+            "U+0628",
+            "U+0644",
+            "U+063A",
+            "U+0020",
+            "U+0661",
+            "U+202F",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+066B",
+            "U+0665",
+            "U+0660"
+          ]
+        },
+        "tags": [
+          "amount",
+          "separators"
+        ],
+        "note": "Separators inside the number are converted too: comma to U+202F, dot to U+066B.",
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-004",
+        "input": {
+          "text": "المبلغ ١٬٢٣٤٫٥٠",
+          "numerals": "latn"
+        },
+        "expected": {
+          "text": "المبلغ 1,234.50",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0645",
+            "U+0628",
+            "U+0644",
+            "U+063A",
+            "U+0020",
+            "U+0031",
+            "U+002C",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002E",
+            "U+0035",
+            "U+0030"
+          ]
+        },
+        "tags": [
+          "amount",
+          "separators"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-005",
+        "input": {
+          "text": "هاتف 010 1234 5678",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "هاتف ٠١٠\u202f١٢٣٤\u202f٥٦٧٨",
+          "codePoints": [
+            "U+0647",
+            "U+0627",
+            "U+062A",
+            "U+0641",
+            "U+0020",
+            "U+0660",
+            "U+0661",
+            "U+0660",
+            "U+202F",
+            "U+0661",
+            "U+0662",
+            "U+0663",
+            "U+0664",
+            "U+202F",
+            "U+0665",
+            "U+0666",
+            "U+0667",
+            "U+0668"
+          ]
+        },
+        "tags": [
+          "phone",
+          "spaces"
+        ],
+        "note": "A space between two digits becomes U+202F so the groups keep their order.",
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-006",
+        "input": {
+          "text": "هاتف 010 1234 5678",
+          "numerals": "latn"
+        },
+        "expected": {
+          "text": "هاتف 010\u202f1234\u202f5678",
+          "codePoints": [
+            "U+0647",
+            "U+0627",
+            "U+062A",
+            "U+0641",
+            "U+0020",
+            "U+0030",
+            "U+0031",
+            "U+0030",
+            "U+202F",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+202F",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038"
+          ]
+        },
+        "tags": [
+          "phone",
+          "spaces"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-007",
+        "input": {
+          "text": "التاريخ 2026-11-11",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "التاريخ ٢٠٢٦-١١-١١",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+062A",
+            "U+0627",
+            "U+0631",
+            "U+064A",
+            "U+062E",
+            "U+0020",
+            "U+0662",
+            "U+0660",
+            "U+0662",
+            "U+0666",
+            "U+002D",
+            "U+0661",
+            "U+0661",
+            "U+002D",
+            "U+0661",
+            "U+0661"
+          ]
+        },
+        "tags": [
+          "date"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-008",
+        "input": {
+          "text": "نسبة 12%",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "نسبة ١٢%",
+          "codePoints": [
+            "U+0646",
+            "U+0633",
+            "U+0628",
+            "U+0629",
+            "U+0020",
+            "U+0661",
+            "U+0662",
+            "U+0025"
+          ]
+        },
+        "tags": [
+          "percent"
+        ],
+        "note": "The percent sign is left as typed.",
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-009",
+        "input": {
+          "text": "العميل CUS-0008",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "العميل CUS-0008",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0639",
+            "U+0645",
+            "U+064A",
+            "U+0644",
+            "U+0020",
+            "U+0043",
+            "U+0055",
+            "U+0053",
+            "U+002D",
+            "U+0030",
+            "U+0030",
+            "U+0030",
+            "U+0038"
+          ]
+        },
+        "tags": [
+          "identifier",
+          "kept-latin"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-010",
+        "input": {
+          "text": "القاعدة R-NUM-004",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "القاعدة R-NUM-004",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0642",
+            "U+0627",
+            "U+0639",
+            "U+062F",
+            "U+0629",
+            "U+0020",
+            "U+0052",
+            "U+002D",
+            "U+004E",
+            "U+0055",
+            "U+004D",
+            "U+002D",
+            "U+0030",
+            "U+0030",
+            "U+0034"
+          ]
+        },
+        "tags": [
+          "identifier",
+          "kept-latin"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-011",
+        "input": {
+          "text": "الهامش 16px",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "الهامش 16px",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0647",
+            "U+0627",
+            "U+0645",
+            "U+0634",
+            "U+0020",
+            "U+0031",
+            "U+0036",
+            "U+0070",
+            "U+0078"
+          ]
+        },
+        "tags": [
+          "identifier",
+          "kept-latin",
+          "unit"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-012",
+        "input": {
+          "text": "اللون #284190",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "اللون #284190",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0648",
+            "U+0646",
+            "U+0020",
+            "U+0023",
+            "U+0032",
+            "U+0038",
+            "U+0034",
+            "U+0031",
+            "U+0039",
+            "U+0030"
+          ]
+        },
+        "tags": [
+          "identifier",
+          "kept-latin",
+          "hash"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-013",
+        "input": {
+          "text": "الفاتورة INV-2026-0148",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "الفاتورة INV-2026-0148",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0641",
+            "U+0627",
+            "U+062A",
+            "U+0648",
+            "U+0631",
+            "U+0629",
+            "U+0020",
+            "U+0049",
+            "U+004E",
+            "U+0056",
+            "U+002D",
+            "U+0032",
+            "U+0030",
+            "U+0032",
+            "U+0036",
+            "U+002D",
+            "U+0030",
+            "U+0031",
+            "U+0034",
+            "U+0038"
+          ]
+        },
+        "tags": [
+          "identifier",
+          "kept-latin"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-014",
+        "input": {
+          "text": "مكتبة React 18",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "مكتبة React 18",
+          "codePoints": [
+            "U+0645",
+            "U+0643",
+            "U+062A",
+            "U+0628",
+            "U+0629",
+            "U+0020",
+            "U+0052",
+            "U+0065",
+            "U+0061",
+            "U+0063",
+            "U+0074",
+            "U+0020",
+            "U+0031",
+            "U+0038"
+          ]
+        },
+        "tags": [
+          "after-latin-word",
+          "kept-latin"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-015",
+        "input": {
+          "text": "إصدار Vitest 5.1.0",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "إصدار Vitest 5.1.0",
+          "codePoints": [
+            "U+0625",
+            "U+0635",
+            "U+062F",
+            "U+0627",
+            "U+0631",
+            "U+0020",
+            "U+0056",
+            "U+0069",
+            "U+0074",
+            "U+0065",
+            "U+0073",
+            "U+0074",
+            "U+0020",
+            "U+0035",
+            "U+002E",
+            "U+0031",
+            "U+002E",
+            "U+0030"
+          ]
+        },
+        "tags": [
+          "after-latin-word",
+          "kept-latin"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-016",
+        "input": {
+          "text": "نظام Material Design 3",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "نظام Material Design 3",
+          "codePoints": [
+            "U+0646",
+            "U+0638",
+            "U+0627",
+            "U+0645",
+            "U+0020",
+            "U+004D",
+            "U+0061",
+            "U+0074",
+            "U+0065",
+            "U+0072",
+            "U+0069",
+            "U+0061",
+            "U+006C",
+            "U+0020",
+            "U+0044",
+            "U+0065",
+            "U+0073",
+            "U+0069",
+            "U+0067",
+            "U+006E",
+            "U+0020",
+            "U+0033"
+          ]
+        },
+        "tags": [
+          "after-latin-word",
+          "kept-latin"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-017",
+        "input": {
+          "text": "شركة 3M مصر",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "شركة 3M مصر",
+          "codePoints": [
+            "U+0634",
+            "U+0631",
+            "U+0643",
+            "U+0629",
+            "U+0020",
+            "U+0033",
+            "U+004D",
+            "U+0020",
+            "U+0645",
+            "U+0635",
+            "U+0631"
+          ]
+        },
+        "tags": [
+          "identifier",
+          "kept-latin"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-018",
+        "input": {
+          "text": "الكمية ۱۲۳",
+          "numerals": "latn"
+        },
+        "expected": {
+          "text": "الكمية 123",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0643",
+            "U+0645",
+            "U+064A",
+            "U+0629",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033"
+          ]
+        },
+        "tags": [
+          "arabext"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-019",
+        "input": {
+          "text": "الكمية ۱۲۳",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "الكمية ١٢٣",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0643",
+            "U+0645",
+            "U+064A",
+            "U+0629",
+            "U+0020",
+            "U+0661",
+            "U+0662",
+            "U+0663"
+          ]
+        },
+        "tags": [
+          "arabext"
+        ],
+        "note": "Extended Arabic-Indic digits in the source are shown in the preferred system.",
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      },
+      {
+        "id": "NC-020",
+        "input": {
+          "text": "الصفحة 5 من 20",
+          "numerals": "arab"
+        },
+        "expected": {
+          "text": "الصفحة ٥ من ٢٠",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0635",
+            "U+0641",
+            "U+062D",
+            "U+0629",
+            "U+0020",
+            "U+0665",
+            "U+0020",
+            "U+0645",
+            "U+0646",
+            "U+0020",
+            "U+0662",
+            "U+0660"
+          ]
+        },
+        "tags": [
+          "quantity"
+        ],
+        "origin": "authored for this project (synthetic); shapes listed in the owner's CONTRACTS.md"
+      }
+    ],
+    "inputShape": "{ text, numerals: latn | arab — the display preference }",
+    "expectedShape": "{ text, codePoints } after localisation.",
+    "rules": [
+      "R-NUM-004",
+      "R-NUM-007",
+      "R-BIDI-003"
+    ]
+  }
+}

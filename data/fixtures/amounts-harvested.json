@@ -1,0 +1,439 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "amounts-harvested",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/fixtures.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/amount.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Every field is copied by script from amount(...) calls; the English half of each note is from harvest-overlay.mjs."
+  },
+  "data": {
+    "purpose": "The owner's amount-parsing cases under the contract arabic.amount.v1: which typed strings are a valid amount, which are rejected and with which error code. Baseline for the L1 money parser.",
+    "appliesTo": [
+      "money-parse",
+      "currency-input"
+    ],
+    "cases": [
+      {
+        "id": "CI-F01",
+        "input": {
+          "text": "1234.50",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "valid",
+          "EGP"
+        ],
+        "note": "Latin digits with a dot as decimal separator — أرقام لاتينية بفاصلة عشرية نقطة",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F01",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "CI-F02",
+        "input": {
+          "text": "١٢٣٤٫٥٠",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "valid",
+          "EGP"
+        ],
+        "note": "Arabic-Indic digits with the Arabic decimal separator — أرقام عربية مشرقية وفاصلة عشرية عربية",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F02",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "CI-F03",
+        "input": {
+          "text": "۱۲۳۴٫۵۰",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "valid",
+          "EGP"
+        ],
+        "note": "Persian (Extended Arabic-Indic) digits — أرقام فارسية (عربية ممتدة)",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F03",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "CI-F04",
+        "input": {
+          "text": "1234,50",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "1234.50"
+          ]
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "An ambiguous comma is not interpreted silently; the likely meaning is suggested — الفاصلة الملتبسة لا تُفسَّر بصمت ويُقترح المعنى",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F04",
+        "rules": [
+          "R-NUM-002"
+        ]
+      },
+      {
+        "id": "CI-F05",
+        "input": {
+          "text": "1.2.3",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "multiple-decimal"
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "More than one decimal separator is rejected — أكثر من فاصلة عشرية مرفوض",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F05",
+        "rules": [
+          "R-NUM-002"
+        ]
+      },
+      {
+        "id": "CI-F06",
+        "input": {
+          "text": "",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "empty",
+          "minor": null
+        },
+        "tags": [
+          "empty",
+          "EGP"
+        ],
+        "note": "An empty field has the value null, not zero — الحقل الفارغ قيمته null وليس صفرًا",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F06",
+        "rules": [
+          "R-NUM-005"
+        ]
+      },
+      {
+        "id": "CI-F07",
+        "input": {
+          "text": "12.345",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-many-fraction-digits"
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "Fraction digits beyond the currency minor unit are rejected without rounding — كسور أكثر من وحدة العملة الصغرى مرفوضة دون تقريب",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F07",
+        "rules": [
+          "R-NUM-003"
+        ]
+      },
+      {
+        "id": "CI-F08",
+        "input": {
+          "text": "12.345",
+          "currency": "KWD",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "12.345"
+        },
+        "tags": [
+          "valid",
+          "KWD"
+        ],
+        "note": "The Kuwaiti dinar accepts three decimal digits — الدينار الكويتي يقبل ثلاثة أرقام عشرية",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F08",
+        "rules": [
+          "R-NUM-003"
+        ]
+      },
+      {
+        "id": "CI-F09",
+        "input": {
+          "text": "1,234.50",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "ambiguous-comma",
+          "suggestions": [
+            "1234.50"
+          ]
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "A Latin thousands comma with a decimal dot stays ambiguous, with a suggestion — فاصل آلاف لاتيني مع نقطة عشرية يبقى ملتبسًا مع اقتراح",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F09",
+        "rules": [
+          "R-NUM-002"
+        ]
+      },
+      {
+        "id": "CI-F10",
+        "input": {
+          "text": "١٬٢٣٤٫٥٠",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "valid",
+          "EGP"
+        ],
+        "note": "The Arabic thousands separator in a valid position — فاصل الآلاف العربي «٬» في موضع صحيح",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F10",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "CI-F11",
+        "input": {
+          "text": "12٬34",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-grouping"
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "A misplaced thousands separator is rejected — فاصل آلاف في غير موضعه مرفوض",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F11",
+        "rules": [
+          "R-NUM-002"
+        ]
+      },
+      {
+        "id": "CI-F12",
+        "input": {
+          "text": "-50",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "negative-not-allowed"
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "A negative is rejected when the field does not allow it — السالب مرفوض حين لا يسمح به الحقل",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F12",
+        "rules": [
+          "R-NUM-003"
+        ]
+      },
+      {
+        "id": "CI-F13",
+        "input": {
+          "text": "50 ج.م",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "A currency symbol inside the field is not silently deleted — رمز العملة داخل الحقل لا يُحذف بصمت",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F13",
+        "rules": [
+          "R-NUM-002"
+        ]
+      },
+      {
+        "id": "CI-F14",
+        "input": {
+          "text": "\u200f1234.50",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "1234.50"
+        },
+        "tags": [
+          "valid",
+          "EGP"
+        ],
+        "note": "Pasted invisible direction marks do not change the value — علامات الاتجاه الخفية الملصوقة لا تغيّر القيمة",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F14",
+        "rules": [
+          "R-BIDI-001"
+        ]
+      },
+      {
+        "id": "CI-F15",
+        "input": {
+          "text": "19.99",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "19.99"
+        },
+        "tags": [
+          "valid",
+          "EGP"
+        ],
+        "note": "Exact conversion to minor units without floating-point arithmetic — تحويل دقيق للوحدات الصغرى دون عمليات عشرية عائمة",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F15",
+        "rules": [
+          "R-NUM-003"
+        ]
+      },
+      {
+        "id": "CI-F16",
+        "input": {
+          "text": ".5",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "valid",
+          "canonical": "0.50"
+        },
+        "tags": [
+          "valid",
+          "EGP"
+        ],
+        "note": "A leading decimal separator — فاصلة عشرية في البداية",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F16",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "CI-F17",
+        "input": {
+          "text": "1234567890123",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-large"
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "More than 12 digits before the separator is rejected — أكثر من ١٢ رقمًا قبل الفاصلة مرفوض",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F17",
+        "rules": [
+          "R-NUM-003"
+        ]
+      },
+      {
+        "id": "CI-F18",
+        "input": {
+          "text": "50-",
+          "currency": "EGP",
+          "allowNegative": false
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "sign-position"
+        },
+        "tags": [
+          "invalid",
+          "EGP"
+        ],
+        "note": "A minus sign after the number (typed right-to-left) is rejected explicitly — علامة السالب بعد الرقم (كتابة من اليمين) مرفوضة بوضوح",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts CI-F18",
+        "rules": [
+          "R-NUM-002"
+        ]
+      }
+    ],
+    "inputShape": "{ text, currency (ISO 4217), allowNegative }",
+    "expectedShape": "valid: { status, canonical } where canonical is the decimal string with the currency's fraction digits; empty: { status, minor: null }; invalid: { status, error, suggestions? } with the error codes of arabic.amount.v1 (invalid-character, ambiguous-comma, multiple-decimal, invalid-grouping, negative-not-allowed, sign-position, too-many-fraction-digits, too-large, no-digits, below-min, above-max).",
+    "rules": [
+      "R-NUM-001",
+      "R-NUM-002",
+      "R-NUM-003",
+      "R-NUM-005",
+      "R-BIDI-001"
+    ]
+  }
+}

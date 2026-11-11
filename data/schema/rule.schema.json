@@ -25,7 +25,7 @@
     },
     "id": {
       "type": "string",
-      "pattern": "^R-[A-Z]+-[0-9]{3}$"
+      "pattern": "^R-[A-Z][A-Z0-9]*-[0-9]{3}$"
     },
     "provenance": {
       "$ref": "common.schema.json#/$defs/provenance"
@@ -35,7 +35,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^R-[A-Z]+-[0-9]{3}$"
+          "pattern": "^R-[A-Z][A-Z0-9]*-[0-9]{3}$"
         },
         "title": {
           "$ref": "common.schema.json#/$defs/localized"
@@ -83,7 +83,9 @@
           "items": {
             "type": "string",
             "minLength": 1
-          }
+          },
+          "minItems": 1,
+          "description": "Statements a machine can evaluate against rendered output, a parsed value or source code. At least one when present."
         },
         "examples": {
           "type": "array",
@@ -112,6 +114,67 @@
           "items": {
             "type": "string",
             "minLength": 1
+          }
+        },
+        "problem": {
+          "$ref": "common.schema.json#/$defs/localized",
+          "description": "What goes wrong without the rule."
+        },
+        "context": {
+          "$ref": "common.schema.json#/$defs/localized",
+          "description": "Where the rule applies."
+        },
+        "exceptions": {
+          "$ref": "common.schema.json#/$defs/localized",
+          "description": "Cases the rule does not cover or deliberately excludes."
+        },
+        "origin": {
+          "description": "harvested: taken from the owner's earlier repository, id kept. new: written in this phase from the references.",
+          "enum": [
+            "harvested",
+            "new"
+          ]
+        },
+        "status": {
+          "description": "Review state. proposed: not yet accepted by the owner.",
+          "enum": [
+            "proposed",
+            "in-review",
+            "accepted"
+          ]
+        },
+        "references": {
+          "description": "Primary references the rule rests on; the text is re-expressed, never quoted at length.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name",
+              "url"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "fixtures": {
+          "description": "Fixture sets (data/fixtures/<id>.json), optionally '<set>#<case id>', that exercise the checks.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*(#.+)?$"
           }
         }
       },

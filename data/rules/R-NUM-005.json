@@ -1,0 +1,67 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-NUM-005",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-NUM-005",
+    "title": {
+      "ar": "المسح يعني الفراغ",
+      "en": "Cleared means empty"
+    },
+    "statement": {
+      "ar": "القيمة الفارغة دائمًا null. بعد المسح ومغادرة الحقل يبقى فارغًا، ويظهر خطأ «أدخل المبلغ» إن كان مطلوبًا.",
+      "en": "The empty value is always null. After clearing and leaving the field it stays empty, and the error \"enter the amount\" appears if it is required."
+    },
+    "rationale": {
+      "ar": "الصفر مبلغ، والفراغ غياب للمبلغ. الخلط بينهما يمرّر تحصيلًا بقيمة لم يقصدها أحد.",
+      "en": "Zero is an amount; blank is the absence of one. Confusing them lets through a collection of a value nobody intended."
+    },
+    "area": "numerals",
+    "severity": "must",
+    "appliesTo": [
+      "numeric-input",
+      "currency-input"
+    ],
+    "checks": [
+      "Parsing \"\" (and whitespace-only input) returns status empty with value null, never 0.",
+      "After clear + blur the field value is null and the rendered text is empty.",
+      "A required empty amount field reports the \"required\" error, not a range or zero-value error."
+    ],
+    "related": [
+      "R-NUM-003"
+    ],
+    "problem": {
+      "ar": "بعض الحقول تعيد آخر مبلغ صالح بعد مسحه، أو تحوّل الفراغ إلى صفر.",
+      "en": "Some fields restore the last valid amount after it is cleared, or turn the blank into zero."
+    },
+    "context": {
+      "ar": "كل الحقول الرقمية.",
+      "en": "All numeric fields."
+    },
+    "exceptions": {
+      "ar": "لا توجد.",
+      "en": "None."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "fixtures": [
+      "amounts-harvested"
+    ]
+  }
+}

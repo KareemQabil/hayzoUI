@@ -1,0 +1,163 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "phones-harvested",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/fixtures.ts"
+      },
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/arabic/phone.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Every field is copied by script from phone(...) calls."
+  },
+  "data": {
+    "purpose": "The owner's Egyptian mobile-number cases under arabic.phone.eg.v1: typed input to E.164 or a rejection code. Baseline for the L1 phone parser; the phone layer owns the numbering plans.",
+    "appliesTo": [
+      "phone-parse",
+      "phone-input"
+    ],
+    "cases": [
+      {
+        "id": "PH-F01",
+        "input": {
+          "text": "01012345678",
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "valid",
+          "EG"
+        ],
+        "note": "A local Egyptian mobile number — رقم محمول مصري محلي",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts PH-F01",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "PH-F02",
+        "input": {
+          "text": "٠١٠١٢٣٤٥٦٧٨",
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "valid",
+          "EG"
+        ],
+        "note": "A mobile number in Arabic-Indic digits — رقم محمول بأرقام عربية",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts PH-F02",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "PH-F03",
+        "input": {
+          "text": "+20 10 1234 5678",
+          "region": "EG"
+        },
+        "expected": {
+          "status": "valid",
+          "e164": "+201012345678"
+        },
+        "tags": [
+          "valid",
+          "EG"
+        ],
+        "note": "An international number with spaces — رقم دولي بمسافات",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts PH-F03",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "PH-F04",
+        "input": {
+          "text": "0101234567",
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "too-short"
+        },
+        "tags": [
+          "invalid",
+          "EG"
+        ],
+        "note": "A number that is too short — رقم ناقص",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts PH-F04",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "PH-F05",
+        "input": {
+          "text": "01312345678",
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-prefix"
+        },
+        "tags": [
+          "invalid",
+          "EG"
+        ],
+        "note": "An unsupported prefix — بادئة غير مدعومة",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts PH-F05",
+        "rules": [
+          "R-NUM-001"
+        ]
+      },
+      {
+        "id": "PH-F06",
+        "input": {
+          "text": "010l2345678",
+          "region": "EG"
+        },
+        "expected": {
+          "status": "invalid",
+          "error": "invalid-character"
+        },
+        "tags": [
+          "invalid",
+          "EG"
+        ],
+        "note": "A Latin letter that looks like the digit 1 — حرف لاتيني يشبه الرقم ١",
+        "origin": "hayzoui@9b4eb32 src/knowledge/fixtures.ts PH-F06",
+        "rules": [
+          "R-NUM-001"
+        ]
+      }
+    ],
+    "inputShape": "{ text, region }",
+    "expectedShape": "valid: { status, e164 }; invalid: { status, error } with error in invalid-character, too-short, too-long, invalid-prefix. Only Egyptian mobile prefixes 010, 011, 012, 015 are valid under this contract.",
+    "rules": [
+      "R-NUM-001"
+    ]
+  }
+}

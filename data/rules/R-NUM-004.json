@@ -1,0 +1,71 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-NUM-004",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-NUM-004",
+    "title": {
+      "ar": "افصل عرض الأرقام عن قبولها",
+      "en": "Separate how numbers are displayed from what is accepted"
+    },
+    "statement": {
+      "ar": "اجعل نظام العرض تفضيلًا مستقلًا عن اللغة والاتجاه، واقبل كل الأنظمة في الإدخال أيًا كان التفضيل. المعرّفات (INV، SKU) تبقى لاتينية لأنها تُطابق أنظمة أخرى.",
+      "en": "Make the display numeral system a preference independent of language and direction, and accept every system on input whatever the preference. Identifiers (INV, SKU) stay Latin because they are matched against other systems."
+    },
+    "rationale": {
+      "ar": "في مصر تشيع الأرقام اللاتينية في الواجهات، وفي الخليج تشيع المشرقية في سياقات كثيرة. التفضيل شخصي وإقليمي.",
+      "en": "In Egypt Latin digits are common in interfaces; in the Gulf Arabic-Indic digits are common in many contexts. The preference is personal and regional."
+    },
+    "area": "numerals",
+    "severity": "must",
+    "appliesTo": [
+      "locale-provider",
+      "currency-input",
+      "table"
+    ],
+    "checks": [
+      "Formatting 123450 minor units of EGP with numerals=latn gives \"1,234.50\"; the stored value is unchanged by the display setting.",
+      "With lang=ar and dir=rtl fixed, switching the numerals preference between latn and arab changes every displayed quantity and nothing else.",
+      "Every visible number is in the numerals of its nearest locale scope, except identifiers (a digit run inside a token with an ASCII letter or starting with #) and a number directly after a Latin word.",
+      "Input parsing gives the same result under both display preferences."
+    ],
+    "related": [
+      "R-NUM-001",
+      "R-BIDI-003"
+    ],
+    "problem": {
+      "ar": "ربط شكل الأرقام المعروضة باللغة يفترض أن كل متحدثي العربية يفضّلون نظامًا واحدًا.",
+      "en": "Tying the shape of displayed digits to the language assumes every Arabic speaker prefers one system."
+    },
+    "context": {
+      "ar": "المبالغ والأعداد والتواريخ.",
+      "en": "Amounts, counts and dates."
+    },
+    "exceptions": {
+      "ar": "المستندات الرسمية قد تفرض نظامًا محددًا.",
+      "en": "Official documents may mandate a specific system."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "fixtures": [
+      "formatting-harvested",
+      "numerals-in-copy"
+    ]
+  }
+}

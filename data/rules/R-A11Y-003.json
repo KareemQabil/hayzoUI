@@ -1,0 +1,81 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-A11Y-003",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Declaring language in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-language-declarations",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-A11Y-003",
+    "title": {
+      "ar": "اللغة والاتجاه معلنان على الجذر وعلى كل نطاق مختلف",
+      "en": "Language and direction are declared on the root and on every scope that differs"
+    },
+    "statement": {
+      "ar": "العنصر الجذر يحمل lang وdir. كل مقطع بلغة أخرى (كلمة إنجليزية، اسم لاتيني، اقتباس) يحمل lang الخاص به، ومعه dir إن اختلف الاتجاه. الاتجاه لا يُستنتج من اللغة ولا العكس.",
+      "en": "The root element carries lang and dir. Every passage in another language (an English word, a Latin name, a quotation) carries its own lang, and dir too if the direction differs. Direction is not inferred from language, nor the reverse."
+    },
+    "rationale": {
+      "ar": "قارئ الشاشة يختار صوت النطق من lang؛ دونها تُقرأ الإنجليزية بصوت عربي حرفًا حرفًا أو تُتخطى. والمتصفح يختار الخط وقواعد الكسر والتدقيق من اللغة.",
+      "en": "A screen reader chooses its voice from lang; without it English is spelled out by an Arabic voice or skipped. The browser chooses font, line-breaking and spellchecking from the language."
+    },
+    "area": "accessibility",
+    "severity": "must",
+    "appliesTo": [
+      "locale-provider",
+      "text",
+      "layout"
+    ],
+    "checks": [
+      "The html element has a valid BCP 47 lang and a dir attribute.",
+      "Every locale scope element sets lang and dir together.",
+      "Runs of four or more Latin letters forming words inside lang=\"ar\" content are wrapped in an element with a non-Arabic lang, or listed as proper names exempt under 3.1.2.",
+      "Portaled content carries the lang and dir of its trigger scope."
+    ],
+    "related": [
+      "R-BIDI-013",
+      "R-LAYOUT-010"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "3.1.1 Language of Page; 3.1.2 Language of Parts"
+      },
+      {
+        "name": "W3C Internationalization: Declaring language in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-language-declarations"
+      },
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir"
+      }
+    ]
+  }
+}

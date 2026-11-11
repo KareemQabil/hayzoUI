@@ -1,0 +1,72 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-LAYOUT-001",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/",
+        "version": "Working Draft 2025-12-04",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Writing Modes Level 4",
+        "url": "https://www.w3.org/TR/css-writing-modes-4/",
+        "version": "Candidate Recommendation 2019-07-30",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-LAYOUT-001",
+    "title": {
+      "ar": "خصائص منطقية فقط",
+      "en": "Logical properties only"
+    },
+    "statement": {
+      "ar": "الأنماط تستخدم الخصائص والقيم المنطقية (inline-start/end، margin-inline، padding-inline، inset-inline، border-start-*-radius، text-align: start، float: inline-start) ولا تذكر left وright إلا في ما هو فيزيائي بطبيعته.",
+      "en": "Styles use logical properties and values (inline-start/end, margin-inline, padding-inline, inset-inline, border-start-*-radius, text-align: start, float: inline-start) and mention left and right only for what is physical by nature."
+    },
+    "rationale": {
+      "ar": "ورقة أنماط واحدة تخدم الاتجاهين دون نسخة RTL تُنسى عند التعديل، وتعمل للعناصر المتداخلة المختلفة الاتجاه.",
+      "en": "One stylesheet serves both directions with no RTL copy to forget when editing, and it works for nested elements of a different direction."
+    },
+    "area": "layout",
+    "severity": "must",
+    "appliesTo": [
+      "recipes",
+      "tokens",
+      "layout"
+    ],
+    "checks": [
+      "The built CSS contains no margin-left/right, padding-left/right, left:, right:, border-left/right, text-align: left/right, float: left/right or clear: left/right outside an allowlist with a stated reason.",
+      "No [dir=rtl] selector overrides a physical property that a logical one could express.",
+      "Each component's RTL screenshot equals the horizontal mirror of its LTR screenshot, except for regions listed as not mirrored."
+    ],
+    "related": [
+      "R-LAYOUT-002",
+      "R-ICON-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "CSS Logical Properties and Values Level 1",
+        "url": "https://www.w3.org/TR/css-logical-1/",
+        "section": "4 Flow-relative box model properties; 2 Flow-relative values"
+      },
+      {
+        "name": "CSS Writing Modes Level 4",
+        "url": "https://www.w3.org/TR/css-writing-modes-4/",
+        "section": "6 Abstract box terminology"
+      }
+    ]
+  }
+}

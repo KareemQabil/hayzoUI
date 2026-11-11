@@ -1,0 +1,70 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-INPUT-005",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Microsoft Learn, Globalization: Text directionality",
+        "url": "https://learn.microsoft.com/en-us/globalization/fonts-layout/text-directionality",
+        "version": "page read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-INPUT-005",
+    "title": {
+      "ar": "نبّه إلى الكتابة بتخطيط خاطئ ولا تحوّلها آليًا",
+      "en": "Flag wrong-layout typing; do not convert it automatically"
+    },
+    "statement": {
+      "ar": "حين يبدو المدخل مكتوبًا بتخطيط لوحة مفاتيح غير المقصود (حروف لاتينية بلا معنى تقابل كلمة عربية على المفاتيح نفسها، أو العكس) اعرض اقتراحًا بالتحويل يقبله المستخدم. في حقول كلمة المرور اعرض تخطيط الكتابة الحالي إن أمكن.",
+      "en": "When input appears typed in the wrong keyboard layout (meaningless Latin letters that map to an Arabic word on the same keys, or the reverse) offer a conversion the person can accept. In password fields show the active layout when it can be known."
+    },
+    "rationale": {
+      "ar": "مستخدمو العربية يبدّلون التخطيط باستمرار، و«hglsjo]l» بدل «المستخدم» خطأ يومي. لكن التحويل الآلي يفسد أسماء وكلمات صحيحة.",
+      "en": "Arabic users switch layouts constantly, and \"hglsjo]l\" for «المستخدم» is an everyday mistake. But automatic conversion corrupts valid names and words."
+    },
+    "area": "input",
+    "severity": "should",
+    "appliesTo": [
+      "search-field",
+      "text-field",
+      "combobox"
+    ],
+    "checks": [
+      "A search with zero results whose query maps, key for key, to a string in the other layout that has results shows a suggestion; the query is not replaced without action.",
+      "The mapping table used names the layouts it covers (e.g. Arabic 101 ↔ US QWERTY).",
+      "No field rewrites typed letters into another script."
+    ],
+    "related": [
+      "R-SRCH-005"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Microsoft Learn, Globalization: Text directionality",
+        "url": "https://learn.microsoft.com/en-us/globalization/fonts-layout/text-directionality"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "5.1 Characters & encoding"
+      }
+    ]
+  }
+}

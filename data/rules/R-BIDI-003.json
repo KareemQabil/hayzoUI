@@ -1,0 +1,79 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-003",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance. Owner's source note: Unicode UAX #9 (W4، N1) — تحقق في المتصفح على Chromium."
+  },
+  "data": {
+    "id": "R-BIDI-003",
+    "title": {
+      "ar": "لا تفصل الأرقام العربية بمسافة عادية",
+      "en": "Do not separate Arabic-Indic digit groups with an ordinary space"
+    },
+    "statement": {
+      "ar": "اجمع الأرقام المشرقية بـU+00A0 في الهواتف وبـU+202F في المبالغ بدل المسافة و«٬». حوّل المسافات المكتوبة في الحقول الرقمية تلقائيًا مع الحفاظ على موضع المؤشر. لا تُضف علامات اتجاه خفية.",
+      "en": "Join Arabic-Indic digit groups with U+00A0 in phone numbers and U+202F in amounts instead of a space and «٬». Convert spaces typed in numeric fields automatically while keeping the caret position. Do not add invisible direction marks."
+    },
+    "rationale": {
+      "ar": "الأرقام المشرقية من فئة AN في UAX #9؛ المسافة العادية محايدة فتُحسب يمينًا وتعيد ترتيب المجموعات حتى داخل عزل LTR. المسافة غير القابلة للكسر (U+00A0) والرفيعة (U+202F) من فئة CS فتُبقي الرقم مقطعًا واحدًا (القاعدة W4). وفي IBM Plex Sans Arabic وReadex Pro يُرسم «٬» و«٫» بالشكل نفسه تقريبًا.",
+      "en": "Arabic-Indic digits are class AN in UAX #9; an ordinary space is neutral, resolves to right-to-left between them and reorders the groups even inside an LTR isolate. The no-break space (U+00A0) and the narrow no-break space (U+202F) are class CS and keep the number one run (rule W4). In IBM Plex Sans Arabic and Readex Pro «٬» and «٫» are drawn almost identically."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "phone-input",
+      "currency-input",
+      "number-format"
+    ],
+    "checks": [
+      "Formatting 123450 minor units of EGP with numerals=arab gives U+0661 U+202F U+0662 U+0663 U+0664 U+066B U+0665 U+0660 — no U+0020 and no U+066C.",
+      "A formatted Arabic-Indic amount matches ^-?[٠-٩]+(\\u202F[٠-٩]{3})*(٫[٠-٩]+)?$ and parses back to the same minor units (property).",
+      "A formatted phone number in Arabic-Indic digits contains no U+0020; its groups are joined with U+00A0 and it parses back to the same E.164 value.",
+      "Under UAX #9 the formatted string resolves to a single level run for all digits and separators in both paragraph directions.",
+      "No validation message contains a digit, an ASCII space, then a digit.",
+      "Typing a space between digit groups leaves the caret offset unchanged after the replacement."
+    ],
+    "related": [
+      "R-BIDI-001",
+      "R-NUM-004"
+    ],
+    "problem": {
+      "ar": "رقم هاتف بأرقام مشرقية مفصول بمسافات عادية يُرسم داخل حقل LTR بترتيب مجموعات معكوس (آخر مجموعة أولًا). وفي خطوط شائعة يتطابق شكل فاصل الآلاف «٬» مع الفاصلة العشرية «٫» فيبدو المبلغ وكأن فيه فاصلتين.",
+      "en": "A phone number in Arabic-Indic digits separated by ordinary spaces is drawn inside an LTR field with its groups in reverse order (last group first). And in common fonts the thousands separator «٬» has the same shape as the decimal separator «٫», so an amount looks as if it had two decimal marks."
+    },
+    "context": {
+      "ar": "عرض المبالغ والهواتف والأعداد بأرقام مشرقية، وتحرير الحقول الرقمية.",
+      "en": "Displaying amounts, phones and counts in Arabic-Indic digits, and editing numeric fields."
+    },
+    "exceptions": {
+      "ar": "الإدخال يظل يقبل «٬» والمسافة العادية كفواصل آلاف صحيحة. الأرقام اللاتينية لا تتأثر بالمشكلة لكن التحويل آمن لها.",
+      "en": "Input still accepts «٬» and the ordinary space as valid thousands separators. Latin digits are not affected by the problem, but the conversion is safe for them."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html"
+      }
+    ],
+    "fixtures": [
+      "formatting-harvested",
+      "mixed-direction"
+    ]
+  }
+}

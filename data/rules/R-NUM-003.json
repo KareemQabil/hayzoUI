@@ -1,0 +1,69 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-NUM-003",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-NUM-003",
+    "title": {
+      "ar": "حدد الإشارة والمدى والدقة صراحة ولا تقرّب",
+      "en": "State sign, range and precision explicitly, and never round"
+    },
+    "statement": {
+      "ar": "خزّن المبلغ عددًا صحيحًا بالوحدة الصغرى للعملة، وابنه من النص لا من عملية ضرب. ارفض الكسور الزائدة بدل تقريبها.",
+      "en": "Store the amount as an integer in the currency's minor unit, built from the text and not from a multiplication. Reject excess fraction digits instead of rounding them."
+    },
+    "rationale": {
+      "ar": "القيمة المخزنة يجب أن تساوي ما رآه الشخص وأكده.",
+      "en": "The stored value must equal what the person saw and confirmed."
+    },
+    "area": "money",
+    "severity": "must",
+    "appliesTo": [
+      "currency-input"
+    ],
+    "checks": [
+      "\"19.99\" in EGP parses to exactly 1999 minor units.",
+      "\"12.345\" is rejected in EGP (too-many-fraction-digits) and accepted in KWD as 12345 minor units.",
+      "\"-50\" is rejected with negative-not-allowed when the field does not allow negatives.",
+      "An integer part longer than 12 digits is rejected as too-large.",
+      "The stored value of every accepted amount is a safe integer; no code path multiplies a float by a power of ten."
+    ],
+    "related": [
+      "R-NUM-002"
+    ],
+    "problem": {
+      "ar": "التقريب الصامت أو استخدام الأعداد العائمة يغيّران المبالغ (\u200e19.99 × 100 = 1998.9999…).",
+      "en": "Silent rounding or floating-point arithmetic changes amounts (19.99 × 100 = 1998.9999…)."
+    },
+    "context": {
+      "ar": "العملات المدعومة في العرض: الجنيه المصري والريال السعودي (رقمان عشريان) والدينار الكويتي (ثلاثة).",
+      "en": "The currencies supported in the prototype: Egyptian pound and Saudi riyal (two decimals) and Kuwaiti dinar (three)."
+    },
+    "exceptions": {
+      "ar": "لا توجد في هذا الإصدار.",
+      "en": "None in this release."
+    },
+    "origin": "harvested",
+    "status": "proposed",
+    "fixtures": [
+      "amounts-harvested",
+      "amounts"
+    ]
+  }
+}

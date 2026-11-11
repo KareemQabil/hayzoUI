@@ -1,0 +1,67 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-SRCH-003",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-SRCH-003",
+    "title": {
+      "ar": "مستويات التسامح مسمّاة ومحددة لكل حقل",
+      "en": "Tolerance levels are named and chosen per field"
+    },
+    "statement": {
+      "ar": "عرّف مستويات التطبيع بأسماء ثابتة (حرفي، افتراضي، كشف التكرار) وحدّد لكل حقل مستواه. الهمزات تُطوى افتراضيًا؛ التاء المربوطة والألف المقصورة وحذف المسافات تُقصر على كشف التكرار؛ والتشكيل يُتجاهل في أسماء الأشخاص لا في النصوص التي يحمل فيها المعنى.",
+      "en": "Define normalisation levels with stable names (strict, default, duplicate check) and assign one to each field. Hamza forms are folded by default; taa marbuta, alef maqsura and space removal are reserved for duplicate detection; diacritics are ignored in personal names but not in texts where they carry meaning."
+    },
+    "rationale": {
+      "ar": "كل طيّ يضيف نتائج صحيحة ونتائج خاطئة: «علي» و«على»، «كره» و«كرة»، «سأل» و«سال». ما يصلح لتنبيه التكرار يفسد البحث في نص.",
+      "en": "Every folding adds right and wrong results: «علي» and «على», «كره» and «كرة», «سأل» and «سال». What suits a duplicate warning ruins search in prose."
+    },
+    "area": "search",
+    "severity": "must",
+    "appliesTo": [
+      "search-match",
+      "search-field",
+      "combobox",
+      "table"
+    ],
+    "checks": [
+      "search-pairs: the verdict at each of the three levels equals expected (40 pairs).",
+      "Every searchable field declares its tolerance level; none relies on an implicit default in the matcher.",
+      "A strict match implies a default match, and a default match implies a duplicate-check match, for every pair.",
+      "Pairs tagged false-positive-risk do not match at the default level except those caused by hamza or diacritics folding."
+    ],
+    "related": [
+      "R-SRCH-001",
+      "R-SRCH-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "5.1 Characters & encoding; A.1 Alphabetical characters; A.2 Diacritics"
+      }
+    ],
+    "fixtures": [
+      "search-pairs",
+      "search-harvested",
+      "names"
+    ]
+  }
+}

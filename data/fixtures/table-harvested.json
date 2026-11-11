@@ -1,0 +1,506 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "table-harvested",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/data/table/table.test.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Rows and every expect(ids(model(<literal>))).toEqual(<literal>) are copied by script. Tests whose expectation is computed (TE-06 collation, TE-08 first row, trees, groups, widths) are not harvested."
+  },
+  "data": {
+    "purpose": "The owner's table-model cases on five customer rows with Arabic, vocalised, mixed and Latin names: hamza- and diacritic-tolerant text filters, phone search by digits in any numeral system, numeric ranges and numeric sorting of values written in Arabic-Indic digits, empty values last, page clamping.",
+    "appliesTo": [
+      "table-model",
+      "search-match"
+    ],
+    "cases": [
+      {
+        "id": "TE-01a",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "text",
+                "column": "name",
+                "query": "ايمان"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0002"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "text filter is Arabic-tolerant: hamza, diacritics",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-01"
+      },
+      {
+        "id": "TE-01b",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "text",
+                "column": "name",
+                "query": "محمد"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0003"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "text filter is Arabic-tolerant: hamza, diacritics",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-01"
+      },
+      {
+        "id": "TE-01c",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "text",
+                "column": "name",
+                "query": "احمد"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0001"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "text filter is Arabic-tolerant: hamza, diacritics",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-01"
+      },
+      {
+        "id": "TE-02a",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "text",
+                "column": "phone",
+                "query": "٠١٠١٢٣"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0001"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "phones match by digits in any numeral system («٠١٠» finds «+20 10 …»)",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-02"
+      },
+      {
+        "id": "TE-02b",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "global",
+                "query": "0115556"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0005"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "phones match by digits in any numeral system («٠١٠» finds «+20 10 …»)",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-02"
+      },
+      {
+        "id": "TE-03a",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "global",
+                "query": "khaled"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0001"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "global filter searches text columns; mixed Latin works",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-03"
+      },
+      {
+        "id": "TE-03b",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "global",
+                "query": "الاسكندريه"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": []
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "global filter searches text columns; mixed Latin works",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-03"
+      },
+      {
+        "id": "TE-03c",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "global",
+                "query": "الإسكندرية"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0002",
+            "CUS-0005"
+          ],
+          "order": "any"
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "global filter searches text columns; mixed Latin works",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-03"
+      },
+      {
+        "id": "TE-04a",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "in",
+                "column": "region",
+                "values": [
+                  "القاهرة"
+                ]
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0001",
+            "CUS-0003"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "«in» filter, number «range» with Arabic digits, date «range» on ISO",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-04"
+      },
+      {
+        "id": "TE-04b",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "range",
+                "column": "qty",
+                "min": "١٠",
+                "max": 50
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0001",
+            "CUS-0005"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "«in» filter, number «range» with Arabic digits, date «range» on ISO",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-04"
+      },
+      {
+        "id": "TE-04c",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "range",
+                "column": "since",
+                "min": "2025-01-01"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0001",
+            "CUS-0003",
+            "CUS-0005"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "«in» filter, number «range» with Arabic digits, date «range» on ISO",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-04"
+      },
+      {
+        "id": "TE-04d",
+        "input": {
+          "state": {
+            "filters": [
+              {
+                "type": "range",
+                "column": "balance",
+                "max": 50
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0002",
+            "CUS-0004"
+          ]
+        },
+        "tags": [
+          "filter"
+        ],
+        "note": "«in» filter, number «range» with Arabic digits, date «range» on ISO",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-04"
+      },
+      {
+        "id": "TE-07a",
+        "input": {
+          "state": {
+            "sort": [
+              {
+                "column": "qty",
+                "dir": "asc"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0002",
+            "CUS-0001",
+            "CUS-0005",
+            "CUS-0004",
+            "CUS-0003"
+          ]
+        },
+        "tags": [
+          "sort"
+        ],
+        "note": "numbers written with Arabic-Indic digits sort numerically; empty values last in both directions",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-07"
+      },
+      {
+        "id": "TE-07b",
+        "input": {
+          "state": {
+            "sort": [
+              {
+                "column": "qty",
+                "dir": "desc"
+              }
+            ]
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0004",
+            "CUS-0005",
+            "CUS-0001",
+            "CUS-0002",
+            "CUS-0003"
+          ]
+        },
+        "tags": [
+          "sort"
+        ],
+        "note": "numbers written with Arabic-Indic digits sort numerically; empty values last in both directions",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-07"
+      },
+      {
+        "id": "TE-15a",
+        "input": {
+          "state": {
+            "page": {
+              "index": 99,
+              "size": 2
+            }
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0005"
+          ]
+        },
+        "tags": [
+          "page"
+        ],
+        "note": "pagination clamps the index; pageCount over visible rows",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-15"
+      },
+      {
+        "id": "TE-15b",
+        "input": {
+          "state": {
+            "page": {
+              "index": -3,
+              "size": 2
+            }
+          },
+          "locale": "ar-EG"
+        },
+        "expected": {
+          "rowIds": [
+            "CUS-0001",
+            "CUS-0002"
+          ]
+        },
+        "tags": [
+          "page"
+        ],
+        "note": "pagination clamps the index; pageCount over visible rows",
+        "origin": "hayzoui@9b4eb32 src/atomic/data/table/table.test.ts TE-15"
+      }
+    ],
+    "inputShape": "{ state: partial table state (filters, sort, page) applied to shared.rows, locale }",
+    "expectedShape": "{ rowIds: ids of the visible rows in order; order: \"any\" when the source compared a sorted copy }",
+    "rules": [
+      "R-SRCH-001",
+      "R-NUM-001"
+    ],
+    "shared": {
+      "rows": [
+        {
+          "id": "CUS-0001",
+          "name": "أحمد Khaled",
+          "phone": "+20 10 1234 5678",
+          "region": "القاهرة",
+          "balance": 123450,
+          "since": "2025-03-14",
+          "active": true,
+          "qty": "١٢"
+        },
+        {
+          "id": "CUS-0002",
+          "name": "إيمان عبد الرحمن",
+          "phone": "+20 11 2345 6789",
+          "region": "الإسكندرية",
+          "balance": 0,
+          "since": "2024-11-02",
+          "active": false,
+          "qty": "3"
+        },
+        {
+          "id": "CUS-0003",
+          "name": "مُحَمَّد السيد",
+          "phone": "+20 12 3456 7890",
+          "region": "القاهرة",
+          "balance": 8750000,
+          "since": "2026-01-20",
+          "active": true,
+          "qty": null
+        },
+        {
+          "id": "CUS-0004",
+          "name": "هالة مؤمن",
+          "phone": "+20 15 5555 1212",
+          "region": "الجيزة",
+          "balance": 50,
+          "since": "2023-07-01",
+          "active": true,
+          "qty": "100"
+        },
+        {
+          "id": "CUS-0005",
+          "name": "Sara Haddad",
+          "phone": "+20 11 5556 6677",
+          "region": "الإسكندرية",
+          "balance": 99999,
+          "since": "2025-12-31",
+          "active": false,
+          "qty": "٢٠"
+        }
+      ],
+      "columns": {
+        "id": "text",
+        "name": "text",
+        "phone": "text",
+        "region": "text",
+        "balance": "money, integer minor units",
+        "since": "date, ISO 8601",
+        "active": "boolean",
+        "qty": "number, may be written in Arabic-Indic digits, may be null"
+      },
+      "note": "By default the text filter tolerates hamza and diacritics but not taa marbuta/haa: «الاسكندريه» does not find «الإسكندرية»."
+    }
+  }
+}

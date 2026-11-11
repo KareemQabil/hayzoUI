@@ -1,0 +1,64 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-A11Y-006",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-A11Y-006",
+    "title": {
+      "ar": "التكبير حتى 200٪ دون قص للنص العربي",
+      "en": "Zoom to 200% without clipping Arabic text"
+    },
+    "statement": {
+      "ar": "عند تكبير النص إلى 200٪ أو تضييق العرض إلى 320 بكسل يبقى كل نص عربي مقروءًا كاملًا بعلاماته، دون تمرير أفقي، ومساحات اللمس لا تتراكب.",
+      "en": "With text enlarged to 200% or the viewport narrowed to 320 px, all Arabic text stays fully readable with its marks, with no horizontal scrolling, and touch targets do not overlap."
+    },
+    "rationale": {
+      "ar": "النص العربي أعلى من اللاتيني وأقصر عرضًا في بعض الخطوط وأطول في أخرى؛ التخطيطات المضبوطة على الإنجليزية تنكسر عند التكبير.",
+      "en": "Arabic text is taller than Latin and narrower in some fonts, wider in others; layouts tuned for English break when enlarged."
+    },
+    "area": "accessibility",
+    "severity": "must",
+    "appliesTo": [
+      "layout",
+      "text",
+      "button",
+      "table"
+    ],
+    "checks": [
+      "At 200% text size no element containing Arabic text has clipped ink (scroll size equals client size, or overflow is visible).",
+      "At 320 CSS px width the page has no horizontal scroll with long-Arabic content (text-stress TS-001).",
+      "Font sizes and line heights are in relative units."
+    ],
+    "related": [
+      "R-TYPE-002",
+      "R-TYPE-007"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "1.4.4 Resize Text; 1.4.10 Reflow; 2.5.8 Target Size (Minimum)"
+      }
+    ],
+    "fixtures": [
+      "text-stress"
+    ]
+  }
+}

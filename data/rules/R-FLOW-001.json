@@ -1,0 +1,64 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-FLOW-001",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI (the owner's earlier prototype)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/knowledge/rules.ts"
+      }
+    ],
+    "script": "tools/extract/rules/harvest.mjs",
+    "notes": "Arabic title, problem, rationale, statement (the owner's \"recommendation\"), context and exceptions are copied verbatim from the owner's file, where the rule's review state is \"proposed\". The English text, area, severity and checks come from tools/extract/rules/harvest-overlay.mjs: the English is a translation and the checks restate the owner's own tests; both need the owner's glance."
+  },
+  "data": {
+    "id": "R-FLOW-001",
+    "title": {
+      "ar": "امنع الإرسال المكرر أثناء الانشغال",
+      "en": "Block duplicate submission while busy"
+    },
+    "statement": {
+      "ar": "احرس الإرسال بحالة داخلية متزامنة، وأبقِ الزر قابلًا للتركيز مع aria-busy ونص يشرح ما يجري.",
+      "en": "Guard submission with a synchronous internal state, and keep the button focusable with aria-busy and a text that explains what is happening."
+    },
+    "rationale": {
+      "ar": "تعطيل الزر وحده لا يكفي مع Enter أو الضغط السريع.",
+      "en": "Disabling the button alone is not enough against Enter or a fast double press."
+    },
+    "area": "flow",
+    "severity": "must",
+    "appliesTo": [
+      "button",
+      "form"
+    ],
+    "checks": [
+      "Two activations within the same task (double click, click then Enter) call the submit handler exactly once.",
+      "While pending the button has aria-busy=\"true\", remains focusable and is not removed from the tab order.",
+      "While pending the button's accessible name or description states the operation in progress."
+    ],
+    "related": [
+      "R-A11Y-002"
+    ],
+    "problem": {
+      "ar": "الضغط مرتين على «تأكيد التحصيل» قد يسجل عمليتين.",
+      "en": "Pressing \"confirm collection\" twice may record two operations."
+    },
+    "context": {
+      "ar": "كل الإجراءات المالية.",
+      "en": "All financial actions."
+    },
+    "exceptions": {
+      "ar": "لا توجد.",
+      "en": "None."
+    },
+    "origin": "harvested",
+    "status": "proposed"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-BIDI-013",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "CSS Writing Modes Level 4",
+        "url": "https://www.w3.org/TR/css-writing-modes-4/",
+        "version": "Candidate Recommendation 2019-07-30",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "version": "living standard, read 2026-11-11",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-BIDI-013",
+    "title": {
+      "ar": "اتجاه المستند في سمة dir لا في CSS",
+      "en": "Document direction lives in the dir attribute, not in CSS"
+    },
+    "statement": {
+      "ar": "حدّد الاتجاه الأساسي بسمة dir على العنصر الجذر، وبدّله بسمة dir على العنصر الذي يختلف اتجاهه. لا تستخدم خاصية direction في CSS لتحديد اتجاه المحتوى.",
+      "en": "Set the base direction with the dir attribute on the root element and change it with dir on the element whose direction differs. Do not use the CSS direction property to set the direction of content."
+    },
+    "rationale": {
+      "ar": "الاتجاه جزء من بنية المحتوى: يجب أن يبقى عند تعطل الأنماط، وفي وضع القراءة، وعند النسخ، ولدى التقنيات المساعدة. سمة dir تمنح العزل تلقائيًا، وخاصية direction لا تمنحه.",
+      "en": "Direction is part of the content's structure: it must survive missing styles, reader modes, copying and assistive technology. The dir attribute isolates automatically; the direction property does not."
+    },
+    "area": "bidi",
+    "severity": "must",
+    "appliesTo": [
+      "locale-provider",
+      "layout"
+    ],
+    "checks": [
+      "The html element has dir=\"rtl\" when the interface language is Arabic.",
+      "No stylesheet contains a direction declaration (except a reset inside a component that renders data of a fixed direction, paired with a dir attribute).",
+      "With all stylesheets disabled the page still lays out right to left."
+    ],
+    "related": [
+      "R-A11Y-003",
+      "R-LAYOUT-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Internationalization: Structural markup and right-to-left text in HTML",
+        "url": "https://www.w3.org/International/questions/qa-html-dir",
+        "section": "Use the dir attribute, not CSS"
+      },
+      {
+        "name": "CSS Writing Modes Level 4",
+        "url": "https://www.w3.org/TR/css-writing-modes-4/",
+        "section": "2.1 direction — note for HTML authors"
+      },
+      {
+        "name": "HTML Living Standard",
+        "url": "https://html.spec.whatwg.org/multipage/",
+        "section": "The dir attribute"
+      }
+    ]
+  }
+}

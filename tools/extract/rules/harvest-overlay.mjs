@@ -1,0 +1,342 @@
+// Hand-written companion to harvest.mjs. The Arabic text of every harvested rule is copied by the script from the
+// owner's src/knowledge/rules.ts; this file adds what that source does not have: the area and severity in this
+// project's vocabulary, an English rendering of each field, and machine-checkable checks written from the owner's
+// own tests and contracts (the old test ids are dropped, the conditions they assert are kept).
+// Field order in `en`: title, problem, rationale, statement (the owner's "recommendation"), context, exceptions.
+
+import { NBSP, NNBSP } from './lib/common.mjs'
+
+export const RULE_OVERLAY = {
+  'R-NUM-001': {
+    area: 'numerals', severity: 'must', appliesTo: ['numeric-input', 'currency-input', 'phone-input'],
+    en: {
+      title: 'Accept every numeral system on input',
+      problem: 'Arabic keyboards type Arabic-Indic digits (٠-٩) or Persian digits (۰-۹), and many fields reject them or delete them without notice.',
+      rationale: 'What a person types with their usual keyboard is valid input. Rejecting it puts the conversion burden on them and causes errors.',
+      statement: 'Accept Latin, Arabic-Indic and Extended Arabic-Indic (Persian) digits, and convert them explicitly to a canonical form before validation. Show the conversion in explanatory tooling, not in the customer-facing interface.',
+      context: 'Numeric, monetary and phone fields.',
+      exceptions: 'Fields that must match external identifiers literally (such as SKU codes) are stored as typed.',
+    },
+    checks: [
+      'Parsing "1234.50", "١٢٣٤٫٥٠" and "۱۲۳۴٫۵۰" as an EGP amount yields the same value, 123450 minor units.',
+      'A phone field accepts "٠١٠١٢٣٤٥٦٧٨" and stores the same E.164 value as for "01012345678".',
+      'For any amount, the forms written in latn, arab and arabext digits parse to identical minor units (metamorphic property).',
+      'No keystroke of U+0660–U+0669 or U+06F0–U+06F9 in a numeric field is dropped or produces a validation error by itself.',
+    ],
+    fixtures: ['amounts-harvested', 'phones-harvested', 'amounts', 'phone-inputs'],
+  },
+  'R-NUM-002': {
+    area: 'numerals', severity: 'must', appliesTo: ['currency-input', 'numeric-input'],
+    en: {
+      title: 'Never interpret an ambiguous comma silently',
+      problem: '"1234,50" may mean one thousand two hundred thirty-four and fifty hundredths, or a number whose writer misplaced the thousands separator. Deleting the comma changes the amount a hundredfold.',
+      rationale: 'An error in a monetary amount is worse than one more question. The field does not have enough context to decide for the person.',
+      statement: 'Reject "," and "،" in amounts, explain why, and offer the possible readings as explicit choices the person picks from.',
+      context: 'Amounts in Arabic contexts where regional and European conventions mix.',
+      exceptions: 'A form built for a single market with a known convention may accept a thousands separator after review and testing.',
+    },
+    checks: [
+      'Parsing "1234,50" returns invalid with code ambiguous-comma, a null value, and a suggestion whose canonical form is "1234.50".',
+      'Parsing "1,234.50" returns invalid with code ambiguous-comma and the suggestion "1234.50".',
+      'For random a,b the input "a,b" is never accepted and never yields a value (property).',
+      '"1.2.3" is rejected as multiple-decimal; "12٬34" as invalid-grouping; "50 ج.م" as invalid-character; "50-" as sign-position.',
+    ],
+    fixtures: ['amounts-harvested', 'amounts'],
+  },
+  'R-NUM-003': {
+    area: 'money', severity: 'must', appliesTo: ['currency-input'],
+    en: {
+      title: 'State sign, range and precision explicitly, and never round',
+      problem: 'Silent rounding or floating-point arithmetic changes amounts (19.99 × 100 = 1998.9999…).',
+      rationale: 'The stored value must equal what the person saw and confirmed.',
+      statement: 'Store the amount as an integer in the currency\'s minor unit, built from the text and not from a multiplication. Reject excess fraction digits instead of rounding them.',
+      context: 'The currencies supported in the prototype: Egyptian pound and Saudi riyal (two decimals) and Kuwaiti dinar (three).',
+      exceptions: 'None in this release.',
+    },
+    checks: [
+      '"19.99" in EGP parses to exactly 1999 minor units.',
+      '"12.345" is rejected in EGP (too-many-fraction-digits) and accepted in KWD as 12345 minor units.',
+      '"-50" is rejected with negative-not-allowed when the field does not allow negatives.',
+      'An integer part longer than 12 digits is rejected as too-large.',
+      'The stored value of every accepted amount is a safe integer; no code path multiplies a float by a power of ten.',
+    ],
+    fixtures: ['amounts-harvested', 'amounts'],
+  },
+  'R-NUM-004': {
+    area: 'numerals', severity: 'must', appliesTo: ['locale-provider', 'currency-input', 'table'],
+    en: {
+      title: 'Separate how numbers are displayed from what is accepted',
+      problem: 'Tying the shape of displayed digits to the language assumes every Arabic speaker prefers one system.',
+      rationale: 'In Egypt Latin digits are common in interfaces; in the Gulf Arabic-Indic digits are common in many contexts. The preference is personal and regional.',
+      statement: 'Make the display numeral system a preference independent of language and direction, and accept every system on input whatever the preference. Identifiers (INV, SKU) stay Latin because they are matched against other systems.',
+      context: 'Amounts, counts and dates.',
+      exceptions: 'Official documents may mandate a specific system.',
+    },
+    checks: [
+      'Formatting 123450 minor units of EGP with numerals=latn gives "1,234.50"; the stored value is unchanged by the display setting.',
+      'With lang=ar and dir=rtl fixed, switching the numerals preference between latn and arab changes every displayed quantity and nothing else.',
+      'Every visible number is in the numerals of its nearest locale scope, except identifiers (a digit run inside a token with an ASCII letter or starting with #) and a number directly after a Latin word.',
+      'Input parsing gives the same result under both display preferences.',
+    ],
+    fixtures: ['formatting-harvested', 'numerals-in-copy'],
+  },
+  'R-NUM-005': {
+    area: 'numerals', severity: 'must', appliesTo: ['numeric-input', 'currency-input'],
+    en: {
+      title: 'Cleared means empty',
+      problem: 'Some fields restore the last valid amount after it is cleared, or turn the blank into zero.',
+      rationale: 'Zero is an amount; blank is the absence of one. Confusing them lets through a collection of a value nobody intended.',
+      statement: 'The empty value is always null. After clearing and leaving the field it stays empty, and the error "enter the amount" appears if it is required.',
+      context: 'All numeric fields.',
+      exceptions: 'None.',
+    },
+    checks: [
+      'Parsing "" (and whitespace-only input) returns status empty with value null, never 0.',
+      'After clear + blur the field value is null and the rendered text is empty.',
+      'A required empty amount field reports the "required" error, not a range or zero-value error.',
+    ],
+    fixtures: ['amounts-harvested'],
+  },
+  'R-BIDI-001': {
+    area: 'bidi', severity: 'must', appliesTo: ['text', 'table', 'phone-input', 'currency-input'],
+    en: {
+      title: 'Isolate Latin data inside Arabic text',
+      problem: 'Phone numbers, product codes and e-mail addresses have their parts swapped, or punctuation jumps around them, in an RTL context.',
+      rationale: 'The Unicode Bidirectional Algorithm (UAX #9) reorders adjacent runs; isolation stops a run from affecting what surrounds it.',
+      statement: 'Render phones, codes, links and code inside an isolated LTR element (bdi dir="ltr"), and strip invisible direction marks from numeric input because they carry no value.',
+      context: 'All mixed-direction text.',
+      exceptions: 'Mixed names such as «أحمد Khaled» stay in the paragraph direction with dir="auto".',
+    },
+    checks: [
+      'Every phone number, code, URL, e-mail address and code sample rendered inside RTL text has an ancestor (within the text block) that establishes a bidi isolate with direction ltr.',
+      'Parsing "\\u200f1234.50" as an amount yields the same value as "1234.50".',
+      'No stored numeric value contains U+200E, U+200F, U+061C, U+202A–U+202E or U+2066–U+2069.',
+    ],
+    fixtures: ['amounts-harvested', 'mixed-direction'],
+  },
+  'R-BIDI-002': {
+    area: 'icons', severity: 'must', appliesTo: ['icon', 'button', 'icon-button'],
+    en: {
+      title: 'Mirror directional icons only',
+      problem: 'Mirroring every icon flips symbols that have no direction (magnifier, speaker, check mark) and distorts their meaning.',
+      rationale: 'Mirroring belongs to what expresses progress in the reading direction: next, previous and back.',
+      statement: 'Record a mirroring behaviour for every icon (auto or never). Arrows and chevrons follow the direction; physical objects and universal symbols do not.',
+      context: 'The system\'s icon registry.',
+      exceptions: 'Media playback icons usually stay as they are; each symbol is reviewed in its context.',
+    },
+    checks: [
+      'Every icon in the registry declares mirror: auto or never; an icon without the field fails the build.',
+      'In dir=rtl an icon with mirror=auto is drawn with a horizontal flip and one with mirror=never has an identity transform.',
+      'Check, search, close, plus and media-play icons are registered as never.',
+    ],
+  },
+  'R-BIDI-003': {
+    area: 'bidi', severity: 'must', appliesTo: ['phone-input', 'currency-input', 'number-format'],
+    en: {
+      title: 'Do not separate Arabic-Indic digit groups with an ordinary space',
+      problem: 'A phone number in Arabic-Indic digits separated by ordinary spaces is drawn inside an LTR field with its groups in reverse order (last group first). And in common fonts the thousands separator «٬» has the same shape as the decimal separator «٫», so an amount looks as if it had two decimal marks.',
+      rationale: 'Arabic-Indic digits are class AN in UAX #9; an ordinary space is neutral, resolves to right-to-left between them and reorders the groups even inside an LTR isolate. The no-break space (U+00A0) and the narrow no-break space (U+202F) are class CS and keep the number one run (rule W4). In IBM Plex Sans Arabic and Readex Pro «٬» and «٫» are drawn almost identically.',
+      statement: 'Join Arabic-Indic digit groups with U+00A0 in phone numbers and U+202F in amounts instead of a space and «٬». Convert spaces typed in numeric fields automatically while keeping the caret position. Do not add invisible direction marks.',
+      context: 'Displaying amounts, phones and counts in Arabic-Indic digits, and editing numeric fields.',
+      exceptions: 'Input still accepts «٬» and the ordinary space as valid thousands separators. Latin digits are not affected by the problem, but the conversion is safe for them.',
+    },
+    checks: [
+      'Formatting 123450 minor units of EGP with numerals=arab gives U+0661 U+202F U+0662 U+0663 U+0664 U+066B U+0665 U+0660 — no U+0020 and no U+066C.',
+      'A formatted Arabic-Indic amount matches ^-?[٠-٩]+(\\u202F[٠-٩]{3})*(٫[٠-٩]+)?$ and parses back to the same minor units (property).',
+      'A formatted phone number in Arabic-Indic digits contains no U+0020; its groups are joined with U+00A0 and it parses back to the same E.164 value.',
+      'Under UAX #9 the formatted string resolves to a single level run for all digits and separators in both paragraph directions.',
+      'No validation message contains a digit, an ASCII space, then a digit.',
+      'Typing a space between digit groups leaves the caret offset unchanged after the replacement.',
+    ],
+    fixtures: ['formatting-harvested', 'mixed-direction'],
+  },
+  'R-SRCH-001': {
+    area: 'search', severity: 'must', appliesTo: ['search-field', 'table', 'combobox'],
+    en: {
+      title: 'Hamza-tolerant search that never edits names',
+      problem: 'People type «احمد» and search for «أحمد», do not find the customer and add them a second time.',
+      rationale: 'Normalisation happens in the comparison only. The stored name belongs to its owner and is not corrected on their behalf.',
+      statement: 'Normalise hamza forms and diacritics when matching, keep the highlight on the original text, and make the tolerance a visible option that can be switched off.',
+      context: 'Searching customer names.',
+      exceptions: 'Search in religious or linguistic documents may require literal matching.',
+    },
+    checks: [
+      'With default tolerance «احمد» matches «أحمد Khaled»; with strict matching it does not.',
+      '«khaled» matches «أحمد Khaled» and the highlighted range is UTF-16 [5,11) of the original string.',
+      '«محمد» matches «مُحَمَّد السيد» and the highlighted range [0,8) covers the diacritics.',
+      'Normalising a name for search never mutates the stored string.',
+      'Any query that matches strictly also matches with tolerance (tolerance only adds matches).',
+      'A digit query of at least three digits, in any numeral system, matches a phone stored as "+20 10 1234 5678"; two digits or a query with letters does not use digit matching.',
+    ],
+    fixtures: ['search-harvested', 'search-pairs', 'table-harvested'],
+  },
+  'R-SRCH-002': {
+    area: 'search', severity: 'must', appliesTo: ['form', 'inline-message'],
+    en: {
+      title: 'Warn about similarity; never merge identities',
+      problem: '«إيمان عبد الرحمن» and «ايمان عبدالرحمن» may be two different people.',
+      rationale: 'Automatic merging mixes the financial accounts of different people, and the damage is hard to undo.',
+      statement: 'When adding a customer, show the similar records with their phone number to tell them apart, and give both options: open the existing one or add as a new customer.',
+      context: 'Adding customers.',
+      exceptions: 'None.',
+    },
+    checks: [
+      'Looking up «ايمان عبدالرحمن» among [«إيمان عبد الرحمن», «إيناس عبد الرحيم»] reports exactly one similar record.',
+      'A similarity hit produces a warning with two actions (open existing, add new) and never changes or links records by itself.',
+      'The similar record is shown with a second distinguishing field (phone).',
+    ],
+    fixtures: ['search-harvested', 'names'],
+  },
+  'R-A11Y-001': {
+    area: 'accessibility', severity: 'must', appliesTo: ['icon-button', 'dialog', 'search-field'],
+    en: {
+      title: 'Every icon button has an audible Arabic name',
+      problem: 'Buttons showing "X" and "⋯" are read as "button" or as "Close" in English inside an Arabic interface.',
+      rationale: 'A screen reader announces only the accessible name; an icon alone has none.',
+      statement: 'Make the label property mandatory on icon buttons, and take the default internal strings of components from the locale messages.',
+      context: 'All icon buttons.',
+      exceptions: 'None.',
+    },
+    checks: [
+      'Every element with role button whose content is only an icon has a non-empty accessible name.',
+      'With lang=ar no default accessible name supplied by a component consists only of Latin letters.',
+      'The icon-button type makes label a required property (compile-time check).',
+    ],
+  },
+  'R-A11Y-002': {
+    area: 'accessibility', severity: 'must', appliesTo: ['dialog', 'drawer'],
+    en: {
+      title: 'Focus behaviour in dialogs',
+      problem: 'Dialogs open with focus left behind them, or close and drop focus at the top of the page.',
+      rationale: 'A keyboard or screen-reader user always needs to know where they are.',
+      statement: 'Move focus to the first field, trap it inside the dialog, close on Escape unless a submission is in progress, and return focus to the element that opened the dialog.',
+      context: 'Dialog and drawer.',
+      exceptions: 'Closing is disabled during submission so the state of the operation is not lost.',
+    },
+    checks: [
+      'After opening, document.activeElement is inside the dialog.',
+      'Tab and Shift+Tab from the last and first focusable elements stay inside the dialog.',
+      'Escape closes the dialog when idle and does nothing while a submission is pending.',
+      'After closing, focus is on the element that opened the dialog.',
+    ],
+  },
+  'R-CNT-001': {
+    area: 'content', severity: 'must', appliesTo: ['inline-message', 'toast', 'form'],
+    en: {
+      title: 'An error message explains, preserves, and says what can be done',
+      problem: 'Messages like "an error occurred" say neither what happened nor what was saved.',
+      rationale: 'The person needs to know the state of their money and data before deciding.',
+      statement: 'Say what failed, what did not happen (no collection was recorded), that the input is still there, and offer only the actions the system really supports.',
+      context: 'Every failure state.',
+      exceptions: 'None.',
+    },
+    checks: [
+      'Every error message key has a text that names the failed operation; no message equals a generic "an error occurred" string.',
+      'After a failed submission every field still holds the value it had before submitting.',
+      'Each action offered in a failure message is bound to a handler.',
+    ],
+  },
+  'R-FLOW-001': {
+    area: 'flow', severity: 'must', appliesTo: ['button', 'form'],
+    en: {
+      title: 'Block duplicate submission while busy',
+      problem: 'Pressing "confirm collection" twice may record two operations.',
+      rationale: 'Disabling the button alone is not enough against Enter or a fast double press.',
+      statement: 'Guard submission with a synchronous internal state, and keep the button focusable with aria-busy and a text that explains what is happening.',
+      context: 'All financial actions.',
+      exceptions: 'None.',
+    },
+    checks: [
+      'Two activations within the same task (double click, click then Enter) call the submit handler exactly once.',
+      'While pending the button has aria-busy="true", remains focusable and is not removed from the tab order.',
+      'While pending the button\'s accessible name or description states the operation in progress.',
+    ],
+  },
+  'R-TYPE-001': {
+    area: 'typography', severity: 'must', appliesTo: ['tokens', 'text'],
+    en: {
+      title: 'No letter-spacing between Arabic letters',
+      problem: 'The letter-spacing property separates joined letters and breaks the shape of the word.',
+      rationale: 'Arabic is a joined script; widening is done with kashida or by choosing a typeface, not with spacing.',
+      statement: 'Do not use letter-spacing in any style applied to Arabic. Choose line height after rendering real vocalised text.',
+      context: 'All typographic styles.',
+      exceptions: 'Large Latin symbols (such as abbreviations) in a separate element.',
+    },
+    checks: [
+      'The computed letter-spacing of every element whose text contains an Arabic letter is 0 (normal).',
+      'No typography token used for Arabic defines a non-zero letter-spacing.',
+      'A line of fully vocalised text does not overlap the lines above and below it at the token line height.',
+    ],
+    fixtures: ['text-stress'],
+  },
+}
+
+// Fixtures in the owner's fixtures.ts that are object literals with a hand-written run(): the script copies id,
+// requirement and rule; the structured input and expected value below are transcribed from the body of run().
+export const FIXTURE_OVERLAY = {
+  'FM-F01': { set: 'formatting-harvested', input: { operation: 'formatAmount', minor: 123450, currency: 'EGP', numerals: 'latn' }, expected: { text: '1,234.50' } },
+  'FM-F02': { set: 'formatting-harvested', input: { operation: 'formatAmount', minor: 123450, currency: 'EGP', numerals: 'arab' }, expected: { text: `١${NNBSP}٢٣٤٫٥٠` } },
+  'FM-F03': { set: 'formatting-harvested', input: { operation: 'formatPhoneNational', e164: '+201012345678', numerals: 'arab' }, expected: { text: `٠١٠${NBSP}١٢٣٤${NBSP}٥٦٧٨`, mustNotContain: ['U+0020'] } },
+  'FM-F04': { set: 'formatting-harvested', input: { operation: 'formatPhoneInternational', e164: '+201012345678', numerals: 'arab' }, expected: { text: `+٢٠${NBSP}١٠${NBSP}١٢٣٤${NBSP}٥٦٧٨` } },
+  'SR-F06': { set: 'search-harvested', input: { operation: 'matchDigits', queries: ['0101', '٠١٠١', '01012345678'], target: '+20 10 1234 5678' }, expected: { match: [true, true, true] } },
+  'SR-F07': { set: 'search-harvested', input: { operation: 'matchDigits', queries: ['01', 'احمد 010'], target: '+20 10 1234 5678' }, expected: { match: [false, false] } },
+  'SR-F01': { set: 'search-harvested', input: { operation: 'matchText', query: 'احمد', target: 'أحمد Khaled', tolerance: 'default' }, expected: { match: true } },
+  'SR-F02': { set: 'search-harvested', input: { operation: 'matchText', query: 'احمد', target: 'أحمد Khaled', tolerance: 'strict' }, expected: { match: false } },
+  'SR-F03': { set: 'search-harvested', input: { operation: 'matchText', query: 'khaled', target: 'أحمد Khaled', tolerance: 'default' }, expected: { match: true, rangesUtf16: [[5, 11]] } },
+  'SR-F04': { set: 'search-harvested', input: { operation: 'matchText', query: 'محمد', target: 'مُحَمَّد السيد', tolerance: 'default' }, expected: { match: true, rangesUtf16: [[0, 8]] } },
+  'SR-F05': { set: 'search-harvested', input: { operation: 'similarNames', name: 'ايمان عبدالرحمن', records: ['إيمان عبد الرحمن', 'إيناس عبد الرحيم'] }, expected: { similar: ['إيمان عبد الرحمن'] } },
+}
+
+// English rendering of each fixture's requirement line (the Arabic original is kept as `note`'s first part).
+export const REQUIREMENT_EN = {
+  'CI-F01': 'Latin digits with a dot as decimal separator',
+  'CI-F02': 'Arabic-Indic digits with the Arabic decimal separator',
+  'CI-F03': 'Persian (Extended Arabic-Indic) digits',
+  'CI-F04': 'An ambiguous comma is not interpreted silently; the likely meaning is suggested',
+  'CI-F05': 'More than one decimal separator is rejected',
+  'CI-F06': 'An empty field has the value null, not zero',
+  'CI-F07': 'Fraction digits beyond the currency minor unit are rejected without rounding',
+  'CI-F08': 'The Kuwaiti dinar accepts three decimal digits',
+  'CI-F09': 'A Latin thousands comma with a decimal dot stays ambiguous, with a suggestion',
+  'CI-F10': 'The Arabic thousands separator in a valid position',
+  'CI-F11': 'A misplaced thousands separator is rejected',
+  'CI-F12': 'A negative is rejected when the field does not allow it',
+  'CI-F13': 'A currency symbol inside the field is not silently deleted',
+  'CI-F14': 'Pasted invisible direction marks do not change the value',
+  'CI-F15': 'Exact conversion to minor units without floating-point arithmetic',
+  'CI-F16': 'A leading decimal separator',
+  'CI-F17': 'More than 12 digits before the separator is rejected',
+  'CI-F18': 'A minus sign after the number (typed right-to-left) is rejected explicitly',
+  'FM-F01': 'Displaying with Latin digits does not change the stored value',
+  'FM-F02': 'Arabic-Indic display: the decimal separator is the only comma-like mark, thousands use a narrow no-break space',
+  'FM-F03': 'A phone number in Arabic-Indic digits contains no ordinary space that would reverse the group order',
+  'FM-F04': 'The international phone form in Arabic-Indic digits has no ordinary spaces',
+  'PH-F01': 'A local Egyptian mobile number',
+  'PH-F02': 'A mobile number in Arabic-Indic digits',
+  'PH-F03': 'An international number with spaces',
+  'PH-F04': 'A number that is too short',
+  'PH-F05': 'An unsupported prefix',
+  'PH-F06': 'A Latin letter that looks like the digit 1',
+  'SR-F06': 'Searching by the local phone number finds the number stored in international form, in any digits',
+  'SR-F07': 'Two digits only, or text containing letters, is not treated as a phone number',
+  'SR-F01': 'Tolerant search: «احمد» finds «أحمد Khaled»',
+  'SR-F02': 'Strict mode distinguishes hamza',
+  'SR-F03': 'The Latin part of a mixed name is case-insensitive',
+  'SR-F04': 'Diacritics do not prevent a match and stay displayed',
+  'SR-F05': 'Similar names are shown as a warning and are not merged',
+}
+
+// Seeded property tests in the owner's suites, transcribed by hand: the invariant and its generator, not the code.
+export const PROPERTIES = [
+  { id: 'PROP-01', file: 'src/arabic/arabic.test.ts', rules: ['R-NUM-001'], invariant: 'For a random amount (0 ≤ minor < 1e9, EGP), the ungrouped editing form written in Latin digits, in Arabic-Indic digits with U+066B, and in Extended Arabic-Indic digits all parse to the same minor units.', cases: 500, seed: 20260314 },
+  { id: 'PROP-02', file: 'src/arabic/arabic.test.ts', rules: ['R-NUM-004', 'R-BIDI-003'], invariant: 'For a random amount (0 ≤ minor < 1e11) in EGP and KWD, both the editing form and the grouped display form in Arabic-Indic digits parse back to the same minor units.', cases: 500, seed: 20260315 },
+  { id: 'PROP-03', file: 'src/arabic/arabic.test.ts', rules: ['R-NUM-003'], invariant: 'Parsing is deterministic and the canonical string is a fixed point: parse(canonical(parse(x))) has the same canonical string (SAR).', cases: 500, seed: 20260316 },
+  { id: 'PROP-04', file: 'src/arabic/arabic.test.ts', rules: ['R-NUM-002'], invariant: 'For random integers a < 99999 and b < 999, the input "a,b" is invalid and yields no value.', cases: 500, seed: 20260317 },
+  { id: 'PROP-05', file: 'src/arabic/arabic.test.ts', rules: ['R-SRCH-001'], invariant: 'For a random 2–4 character substring of a name, a strict match implies a tolerant match: tolerance only adds matches.', cases: 500, seed: 20260318 },
+  { id: 'PROP-06', file: 'src/arabic/arabic.test.ts', rules: ['R-SRCH-001'], invariant: 'Normalising a name for search leaves the stored string unchanged.', cases: 1 },
+  { id: 'PROP-07', file: 'src/arabic/arabic.test.ts', rules: ['R-BIDI-003'], invariant: 'An amount displayed in Arabic-Indic digits (EGP, KWD; |minor| < 1e14, 10% negative) matches ^-?[٠-٩]+(U+202F[٠-٩]{3})*(٫[٠-٩]+)?$ and parses back to the same value; a random Egyptian mobile number displayed in Arabic-Indic digits (national and international form) contains no U+0020 and parses back to the same E.164 value.', cases: 500, seed: 20260319 },
+  { id: 'CT-01', file: 'src/content/messages.test.ts', rules: ['R-NUM-004', 'R-BIDI-003'], invariant: 'For every amount error code × currency (EGP, SAR, KWD) and every phone error code, under each display numerals setting: the message contains no digit of the other system, and never a digit, one or more U+0020, then a digit.', cases: 76 },
+  { id: 'BD-09', file: 'src/arabic/bidi-runs.test.ts', rules: ['R-BIDI-001'], invariant: 'For random mixed strings of 1–7 Arabic, Latin and neutral words (optionally wrapped in parentheses, guillemets or an opening quote): the runs concatenate to the input, an isolate never has the line direction, never starts or ends inside a word, has no leading or trailing space, and no run is empty.', cases: 600, seed: 20261107 },
+  { id: 'BD-10', file: 'src/arabic/bidi-runs.test.ts', rules: ['R-BIDI-001'], invariant: 'For random single-script strings (Arabic + neutrals, Latin + neutrals): no run is isolated and the direction, when there is one, is that of the script.', cases: 500, seed: 7 },
+  { id: 'TE-20', file: 'src/atomic/data/table/table.test.ts', rules: ['R-SRCH-001'], invariant: 'For random tables of 1–40 rows: sorting is an ordered permutation of the rows, a text filter returns a subset of the input whose count equals the reported filtered count, and the pages of any page size partition the rows in order.', cases: 600, seed: 20261108 },
+]

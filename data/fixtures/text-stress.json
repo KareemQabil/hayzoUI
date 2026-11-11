@@ -1,0 +1,2157 @@
+{
+  "kind": "fixture",
+  "schemaVersion": 1,
+  "id": "text-stress",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "version": "18.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "ICU (via Node.js Intl)",
+        "url": "https://github.com/unicode-org/icu",
+        "version": "ICU 78.3, CLDR 48.0, tzdata 2026e, Node 22.23.4",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Unicode Standard Annex #9: Unicode Bidirectional Algorithm",
+        "url": "https://www.unicode.org/reports/tr9/tr9-52.html",
+        "version": "Revision 52 (Unicode 18.0.0), 2026-09-01",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "notes": "Strings composed by the researcher. Computed fields: counts and normalisation by the runtime (ICU 78.3, Unicode 17 data in Node 22 — grapheme counts of characters added in Unicode 18 are not covered), bidi-control inventory and display order by lib/uax9.mjs. The choice of strings is from model knowledge.",
+    "script": "tools/extract/rules/build-fixtures.mjs"
+  },
+  "data": {
+    "purpose": "Strings that break layouts and text handling: unbreakable runs, kashida, lam-alef and wide ligatures, joining controls, stacked marks, emoji beside Arabic, bidi controls used to spoof or left unbalanced, decomposed and look-alike letters, stray invisible characters. Use it for wrapping and truncation, line-height, caret movement and deletion by grapheme, sanitising of pasted or user-supplied text, and search normalisation.",
+    "appliesTo": [
+      "text",
+      "text-field",
+      "truncate",
+      "sanitize",
+      "search-match"
+    ],
+    "cases": [
+      {
+        "id": "TS-001",
+        "input": {
+          "text": "مستشفياتمستشفياتمستشفياتمستشفياتمستشفياتمستشفياتمستشفياتمستشفياتمستشفياتمستشفياتمستشفياتمستشفيات",
+          "codePoints": [
+            "U+0645",
+            "U+0633",
+            "U+062A",
+            "U+0634",
+            "U+0641",
+            "U+064A",
+            "U+0627",
+            "U+062A",
+            "U+0645",
+            "U+0633",
+            "U+062A",
+            "U+0634",
+            "U+0641",
+            "U+064A",
+            "U+0627",
+            "U+062A",
+            "… 80 more"
+          ]
+        },
+        "expected": {
+          "codePoints": 96,
+          "utf16Length": 96,
+          "graphemes": 96,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "unbreakable",
+          "arabic"
+        ],
+        "note": "96 joined Arabic letters with no space: no legal line break.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-002",
+        "input": {
+          "text": "https://example.com/very-long-path-segment-very-long-path-segment-very-long-path-segment-very-long-path-segment-very-long-path-segment-very-long-path-segment-end",
+          "codePoints": [
+            "U+0068",
+            "U+0074",
+            "U+0074",
+            "U+0070",
+            "U+0073",
+            "U+003A",
+            "U+002F",
+            "U+002F",
+            "U+0065",
+            "U+0078",
+            "U+0061",
+            "U+006D",
+            "U+0070",
+            "U+006C",
+            "U+0065",
+            "U+002E",
+            "… 145 more"
+          ]
+        },
+        "expected": {
+          "codePoints": 161,
+          "utf16Length": 161,
+          "graphemes": 161,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "unbreakable",
+          "url"
+        ],
+        "note": "A long URL.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-003",
+        "input": {
+          "text": "12345678901234567890123456789012345678901234567890123456789012345678901234567890",
+          "codePoints": [
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+0039",
+            "U+0030",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0035",
+            "U+0036",
+            "… 64 more"
+          ]
+        },
+        "expected": {
+          "codePoints": 80,
+          "utf16Length": 80,
+          "graphemes": 80,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "unbreakable",
+          "digits"
+        ],
+        "note": "80 digits.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-004",
+        "input": {
+          "text": "ــــــــــــــــــــــــــــــــــــــــ",
+          "codePoints": [
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0640"
+          ]
+        },
+        "expected": {
+          "codePoints": 40,
+          "utf16Length": 40,
+          "graphemes": 40,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "unbreakable",
+          "kashida"
+        ],
+        "note": "40 tatweel characters alone.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-005",
+        "input": {
+          "text": "Pneumonoultramicroscopicsilicovolcanoconiosisالمستشفيات",
+          "codePoints": [
+            "U+0050",
+            "U+006E",
+            "U+0065",
+            "U+0075",
+            "U+006D",
+            "U+006F",
+            "U+006E",
+            "U+006F",
+            "U+0075",
+            "U+006C",
+            "U+0074",
+            "U+0072",
+            "U+0061",
+            "U+006D",
+            "U+0069",
+            "U+0063",
+            "U+0072",
+            "U+006F",
+            "U+0073",
+            "U+0063",
+            "U+006F",
+            "U+0070",
+            "U+0069",
+            "U+0063",
+            "U+0073",
+            "U+0069",
+            "U+006C",
+            "U+0069",
+            "U+0063",
+            "U+006F",
+            "U+0076",
+            "U+006F",
+            "U+006C",
+            "U+0063",
+            "U+0061",
+            "U+006E",
+            "U+006F",
+            "U+0063",
+            "U+006F",
+            "U+006E",
+            "U+0069",
+            "U+006F",
+            "U+0073",
+            "U+0069",
+            "U+0073",
+            "U+0627",
+            "U+0644",
+            "U+0645",
+            "U+0633",
+            "U+062A",
+            "U+0634",
+            "U+0641",
+            "U+064A",
+            "U+0627",
+            "U+062A"
+          ]
+        },
+        "expected": {
+          "codePoints": 55,
+          "utf16Length": 55,
+          "graphemes": 55,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "unbreakable",
+          "mixed"
+        ],
+        "note": "Latin and Arabic with no space between them.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-010",
+        "input": {
+          "text": "جميـــل",
+          "codePoints": [
+            "U+062C",
+            "U+0645",
+            "U+064A",
+            "U+0640",
+            "U+0640",
+            "U+0640",
+            "U+0644"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "kashida"
+        ],
+        "note": "Tatweel typed for emphasis inside a word.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-011",
+        "input": {
+          "text": "الرحمـٰن",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0631",
+            "U+062D",
+            "U+0645",
+            "U+0640",
+            "U+0670",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "kashida",
+          "superscript-alef"
+        ],
+        "note": "Tatweel carrying a superscript alef (U+0670).",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-012",
+        "input": {
+          "text": "ـة",
+          "codePoints": [
+            "U+0640",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 2,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "kashida",
+          "isolated-suffix"
+        ],
+        "note": "Tatweel + taa marbuta, as used to show a suffix form.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-020",
+        "input": {
+          "text": "لا",
+          "codePoints": [
+            "U+0644",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 2,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "lam-alef"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-021",
+        "input": {
+          "text": "الآن",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0622",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "lam-alef",
+          "madda"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-022",
+        "input": {
+          "text": "لأن",
+          "codePoints": [
+            "U+0644",
+            "U+0623",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "lam-alef",
+          "hamza"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-023",
+        "input": {
+          "text": "للإسلام",
+          "codePoints": [
+            "U+0644",
+            "U+0644",
+            "U+0625",
+            "U+0633",
+            "U+0644",
+            "U+0627",
+            "U+0645"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "lam-alef",
+          "hamza"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-024",
+        "input": {
+          "text": "كلا",
+          "codePoints": [
+            "U+0643",
+            "U+0644",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "lam-alef",
+          "final"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-025",
+        "input": {
+          "text": "لَا",
+          "codePoints": [
+            "U+0644",
+            "U+064E",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 2,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "lam-alef",
+          "tashkeel"
+        ],
+        "note": "A mark between lam and alef must not break the ligature.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-026",
+        "input": {
+          "text": "الله",
+          "codePoints": [
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "ligature",
+          "allah"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-027",
+        "input": {
+          "text": "ﷲ",
+          "codePoints": [
+            "U+FDF2"
+          ]
+        },
+        "expected": {
+          "codePoints": 1,
+          "utf16Length": 1,
+          "graphemes": 1,
+          "nfcEqualsInput": true,
+          "nfkc": [
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "tags": [
+          "ligature",
+          "presentation-form"
+        ],
+        "note": "U+FDF2 ARABIC LIGATURE ALLAH ISOLATED FORM.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-028",
+        "input": {
+          "text": "محمد ﷺ",
+          "codePoints": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+FDFA"
+          ]
+        },
+        "expected": {
+          "codePoints": 6,
+          "utf16Length": 6,
+          "graphemes": 6,
+          "nfcEqualsInput": true,
+          "nfkc": [
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0020",
+            "U+0635",
+            "U+0644",
+            "U+0649",
+            "U+0020",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647",
+            "U+0020",
+            "U+0639",
+            "U+0644",
+            "U+064A",
+            "U+0647",
+            "U+0020",
+            "U+0648",
+            "U+0633",
+            "U+0644",
+            "U+0645"
+          ]
+        },
+        "tags": [
+          "ligature",
+          "presentation-form"
+        ],
+        "note": "U+FDFA, a whole phrase in one code point.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-029",
+        "input": {
+          "text": "﷽",
+          "codePoints": [
+            "U+FDFD"
+          ]
+        },
+        "expected": {
+          "codePoints": 1,
+          "utf16Length": 1,
+          "graphemes": 1,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "ligature",
+          "presentation-form",
+          "wide"
+        ],
+        "note": "U+FDFD, a very wide single glyph: one grapheme, many advance widths.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-030",
+        "input": {
+          "text": "ﻻ",
+          "codePoints": [
+            "U+FEFB"
+          ]
+        },
+        "expected": {
+          "codePoints": 1,
+          "utf16Length": 1,
+          "graphemes": 1,
+          "nfcEqualsInput": true,
+          "nfkc": [
+            "U+0644",
+            "U+0627"
+          ]
+        },
+        "tags": [
+          "lam-alef",
+          "presentation-form"
+        ],
+        "note": "U+FEFB, lam-alef as a compatibility presentation form; NFKC gives U+0644 U+0627.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-031",
+        "input": {
+          "text": "ﻣﺮﺣﺒﺎ",
+          "codePoints": [
+            "U+FEE3",
+            "U+FEAE",
+            "U+FEA3",
+            "U+FE92",
+            "U+FE8E"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "nfcEqualsInput": true,
+          "nfkc": [
+            "U+0645",
+            "U+0631",
+            "U+062D",
+            "U+0628",
+            "U+0627"
+          ]
+        },
+        "tags": [
+          "presentation-form"
+        ],
+        "note": "A word stored as presentation forms (visual-order legacy data).",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-040",
+        "input": {
+          "text": "می\u200cخواهم",
+          "codePoints": [
+            "U+0645",
+            "U+06CC",
+            "U+200C",
+            "U+062E",
+            "U+0648",
+            "U+0627",
+            "U+0647",
+            "U+0645"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "zwnj",
+          "persian"
+        ],
+        "note": "Persian word with U+200C: the yeh must take its final form.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-041",
+        "input": {
+          "text": "ه\u200d",
+          "codePoints": [
+            "U+0647",
+            "U+200D"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 1,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "zwj"
+        ],
+        "note": "Heh + U+200D: initial form used as an abbreviation of «هجري».",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-042",
+        "input": {
+          "text": "ب\u200d \u200dب",
+          "codePoints": [
+            "U+0628",
+            "U+200D",
+            "U+0020",
+            "U+200D",
+            "U+0628"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 3,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "zwj"
+        ],
+        "note": "Joining forced on both sides of a space.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-043",
+        "input": {
+          "text": "كتاب\u200cها",
+          "codePoints": [
+            "U+0643",
+            "U+062A",
+            "U+0627",
+            "U+0628",
+            "U+200C",
+            "U+0647",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 6,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "zwnj"
+        ],
+        "note": "U+200C between letters that would otherwise join.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-044",
+        "input": {
+          "text": "عربي\u200bعربي",
+          "codePoints": [
+            "U+0639",
+            "U+0631",
+            "U+0628",
+            "U+064A",
+            "U+200B",
+            "U+0639",
+            "U+0631",
+            "U+0628",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 9,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "zwsp"
+        ],
+        "note": "U+200B allows a line break without a visible space.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-050",
+        "input": {
+          "text": "مُحَمَّدٌ",
+          "codePoints": [
+            "U+0645",
+            "U+064F",
+            "U+062D",
+            "U+064E",
+            "U+0645",
+            "U+064E",
+            "U+0651",
+            "U+062F",
+            "U+064C"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 4,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "marks"
+        ],
+        "note": "Fully vocalised word; the shadda carries a second mark.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-051",
+        "input": {
+          "text": "ٱلرَّحْمَٰنِ",
+          "codePoints": [
+            "U+0671",
+            "U+0644",
+            "U+0631",
+            "U+064E",
+            "U+0651",
+            "U+062D",
+            "U+0652",
+            "U+0645",
+            "U+064E",
+            "U+0670",
+            "U+0646",
+            "U+0650"
+          ]
+        },
+        "expected": {
+          "codePoints": 12,
+          "utf16Length": 12,
+          "graphemes": 6,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "marks",
+          "quranic"
+        ],
+        "note": "Alef wasla, shadda + fatha, superscript alef.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-052",
+        "input": {
+          "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+          "codePoints": [
+            "U+0628",
+            "U+0650",
+            "U+0633",
+            "U+0652",
+            "U+0645",
+            "U+0650",
+            "U+0020",
+            "U+0671",
+            "U+0644",
+            "U+0644",
+            "U+064E",
+            "U+0651",
+            "U+0647",
+            "U+0650",
+            "U+0020",
+            "U+0671",
+            "U+0644",
+            "U+0631",
+            "U+064E",
+            "U+0651",
+            "U+062D",
+            "U+0652",
+            "U+0645",
+            "U+064E",
+            "U+0670",
+            "U+0646",
+            "U+0650",
+            "U+0020",
+            "U+0671",
+            "U+0644",
+            "U+0631",
+            "U+064E",
+            "U+0651",
+            "U+062D",
+            "U+0650",
+            "U+064A",
+            "U+0645",
+            "U+0650"
+          ]
+        },
+        "expected": {
+          "codePoints": 38,
+          "utf16Length": 38,
+          "graphemes": 22,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "marks",
+          "quranic",
+          "line-height"
+        ],
+        "note": "A fully vocalised line for line-height tests.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-053",
+        "input": {
+          "text": "بَّٕٓٔ",
+          "codePoints": [
+            "U+0628",
+            "U+0651",
+            "U+064E",
+            "U+0653",
+            "U+0654",
+            "U+0655"
+          ]
+        },
+        "expected": {
+          "codePoints": 6,
+          "utf16Length": 6,
+          "graphemes": 1,
+          "nfcEqualsInput": false,
+          "nfc": [
+            "U+0628",
+            "U+064E",
+            "U+0651",
+            "U+0655",
+            "U+0653",
+            "U+0654"
+          ]
+        },
+        "tags": [
+          "marks",
+          "stacked"
+        ],
+        "note": "One base with five combining marks above and below.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-054",
+        "input": {
+          "text": "َب",
+          "codePoints": [
+            "U+064E",
+            "U+0628"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 2,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "marks",
+          "orphan-mark"
+        ],
+        "note": "A combining mark with no base at the start of the string.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-055",
+        "input": {
+          "text": "اً",
+          "codePoints": [
+            "U+0627",
+            "U+064B"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 1,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "marks",
+          "tanween"
+        ],
+        "note": "Tanween on alef, as in adverbs.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-056",
+        "input": {
+          "text": "شكرًا جزيلًا",
+          "codePoints": [
+            "U+0634",
+            "U+0643",
+            "U+0631",
+            "U+064B",
+            "U+0627",
+            "U+0020",
+            "U+062C",
+            "U+0632",
+            "U+064A",
+            "U+0644",
+            "U+064B",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 12,
+          "utf16Length": 12,
+          "graphemes": 10,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "marks",
+          "tanween"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-057",
+        "input": {
+          "text": "لِلَّٰهِ",
+          "codePoints": [
+            "U+0644",
+            "U+0650",
+            "U+0644",
+            "U+064E",
+            "U+0651",
+            "U+0670",
+            "U+0647",
+            "U+0650"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 3,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "marks",
+          "lam-alef"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-060",
+        "input": {
+          "text": "مرحبا 👋",
+          "codePoints": [
+            "U+0645",
+            "U+0631",
+            "U+062D",
+            "U+0628",
+            "U+0627",
+            "U+0020",
+            "U+1F44B"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 8,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-061",
+        "input": {
+          "text": "👋 مرحبا",
+          "codePoints": [
+            "U+1F44B",
+            "U+0020",
+            "U+0645",
+            "U+0631",
+            "U+062D",
+            "U+0628",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 8,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji",
+          "at-start"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-062",
+        "input": {
+          "text": "🇪🇬 مصر",
+          "codePoints": [
+            "U+1F1EA",
+            "U+1F1EC",
+            "U+0020",
+            "U+0645",
+            "U+0635",
+            "U+0631"
+          ]
+        },
+        "expected": {
+          "codePoints": 6,
+          "utf16Length": 8,
+          "graphemes": 5,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji",
+          "flag"
+        ],
+        "note": "A flag is two regional-indicator code points and one grapheme.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-063",
+        "input": {
+          "text": "👨\u200d👩\u200d👧 عائلة",
+          "codePoints": [
+            "U+1F468",
+            "U+200D",
+            "U+1F469",
+            "U+200D",
+            "U+1F467",
+            "U+0020",
+            "U+0639",
+            "U+0627",
+            "U+0626",
+            "U+0644",
+            "U+0629"
+          ]
+        },
+        "expected": {
+          "codePoints": 11,
+          "utf16Length": 14,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji",
+          "zwj-sequence"
+        ],
+        "note": "Family emoji joined with U+200D.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-064",
+        "input": {
+          "text": "👍🏽 تمام",
+          "codePoints": [
+            "U+1F44D",
+            "U+1F3FD",
+            "U+0020",
+            "U+062A",
+            "U+0645",
+            "U+0627",
+            "U+0645"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 9,
+          "graphemes": 6,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji",
+          "skin-tone"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-065",
+        "input": {
+          "text": "1️⃣ أولًا",
+          "codePoints": [
+            "U+0031",
+            "U+FE0F",
+            "U+20E3",
+            "U+0020",
+            "U+0623",
+            "U+0648",
+            "U+0644",
+            "U+064B",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 6,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji",
+          "keycap"
+        ],
+        "note": "Keycap sequence that starts with an ASCII digit.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-066",
+        "input": {
+          "text": "أحبك ❤️ كثيرًا",
+          "codePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0628",
+            "U+0643",
+            "U+0020",
+            "U+2764",
+            "U+FE0F",
+            "U+0020",
+            "U+0643",
+            "U+062B",
+            "U+064A",
+            "U+0631",
+            "U+064B",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 14,
+          "utf16Length": 14,
+          "graphemes": 12,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji",
+          "variation-selector"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-067",
+        "input": {
+          "text": "سعيد😀جدًا",
+          "codePoints": [
+            "U+0633",
+            "U+0639",
+            "U+064A",
+            "U+062F",
+            "U+1F600",
+            "U+062C",
+            "U+062F",
+            "U+064B",
+            "U+0627"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 10,
+          "graphemes": 8,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "emoji",
+          "no-space"
+        ],
+        "note": "Emoji between Arabic letters with no spaces.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-070",
+        "input": {
+          "text": "invoice\u202efdp.exe",
+          "codePoints": [
+            "U+0069",
+            "U+006E",
+            "U+0076",
+            "U+006F",
+            "U+0069",
+            "U+0063",
+            "U+0065",
+            "U+202E",
+            "U+0066",
+            "U+0064",
+            "U+0070",
+            "U+002E",
+            "U+0065",
+            "U+0078",
+            "U+0065"
+          ]
+        },
+        "expected": {
+          "codePoints": 15,
+          "utf16Length": 15,
+          "graphemes": 15,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 7,
+              "name": "RLO",
+              "codePoint": "U+202E"
+            }
+          ],
+          "unbalanced": true,
+          "withoutBidiControls": "invoicefdp.exe",
+          "asDisplayedInLtr": [
+            {
+              "text": "invoice",
+              "direction": "ltr"
+            },
+            {
+              "text": "fdp.exe",
+              "direction": "rtl"
+            }
+          ]
+        },
+        "tags": [
+          "bidi-control",
+          "spoof",
+          "rlo"
+        ],
+        "note": "Right-to-left override in a file name: displayed as if it ended in \".pdf\".",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-071",
+        "input": {
+          "text": "سامي\u202e",
+          "codePoints": [
+            "U+0633",
+            "U+0627",
+            "U+0645",
+            "U+064A",
+            "U+202E"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 4,
+              "name": "RLO",
+              "codePoint": "U+202E"
+            }
+          ],
+          "unbalanced": true,
+          "withoutBidiControls": "سامي",
+          "asDisplayedInLtr": [
+            {
+              "text": "سامي",
+              "direction": "rtl"
+            }
+          ]
+        },
+        "tags": [
+          "bidi-control",
+          "spoof",
+          "rlo",
+          "unterminated"
+        ],
+        "note": "A display name ending in an unterminated override: without isolation it reverses the interface text that follows.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-072",
+        "input": {
+          "text": "admin\u2067\u2066resu\u2069\u2069",
+          "codePoints": [
+            "U+0061",
+            "U+0064",
+            "U+006D",
+            "U+0069",
+            "U+006E",
+            "U+2067",
+            "U+2066",
+            "U+0072",
+            "U+0065",
+            "U+0073",
+            "U+0075",
+            "U+2069",
+            "U+2069"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 5,
+              "name": "RLI",
+              "codePoint": "U+2067"
+            },
+            {
+              "index": 6,
+              "name": "LRI",
+              "codePoint": "U+2066"
+            },
+            {
+              "index": 11,
+              "name": "PDI",
+              "codePoint": "U+2069"
+            },
+            {
+              "index": 12,
+              "name": "PDI",
+              "codePoint": "U+2069"
+            }
+          ],
+          "unbalanced": false,
+          "withoutBidiControls": "adminresu",
+          "asDisplayedInLtr": [
+            {
+              "text": "admin\u2067",
+              "direction": "ltr"
+            },
+            {
+              "text": "resu",
+              "direction": "ltr"
+            },
+            {
+              "text": "\u2066",
+              "direction": "rtl"
+            },
+            {
+              "text": "\u2069\u2069",
+              "direction": "ltr"
+            }
+          ]
+        },
+        "tags": [
+          "bidi-control",
+          "spoof",
+          "isolate"
+        ],
+        "note": "Isolates used to reorder an identifier.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-073",
+        "input": {
+          "text": "\u202babc",
+          "codePoints": [
+            "U+202B",
+            "U+0061",
+            "U+0062",
+            "U+0063"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 0,
+              "name": "RLE",
+              "codePoint": "U+202B"
+            }
+          ],
+          "unbalanced": true,
+          "withoutBidiControls": "abc"
+        },
+        "tags": [
+          "bidi-control",
+          "unterminated"
+        ],
+        "note": "Embedding opened and never closed.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-074",
+        "input": {
+          "text": "abc\u202c\u2069",
+          "codePoints": [
+            "U+0061",
+            "U+0062",
+            "U+0063",
+            "U+202C",
+            "U+2069"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 3,
+              "name": "PDF",
+              "codePoint": "U+202C"
+            },
+            {
+              "index": 4,
+              "name": "PDI",
+              "codePoint": "U+2069"
+            }
+          ],
+          "unbalanced": true,
+          "withoutBidiControls": "abc"
+        },
+        "tags": [
+          "bidi-control",
+          "unmatched-close"
+        ],
+        "note": "Closing controls with nothing to close.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-075",
+        "input": {
+          "text": "\u200f1234.50\u200e",
+          "codePoints": [
+            "U+200F",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+002E",
+            "U+0035",
+            "U+0030",
+            "U+200E"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 9,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 0,
+              "name": "RLM",
+              "codePoint": "U+200F"
+            },
+            {
+              "index": 8,
+              "name": "LRM",
+              "codePoint": "U+200E"
+            }
+          ],
+          "unbalanced": false,
+          "withoutBidiControls": "1234.50"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "number"
+        ],
+        "note": "A number copied from a web page with marks around it.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-076",
+        "input": {
+          "text": "\u061c١٢٣",
+          "codePoints": [
+            "U+061C",
+            "U+0661",
+            "U+0662",
+            "U+0663"
+          ]
+        },
+        "expected": {
+          "codePoints": 4,
+          "utf16Length": 4,
+          "graphemes": 4,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 0,
+              "name": "ALM",
+              "codePoint": "U+061C"
+            }
+          ],
+          "unbalanced": false,
+          "withoutBidiControls": "١٢٣"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "number"
+        ],
+        "note": "U+061C ARABIC LETTER MARK before Arabic-Indic digits.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-077",
+        "input": {
+          "text": "\u202a+20 10 1234 5678\u202c",
+          "codePoints": [
+            "U+202A",
+            "U+002B",
+            "U+0032",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0030",
+            "U+0020",
+            "U+0031",
+            "U+0032",
+            "U+0033",
+            "U+0034",
+            "U+0020",
+            "U+0035",
+            "U+0036",
+            "U+0037",
+            "U+0038",
+            "U+202C"
+          ]
+        },
+        "expected": {
+          "codePoints": 18,
+          "utf16Length": 18,
+          "graphemes": 18,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 0,
+              "name": "LRE",
+              "codePoint": "U+202A"
+            },
+            {
+              "index": 17,
+              "name": "PDF",
+              "codePoint": "U+202C"
+            }
+          ],
+          "unbalanced": false,
+          "withoutBidiControls": "+20 10 1234 5678"
+        },
+        "tags": [
+          "bidi-control",
+          "pasted",
+          "phone"
+        ],
+        "note": "Phone number copied from a messaging application that wraps it in an embedding.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-078",
+        "input": {
+          "text": "user\u202dname",
+          "codePoints": [
+            "U+0075",
+            "U+0073",
+            "U+0065",
+            "U+0072",
+            "U+202D",
+            "U+006E",
+            "U+0061",
+            "U+006D",
+            "U+0065"
+          ]
+        },
+        "expected": {
+          "codePoints": 9,
+          "utf16Length": 9,
+          "graphemes": 9,
+          "nfcEqualsInput": true,
+          "bidiControls": [
+            {
+              "index": 4,
+              "name": "LRO",
+              "codePoint": "U+202D"
+            }
+          ],
+          "unbalanced": true,
+          "withoutBidiControls": "username",
+          "asDisplayedInLtr": [
+            {
+              "text": "user",
+              "direction": "ltr"
+            },
+            {
+              "text": "name",
+              "direction": "ltr"
+            }
+          ]
+        },
+        "tags": [
+          "bidi-control",
+          "spoof",
+          "lro"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-079",
+        "input": {
+          "text": "\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067\u2067ا",
+          "codePoints": [
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "U+2067",
+            "… 115 more"
+          ]
+        },
+        "expected": {
+          "codePoints": 131,
+          "utf16Length": 131,
+          "graphemes": 131,
+          "nfcEqualsInput": true,
+          "bidiControls": {
+            "count": 130,
+            "names": [
+              "RLI"
+            ]
+          },
+          "unbalanced": true,
+          "withoutBidiControls": "ا"
+        },
+        "tags": [
+          "bidi-control",
+          "depth"
+        ],
+        "note": "130 nested isolates: beyond the maximum depth of 125.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-080",
+        "input": {
+          "text": "آ",
+          "codePoints": [
+            "U+0627",
+            "U+0653"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 1,
+          "nfcEqualsInput": false,
+          "nfc": [
+            "U+0622"
+          ]
+        },
+        "tags": [
+          "normalisation",
+          "decomposed"
+        ],
+        "note": "Alef + combining madda; NFC is U+0622.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-081",
+        "input": {
+          "text": "أ",
+          "codePoints": [
+            "U+0627",
+            "U+0654"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 1,
+          "nfcEqualsInput": false,
+          "nfc": [
+            "U+0623"
+          ]
+        },
+        "tags": [
+          "normalisation",
+          "decomposed"
+        ],
+        "note": "Alef + combining hamza above; NFC is U+0623.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-082",
+        "input": {
+          "text": "ئ",
+          "codePoints": [
+            "U+064A",
+            "U+0654"
+          ]
+        },
+        "expected": {
+          "codePoints": 2,
+          "utf16Length": 2,
+          "graphemes": 1,
+          "nfcEqualsInput": false,
+          "nfc": [
+            "U+0626"
+          ]
+        },
+        "tags": [
+          "normalisation",
+          "decomposed"
+        ],
+        "note": "Yeh + combining hamza above; NFC is U+0626.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-083",
+        "input": {
+          "text": "ك ک",
+          "codePoints": [
+            "U+0643",
+            "U+0020",
+            "U+06A9"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "look-alike"
+        ],
+        "note": "Arabic kaf U+0643 and Persian keheh U+06A9.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-084",
+        "input": {
+          "text": "ي ی ى",
+          "codePoints": [
+            "U+064A",
+            "U+0020",
+            "U+06CC",
+            "U+0020",
+            "U+0649"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "look-alike"
+        ],
+        "note": "Arabic yeh, Farsi yeh and alef maqsura.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-085",
+        "input": {
+          "text": "ه ە ہ",
+          "codePoints": [
+            "U+0647",
+            "U+0020",
+            "U+06D5",
+            "U+0020",
+            "U+06C1"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "look-alike"
+        ],
+        "note": "Heh, Kurdish ae and Urdu heh goal.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-086",
+        "input": {
+          "text": "٤٥٦ ۴۵۶",
+          "codePoints": [
+            "U+0664",
+            "U+0665",
+            "U+0666",
+            "U+0020",
+            "U+06F4",
+            "U+06F5",
+            "U+06F6"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "look-alike",
+          "digits"
+        ],
+        "note": "Arabic-Indic and Extended Arabic-Indic 4, 5, 6 have different shapes and different code points.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-087",
+        "input": {
+          "text": "\ufeffأحمد",
+          "codePoints": [
+            "U+FEFF",
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F"
+          ]
+        },
+        "expected": {
+          "codePoints": 5,
+          "utf16Length": 5,
+          "graphemes": 5,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "invisible",
+          "bom"
+        ],
+        "note": "Byte order mark left at the start of an imported value.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-088",
+        "input": {
+          "text": "عبد\u00adالله",
+          "codePoints": [
+            "U+0639",
+            "U+0628",
+            "U+062F",
+            "U+00AD",
+            "U+0627",
+            "U+0644",
+            "U+0644",
+            "U+0647"
+          ]
+        },
+        "expected": {
+          "codePoints": 8,
+          "utf16Length": 8,
+          "graphemes": 8,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "invisible",
+          "soft-hyphen"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-089",
+        "input": {
+          "text": "سطر أول\u2028سطر ثان",
+          "codePoints": [
+            "U+0633",
+            "U+0637",
+            "U+0631",
+            "U+0020",
+            "U+0623",
+            "U+0648",
+            "U+0644",
+            "U+2028",
+            "U+0633",
+            "U+0637",
+            "U+0631",
+            "U+0020",
+            "U+062B",
+            "U+0627",
+            "U+0646"
+          ]
+        },
+        "expected": {
+          "codePoints": 15,
+          "utf16Length": 15,
+          "graphemes": 15,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "invisible",
+          "line-separator"
+        ],
+        "note": "U+2028 LINE SEPARATOR inside a single-line value.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-090",
+        "input": {
+          "text": "أحمد\tمحمد\nعلي",
+          "codePoints": [
+            "U+0623",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+0009",
+            "U+0645",
+            "U+062D",
+            "U+0645",
+            "U+062F",
+            "U+000A",
+            "U+0639",
+            "U+0644",
+            "U+064A"
+          ]
+        },
+        "expected": {
+          "codePoints": 13,
+          "utf16Length": 13,
+          "graphemes": 13,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "whitespace",
+          "tab",
+          "newline"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-091",
+        "input": {
+          "text": "أ",
+          "codePoints": [
+            "U+0623"
+          ]
+        },
+        "expected": {
+          "codePoints": 1,
+          "utf16Length": 1,
+          "graphemes": 1,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "short"
+        ],
+        "note": "A single letter.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-092",
+        "input": {
+          "text": "",
+          "codePoints": []
+        },
+        "expected": {
+          "codePoints": 0,
+          "utf16Length": 0,
+          "graphemes": 0,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "empty"
+        ],
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-093",
+        "input": {
+          "text": "،؛؟",
+          "codePoints": [
+            "U+060C",
+            "U+061B",
+            "U+061F"
+          ]
+        },
+        "expected": {
+          "codePoints": 3,
+          "utf16Length": 3,
+          "graphemes": 3,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "punctuation-only"
+        ],
+        "note": "Arabic comma, semicolon and question mark only.",
+        "origin": "authored for this project (synthetic)"
+      },
+      {
+        "id": "TS-094",
+        "input": {
+          "text": "٪ ٫ ٬ ؉",
+          "codePoints": [
+            "U+066A",
+            "U+0020",
+            "U+066B",
+            "U+0020",
+            "U+066C",
+            "U+0020",
+            "U+0609"
+          ]
+        },
+        "expected": {
+          "codePoints": 7,
+          "utf16Length": 7,
+          "graphemes": 7,
+          "nfcEqualsInput": true
+        },
+        "tags": [
+          "punctuation-only",
+          "number-signs"
+        ],
+        "note": "Arabic percent sign, decimal and thousands separators, per mille sign.",
+        "origin": "authored for this project (synthetic)"
+      }
+    ],
+    "inputShape": "{ text, codePoints (first 16 only when the string is longer than 64 code points) }",
+    "expectedShape": "{ codePoints, utf16Length, graphemes, nfcEqualsInput, nfc?, nfkc? (when different), bidiControls?: [{ index, name, codePoint }], unbalanced?: true when a directional initiator is not closed or a terminator closes nothing, withoutBidiControls?: the string with the twelve bidi control characters removed, asDisplayedInLtr?: for spoofing strings, the visual runs from left to right in an LTR paragraph }. There is no expected pixel result: line height and wrapping depend on the font and are measured by the harness.",
+    "rules": [
+      "R-TYPE-001",
+      "R-TYPE-002",
+      "R-TYPE-003",
+      "R-TYPE-004",
+      "R-TYPE-007",
+      "R-BIDI-006",
+      "R-BIDI-011",
+      "R-INPUT-001",
+      "R-INPUT-002"
+    ]
+  }
+}

@@ -1,0 +1,206 @@
+// Amounts, phone inputs, search pairs and numerals-in-copy cases. Inputs and expectations are written by hand
+// from the owner's contracts; build-fixtures.mjs re-derives every expectation with lib/contracts.mjs and fails on
+// any difference. A case with `expected: undefined` has no settled answer and is tagged needs-expected.
+import { CH, NBSP, NNBSP } from '../lib/common.mjs'
+
+const ok = (minor, canonical) => ({ status: 'valid', minor, canonical })
+const no = (error, suggestions) => ({ status: 'invalid', error, ...(suggestions ? { suggestions } : {}) })
+const EMPTY = { status: 'empty', minor: null }
+const cp = (...codes) => String.fromCodePoint(...codes)
+
+// [id, text, currency, allowNegative, expected, tags, note]
+export const AMOUNTS = [
+  ['AM-001', '0', 'EGP', false, ok(0, '0.00'), ['zero', 'latn']],
+  ['AM-002', '000123', 'EGP', false, ok(12300, '123.00'), ['leading-zeros', 'latn']],
+  ['AM-003', '007.50', 'EGP', false, ok(750, '7.50'), ['leading-zeros', 'latn']],
+  ['AM-004', '0000000000000001', 'EGP', false, ok(100, '1.00'), ['leading-zeros'], 'Sixteen characters but one significant digit: leading zeros do not count toward the 12-digit limit.'],
+  ['AM-005', '1234.', 'EGP', false, ok(123400, '1234.00'), ['trailing-decimal', 'latn']],
+  ['AM-006', '٫٥', 'EGP', false, ok(50, '0.50'), ['leading-decimal', 'arab']],
+  ['AM-007', '١٢٣٤٫٥', 'EGP', false, ok(123450, '1234.50'), ['arab', 'arabic-decimal']],
+  ['AM-008', '۱۲۳۴.۵۰', 'EGP', false, ok(123450, '1234.50'), ['arabext', 'dot-decimal']],
+  ['AM-009', '١٢34.٥0', 'EGP', false, ok(123450, '1234.50'), ['mixed-digit-systems'], 'Digits of two systems in one number are accepted by the contract.'],
+  ['AM-010', '١٢٣٤.٥٠', 'EGP', false, ok(123450, '1234.50'), ['arab', 'dot-decimal'], 'Arabic-Indic digits with an ASCII dot, as typed on many phone keyboards.'],
+  ['AM-011', '1234٫50', 'EGP', false, ok(123450, '1234.50'), ['latn', 'arabic-decimal']],
+  ['AM-012', '0.01', 'EGP', false, ok(1, '0.01'), ['minor-unit']],
+  ['AM-013', '0.1', 'EGP', false, ok(10, '0.10'), ['minor-unit']],
+  ['AM-014', '0.001', 'KWD', false, ok(1, '0.001'), ['minor-unit', 'three-decimals']],
+  ['AM-015', '50.0', 'EGP', false, ok(5000, '50.00'), ['trailing-zeros']],
+  ['AM-016', '50.000', 'EGP', false, no('too-many-fraction-digits'), ['trailing-zeros'], 'Extra fraction digits are rejected even when they are zeros.'],
+  ['AM-017', '12.345', 'SAR', false, no('too-many-fraction-digits'), ['minor-unit']],
+  ['AM-018', '12.3456', 'KWD', false, no('too-many-fraction-digits'), ['minor-unit', 'three-decimals']],
+  ['AM-019', '999999999999.99', 'EGP', false, ok(99999999999999, '999999999999.99'), ['limit'], 'Largest accepted EGP amount: 12 integer digits.'],
+  ['AM-020', '1000000000000', 'EGP', false, no('too-large'), ['limit']],
+  ['AM-021', ' 50 ', 'EGP', false, ok(5000, '50.00'), ['whitespace']],
+  // grouping
+  ['AM-030', '١٬٢٣٤٬٥٦٧٫٨٩', 'EGP', false, ok(123456789, '1234567.89'), ['grouping', 'arabic-thousands', 'arab']],
+  ['AM-031', '1 234 567.89', 'EGP', false, ok(123456789, '1234567.89'), ['grouping', 'space']],
+  ['AM-032', `1${NBSP}234.50`, 'EGP', false, ok(123450, '1234.50'), ['grouping', 'nbsp']],
+  ['AM-033', `١${NNBSP}٢٣٤٫٥٠`, 'EGP', false, ok(123450, '1234.50'), ['grouping', 'nnbsp', 'arab'], 'The display form of the owner\'s formatter must parse back.'],
+  ['AM-034', `1${CH.THIN}234`, 'EGP', false, ok(123400, '1234.00'), ['grouping', 'thin-space']],
+  ['AM-035', '12 34', 'EGP', false, no('invalid-grouping'), ['grouping', 'space']],
+  ['AM-036', '1 2345', 'EGP', false, no('invalid-grouping'), ['grouping', 'space']],
+  ['AM-037', '1234 567', 'EGP', false, no('invalid-grouping'), ['grouping', 'space'], 'The first group has four digits.'],
+  ['AM-038', '1.234 5', 'KWD', false, no('invalid-grouping'), ['grouping', 'space'], 'A grouping separator inside the fraction.'],
+  ['AM-039', '1٬234 567', 'EGP', false, ok(123456700, '1234567.00'), ['grouping', 'mixed-separators'], 'Two different grouping separators in one number are accepted when every group is valid.'],
+  // ambiguous commas
+  ['AM-040', '١٢٣٤،٥٠', 'EGP', false, no('ambiguous-comma', ['1234.50']), ['comma', 'arabic-comma', 'arab'], 'The Arabic comma U+060C is the key next to the digits on Arabic layouts.'],
+  ['AM-041', '1,234', 'EGP', false, no('ambiguous-comma', ['1234.00']), ['comma'], 'As a decimal comma it would have three fraction digits, which EGP does not allow; only the grouping reading is offered.'],
+  ['AM-042', '1,234', 'KWD', false, no('ambiguous-comma', ['1.234', '1234.000']), ['comma', 'three-decimals'], 'In a three-decimal currency both readings are valid: 1.234 or 1234.'],
+  ['AM-043', '1,234,567', 'EGP', false, no('ambiguous-comma', ['1234567.00']), ['comma']],
+  ['AM-044', '1.234,56', 'EGP', false, no('ambiguous-comma'), ['comma', 'european'], 'European convention: no reading is offered under this contract.'],
+  ['AM-045', '12,5', 'EGP', false, no('ambiguous-comma', ['12.50']), ['comma']],
+  ['AM-046', '1٫2.3', 'EGP', false, no('multiple-decimal'), ['decimal']],
+  // signs
+  ['AM-050', '-50', 'EGP', true, ok(-5000, '-50.00'), ['negative']],
+  ['AM-051', cp(0x2212) + '50', 'EGP', true, ok(-5000, '-50.00'), ['negative', 'minus-sign'], 'U+2212 MINUS SIGN.'],
+  ['AM-052', '-0', 'EGP', true, ok(0, '0.00'), ['negative', 'zero'], 'Negative zero is zero.'],
+  ['AM-053', '-0', 'EGP', false, no('negative-not-allowed'), ['negative', 'zero']],
+  ['AM-054', '+50', 'EGP', false, ok(5000, '50.00'), ['plus']],
+  ['AM-055', '٥٠-', 'EGP', true, no('sign-position'), ['negative', 'trailing-sign', 'arab'], 'A trailing minus is rejected even when negatives are allowed.'],
+  ['AM-056', '- 50', 'EGP', true, ok(-5000, '-50.00'), ['negative', 'whitespace']],
+  ['AM-057', '--50', 'EGP', true, no('invalid-character'), ['negative']],
+  ['AM-058', '(50)', 'EGP', true, no('invalid-character'), ['negative', 'accounting']],
+  ['AM-059', '-', 'EGP', true, no('no-digits'), ['negative']],
+  // things that are not part of an amount
+  ['AM-060', '١٢٣٤٫٥٠ ج.م', 'EGP', false, no('invalid-character'), ['currency-symbol']],
+  ['AM-061', 'EGP 50', 'EGP', false, no('invalid-character'), ['currency-code']],
+  ['AM-062', '$50', 'EGP', false, no('invalid-character'), ['currency-symbol']],
+  ['AM-063', '1e3', 'EGP', false, no('invalid-character'), ['exponent']],
+  ['AM-064', '٫', 'EGP', false, no('no-digits'), ['decimal']],
+  ['AM-065', '   ', 'EGP', false, EMPTY, ['whitespace', 'empty']],
+  ['AM-066', CH.RLM, 'EGP', false, EMPTY, ['bidi-control', 'empty'], 'Only an invisible mark: empty, not an error.'],
+  ['AM-067', `1${CH.ZWSP}234`, 'EGP', false, no('invalid-character'), ['invisible'], 'U+200B is not a bidi control and not a separator under this contract.'],
+  ['AM-068', cp(0xff11, 0xff12, 0xff13), 'EGP', false, no('invalid-character'), ['other-numeral-system'], 'Fullwidth digits: outside the three systems of arabic.amount.v1.'],
+  ['AM-069', cp(0x967, 0x968, 0x969), 'EGP', false, no('invalid-character'), ['other-numeral-system'], 'Devanagari digits: outside the three systems of arabic.amount.v1.'],
+  // pasted with bidi controls
+  ['AM-070', CH.RLM + '١٢٣٤٫٥٠' + CH.LRM, 'EGP', false, ok(123450, '1234.50'), ['bidi-control', 'pasted', 'arab']],
+  ['AM-071', CH.LRI + '1234.50' + CH.PDI, 'EGP', false, ok(123450, '1234.50'), ['bidi-control', 'pasted']],
+  ['AM-072', CH.RLE + '1,234.50' + CH.PDF, 'EGP', false, no('ambiguous-comma', ['1234.50']), ['bidi-control', 'pasted', 'comma']],
+  ['AM-073', CH.ALM + '٥٠', 'EGP', false, ok(5000, '50.00'), ['bidi-control', 'pasted', 'arab']],
+  ['AM-074', '12' + CH.RLM + '34', 'EGP', false, ok(123400, '1234.00'), ['bidi-control', 'inside-number']],
+  // percent: no contract yet
+  ['AM-080', '50%', null, false, undefined, ['percent'], 'Percent field: is the sign accepted and stripped, or rejected?'],
+  ['AM-081', '٥٠٪', null, false, undefined, ['percent', 'arab'], 'U+066A ARABIC PERCENT SIGN after Arabic-Indic digits.'],
+  ['AM-082', '%50', null, false, undefined, ['percent', 'percent-first']],
+  ['AM-083', '50 %', null, false, undefined, ['percent', 'whitespace']],
+  ['AM-084', '-5%', null, true, undefined, ['percent', 'negative']],
+  ['AM-085', '12٫5٪', null, false, undefined, ['percent', 'arab', 'decimal']],
+]
+
+const tel = (e164) => ({ status: 'valid', e164 })
+const bad = (error) => ({ status: 'invalid', error })
+// [id, text, region, expected, tags, note] — region EG is checked against arabic.phone.eg.v1.
+export const PHONES = [
+  ['PI-001', '۰۱۰۱۲۳۴۵۶۷۸', 'EG', tel('+201012345678'), ['arabext']],
+  ['PI-002', '010 1234 5678', 'EG', tel('+201012345678'), ['spaces']],
+  ['PI-003', '010-1234-5678', 'EG', tel('+201012345678'), ['dashes']],
+  ['PI-004', '(010) 1234 5678', 'EG', tel('+201012345678'), ['parentheses']],
+  ['PI-005', '010.1234.5678', 'EG', tel('+201012345678'), ['dots']],
+  ['PI-006', '+201012345678', 'EG', tel('+201012345678'), ['plus']],
+  ['PI-007', '+٢٠ ١٠ ١٢٣٤ ٥٦٧٨', 'EG', tel('+201012345678'), ['plus', 'arab', 'spaces']],
+  ['PI-008', '00201012345678', 'EG', tel('+201012345678'), ['double-zero']],
+  ['PI-009', '٠٠٢٠١٠١٢٣٤٥٦٧٨', 'EG', tel('+201012345678'), ['double-zero', 'arab']],
+  ['PI-010', '201012345678', 'EG', tel('+201012345678'), ['country-code-no-plus']],
+  ['PI-011', '1012345678', 'EG', tel('+201012345678'), ['no-leading-zero']],
+  ['PI-012', '+2001012345678', 'EG', bad('too-long'), ['plus', 'trunk-zero-kept'], 'Country code followed by the national trunk zero: a common typing mistake, rejected by this contract rather than repaired.'],
+  ['PI-013', CH.RLM + '01012345678', 'EG', tel('+201012345678'), ['bidi-control', 'pasted']],
+  ['PI-014', CH.LRM + '+20 10 1234 5678' + CH.LRM, 'EG', tel('+201012345678'), ['bidi-control', 'pasted', 'plus']],
+  ['PI-015', CH.LRE + '+20 10 1234 5678' + CH.PDF, 'EG', tel('+201012345678'), ['bidi-control', 'pasted', 'plus']],
+  ['PI-016', `٠١٠${NBSP}١٢٣٤${NBSP}٥٦٧٨`, 'EG', tel('+201012345678'), ['nbsp', 'arab'], 'The display form must parse back.'],
+  ['PI-017', `010${NNBSP}1234${NNBSP}5678`, 'EG', tel('+201012345678'), ['nnbsp']],
+  ['PI-018', ' 01012345678 ', 'EG', tel('+201012345678'), ['whitespace']],
+  ['PI-019', '0101234567٨', 'EG', tel('+201012345678'), ['mixed-digit-systems']],
+  ['PI-020', '010123456789', 'EG', bad('too-long'), ['length']],
+  ['PI-021', '02 2345 6789', 'EG', bad('too-short'), ['landline'], 'A Cairo landline: arabic.phone.eg.v1 covers mobile numbers only. The phone layer decides what a full plan accepts.'],
+  ['PI-022', '+966501234567', 'EG', bad('invalid-prefix'), ['other-country'], 'A Saudi number in a field limited to Egypt.'],
+  ['PI-023', '010-1234-567O', 'EG', bad('invalid-character'), ['look-alike'], 'Latin capital O typed for zero.'],
+  ['PI-024', '٠١٠ ١٢٣٤ ٥٦٧٨ تحويلة 12', 'EG', bad('invalid-character'), ['extension']],
+  ['PI-025', '++201012345678', 'EG', bad('invalid-character'), ['plus']],
+  ['PI-026', '٠١٠/١٢٣٤/٥٦٧٨', 'EG', bad('invalid-character'), ['slash']],
+  ['PI-027', '+20 (0) 10 1234 5678', 'EG', bad('too-long'), ['plus', 'trunk-zero-kept', 'parentheses'], 'The "(0)" convention.'],
+  // other regions: formatting only; validity belongs to the phone layer
+  ['PI-040', '+966 50 123 4567', 'SA', { e164: '+966501234567' }, ['plus', 'spaces', 'format-only']],
+  ['PI-041', '+971-50-123-4567', 'AE', { e164: '+971501234567' }, ['plus', 'dashes', 'format-only']],
+  ['PI-042', '+٩٦٦ ٥٠ ١٢٣ ٤٥٦٧', 'SA', { e164: '+966501234567' }, ['plus', 'arab', 'format-only']],
+  ['PI-043', '00966501234567', 'SA', undefined, ['double-zero'], 'Whether 00 is the international prefix depends on where the person dials from.'],
+  ['PI-044', '٠٥٠١٢٣٤٥٦٧', 'SA', undefined, ['leading-zero', 'arab'], 'National format: needs the numbering plan of the selected country.'],
+  ['PI-045', '0501234567', 'AE', undefined, ['leading-zero'], 'The same digits are a valid national mobile number in more than one country.'],
+  ['PI-046', '966501234567', 'SA', undefined, ['country-code-no-plus']],
+]
+
+// [id, query, target, strict, default, duplicateCheck, tags, note]
+export const SEARCH = [
+  ['SP-001', 'احمد', 'أحمد', false, true, true, ['hamza']],
+  ['SP-002', 'أحمد', 'احمد', false, true, true, ['hamza']],
+  ['SP-003', 'اسامه', 'أسامة', false, false, true, ['hamza', 'taa-marbuta']],
+  ['SP-004', 'فاطمه', 'فاطمة', false, false, true, ['taa-marbuta']],
+  ['SP-005', 'مصطفي', 'مصطفى', false, false, true, ['alef-maqsura']],
+  ['SP-006', 'علي', 'على', false, false, true, ['alef-maqsura', 'false-positive-risk'], 'The name «علي» and the preposition «على».'],
+  ['SP-007', 'محمد', 'مُحَمَّد', true, true, true, ['diacritics']],
+  ['SP-008', 'مُحَمَّد', 'محمد', true, true, true, ['diacritics']],
+  ['SP-009', 'عَلَم', 'عِلْم', true, true, true, ['diacritics', 'false-positive-risk'], 'Flag and knowledge: different words, the same letters. Diacritics are folded at every level, strict included.'],
+  ['SP-010', 'عبدالله', 'عبد الله', false, false, true, ['spaces']],
+  ['SP-011', 'عبد الله', 'عبدالله', false, false, true, ['spaces']],
+  ['SP-012', 'عبد  الله', 'عبد الله', true, true, true, ['spaces', 'double-space']],
+  ['SP-013', 'جميـل', 'جميل', true, true, true, ['tatweel']],
+  ['SP-014', 'KHALED', 'أحمد Khaled', true, true, true, ['case']],
+  ['SP-015', '١٢٣', 'طلب 123', true, true, true, ['digits']],
+  ['SP-016', '۰۱۰', '010 1234', true, true, true, ['digits', 'arabext']],
+  ['SP-017', 'مومن', 'مؤمن', false, true, true, ['hamza']],
+  ['SP-018', 'هاني', 'هانئ', false, true, true, ['hamza']],
+  ['SP-019', 'رايد', 'رائد', false, true, true, ['hamza']],
+  ['SP-020', 'سال', 'سأل', false, true, true, ['hamza', 'false-positive-risk'], 'Flowed and asked.'],
+  ['SP-021', 'قران', 'قرآن', false, true, true, ['hamza', 'madda']],
+  ['SP-022', 'ماء', 'ما', false, true, true, ['hamza', 'false-positive-risk'], 'Water and the particle «ما»: a standalone hamza is dropped by hamza tolerance.'],
+  ['SP-023', 'ال', 'آل', false, true, true, ['hamza', 'madda', 'false-positive-risk'], 'The definite article and the family particle.'],
+  ['SP-024', 'منه', 'منة', false, false, true, ['taa-marbuta', 'false-positive-risk'], '«منه» (from him) and the name «منة».'],
+  ['SP-025', 'كره', 'كرة', false, false, true, ['taa-marbuta', 'false-positive-risk'], 'Hated and ball.'],
+  ['SP-026', 'ايمان عبدالرحمن', 'إيمان عبد الرحمن', false, false, true, ['hamza', 'spaces']],
+  ['SP-027', 'الاسكندريه', 'الإسكندرية', false, false, true, ['hamza', 'taa-marbuta']],
+  ['SP-028', 'ابوبكر', 'أبو بكر', false, false, true, ['hamza', 'spaces']],
+  ['SP-029', 'د.سامي', 'د. سامي', false, false, true, ['spaces', 'honorific']],
+  ['SP-030', 'abdel rahman', 'Abdelrahman', false, false, true, ['spaces', 'case', 'latin']],
+  ['SP-031', 'سيد', 'السيد', true, true, true, ['substring', 'article'], 'Matching is by substring: the query without the article finds the word with it.'],
+  ['SP-032', 'السيد', 'سيد', false, false, false, ['substring', 'article'], 'The reverse does not match at any level.'],
+  ['SP-033', 'حمد', 'محمد أحمد حمدي', true, true, true, ['substring'], 'A short query matches inside three different names.'],
+  ['SP-034', '', 'أحمد', true, true, true, ['empty-query'], 'An empty query matches everything.'],
+  ['SP-035', 'Mohamed', 'Mohammed', false, false, false, ['latin', 'transliteration', 'out-of-scope'], 'Transliteration variants are not folded at any level.'],
+  ['SP-036', String.fromCodePoint(0x639, 0x644, 0x6cc), 'علي', false, false, false, ['persian-yeh', 'v1-gap'], 'U+06CC FARSI YEH typed for U+064A: not folded at any level of arabic.search.v1, although the two look the same in the middle of a word.'],
+  ['SP-037', String.fromCodePoint(0x6a9, 0x631, 0x6cc, 0x645), 'كريم', false, false, false, ['persian-kaf', 'persian-yeh', 'v1-gap'], 'U+06A9 KEHEH and U+06CC typed on a Persian or Urdu layout.'],
+  ['SP-038', String.fromCodePoint(0x627, 0x653, 0x645, 0x646, 0x629), 'آمنة', false, true, true, ['unicode-normalisation', 'v1-gap'], 'Decomposed alef + madda against the precomposed letter: canonically equal, yet strict does not match because the contract does not normalise to NFC.'],
+  ['SP-039', String.fromCodePoint(0xfefb), 'لا', false, false, false, ['presentation-form', 'v1-gap'], 'Lam-alef presentation form U+FEFB against the two letters.'],
+  ['SP-040', 'سارا', 'سارة', false, false, false, ['variant', 'out-of-scope'], 'A different spelling of the same name; no level folds alef with taa marbuta.'],
+]
+
+// Numerals in running copy (CONTRACTS.md "Numerals in copy"). [id, text, numerals, expected, tags, note]
+export const COPY = [
+  ['NC-001', 'لديك 3 رسائل', 'arab', 'لديك ٣ رسائل', ['quantity']],
+  ['NC-002', 'لديك ٣ رسائل', 'latn', 'لديك 3 رسائل', ['quantity']],
+  ['NC-003', 'المبلغ 1,234.50', 'arab', `المبلغ ١${NNBSP}٢٣٤٫٥٠`, ['amount', 'separators'], 'Separators inside the number are converted too: comma to U+202F, dot to U+066B.'],
+  ['NC-004', 'المبلغ ١٬٢٣٤٫٥٠', 'latn', 'المبلغ 1,234.50', ['amount', 'separators']],
+  ['NC-005', 'هاتف 010 1234 5678', 'arab', `هاتف ٠١٠${NNBSP}١٢٣٤${NNBSP}٥٦٧٨`, ['phone', 'spaces'], 'A space between two digits becomes U+202F so the groups keep their order.'],
+  ['NC-006', 'هاتف 010 1234 5678', 'latn', `هاتف 010${NNBSP}1234${NNBSP}5678`, ['phone', 'spaces']],
+  ['NC-007', 'التاريخ 2026-11-11', 'arab', 'التاريخ ٢٠٢٦-١١-١١', ['date']],
+  ['NC-008', 'نسبة 12%', 'arab', 'نسبة ١٢%', ['percent'], 'The percent sign is left as typed.'],
+  ['NC-009', 'العميل CUS-0008', 'arab', 'العميل CUS-0008', ['identifier', 'kept-latin']],
+  ['NC-010', 'القاعدة R-NUM-004', 'arab', 'القاعدة R-NUM-004', ['identifier', 'kept-latin']],
+  ['NC-011', 'الهامش 16px', 'arab', 'الهامش 16px', ['identifier', 'kept-latin', 'unit']],
+  ['NC-012', 'اللون #284190', 'arab', 'اللون #284190', ['identifier', 'kept-latin', 'hash']],
+  ['NC-013', 'الفاتورة INV-2026-0148', 'arab', 'الفاتورة INV-2026-0148', ['identifier', 'kept-latin']],
+  ['NC-014', 'مكتبة React 18', 'arab', 'مكتبة React 18', ['after-latin-word', 'kept-latin']],
+  ['NC-015', 'إصدار Vitest 5.1.0', 'arab', 'إصدار Vitest 5.1.0', ['after-latin-word', 'kept-latin']],
+  ['NC-016', 'نظام Material Design 3', 'arab', 'نظام Material Design 3', ['after-latin-word', 'kept-latin']],
+  ['NC-017', 'شركة 3M مصر', 'arab', 'شركة 3M مصر', ['identifier', 'kept-latin']],
+  ['NC-018', 'الكمية ۱۲۳', 'latn', 'الكمية 123', ['arabext']],
+  ['NC-019', 'الكمية ۱۲۳', 'arab', 'الكمية ١٢٣', ['arabext'], 'Extended Arabic-Indic digits in the source are shown in the preferred system.'],
+  ['NC-020', 'الصفحة 5 من 20', 'arab', 'الصفحة ٥ من ٢٠', ['quantity']],
+]
+
+// Counted nouns for the plural set: one Arabic form per CLDR category, the researcher's own wording.
+export const NOUNS = [
+  { key: 'file', en: 'file', forms: { zero: 'لا ملفات', one: 'ملف واحد', two: 'ملفان', few: '{n} ملفات', many: '{n} ملفًا', other: '{n} ملف' } },
+  { key: 'message', en: 'message', forms: { zero: 'لا رسائل', one: 'رسالة واحدة', two: 'رسالتان', few: '{n} رسائل', many: '{n} رسالة', other: '{n} رسالة' } },
+  { key: 'day', en: 'day', forms: { zero: 'لا أيام', one: 'يوم واحد', two: 'يومان', few: '{n} أيام', many: '{n} يومًا', other: '{n} يوم' } },
+]
+export const COUNTS = [0, 1, 2, 3, 4, 10, 11, 12, 19, 20, 21, 50, 99, 100, 101, 102, 103, 110, 111, 199, 200, 201, 202, 203, 300, 1000, 1001, 1002, 1003, 1011, 2000, 1000000]
+export const DECIMAL_COUNTS = ['0.5', '1.0', '1.5', '2.0', '2.5', '10.5']

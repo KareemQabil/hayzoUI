@@ -1,0 +1,76 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-CNT-006",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "version": "W3C Recommendation 2024-12-12",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-CNT-006",
+    "title": {
+      "ar": "الاسم يُعرض ويُخزَّن كما كتبه صاحبه",
+      "en": "A name is shown and stored as its owner wrote it"
+    },
+    "statement": {
+      "ar": "لا تقسّم الاسم العربي آليًا إلى «أول» و«أخير»، ولا تصحح همزاته أو تحذف تشكيله أو تطبّع مسافاته في القيمة المخزنة. الحرف الأول للصورة الرمزية هو أول عنقود كتابي بشكله المنفرد، وتُتخطى ألقاب مثل «د.» و«م.» عند توفر قائمة بها.",
+      "en": "Do not split an Arabic name automatically into \"first\" and \"last\", and do not correct its hamzas, remove its diacritics or normalise its spaces in the stored value. The avatar initial is the first grapheme cluster in its isolated shape, and honorifics such as «د.» and «م.» are skipped when a list of them is available."
+    },
+    "rationale": {
+      "ar": "الأسماء المركبة («عبد الله»، «أبو بكر») والأنساب («بن»، «آل») لا تُشطر عند أول مسافة. والاسم ملك صاحبه. والحرف الأول من «عبد الله» إن رُسم متصلًا بما بعده يظهر مبتورًا.",
+      "en": "Compound names («عبد الله», «أبو بكر») and lineage particles («بن», «آل») cannot be cut at the first space. A name belongs to its owner. And the first letter of «عبد الله», if drawn as though joined to the next, looks cut off."
+    },
+    "area": "content",
+    "severity": "must",
+    "appliesTo": [
+      "text-field",
+      "avatar",
+      "form"
+    ],
+    "checks": [
+      "For every names case the stored value equals input.text code point for code point (only leading and trailing whitespace may be trimmed, by an explicit rule).",
+      "No form requires separate first-name and last-name fields without a single full-name alternative.",
+      "The avatar initial of each names case is one grapheme cluster and renders in its isolated form.",
+      "Sorting names uses locale collation and does not strip «ال» unless the product states it."
+    ],
+    "related": [
+      "R-SRCH-001",
+      "R-SRCH-002"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "4.3.1 Joining Forms"
+      },
+      {
+        "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "section": "3.3.2 Labels or Instructions"
+      }
+    ],
+    "fixtures": [
+      "names"
+    ]
+  }
+}

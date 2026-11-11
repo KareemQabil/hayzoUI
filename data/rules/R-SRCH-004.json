@@ -1,0 +1,62 @@
+{
+  "kind": "rule",
+  "schemaVersion": 1,
+  "id": "R-SRCH-004",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "version": "Group Draft Note 2025-10-02",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/rules/build-rules.mjs",
+    "notes": "Written in this phase from the cited references and re-expressed; the Arabic text is the researcher's own wording and needs a native reviewer. The checks are proposals for the harness, not yet run."
+  },
+  "data": {
+    "id": "R-SRCH-004",
+    "title": {
+      "ar": "التظليل على النص الأصلي وبحدود العناقيد",
+      "en": "Highlight the original text, on grapheme boundaries"
+    },
+    "statement": {
+      "ar": "نتيجة المطابقة تُعاد كمدى في النص الأصلي غير المطبَّع، يبدأ وينتهي عند حدود عنقود كتابي، فيشمل التشكيل التابع لآخر حرف. والتظليل لا يقطع اتصال الحروف.",
+      "en": "A match is returned as a range in the original, un-normalised text that starts and ends on grapheme-cluster boundaries, so it includes the marks of the last letter. Highlighting must not break letter joining."
+    },
+    "rationale": {
+      "ar": "التطبيع يغيّر الأطوال، فمدى محسوب على النص المطبَّع يقع في غير موضعه. وتلوين جزء من كلمة عربية بعنصر مستقل قد يفصل الحرف عن جاره في بعض المحركات.",
+      "en": "Normalisation changes lengths, so a range computed on normalised text lands in the wrong place. Colouring part of an Arabic word with a separate element can disconnect a letter from its neighbour in some engines."
+    },
+    "area": "search",
+    "severity": "must",
+    "appliesTo": [
+      "search-match",
+      "highlight"
+    ],
+    "checks": [
+      "search-harvested SR-F03 and SR-F04: ranges [5,11) and [0,8) on the original string.",
+      "No highlight range ends between a base letter and its combining mark.",
+      "A highlighted substring inside a word renders with the same joining forms as the unhighlighted word (pixel comparison of glyph shapes)."
+    ],
+    "related": [
+      "R-SRCH-001",
+      "R-TYPE-010"
+    ],
+    "origin": "new",
+    "status": "proposed",
+    "references": [
+      {
+        "name": "W3C Arabic & Persian Layout Requirements",
+        "url": "https://www.w3.org/TR/2025/DNOTE-alreq-20251002/",
+        "section": "4.3.7.4 Styling individual letters; 5.2 Grapheme/word segmentation & selection"
+      }
+    ],
+    "fixtures": [
+      "search-harvested"
+    ]
+  }
+}
