@@ -1,0 +1,129 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "iban-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "iban-field",
+    "name": {
+      "ar": "حقل آيبان",
+      "en": "IBAN field"
+    },
+    "summary": {
+      "ar": "إدخال آيبان مع طول الدولة وأرقام التحقق وعرض مجمَّع.",
+      "en": "IBAN entry with country length, check digits and grouped display."
+    },
+    "family": "text-input",
+    "tier": "T5",
+    "priority": "p0",
+    "engines": [
+      "segmented-input",
+      "text-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "bank-hint"
+    ],
+    "dependsOn": [
+      "mask-input",
+      "ltr-island"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "checksum",
+        "name": {
+          "ar": "تحقق mod-97 وطول الدولة",
+          "en": "Mod-97 check and country length"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "ltr",
+        "name": {
+          "ar": "دائمًا LTR بأحرف وأرقام لاتينية",
+          "en": "Always LTR, Latin letters and digits"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "any-digits",
+        "name": {
+          "ar": "قبول الأرقام الهندية وتحويلها",
+          "en": "Arabic-Indic digits accepted and converted"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الإدخال يقبل الأرقام اللاتينية والهندية والفارسية أيًّا كان نظام أرقام العرض",
+            "en": "Typing accepts Latin, Arabic-Indic and Persian digits whatever the display numerals"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "grouping",
+        "name": {
+          "ar": "مجموعات رباعية لا تتأثر بالنسخ واللصق",
+          "en": "Groups of four that survive copy and paste"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مسافات العرض يجب ألا تدخل القيمة المخزنة، والآيبان الملصق يصل بمسافات وعلامات اتجاه",
+            "en": "Display spaces must not enter the stored value, and pasted IBANs arrive with spaces and bidi marks"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "bank",
+        "name": {
+          "ar": "اسم البنك من رمز البنك",
+          "en": "Bank name from the bank code"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; T5 in the owner's plan."
+      }
+    ]
+  }
+}

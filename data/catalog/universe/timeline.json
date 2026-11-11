@@ -1,0 +1,240 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "timeline",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "timeline",
+    "name": {
+      "ar": "خط زمني",
+      "en": "Timeline"
+    },
+    "summary": {
+      "ar": "أحداث مرتبة على خط.",
+      "en": "Events in order along a line."
+    },
+    "family": "display",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "connector",
+      "indicator",
+      "title",
+      "content"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Timeline"
+      },
+      {
+        "library": "mantine",
+        "name": "Timeline"
+      },
+      {
+        "library": "chakra",
+        "name": "Timeline"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عناصر",
+          "en": "Items"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "color",
+        "name": {
+          "ar": "ألوان ونقاط مخصصة",
+          "en": "Colors / custom dot"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "color",
+            "path": "antd/es/timeline/Timeline.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "color",
+            "path": "@mantine/core/lib/components/Timeline/Timeline.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "color",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/timeline.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mode",
+        "name": {
+          "ar": "أنماط التبادل",
+          "en": "Alternate / left / right mode"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "mode",
+            "path": "antd/es/timeline/Timeline.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "align",
+            "path": "@mantine/core/lib/components/Timeline/Timeline.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "pending",
+        "name": {
+          "ar": "قيد الانتظار",
+          "en": "Pending"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "pending",
+            "path": "antd/es/timeline/Timeline.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "reverse",
+        "name": {
+          "ar": "عكس الترتيب",
+          "en": "Reverse"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "reverse",
+            "path": "antd/es/timeline/Timeline.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "reverseActive",
+            "path": "@mantine/core/lib/components/Timeline/Timeline.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "side",
+        "name": {
+          "ar": "الخط عند بداية السطر والنمط المتبادل ينعكس",
+          "en": "Line on the inline start; alternate mode mirrors"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "dates",
+        "name": {
+          "ar": "التواريخ بتقويم النطاق وأرقامه",
+          "en": "Dates in the scope calendar and numerals"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نظام التقويم (ميلادي أو هجري أم القرى) يُختار بمعزل عن اللغة والأرقام، والتخزين يبقى ميلاديًا بصيغة ISO",
+            "en": "The calendar system (Gregorian, Hijri Umm al-Qura) is chosen separately from language and numerals; storage stays ISO Gregorian"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

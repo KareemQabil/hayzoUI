@@ -1,0 +1,124 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "amount-in-words",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "amount-in-words",
+    "name": {
+      "ar": "تفقيط",
+      "en": "Amount in words"
+    },
+    "summary": {
+      "ar": "يكتب المبلغ بالحروف العربية للفواتير والشيكات والإيصالات.",
+      "en": "Spells an amount out in Arabic words for invoices, cheques and receipts."
+    },
+    "family": "display",
+    "tier": "T5",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "dependsOn": [
+      "money-text"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "grammar",
+        "name": {
+          "ar": "التذكير والتأنيث والإعراب والمثنى",
+          "en": "Gender, case and dual forms"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "لاسم العملة ولجزئها جنس، والآحاد والعشرات تُعطف بالواو مع تقديم الآحاد",
+            "en": "The currency noun and its subunit have genders; tens and units are joined with و and ordered units-first"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "subunit",
+        "name": {
+          "ar": "اسما الوحدة وجزئها لكل عملة",
+          "en": "Major and minor unit names per currency"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "جنيه وقرش، ريال وهللة، دينار وفلس، بمئة أو ألف جزء من بيانات العملات",
+            "en": "جنيه/قرش, ريال/هللة, دينار/فلس with 100 or 1000 subunits, from currency data"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "closing",
+        "name": {
+          "ar": "عبارة الختام («فقط … لا غير»)",
+          "en": "Closing phrase (\"فقط … لا غير\")"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "عبارة الإطار المستخدمة في الشيكات والفواتير إعداد لكل نوع مستند",
+            "en": "The framing phrase used on cheques and invoices is a setting per document type"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "english",
+        "name": {
+          "ar": "الكتابة بالإنجليزية للمستندات ثنائية اللغة",
+          "en": "English words for bilingual documents"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "range",
+        "name": {
+          "ar": "حد أقصى معلن، وما فوقه خطأ لا جملة مغلوطة",
+          "en": "Stated maximum; larger amounts are an error, not a wrong sentence"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; T5 in the owner's plan."
+      }
+    ]
+  }
+}

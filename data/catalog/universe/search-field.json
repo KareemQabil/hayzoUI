@@ -1,0 +1,195 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "search-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "search-field",
+    "name": {
+      "ar": "حقل بحث",
+      "en": "Search field"
+    },
+    "summary": {
+      "ar": "حقل نصي للاستعلامات مع المسح والإرسال ومساعدات المطابقة المتسامحة.",
+      "en": "Text field for queries, with clear, submit and tolerant matching helpers."
+    },
+    "family": "text-input",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "text-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "clear",
+      "submit"
+    ],
+    "dependsOn": [
+      "text-field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Input.Search"
+      },
+      {
+        "library": "react-aria",
+        "name": "SearchField"
+      }
+    ],
+    "features": [
+      {
+        "id": "search",
+        "name": {
+          "ar": "حقل البحث",
+          "en": "Input.Search"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onSearch",
+            "path": "antd/es/input/Search.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "onSubmit",
+            "path": "react-stately/dist/types/src/searchfield/useSearchFieldState.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "clear",
+        "name": {
+          "ar": "زر المسح ومفتاح Escape",
+          "en": "Clear button and Escape"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "allowClear",
+            "path": "@rc-component/input/es/interface.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "onClear",
+            "path": "react-stately/dist/types/src/searchfield/useSearchFieldState.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tolerant",
+        "name": {
+          "ar": "مساعد مطابقة متسامح مع العربية",
+          "en": "Arabic-tolerant matching helper"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "digits",
+        "name": {
+          "ar": "مطابقة الأرقام بأي نظام أرقام",
+          "en": "Digits match in any numeral system"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الهاتف المكتوب بأرقام هندية وبادئة محلية يجد الرقم المخزن بالصيغة الدولية",
+            "en": "A phone typed with Arabic-Indic digits and a local prefix finds the number stored in international form"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "franco",
+        "name": {
+          "ar": "استعلام بالفرانكو يطابق النص العربي",
+          "en": "Arabizi (Franco) query matches Arabic text"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "استعلامات مثل «mo7amed» يمكن أن تطابق الكتابة العربية عبر جدول نقل حرفي",
+            "en": "Queries such as \"mo7amed\" can match the Arabic spelling through a transliteration table"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "debounce",
+        "name": {
+          "ar": "تأخير حدث التغيير",
+          "en": "Debounced change"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

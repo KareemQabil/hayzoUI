@@ -1,0 +1,125 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "country-select",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "country-select",
+    "name": {
+      "ar": "اختيار الدولة",
+      "en": "Country select"
+    },
+    "summary": {
+      "ar": "قائمة منسدلة للدول بأسمائها العربية ومفاتيح الاتصال والأعلام.",
+      "en": "Select over countries with Arabic names, dial codes and flags."
+    },
+    "family": "selection",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "combobox",
+      "listbox",
+      "collection",
+      "selection",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "trigger",
+      "popup",
+      "option",
+      "flag",
+      "dial-code"
+    ],
+    "dependsOn": [
+      "combobox"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "names",
+        "name": {
+          "ar": "أسماء عربية وإنجليزية من CLDR",
+          "en": "Arabic and English names from CLDR"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "order",
+        "name": {
+          "ar": "الدول العربية أو الاختيارات الأخيرة أولًا",
+          "en": "Arab countries or recent choices first"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "collation",
+        "name": {
+          "ar": "ترتيب بمُرتِّب اللغة العربية",
+          "en": "Sorted with the Arabic collator"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأسماء المبدوءة بـ«ال» تُرتَّب بالحرف التالي فقط إن قرر المُرتِّب ذلك، والترتيب ترتيب المُرتِّب لا ترتيب رموز المحارف",
+            "en": "Names starting with the definite article sort by the letter after it only if the collator says so; the order is the collator's, not code-point order"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "dial-code",
+        "name": {
+          "ar": "مفتاح الاتصال كجزيرة LTR",
+          "en": "Dial code as an LTR island"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone. Named in ARCHITECTURE.md (regions feed the country picker)."
+      }
+    ]
+  }
+}

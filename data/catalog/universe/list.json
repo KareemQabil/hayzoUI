@@ -1,0 +1,139 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "list",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "list",
+    "name": {
+      "ar": "قائمة",
+      "en": "List"
+    },
+    "summary": {
+      "ar": "قائمة نصية نقطية أو مرقّمة.",
+      "en": "Bulleted or numbered text list."
+    },
+    "family": "display",
+    "tier": "T1",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "marker"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "List"
+      },
+      {
+        "library": "chakra",
+        "name": "List"
+      }
+    ],
+    "features": [
+      {
+        "id": "markers",
+        "name": {
+          "ar": "نمط الترقيم بحسب اللغة",
+          "en": "Marker style by locale"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القوائم المرتبة ترقَّم بالأرقام الهندية أو بحروف أبجد (أ، ب، ج) عبر أنماط العدّاد في CSS",
+            "en": "Ordered lists can number with Arabic-Indic digits or the abjad letters (أ، ب، ج) through CSS counter styles"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "type",
+            "path": "@mantine/core/lib/components/List/List.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/list.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icon",
+        "name": {
+          "ar": "أيقونة كعلامة",
+          "en": "Icon as marker"
+        },
+        "priority": "p2",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "icon",
+            "path": "@mantine/core/lib/components/List/List.context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "indent",
+        "name": {
+          "ar": "المسافة البادئة من بداية السطر",
+          "en": "Indent from the inline start"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

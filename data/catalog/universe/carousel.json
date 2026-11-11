@@ -1,0 +1,220 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "carousel",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "carousel",
+    "name": {
+      "ar": "عرض شرائح",
+      "en": "Carousel"
+    },
+    "summary": {
+      "ar": "شرائح تُعرض مجموعة تلو أخرى بالسحب أو الأزرار أو النقاط.",
+      "en": "Slides shown one group at a time, moved by swipe, buttons or dots."
+    },
+    "family": "media",
+    "tier": "T4",
+    "priority": "p2",
+    "engines": [
+      "carousel"
+    ],
+    "anatomy": [
+      "root",
+      "viewport",
+      "slide",
+      "prev",
+      "next",
+      "indicators"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Carousel"
+      },
+      {
+        "library": "mantine",
+        "name": "Carousel"
+      },
+      {
+        "library": "chakra",
+        "name": "Carousel"
+      },
+      {
+        "library": "shadcn",
+        "name": "carousel"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "شرائح",
+          "en": "Slides"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "autoplay",
+        "name": {
+          "ar": "تشغيل تلقائي",
+          "en": "Autoplay"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "autoplay",
+            "path": "antd/es/carousel/index.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "autoplay",
+            "path": "@zag-js/carousel/dist/carousel.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "dots",
+        "name": {
+          "ar": "موضع النقاط",
+          "en": "Dots position"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "dots",
+            "path": "antd/es/carousel/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withIndicators",
+            "path": "@mantine/carousel/lib/Carousel.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fade",
+        "name": {
+          "ar": "تأثير التلاشي",
+          "en": "Fade effect"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "effect",
+            "path": "antd/es/carousel/index.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "effect",
+            "path": "@zag-js/carousel/dist/carousel.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "اتجاه السحب في RTL",
+          "en": "Swipe direction in RTL"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الشريحة التالية تأتي من نهاية السطر، وإيماءة السحب تنعكس",
+            "en": "The next slide comes from the inline end, and the swipe gesture reverses"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "pause",
+        "name": {
+          "ar": "التشغيل التلقائي يتوقف عند التركيز والمرور",
+          "en": "Autoplay pauses on focus and hover"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

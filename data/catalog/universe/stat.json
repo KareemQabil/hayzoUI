@@ -1,0 +1,245 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "stat",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "stat",
+    "name": {
+      "ar": "مؤشر رقمي",
+      "en": "Stat"
+    },
+    "summary": {
+      "ar": "رقم معنون مع وحدته وتغيّره واتجاهه.",
+      "en": "A labelled figure with unit, change and trend."
+    },
+    "family": "display",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "label",
+      "value",
+      "unit",
+      "help",
+      "trend"
+    ],
+    "dependsOn": [
+      "number-text"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Statistic"
+      },
+      {
+        "library": "antd-pro",
+        "name": "Statistic"
+      },
+      {
+        "library": "mantine",
+        "name": "RollingNumber",
+        "note": "animated digits only"
+      },
+      {
+        "library": "chakra",
+        "name": "Stat"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عنوان وقيمة",
+          "en": "Title and value"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "precision",
+        "name": {
+          "ar": "الدقة والتنسيق",
+          "en": "Precision / formatter"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "precision",
+            "path": "antd/es/statistic/utils.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "prefix-suffix",
+        "name": {
+          "ar": "بادئة/لاحقة",
+          "en": "Prefix / suffix"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "prefix",
+            "path": "antd/es/statistic/Statistic.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "prefix",
+            "path": "@mantine/core/lib/components/RollingNumber/RollingNumber.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "countdown",
+        "name": {
+          "ar": "عد تنازلي",
+          "en": "Countdown"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Countdown",
+            "path": "antd/es/statistic/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "numerals",
+        "name": {
+          "ar": "القيمة بنظام أرقام المستخدم",
+          "en": "Value in the user numerals"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة تُعرض بنظام أرقام النطاق",
+            "en": "The value is shown in the numerals of the scope"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "trend",
+        "name": {
+          "ar": "مؤشر صعود وهبوط",
+          "en": "Up / down indicator"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "سهما الصعود والهبوط لا ينعكسان، والنسبة ذات الإشارة تُبقي إشارتها في الجهة التي تحددها اللغة",
+            "en": "Up and down arrows do not mirror; a signed percentage keeps its sign on the side the locale puts it"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "trend",
+            "path": "@ant-design/pro-card/es/components/Statistic/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "compact",
+        "name": {
+          "ar": "صيغة مختصرة (ألف، مليون)",
+          "en": "Compact notation (thousand, million)"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الصيغ المختصرة العربية كلمات تتوافق مع العدد («٣ آلاف»، «١٢ ألفًا»، «مليونان») وتؤخذ من بيانات اللغة",
+            "en": "Arabic compact forms are words with plural agreement (\"٣ آلاف\", \"١٢ ألفًا\", \"مليونان\"), taken from locale data"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

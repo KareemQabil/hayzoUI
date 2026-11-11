@@ -1,0 +1,541 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "text-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "text-field",
+    "name": {
+      "ar": "حقل نصي",
+      "en": "Text field"
+    },
+    "summary": {
+      "ar": "إدخال نص من سطر واحد داخل حقل.",
+      "en": "Single-line text entry inside a field."
+    },
+    "family": "text-input",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "text-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "prefix",
+      "suffix",
+      "clear"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Input"
+      },
+      {
+        "library": "mui",
+        "name": "TextField"
+      },
+      {
+        "library": "mui",
+        "name": "Input"
+      },
+      {
+        "library": "mui",
+        "name": "OutlinedInput"
+      },
+      {
+        "library": "mui",
+        "name": "FilledInput"
+      },
+      {
+        "library": "mui",
+        "name": "InputBase"
+      },
+      {
+        "library": "mantine",
+        "name": "TextInput"
+      },
+      {
+        "library": "mantine",
+        "name": "Input"
+      },
+      {
+        "library": "chakra",
+        "name": "Input"
+      },
+      {
+        "library": "react-aria",
+        "name": "TextField"
+      },
+      {
+        "library": "react-aria",
+        "name": "Input"
+      },
+      {
+        "library": "base-ui",
+        "name": "Input"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Input"
+      },
+      {
+        "library": "shadcn",
+        "name": "input"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "حقل نصي، تحكم وبدون تحكم",
+          "en": "Basic input, controlled / uncontrolled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام",
+          "en": "Sizes"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/input/Group.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/TextField/TextField.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/Input/Input.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/input-addon.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "حالة خطأ/تحذير",
+          "en": "Status error / warning"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "react-aria",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/input/Input.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "error",
+            "path": "@mui/material/TextField/TextField.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "error",
+            "path": "@mantine/core/lib/components/Input/Input.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isInvalid",
+            "path": "react-aria-components/dist/types/src/TextField.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "invalid",
+            "path": "@headlessui/react/dist/components/input/input.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "معطل/للقراءة فقط",
+          "en": "Disabled / read-only"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/input/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/TextField/TextField.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Input/Input.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria-components/dist/types/src/TextField.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/combobox/input/ComboboxInput.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/input/input.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "prefix-suffix",
+        "name": {
+          "ar": "بادئة/لاحقة",
+          "en": "Prefix / suffix"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "prefix",
+            "path": "@rc-component/input/es/ResizableTextArea.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "startAdornment",
+            "path": "@mui/material/InputBase/InputBase.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "prefix",
+            "path": "@mantine/core/lib/components/Input/use-input-props.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "startElement",
+            "path": "@chakra-ui/react/dist/types/components/input-group/input-group.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "allow-clear",
+        "name": {
+          "ar": "زر المسح",
+          "en": "Allow clear"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "allowClear",
+            "path": "@rc-component/input/es/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "name": {
+          "ar": "عدّاد الأحرف",
+          "en": "showCount / maxLength"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showCount",
+            "path": "@rc-component/input/es/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "variants",
+        "name": {
+          "ar": "الأنماط محدد/مملوء/بلا حدود",
+          "en": "Variants outlined / filled / borderless"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "variant",
+            "path": "@rc-component/input/es/ResizableTextArea.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/TextField/TextField.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "variant",
+            "path": "@mantine/core/lib/components/TextInput/TextInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/input-addon.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "content-dir",
+        "name": {
+          "ar": "اتجاه المحتوى تلقائي أو LTR صريح",
+          "en": "Content direction auto / explicit LTR"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص اللاتيني المكتوب في واجهة عربية يُحاذى بحسب أول حرف قوي، ويمكن تثبيت الرموز والبريد على LTR، والمكتبات تورّث اتجاه الواجهة فقط",
+            "en": "Typed Latin in an Arabic interface aligns by its first strong character, and codes or emails can be pinned LTR; libraries inherit the interface direction only"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "null-empty",
+        "name": {
+          "ar": "الفراغ يُبلَّغ كـnull",
+          "en": "Empty reports null"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "keyboard-layout",
+        "name": {
+          "ar": "اقتراح تصحيح تخطيط لوحة المفاتيح",
+          "en": "Wrong keyboard layout suggestion"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "النص المكتوب بتخطيط عربي والمقصود لاتيني (أو العكس) يُكتشف ويُقترح تصحيحه دون تطبيقه صامتًا",
+            "en": "Text typed on the Arabic layout while meaning Latin (or the reverse) is detected and the corrected text is offered, never applied silently"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "strip-bidi",
+        "name": {
+          "ar": "إزالة محارف التحكم الاتجاهية عند اللصق",
+          "en": "Bidi control characters removed on paste"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "تُزال علامات الاتجاه غير المرئية المنسوخة من المستندات قبل تخزين القيمة",
+            "en": "Invisible RLM/LRM and isolates copied from documents are removed before the value is stored"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "affix-side",
+        "name": {
+          "ar": "جهتا البادئة واللاحقة منطقيتان",
+          "en": "Prefix and suffix sides are logical"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "placeholder",
+        "name": {
+          "ar": "اتجاه النص الإرشادي يطابق المحتوى المتوقع",
+          "en": "Placeholder direction matches the expected content"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "المثال اللاتيني كنص إرشادي في حقل RTL يُحاذى يمينًا وتنتقل علامات ترقيمه ما لم يُعزل",
+            "en": "An LTR example placeholder in an RTL field is right-aligned with its punctuation moved unless it is isolated"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "text-field (the control with its field anatomy, as MUI and React Aria name it and as the owner's contracts do) rather than input, which is kept for the bare control part."
+      },
+      {
+        "topic": "split",
+        "note": "Password, textarea, search, OTP, phone and add-on rows of the matrix moved to their own entries."
+      }
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "checkbox-group",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "checkbox-group",
+    "name": {
+      "ar": "مجموعة مربعات اختيار",
+      "en": "Checkbox group"
+    },
+    "summary": {
+      "ar": "مربعات اختيار تشترك في عنوان ومصفوفة قيم وتحقق.",
+      "en": "Several checkboxes that share a label, a value array and validation."
+    },
+    "family": "choice",
+    "tier": "T1",
+    "priority": "p1",
+    "engines": [
+      "selection",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "label",
+      "item"
+    ],
+    "dependsOn": [
+      "checkbox",
+      "fieldset"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Checkbox.Group"
+      },
+      {
+        "library": "mantine",
+        "name": "CheckboxGroup"
+      },
+      {
+        "library": "chakra",
+        "name": "CheckboxGroup"
+      },
+      {
+        "library": "chakra",
+        "name": "CheckboxCard",
+        "note": "card-shaped item"
+      },
+      {
+        "library": "react-aria",
+        "name": "CheckboxGroup"
+      },
+      {
+        "library": "base-ui",
+        "name": "CheckboxGroup"
+      }
+    ],
+    "features": [
+      {
+        "id": "group",
+        "name": {
+          "ar": "مجموعة خيارات",
+          "en": "Checkbox.Group with options"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "options",
+            "path": "antd/es/checkbox/Group.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "value",
+            "path": "@mantine/core/lib/components/Checkbox/CheckboxGroup/CheckboxGroup.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "value",
+            "path": "@ark-ui/react/dist/components/checkbox/checkbox-group-provider.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "value",
+            "path": "@base-ui/react/checkbox-group/CheckboxGroup.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "select-all",
+        "name": {
+          "ar": "مربع رئيسي بحالة جزئية",
+          "en": "Parent checkbox with mixed state"
+        },
+        "priority": "p1",
+        "in": [
+          "base-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "base-ui",
+            "symbol": "allValues",
+            "path": "@base-ui/react/checkbox-group/CheckboxGroup.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "card",
+        "name": {
+          "ar": "خيارات على شكل بطاقات",
+          "en": "Card-shaped options"
+        },
+        "priority": "p2",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored"
+      }
+    ]
+  }
+}

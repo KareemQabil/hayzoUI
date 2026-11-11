@@ -1,0 +1,823 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "data-grid",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "AG Grid Community",
+        "url": "https://github.com/ag-grid/ag-grid",
+        "version": "ag-grid-community@36.3.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "TanStack Table",
+        "url": "https://github.com/TanStack/table",
+        "version": "@tanstack/table-core@9.3.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "data-grid",
+    "name": {
+      "ar": "شبكة بيانات",
+      "en": "Data grid"
+    },
+    "summary": {
+      "ar": "جدول شبيه بجداول البيانات: تركيز الخلايا وتحريرها والمجالات والتجميع والعرض الافتراضي في المحورين.",
+      "en": "A spreadsheet-like table: cell focus, editing, ranges, grouping and both-axis virtualisation."
+    },
+    "family": "data",
+    "tier": "T5",
+    "priority": "p1",
+    "engines": [
+      "table-model",
+      "grid-navigation",
+      "selection",
+      "virtual-list",
+      "resize",
+      "drag-sort",
+      "form"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "body",
+      "row",
+      "cell",
+      "editor",
+      "group-row",
+      "aggregation-row",
+      "fill-handle",
+      "overlay",
+      "status-bar"
+    ],
+    "dependsOn": [
+      "data-table",
+      "text-field",
+      "number-input",
+      "select",
+      "date-picker",
+      "checkbox"
+    ],
+    "aliases": [
+      {
+        "library": "antd-pro",
+        "name": "EditableProTable"
+      },
+      {
+        "library": "antd-pro",
+        "name": "CellEditorTable"
+      },
+      {
+        "library": "antd-pro",
+        "name": "RowEditorTable"
+      },
+      {
+        "library": "mui-x",
+        "name": "DataGrid"
+      },
+      {
+        "library": "ag-grid",
+        "name": "createGrid"
+      },
+      {
+        "library": "tanstack-table",
+        "name": "constructTable",
+        "note": "headless model; editing is left to the application"
+      }
+    ],
+    "features": [
+      {
+        "id": "edit-cell",
+        "name": {
+          "ar": "خلايا قابلة للتحرير",
+          "en": "Editable cells"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "editable",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "editable",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "editable",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "edit-row",
+        "name": {
+          "ar": "صفوف قابلة للتحرير",
+          "en": "Editable rows"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "editMode",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "editType",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "cell-focus",
+        "name": {
+          "ar": "تركيز الخلايا بالأسهم و Home/End و Page",
+          "en": "Cell focus with arrow, Home/End, Page keys"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "tabNavigation",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "navigateToNextCell",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "editors",
+        "name": {
+          "ar": "محررات بحسب نوع العمود",
+          "en": "Editors by column type"
+        },
+        "priority": "p0",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "محررات الأرقام والمبالغ والتواريخ هي حقول النماذج نفسها المراعية للعربية (أي نظام أرقام، فواصل عربية، تقويمان)",
+            "en": "Number, money and date editors are the same Arabic-aware inputs used in forms (any digit system, Arabic separators, dual calendar)"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "valueType",
+            "path": "@ant-design/pro-table/es/utils/cellRenderToFromItem.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "renderEditCell",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "cellEditor",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "type-to-edit",
+        "name": {
+          "ar": "الكتابة تبدأ التحرير وتستبدل القيمة",
+          "en": "Typing starts editing and replaces the value"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "ضغطة المفتاح الأولى يجب ألا تضيع مع وسائل الإدخال العربية، فأحداث التركيب هي التي تبدأ التحرير لا keydown",
+            "en": "The first keystroke must not be lost under an Arabic input method; composition events start the edit, not keydown"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "isCellEditable",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "singleClickEdit",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "validation",
+        "name": {
+          "ar": "تحقق من الخلية والصف مع رسائل",
+          "en": "Cell and row validation with messages"
+        },
+        "priority": "p0",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "formItemProps",
+            "path": "@ant-design/pro-table/es/components/EditableTable/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "preProcessEditCellProps",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "invalidEditValueMode",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "commit",
+        "name": {
+          "ar": "التثبيت بـEnter و Tab والإلغاء بـEscape وحفظ غير متزامن",
+          "en": "Commit on Enter / Tab, cancel on Escape, async save"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "processRowUpdate",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "onCellValueChanged",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tab-order",
+        "name": {
+          "ar": "Tab ينتقل بترتيب القراءة",
+          "en": "Tab moves in reading order"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "في RTL ينتقل Tab من العمود الأيمن إلى اليسار",
+            "en": "In RTL Tab moves from the right-most column leftwards"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "tabNavigation",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "tabToNextCell",
+            "path": "ag-grid-community/dist/types/src/api/gridApi.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "undo",
+        "name": {
+          "ar": "تراجع وإعادة",
+          "en": "Undo and redo"
+        },
+        "priority": "p2",
+        "in": [
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "ag-grid",
+            "symbol": "undoRedoCellEditing",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "range",
+        "name": {
+          "ar": "تحديد مجال من الخلايا",
+          "en": "Cell range selection"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "Shift مع السهم يمدّ المجال في الاتجاه البصري، ومستطيلات المجال تُرسم من بداية السطر",
+            "en": "Shift+Arrow extends the range in the visual direction; range rectangles are drawn from the inline start"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "cellSelection",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "cellSelection",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "cellSelection",
+            "path": "@tanstack/table-core/dist/features/cell-selection/cellSelectionFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "clipboard",
+        "name": {
+          "ar": "نسخ الخلايا ولصقها (تبادل مع جداول البيانات)",
+          "en": "Copy and paste cells (spreadsheet interchange)"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام الملصقة قد تأتي بأرقام هندية وفواصل عربية، والأرقام المنسوخة تخرج لاتينية صِرفة",
+            "en": "Pasted numbers may arrive with Arabic-Indic digits and Arabic separators; copied numbers leave as plain Latin digits"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "clipboardCopyCellDelimiter",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "processCellForClipboard",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fill",
+        "name": {
+          "ar": "مقبض التعبئة",
+          "en": "Fill handle"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "cellSelection",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "cellSelection",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "cellSelection",
+            "path": "@tanstack/table-core/dist/features/cell-selection/cellSelectionFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "grouping",
+        "name": {
+          "ar": "تجميع الصفوف بمجموعات قابلة للتوسيع",
+          "en": "Row grouping with expandable groups"
+        },
+        "priority": "p1",
+        "in": [
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "ag-grid",
+            "symbol": "rowGroup",
+            "path": "ag-grid-community/dist/types/src/columns/columnStateUtils.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "enableGrouping",
+            "path": "@tanstack/table-core/dist/features/column-grouping/columnGroupingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "aggregation",
+        "name": {
+          "ar": "تجميع القيم (مجموع، متوسط، عدد) لكل مجموعة وللإجمالي",
+          "en": "Aggregation (sum, average, count) per group and total"
+        },
+        "priority": "p1",
+        "in": [
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مجاميع المبالغ تبقى وحدات صغرى صحيحة، والمتوسط يُقرَّب بقاعدة العملة ويُبيَّن أنه مقرَّب",
+            "en": "Money aggregates stay in integer minor units; an average is rounded by the currency rule and labelled as rounded"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "ag-grid",
+            "symbol": "aggFunc",
+            "path": "ag-grid-community/dist/types/src/columns/columnStateUtils.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "aggregationFn",
+            "path": "@tanstack/table-core/dist/features/row-aggregation/rowAggregationFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "pivot",
+        "name": {
+          "ar": "جداول محورية",
+          "en": "Pivoting"
+        },
+        "priority": "p2",
+        "in": [
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "ag-grid",
+            "symbol": "pivot",
+            "path": "ag-grid-community/dist/types/src/columns/columnStateUtils.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-virtual",
+        "name": {
+          "ar": "عرض افتراضي للأعمدة",
+          "en": "Column virtualisation"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "نوافذ الأعمدة تُحسب من بداية السطر، وإزاحات التمرير في RTL سالبة",
+            "en": "Column windows are computed from the inline start; RTL scroll offsets are negative"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "columnBufferPx",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "suppressColumnVirtualisation",
+            "path": "ag-grid-community/dist/types/src/columns/columnViewportService.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-virtual",
+        "name": {
+          "ar": "عرض افتراضي للصفوف بارتفاعات متغيرة",
+          "en": "Row virtualisation with variable heights"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "rowBufferPx",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "rowBuffer",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "server-rows",
+        "name": {
+          "ar": "نموذج صفوف من الخادم (كتل عند الطلب)",
+          "en": "Server-side row model (lazy blocks)"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "dataSource",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "rowModelType",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "transactions",
+        "name": {
+          "ar": "تحديثات متدفقة مع وميض التغيير",
+          "en": "Streaming updates with change flash"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "updateRows",
+            "path": "@mui/x-data-grid/models/api/gridRowApi.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "applyTransaction",
+            "path": "ag-grid-community/dist/types/src/api/gridApi.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "master-detail",
+        "name": {
+          "ar": "صفوف رئيسية وتفصيلية",
+          "en": "Master–detail rows"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "getDetailPanelContent",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "masterDetail",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "getRowCanExpand",
+            "path": "@tanstack/table-core/dist/features/row-expanding/rowExpandingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "add-row",
+        "name": {
+          "ar": "إضافة صف في مكانه",
+          "en": "Add a row inline"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "recordCreatorProps",
+            "path": "@ant-design/pro-table/es/components/EditableTable/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "updateRows",
+            "path": "@mui/x-data-grid/models/api/gridRowApi.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "applyTransaction",
+            "path": "ag-grid-community/dist/types/src/api/gridApi.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "formulas",
+        "name": {
+          "ar": "أعمدة محسوبة",
+          "en": "Calculated columns"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "valueGetter",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "valueGetter",
+            "path": "ag-grid-community/dist/types/src/entities/agColumn.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "accessorFn",
+            "path": "@tanstack/table-core/dist/core/columns/coreColumnsFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "line-items",
+        "name": {
+          "ar": "نمط بنود الفاتورة (كمية × سعر، ضريبة، إجمالي)",
+          "en": "Line-items preset (quantity × price, tax, total)"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "تحرير بنود الفاتورة أكثر الشبكات شيوعًا في برامج الأعمال العربية، والتقريب لكل بند أو لكل مستند يتبع قاعدة الجهة الضريبية",
+            "en": "Invoice line editing is the most common grid in Arabic business software: rounding per line or per document follows the tax authority's rule"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "split",
+        "note": "Warranted as its own entry: the features here need cell focus, editors or a second virtualisation axis that a read-only table never loads. It depends on data-table for the column, sort, filter and selection model."
+      }
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "mentions",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "mentions",
+    "name": {
+      "ar": "إشارات",
+      "en": "Mentions"
+    },
+    "summary": {
+      "ar": "حقل نص يقترح أشخاصًا أو وسومًا بعد محرف مشغِّل.",
+      "en": "Textarea that suggests people or tags after a trigger character."
+    },
+    "family": "text-input",
+    "tier": "T5",
+    "priority": "p2",
+    "engines": [
+      "text-input",
+      "combobox",
+      "anchored-position"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "popup",
+      "option"
+    ],
+    "dependsOn": [
+      "textarea",
+      "listbox"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Mentions"
+      },
+      {
+        "library": "mantine",
+        "name": "Mentions"
+      },
+      {
+        "library": "mantine",
+        "name": "Mention"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "اقتراحات الإشارة",
+          "en": "Mention suggestions"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "prefix",
+        "name": {
+          "ar": "بادئة مخصصة",
+          "en": "Custom prefix (@, #)"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "prefix",
+            "path": "@rc-component/mentions/es/Mentions.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "prefix",
+            "path": "@mantine/core/lib/components/Mentions/MentionsInlineSuggestion.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "async",
+        "name": {
+          "ar": "خيارات غير متزامنة",
+          "en": "Async options"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "@rc-component/mentions/es/KeywordTrigger.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "loading",
+            "path": "@mantine/core/lib/components/Mentions/use-mentions-query.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "placement",
+            "path": "@rc-component/mentions/es/KeywordTrigger.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "caret-rtl",
+        "name": {
+          "ar": "النافذة تُثبَّت عند المؤشر في نص RTL",
+          "en": "Popup anchored to the caret in RTL text"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "إحداثيات المؤشر في النص المختلط غير مطّردة، فيجب أن تتبع النافذةُ المؤشرَ المرئي",
+            "en": "Caret coordinates in mixed-direction text are not monotonic; the popup must follow the visual caret"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

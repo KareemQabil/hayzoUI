@@ -1,0 +1,180 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "transfer",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "transfer",
+    "name": {
+      "ar": "نقل بين قائمتين",
+      "en": "Transfer"
+    },
+    "summary": {
+      "ar": "ينقل العناصر بين قائمة مصدر وقائمة هدف.",
+      "en": "Moves items between a source list and a target list."
+    },
+    "family": "selection",
+    "tier": "T5",
+    "priority": "p2",
+    "engines": [
+      "listbox",
+      "selection"
+    ],
+    "anatomy": [
+      "root",
+      "list",
+      "search",
+      "item",
+      "move-button"
+    ],
+    "dependsOn": [
+      "listbox",
+      "checkbox",
+      "button"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Transfer"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "قائمتان مع نقل",
+          "en": "Two lists with move"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "search",
+        "name": {
+          "ar": "بحث",
+          "en": "Search"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showSearch",
+            "path": "antd/es/transfer/Section.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "one-way",
+        "name": {
+          "ar": "اتجاه واحد",
+          "en": "One-way"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "oneWay",
+            "path": "antd/es/transfer/Actions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "custom-render",
+        "name": {
+          "ar": "عرض مخصص",
+          "en": "Custom render / table / tree"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "render",
+            "path": "antd/es/transfer/Section.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "pagination",
+        "name": {
+          "ar": "ترقيم الصفحات",
+          "en": "Pagination"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "pagination",
+            "path": "antd/es/transfer/Section.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "عكس أسهم النقل في RTL",
+          "en": "Move arrows mirrored in RTL"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "أسهم النقل تشير إلى قائمة الهدف كما تُرسم، فتنعكس في RTL",
+            "en": "The move arrows point at the target list as it is drawn, so they mirror in RTL"
+          }
+        },
+        "origin": "owner-matrix"
+      }
+    ]
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "otp-input",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "otp-input",
+    "name": {
+      "ar": "حقل رمز التحقق",
+      "en": "OTP input"
+    },
+    "summary": {
+      "ar": "خانة لكل محرف لإدخال رموز التحقق.",
+      "en": "One box per character for verification codes."
+    },
+    "family": "text-input",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "segmented-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "cell",
+      "separator",
+      "hidden-input"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Input.OTP"
+      },
+      {
+        "library": "mantine",
+        "name": "PinInput"
+      },
+      {
+        "library": "chakra",
+        "name": "PinInput"
+      },
+      {
+        "library": "base-ui",
+        "name": "OTPField"
+      },
+      {
+        "library": "shadcn",
+        "name": "input-otp"
+      }
+    ],
+    "features": [
+      {
+        "id": "otp",
+        "name": {
+          "ar": "رمز التحقق",
+          "en": "Input.OTP"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "length",
+            "path": "antd/es/input/OTP/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "length",
+            "path": "@mantine/core/lib/components/PinInput/PinInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "count",
+            "path": "@zag-js/pin-input/dist/pin-input.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "length",
+            "path": "@base-ui/react/otp-field/root/OTPFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "ltr-cells",
+        "name": {
+          "ar": "الخانات من اليسار إلى اليمين في كل اتجاه",
+          "en": "Cells run left to right in every direction"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الرمز يُقرأ كما أُرسل: أول رقم في أقصى اليسار حتى في واجهة عربية، ومفاتيح الأسهم تتبع هذا الترتيب",
+            "en": "A code is read as it was sent: the first digit is the leftmost cell even in an Arabic interface, and arrow keys follow that order"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "any-digits",
+        "name": {
+          "ar": "يقبل أي نظام أرقام ويخزّن اللاتينية",
+          "en": "Accepts any digit system, stores Latin"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الإدخال يقبل الأرقام اللاتينية والهندية والفارسية أيًّا كان نظام أرقام العرض",
+            "en": "Typing accepts Latin, Arabic-Indic and Persian digits whatever the display numerals"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "paste",
+        "name": {
+          "ar": "اللصق يملأ كل الخانات",
+          "en": "Paste fills all cells"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "autofill",
+        "name": {
+          "ar": "التعبئة التلقائية من الرسائل",
+          "en": "SMS autofill (one-time-code)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "base-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "autoComplete",
+            "path": "@rc-component/input/es/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "oneTimeCode",
+            "path": "@mantine/core/lib/components/PinInput/PinInput.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "autoComplete",
+            "path": "@base-ui/react/otp-field/root/OTPFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mask",
+        "name": {
+          "ar": "خانات مخفية",
+          "en": "Masked cells"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "mask",
+            "path": "antd/es/input/OTP/OTPInput.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "mask",
+            "path": "@mantine/core/lib/components/PinInput/PinInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "mask",
+            "path": "@zag-js/pin-input/dist/pin-input.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "mask",
+            "path": "@base-ui/react/otp-field/root/OTPFieldRoot.d.ts"
+          }
+        ]
+      }
+    ],
+    "notes": "Radix publishes unstable_OneTimePasswordField; it is not a stable export and is not listed."
+  }
+}

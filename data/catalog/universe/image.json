@@ -1,0 +1,197 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "image",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "image",
+    "name": {
+      "ar": "صورة",
+      "en": "Image"
+    },
+    "summary": {
+      "ar": "صورة مع بديل وعنصر نائب ومعاينة بملء الشاشة.",
+      "en": "An image with fallback, placeholder and full-screen preview."
+    },
+    "family": "media",
+    "tier": "T2",
+    "priority": "p2",
+    "engines": [
+      "dialog",
+      "overlay-layers"
+    ],
+    "anatomy": [
+      "root",
+      "img",
+      "fallback",
+      "preview",
+      "toolbar"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Image"
+      },
+      {
+        "library": "mantine",
+        "name": "Image"
+      },
+      {
+        "library": "mantine",
+        "name": "BackgroundImage"
+      },
+      {
+        "library": "chakra",
+        "name": "Image"
+      }
+    ],
+    "features": [
+      {
+        "id": "preview",
+        "name": {
+          "ar": "معاينة",
+          "en": "Preview"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "preview",
+            "path": "@rc-component/image/es/Image.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "group",
+        "name": {
+          "ar": "مجموعة معاينة",
+          "en": "Preview group"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "PreviewGroup",
+            "path": "@rc-component/image/es/Image.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fallback",
+        "name": {
+          "ar": "بديل عند الفشل",
+          "en": "Fallback / placeholder"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fallback",
+            "path": "@rc-component/image/es/Image.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "fallbackSrc",
+            "path": "@mantine/core/lib/components/Image/Image.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "toolbar",
+        "name": {
+          "ar": "أدوات تكبير وتدوير",
+          "en": "Zoom / rotate toolbar"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "toolbarRender",
+            "path": "antd/es/image/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "gallery-arrows",
+        "name": {
+          "ar": "التالي والسابق في المعرض يتبعان الاتجاه",
+          "en": "Gallery next / previous follow direction"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

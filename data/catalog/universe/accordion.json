@@ -1,0 +1,399 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "accordion",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "accordion",
+    "name": {
+      "ar": "أكورديون",
+      "en": "Accordion"
+    },
+    "summary": {
+      "ar": "مجموعة أقسام قابلة للطي يُفتح واحد منها أو أكثر.",
+      "en": "A stack of collapsible sections where one or several are open."
+    },
+    "family": "display",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "disclosure",
+      "roving-focus"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "header",
+      "trigger",
+      "indicator",
+      "panel"
+    ],
+    "dependsOn": [
+      "collapsible"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Collapse"
+      },
+      {
+        "library": "mui",
+        "name": "Accordion"
+      },
+      {
+        "library": "mantine",
+        "name": "Accordion"
+      },
+      {
+        "library": "chakra",
+        "name": "Accordion"
+      },
+      {
+        "library": "react-aria",
+        "name": "DisclosureGroup"
+      },
+      {
+        "library": "base-ui",
+        "name": "Accordion"
+      },
+      {
+        "library": "radix",
+        "name": "Accordion"
+      },
+      {
+        "library": "shadcn",
+        "name": "accordion"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "ألواح",
+          "en": "Panels"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "accordion",
+        "name": {
+          "ar": "أكورديون",
+          "en": "Accordion"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "accordion",
+            "path": "@rc-component/collapse/es/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "multiple",
+            "path": "@mantine/core/lib/components/Accordion/Accordion.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "multiple",
+            "path": "@zag-js/accordion/dist/accordion.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "multiple",
+            "path": "@base-ui/react/accordion/root/AccordionRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "type",
+            "path": "@radix-ui/react-accordion/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "type",
+            "path": "via @radix-ui/react-accordion/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "nested",
+        "name": {
+          "ar": "متداخل",
+          "en": "Nested"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "borderless-ghost",
+        "name": {
+          "ar": "بلا حدود",
+          "en": "Borderless / ghost"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "bordered",
+            "path": "antd/es/collapse/Collapse.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "variant",
+            "path": "@mantine/core/lib/components/Accordion/Accordion.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/accordion.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "extra",
+        "name": {
+          "ar": "إضافي وأيقونة مخصصة",
+          "en": "Extra and custom icon"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "extra",
+            "path": "@rc-component/collapse/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "expandIcon",
+            "path": "@mui/material/AccordionSummary/AccordionSummary.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "chevron",
+            "path": "@mantine/core/lib/components/Accordion/Accordion.context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "collapsible",
+        "name": {
+          "ar": "قابلية الطي",
+          "en": "collapsible header / icon / disabled"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "collapsible",
+            "path": "@rc-component/collapse/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/Accordion/Accordion.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Accordion/AccordionControl/AccordionControl.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "collapsible",
+            "path": "@zag-js/accordion/dist/accordion.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/accordion/root/AccordionRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "collapsible",
+            "path": "@radix-ui/react-accordion/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "collapsible",
+            "path": "via @radix-ui/react-accordion/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icon-side",
+        "name": {
+          "ar": "جهة السهم منطقية",
+          "en": "Chevron side is logical"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "expandIconPlacement",
+            "path": "antd/es/collapse/Collapse.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "chevronPosition",
+            "path": "@mantine/core/lib/components/Accordion/Accordion.context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "heading-level",
+        "name": {
+          "ar": "مستوى عنوان الأزرار",
+          "en": "Heading level of triggers"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "order",
+            "path": "@mantine/core/lib/components/Accordion/Accordion.context.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

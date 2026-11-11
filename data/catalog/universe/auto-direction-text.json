@@ -1,0 +1,154 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "auto-direction-text",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "auto-direction-text",
+    "name": {
+      "ar": "نص تلقائي الاتجاه",
+      "en": "Auto-direction text"
+    },
+    "summary": {
+      "ar": "نص حر مجهول اللغة يأخذ اتجاهه من محتواه ويعزل المقاطع المكتوبة بخط آخر.",
+      "en": "Free text of unknown script that takes its direction from its content and isolates foreign runs."
+    },
+    "family": "display",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "run"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "auto-dir",
+        "name": {
+          "ar": "النص المختلط يأخذ اتجاهه من محتواه",
+          "en": "Mixed-script text takes direction from its content"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "اللقب اللاتيني قبل اسم عربي يحتفظ بنقطته في مكانها داخل واجهة RTL",
+            "en": "A Latin title before an Arabic name keeps its full stop in place inside an RTL interface"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "dominant",
+        "name": {
+          "ar": "اتجاه السطر من الخط الغالب محسوبًا بالكلمات",
+          "en": "Line direction from the dominant script, counted by words"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "تُعدّ الكلمات لا الحروف، فالعربية تكتب الأسماء بحروف أقل وعدّ الحروف يقلب الاسم العربي إلى LTR",
+            "en": "Words are counted, not letters: Arabic spells names in fewer letters, so a letter count turns an Arabic-first name LTR"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "islands",
+        "name": {
+          "ar": "المقاطع الأجنبية تُغلَّف كجزر معزولة",
+          "en": "Foreign runs wrapped as isolated islands"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص المختلط يأخذ اتجاهه من محتواه مع عزل المقاطع المكتوبة بخط آخر",
+            "en": "Mixed-script content takes its direction from the content, with foreign runs isolated"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "align-pref",
+        "name": {
+          "ar": "المحاذاة بحسب الواجهة أو بحسب المحتوى",
+          "en": "Alignment by interface or by content"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "محاذاة السطر اللاتيني في قائمة عربية تفضيل إقليمي يُضبط في نطاق اللغة",
+            "en": "Alignment of a Latin line in an Arabic list is a regional preference set on the locale scope"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "highlight",
+        "name": {
+          "ar": "يعمل مع تمييز نتيجة البحث بداخله",
+          "en": "Works with a highlighted match inside"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "streaming",
+        "name": {
+          "ar": "ثابت أثناء وصول النص تدريجيًا",
+          "en": "Stable while text streams in"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "قد ينقلب الاتجاه أثناء وصول الرسالة، فيجب أن يستقر عند أول كلمة قوية ولا يقفز بعدها",
+            "en": "Direction can flip while a message streams; it should settle on the first strong word and not jump afterwards"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "Called AutoText in the owner's earlier code; the id says what it does for a reader who has not seen that code."
+      }
+    ]
+  }
+}

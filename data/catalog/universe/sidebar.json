@@ -1,0 +1,205 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "sidebar",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "sidebar",
+    "name": {
+      "ar": "شريط جانبي",
+      "en": "Sidebar"
+    },
+    "summary": {
+      "ar": "تنقل جانبي قابل للطي بمجموعات وعناصر متداخلة وشريط أيقونات.",
+      "en": "Collapsible side navigation with groups, nested items and an icon-only rail."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "disclosure",
+      "roving-focus"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "content",
+      "group",
+      "item",
+      "trigger",
+      "rail",
+      "footer"
+    ],
+    "dependsOn": [
+      "navigation-menu",
+      "tooltip"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Layout.Sider"
+      },
+      {
+        "library": "mantine",
+        "name": "NavLink",
+        "note": "the item only"
+      },
+      {
+        "library": "mantine",
+        "name": "Burger",
+        "note": "the toggle button only"
+      },
+      {
+        "library": "react-aria",
+        "name": "NavigationTree"
+      },
+      {
+        "library": "shadcn",
+        "name": "sidebar"
+      }
+    ],
+    "features": [
+      {
+        "id": "collapse",
+        "name": {
+          "ar": "الطي إلى أيقونات أو خارج الشاشة",
+          "en": "Collapse to icons or off-canvas"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "collapsed",
+            "path": "antd/es/layout/Sider.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "collapsible",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+          }
+        ]
+      },
+      {
+        "id": "side",
+        "name": {
+          "ar": "الجهة تتبع الاتجاه",
+          "en": "Side follows direction"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مواضع البداية والنهاية تنعكس مع الاتجاه، ولا يُستخدم اليسار واليمين الفيزيائيان إلا بطلب صريح",
+            "en": "Start/end placement must mirror with direction; physical left/right only when asked for explicitly"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "reverseArrow",
+            "path": "antd/es/layout/Sider.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "side",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+          }
+        ]
+      },
+      {
+        "id": "mobile",
+        "name": {
+          "ar": "يتحول إلى درج في الشاشات الصغيرة",
+          "en": "Becomes a drawer on small screens"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "breakpoint",
+            "path": "antd/es/layout/Sider.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "isMobile",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+          }
+        ]
+      },
+      {
+        "id": "shortcut",
+        "name": {
+          "ar": "اختصار لوحة مفاتيح للتبديل",
+          "en": "Keyboard shortcut to toggle"
+        },
+        "priority": "p2",
+        "in": [
+          "shadcn"
+        ],
+        "origin": "authored"
+      }
+    ]
+  }
+}

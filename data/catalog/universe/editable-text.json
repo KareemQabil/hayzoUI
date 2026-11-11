@@ -1,0 +1,119 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "editable-text",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "editable-text",
+    "name": {
+      "ar": "نص قابل للتحرير",
+      "en": "Editable text"
+    },
+    "summary": {
+      "ar": "نص يتحول إلى حقل عند التفعيل ثم يُثبَّت أو يُلغى.",
+      "en": "Text that turns into an input on activation and commits or cancels."
+    },
+    "family": "text-input",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "text-input"
+    ],
+    "anatomy": [
+      "root",
+      "preview",
+      "control",
+      "submit",
+      "cancel"
+    ],
+    "dependsOn": [
+      "text-field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Typography.Text",
+        "note": "through the editable prop"
+      },
+      {
+        "library": "chakra",
+        "name": "Editable"
+      }
+    ],
+    "features": [
+      {
+        "id": "commit",
+        "name": {
+          "ar": "Enter يثبّت و Escape يتراجع",
+          "en": "Enter commits, Escape reverts"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onEnd",
+            "path": "antd/es/typography/Base/index.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "submitMode",
+            "path": "@zag-js/editable/dist/editable.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "same-metrics",
+        "name": {
+          "ar": "العرض والحقل بالمقاييس نفسها",
+          "en": "Preview and input share metrics"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الانتقال من عرض تلقائي الاتجاه إلى حقل يجب ألا يقلب محاذاة النص تحت المؤشر",
+            "en": "Switching from auto-direction preview to an input must not flip the alignment of the text under the cursor"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

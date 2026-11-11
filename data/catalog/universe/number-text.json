@@ -1,0 +1,218 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "number-text",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "number-text",
+    "name": {
+      "ar": "نص رقمي",
+      "en": "Number text"
+    },
+    "summary": {
+      "ar": "ينسّق رقمًا للقراءة بنظام أرقام النطاق وفواصله.",
+      "en": "Formats a number for reading in the numerals and separators of the scope."
+    },
+    "family": "display",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "NumberFormatter"
+      },
+      {
+        "library": "chakra",
+        "name": "FormatNumber"
+      },
+      {
+        "library": "chakra",
+        "name": "FormatByte"
+      }
+    ],
+    "features": [
+      {
+        "id": "numerals",
+        "name": {
+          "ar": "أرقام لاتينية أو هندية من النطاق لا من اللغة",
+          "en": "Latin or Arabic-Indic digits from the scope, not from the language"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مصر تكتب العربية بأرقام لاتينية في معظم برامج الأعمال بينما وثائق سعودية كثيرة تستخدم الهندية، فالاختيار إعداد",
+            "en": "Egypt writes Arabic with Latin digits in most business software while Saudi documents often use Arabic-Indic; the choice is a setting"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "separators",
+        "name": {
+          "ar": "فواصل الآلاف والكسور الخاصة بنظام الأرقام",
+          "en": "Grouping and decimal separators of the numeral system"
+        },
+        "priority": "p0",
+        "in": [
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "فاصل الآلاف العربي يشبه الفاصلة العشرية في خطوط الواجهات، والتجميع بمسافة ضيقة غير فاصلة يتجنب اللبس",
+            "en": "The Arabic thousands separator looks like the decimal separator in interface fonts; grouping with a narrow no-break space avoids the confusion"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "thousandSeparator",
+            "path": "@mantine/core/lib/components/NumberFormatter/NumberFormatter.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "identifiers",
+        "name": {
+          "ar": "المعرّفات تبقى لاتينية",
+          "en": "Identifiers stay Latin"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الرموز مثل INV-2026-0148 تحتفظ بأرقامها كما كُتبت، والتفضيل يشمل الكميات والمبالغ والهواتف والتواريخ فقط",
+            "en": "Codes such as INV-2026-0148 keep the digits they were written with; only quantities, amounts, phones and dates follow the preference"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "tabular",
+        "name": {
+          "ar": "أرقام متساوية العرض في الأعمدة",
+          "en": "Tabular digits in columns"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "ليست كل الخطوط العربية تحوي أرقامًا هندية متساوية العرض، وطبقة الخطوط تسجّل أيها يحويها",
+            "en": "Not every Arabic face has tabular Arabic-Indic digits; the font layer records which do"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "sign",
+        "name": {
+          "ar": "موضع الإشارة وعلامة النسبة من بيانات اللغة",
+          "en": "Sign and percent placement from locale data"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "علامة السالب بعد الأرقام أو علامة النسبة في الجهة الخاطئة تنتج عن ضم النصوص في RTL",
+            "en": "A minus after the digits or a percent on the wrong side comes from concatenating strings in RTL"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "prefix",
+            "path": "@mantine/core/lib/components/NumberFormatter/NumberFormatter.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "isolated",
+        "name": {
+          "ar": "يُرسم كمقطع معزول واحد",
+          "en": "Rendered as one isolated run"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "compact-bytes",
+        "name": {
+          "ar": "صيغ مختصرة وصيغ البايت",
+          "en": "Compact and byte formats"
+        },
+        "priority": "p2",
+        "in": [
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "unit",
+            "path": "@ark-ui/react/dist/components/format/format-byte.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "The owner's earlier code calls these Digits / NumberText; one entry covers both."
+      }
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "tax-summary",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "tax-summary",
+    "name": {
+      "ar": "ملخص الضريبة والزكاة",
+      "en": "Tax summary"
+    },
+    "summary": {
+      "ar": "تفصيل المبالغ الخاضعة للضريبة وضريبة القيمة المضافة لكل نسبة والزكاة حيث تنطبق.",
+      "en": "Breakdown of taxable amounts, VAT by rate, and zakat where it applies."
+    },
+    "family": "pattern",
+    "tier": "T5",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "row",
+      "rate",
+      "taxable",
+      "tax",
+      "total"
+    ],
+    "dependsOn": [
+      "money-text",
+      "description-list"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "by-rate",
+        "name": {
+          "ar": "صف لكل نسبة وفئة (أساسية، صفرية، معفاة)",
+          "en": "One row per rate and category (standard, zero, exempt)"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النسب بيانات مؤرخة في بيانات المالية، والملخص يعرض النسبة السارية في تاريخ التوريد",
+            "en": "Rates are dated claims in data/finance; the summary shows the rate that applied on the supply date"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "exact",
+        "name": {
+          "ar": "الإجماليات تتطابق حتى الوحدة الصغرى",
+          "en": "Totals reconcile to the minor unit"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "percent",
+        "name": {
+          "ar": "النسبة مكتوبة بعلامة النسبة الخاصة باللغة",
+          "en": "Rate written with the locale percent sign"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "zakat",
+        "name": {
+          "ar": "سطر الزكاة حين تخضع لها المنشأة",
+          "en": "Zakat line where the entity is subject to it"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الزكاة تُحتسب على المنشأة لا على الفاتورة، فيظهر السطر في ملخصات الفترات والتقارير فقط",
+            "en": "Zakat is assessed on the entity, not per invoice; the line appears in period summaries and reports only"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "inclusive",
+        "name": {
+          "ar": "عرض شامل الضريبة وغير شامل",
+          "en": "Tax-inclusive and tax-exclusive presentation"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "tax-summary covers the \"zakat/VAT summary\" of the brief."
+      }
+    ]
+  }
+}

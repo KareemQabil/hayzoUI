@@ -1,0 +1,123 @@
+{
+  "note": "Pinned artifacts read by fetch.mjs. Library id -> npm packages (the first is the entry used for export checks). `deps` are regular expressions: dependencies (followed transitively) whose name matches are fetched too, because prop types are declared there; the versions npm resolved are written to evidence/resolved-packages.json.",
+  "retrievedAt": "2026-11-11",
+  "libraries": {
+    "antd": {
+      "name": "Ant Design",
+      "license": "MIT",
+      "packages": [
+        "antd@6.7.0"
+      ],
+      "deps": [
+        "^@rc-component/"
+      ]
+    },
+    "antd-pro": {
+      "name": "Ant Design ProComponents",
+      "license": "MIT",
+      "packages": [
+        "@ant-design/pro-components@2.8.10"
+      ],
+      "deps": [
+        "^@ant-design/pro-"
+      ]
+    },
+    "mui": {
+      "name": "Material UI",
+      "license": "MIT",
+      "packages": [
+        "@mui/material@9.5.0"
+      ]
+    },
+    "mui-x": {
+      "name": "MUI X (community)",
+      "license": "MIT",
+      "packages": [
+        "@mui/x-data-grid@9.17.0",
+        "@mui/x-date-pickers@9.17.0",
+        "@mui/x-tree-view@9.17.0",
+        "@mui/x-charts@9.17.0"
+      ]
+    },
+    "mantine": {
+      "name": "Mantine",
+      "license": "MIT",
+      "packages": [
+        "@mantine/core@9.8.0",
+        "@mantine/dates@9.8.0",
+        "@mantine/notifications@9.8.0",
+        "@mantine/dropzone@9.8.0",
+        "@mantine/spotlight@9.8.0",
+        "@mantine/carousel@9.8.0",
+        "@mantine/charts@9.8.0",
+        "@mantine/tiptap@9.8.0"
+      ]
+    },
+    "chakra": {
+      "name": "Chakra UI",
+      "license": "MIT",
+      "packages": [
+        "@chakra-ui/react@3.38.0"
+      ],
+      "deps": [
+        "^@ark-ui/react$",
+        "^@zag-js/"
+      ]
+    },
+    "react-aria": {
+      "name": "React Aria Components",
+      "license": "Apache-2.0",
+      "packages": [
+        "react-aria-components@1.22.1"
+      ],
+      "deps": [
+        "^react-aria$",
+        "^react-stately$",
+        "^@react-types/shared$"
+      ]
+    },
+    "base-ui": {
+      "name": "Base UI",
+      "license": "MIT",
+      "packages": [
+        "@base-ui/react@1.9.0"
+      ]
+    },
+    "radix": {
+      "name": "Radix Primitives",
+      "license": "MIT",
+      "packages": [
+        "radix-ui@1.8.1"
+      ],
+      "deps": [
+        "^@radix-ui/"
+      ]
+    },
+    "headless-ui": {
+      "name": "Headless UI",
+      "license": "MIT",
+      "packages": [
+        "@headlessui/react@2.2.10"
+      ]
+    },
+    "ag-grid": {
+      "name": "AG Grid Community",
+      "license": "MIT",
+      "packages": [
+        "ag-grid-community@36.3.0"
+      ]
+    },
+    "tanstack-table": {
+      "name": "TanStack Table",
+      "license": "MIT",
+      "packages": [
+        "@tanstack/table-core@9.3.1"
+      ]
+    }
+  },
+  "shadcn": {
+    "name": "shadcn/ui",
+    "license": "MIT",
+    "repo": "https://github.com/shadcn-ui/ui"
+  }
+}

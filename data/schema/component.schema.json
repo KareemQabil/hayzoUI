@@ -77,12 +77,14 @@
           "$ref": "common.schema.json#/$defs/priority"
         },
         "engines": {
-          "description": "Headless engines it is built on (ids under data/catalog/engines.json).",
+          "description": "Headless engines it is built on, from the closed list in docs/ARCHITECTURE.md (\"none\" when it needs no engine). tools/extract/universe/report.mjs checks every id against that list.",
           "type": "array",
           "items": {
             "type": "string",
             "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
-          }
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "patterns": {
           "description": "Behaviour pattern ids (data/patterns).",
@@ -97,14 +99,17 @@
           "items": {
             "type": "string",
             "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
-          }
+          },
+          "description": "Named parts, in reading order."
         },
         "dependsOn": {
           "type": "array",
           "items": {
             "type": "string",
             "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
-          }
+          },
+          "description": "Ids of other universe components this one is built from. Every id must resolve (checked by tools/extract/universe/report.mjs).",
+          "uniqueItems": true
         },
         "aliases": {
           "type": "array",
@@ -129,7 +134,8 @@
               "name"
             ],
             "additionalProperties": false
-          }
+          },
+          "description": "Names of this component in other libraries. Every alias was checked against the library's published exports (or the shadcn registry index); names that could not be checked are left out."
         },
         "features": {
           "type": "array",
@@ -173,6 +179,39 @@
                   "note"
                 ],
                 "additionalProperties": false
+              },
+              "origin": {
+                "description": "Where the row and its Arabic name come from: the owner's parity matrix (citable source) or written for this file (needs review).",
+                "enum": [
+                  "owner-matrix",
+                  "authored"
+                ]
+              },
+              "evidence": {
+                "description": "For libraries of `in` that were confirmed mechanically: the property found in that library's type declarations (or source, for shadcn). A library listed in `in` without evidence is asserted from the owner's matrix or from knowledge of the library and needs review.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "library": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                    },
+                    "symbol": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "library",
+                    "symbol"
+                  ],
+                  "additionalProperties": false
+                }
               }
             },
             "required": [
@@ -201,6 +240,34 @@
           "required": [],
           "additionalProperties": false
         },
+        "decisions": {
+          "description": "Judgement calls made for this entry, stated so they can be challenged.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "topic": {
+                "enum": [
+                  "naming",
+                  "merge",
+                  "split",
+                  "tier",
+                  "engine",
+                  "scope"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "topic",
+              "note"
+            ],
+            "additionalProperties": false
+          }
+        },
         "notes": {
           "type": "string",
           "minLength": 1
@@ -209,9 +276,11 @@
       "required": [
         "id",
         "name",
+        "summary",
         "family",
         "tier",
         "priority",
+        "engines",
         "aliases",
         "features"
       ],

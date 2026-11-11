@@ -1,0 +1,151 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "context-menu",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "context-menu",
+    "name": {
+      "ar": "قائمة سياقية",
+      "en": "Context menu"
+    },
+    "summary": {
+      "ar": "قائمة تُفتح بالنقر الأيمن أو الضغط المطوّل عند المؤشر.",
+      "en": "A menu opened by right-click or long-press at the pointer."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "menu",
+      "collection",
+      "roving-focus",
+      "overlay-layers",
+      "anchored-position"
+    ],
+    "anatomy": [
+      "trigger",
+      "popup",
+      "item",
+      "separator"
+    ],
+    "dependsOn": [
+      "menu"
+    ],
+    "aliases": [
+      {
+        "library": "base-ui",
+        "name": "ContextMenu"
+      },
+      {
+        "library": "radix",
+        "name": "ContextMenu"
+      },
+      {
+        "library": "shadcn",
+        "name": "context-menu"
+      }
+    ],
+    "features": [
+      {
+        "id": "trigger",
+        "name": {
+          "ar": "المشغّل: مرور/نقر/زر أيمن",
+          "en": "Trigger hover / click / contextMenu"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "long-press",
+        "name": {
+          "ar": "ضغط مطوّل في اللمس",
+          "en": "Long-press on touch"
+        },
+        "priority": "p1",
+        "in": [
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "authored"
+      },
+      {
+        "id": "anchor",
+        "name": {
+          "ar": "تُفتح نحو نهاية السطر من موضع المؤشر",
+          "en": "Opens toward the inline end of the pointer"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مواضع البداية والنهاية تنعكس مع الاتجاه، ولا يُستخدم اليسار واليمين الفيزيائيان إلا بطلب صريح",
+            "en": "Start/end placement must mirror with direction; physical left/right only when asked for explicitly"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "notes": "AntD: Dropdown with trigger contextMenu; Chakra: Menu.ContextTrigger. Neither is a separate export."
+  }
+}

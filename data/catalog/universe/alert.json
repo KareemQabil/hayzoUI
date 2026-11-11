@@ -1,0 +1,325 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "alert",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "alert",
+    "name": {
+      "ar": "تنبيه",
+      "en": "Alert"
+    },
+    "summary": {
+      "ar": "رسالة ضمن الصفحة عن حالتها أو حالة قسم منها.",
+      "en": "An inline message about the state of the page or a section."
+    },
+    "family": "feedback",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "icon",
+      "title",
+      "description",
+      "action",
+      "close"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Alert"
+      },
+      {
+        "library": "mui",
+        "name": "Alert"
+      },
+      {
+        "library": "mantine",
+        "name": "Alert"
+      },
+      {
+        "library": "chakra",
+        "name": "Alert"
+      },
+      {
+        "library": "shadcn",
+        "name": "alert"
+      }
+    ],
+    "features": [
+      {
+        "id": "types",
+        "name": {
+          "ar": "الأنواع",
+          "en": "Types success / info / warning / error"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "type",
+            "path": "antd/es/alert/Alert.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "severity",
+            "path": "@mui/material/Alert/Alert.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "color",
+            "path": "@mantine/core/lib/components/Alert/Alert.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "color",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/alert.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "variant",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/alert.tsx"
+          }
+        ]
+      },
+      {
+        "id": "description",
+        "name": {
+          "ar": "عنوان ووصف",
+          "en": "Message and description"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "description",
+            "path": "antd/es/alert/Alert.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "title",
+            "path": "@mantine/core/lib/components/Alert/Alert.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "action",
+        "name": {
+          "ar": "إجراء",
+          "en": "Action"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "action",
+            "path": "antd/es/alert/Alert.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "action",
+            "path": "@mui/material/Alert/Alert.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "live",
+        "name": {
+          "ar": "منطقة إعلان حي",
+          "en": "Live region politeness"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "closable",
+        "name": {
+          "ar": "قابل للإغلاق",
+          "en": "Closable"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "closable",
+            "path": "antd/es/alert/Alert.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "onClose",
+            "path": "@mui/material/Alert/Alert.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "onClose",
+            "path": "@mantine/core/lib/components/Alert/Alert.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "banner",
+        "name": {
+          "ar": "نمط الشريط",
+          "en": "Banner mode"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "banner",
+            "path": "antd/es/alert/Alert.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icon",
+        "name": {
+          "ar": "أيقونة مخصصة",
+          "en": "Show / custom icon"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showIcon",
+            "path": "antd/es/alert/Alert.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "icon",
+            "path": "@mui/material/Alert/Alert.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "icon",
+            "path": "@mantine/core/lib/components/Alert/Alert.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icon-side",
+        "name": {
+          "ar": "الأيقونة عند بداية السطر والإغلاق عند نهايته",
+          "en": "Icon at the inline start, close at the inline end"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "alert; the owner's plan calls the page-level form Banner, kept as the banner feature."
+      }
+    ]
+  }
+}

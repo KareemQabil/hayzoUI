@@ -1,0 +1,137 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "entity-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "entity-picker",
+    "name": {
+      "ar": "منتقي السجلات",
+      "en": "Entity picker"
+    },
+    "summary": {
+      "ar": "مربع تحرير وسرد لسجلات العمل (عميل، مورد، صنف) يبحث بالاسم أو الهاتف أو الرمز مع إنشاء جديد.",
+      "en": "Combobox over business records (customer, supplier, item) searched by name, phone or code, with create-new."
+    },
+    "family": "pattern",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "combobox",
+      "listbox",
+      "collection",
+      "selection",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "input",
+      "popup",
+      "option",
+      "secondary-line",
+      "create",
+      "empty"
+    ],
+    "dependsOn": [
+      "combobox",
+      "auto-direction-text"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "name-search",
+        "name": {
+          "ar": "بحث بالاسم متسامح مع اختلاف الإملاء العربي",
+          "en": "Name search tolerant of Arabic spelling variants"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "phone-code",
+        "name": {
+          "ar": "بحث بالهاتف والرمز عبر الأرقام",
+          "en": "Phone and code search by digits"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "تُطابَق الأرقام ابتداءً من ثلاثة محارف مع تجاهل المسافات وعلامة + والشرطات وبأي نظام أرقام",
+            "en": "Digits match from three characters up, ignoring spaces, plus and dashes, in any numeral system"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "secondary",
+        "name": {
+          "ar": "سطر ثانوي (الهاتف، الرصيد)",
+          "en": "Secondary line (phone, balance)"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "create",
+        "name": {
+          "ar": "إنشاء سجل من نص البحث",
+          "en": "Create a record from the query"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "recent",
+        "name": {
+          "ar": "السجلات الأخيرة أولًا",
+          "en": "Recent records first"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "The owner's plan lists CustomerPicker at T2; generalised to any record so it is one pattern, not one per entity."
+      }
+    ]
+  }
+}

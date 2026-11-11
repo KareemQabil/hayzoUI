@@ -1,0 +1,288 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "tree-select",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "tree-select",
+    "name": {
+      "ar": "اختيار شجري",
+      "en": "Tree select"
+    },
+    "summary": {
+      "ar": "قائمة منسدلة نافذتها شجرة.",
+      "en": "Select whose popup is a tree."
+    },
+    "family": "selection",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "tree-model",
+      "selection",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "trigger",
+      "popup",
+      "tree"
+    ],
+    "dependsOn": [
+      "tree",
+      "select"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "TreeSelect"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "اختيار من شجرة",
+          "en": "Tree dropdown select"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "multiple",
+        "name": {
+          "ar": "متعدد",
+          "en": "Multiple"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "multiple",
+            "path": "@rc-component/tree-select/es/TreeSelect.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "checkable",
+        "name": {
+          "ar": "تحديد بمربعات",
+          "en": "treeCheckable"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "treeCheckable",
+            "path": "@rc-component/tree-select/es/TreeSelect.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "strategy",
+        "name": {
+          "ar": "استراتيجية عرض المحدد",
+          "en": "showCheckedStrategy"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showCheckedStrategy",
+            "path": "@rc-component/tree-select/es/TreeSelect.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "search",
+        "name": {
+          "ar": "البحث في الشجرة",
+          "en": "Search with treeNodeFilterProp"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "treeNodeFilterProp",
+            "path": "@rc-component/tree-select/es/LegacyContext.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "async",
+        "name": {
+          "ar": "تحميل غير متزامن",
+          "en": "Async load data"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loadData",
+            "path": "@rc-component/tree-select/es/LegacyContext.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tree-data",
+        "name": {
+          "ar": "بيانات الشجرة",
+          "en": "treeData / simple mode"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "treeData",
+            "path": "@rc-component/tree-select/es/TreeSelect.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "expand",
+        "name": {
+          "ar": "التوسيع الافتراضي والمتحكم به",
+          "en": "Default / controlled expanded keys"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "treeExpandedKeys",
+            "path": "@rc-component/tree-select/es/LegacyContext.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tree-line",
+        "name": {
+          "ar": "خطوط الشجرة",
+          "en": "Tree lines"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "treeLine",
+            "path": "@rc-component/tree-select/es/LegacyContext.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "virtual",
+        "name": {
+          "ar": "تمرير افتراضي",
+          "en": "Virtual scroll"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "virtual",
+            "path": "@rc-component/tree-select/es/TreeSelect.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "max-tag",
+        "name": {
+          "ar": "حد الوسوم",
+          "en": "maxTagCount"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "عكس المسافة البادئة ومفتاح التوسيع في RTL",
+          "en": "Indent and switcher mirrored in RTL"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "المسافة البادئة تبدأ من بداية السطر وزر التوسيع ينعكس، ويُطبَّق البحث المتسامح",
+            "en": "Indentation starts from the inline start and the switcher mirrors; tolerant Arabic search applies"
+          }
+        },
+        "origin": "owner-matrix"
+      }
+    ]
+  }
+}

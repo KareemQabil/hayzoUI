@@ -1,0 +1,826 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "dialog",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "dialog",
+    "name": {
+      "ar": "حوار",
+      "en": "Dialog"
+    },
+    "summary": {
+      "ar": "نافذة حاجبة تأخذ التركيز حتى تُغلق.",
+      "en": "A modal window that takes focus until it is closed."
+    },
+    "family": "overlay",
+    "tier": "T3",
+    "priority": "p0",
+    "engines": [
+      "dialog",
+      "overlay-layers",
+      "focus-scope"
+    ],
+    "anatomy": [
+      "trigger",
+      "backdrop",
+      "popup",
+      "title",
+      "description",
+      "close",
+      "footer"
+    ],
+    "dependsOn": [
+      "portal",
+      "focus-scope",
+      "button"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Modal"
+      },
+      {
+        "library": "mui",
+        "name": "Dialog"
+      },
+      {
+        "library": "mui",
+        "name": "Modal",
+        "note": "low-level"
+      },
+      {
+        "library": "mui",
+        "name": "Backdrop",
+        "note": "the backdrop part"
+      },
+      {
+        "library": "mantine",
+        "name": "Modal"
+      },
+      {
+        "library": "mantine",
+        "name": "Overlay"
+      },
+      {
+        "library": "mantine",
+        "name": "Dialog",
+        "note": "non-modal fixed panel"
+      },
+      {
+        "library": "chakra",
+        "name": "Dialog"
+      },
+      {
+        "library": "react-aria",
+        "name": "Dialog"
+      },
+      {
+        "library": "react-aria",
+        "name": "DialogTrigger"
+      },
+      {
+        "library": "react-aria",
+        "name": "Modal"
+      },
+      {
+        "library": "base-ui",
+        "name": "Dialog"
+      },
+      {
+        "library": "radix",
+        "name": "Dialog"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Dialog"
+      },
+      {
+        "library": "shadcn",
+        "name": "dialog"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عنوان ومحتوى وتذييل",
+          "en": "Title, content, footer"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "controlled",
+        "name": {
+          "ar": "فتح متحكم به مع سبب الإغلاق",
+          "en": "Controlled open with close reason"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "open",
+            "path": "antd/es/modal/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "open",
+            "path": "@mui/material/Dialog/Dialog.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "open",
+            "path": "@mantine/core/lib/components/Modal/use-modals-stack.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "open",
+            "path": "@zag-js/dialog/dist/dialog.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isOpen",
+            "path": "react-aria-components/dist/types/src/Modal.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "open",
+            "path": "@base-ui/react/dialog/backdrop/DialogBackdrop.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "open",
+            "path": "@radix-ui/react-dialog/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "open",
+            "path": "@headlessui/react/dist/components/dialog/dialog.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "open",
+            "path": "via @radix-ui/react-dialog/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "focus-enter",
+        "name": {
+          "ar": "دخول التركيز عند الفتح",
+          "en": "Focus enters on open"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "focus-trap",
+        "name": {
+          "ar": "حبس التركيز",
+          "en": "Focus trapped"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "focusTrap",
+            "path": "@rc-component/dialog/es/IDialogPropTypes.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disableEnforceFocus",
+            "path": "@mui/material/Modal/Modal.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "trapFocus",
+            "path": "@mantine/core/lib/components/ModalBase/ModalBase.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "trapFocus",
+            "path": "@zag-js/dialog/dist/dialog.types.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "trapFocus",
+            "path": "@radix-ui/react-dialog/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "trapFocus",
+            "path": "via @radix-ui/react-dialog/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "escape",
+        "name": {
+          "ar": "Escape يغلق والتركيز يعود",
+          "en": "Escape closes, focus returns"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "keyboard",
+            "path": "antd/es/modal/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "closeOnEscape",
+            "path": "@mantine/core/lib/components/ModalBase/ModalBase.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "closeOnEscape",
+            "path": "@zag-js/dialog/dist/dialog.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "nested",
+        "name": {
+          "ar": "حوارات متداخلة",
+          "en": "Nested modals"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "base-ui",
+            "symbol": "nested",
+            "path": "@base-ui/react/dialog/popup/DialogPopup.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mask-closable",
+        "name": {
+          "ar": "الإغلاق بالنقر على الخلفية",
+          "en": "Mask closable"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "maskClosable",
+            "path": "antd/es/modal/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "closeOnClickOutside",
+            "path": "@mantine/core/lib/components/ModalBase/ModalBase.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "closeOnInteractOutside",
+            "path": "@zag-js/dialog/dist/dialog.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDismissable",
+            "path": "react-aria-components/dist/types/src/Modal.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disablePointerDismissal",
+            "path": "@base-ui/react/dialog/root/DialogRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "closable",
+        "name": {
+          "ar": "زر الإغلاق",
+          "en": "Close button"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "closable",
+            "path": "antd/es/modal/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withCloseButton",
+            "path": "@mantine/core/lib/components/Modal/Modal.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "showCloseButton",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/dialog.tsx"
+          }
+        ]
+      },
+      {
+        "id": "confirm-loading",
+        "name": {
+          "ar": "منع الإغلاق أثناء الانشغال",
+          "en": "confirmLoading / prevent close while busy"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "confirmLoading",
+            "path": "antd/es/modal/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "width",
+        "name": {
+          "ar": "العرض",
+          "en": "Width"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "width",
+            "path": "antd/es/modal/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "maxWidth",
+            "path": "@mui/material/Dialog/Dialog.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/ModalBase/ModalBase.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/dialog.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "centered",
+        "name": {
+          "ar": "التوسيط",
+          "en": "Centered / top offset"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "centered",
+            "path": "antd/es/modal/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "scroll",
+            "path": "@mui/material/Dialog/Dialog.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "centered",
+            "path": "@mantine/core/lib/components/Modal/ModalRoot.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "placement",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/dialog.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "destroy",
+        "name": {
+          "ar": "الإزالة عند الإغلاق",
+          "en": "destroyOnClose / forceRender"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "destroyOnHidden",
+            "path": "antd/es/modal/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "keepMounted",
+            "path": "@mui/material/Modal/Modal.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "keepMounted",
+            "path": "@mantine/core/lib/components/ModalBase/ModalBase.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "keepMounted",
+            "path": "@base-ui/react/dialog/portal/DialogPortal.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "forceMount",
+            "path": "@radix-ui/react-dialog/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "forceMount",
+            "path": "via @radix-ui/react-dialog/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "after-close",
+        "name": {
+          "ar": "بعد الإغلاق",
+          "en": "afterClose / afterOpenChange"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "afterClose",
+            "path": "antd/es/modal/ConfirmDialog.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "onExitTransitionEnd",
+            "path": "@mantine/core/lib/components/ModalBase/ModalBase.context.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "onOpenChangeComplete",
+            "path": "@base-ui/react/dialog/root/DialogRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "footer-render",
+        "name": {
+          "ar": "تذييل مخصص مع الأزرار الافتراضية",
+          "en": "Footer render with default buttons"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "footer",
+            "path": "antd/es/modal/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "inert",
+        "name": {
+          "ar": "جعل الخلفية خاملة لقارئات الشاشة",
+          "en": "Background made inert for assistive tech"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "close-side",
+        "name": {
+          "ar": "زر الإغلاق عند نهاية سطر الرأس",
+          "en": "Close button at the inline end of the header"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "footer-order",
+        "name": {
+          "ar": "موضع الإجراء الأساسي في التذييل",
+          "en": "Primary action position in the footer"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "ترتيب أزرار التذييل عادة منصة لا قاعدة اتجاه، والانعكاس يضع الإجراء الأساسي يسارًا في العربية فيجب أن يكون اختيارًا مقصودًا",
+            "en": "Footer button order is a platform habit, not a direction rule: mirroring puts the primary action on the left in Arabic, which must be a deliberate choice"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "draft-guard",
+        "name": {
+          "ar": "Escape يتراجع عن مسودة الحقل قبل الإغلاق",
+          "en": "Escape reverts a field draft before closing"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "scroll-lock",
+        "name": {
+          "ar": "قفل تمرير الخلفية",
+          "en": "Background scroll locked"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "تعويض شريط التمرير المزال بـpadding-right يزيح الصفحة في RTL حيث الشريط على اليسار",
+            "en": "Compensating for the removed scrollbar with padding-right shifts the page in RTL, where the scrollbar is on the left"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "disableScrollLock",
+            "path": "@mui/material/Modal/Modal.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "lockScroll",
+            "path": "@mantine/core/lib/components/ModalBase/ModalBase.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "preventScroll",
+            "path": "@zag-js/dialog/dist/dialog.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "modal",
+            "path": "@base-ui/react/dialog/root/DialogRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "modal",
+            "path": "@radix-ui/react-dialog/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "modal",
+            "path": "via @radix-ui/react-dialog/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fullscreen",
+        "name": {
+          "ar": "ملء الشاشة في النوافذ الصغيرة",
+          "en": "Full screen on small viewports"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "fullScreen",
+            "path": "@mui/material/Dialog/Dialog.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "fullScreen",
+            "path": "@mantine/core/lib/components/Modal/Modal.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/dialog.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "dialog (ARIA role and seven libraries) over modal (AntD, Mantine)."
+      },
+      {
+        "topic": "split",
+        "note": "Modal.confirm and useModal rows moved to alert-dialog; the draggable recipe row is dropped."
+      }
+    ]
+  }
+}

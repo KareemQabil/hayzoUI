@@ -1,0 +1,271 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "tags-input",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "tags-input",
+    "name": {
+      "ar": "حقل وسوم",
+      "en": "Tags input"
+    },
+    "summary": {
+      "ar": "إدخال نص حر يحوّل كل كلمة مثبتة إلى وسم.",
+      "en": "Free-text entry that turns each committed word into a tag."
+    },
+    "family": "selection",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "text-input",
+      "collection",
+      "selection",
+      "roving-focus",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "input",
+      "tag",
+      "tag-remove",
+      "clear"
+    ],
+    "dependsOn": [
+      "tag",
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Select",
+        "note": "mode=\"tags\""
+      },
+      {
+        "library": "mantine",
+        "name": "TagsInput"
+      },
+      {
+        "library": "chakra",
+        "name": "TagsInput"
+      },
+      {
+        "library": "react-aria",
+        "name": "TokenField"
+      }
+    ],
+    "features": [
+      {
+        "id": "tags",
+        "name": {
+          "ar": "نمط الوسوم",
+          "en": "Tags mode"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "tokenSeparators",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "splitChars",
+            "path": "@mantine/core/lib/components/TagsInput/TagsInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "delimiter",
+            "path": "@zag-js/tags-input/dist/tags-input.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "separators",
+        "name": {
+          "ar": "الفصل عند الفواصل ومنها الفاصلة العربية",
+          "en": "Split on separators, including the Arabic comma"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الفاصلة العربية والفاصلة المنقوطة العربية تفصلان الوسوم مثل اللاتينيتين",
+            "en": "The Arabic comma (U+060C) and Arabic semicolon split tags just like the Latin ones"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "tokenSeparators",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "splitChars",
+            "path": "@mantine/core/lib/components/TagsInput/TagsInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "delimiter",
+            "path": "@zag-js/tags-input/dist/tags-input.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "duplicates",
+        "name": {
+          "ar": "كشف التكرار بعد توحيد الأحرف",
+          "en": "Duplicate check with Arabic folding"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "allowDuplicates",
+            "path": "@mantine/core/lib/components/TagsInput/TagsInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "allowDuplicates",
+            "path": "@zag-js/tags-input/dist/tags-input.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "paste",
+        "name": {
+          "ar": "لصق قائمة",
+          "en": "Paste a list"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "acceptValueOnBlur",
+            "path": "@mantine/core/lib/components/TagsInput/TagsInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "addOnPaste",
+            "path": "@zag-js/tags-input/dist/tags-input.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "max",
+        "name": {
+          "ar": "حد أقصى للوسوم",
+          "en": "Maximum number of tags"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "maxCount",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "maxTags",
+            "path": "@mantine/core/lib/components/TagsInput/TagsInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "max",
+            "path": "@zag-js/tags-input/dist/tags-input.types.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

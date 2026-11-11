@@ -1,0 +1,223 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "flex",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "flex",
+    "name": {
+      "ar": "تخطيط مرن",
+      "en": "Flex"
+    },
+    "summary": {
+      "ar": "حاوية Flexbox بخصائص المحاذاة والالتفاف والمسافة.",
+      "en": "Flexbox container with alignment, wrap and gap props."
+    },
+    "family": "layout",
+    "tier": "T0",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Flex"
+      },
+      {
+        "library": "mantine",
+        "name": "Flex"
+      },
+      {
+        "library": "mantine",
+        "name": "Center"
+      },
+      {
+        "library": "chakra",
+        "name": "Flex"
+      },
+      {
+        "library": "chakra",
+        "name": "Center"
+      },
+      {
+        "library": "chakra",
+        "name": "Wrap"
+      },
+      {
+        "library": "chakra",
+        "name": "AbsoluteCenter"
+      }
+    ],
+    "features": [
+      {
+        "id": "direction",
+        "name": {
+          "ar": "رأسي/أفقي",
+          "en": "Vertical / horizontal"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "vertical",
+            "path": "antd/es/flex/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "direction",
+            "path": "@mantine/core/lib/components/Flex/Flex.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "direction",
+            "path": "@chakra-ui/react/dist/types/components/flex/flex.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "align-justify",
+        "name": {
+          "ar": "المحاذاة والتوزيع",
+          "en": "Align and justify"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "align",
+            "path": "antd/es/flex/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "align",
+            "path": "@mantine/core/lib/components/Flex/Flex.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "align",
+            "path": "@chakra-ui/react/dist/types/components/flex/flex.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "gap",
+        "name": {
+          "ar": "مسافات محددة",
+          "en": "Gap presets"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "gap",
+            "path": "antd/es/flex/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "gap",
+            "path": "@mantine/core/lib/components/Flex/Flex.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "wrap",
+        "name": {
+          "ar": "الالتفاف",
+          "en": "Wrap"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "wrap",
+            "path": "antd/es/flex/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "wrap",
+            "path": "@mantine/core/lib/components/Flex/Flex.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "wrap",
+            "path": "@chakra-ui/react/dist/types/components/flex/flex.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

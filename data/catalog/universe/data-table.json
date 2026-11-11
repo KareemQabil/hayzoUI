@@ -1,0 +1,3273 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "data-table",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      },
+      {
+        "name": "AG Grid Community",
+        "url": "https://github.com/ag-grid/ag-grid",
+        "version": "ag-grid-community@36.3.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "TanStack Table",
+        "url": "https://github.com/TanStack/table",
+        "version": "@tanstack/table-core@9.3.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "data-table",
+    "name": {
+      "ar": "جدول بيانات",
+      "en": "Data table"
+    },
+    "summary": {
+      "ar": "صفوف وأعمدة من السجلات للقراءة: فرز وتصفية وترقيم وتحديد وتثبيت وإجمالي.",
+      "en": "Rows and columns of records to read: sort, filter, page, select, pin, total."
+    },
+    "family": "data",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "table-model",
+      "collection",
+      "selection",
+      "grid-navigation",
+      "pagination",
+      "virtual-list",
+      "resize"
+    ],
+    "anatomy": [
+      "root",
+      "toolbar",
+      "header",
+      "header-cell",
+      "sort-indicator",
+      "filter-trigger",
+      "body",
+      "row",
+      "cell",
+      "selection-cell",
+      "expand-cell",
+      "footer",
+      "summary",
+      "pagination",
+      "empty",
+      "loading"
+    ],
+    "dependsOn": [
+      "checkbox",
+      "pagination",
+      "menu",
+      "scroll-area",
+      "empty-state",
+      "skeleton"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Table"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProTable"
+      },
+      {
+        "library": "antd-pro",
+        "name": "DragSortTable"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ListToolBar"
+      },
+      {
+        "library": "antd-pro",
+        "name": "TableDropdown"
+      },
+      {
+        "library": "mui",
+        "name": "Table",
+        "note": "markup only; behaviour lives in MUI X"
+      },
+      {
+        "library": "mui",
+        "name": "TableSortLabel"
+      },
+      {
+        "library": "mui-x",
+        "name": "DataGrid"
+      },
+      {
+        "library": "mui-x",
+        "name": "QuickFilter"
+      },
+      {
+        "library": "mui-x",
+        "name": "ExportCsv"
+      },
+      {
+        "library": "mui-x",
+        "name": "ExportPrint"
+      },
+      {
+        "library": "mui-x",
+        "name": "ColumnsPanelTrigger"
+      },
+      {
+        "library": "mui-x",
+        "name": "FilterPanelTrigger"
+      },
+      {
+        "library": "mantine",
+        "name": "Table"
+      },
+      {
+        "library": "chakra",
+        "name": "Table"
+      },
+      {
+        "library": "react-aria",
+        "name": "Table"
+      },
+      {
+        "library": "react-aria",
+        "name": "Column"
+      },
+      {
+        "library": "react-aria",
+        "name": "Row"
+      },
+      {
+        "library": "react-aria",
+        "name": "Cell"
+      },
+      {
+        "library": "react-aria",
+        "name": "ResizableTableContainer"
+      },
+      {
+        "library": "shadcn",
+        "name": "table",
+        "note": "markup only; the documented data table combines it with TanStack Table"
+      },
+      {
+        "library": "ag-grid",
+        "name": "createGrid"
+      },
+      {
+        "library": "tanstack-table",
+        "name": "constructTable",
+        "note": "headless model"
+      }
+    ],
+    "features": [
+      {
+        "id": "columns",
+        "name": {
+          "ar": "الأعمدة ومصدر البيانات",
+          "en": "Columns and dataSource"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "columns",
+            "path": "@rc-component/table/es/Body/MeasureRow.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "columns",
+            "path": "@ant-design/pro-table/es/Store/Provide.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "columns",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "columns",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "columns",
+            "path": "ag-grid-community/dist/types/src/columnMove/columnMoveService.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "columns",
+            "path": "@tanstack/table-core/dist/core/columns/coreColumnsFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-key",
+        "name": {
+          "ar": "مفتاح الصف",
+          "en": "rowKey"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "rowKey",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "rowKey",
+            "path": "@ant-design/pro-table/es/utils/useDragSort.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "getRowId",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "getRowId",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "getRowId",
+            "path": "@tanstack/table-core/dist/core/rows/coreRowsFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "render",
+        "name": {
+          "ar": "عرض خلية مخصص",
+          "en": "Custom cell render"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "render",
+            "path": "@rc-component/table/es/Cell/index.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "render",
+            "path": "@ant-design/pro-table/es/components/Form/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "renderCell",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "cellRenderer",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "cell",
+            "path": "@tanstack/table-core/dist/core/cells/coreCellsFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "align",
+        "name": {
+          "ar": "محاذاة الأعمدة (الأرقام للنهاية)",
+          "en": "Column align (numeric end)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "align",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "align",
+            "path": "@mui/material/TableCell/TableCell.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "align",
+            "path": "@mui/x-data-grid/components/cell/GridCell.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "cellStyle",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "width",
+        "name": {
+          "ar": "عرض العمود",
+          "en": "Column width"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "width",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "width",
+            "path": "@mui/x-data-grid/components/cell/GridCell.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "minWidth",
+            "path": "@mantine/core/lib/components/Table/TableScrollContainer.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "width",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "width",
+            "path": "ag-grid-community/dist/types/src/agWidgets/agFieldParams.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "size",
+            "path": "@tanstack/table-core/dist/features/column-sizing/columnSizingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "empty",
+        "name": {
+          "ar": "حالة الفراغ",
+          "en": "Empty state"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "emptyText",
+            "path": "@rc-component/table/es/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "noRowsOverlay",
+            "path": "@mui/x-data-grid/models/gridSlotsComponent.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "renderEmptyState",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "noRowsOverlayComponent",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "scroll-x",
+        "name": {
+          "ar": "تمرير أفقي داخل الحاوية",
+          "en": "Horizontal scroll inside its container"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "scroll",
+            "path": "@rc-component/table/es/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "scroll",
+            "path": "@mui/x-data-grid/models/api/gridScrollApi.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "scroll",
+            "path": "ag-grid-community/dist/types/src/focusService.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "scroll-y",
+        "name": {
+          "ar": "تمرير رأسي",
+          "en": "Vertical scroll (scroll.y)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "scroll",
+            "path": "@rc-component/table/es/Table.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "stickyHeader",
+            "path": "@mui/material/Table/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "scroll",
+            "path": "@mui/x-data-grid/models/api/gridScrollApi.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "stickyHeader",
+            "path": "@mantine/core/lib/components/Table/Table.components.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "stickyHeader",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "scroll",
+            "path": "ag-grid-community/dist/types/src/focusService.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fixed-header",
+        "name": {
+          "ar": "رأس ثابت",
+          "en": "Fixed header"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "sticky",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "stickyHeader",
+            "path": "@mui/material/Table/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "scroll",
+            "path": "@mui/x-data-grid/models/api/gridScrollApi.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "stickyHeader",
+            "path": "@mantine/core/lib/components/Table/Table.components.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "stickyHeader",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "sticky",
+            "path": "ag-grid-community/dist/types/src/entities/rowNode.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "responsive",
+        "name": {
+          "ar": "أعمدة متجاوبة",
+          "en": "Responsive columns (breakpoints)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "responsive",
+            "path": "antd/es/table/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "title-caption",
+        "name": {
+          "ar": "العنوان",
+          "en": "Title / caption"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "title",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "headerTitle",
+            "path": "@ant-design/pro-table/es/components/ToolBar/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "caption",
+            "path": "@mantine/core/lib/components/Table/Table.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-hover",
+        "name": {
+          "ar": "تمييز الصف عند المرور",
+          "en": "Row hover"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "hover",
+            "path": "@mui/material/TableRow/TableRow.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "hover",
+            "path": "@mui/x-data-grid/constants/cssVariables.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "highlightOnHover",
+            "path": "@mantine/core/lib/components/Table/Table.components.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "interactive",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "suppressRowHoverHighlight",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-selected",
+        "name": {
+          "ar": "تمييز الصف المحدد",
+          "en": "Highlighted (selected) row"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mui-x",
+          "react-aria",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "selected",
+            "path": "@mui/material/TableRow/TableRow.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "selected",
+            "path": "@mui/x-data-grid/components/GridRow.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isSelected",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "selected",
+            "path": "ag-grid-community/dist/types/src/agWidgets/agCheckbox.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "nowrap",
+        "name": {
+          "ar": "خلايا بلا التفاف",
+          "en": "No-wrap cells"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "ellipsis",
+            "path": "@rc-component/table/es/Cell/index.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "ellipsis",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "wrapText",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sort-single",
+        "name": {
+          "ar": "الفرز بعمود واحد",
+          "en": "Sorting (single column)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "sorter",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "sorter",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "sortable",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "allowsSorting",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "sortable",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "enableSorting",
+            "path": "@tanstack/table-core/dist/features/row-sorting/rowSortingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sort-multi",
+        "name": {
+          "ar": "الفرز بعدة أعمدة",
+          "en": "Multi-column sorting"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "multiple",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "multiple",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "disableMultipleColumnsSorting",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "multiSortKey",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "enableMultiSort",
+            "path": "@tanstack/table-core/dist/features/row-sorting/rowSortingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sorter-custom",
+        "name": {
+          "ar": "دالة فرز مخصصة واتجاهاته",
+          "en": "Custom sorter / sortDirections"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "sortDirections",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "sortComparator",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "comparator",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "sortFn",
+            "path": "@tanstack/table-core/dist/features/row-sorting/rowSortingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sort-controlled",
+        "name": {
+          "ar": "ترتيب فرز متحكم به",
+          "en": "Controlled sortOrder"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "sortOrder",
+            "path": "antd/es/table/hooks/useSorter.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "sortModel",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "sortDescriptor",
+            "path": "react-stately/dist/types/src/table/useTableState.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "sortModel",
+            "path": "ag-grid-community/dist/types/src/infiniteRowModel/infiniteCache.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "onSortingChange",
+            "path": "@tanstack/table-core/dist/features/row-sorting/rowSortingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-dropdown",
+        "name": {
+          "ar": "قائمة التصفية",
+          "en": "Filters dropdown"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filters",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "filters",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "filterable",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "filters",
+            "path": "ag-grid-community/dist/types/src/interfaces/gridState.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "enableColumnFilter",
+            "path": "@tanstack/table-core/dist/features/column-filtering/columnFilteringFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-custom",
+        "name": {
+          "ar": "تصفية مخصصة",
+          "en": "Custom filter dropdown"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filterDropdown",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "filterOperators",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "filterParams",
+            "path": "ag-grid-community/dist/types/src/filter/columnFilterUtils.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "filterFn",
+            "path": "@tanstack/table-core/dist/features/column-filtering/columnFilteringFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-search",
+        "name": {
+          "ar": "البحث داخل التصفية",
+          "en": "Filter search"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "التصفية متسامحة مع العربية (أشكال الهمزة والتشكيل) وتطابق الهواتف بالأرقام بأي نظام أرقام",
+            "en": "Filters are Arabic-tolerant (hamza forms, diacritics) and match phones by digits in any numeral system"
+          }
+        },
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filterSearch",
+            "path": "antd/es/table/hooks/useFilter/FilterDropdown.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "quickFilterText",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "globalFilterFn",
+            "path": "@tanstack/table-core/dist/features/global-filtering/globalFilteringFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-controlled",
+        "name": {
+          "ar": "تصفية متحكم بها",
+          "en": "Controlled filters (filteredValue)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filteredValue",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "filterModel",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "filterModel",
+            "path": "ag-grid-community/dist/types/src/infiniteRowModel/infiniteCache.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "onColumnFiltersChange",
+            "path": "@tanstack/table-core/dist/features/column-filtering/columnFilteringFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "pagination-client",
+        "name": {
+          "ar": "ترقيم صفحات محلي",
+          "en": "Client-side pagination"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "pagination",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "pagination",
+            "path": "@ant-design/pro-table/es/components/Form/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "pagination",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "pagination",
+            "path": "ag-grid-community/dist/types/src/context/context.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "pagination",
+            "path": "@tanstack/table-core/dist/features/row-pagination/rowPaginationFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "pagination-server",
+        "name": {
+          "ar": "ترقيم صفحات من الخادم",
+          "en": "Server-side pagination (onChange)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "request",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "paginationMode",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "rowCount",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "manualPagination",
+            "path": "@tanstack/table-core/dist/features/row-pagination/rowPaginationFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "selection-checkbox",
+        "name": {
+          "ar": "تحديد الصفوف بمربعات",
+          "en": "Row selection: checkbox"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "rowSelection",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "rowSelection",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "rowSelection",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "selectionMode",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "rowSelection",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "rowSelection",
+            "path": "@tanstack/table-core/dist/features/row-selection/rowSelectionFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "selection-radio",
+        "name": {
+          "ar": "تحديد صف واحد",
+          "en": "Row selection: radio"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "type",
+            "path": "@rc-component/table/es/interface.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "type",
+            "path": "@ant-design/pro-table/es/components/Form/FormRender.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "disableMultipleRowSelection",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "selectionMode",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "mode",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "enableMultiRowSelection",
+            "path": "@tanstack/table-core/dist/features/row-selection/rowSelectionFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "select-all",
+        "name": {
+          "ar": "تحديد الكل والعكس",
+          "en": "Select all / invert / custom selections"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "selections",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "checkboxSelectionVisibleOnly",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "headerCheckbox",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "getToggleAllRowsSelectedHandler",
+            "path": "@tanstack/table-core/dist/features/row-selection/rowSelectionFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "selection-disabled",
+        "name": {
+          "ar": "صفوف غير قابلة للتحديد",
+          "en": "Disabled rows (getCheckboxProps)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "getCheckboxProps",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "isRowSelectable",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "disabledKeys",
+            "path": "react-stately/dist/types/src/table/useTableState.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "isRowSelectable",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "enableRowSelection",
+            "path": "@tanstack/table-core/dist/features/row-selection/rowSelectionFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "selection-preserve",
+        "name": {
+          "ar": "الاحتفاظ بالتحديد بين الصفحات",
+          "en": "Preserve selection across pages"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "preserveSelectedRowKeys",
+            "path": "antd/es/table/interface.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "keepNonExistentRowsSelected",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "expandable",
+        "name": {
+          "ar": "صفوف قابلة للتوسيع",
+          "en": "Expandable rows"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "expandable",
+            "path": "@rc-component/table/es/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "expandable",
+            "path": "ag-grid-community/dist/types/src/entities/agProvidedColumnGroup.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "getRowCanExpand",
+            "path": "@tanstack/table-core/dist/features/row-expanding/rowExpandingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tree-data",
+        "name": {
+          "ar": "بيانات شجرية",
+          "en": "Tree data"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "childrenColumnName",
+            "path": "@rc-component/table/es/context/TableContext.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "treeData",
+            "path": "ag-grid-community/dist/types/src/dragAndDrop/rowDragTypes.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "getSubRows",
+            "path": "@tanstack/table-core/dist/core/rows/coreRowsFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fixed-start",
+        "name": {
+          "ar": "أعمدة مثبتة في البداية",
+          "en": "Fixed columns (start)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "التثبيت بإزاحات منطقية: الأعمدة نفسها تُثبَّت يمينًا في العربية ويسارًا في الإنجليزية دون إعداد، وتبقى مثبتة عند التمرير في الاتجاهين",
+            "en": "Pinning uses logical offsets: the same columns pin to the right in Arabic and to the left in English with no configuration, and stay pinned while scrolling in both directions"
+          }
+        },
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fixed",
+            "path": "@rc-component/table/es/Footer/Summary.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "fixed",
+            "path": "@ant-design/pro-table/es/Store/Provide.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "pinned",
+            "path": "@mui/x-data-grid/constants/cssVariables.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "pinned",
+            "path": "ag-grid-community/dist/types/src/columnMove/columnDrag/bodyDropPivotTarget.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "columnPinning",
+            "path": "@tanstack/table-core/dist/features/column-pinning/columnPinningFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fixed-end",
+        "name": {
+          "ar": "أعمدة مثبتة في النهاية",
+          "en": "Fixed columns (end)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fixed",
+            "path": "@rc-component/table/es/Footer/Summary.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "fixed",
+            "path": "@ant-design/pro-table/es/Store/Provide.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "pinned",
+            "path": "@mui/x-data-grid/constants/cssVariables.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "pinned",
+            "path": "ag-grid-community/dist/types/src/columnMove/columnDrag/bodyDropPivotTarget.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "columnPinning",
+            "path": "@tanstack/table-core/dist/features/column-pinning/columnPinningFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "virtual",
+        "name": {
+          "ar": "تمرير افتراضي",
+          "en": "Virtual scroll"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "virtual",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "disableVirtualization",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "rowBuffer",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "resize",
+        "name": {
+          "ar": "تغيير عرض الأعمدة",
+          "en": "Column resize"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "resizable",
+            "path": "@mui/x-data-grid/components/columnHeaders/GridColumnHeaderSeparator.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "allowsResizing",
+            "path": "react-stately/dist/types/src/table/Column.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "resizable",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "enableResizing",
+            "path": "@tanstack/table-core/dist/features/column-resizing/columnResizingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "grouping",
+        "name": {
+          "ar": "رؤوس أعمدة مجمّعة",
+          "en": "Column grouping headers"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "children",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "columnGroupingModel",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "children",
+            "path": "ag-grid-community/dist/types/src/entities/agColumnGroup.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "getHeaderGroups",
+            "path": "@tanstack/table-core/dist/core/headers/coreHeadersFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "summary",
+        "name": {
+          "ar": "صف الإجماليات",
+          "en": "Summary row"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الإجماليات تشمل كل الصفوف المصفّاة، والمبالغ دقيقة بالوحدات الصغرى ومعروضة بنظام أرقام النطاق",
+            "en": "Totals cover all filtered rows, money is exact in minor units and shown in the scope numerals"
+          }
+        },
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "summary",
+            "path": "@rc-component/table/es/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "summary",
+            "path": "ag-grid-community/dist/types/src/interfaces/iNewFiltersToolPanel.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "aggregationFn",
+            "path": "@tanstack/table-core/dist/features/row-aggregation/rowAggregationFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "on-row",
+        "name": {
+          "ar": "أحداث الصف",
+          "en": "Row click / events (onRow)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onRow",
+            "path": "@rc-component/table/es/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "onRowClick",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "onRowAction",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "onRowClick",
+            "path": "ag-grid-community/dist/types/src/rendering/row/rowCtrl.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "loading",
+        "name": {
+          "ar": "حالة التحميل",
+          "en": "Loading state"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "react-aria",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "loading",
+            "path": "@ant-design/pro-table/es/components/Form/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "loading",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isLoading",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "loading",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sticky-offset",
+        "name": {
+          "ar": "رأس لاصق بإزاحة",
+          "en": "Sticky header with offset / sticky scrollbar"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "sticky",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "sticky",
+            "path": "ag-grid-community/dist/types/src/entities/rowNode.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "ellipsis",
+        "name": {
+          "ar": "اختصار مع تلميح",
+          "en": "Ellipsis with tooltip"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "ellipsis",
+            "path": "@rc-component/table/es/Cell/index.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "ellipsis",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "tooltipField",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-class",
+        "name": {
+          "ar": "تنسيق الصف",
+          "en": "rowClassName / row style"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "rowClassName",
+            "path": "@rc-component/table/es/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "rowClassName",
+            "path": "@mui/x-data-grid/hooks/core/pipeProcessing/gridPipeProcessingApi.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "getRowClass",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "size-bordered",
+        "name": {
+          "ar": "الأحجام والحدود",
+          "en": "Size and bordered variants"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui",
+          "mui-x",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "bordered",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "bordered",
+            "path": "@ant-design/pro-table/es/components/Form/FormRender.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/Table/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "density",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withTableBorder",
+            "path": "@mantine/core/lib/components/Table/Table.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "striped",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/table.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "drag-sort",
+        "name": {
+          "ar": "ترتيب الصفوف بالسحب",
+          "en": "Drag sort rows (via dnd-kit extension)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "react-aria",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "dragSortKey",
+            "path": "@ant-design/pro-table/es/components/DragSortTable/index.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "dragAndDropHooks",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "rowDrag",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-settings",
+        "name": {
+          "ar": "إظهار وإخفاء الأعمدة",
+          "en": "Column visibility settings (ProTable)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "columnsState",
+            "path": "@ant-design/pro-table/es/Store/Provide.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "columnVisibilityModel",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "columnVisibility",
+            "path": "ag-grid-community/dist/types/src/interfaces/gridState.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "columnVisibility",
+            "path": "@tanstack/table-core/dist/features/column-visibility/columnVisibilityFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "density",
+        "name": {
+          "ar": "إعداد الكثافة",
+          "en": "Density setting (ProTable)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui",
+          "mui-x",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "density",
+            "path": "@ant-design/pro-table/es/components/ToolBar/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/Table/Table.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "density",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "verticalSpacing",
+            "path": "@mantine/core/lib/components/Table/Table.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/table.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "export",
+        "name": {
+          "ar": "تصدير",
+          "en": "Export (ProTable)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "csvOptions",
+            "path": "@mui/x-data-grid/components/toolbar/GridToolbarExport.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "exportDataAsCsv",
+            "path": "ag-grid-community/dist/types/src/api/gridApi.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "التنقل بلوحة المفاتيح",
+          "en": "Keyboard navigation (grid)"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "react-aria",
+          "ag-grid"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "react-aria",
+            "symbol": "keyboardNavigationBehavior",
+            "path": "react-stately/dist/types/src/table/useTableState.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "cellFocused",
+            "path": "ag-grid-community/dist/types/src/events.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "تخطيط RTL",
+          "en": "RTL layout"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "direction",
+            "path": "@rc-component/table/es/FixedHolder/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "isRtl",
+            "path": "@mui/x-data-grid/hooks/features/keyboardNavigation/utils.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "enableRtl",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "columnResizeDirection",
+            "path": "@tanstack/table-core/dist/features/column-resizing/columnResizingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-types",
+        "name": {
+          "ar": "أنواع الأعمدة: نص، رقم، مبلغ، تاريخ، منطقي، قائمة، إجراءات",
+          "en": "Column types: text, number, money, date, boolean, enum, actions"
+        },
+        "priority": "p0",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النوع يحدد المحاذاة والتنسيق: الأرقام والمبالغ تُحاذى إلى نهاية السطر بأرقام متساوية العرض، والتواريخ بتقويم النطاق، والنص يأخذ اتجاهه",
+            "en": "Type decides alignment and formatting: numbers and money align to the inline end with tabular digits, dates use the scope calendar, text takes its own direction"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "valueType",
+            "path": "@ant-design/pro-table/es/utils/cellRenderToFromItem.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "type",
+            "path": "@mui/x-data-grid/colDef/gridNumericOperators.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "cellDataType",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "meta",
+            "path": "@tanstack/table-core/dist/core/table/coreTablesFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "value-getter",
+        "name": {
+          "ar": "دالة قيمة ودالة تنسيق لكل عمود",
+          "en": "Value getter and formatter per column"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "valueGetter",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "valueGetter",
+            "path": "ag-grid-community/dist/types/src/entities/agColumn.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "accessorFn",
+            "path": "@tanstack/table-core/dist/core/columns/coreColumnsFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-order",
+        "name": {
+          "ar": "إعادة ترتيب الأعمدة بالسحب",
+          "en": "Column reorder by drag"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "إزاحات السحب ومؤشر الإفلات تُحسب من بداية السطر، ومناطق التثبيت تتبادل الجهتين في RTL",
+            "en": "Drag offsets and the drop indicator are computed from the inline start; pinned regions swap sides in RTL"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "disableColumnReorder",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "columnOrder",
+            "path": "ag-grid-community/dist/types/src/interfaces/gridState.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "columnOrder",
+            "path": "@tanstack/table-core/dist/features/column-ordering/columnOrderingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-autosize",
+        "name": {
+          "ar": "ضبط عرض الأعمدة تلقائيًا بحسب المحتوى",
+          "en": "Auto-size columns to content"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "العرض المقيس بعينة لاتينية يقصّر عن النص العربي المكتوب بخط أعرض",
+            "en": "Width measured with a Latin sample under-sizes Arabic text set in a wider face"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "autosizeOptions",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "autoSizeStrategy",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-flex",
+        "name": {
+          "ar": "عرض أعمدة مرن",
+          "en": "Flexible column widths"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "flex",
+            "path": "@mui/x-data-grid/hooks/features/columns/gridColumnsUtils.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "flex",
+            "path": "ag-grid-community/dist/types/src/columns/columnStateUtils.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-menu",
+        "name": {
+          "ar": "قائمة رأس العمود",
+          "en": "Column header menu"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "disableColumnMenu",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "suppressHeaderMenuButton",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "col-span",
+        "name": {
+          "ar": "دمج الأعمدة والصفوف",
+          "en": "Column and row spanning"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "colSpan",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "colSpan",
+            "path": "@mui/x-data-grid/components/cell/GridCell.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "colSpan",
+            "path": "react-aria-components/dist/types/src/Table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "colSpan",
+            "path": "ag-grid-community/dist/types/src/entities/agColumn.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "colSpan",
+            "path": "@tanstack/table-core/dist/core/headers/coreHeadersFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "header-tooltip",
+        "name": {
+          "ar": "تلميح وصف رأس العمود",
+          "en": "Header description tooltip"
+        },
+        "priority": "p2",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "tooltip",
+            "path": "@ant-design/pro-table/es/components/ListToolBar/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "tooltip",
+            "path": "@mui/x-data-grid/components/toolbar/GridToolbarColumnsButton.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "tooltip",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sort-collation",
+        "name": {
+          "ar": "ترتيب أبجدي بحسب اللغة",
+          "en": "Locale-aware collation"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الفرز العربي يستخدم مُرتِّب اللغة: «ال» وأشكال الهمزة لا تبعثر الأسماء، وترتيب الأسماء العربية واللاتينية محدد وصريح",
+            "en": "Arabic sort uses the locale collator: the definite article and hamza forms do not scatter names, and Arabic and Latin names sort in a stated order"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "sort-server",
+        "name": {
+          "ar": "فرز من الخادم",
+          "en": "Server-side sorting"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "sortingMode",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "manualSorting",
+            "path": "@tanstack/table-core/dist/features/row-sorting/rowSortingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-operators",
+        "name": {
+          "ar": "معاملات تصفية بحسب النوع (يحتوي، بين، فارغ)",
+          "en": "Filter operators per type (contains, between, is empty)"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "filterOperators",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "filterOptions",
+            "path": "ag-grid-community/dist/types/src/filter/provided/bigInt/iBigIntFilter.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "filterFn",
+            "path": "@tanstack/table-core/dist/features/column-filtering/columnFilteringFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-panel",
+        "name": {
+          "ar": "باني تصفية بـ«و» و«أو»",
+          "en": "Filter builder with AND / OR"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "logicOperators",
+            "path": "@mui/x-data-grid/components/panel/filterPanel/GridFilterFormBase.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "filterModel",
+            "path": "ag-grid-community/dist/types/src/infiniteRowModel/infiniteCache.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-row",
+        "name": {
+          "ar": "صف تصفية تحت الرأس",
+          "en": "Filter row under the header"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "headerFilters",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "floatingFilter",
+            "path": "ag-grid-community/dist/types/src/entities/colDef.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-server",
+        "name": {
+          "ar": "تصفية من الخادم",
+          "en": "Server-side filtering"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filterMode",
+            "path": "antd/es/table/hooks/useFilter/FilterDropdown.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "request",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "filterMode",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "manualFiltering",
+            "path": "@tanstack/table-core/dist/features/column-filtering/columnFilteringFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "global-search",
+        "name": {
+          "ar": "بحث عام في كل الأعمدة",
+          "en": "Global search across columns"
+        },
+        "priority": "p0",
+        "in": [
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "ag-grid",
+            "symbol": "quickFilterText",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "globalFilter",
+            "path": "@tanstack/table-core/dist/features/global-filtering/globalFilteringFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "facets",
+        "name": {
+          "ar": "أعداد لكل قيمة في التصفية",
+          "en": "Faceted counts for filters"
+        },
+        "priority": "p2",
+        "in": [
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "tanstack-table",
+            "symbol": "getFacetedUniqueValues",
+            "path": "@tanstack/table-core/dist/features/column-faceting/columnFacetingFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "query-form",
+        "name": {
+          "ar": "نموذج استعلام فوق الجدول",
+          "en": "Query form above the table"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "search",
+            "path": "@ant-design/pro-table/es/components/Form/FormRender.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-height",
+        "name": {
+          "ar": "ارتفاع الصف: ثابت، تلقائي، بحسب الكثافة",
+          "en": "Row height: fixed, auto, density"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "react-aria",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "ارتفاع السطر يجب أن يتسع للتشكيل المتراكب، ولا يُطبَّق تباعد الحروف على العربية",
+            "en": "Line height must clear stacked diacritics; Arabic text takes no letter-spacing"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "getRowHeight",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "rowHeight",
+            "path": "react-stately/dist/types/src/layout/TableLayout.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "getRowHeight",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-pin",
+        "name": {
+          "ar": "صفوف مثبتة (أعلى وأسفل)",
+          "en": "Pinned rows (top / bottom)"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "pinnedRows",
+            "path": "@mui/x-data-grid/constants/gridClasses.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "pinnedTopRowData",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "rowPinning",
+            "path": "@tanstack/table-core/dist/features/row-pinning/rowPinningFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-actions",
+        "name": {
+          "ar": "عمود إجراءات الصف",
+          "en": "Row actions column"
+        },
+        "priority": "p0",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "عمود الإجراءات يُثبَّت عند نهاية السطر، وهي الحافة اليسرى في العربية",
+            "en": "The actions column pins to the inline end, which is the left edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "valueType",
+            "path": "@ant-design/pro-table/es/utils/cellRenderToFromItem.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "getActions",
+            "path": "@mui/x-data-grid/models/colDef/gridColDef.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "getActions",
+            "path": "ag-grid-community/dist/types/src/interfaces/iNewFiltersToolPanel.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "row-number",
+        "name": {
+          "ar": "عمود رقم الصف",
+          "en": "Row number column"
+        },
+        "priority": "p2",
+        "in": [
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "ag-grid",
+            "symbol": "rowNumbers",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "zebra",
+        "name": {
+          "ar": "صفوف مخططة",
+          "en": "Striped rows"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x",
+          "mantine",
+          "chakra",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "getRowClassName",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "striped",
+            "path": "@mantine/core/lib/components/Table/Table.components.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "striped",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/table.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "rowClassRules",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "infinite",
+        "name": {
+          "ar": "تحميل لا نهائي",
+          "en": "Infinite loading"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "saved-views",
+        "name": {
+          "ar": "عروض محفوظة (أعمدة، تصفية، فرز)",
+          "en": "Saved views (columns, filters, sort)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "columnsState",
+            "path": "@ant-design/pro-table/es/Store/Provide.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "initialState",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "initialState",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "initialState",
+            "path": "@tanstack/table-core/dist/core/table/coreTablesFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "url-state",
+        "name": {
+          "ar": "مزامنة الحالة مع الرابط",
+          "en": "State synchronised with the URL"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "controlled-state",
+        "name": {
+          "ar": "كل جزء من الحالة قابل للتحكم",
+          "en": "Every piece of state controllable"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "ag-grid",
+          "tanstack-table"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onChange",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "onStateChange",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "onStateChange",
+            "path": "ag-grid-community/dist/types/src/interfaces/iFilter.d.ts"
+          },
+          {
+            "library": "tanstack-table",
+            "symbol": "state",
+            "path": "@tanstack/table-core/dist/core/table/coreTablesFeature.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "print",
+        "name": {
+          "ar": "تخطيط الطباعة",
+          "en": "Print layout"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الجداول المطبوعة تكرر الرأس وتحافظ على ترتيب أعمدة RTL وتطبع الإجماليات بنظام أرقام النطاق",
+            "en": "Printed tables repeat the header, keep RTL column order and print totals in the scope numerals"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "printOptions",
+            "path": "@mui/x-data-grid/components/toolbar/GridToolbarExport.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "domLayout",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "export-csv",
+        "name": {
+          "ar": "تصدير CSV مع BOM وبالقيم المخزنة لا المعروضة",
+          "en": "CSV export with a BOM and stored (not displayed) values"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "Excel يفتح CSV بترميز UTF-8 بحروف مشوّهة دون BOM، والأرقام المصدَّرة يجب أن تكون لاتينية لتقرأها الجداول كأرقام",
+            "en": "Excel opens UTF-8 CSV as mojibake without a BOM; exported numbers must be Latin digits so spreadsheets read them as numbers"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "csvOptions",
+            "path": "@mui/x-data-grid/components/toolbar/GridToolbarExport.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "exportDataAsCsv",
+            "path": "ag-grid-community/dist/types/src/api/gridApi.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "copy",
+        "name": {
+          "ar": "نسخ الصفوف أو الخلايا المحددة",
+          "en": "Copy selected rows or cells"
+        },
+        "priority": "p2",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "copyable",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "ignoreValueFormatterDuringExport",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "enableCellTextSelection",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "toolbar",
+        "name": {
+          "ar": "شريط أدوات بعنوان وبحث وإجراءات",
+          "en": "Toolbar with title, search, actions"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro",
+          "mui",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "toolBarRender",
+            "path": "@ant-design/pro-table/es/components/ToolBar/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "toolbar",
+            "path": "@mui/material/TablePagination/TablePagination.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "toolbar",
+            "path": "@mui/x-data-grid/constants/gridClasses.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "toolbar",
+            "path": "ag-grid-community/dist/types/src/context/context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "bulk-actions",
+        "name": {
+          "ar": "شريط إجراءات جماعية للتحديد",
+          "en": "Bulk action bar for the selection"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "tableAlertRender",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "card-mode",
+        "name": {
+          "ar": "عرض بطاقات في الشاشات الضيقة",
+          "en": "Card layout on narrow screens"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "cardProps",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "scroll-shadow",
+        "name": {
+          "ar": "ظلال الحواف تبيّن الأعمدة المخفية",
+          "en": "Edge shadows show hidden columns"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "جهتا الظل وأصل التمرير تتبادلان في RTL، وحسابهما من scrollLeft يحتاج اصطلاح الإشارة الخاص بـRTL",
+            "en": "Shadow sides and the scroll origin swap in RTL; computing them from scrollLeft needs the RTL sign convention"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "aria-grid",
+        "name": {
+          "ar": "دلالات جدول أو شبكة مع إعلان الفرز والتحديد",
+          "en": "Table or grid semantics with announced sort and selection"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "aria-label",
+            "path": "@rc-component/table/es/Body/BodyRow.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "aria-label",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "aria-label",
+            "path": "react-aria/dist/types/src/table/useTableColumnResize.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "ariaLabel",
+            "path": "ag-grid-community/dist/types/src/agWidgets/agFieldParams.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "locale-text",
+        "name": {
+          "ar": "كل النصوص الداخلية قابلة للاستبدال لكل لغة",
+          "en": "All built-in strings replaceable per locale"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "locale",
+            "path": "antd/es/table/InternalTable.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "intl",
+            "path": "@ant-design/pro-table/es/components/Alert/index.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "localeText",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "localeText",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "cell-direction",
+        "name": {
+          "ar": "خلايا النص تأخذ اتجاه محتواها",
+          "en": "Text cells take the direction of their content"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص المختلط يأخذ اتجاهه من محتواه مع عزل المقاطع المكتوبة بخط آخر",
+            "en": "Mixed-script content takes its direction from the content, with foreign runs isolated"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "money-cells",
+        "name": {
+          "ar": "خلايا المبالغ: وحدات صغرى والعملة مرة واحدة في الرأس",
+          "en": "Money cells: minor units, currency once in the header"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "المبالغ تُخزَّن وحدات صغرى صحيحة وتُعرض بخانات العملة العشرية، والعمود المتعدد العملات يبيّن العملة في كل صف",
+            "en": "Amounts are stored as integer minor units, shown with the decimals of the currency, and a mixed-currency column says so per row"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "server-data",
+        "name": {
+          "ar": "بروتوكول مصدر البيانات (طلب بالصفحة والفرز والتصفية)",
+          "en": "Data source protocol (request with page, sort, filter)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd-pro",
+          "mui-x",
+          "ag-grid"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "request",
+            "path": "@ant-design/pro-table/es/typing.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "dataSource",
+            "path": "@mui/x-data-grid/models/props/DataGridProps.d.ts"
+          },
+          {
+            "library": "ag-grid",
+            "symbol": "datasource",
+            "path": "ag-grid-community/dist/types/src/entities/gridOptions.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "AntD Table, ProTable, MUI Table, Mantine/Chakra/shadcn Table, React Aria Table and the read-side of the grid libraries are one entry. ProTable is an alias, not a pattern of its own: its search form, toolbar, column settings and density are features here."
+      },
+      {
+        "topic": "split",
+        "note": "Editing, range selection, clipboard, grouping, aggregation and pivoting are in data-grid; a table that only shows records should not carry them."
+      },
+      {
+        "topic": "scope",
+        "note": "AG Grid Enterprise and MUI X Pro/Premium are commercial packages and were not unpacked; a feature they alone ship shows no `in` for them."
+      }
+    ]
+  }
+}

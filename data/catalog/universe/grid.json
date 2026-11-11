@@ -1,0 +1,268 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "grid",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "grid",
+    "name": {
+      "ar": "شبكة",
+      "en": "Grid"
+    },
+    "summary": {
+      "ar": "شبكة أعمدة بامتدادات متجاوبة.",
+      "en": "Column grid with responsive spans."
+    },
+    "family": "layout",
+    "tier": "T0",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "item"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Grid"
+      },
+      {
+        "library": "antd",
+        "name": "Row"
+      },
+      {
+        "library": "antd",
+        "name": "Col"
+      },
+      {
+        "library": "antd",
+        "name": "Masonry",
+        "note": "masonry variant"
+      },
+      {
+        "library": "mui",
+        "name": "Grid"
+      },
+      {
+        "library": "mui",
+        "name": "ImageList",
+        "note": "image grid variant"
+      },
+      {
+        "library": "mantine",
+        "name": "Grid"
+      },
+      {
+        "library": "mantine",
+        "name": "SimpleGrid"
+      },
+      {
+        "library": "chakra",
+        "name": "Grid"
+      },
+      {
+        "library": "chakra",
+        "name": "SimpleGrid"
+      }
+    ],
+    "features": [
+      {
+        "id": "row-col",
+        "name": {
+          "ar": "شبكة من 24 عمودًا",
+          "en": "Row / Col 24-column grid"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "gutter",
+        "name": {
+          "ar": "الفواصل بين الأعمدة",
+          "en": "Gutter"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "gutter",
+            "path": "antd/es/grid/RowContext.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "spacing",
+            "path": "@mui/material/Grid/Grid.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "spacing",
+            "path": "@mantine/core/lib/components/SimpleGrid/SimpleGrid.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "responsive",
+        "name": {
+          "ar": "امتدادات متجاوبة",
+          "en": "Responsive spans (xs…xxl)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "xs",
+            "path": "antd/es/grid/style/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "columns",
+            "path": "@mui/material/Grid/Grid.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "span",
+            "path": "@mantine/core/lib/components/Grid/GridCol/GridCol.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "columns",
+            "path": "@chakra-ui/react/dist/types/components/simple-grid/simple-grid.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "offset-order",
+        "name": {
+          "ar": "إزاحة وترتيب",
+          "en": "Offset, push/pull, order"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "offset",
+            "path": "antd/es/grid/col.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "offset",
+            "path": "@mui/material/Grid/Grid.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "offset",
+            "path": "@mantine/core/lib/components/Grid/GridCol/GridCol.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "use-breakpoint",
+        "name": {
+          "ar": "خطاف نقاط التوقف",
+          "en": "useBreakpoint hook"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "column-order",
+        "name": {
+          "ar": "ترتيب الأعمدة يتبع الاتجاه",
+          "en": "Column order follows direction"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الإزاحات في الشبكات القديمة فيزيائية، ويجب أن تُحسب من بداية السطر",
+            "en": "Offsets and push/pull are physical in older grids; they must be inline-start based"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

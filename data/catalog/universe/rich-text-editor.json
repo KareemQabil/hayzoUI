@@ -1,0 +1,123 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "rich-text-editor",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "rich-text-editor",
+    "name": {
+      "ar": "محرر نصوص منسّقة",
+      "en": "Rich text editor"
+    },
+    "summary": {
+      "ar": "تحرير نص منسّق مع شريط أدوات.",
+      "en": "Formatted text editing with a toolbar."
+    },
+    "family": "text-input",
+    "tier": "T5",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "toolbar",
+      "control",
+      "content"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "RichTextEditor"
+      }
+    ],
+    "features": [
+      {
+        "id": "block-direction",
+        "name": {
+          "ar": "اتجاه لكل كتلة مع زر تبديل",
+          "en": "Direction per block with a toggle"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "كل فقرة تأخذ اتجاهها تلقائيًا ويمكن فرضه، وأزرار المحاذاة بداية ونهاية مع إبقاء يسار ويمين للتجاوز الصريح",
+            "en": "Each paragraph is auto-directed and can be forced; alignment buttons are start/end, with left/right kept for explicit overrides"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "align-controls",
+        "name": {
+          "ar": "عناصر المحاذاة",
+          "en": "Alignment controls"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأيقونات الاتجاهية (الأسهم) يجب أن تنعكس في RTL، وغير الاتجاهية لا تنعكس",
+            "en": "Directional icons (chevrons, arrows) must mirror in RTL; non-directional ones must not"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "AlignLeft",
+            "path": "@mantine/tiptap/lib/RichTextEditor.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "lists",
+        "name": {
+          "ar": "قوائم بعلامات عربية",
+          "en": "Lists with Arabic markers"
+        },
+        "priority": "p2",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "BulletList",
+            "path": "@mantine/tiptap/lib/RichTextEditor.d.ts"
+          }
+        ]
+      }
+    ],
+    "notes": "Wanted engine: rich-text."
+  }
+}

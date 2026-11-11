@@ -1,0 +1,608 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "form",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "form",
+    "name": {
+      "ar": "نموذج",
+      "en": "Form"
+    },
+    "summary": {
+      "ar": "يجمع القيم ويتحقق منها ويحمي الإرسال.",
+      "en": "Collects values, validates them and guards submission."
+    },
+    "family": "utility",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "form",
+      "field"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "dependsOn": [
+      "field",
+      "button"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Form"
+      },
+      {
+        "library": "react-aria",
+        "name": "Form"
+      },
+      {
+        "library": "base-ui",
+        "name": "Form"
+      },
+      {
+        "library": "radix",
+        "name": "Form"
+      },
+      {
+        "library": "shadcn",
+        "name": "form"
+      }
+    ],
+    "features": [
+      {
+        "id": "layout",
+        "name": {
+          "ar": "التخطيطات أفقي/رأسي/سطري",
+          "en": "Layouts horizontal / vertical / inline"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "layout",
+            "path": "antd/es/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "label-align",
+        "name": {
+          "ar": "محاذاة العنوان وأعمدته",
+          "en": "Label align / labelCol / wrapperCol"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "labelAlign",
+            "path": "antd/es/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rules",
+        "name": {
+          "ar": "قواعد التحقق",
+          "en": "Validation rules (required, type, pattern, min/max)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "rules",
+            "path": "@rc-component/form/es/Field.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "validationBehavior",
+            "path": "react-aria-components/dist/types/src/Form.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "validate",
+            "path": "@base-ui/react/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "validator",
+        "name": {
+          "ar": "تحقق مخصص",
+          "en": "Custom validator"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "validator",
+            "path": "@rc-component/form/es/interface.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "validate",
+            "path": "@base-ui/react/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "async-validation",
+        "name": {
+          "ar": "تحقق غير متزامن",
+          "en": "Async validation"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "validate-trigger",
+        "name": {
+          "ar": "توقيت التحقق",
+          "en": "validateTrigger (change / blur)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "validateTrigger",
+            "path": "@rc-component/form/es/Field.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "validationMode",
+            "path": "@base-ui/react/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "dependencies",
+        "name": {
+          "ar": "اعتماد الحقول على بعضها",
+          "en": "Field dependencies"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "dependencies",
+            "path": "@rc-component/form/es/Field.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "should-update",
+        "name": {
+          "ar": "مراقبة القيم",
+          "en": "shouldUpdate / Form.useWatch"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "shouldUpdate",
+            "path": "@rc-component/form/es/Field.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "list",
+        "name": {
+          "ar": "قوائم حقول ديناميكية",
+          "en": "Dynamic Form.List"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "nested-names",
+        "name": {
+          "ar": "أسماء متداخلة",
+          "en": "Nested names (namePath)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "scroll-to-error",
+        "name": {
+          "ar": "التمرير لأول خطأ",
+          "en": "Scroll to first error"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "scrollToFirstError",
+            "path": "antd/es/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "instance",
+        "name": {
+          "ar": "واجهة نموذج برمجية",
+          "en": "Form instance API (getFieldsValue, setFieldsValue, validateFields)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "initial-values",
+        "name": {
+          "ar": "القيم الابتدائية",
+          "en": "initialValues"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "initialValues",
+            "path": "@rc-component/form/es/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "reset",
+        "name": {
+          "ar": "إعادة الضبط",
+          "en": "resetFields"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "تعطيل النموذج كله",
+          "en": "Form-level disabled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "antd/es/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "submit",
+        "name": {
+          "ar": "دورة الإرسال",
+          "en": "Submit lifecycle (onFinish / onFinishFailed)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onFinish",
+            "path": "@rc-component/form/es/Form.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "onFormSubmit",
+            "path": "@base-ui/react/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "submit-guard",
+        "name": {
+          "ar": "زر الإرسال لا يرسل مرتين",
+          "en": "Submit button cannot double-submit"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "show-validation",
+        "name": {
+          "ar": "إظهار الأخطاء بعد محاولة الإرسال",
+          "en": "Show errors after submit attempt"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "base-ui",
+          "radix"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "errors",
+            "path": "@rc-component/form/es/interface.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "errors",
+            "path": "@base-ui/react/form/Form.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "serverInvalid",
+            "path": "@radix-ui/react-form/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "messages-locale",
+        "name": {
+          "ar": "رسائل تحقق مترجمة",
+          "en": "Validation messages localized (validateMessages)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "validateMessages",
+            "path": "@rc-component/form/es/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "name": {
+          "ar": "حجم النموذج",
+          "en": "Form size / variant"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/form/Form.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "null-empty",
+        "name": {
+          "ar": "الحقول الفارغة تبلّغ null",
+          "en": "Empty fields report null"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "preserve",
+        "name": {
+          "ar": "الاحتفاظ بالقيم عند الإزالة",
+          "en": "preserve on unmount"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "preserve",
+            "path": "@rc-component/form/es/Field.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "provider",
+        "name": {
+          "ar": "ربط عدة نماذج",
+          "en": "Form.Provider (multi-form)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "server-errors",
+        "name": {
+          "ar": "ربط أخطاء الخادم بالحقول",
+          "en": "Server errors mapped to fields"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "base-ui",
+          "radix"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "errors",
+            "path": "@rc-component/form/es/interface.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "errors",
+            "path": "@base-ui/react/form/Form.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "serverInvalid",
+            "path": "@radix-ui/react-form/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "error-summary",
+        "name": {
+          "ar": "ملخص الأخطاء بروابط إلى الحقول",
+          "en": "Error summary with links to fields"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "messages-plural",
+        "name": {
+          "ar": "رسائل التحقق بصيغ الجمع العربية",
+          "en": "Validation messages with Arabic plurals"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "رسالة «٣ أحرف على الأقل» تحتاج فئات الجمع العربية (القليل من ٣ إلى ١٠ والكثير من ١١ إلى ٩٩) والعدد بنظام أرقام النطاق",
+            "en": "\"At least 3 characters\" needs the Arabic plural categories (few for 3–10, many for 11–99) and the number in the scope numerals"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "split",
+        "note": "Form.Item rows of the matrix moved to field."
+      }
+    ]
+  }
+}

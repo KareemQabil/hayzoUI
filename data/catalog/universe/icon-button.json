@@ -1,0 +1,199 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "icon-button",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "icon-button",
+    "name": {
+      "ar": "زر أيقونة",
+      "en": "Icon button"
+    },
+    "summary": {
+      "ar": "زر يعرض أيقونة فقط ولذلك يتطلب اسمًا مقروءًا.",
+      "en": "A button that shows only an icon and therefore requires a label."
+    },
+    "family": "action",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "press"
+    ],
+    "anatomy": [
+      "root",
+      "icon"
+    ],
+    "dependsOn": [
+      "button",
+      "icon"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "IconButton"
+      },
+      {
+        "library": "mantine",
+        "name": "ActionIcon"
+      },
+      {
+        "library": "mantine",
+        "name": "CloseButton",
+        "note": "preset"
+      },
+      {
+        "library": "chakra",
+        "name": "IconButton"
+      },
+      {
+        "library": "chakra",
+        "name": "CloseButton",
+        "note": "preset"
+      },
+      {
+        "library": "headless-ui",
+        "name": "CloseButton",
+        "note": "closes the nearest dialog or popover"
+      }
+    ],
+    "features": [
+      {
+        "id": "label-required",
+        "name": {
+          "ar": "الاسم المقروء إلزامي",
+          "en": "Accessible label is required"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "mirror",
+        "name": {
+          "ar": "الأيقونة الاتجاهية تنعكس مع الاتجاه",
+          "en": "Directional icon mirrors with direction"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأيقونات الاتجاهية (الأسهم) يجب أن تنعكس في RTL، وغير الاتجاهية لا تنعكس",
+            "en": "Directional icons (chevrons, arrows) must mirror in RTL; non-directional ones must not"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "loading",
+        "name": {
+          "ar": "حالة التحميل",
+          "en": "Loading state"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "loading",
+            "path": "@mui/material/IconButton/IconButton.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "loading",
+            "path": "@mantine/core/lib/components/ActionIcon/ActionIcon.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "أحجام بحد أدنى لمساحة اللمس",
+          "en": "Sizes with a minimum touch target"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/IconButton/IconButton.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/ActionIcon/ActionIcon.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "Close buttons are folded in as a preset; AntD has no separate export (Button with only an icon)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "breadcrumb",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "breadcrumb",
+    "name": {
+      "ar": "مسار التنقل",
+      "en": "Breadcrumb"
+    },
+    "summary": {
+      "ar": "المسار من الجذر إلى الصفحة الحالية.",
+      "en": "The path from the root to the current page."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "list",
+      "item",
+      "link",
+      "separator",
+      "current",
+      "ellipsis"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Breadcrumb"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProBreadcrumb"
+      },
+      {
+        "library": "mui",
+        "name": "Breadcrumbs"
+      },
+      {
+        "library": "mantine",
+        "name": "Breadcrumbs"
+      },
+      {
+        "library": "chakra",
+        "name": "Breadcrumb"
+      },
+      {
+        "library": "react-aria",
+        "name": "Breadcrumbs"
+      },
+      {
+        "library": "react-aria",
+        "name": "Breadcrumb"
+      },
+      {
+        "library": "shadcn",
+        "name": "breadcrumb"
+      }
+    ],
+    "features": [
+      {
+        "id": "items",
+        "name": {
+          "ar": "عناصر بروابط",
+          "en": "Items with links"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "items",
+            "path": "antd/es/breadcrumb/Breadcrumb.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "separator",
+        "name": {
+          "ar": "فاصل مخصص",
+          "en": "Custom separator"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "separator",
+            "path": "antd/es/breadcrumb/Breadcrumb.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "separator",
+            "path": "@mui/material/Breadcrumbs/Breadcrumbs.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "separator",
+            "path": "@mantine/core/lib/components/Breadcrumbs/Breadcrumbs.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "dropdown",
+        "name": {
+          "ar": "قائمة منسدلة داخل العنصر",
+          "en": "Dropdown menu in item"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "menu",
+            "path": "antd/es/breadcrumb/Breadcrumb.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "routes",
+        "name": {
+          "ar": "معاملات المسار",
+          "en": "Route params"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "params",
+            "path": "antd/es/breadcrumb/Breadcrumb.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl-separator",
+        "name": {
+          "ar": "عكس الفاصل في RTL",
+          "en": "Separator mirrored in RTL"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الفاصل المائل وأسهم الفصل يجب أن تشير في اتجاه القراءة",
+            "en": "The slash and chevron separators must point in the reading direction"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "collapse",
+        "name": {
+          "ar": "طي العناصر الوسطى",
+          "en": "Collapse the middle items"
+        },
+        "priority": "p2",
+        "in": [
+          "mui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "maxItems",
+            "path": "@mui/material/Breadcrumbs/Breadcrumbs.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mixed",
+        "name": {
+          "ar": "جزء لاتيني داخل مسار عربي",
+          "en": "Latin segment inside an Arabic path"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص المختلط يأخذ اتجاهه من محتواه مع عزل المقاطع المكتوبة بخط آخر",
+            "en": "Mixed-script content takes its direction from the content, with foreign runs isolated"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

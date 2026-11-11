@@ -1,0 +1,196 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "phone-input",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "phone-input",
+    "name": {
+      "ar": "حقل هاتف",
+      "en": "Phone input"
+    },
+    "summary": {
+      "ar": "إدخال هاتف بالدولة والتنسيق المحلي ومُخرج بصيغة E.164.",
+      "en": "Phone entry with country, national formatting and E.164 output."
+    },
+    "family": "text-input",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "text-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "country-trigger",
+      "control"
+    ],
+    "dependsOn": [
+      "text-field",
+      "country-select",
+      "ltr-island"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "PhoneInput"
+      }
+    ],
+    "features": [
+      {
+        "id": "phone",
+        "name": {
+          "ar": "حقل هاتف يخرج E.164",
+          "en": "Phone input with E.164 output"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يقبل الأرقام الهندية ويرفض الأحرف اللاتينية الشبيهة بالأرقام، و AntD لا يملك حقل هاتف",
+            "en": "Accepts Arabic-Indic digits and rejects look-alike Latin letters; AntD has no phone input"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "e164",
+        "name": {
+          "ar": "يخزّن E.164 ويعرض الصيغة المحلية",
+          "en": "Stores E.164, shows the national form"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "ltr",
+        "name": {
+          "ar": "الرقم LTR داخل نموذج RTL",
+          "en": "The number is LTR in an RTL form"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "grouping",
+        "name": {
+          "ar": "مجموعات الأرقام تُربط بمسافات غير فاصلة",
+          "en": "Digit groups joined with no-break spaces"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "المسافة العادية بين مجموعات الأرقام الهندية تجعل خوارزمية الاتجاه تعكس ترتيب المجموعات حتى داخل حقل LTR",
+            "en": "An ASCII space between Arabic-Indic digit groups makes the bidi algorithm reverse the group order even inside an LTR field"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "local-prefix",
+        "name": {
+          "ar": "قبول البادئة المحلية (010… و +20 10…)",
+          "en": "Local trunk prefix accepted (010… and +20 10…)"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "country",
+        "name": {
+          "ar": "اختيار الدولة بأسماء عربية وبحث متسامح",
+          "en": "Country selector with Arabic names and tolerant search"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "countries",
+            "path": "@mantine/core/lib/components/PhoneInput/get-countries/get-countries.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "kind",
+        "name": {
+          "ar": "التحقق من نوع الخط من خطة الترقيم",
+          "en": "Mobile or landline check from the numbering plan"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "paste",
+        "name": {
+          "ar": "اللصق مع مسافات وشرطات وأقواس وعلامات اتجاه",
+          "en": "Paste with spaces, dashes, brackets and bidi marks"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Not ours alone after all: Mantine 9 publishes PhoneInput. The Arabic rows have no counterpart there."
+      }
+    ]
+  }
+}

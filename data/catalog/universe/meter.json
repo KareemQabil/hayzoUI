@@ -1,0 +1,126 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "meter",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "meter",
+    "name": {
+      "ar": "مقياس",
+      "en": "Meter"
+    },
+    "summary": {
+      "ar": "قياس ضمن مجال معروف (حصة، قوة) وليس تقدم مهمة.",
+      "en": "A measurement within a known range (quota, strength), not task progress."
+    },
+    "family": "feedback",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "track",
+      "indicator",
+      "label",
+      "value"
+    ],
+    "aliases": [
+      {
+        "library": "react-aria",
+        "name": "Meter"
+      },
+      {
+        "library": "base-ui",
+        "name": "Meter"
+      }
+    ],
+    "features": [
+      {
+        "id": "ranges",
+        "name": {
+          "ar": "مجالات منخفض ومرتفع ومثالي",
+          "en": "Low / high / optimum ranges"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "value-text",
+        "name": {
+          "ar": "نص القيمة المنسّق",
+          "en": "Formatted value text"
+        },
+        "priority": "p2",
+        "in": [
+          "base-ui"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "base-ui",
+            "symbol": "format",
+            "path": "@base-ui/react/meter/root/MeterRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fill",
+        "name": {
+          "ar": "التعبئة من بداية السطر",
+          "en": "Fill from the inline start"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "التعبئة تبدأ من بداية السطر، والتعبئة المثبتة يسارًا تُقرأ معكوسة في RTL",
+            "en": "The fill grows from the inline start; a left-anchored fill reads backwards in RTL"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

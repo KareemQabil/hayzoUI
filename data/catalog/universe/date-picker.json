@@ -1,0 +1,734 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "date-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "date-picker",
+    "name": {
+      "ar": "منتقي التاريخ",
+      "en": "Date picker"
+    },
+    "summary": {
+      "ar": "حقل تاريخ مع نافذة تقويم، والقيمة المخزنة ميلادية بصيغة ISO.",
+      "en": "A date field with a calendar popup; the stored value is ISO Gregorian."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "calendar-grid",
+      "segmented-input",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "field",
+      "trigger",
+      "popup",
+      "calendar",
+      "presets",
+      "footer"
+    ],
+    "dependsOn": [
+      "date-field",
+      "calendar",
+      "popover"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "DatePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "DatePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "DesktopDatePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "MobileDatePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "StaticDatePicker"
+      },
+      {
+        "library": "mantine",
+        "name": "DatePickerInput"
+      },
+      {
+        "library": "mantine",
+        "name": "MonthPickerInput"
+      },
+      {
+        "library": "mantine",
+        "name": "YearPickerInput"
+      },
+      {
+        "library": "mantine",
+        "name": "QuarterPickerInput"
+      },
+      {
+        "library": "mantine",
+        "name": "WeekPickerInput"
+      },
+      {
+        "library": "chakra",
+        "name": "DatePicker"
+      },
+      {
+        "library": "react-aria",
+        "name": "DatePicker"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "تاريخ واحد، تحكم وبدون تحكم",
+          "en": "Single date, controlled / uncontrolled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "storage",
+        "name": {
+          "ar": "قيمة مخزنة مستقلة عن العرض",
+          "en": "Stable value independent of display"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "min-max",
+        "name": {
+          "ar": "أقل وأقصى تاريخ",
+          "en": "Min / max dates"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "minDate",
+            "path": "@mui/x-date-pickers/DateCalendar/useIsDateDisabled.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "minDate",
+            "path": "@mantine/dates/lib/components/QuarterPickerInput/pick-quarter-picker-props/pick-quarter-picker-props.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "min",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "minValue",
+            "path": "react-stately/dist/types/src/datepicker/IncompleteDate.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled-date",
+        "name": {
+          "ar": "دالة الأيام المعطلة",
+          "en": "disabledDate function"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "shouldDisableDate",
+            "path": "@mui/x-date-pickers/DateCalendar/useIsDateDisabled.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "excludeDate",
+            "path": "@mantine/dates/lib/components/Calendar/pick-calendar-levels-props/pick-calendar-levels-props.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "isDateUnavailable",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDateUnavailable",
+            "path": "react-stately/dist/types/src/datepicker/types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "presets",
+        "name": {
+          "ar": "نطاقات جاهزة",
+          "en": "Presets (quick ranges)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "shortcuts",
+            "path": "@mui/x-date-pickers/PickersLayout/PickersLayout.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "presets",
+            "path": "@mantine/dates/lib/components/DateInput/DateInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "week",
+        "name": {
+          "ar": "اختيار أسبوع",
+          "en": "Week picker"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "WeekPicker",
+            "path": "antd/es/date-picker/generatePicker/generateSinglePicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "month",
+        "name": {
+          "ar": "اختيار شهر",
+          "en": "Month picker"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "MonthPicker",
+            "path": "antd/es/date-picker/generatePicker/generateSinglePicker.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "views",
+            "path": "@mui/x-date-pickers/DateTimePicker/shared.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "quarter",
+        "name": {
+          "ar": "اختيار ربع سنة",
+          "en": "Quarter picker"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "QuarterPicker",
+            "path": "antd/es/date-picker/generatePicker/generateSinglePicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "year",
+        "name": {
+          "ar": "اختيار سنة",
+          "en": "Year picker"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "YearPicker",
+            "path": "antd/es/date-picker/generatePicker/generateSinglePicker.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "views",
+            "path": "@mui/x-date-pickers/DateTimePicker/shared.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "format",
+        "name": {
+          "ar": "صيغة عرض مخصصة",
+          "en": "Custom display format"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "format",
+            "path": "@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "format",
+            "path": "@mantine/dates/lib/components/MaskedDateInput/MaskedDateInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "format",
+            "path": "@chakra-ui/react/dist/types/components/date-picker/date-picker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "locale",
+        "name": {
+          "ar": "اللغة (أسماء الشهور، أول يوم)",
+          "en": "Locale (month names, first day)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "locale",
+            "path": "antd/es/date-picker/generatePicker/generateRangePicker.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "locale",
+            "path": "@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "locale",
+            "path": "@mantine/dates/lib/components/QuarterPickerInput/pick-quarter-picker-props/pick-quarter-picker-props.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "locale",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "locale",
+            "path": "react-stately/dist/types/src/datepicker/useDateFieldState.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl-keys",
+        "name": {
+          "ar": "الأسهم تتبع الاتجاه البصري في RTL",
+          "en": "Arrow keys follow visual direction in RTL"
+        },
+        "priority": "p0",
+        "in": [
+          "react-aria"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "حالة الخطأ والمساعدة",
+          "en": "Status / error / helper"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/date-picker/generatePicker/generateRangePicker.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "error",
+            "path": "@mui/x-date-pickers/PickersTextField/PickersFilledInput/pickersFilledInputClasses.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "invalid",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isInvalid",
+            "path": "react-aria-components/dist/types/src/DatePicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "معطل/للقراءة فقط",
+          "en": "Disabled / read-only"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "disabled",
+            "path": "@mui/x-date-pickers/DigitalClock/DigitalClock.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/dates/lib/components/MaskedDateInput/MaskedDateInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria-components/dist/types/src/DatePicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "allow-clear",
+        "name": {
+          "ar": "زر المسح",
+          "en": "Allow clear"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "clearable",
+            "path": "@mui/x-date-pickers/internals/components/PickerFieldUI.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "clearable",
+            "path": "@mantine/dates/lib/components/DateInput/DateInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "multiple",
+        "name": {
+          "ar": "تواريخ متعددة",
+          "en": "Multiple dates"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "multiple",
+            "path": "antd/es/date-picker/generatePicker/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "type",
+            "path": "@mantine/dates/lib/components/DateTimePicker/DateTimePicker.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "selectionMode",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "render-cell",
+        "name": {
+          "ar": "عرض خلية مخصص",
+          "en": "Custom cell render"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "slots",
+            "path": "@mui/x-date-pickers/DatePicker/DatePicker.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "renderDay",
+            "path": "@mantine/dates/lib/components/Calendar/pick-calendar-levels-props/pick-calendar-levels-props.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "hijri",
+        "name": {
+          "ar": "التقويم الهجري (أم القرى) للعرض",
+          "en": "Hijri (Umm al-Qura) display calendar"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "عرض هجري بأسماء الشهور العربية فوق القيمة الميلادية نفسها بصيغة ISO، و AntD يحتاج إضافة تقويم مخصصة لـdayjs",
+            "en": "Hijri display with Arabic month names over the same Gregorian ISO value; AntD needs a custom dayjs calendar plugin"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "calendar-switch",
+        "name": {
+          "ar": "نظام التقويم يُحدَّد لكل حقل",
+          "en": "Calendar system set per field"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "chakra",
+          "react-aria"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نظام التقويم (ميلادي أو هجري أم القرى) يُختار بمعزل عن اللغة والأرقام، والتخزين يبقى ميلاديًا بصيغة ISO",
+            "en": "The calendar system (Gregorian, Hijri Umm al-Qura) is chosen separately from language and numerals; storage stays ISO Gregorian"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "dateAdapter",
+            "path": "@mui/x-date-pickers/LocalizationProvider/LocalizationProvider.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "createCalendar",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "createCalendar",
+            "path": "react-stately/dist/types/src/datepicker/useDateFieldState.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mobile",
+        "name": {
+          "ar": "عرض للجوال (ورقة أو عجلات)",
+          "en": "Mobile presentation (sheet or wheels)"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "desktopModeMediaQuery",
+            "path": "@mui/x-date-pickers/DatePicker/DatePicker.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "dropdownType",
+            "path": "@mantine/dates/lib/components/PickerInputBase/PickerInputBase.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "time-zone",
+        "name": {
+          "ar": "المنطقة الزمنية للقيمة",
+          "en": "Time zone of the value"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "timezone",
+            "path": "@mui/x-date-pickers/DateCalendar/useCalendarState.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "timeZone",
+            "path": "@zag-js/date-picker/dist/date-picker.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "timeZone",
+            "path": "react-stately/dist/types/src/datepicker/utils.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "Week, month, quarter and year pickers are granularities of date-picker, not entries."
+      },
+      {
+        "topic": "split",
+        "note": "Range moved to date-range-picker, showTime to date-time-picker, segment entry to date-field."
+      }
+    ]
+  }
+}

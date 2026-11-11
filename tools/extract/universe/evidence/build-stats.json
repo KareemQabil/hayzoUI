@@ -1,0 +1,155 @@
+{
+ "components": 149,
+ "aliases": {
+  "verified": 797,
+  "unverified": [
+   "toggle-group  mantine:ToggleGroup"
+  ]
+ },
+ "features": 1026,
+ "inClaims": 1975,
+ "inWithEvidence": 1747,
+ "probes": 639,
+ "probesWithoutHit": [
+  "carousel.pause",
+  "command-palette.groups",
+  "data-table.infinite",
+  "data-table.url-state",
+  "date-range-picker.order",
+  "field.count",
+  "icon-button.label-required",
+  "link.external",
+  "listbox.sections",
+  "meter.ranges",
+  "money-text.currency-form",
+  "otp-input.ltr-cells",
+  "popconfirm.placement",
+  "pro-form.dependency",
+  "toast.progress",
+  "transition.reduced-motion",
+  "tree-select.max-tag"
+ ],
+ "matrix": {
+  "components": 70,
+  "features": 564,
+  "dropped": [
+   {
+    "component": "icon",
+    "matrix": "icon.iconfont"
+   },
+   {
+    "component": "stack",
+    "matrix": "space.compact"
+   },
+   {
+    "component": "button",
+    "matrix": "button.group"
+   },
+   {
+    "component": "form",
+    "matrix": "form.item-anatomy"
+   },
+   {
+    "component": "form",
+    "matrix": "form.required-mark"
+   },
+   {
+    "component": "form",
+    "matrix": "form.feedback-icons"
+   },
+   {
+    "component": "form",
+    "matrix": "form.field-disabled"
+   },
+   {
+    "component": "text-field",
+    "matrix": "input.addon"
+   },
+   {
+    "component": "text-field",
+    "matrix": "input.password"
+   },
+   {
+    "component": "text-field",
+    "matrix": "input.textarea"
+   },
+   {
+    "component": "text-field",
+    "matrix": "input.search"
+   },
+   {
+    "component": "text-field",
+    "matrix": "input.otp"
+   },
+   {
+    "component": "text-field",
+    "matrix": "input.phone"
+   },
+   {
+    "component": "checkbox",
+    "matrix": "checkbox.group"
+   },
+   {
+    "component": "select",
+    "matrix": "select.multiple"
+   },
+   {
+    "component": "select",
+    "matrix": "select.tags"
+   },
+   {
+    "component": "select",
+    "matrix": "select.max-tag"
+   },
+   {
+    "component": "dialog",
+    "matrix": "modal.confirm"
+   },
+   {
+    "component": "dialog",
+    "matrix": "modal.use-modal"
+   },
+   {
+    "component": "dialog",
+    "matrix": "modal.draggable"
+   },
+   {
+    "component": "progress",
+    "matrix": "progress.circle"
+   },
+   {
+    "component": "date-picker",
+    "matrix": "date-picker.range"
+   },
+   {
+    "component": "date-picker",
+    "matrix": "date-picker.time"
+   },
+   {
+    "component": "date-picker",
+    "matrix": "date-picker.keyboard"
+   },
+   {
+    "component": "date-picker",
+    "matrix": "date-picker.any-digits"
+   },
+   {
+    "component": "data-table",
+    "matrix": "table.edit-cell"
+   },
+   {
+    "component": "data-table",
+    "matrix": "table.edit-row"
+   }
+  ],
+  "unused": [
+   "icon.iconfont",
+   "message.types",
+   "message.duration",
+   "modal.draggable",
+   "app.context",
+   "app.config",
+   "util.get-ref"
+  ]
+ }
+}

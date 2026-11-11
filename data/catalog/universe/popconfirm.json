@@ -1,0 +1,155 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "popconfirm",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "popconfirm",
+    "name": {
+      "ar": "تأكيد منبثق",
+      "en": "Popconfirm"
+    },
+    "summary": {
+      "ar": "تأكيد صغير مثبت بجوار العنصر الذي طلبه.",
+      "en": "A small anchored confirmation next to the control that asked for it."
+    },
+    "family": "overlay",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "overlay-layers",
+      "anchored-position",
+      "focus-scope"
+    ],
+    "anatomy": [
+      "trigger",
+      "popup",
+      "title",
+      "description",
+      "cancel",
+      "action"
+    ],
+    "dependsOn": [
+      "popover",
+      "button"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Popconfirm"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "تأكيد قبل الإجراء",
+          "en": "Confirm on action"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "async",
+        "name": {
+          "ar": "تأكيد غير متزامن",
+          "en": "Async confirm"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onConfirm",
+            "path": "antd/es/popconfirm/PurePanel.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "icon",
+        "name": {
+          "ar": "أيقونة ونصوص مخصصة",
+          "en": "Custom icon / texts"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "icon",
+            "path": "antd/es/popconfirm/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement-rtl",
+        "name": {
+          "ar": "موضع منطقي",
+          "en": "Logical placement"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مواضع البداية والنهاية تنعكس مع الاتجاه، ولا يُستخدم اليسار واليمين الفيزيائيان إلا بطلب صريح",
+            "en": "Start/end placement must mirror with direction; physical left/right only when asked for explicitly"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

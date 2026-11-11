@@ -1,0 +1,486 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "calendar",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "calendar",
+    "name": {
+      "ar": "تقويم",
+      "en": "Calendar"
+    },
+    "summary": {
+      "ar": "شبكة شهر لاختيار تاريخ أو مجال بأي نظام تقويم مدعوم.",
+      "en": "A month grid for picking a date or a range, in any supported calendar system."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "calendar-grid",
+      "grid-navigation",
+      "date-range"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "heading",
+      "prev",
+      "next",
+      "grid",
+      "weekday",
+      "cell",
+      "month-view",
+      "year-view"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Calendar"
+      },
+      {
+        "library": "mui-x",
+        "name": "DateCalendar"
+      },
+      {
+        "library": "mui-x",
+        "name": "MonthCalendar"
+      },
+      {
+        "library": "mui-x",
+        "name": "YearCalendar"
+      },
+      {
+        "library": "mantine",
+        "name": "Calendar"
+      },
+      {
+        "library": "mantine",
+        "name": "DatePicker",
+        "note": "inline calendar in Mantine naming"
+      },
+      {
+        "library": "mantine",
+        "name": "MiniCalendar"
+      },
+      {
+        "library": "mantine",
+        "name": "MonthPicker"
+      },
+      {
+        "library": "mantine",
+        "name": "YearPicker"
+      },
+      {
+        "library": "mantine",
+        "name": "QuarterPicker"
+      },
+      {
+        "library": "mantine",
+        "name": "WeekPicker"
+      },
+      {
+        "library": "react-aria",
+        "name": "Calendar"
+      },
+      {
+        "library": "react-aria",
+        "name": "RangeCalendar"
+      },
+      {
+        "library": "shadcn",
+        "name": "calendar"
+      }
+    ],
+    "features": [
+      {
+        "id": "full",
+        "name": {
+          "ar": "تقويم كامل",
+          "en": "Full calendar"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "card",
+        "name": {
+          "ar": "نمط البطاقة",
+          "en": "Card mode"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fullscreen",
+            "path": "antd/es/calendar/Header.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "cell-render",
+        "name": {
+          "ar": "عرض الخلايا",
+          "en": "Cell render"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "cellRender",
+            "path": "antd/es/calendar/generateCalendar.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "slots",
+            "path": "@mui/x-date-pickers/DateCalendar/DateCalendar.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "renderDay",
+            "path": "@mantine/dates/lib/components/Calendar/pick-calendar-levels-props/pick-calendar-levels-props.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mode",
+        "name": {
+          "ar": "نمط شهر/سنة",
+          "en": "Month / year mode"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "mode",
+            "path": "antd/es/calendar/Header.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "views",
+            "path": "@mui/x-date-pickers/DateTimePicker/shared.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "level",
+            "path": "@mantine/dates/lib/components/Calendar/Calendar.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "hijri",
+        "name": {
+          "ar": "التقويم الهجري",
+          "en": "Hijri calendar"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "شبكة التقويم الهجري (أم القرى) تستخدم المحرك نفسه لمنتقي التاريخ، ولا يقدمها أي تقويم كامل الصفحة مما دُرس",
+            "en": "A Hijri (Umm al-Qura) grid reuses the same engine as the date picker; no surveyed full-page calendar offers it"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "week-start",
+        "name": {
+          "ar": "أول أيام الأسبوع والعطلة من المنطقة",
+          "en": "First day of week and weekend from the region"
+        },
+        "priority": "p0",
+        "in": [
+          "mantine",
+          "react-aria"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأسبوع يبدأ السبت في مصر والأحد في السعودية والعطلة الجمعة والسبت، وكلاهما من بيانات المنطقة لا من اللغة",
+            "en": "The week starts on Saturday in Egypt and on Sunday in Saudi Arabia, and the weekend is Friday–Saturday; both come from region data, not from the language"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "firstDayOfWeek",
+            "path": "@mantine/dates/lib/components/Calendar/pick-calendar-levels-props/pick-calendar-levels-props.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "firstDayOfWeek",
+            "path": "react-aria/dist/types/src/calendar/useCalendarGrid.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "calendars",
+        "name": {
+          "ar": "نظام التقويم: ميلادي، هجري أم القرى، مدني، حسابي",
+          "en": "Calendar system: Gregorian, Hijri Umm al-Qura, civil, tabular"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "react-aria"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نظام التقويم (ميلادي أو هجري أم القرى) يُختار بمعزل عن اللغة والأرقام، والتخزين يبقى ميلاديًا بصيغة ISO",
+            "en": "The calendar system (Gregorian, Hijri Umm al-Qura) is chosen separately from language and numerals; storage stays ISO Gregorian"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "dateAdapter",
+            "path": "@mui/x-date-pickers/LocalizationProvider/LocalizationProvider.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "createCalendar",
+            "path": "react-aria-components/dist/types/src/Calendar.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "month-names",
+        "name": {
+          "ar": "أسماء الشهور بحسب المنطقة",
+          "en": "Month name set by region"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الشهور الميلادية تختلف أسماؤها في العالم العربي (يناير / كانون الثاني / جانفي)، والمجموعة تأتي من المنطقة",
+            "en": "Gregorian months are named differently across the Arab world (يناير / كانون الثاني / جانفي); the set comes from the region"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "grid-direction",
+        "name": {
+          "ar": "أعمدة الشبكة ومفاتيح الأسهم تتبع الاتجاه",
+          "en": "Grid columns and arrow keys follow direction"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "range",
+        "name": {
+          "ar": "تحديد مجال مع معاينة عند المرور",
+          "en": "Range selection with hover preview"
+        },
+        "priority": "p0",
+        "in": [
+          "mantine",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "type",
+            "path": "@mantine/dates/lib/components/DateTimePicker/DateTimePicker.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "allowsNonContiguousRanges",
+            "path": "react-stately/dist/types/src/calendar/useRangeCalendarState.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "unavailable",
+        "name": {
+          "ar": "تواريخ غير متاحة وحد أدنى وأقصى",
+          "en": "Unavailable dates and min / max"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "react-aria",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabledDate",
+            "path": "antd/es/calendar/generateCalendar.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "shouldDisableDate",
+            "path": "@mui/x-date-pickers/DateCalendar/useIsDateDisabled.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "excludeDate",
+            "path": "@mantine/dates/lib/components/Calendar/pick-calendar-levels-props/pick-calendar-levels-props.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDateUnavailable",
+            "path": "react-stately/dist/types/src/calendar/useCalendarState.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "disabled",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/calendar.tsx"
+          }
+        ]
+      },
+      {
+        "id": "multi-month",
+        "name": {
+          "ar": "عدة أشهر متجاورة",
+          "en": "Several months side by side"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "react-aria"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "numberOfColumns",
+            "path": "@mantine/dates/lib/components/Calendar/Calendar.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "visibleDuration",
+            "path": "react-aria-components/dist/types/src/Calendar.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "secondary-calendar",
+        "name": {
+          "ar": "تاريخ التقويم الثاني في كل خلية",
+          "en": "Secondary calendar date in each cell"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "كل خلية يمكن أن تعرض اليوم الهجري تحت الميلادي أو العكس",
+            "en": "Each cell can show the Hijri day under the Gregorian one, or the reverse"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "progress-circle",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "progress-circle",
+    "name": {
+      "ar": "تقدم دائري",
+      "en": "Progress circle"
+    },
+    "summary": {
+      "ar": "تقدم على حلقة مع قيمة في المنتصف.",
+      "en": "Progress on a ring, with a value in the centre."
+    },
+    "family": "feedback",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "track",
+      "range",
+      "label"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Progress",
+        "note": "type=\"circle\" or \"dashboard\""
+      },
+      {
+        "library": "mui",
+        "name": "CircularProgress"
+      },
+      {
+        "library": "mantine",
+        "name": "RingProgress"
+      },
+      {
+        "library": "mantine",
+        "name": "SemiCircleProgress"
+      },
+      {
+        "library": "chakra",
+        "name": "ProgressCircle"
+      }
+    ],
+    "features": [
+      {
+        "id": "circle",
+        "name": {
+          "ar": "دائري",
+          "en": "Circle / dashboard"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "type",
+            "path": "antd/es/progress/progress.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "clockwise",
+        "name": {
+          "ar": "اتجاه الدوران لا ينعكس",
+          "en": "Sweep direction is not mirrored"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "التعبئة مع عقارب الساعة عرف الساعة لا اتجاه القراءة، وعكسها في RTL خطأ",
+            "en": "Clockwise fill is a clock convention, not a reading direction; mirroring it in RTL is a mistake"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "value",
+        "name": {
+          "ar": "القيمة الوسطى بنظام أرقام النطاق",
+          "en": "Centre value in the scope numerals"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

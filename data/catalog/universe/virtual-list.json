@@ -1,0 +1,114 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "virtual-list",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "virtual-list",
+    "name": {
+      "ar": "قائمة افتراضية العرض",
+      "en": "Virtual list"
+    },
+    "summary": {
+      "ar": "يرسم الجزء الظاهر فقط من قائمة أو شبكة طويلة.",
+      "en": "Renders only the visible part of a long list or grid."
+    },
+    "family": "data",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "virtual-list"
+    ],
+    "anatomy": [
+      "root",
+      "viewport",
+      "item"
+    ],
+    "aliases": [
+      {
+        "library": "react-aria",
+        "name": "Virtualizer"
+      }
+    ],
+    "features": [
+      {
+        "id": "variable-size",
+        "name": {
+          "ar": "أحجام عناصر متغيرة ومقيسة",
+          "en": "Variable and measured item sizes"
+        },
+        "priority": "p1",
+        "in": [
+          "react-aria"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الصفوف العربية أطول من التقدير اللاتيني عند ظهور التشكيل، فالتقدير يؤخذ من ارتفاع السطر العربي",
+            "en": "Arabic rows are taller than the Latin estimate once diacritics appear; estimates come from the Arabic line height"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "react-aria",
+            "symbol": "layout",
+            "path": "react-aria/dist/types/src/virtualizer/Virtualizer.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "horizontal-rtl",
+        "name": {
+          "ar": "العرض الافتراضي الأفقي في RTL",
+          "en": "Horizontal virtualisation in RTL"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الإزاحات تُحسب من بداية السطر، وقيمة scrollLeft السالبة في RTL تكسر الحسابات المبسّطة للنافذة",
+            "en": "Offsets are computed from the inline start; negative scrollLeft in RTL breaks naive window calculations"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "focus",
+        "name": {
+          "ar": "يُبقي العنصر المركَّز مرسومًا",
+          "en": "Keeps the focused item mounted"
+        },
+        "priority": "p1",
+        "in": [
+          "react-aria"
+        ],
+        "origin": "authored"
+      }
+    ]
+  }
+}

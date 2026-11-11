@@ -1,0 +1,181 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "invoice",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "invoice",
+    "name": {
+      "ar": "فاتورة",
+      "en": "Invoice"
+    },
+    "summary": {
+      "ar": "مستند فاتورة ضريبية: الأطراف والبنود وتفصيل الضريبة والإجماليات ورمز QR وتخطيط الطباعة.",
+      "en": "A tax invoice document: parties, line items, tax breakdown, totals, QR and print layout."
+    },
+    "family": "pattern",
+    "tier": "T5",
+    "priority": "p0",
+    "engines": [
+      "table-model"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "seller",
+      "buyer",
+      "meta",
+      "lines",
+      "tax-summary",
+      "totals",
+      "amount-in-words",
+      "qr",
+      "footer"
+    ],
+    "dependsOn": [
+      "data-table",
+      "money-text",
+      "tax-summary",
+      "amount-in-words",
+      "qr-code",
+      "date-text",
+      "description-list"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "mandatory-fields",
+        "name": {
+          "ar": "الحقول الإلزامية بحسب الدولة ونوع الفاتورة",
+          "en": "Mandatory fields by country and invoice type"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الفاتورة الضريبية المبسطة والقياسية تختلفان في الحقول الإلزامية، والقائمة من بيانات المالية لا من الشيفرة",
+            "en": "Simplified and standard tax invoices carry different mandatory fields; the list comes from data/finance, never hard-coded"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "bilingual",
+        "name": {
+          "ar": "العربية مع لغة ثانية جنبًا إلى جنب",
+          "en": "Arabic with a second language side by side"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "العربية إلزامية في الفواتير الضريبية السعودية، والتخطيط ثنائي اللغة يقرن كل عنوان مع وضع العربية يمينًا",
+            "en": "Arabic is mandatory on Saudi tax invoices; a bilingual layout pairs each label, with Arabic on the right"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "rounding",
+        "name": {
+          "ar": "قاعدة تقريب البند والمستند",
+          "en": "Line and document rounding rule"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الضريبة تُحسب بالوحدات الصغرى، والتقريب لكل بند أو لكل مستند قاعدة للجهة الضريبية ويُبيَّن",
+            "en": "Tax is computed in minor units; whether rounding is per line or per document is a rule of the authority and is shown"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "qr",
+        "name": {
+          "ar": "رمز QR النظامي",
+          "en": "Regulatory QR code"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "صيغة حمولة QR تحددها الجهة الضريبية وتُولَّد من الإجماليات المطبوعة نفسها",
+            "en": "The QR payload format is set by the tax authority and generated from the same totals that are printed"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "print",
+        "name": {
+          "ar": "طباعة A4 برأس مكرر وأرقام صفحات",
+          "en": "A4 print with repeated header and page numbers"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "محركات الطباعة تختلف في جداول RTL المنقسمة بين الصفحات، فترتيب الأعمدة والرأس المكرر يحتاجان اختبارًا لكل متصفح",
+            "en": "Print engines differ on RTL tables that break across pages; column order and repeated headers need a test per browser"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "dates",
+        "name": {
+          "ar": "تاريخا الإصدار والتوريد وبالتقويمين عند الطلب",
+          "en": "Issue and supply dates, optionally in both calendars"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نظام التقويم (ميلادي أو هجري أم القرى) يُختار بمعزل عن اللغة والأرقام، والتخزين يبقى ميلاديًا بصيغة ISO",
+            "en": "The calendar system (Gregorian, Hijri Umm al-Qura) is chosen separately from language and numerals; storage stays ISO Gregorian"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "credit-note",
+        "name": {
+          "ar": "صيغتا الإشعار الدائن والمدين",
+          "en": "Credit and debit note variants"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; L5 pattern in ARCHITECTURE.md."
+      }
+    ]
+  }
+}

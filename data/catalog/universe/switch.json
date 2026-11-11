@@ -1,0 +1,377 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "switch",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "switch",
+    "name": {
+      "ar": "مفتاح تبديل",
+      "en": "Switch"
+    },
+    "summary": {
+      "ar": "إعداد تشغيل وإيقاف يُطبَّق فورًا.",
+      "en": "An on/off setting that applies immediately."
+    },
+    "family": "choice",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "toggle",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "track",
+      "thumb",
+      "label"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Switch"
+      },
+      {
+        "library": "mui",
+        "name": "Switch"
+      },
+      {
+        "library": "mantine",
+        "name": "Switch"
+      },
+      {
+        "library": "chakra",
+        "name": "Switch"
+      },
+      {
+        "library": "react-aria",
+        "name": "Switch"
+      },
+      {
+        "library": "base-ui",
+        "name": "Switch"
+      },
+      {
+        "library": "radix",
+        "name": "Switch"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Switch"
+      },
+      {
+        "library": "shadcn",
+        "name": "switch"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "تشغيل/إيقاف، تحكم وبدون تحكم",
+          "en": "Checked, controlled / uncontrolled"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "معطل",
+          "en": "Disabled"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/switch/es/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/Switch/Switch.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Switch/SwitchGroup/SwitchGroup.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@zag-js/switch/dist/switch.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria/dist/types/src/switch/useSwitch.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/switch/root/SwitchRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "disabled",
+            "path": "@radix-ui/react-switch/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/switch/switch.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "disabled",
+            "path": "via @radix-ui/react-switch/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "label",
+        "name": {
+          "ar": "عنوان ووصف",
+          "en": "Label and description"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "label",
+            "path": "@mantine/core/lib/components/Switch/Switch.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "label",
+            "path": "@zag-js/switch/dist/switch.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "name": {
+          "ar": "حجم صغير",
+          "en": "Size small"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/switch/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/Switch/Switch.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/Switch/Switch.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/switch.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "size",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/switch.tsx"
+          }
+        ]
+      },
+      {
+        "id": "loading",
+        "name": {
+          "ar": "تحميل",
+          "en": "Loading"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "antd/es/switch/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "children",
+        "name": {
+          "ar": "نص داخل المفتاح",
+          "en": "checkedChildren / unCheckedChildren"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "checkedChildren",
+            "path": "@rc-component/switch/es/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "onLabel",
+            "path": "@mantine/core/lib/components/Switch/Switch.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "thumb-direction",
+        "name": {
+          "ar": "المقبض يتحرك نحو نهاية السطر عند التشغيل",
+          "en": "Thumb moves toward the inline end when on"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "التحريك المكتوب بـtranslateX موجب يحرّك المقبض في الاتجاه الخاطئ في RTL",
+            "en": "A transform written as translateX(+n) moves the thumb the wrong way in RTL"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

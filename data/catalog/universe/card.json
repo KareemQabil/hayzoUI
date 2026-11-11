@@ -1,0 +1,336 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "card",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "card",
+    "name": {
+      "ar": "بطاقة",
+      "en": "Card"
+    },
+    "summary": {
+      "ar": "سطح يجمع محتوى وإجراءات مترابطة.",
+      "en": "A surface that groups related content and actions."
+    },
+    "family": "display",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "title",
+      "description",
+      "media",
+      "body",
+      "footer",
+      "actions"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Card"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProCard"
+      },
+      {
+        "library": "antd-pro",
+        "name": "CheckCard"
+      },
+      {
+        "library": "mui",
+        "name": "Card"
+      },
+      {
+        "library": "mantine",
+        "name": "Card"
+      },
+      {
+        "library": "chakra",
+        "name": "Card"
+      },
+      {
+        "library": "shadcn",
+        "name": "card"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عنوان وإضافي ومحتوى",
+          "en": "Title, extra, body"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "title",
+            "path": "antd/es/card/Card.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "title",
+            "path": "@ant-design/pro-card/es/components/CheckCard/Group.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "title",
+            "path": "@mui/material/CardHeader/CardHeader.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "title",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/card.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "cover",
+        "name": {
+          "ar": "صورة غلاف",
+          "en": "Cover image"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "cover",
+            "path": "antd/es/card/Card.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "cover",
+            "path": "@ant-design/pro-card/es/components/CheckCard/Group.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "Section",
+            "path": "@mantine/core/lib/components/Card/Card.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "actions",
+        "name": {
+          "ar": "إجراءات",
+          "en": "Actions"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "actions",
+            "path": "antd/es/card/Card.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "actions",
+            "path": "@ant-design/pro-card/es/components/Actions/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "loading",
+        "name": {
+          "ar": "تحميل",
+          "en": "Loading"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "antd/es/card/Card.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "loading",
+            "path": "@ant-design/pro-card/es/components/CheckCard/Group.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "meta",
+        "name": {
+          "ar": "بيانات وصفية",
+          "en": "Card.Meta"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Meta",
+            "path": "antd/es/card/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tabs",
+        "name": {
+          "ar": "مع تبويبات",
+          "en": "With tabs"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "tabList",
+            "path": "antd/es/card/Card.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "grid",
+        "name": {
+          "ar": "شبكة",
+          "en": "Card.Grid"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Grid",
+            "path": "antd/es/card/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "clickable",
+        "name": {
+          "ar": "البطاقة كلها هدف رابط واحد",
+          "en": "Whole card as one link target"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "antd-pro"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "hoverable",
+            "path": "antd/es/card/Card.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "hoverable",
+            "path": "@ant-design/pro-card/es/typing.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

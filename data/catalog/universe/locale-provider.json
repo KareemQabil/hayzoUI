@@ -1,0 +1,388 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "locale-provider",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "locale-provider",
+    "name": {
+      "ar": "مزوّد اللغة والاتجاه",
+      "en": "Locale provider"
+    },
+    "summary": {
+      "ar": "نطاق يحدد اللغة والاتجاه ونظام الأرقام والتقويم والمنطقة لكل ما بداخله.",
+      "en": "Scope that fixes language, direction, numerals, calendar and region for everything inside it."
+    },
+    "family": "utility",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "ConfigProvider"
+      },
+      {
+        "library": "mui",
+        "name": "ThemeProvider",
+        "note": "direction is a theme key"
+      },
+      {
+        "library": "mui-x",
+        "name": "LocalizationProvider",
+        "note": "date adapter and picker strings only"
+      },
+      {
+        "library": "mantine",
+        "name": "DirectionProvider"
+      },
+      {
+        "library": "chakra",
+        "name": "LocaleProvider"
+      },
+      {
+        "library": "react-aria",
+        "name": "I18nProvider"
+      },
+      {
+        "library": "base-ui",
+        "name": "DirectionProvider"
+      },
+      {
+        "library": "radix",
+        "name": "Direction"
+      },
+      {
+        "library": "shadcn",
+        "name": "direction"
+      }
+    ],
+    "features": [
+      {
+        "id": "direction",
+        "name": {
+          "ar": "الاتجاه",
+          "en": "direction rtl / ltr"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "direction",
+            "path": "antd/es/config-provider/context.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "dir",
+            "path": "@mantine/core/lib/core/DirectionProvider/DirectionProvider.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "direction",
+            "path": "react-aria/dist/types/src/i18n/I18nProvider.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "direction",
+            "path": "@base-ui/react/direction-provider/DirectionProvider.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "dir",
+            "path": "@radix-ui/react-direction/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "direction",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/direction.tsx"
+          }
+        ]
+      },
+      {
+        "id": "locale",
+        "name": {
+          "ar": "اللغة (النصوص الداخلية)",
+          "en": "Locale (internal strings)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "locale",
+            "path": "antd/es/config-provider/context.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "localeText",
+            "path": "@mui/x-date-pickers/LocalizationProvider/LocalizationProvider.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "locale",
+            "path": "@ark-ui/react/dist/providers/locale/locale-provider.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "locale",
+            "path": "react-aria/dist/types/src/i18n/I18nProvider.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "nesting",
+        "name": {
+          "ar": "مزودات متداخلة",
+          "en": "Nested providers"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "numerals",
+        "name": {
+          "ar": "تفضيل نظام الأرقام",
+          "en": "Numerals preference (Latin / Arabic-Indic)"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "إعداد واحد في المزوّد ينقل كل أرقام الصفحة بين اللاتينية والهندية، ولا يملك أي مزوّد مدروس إعدادًا للأرقام",
+            "en": "One provider setting moves every number on the page between Latin and Arabic-Indic digits; none of the surveyed providers has a numerals setting"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "mixed-align",
+        "name": {
+          "ar": "تفضيل محاذاة النص المختلط",
+          "en": "Mixed-script alignment preference"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأسماء اللاتينية داخل واجهة عربية تُحاذى بحسب الواجهة أو بحسب محتواها، كتفضيل يخص المنطقة",
+            "en": "Latin names inside an Arabic interface align by the interface or by their content, as a regional preference"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "calendar",
+        "name": {
+          "ar": "نظام التقويم مستقل عن اللغة",
+          "en": "Calendar system independent of locale"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نظام التقويم (ميلادي أو هجري أم القرى) يُختار بمعزل عن اللغة والأرقام، والتخزين يبقى ميلاديًا بصيغة ISO",
+            "en": "The calendar system (Gregorian, Hijri Umm al-Qura) is chosen separately from language and numerals; storage stays ISO Gregorian"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "region",
+        "name": {
+          "ar": "المنطقة (الدولة) كبُعد مستقل: العملة وبداية الأسبوع والعطلة",
+          "en": "Region (country) as its own dimension: currency, week start, weekend"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "ar-EG و ar-SA لغة واحدة لكن العملة والعطلة والتقويم الافتراضي تختلف، فلا تُستنتج المنطقة من وسم اللغة وحده",
+            "en": "ar-EG and ar-SA share a language but differ in currency, weekend and default calendar; region is never inferred from the language tag alone"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "portal-inherit",
+        "name": {
+          "ar": "العناصر المرسومة في بوابة تحتفظ بنطاق العنصر الذي فتحها",
+          "en": "Overlays rendered in a portal keep the scope of their trigger"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "البوابة الملحقة بـbody تفقد الاتجاه ونظام الأرقام ما لم يُنقل النطاق صراحة",
+            "en": "A portal attached to body loses dir and numerals unless the scope is carried explicitly"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "strings",
+        "name": {
+          "ar": "فهرس النصوص الداخلية لكل لغة",
+          "en": "Built-in strings catalogue per language"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "locale",
+            "path": "antd/es/config-provider/context.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "localeText",
+            "path": "@mui/x-date-pickers/LocalizationProvider/LocalizationProvider.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "The owner's T0 lists LocaleProvider and Direction separately; they are one entry because no surveyed library gains anything from a direction scope without a language."
+      },
+      {
+        "topic": "split",
+        "note": "AntD ConfigProvider is split: direction/locale rows are here, theme/size/token rows are in theme-provider."
+      }
+    ]
+  }
+}

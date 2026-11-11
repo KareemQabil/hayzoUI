@@ -1,0 +1,566 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "toast",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "toast",
+    "name": {
+      "ar": "إشعار عابر",
+      "en": "Toast"
+    },
+    "summary": {
+      "ar": "رسائل قصيرة تُصفّ في زاوية وتُعلَن بهدوء.",
+      "en": "Brief messages queued in a corner, announced politely."
+    },
+    "family": "feedback",
+    "tier": "T3",
+    "priority": "p0",
+    "engines": [
+      "toast-queue",
+      "overlay-layers"
+    ],
+    "anatomy": [
+      "viewport",
+      "root",
+      "title",
+      "description",
+      "action",
+      "close",
+      "progress"
+    ],
+    "dependsOn": [
+      "portal",
+      "icon-button"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "Snackbar"
+      },
+      {
+        "library": "mantine",
+        "name": "Notifications"
+      },
+      {
+        "library": "mantine",
+        "name": "Notification"
+      },
+      {
+        "library": "chakra",
+        "name": "Toaster"
+      },
+      {
+        "library": "chakra",
+        "name": "Toast"
+      },
+      {
+        "library": "react-aria",
+        "name": "UNSTABLE_Toast",
+        "note": "unstable export"
+      },
+      {
+        "library": "base-ui",
+        "name": "Toast"
+      },
+      {
+        "library": "radix",
+        "name": "Toast"
+      },
+      {
+        "library": "shadcn",
+        "name": "sonner"
+      },
+      {
+        "library": "shadcn",
+        "name": "toast",
+        "note": "superseded by sonner"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عنوان ووصف",
+          "en": "Title and description"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "types",
+        "name": {
+          "ar": "الأنواع",
+          "en": "Types"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "duration",
+        "name": {
+          "ar": "المدة/دائم",
+          "en": "Duration / persistent"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "autoHideDuration",
+            "path": "@mui/material/Snackbar/Snackbar.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "autoClose",
+            "path": "@mantine/notifications/lib/NotificationContainer.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "duration",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "timeout",
+            "path": "@base-ui/react/toast/provider/ToastProvider.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "duration",
+            "path": "@radix-ui/react-toast/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "pause-hover",
+        "name": {
+          "ar": "إيقاف المؤقت عند المرور",
+          "en": "Pause on hover"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "disableWindowBlurListener",
+            "path": "@mui/material/Snackbar/Snackbar.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "pauseOnPageIdle",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "close",
+        "name": {
+          "ar": "زر الإغلاق",
+          "en": "Close button"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "withCloseButton",
+            "path": "@mantine/core/lib/components/Notification/Notification.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "closable",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "anchorOrigin",
+            "path": "@mui/material/Snackbar/Snackbar.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "position",
+            "path": "@mantine/notifications/lib/Notifications.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "placement",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "actions",
+        "name": {
+          "ar": "أزرار إجراء",
+          "en": "Action buttons (btn)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "action",
+            "path": "@mui/material/Snackbar/Snackbar.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "action",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "action",
+            "path": "@base-ui/react/toast/createToastManager.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "stack",
+        "name": {
+          "ar": "تجميع المكدس",
+          "en": "Stack collapse"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "limit",
+            "path": "@mantine/notifications/lib/Notifications.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "max",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "limit",
+            "path": "@base-ui/react/toast/provider/ToastProvider.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "progress",
+        "name": {
+          "ar": "شريط الوقت المتبقي",
+          "en": "Progress bar of remaining time"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "hook",
+        "name": {
+          "ar": "واجهة الخطاف",
+          "en": "Hook API (useMessage)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "loading",
+        "name": {
+          "ar": "رسالة تحميل تُحدَّث بمفتاح",
+          "en": "Loading message with update by key"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "dir",
+        "name": {
+          "ar": "الاتجاه واللغة من نطاق اللغة",
+          "en": "Direction and language from the locale scope"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "corner",
+        "name": {
+          "ar": "الزاوية تُسمّى بداية ونهاية",
+          "en": "Corner named start / end"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مواضع البداية والنهاية تنعكس مع الاتجاه، ولا يُستخدم اليسار واليمين الفيزيائيان إلا بطلب صريح",
+            "en": "Start/end placement must mirror with direction; physical left/right only when asked for explicitly"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "swipe",
+        "name": {
+          "ar": "السحب للإزالة نحو أقرب حافة",
+          "en": "Swipe away toward the nearest edge"
+        },
+        "priority": "p1",
+        "in": [
+          "base-ui",
+          "radix"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "اتجاه السحب للإزالة فيزيائي في Radix و Base UI، ويجب أن يتبع الزاوية التي جاء منها الإشعار",
+            "en": "Swipe-to-dismiss direction is physical in Radix and Base UI; it has to follow the corner the toast came from"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "base-ui",
+            "symbol": "swipeDirection",
+            "path": "@base-ui/react/toast/root/ToastRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "swipeDirection",
+            "path": "@radix-ui/react-toast/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "promise",
+        "name": {
+          "ar": "إشعار وعد (تحميل ثم نتيجة)",
+          "en": "Promise toast (loading, then result)"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "promise",
+            "path": "@mantine/notifications/lib/Notifications.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "promise",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "promise",
+            "path": "@base-ui/react/toast/createToastManager.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "hotkey",
+        "name": {
+          "ar": "اختصار للانتقال إلى منطقة الإشعارات",
+          "en": "Hotkey to focus the region"
+        },
+        "priority": "p2",
+        "in": [
+          "chakra",
+          "radix"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "hotkey",
+            "path": "@zag-js/toast/dist/toast.types.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "hotkey",
+            "path": "@radix-ui/react-toast/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "count-text",
+        "name": {
+          "ar": "ملخص الرصّة بصيغة الجمع العربية",
+          "en": "Stack summary with Arabic plural"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "AntD message and notification, MUI Snackbar and Sonner are one queue with different defaults."
+      },
+      {
+        "topic": "scope",
+        "note": "AntD message and notification are functions, not components, so AntD is recorded on features and has no alias here."
+      }
+    ]
+  }
+}

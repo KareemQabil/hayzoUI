@@ -1,0 +1,97 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "count-text",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "count-text",
+    "name": {
+      "ar": "نص عدد",
+      "en": "Count text"
+    },
+    "summary": {
+      "ar": "رقم مع المعدود بصيغة الجمع العربية الصحيحة.",
+      "en": "A number with the noun it counts, in the right Arabic plural form."
+    },
+    "family": "display",
+    "tier": "T1",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "dependsOn": [
+      "number-text"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "six-forms",
+        "name": {
+          "ar": "ست فئات للجمع",
+          "en": "Six plural categories"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "صفر ومفرد ومثنى وقليل (٣–١٠) وكثير (١١–٩٩) وغير ذلك، والمفرد والمثنى يُكتبان غالبًا بلا رقم («عميل واحد»، «عميلان»)",
+            "en": "zero, one, two, few (3–10), many (11–99) and other; \"one\" and \"two\" usually drop the digit (\"عميل واحد\", \"عميلان\")"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "gender",
+        "name": {
+          "ar": "توافق العدد والمعدود في الجنس",
+          "en": "Number–noun gender agreement"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأعداد من ٣ إلى ١٠ تخالف المعدود في الجنس عند كتابتها بالحروف، والأرقام تتجنب المشكلة بخلاف الكلمات",
+            "en": "Numbers 3–10 take the opposite gender of the noun when spelled out; digits avoid the problem, words do not"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "zero",
+        "name": {
+          "ar": "للصفر جملته الخاصة",
+          "en": "Zero has its own sentence"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; listed as CountText in the owner's T1."
+      }
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "dual-calendar-date-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "dual-calendar-date-picker",
+    "name": {
+      "ar": "منتقي تاريخ بتقويمين",
+      "en": "Dual-calendar date picker"
+    },
+    "summary": {
+      "ar": "تاريخ واحد يُعرض ويُحرَّر بالميلادي والهجري معًا مع تبديل التقويم الأساسي في مكانه.",
+      "en": "One date shown and editable in Gregorian and Hijri at once, switching the primary calendar in place."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "calendar-grid",
+      "segmented-input",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "field",
+      "calendar-toggle",
+      "trigger",
+      "popup",
+      "calendar",
+      "secondary-date"
+    ],
+    "dependsOn": [
+      "date-picker",
+      "hijri-date-picker"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "toggle",
+        "name": {
+          "ar": "تبديل التقويم الأساسي دون فقد القيمة",
+          "en": "Switch primary calendar without losing the value"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نظام التقويم (ميلادي أو هجري أم القرى) يُختار بمعزل عن اللغة والأرقام، والتخزين يبقى ميلاديًا بصيغة ISO",
+            "en": "The calendar system (Gregorian, Hijri Umm al-Qura) is chosen separately from language and numerals; storage stays ISO Gregorian"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "both-shown",
+        "name": {
+          "ar": "التاريخان ظاهران دائمًا",
+          "en": "Both dates always visible"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الوثائق الرسمية في السعودية تحمل التاريخين، والتاريخ الثانوي نص لا عنصر تحكم ثانٍ",
+            "en": "Official documents in Saudi Arabia carry both dates; the secondary date is text, not a second control"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "cell-secondary",
+        "name": {
+          "ar": "رقم اليوم الثانوي في كل خلية",
+          "en": "Secondary day number in each grid cell"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "single-value",
+        "name": {
+          "ar": "قيمة مخزنة واحدة (ميلادية ISO)",
+          "en": "One stored value (ISO Gregorian)"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; no surveyed library shows two calendar systems in one control."
+      }
+    ]
+  }
+}

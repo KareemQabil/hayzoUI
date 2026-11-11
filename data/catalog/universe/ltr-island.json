@@ -1,0 +1,111 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "ltr-island",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "ltr-island",
+    "name": {
+      "ar": "جزيرة من اليسار لليمين",
+      "en": "LTR island"
+    },
+    "summary": {
+      "ar": "يعزل قيمة تُكتب من اليسار إلى اليمين (رمز، آيبان، هاتف، رابط، بريد) داخل نص عربي.",
+      "en": "Isolates a left-to-right value (code, IBAN, phone, URL, email) inside right-to-left text."
+    },
+    "family": "utility",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "isolate",
+        "name": {
+          "ar": "عزل اتجاهي مع اتجاه ltr صريح",
+          "en": "Bidi isolation with explicit ltr direction"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يستخدم dir والعزل في الوسوم، ولا يضع محارف تحكم اتجاهية داخل البيانات",
+            "en": "Uses dir and unicode-bidi isolation in markup, never bidi control characters in the data"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "align",
+        "name": {
+          "ar": "المحاذاة تتبع الواجهة المحيطة لا الجزيرة",
+          "en": "Alignment follows the surrounding interface, not the island"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الرمز اللاتيني في خلية جدول عربي يبقى مبتدئًا من الحافة اليمنى للخلية",
+            "en": "An LTR code in an Arabic table cell still starts at the right edge of the cell"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "grouping",
+        "name": {
+          "ar": "مجموعات الأرقام تُربط بمسافات غير فاصلة",
+          "en": "Digit groups joined with no-break spaces"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "المسافة العادية بين مجموعات الأرقام الهندية تجعل خوارزمية الاتجاه تعكس ترتيب المجموعات",
+            "en": "An ASCII space between Arabic-Indic digit groups lets the bidi algorithm reverse the group order"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "copy",
+        "name": {
+          "ar": "ينسخ القيمة المخزنة بلا محارف مضافة",
+          "en": "Copies the stored value without added characters"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone: every surveyed library leaves bidi isolation to the application."
+      }
+    ]
+  }
+}

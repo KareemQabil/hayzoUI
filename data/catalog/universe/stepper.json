@@ -1,0 +1,338 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "stepper",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "stepper",
+    "name": {
+      "ar": "خطوات",
+      "en": "Stepper"
+    },
+    "summary": {
+      "ar": "يعرض التقدم عبر تسلسل مرتب من الخطوات.",
+      "en": "Shows progress through an ordered sequence of steps."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "stepper"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "indicator",
+      "title",
+      "description",
+      "separator",
+      "content"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Steps"
+      },
+      {
+        "library": "mui",
+        "name": "Stepper"
+      },
+      {
+        "library": "mui",
+        "name": "Step"
+      },
+      {
+        "library": "mui",
+        "name": "MobileStepper"
+      },
+      {
+        "library": "mantine",
+        "name": "Stepper"
+      },
+      {
+        "library": "chakra",
+        "name": "Steps"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "خطوات أفقية",
+          "en": "Horizontal steps"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "vertical",
+        "name": {
+          "ar": "رأسية",
+          "en": "Vertical"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "orientation",
+            "path": "@rc-component/steps/es/Steps.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "orientation",
+            "path": "@mui/material/Stepper/Stepper.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "orientation",
+            "path": "@mantine/core/lib/components/Stepper/Stepper.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/steps.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "الحالة",
+          "en": "Status (wait/process/finish/error)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "@rc-component/steps/es/Rail.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "completed",
+            "path": "@mui/material/Step/Step.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "completed",
+            "path": "@zag-js/steps/dist/steps.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "clickable",
+        "name": {
+          "ar": "خطوات قابلة للنقر",
+          "en": "Clickable steps"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onChange",
+            "path": "@rc-component/steps/es/Steps.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "nonLinear",
+            "path": "@mui/material/Stepper/Stepper.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "onStepClick",
+            "path": "@mantine/core/lib/components/Stepper/Stepper.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "linear",
+            "path": "@zag-js/steps/dist/steps.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "progress-dot",
+        "name": {
+          "ar": "نقاط التقدم ونمط التنقل",
+          "en": "Progress dot / navigation type"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "progressDot",
+            "path": "antd/es/steps/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/MobileStepper/MobileStepper.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/steps.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "small",
+        "name": {
+          "ar": "حجم صغير",
+          "en": "Small size"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/steps/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/Stepper/Stepper.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/steps.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "order",
+        "name": {
+          "ar": "الخطوات تتقدم من بداية السطر",
+          "en": "Steps progress from the inline start"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "numbers",
+        "name": {
+          "ar": "أرقام الخطوات بنظام أرقام النطاق",
+          "en": "Step numbers in the scope numerals"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "wizard",
+        "name": {
+          "ar": "معالج بتحقق لكل خطوة",
+          "en": "Wizard with validation per step"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

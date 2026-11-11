@@ -1,0 +1,187 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "alert-dialog",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "alert-dialog",
+    "name": {
+      "ar": "حوار تأكيد",
+      "en": "Alert dialog"
+    },
+    "summary": {
+      "ar": "حوار حاجب يقاطع لتأكيد إجراء له عواقب.",
+      "en": "A modal that interrupts to confirm a consequential action."
+    },
+    "family": "overlay",
+    "tier": "T3",
+    "priority": "p0",
+    "engines": [
+      "dialog",
+      "overlay-layers",
+      "focus-scope"
+    ],
+    "anatomy": [
+      "backdrop",
+      "popup",
+      "title",
+      "description",
+      "cancel",
+      "action"
+    ],
+    "dependsOn": [
+      "dialog",
+      "button"
+    ],
+    "aliases": [
+      {
+        "library": "base-ui",
+        "name": "AlertDialog"
+      },
+      {
+        "library": "radix",
+        "name": "AlertDialog"
+      },
+      {
+        "library": "shadcn",
+        "name": "alert-dialog"
+      }
+    ],
+    "features": [
+      {
+        "id": "confirm",
+        "name": {
+          "ar": "حوارات التأكيد الجاهزة",
+          "en": "Modal.confirm / info / success / error"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "use-modal",
+        "name": {
+          "ar": "خطاف الحوار",
+          "en": "useModal hook"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "no-outside-dismiss",
+        "name": {
+          "ar": "لا يُغلق بالنقر خارجه",
+          "en": "Not dismissed by outside press"
+        },
+        "priority": "p0",
+        "in": [
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "authored"
+      },
+      {
+        "id": "cancel-focus",
+        "name": {
+          "ar": "التركيز يبدأ على الإجراء الأقل ضررًا",
+          "en": "Focus starts on the least destructive action"
+        },
+        "priority": "p0",
+        "in": [
+          "radix",
+          "shadcn"
+        ],
+        "origin": "authored"
+      },
+      {
+        "id": "async-action",
+        "name": {
+          "ar": "الإجراء يبقى منتظرًا حتى ينتهي",
+          "en": "Action stays pending until it resolves"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "verb-labels",
+        "name": {
+          "ar": "الأزرار تسمّي الإجراء",
+          "en": "Buttons name the action"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "العناوين الافتراضية أفعال عربية («حذف»، «إلغاء») من نطاق اللغة، لا OK و Cancel كما هي",
+            "en": "Default labels are verbs in Arabic (\"حذف\", \"إلغاء\") from the locale scope, never OK / Cancel passed through"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "notes": "AntD ships this as Modal.confirm and the useModal hook (static methods, not a component export), so it is recorded on the feature rather than as an alias."
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "floating-panel",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "floating-panel",
+    "name": {
+      "ar": "لوح عائم",
+      "en": "Floating panel"
+    },
+    "summary": {
+      "ar": "نافذة غير حاجبة يمكن سحبها وتغيير حجمها وتصغيرها.",
+      "en": "A non-modal window that can be dragged, resized and minimised."
+    },
+    "family": "overlay",
+    "tier": "T5",
+    "priority": "p2",
+    "engines": [
+      "overlay-layers",
+      "resize"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "drag-handle",
+      "resize-handle",
+      "body",
+      "controls"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "FloatingWindow"
+      },
+      {
+        "library": "chakra",
+        "name": "FloatingPanel"
+      }
+    ],
+    "features": [
+      {
+        "id": "drag",
+        "name": {
+          "ar": "السحب داخل الحدود",
+          "en": "Drag within bounds"
+        },
+        "priority": "p2",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "constrainToViewport",
+            "path": "@mantine/core/lib/components/FloatingWindow/FloatingWindow.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "draggable",
+            "path": "@zag-js/floating-panel/dist/floating-panel.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "resize",
+        "name": {
+          "ar": "تغيير الحجم من الحواف",
+          "en": "Resize from edges"
+        },
+        "priority": "p2",
+        "in": [
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "resizable",
+            "path": "@zag-js/floating-panel/dist/floating-panel.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "controls-side",
+        "name": {
+          "ar": "عناصر النافذة عند نهاية السطر",
+          "en": "Window controls at the inline end"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

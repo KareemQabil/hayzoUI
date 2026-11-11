@@ -1,0 +1,360 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "cascader",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "cascader",
+    "name": {
+      "ar": "اختيار متتالي",
+      "en": "Cascader"
+    },
+    "summary": {
+      "ar": "يختار مسارًا في تسلسل هرمي بعمود لكل مستوى.",
+      "en": "Picks a path through a hierarchy, one column per level."
+    },
+    "family": "selection",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "tree-model",
+      "menu",
+      "selection",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "trigger",
+      "popup",
+      "column",
+      "option",
+      "expand-icon"
+    ],
+    "dependsOn": [
+      "popover",
+      "listbox"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Cascader"
+      },
+      {
+        "library": "mantine",
+        "name": "Cascader"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "خيارات متتالية",
+          "en": "Cascading options"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "hover-expand",
+        "name": {
+          "ar": "التوسيع بالمرور أو النقر",
+          "en": "Expand on hover / click"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "expandTrigger",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "expandTrigger",
+            "path": "@mantine/core/lib/components/Cascader/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "change-on-select",
+        "name": {
+          "ar": "اختيار أي مستوى",
+          "en": "Select any level (changeOnSelect)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "changeOnSelect",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "changeOnSelect",
+            "path": "@mantine/core/lib/components/Cascader/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "multiple",
+        "name": {
+          "ar": "تحديد متعدد",
+          "en": "Multiple selection"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "multiple",
+            "path": "@rc-component/cascader/es/OptionList/Column.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "show-checked",
+        "name": {
+          "ar": "استراتيجية عرض المحدد",
+          "en": "showCheckedStrategy"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showCheckedStrategy",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "search",
+        "name": {
+          "ar": "البحث في المسارات",
+          "en": "Search across paths"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showSearch",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "searchable",
+            "path": "@mantine/core/lib/components/Cascader/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "load-data",
+        "name": {
+          "ar": "تحميل الأبناء عند الطلب",
+          "en": "Lazy load children"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loadData",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "display-render",
+        "name": {
+          "ar": "عرض مخصص للقيمة",
+          "en": "Custom display render"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "displayRender",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "field-names",
+        "name": {
+          "ar": "أسماء حقول مخصصة",
+          "en": "Custom field names"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fieldNames",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "panel",
+        "name": {
+          "ar": "لوحة فقط",
+          "en": "Panel only (Cascader.Panel)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Panel",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "خيارات معطلة",
+          "en": "Disabled options"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/cascader/es/Cascader.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Cascader/Cascader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "الأعمدة تفتح نحو نهاية السطر في RTL",
+          "en": "Columns open toward inline end in RTL"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأعمدة تُفتح نحو نهاية السطر وأسهم التوسيع تنعكس، والبحث المتسامح مهم لأسماء المناطق والمدن",
+            "en": "Columns open toward the inline end and expand arrows mirror; tolerant Arabic search matters for region and city names"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "path-separator",
+        "name": {
+          "ar": "فاصل المسار يتبع الاتجاه",
+          "en": "Path separator follows direction"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "المسار المضموم بـ« / » بين مستويات عربية ولاتينية يتغير ترتيبه ما لم يُعزل كل مستوى",
+            "en": "A path joined with \" / \" between Arabic and Latin levels reorders unless each level is isolated"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "separator",
+            "path": "@mantine/core/lib/components/Cascader/Cascader.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

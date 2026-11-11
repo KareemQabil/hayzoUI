@@ -1,0 +1,221 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "date-range-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "date-range-picker",
+    "name": {
+      "ar": "منتقي مجال التاريخ",
+      "en": "Date range picker"
+    },
+    "summary": {
+      "ar": "يختار تاريخ بداية وتاريخ نهاية مع اختصارات جاهزة.",
+      "en": "Picks a start and an end date with presets."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "calendar-grid",
+      "date-range",
+      "segmented-input",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "start-field",
+      "separator",
+      "end-field",
+      "trigger",
+      "popup",
+      "calendar",
+      "presets"
+    ],
+    "dependsOn": [
+      "date-picker"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "DatePicker.RangePicker"
+      },
+      {
+        "library": "mantine",
+        "name": "DatePickerInput",
+        "note": "type=\"range\""
+      },
+      {
+        "library": "react-aria",
+        "name": "DateRangePicker"
+      }
+    ],
+    "features": [
+      {
+        "id": "range",
+        "name": {
+          "ar": "اختيار نطاق",
+          "en": "RangePicker"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "RangePicker",
+            "path": "antd/es/date-picker/generatePicker/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "type",
+            "path": "@mantine/dates/lib/components/DateTimePicker/DateTimePicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "presets",
+        "name": {
+          "ar": "نطاقات جاهزة",
+          "en": "Presets (quick ranges)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "presets",
+            "path": "@mantine/dates/lib/components/DateInput/DateInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "order",
+        "name": {
+          "ar": "حقل البداية عند بداية السطر والسهم بينهما ينعكس",
+          "en": "Start field on the inline start; the arrow between them mirrors"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأيقونات الاتجاهية (الأسهم) يجب أن تنعكس في RTL، وغير الاتجاهية لا تنعكس",
+            "en": "Directional icons (chevrons, arrows) must mirror in RTL; non-directional ones must not"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "presets-fiscal",
+        "name": {
+          "ar": "اختصارات للفترات المالية والشهور الهجرية",
+          "en": "Presets for fiscal periods and Hijri months"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "«هذا الشهر الهجري» و«هذه الفترة الضريبية» اختصارات لا تقدمها أي مكتبة، والفترة الضريبية تعتمد على الدولة",
+            "en": "\"This Hijri month\" and \"this tax period\" are presets no library ships; the tax period depends on the country"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "range-text",
+        "name": {
+          "ar": "نص المجال كمقطع معزول واحد",
+          "en": "Range text as one isolated run"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "تاريخان بينهما شرطة يتغير ترتيبهما في RTL ما لم يُعزل المجال كله",
+            "en": "Two dates joined by a dash reorder in RTL unless the whole range is isolated"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "limits",
+        "name": {
+          "ar": "أقل وأقصى مدة",
+          "en": "Minimum and maximum span"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "allowSingleDateInRange",
+            "path": "@mantine/dates/lib/components/Calendar/pick-calendar-levels-props/pick-calendar-levels-props.d.ts"
+          }
+        ]
+      }
+    ],
+    "notes": "MUI ships DateRangePicker only in the commercial @mui/x-date-pickers-pro package, which was not surveyed."
+  }
+}

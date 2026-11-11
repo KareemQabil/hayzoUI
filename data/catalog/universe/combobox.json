@@ -1,0 +1,494 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "combobox",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "combobox",
+    "name": {
+      "ar": "مربع تحرير وسرد",
+      "en": "Combobox"
+    },
+    "summary": {
+      "ar": "حقل نصي يصفّي قائمة خيارات، وقيمته خيار أو نص حر.",
+      "en": "A text input that filters a list of options; the value is an option or free text."
+    },
+    "family": "selection",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "combobox",
+      "listbox",
+      "collection",
+      "selection",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "input",
+      "trigger",
+      "popup",
+      "option",
+      "empty",
+      "clear"
+    ],
+    "dependsOn": [
+      "listbox",
+      "field",
+      "popover"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "AutoComplete"
+      },
+      {
+        "library": "mui",
+        "name": "Autocomplete"
+      },
+      {
+        "library": "mantine",
+        "name": "Autocomplete"
+      },
+      {
+        "library": "mantine",
+        "name": "Combobox"
+      },
+      {
+        "library": "chakra",
+        "name": "Combobox"
+      },
+      {
+        "library": "react-aria",
+        "name": "ComboBox"
+      },
+      {
+        "library": "react-aria",
+        "name": "Autocomplete"
+      },
+      {
+        "library": "base-ui",
+        "name": "Combobox"
+      },
+      {
+        "library": "base-ui",
+        "name": "Autocomplete"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Combobox"
+      },
+      {
+        "library": "shadcn",
+        "name": "combobox"
+      }
+    ],
+    "features": [
+      {
+        "id": "options",
+        "name": {
+          "ar": "اقتراحات أثناء الكتابة مع بقاء النص الحر",
+          "en": "Suggestions while typing, free text kept"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "options",
+            "path": "@rc-component/select/es/Select.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "options",
+            "path": "@mantine/core/lib/components/Combobox/Combobox.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "items",
+            "path": "@zag-js/combobox/dist/combobox.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "items",
+            "path": "react-stately/dist/types/src/combobox/useComboBoxState.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "data",
+            "path": "@base-ui/react/combobox/items/itemCollection.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "options",
+            "path": "@headlessui/react/dist/components/combobox/combobox-machine.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter",
+        "name": {
+          "ar": "تصفية الخيارات",
+          "en": "Filter option"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filterOption",
+            "path": "@rc-component/select/es/Select.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "filterOptions",
+            "path": "@mantine/core/lib/components/Combobox/OptionsDropdown/OptionsDropdown.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "filter",
+            "path": "react-aria/dist/types/src/autocomplete/useAutocomplete.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "filter",
+            "path": "@base-ui/react/combobox/root/AriaCombobox.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "custom-input",
+        "name": {
+          "ar": "حقل مخصص",
+          "en": "Custom input (TextArea)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "renderInput",
+            "path": "@mui/material/Autocomplete/Autocomplete.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "الحالة",
+          "en": "Status"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/auto-complete/AutoComplete.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "error",
+            "path": "@mantine/core/lib/components/Combobox/ComboboxChevron/ComboboxChevron.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "invalid",
+            "path": "@zag-js/combobox/dist/combobox.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isInvalid",
+            "path": "react-aria-components/dist/types/src/ComboBox.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "invalid",
+            "path": "@headlessui/react/dist/components/combobox/combobox-machine.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "allow-clear",
+        "name": {
+          "ar": "زر المسح",
+          "en": "Allow clear"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "allowClear",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "clearable",
+            "path": "@mantine/core/lib/components/Autocomplete/Autocomplete.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "clearButtonProps",
+            "path": "react-aria/dist/types/src/autocomplete/useSearchAutocomplete.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "free-text",
+        "name": {
+          "ar": "نص حر أو خيارات فقط",
+          "en": "Free text or options only"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "freeSolo",
+            "path": "@mui/material/Autocomplete/Autocomplete.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "allowCustomValue",
+            "path": "@zag-js/combobox/dist/combobox.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "allowsCustomValue",
+            "path": "react-stately/dist/types/src/combobox/useComboBoxState.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "async",
+        "name": {
+          "ar": "خيارات غير متزامنة بحالتي تحميل وفراغ",
+          "en": "Async options with loading and empty states"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "loading",
+            "path": "@mui/material/Autocomplete/Autocomplete.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "loading",
+            "path": "@zag-js/combobox/dist/combobox.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "onInputChange",
+            "path": "react-stately/dist/types/src/combobox/useComboBoxState.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tolerant",
+        "name": {
+          "ar": "تصفية متسامحة مع العربية مع تمييز المطابقة",
+          "en": "Arabic-tolerant filter with highlighted match"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "virtual-focus",
+        "name": {
+          "ar": "التركيز يبقى في الحقل (العنصر النشط)",
+          "en": "Focus stays in the input (active descendant)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "headless-ui"
+        ],
+        "origin": "authored"
+      },
+      {
+        "id": "create",
+        "name": {
+          "ar": "إنشاء خيار جديد من الاستعلام",
+          "en": "Create a new option from the query"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "option-direction",
+        "name": {
+          "ar": "كل خيار يحتفظ باتجاهه",
+          "en": "Each option keeps its own direction"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص المختلط يأخذ اتجاهه من محتواه مع عزل المقاطع المكتوبة بخط آخر",
+            "en": "Mixed-script content takes its direction from the content, with foreign runs isolated"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "Autocomplete (free text with suggestions) and Combobox (pick one, filter by typing) are one entry with an \"options only\" switch; six libraries ship one or both names for the same engine."
+      }
+    ]
+  }
+}

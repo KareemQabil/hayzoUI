@@ -1,0 +1,111 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "date-text",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "date-text",
+    "name": {
+      "ar": "نص تاريخ",
+      "en": "Date text"
+    },
+    "summary": {
+      "ar": "ينسّق تاريخًا مخزنًا للقراءة: التقويم والأرقام والوقت النسبي.",
+      "en": "Formats a stored date for reading: calendar, numerals, relative time."
+    },
+    "family": "date-time",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "calendar",
+        "name": {
+          "ar": "بتقويم النطاق مع الآخر بين قوسين عند الطلب",
+          "en": "In the scope calendar, optionally with the other in brackets"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نظام التقويم (ميلادي أو هجري أم القرى) يُختار بمعزل عن اللغة والأرقام، والتخزين يبقى ميلاديًا بصيغة ISO",
+            "en": "The calendar system (Gregorian, Hijri Umm al-Qura) is chosen separately from language and numerals; storage stays ISO Gregorian"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "relative",
+        "name": {
+          "ar": "وقت نسبي بصيغ المثنى والجمع العربية",
+          "en": "Relative time with Arabic dual and plural forms"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "عبارات مثل «منذ يومين» و«منذ ٣ أيام» و«منذ ١١ يومًا» تحتاج صيغ المثنى والقليل والكثير",
+            "en": "\"منذ يومين\", \"منذ ٣ أيام\", \"منذ ١١ يومًا\" need the two, few and many forms"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "machine",
+        "name": {
+          "ar": "سمة datetime مقروءة آليًا",
+          "en": "Machine-readable datetime attribute"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "isolated",
+        "name": {
+          "ar": "معزول فلا يتغير ترتيب الفواصل",
+          "en": "Isolated so separators do not reorder"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; libraries leave date display to Intl or a date library."
+      }
+    ]
+  }
+}

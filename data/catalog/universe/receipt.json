@@ -1,0 +1,150 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "receipt",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "receipt",
+    "name": {
+      "ar": "إيصال",
+      "en": "Receipt"
+    },
+    "summary": {
+      "ar": "إيصال نقطة بيع مصمم لطابعات حرارية بعرض ٥٨ و٨٠ ملم.",
+      "en": "A point-of-sale receipt laid out for 58 mm and 80 mm thermal printers."
+    },
+    "family": "pattern",
+    "tier": "T5",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "lines",
+      "totals",
+      "payment",
+      "qr",
+      "footer"
+    ],
+    "dependsOn": [
+      "money-text",
+      "tax-summary",
+      "qr-code",
+      "date-text"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "paper",
+        "name": {
+          "ar": "عروض ورق ثابتة بأعمدة محارف",
+          "en": "Fixed paper widths with character columns"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الطابعات الحرارية في نمط الصورة تطبع ما يشكّله المتصفح، وفي نمط النص لا يستطيع كثير منها تشكيل العربية، فيُرسم الإيصال صورة أو HTML",
+            "en": "Thermal printers in raster mode print whatever the browser shapes; in text mode many cannot shape Arabic at all, so the receipt is rendered as an image or HTML"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "columns",
+        "name": {
+          "ar": "الصنف يمينًا والمبلغ يسارًا",
+          "en": "Item on the right, amount on the left"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "font",
+        "name": {
+          "ar": "خط يبقى مقروءًا بحجم الإيصال",
+          "en": "A face that stays legible at receipt size"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الخطوط العربية الرفيعة ونقاطها تختفي عند دقة ٢٠٣ نقطة في البوصة، والوزن والحجم من طبقة الخطوط",
+            "en": "Thin Arabic strokes and dots drop out at 203 dpi; weight and size come from the font layer"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "totals",
+        "name": {
+          "ar": "الإجماليات والضريبة وطريقة الدفع",
+          "en": "Totals, tax and payment method"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "qr",
+        "name": {
+          "ar": "رمز QR للفاتورة الضريبية المبسطة",
+          "en": "QR for the simplified tax invoice"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "cut",
+        "name": {
+          "ar": "بلا هوامش صفحة وبطول تلقائي",
+          "en": "No page margins, automatic length"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; L5 pattern in ARCHITECTURE.md."
+      }
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "toggle-group",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "toggle-group",
+    "name": {
+      "ar": "مجموعة أزرار تبديل",
+      "en": "Toggle group"
+    },
+    "summary": {
+      "ar": "صف من أزرار التبديل يُضغط واحد منها أو أكثر.",
+      "en": "A row of toggle buttons where one or several can be pressed."
+    },
+    "family": "choice",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "roving-focus",
+      "selection",
+      "toggle"
+    ],
+    "anatomy": [
+      "root",
+      "item"
+    ],
+    "dependsOn": [
+      "toggle-button"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "ToggleButtonGroup"
+      },
+      {
+        "library": "react-aria",
+        "name": "ToggleButtonGroup"
+      },
+      {
+        "library": "base-ui",
+        "name": "ToggleGroup"
+      },
+      {
+        "library": "radix",
+        "name": "ToggleGroup"
+      },
+      {
+        "library": "shadcn",
+        "name": "toggle-group"
+      }
+    ],
+    "features": [
+      {
+        "id": "single-multiple",
+        "name": {
+          "ar": "تحديد مفرد أو متعدد",
+          "en": "Single or multiple selection"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "exclusive",
+            "path": "@mui/material/ToggleButtonGroup/ToggleButtonGroup.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "multiple",
+            "path": "@base-ui/react/toggle-group/ToggleGroup.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "type",
+            "path": "@radix-ui/react-toggle-group/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "type",
+            "path": "via @radix-ui/react-toggle-group/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "arrows",
+        "name": {
+          "ar": "تركيز متنقل بمفاتيح الأسهم",
+          "en": "Roving focus with arrow keys"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "orientation",
+            "path": "@mui/material/ToggleButtonGroup/ToggleButtonGroup.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "orientation",
+            "path": "react-aria-components/dist/types/src/ToggleButtonGroup.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "loopFocus",
+            "path": "@base-ui/react/toggle-group/ToggleGroup.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "rovingFocus",
+            "path": "@radix-ui/react-toggle-group/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "rovingFocus",
+            "path": "via @radix-ui/react-toggle-group/dist/index.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "split",
+        "note": "Kept apart from segmented-control: a toggle group is pressed buttons (zero, one or many); a segmented control is a radio group that always holds one value."
+      }
+    ]
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "portal",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "portal",
+    "name": {
+      "ar": "بوابة",
+      "en": "Portal"
+    },
+    "summary": {
+      "ar": "يرسم العناصر في حاوية DOM أخرى مع الاحتفاظ بنطاق React ونطاق اللغة.",
+      "en": "Renders children into another DOM container while keeping the React and locale scope."
+    },
+    "family": "utility",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "overlay-layers"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "Portal"
+      },
+      {
+        "library": "mantine",
+        "name": "Portal"
+      },
+      {
+        "library": "mantine",
+        "name": "OptionalPortal"
+      },
+      {
+        "library": "chakra",
+        "name": "Portal"
+      },
+      {
+        "library": "radix",
+        "name": "Portal"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Portal"
+      }
+    ],
+    "features": [
+      {
+        "id": "container",
+        "name": {
+          "ar": "حاوية مخصصة",
+          "en": "Custom container"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra",
+          "radix",
+          "headless-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "container",
+            "path": "@mui/material/Portal/Portal.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "target",
+            "path": "@mantine/core/lib/components/Portal/Portal.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "container",
+            "path": "@ark-ui/react/dist/components/portal/portal.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "container",
+            "path": "@radix-ui/react-portal/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "target",
+            "path": "@headlessui/react/dist/components/portal/portal.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disable",
+        "name": {
+          "ar": "الرسم في المكان بلا بوابة",
+          "en": "Render in place (no portal)"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "disablePortal",
+            "path": "@mui/material/Portal/Portal.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withinPortal",
+            "path": "@mantine/core/lib/components/Portal/OptionalPortal.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@ark-ui/react/dist/components/portal/portal.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "scope",
+        "name": {
+          "ar": "ينقل الاتجاه واللغة ونظام الأرقام إلى الحاوية",
+          "en": "Carries dir, lang and numerals to the container"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "جذر البوابة يكرر الاتجاه واللغة، وإلا ظهرت النافذة المفتوحة من جزء عربي في صفحة إنجليزية باتجاه LTR",
+            "en": "The portal root repeats dir and lang, otherwise an overlay opened from an Arabic region of an English page renders LTR"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

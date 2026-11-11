@@ -1,0 +1,147 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "input-group",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "input-group",
+    "name": {
+      "ar": "مجموعة إدخال",
+      "en": "Input group"
+    },
+    "summary": {
+      "ar": "يلحق إضافات أو أزرارًا أو عنصرًا ثانيًا بحقل الإدخال.",
+      "en": "Attaches add-ons, buttons or a second control to an input."
+    },
+    "family": "text-input",
+    "tier": "T1",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "addon",
+      "control"
+    ],
+    "dependsOn": [
+      "text-field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Space.Compact"
+      },
+      {
+        "library": "mui",
+        "name": "InputAdornment"
+      },
+      {
+        "library": "chakra",
+        "name": "InputGroup"
+      },
+      {
+        "library": "shadcn",
+        "name": "input-group"
+      }
+    ],
+    "features": [
+      {
+        "id": "addon",
+        "name": {
+          "ar": "إضافات قبل وبعد",
+          "en": "addonBefore / addonAfter"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "compact",
+        "name": {
+          "ar": "تجميع مضغوط",
+          "en": "Space.Compact"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "order",
+        "name": {
+          "ar": "ترتيب الإضافات يتبع الاتجاه مع إمكانية تثبيت الوحدة",
+          "en": "Add-on order follows direction; a unit can be pinned"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "رمز العملة أو الوحدة بعد الرقم يبقى في الجهة التي تحددها اللغة، وهي ليست دائمًا نهاية السطر",
+            "en": "A currency code or unit after a number stays on the side the locale puts it, which is not always the inline end"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

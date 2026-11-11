@@ -1,0 +1,214 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "qr-code",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "qr-code",
+    "name": {
+      "ar": "رمز QR",
+      "en": "QR code"
+    },
+    "summary": {
+      "ar": "يرسم قيمة على شكل رمز QR.",
+      "en": "Renders a value as a QR code."
+    },
+    "family": "media",
+    "tier": "T5",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "frame",
+      "pattern",
+      "overlay"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "QRCode"
+      },
+      {
+        "library": "chakra",
+        "name": "QrCode"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عرض القيمة",
+          "en": "Render value"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "value",
+            "path": "@rc-component/qrcode/es/hooks/useQRCode.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "value",
+            "path": "@ark-ui/react/dist/components/qr-code/qr-code-root-provider.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icon",
+        "name": {
+          "ar": "أيقونة في الوسط",
+          "en": "Icon in center"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "icon",
+            "path": "antd/es/qr-code/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "الحالة",
+          "en": "Status (loading / expired)"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/qr-code/QrcodeStatus.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "type",
+        "name": {
+          "ar": "الرسم بـCanvas أو SVG",
+          "en": "Canvas / SVG"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "type",
+            "path": "antd/es/qr-code/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "binary",
+        "name": {
+          "ar": "حمولة ثنائية (بايتات) لا نص فقط",
+          "en": "Binary payload (bytes), not only text"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "حمولة QR للفاتورة الإلكترونية ترميز TLV ثنائي بصيغة Base64، وأسماء البائعين العربية بايتات UTF-8 يُحسب طولها بالبايت",
+            "en": "E-invoice QR payloads are binary TLV encoded as Base64; Arabic seller names are UTF-8 bytes whose length is counted in bytes"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "error-level",
+        "name": {
+          "ar": "مستوى تصحيح الخطأ والهامش الفارغ",
+          "en": "Error correction level and quiet zone"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "errorLevel",
+            "path": "antd/es/qr-code/interface.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "encoding",
+            "path": "@zag-js/qr-code/dist/qr-code.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "print",
+        "name": {
+          "ar": "واضح بدقة الطابعة الحرارية",
+          "en": "Crisp at thermal-printer resolution"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "splitter",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "splitter",
+    "name": {
+      "ar": "ألواح قابلة للتقسيم",
+      "en": "Splitter"
+    },
+    "summary": {
+      "ar": "ألواح تفصل بينها مقابض لتغيير أحجامها.",
+      "en": "Panels separated by handles that resize them."
+    },
+    "family": "layout",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "resize"
+    ],
+    "anatomy": [
+      "root",
+      "panel",
+      "handle"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Splitter"
+      },
+      {
+        "library": "mantine",
+        "name": "Splitter"
+      },
+      {
+        "library": "chakra",
+        "name": "Splitter"
+      },
+      {
+        "library": "shadcn",
+        "name": "resizable"
+      }
+    ],
+    "features": [
+      {
+        "id": "panels",
+        "name": {
+          "ar": "ألواح قابلة لتغيير الحجم",
+          "en": "Resizable panels"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "collapsible",
+        "name": {
+          "ar": "ألواح قابلة للطي",
+          "en": "Collapsible panels"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "collapsible",
+            "path": "antd/es/splitter/hooks/useItems.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "collapsible",
+            "path": "@mantine/core/lib/components/Splitter/SplitterPane/SplitterPane.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "collapsible",
+            "path": "@zag-js/splitter/dist/splitter.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "vertical",
+        "name": {
+          "ar": "تخطيط رأسي",
+          "en": "Vertical layout"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "orientation",
+            "path": "antd/es/splitter/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "orientation",
+            "path": "@mantine/core/lib/components/Splitter/Splitter.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@zag-js/splitter/dist/splitter.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "min-max",
+        "name": {
+          "ar": "حد أدنى وأقصى",
+          "en": "Min / max size"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "min",
+            "path": "antd/es/splitter/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "min",
+            "path": "@mantine/core/lib/components/Splitter/SplitterPane/SplitterPane.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "minSize",
+            "path": "@zag-js/splitter/dist/splitter.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "تغيير الحجم بمفاتيح الأسهم",
+          "en": "Resize with arrow keys"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "step",
+            "path": "@mantine/core/lib/components/Splitter/Splitter.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "keyboardResizeBy",
+            "path": "@zag-js/splitter/dist/splitter.types.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

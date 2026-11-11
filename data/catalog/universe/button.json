@@ -1,0 +1,621 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "button",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "button",
+    "name": {
+      "ar": "زر",
+      "en": "Button"
+    },
+    "summary": {
+      "ar": "ينفّذ إجراءً، ويعرف حالة الانتظار ويمنع التنفيذ المزدوج.",
+      "en": "Triggers an action; knows pending and prevents a second activation."
+    },
+    "family": "action",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "press"
+    ],
+    "anatomy": [
+      "root",
+      "label",
+      "icon",
+      "spinner"
+    ],
+    "dependsOn": [
+      "icon",
+      "spinner"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Button"
+      },
+      {
+        "library": "mui",
+        "name": "Button"
+      },
+      {
+        "library": "mui",
+        "name": "ButtonBase"
+      },
+      {
+        "library": "mantine",
+        "name": "Button"
+      },
+      {
+        "library": "mantine",
+        "name": "UnstyledButton"
+      },
+      {
+        "library": "chakra",
+        "name": "Button"
+      },
+      {
+        "library": "react-aria",
+        "name": "Button"
+      },
+      {
+        "library": "base-ui",
+        "name": "Button"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Button"
+      },
+      {
+        "library": "shadcn",
+        "name": "button"
+      }
+    ],
+    "features": [
+      {
+        "id": "variants",
+        "name": {
+          "ar": "الأنواع (أساسي، افتراضي، منقّط، نصي، رابط)",
+          "en": "Types / variants (primary, default, dashed, text, link)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "variant",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "variant",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/button.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "variant",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/button.tsx"
+          }
+        ]
+      },
+      {
+        "id": "danger",
+        "name": {
+          "ar": "نبرة الخطر",
+          "en": "Danger tone"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "danger",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "color",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "color",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "color",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/button.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام صغير/متوسط/كبير",
+          "en": "Sizes small / middle / large"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/button.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "size",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/button.tsx"
+          }
+        ]
+      },
+      {
+        "id": "loading",
+        "name": {
+          "ar": "حالة التحميل",
+          "en": "Loading state"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "loading",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "loading",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "loading",
+            "path": "@chakra-ui/react/dist/types/components/button/button.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isPending",
+            "path": "react-aria-components/dist/types/src/Button.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "التعطيل",
+          "en": "Disabled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria/dist/types/src/button/useButton.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/button/Button.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/button/button.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icon",
+        "name": {
+          "ar": "أيقونة مع النص وموضعها",
+          "en": "Icon with text, icon placement"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "icon",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "icon",
+            "path": "@mui/material/Button/buttonClasses.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "leftSection",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "icon",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/button.tsx"
+          }
+        ]
+      },
+      {
+        "id": "block",
+        "name": {
+          "ar": "بعرض كامل",
+          "en": "Block (full width)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "block",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "fullWidth",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "fullWidth",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "shape",
+        "name": {
+          "ar": "الشكل دائري/مستدير",
+          "en": "Shape circle / round"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "shape",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "radius",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "href",
+        "name": {
+          "ar": "زر رابط (href)",
+          "en": "Link button (href, target)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "href",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "href",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "href",
+            "path": "react-aria/dist/types/src/button/useButton.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "double-submit",
+        "name": {
+          "ar": "منع التنفيذ المزدوج أثناء الانتظار",
+          "en": "Double activation guard while pending"
+        },
+        "priority": "p0",
+        "in": [
+          "react-aria"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "busy-label",
+        "name": {
+          "ar": "إعلان حالة الانتظار بلغة النطاق",
+          "en": "Pending state announced in the scope language"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "حالة الانتظار تُعلَن بلغة النطاق (العربية افتراضيًا) ولا تُمرَّر كخاصية",
+            "en": "The pending state is announced in the language of the scope (Arabic by default), not passed as a prop"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "icon-side",
+        "name": {
+          "ar": "موضع الأيقونة منطقي (بداية/نهاية)",
+          "en": "Icon side is logical (start / end)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الخصائص المسماة left/right تُبقي الأيقونة في الجهة الفيزيائية، ومثالها leftSection في Mantine الذي يحتاج توضيحًا في RTL",
+            "en": "Props named left/right keep the icon on the physical side; Mantine leftSection is an example of a name that needs explaining in RTL"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "iconPlacement",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "startIcon",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "leftSection",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "polymorphic",
+        "name": {
+          "ar": "الرسم كرابط أو رابط توجيه",
+          "en": "Render as link or router link"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "react-aria",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "href",
+            "path": "antd/es/button/Button.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "component",
+            "path": "@mui/material/Button/Button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "component",
+            "path": "@mantine/core/lib/components/Button/Button.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "href",
+            "path": "react-aria/dist/types/src/button/useButton.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "asChild",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/button.tsx"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "split",
+        "note": "The button-group row of the matrix moved to button-group."
+      }
+    ]
+  }
+}

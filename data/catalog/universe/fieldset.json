@@ -1,0 +1,162 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "fieldset",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "fieldset",
+    "name": {
+      "ar": "مجموعة حقول",
+      "en": "Fieldset"
+    },
+    "summary": {
+      "ar": "يجمع الحقول المترابطة تحت عنوان ويعطّلها معًا.",
+      "en": "Groups related fields under a legend and disables them together."
+    },
+    "family": "utility",
+    "tier": "T1",
+    "priority": "p1",
+    "engines": [
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "legend"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "FormGroup"
+      },
+      {
+        "library": "mantine",
+        "name": "Fieldset"
+      },
+      {
+        "library": "chakra",
+        "name": "Fieldset"
+      },
+      {
+        "library": "react-aria",
+        "name": "Group"
+      },
+      {
+        "library": "base-ui",
+        "name": "Fieldset"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Fieldset"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Legend"
+      }
+    ],
+    "features": [
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "يعطّل كل العناصر بداخله",
+          "en": "Disables all controls inside"
+        },
+        "priority": "p1",
+        "in": [
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "headless-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@ark-ui/react/dist/components/fieldset/use-fieldset.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria-components/dist/types/src/Group.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/fieldset/legend/FieldsetLegend.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/fieldset/fieldset.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

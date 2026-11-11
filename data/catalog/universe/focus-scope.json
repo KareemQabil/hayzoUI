@@ -1,0 +1,187 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "focus-scope",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "focus-scope",
+    "name": {
+      "ar": "نطاق التركيز",
+      "en": "Focus scope"
+    },
+    "summary": {
+      "ar": "يحبس تركيز لوحة المفاتيح داخل منطقة ويعيده ويضبطه تلقائيًا.",
+      "en": "Contains, restores and auto-focuses keyboard focus inside a region."
+    },
+    "family": "utility",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "focus-scope"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "Unstable_TrapFocus"
+      },
+      {
+        "library": "mantine",
+        "name": "FocusTrap"
+      },
+      {
+        "library": "chakra",
+        "name": "FocusTrap"
+      },
+      {
+        "library": "headless-ui",
+        "name": "FocusTrap"
+      }
+    ],
+    "features": [
+      {
+        "id": "contain",
+        "name": {
+          "ar": "حبس مفتاح Tab في الداخل",
+          "en": "Trap Tab inside"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra",
+          "headless-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "open",
+            "path": "@mui/material/Unstable_TrapFocus/FocusTrap.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "active",
+            "path": "@mantine/core/lib/components/FocusTrap/FocusTrap.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "active",
+            "path": "@zag-js/focus-trap/dist/types.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "features",
+            "path": "@headlessui/react/dist/components/focus-trap/focus-trap.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "restore",
+        "name": {
+          "ar": "إعادة التركيز عند الخروج",
+          "en": "Restore focus on exit"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "disableRestoreFocus",
+            "path": "@mui/material/Unstable_TrapFocus/FocusTrap.types.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "returnFocusOnDeactivate",
+            "path": "@zag-js/focus-trap/dist/types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "initial",
+        "name": {
+          "ar": "هدف التركيز الأول",
+          "en": "Initial focus target"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "chakra",
+          "headless-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "disableAutoFocus",
+            "path": "@mui/material/Unstable_TrapFocus/FocusTrap.types.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "initialFocus",
+            "path": "@zag-js/focus-trap/dist/types.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "initialFocus",
+            "path": "@headlessui/react/dist/components/focus-trap/focus-trap.d.ts"
+          }
+        ]
+      }
+    ],
+    "notes": "react-aria publishes FocusScope in the react-aria package, not in react-aria-components, so it is not listed as an alias of this survey."
+  }
+}

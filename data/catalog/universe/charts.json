@@ -1,0 +1,326 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "charts",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "charts",
+    "name": {
+      "ar": "رسوم بيانية",
+      "en": "Charts"
+    },
+    "summary": {
+      "ar": "رسوم أعمدة وخطوط ومساحات ودوائر مع المحاور والمفتاح والتلميح.",
+      "en": "Bar, line, area, pie and related charts with axes, legend and tooltip."
+    },
+    "family": "data",
+    "tier": "T5",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "plot",
+      "axis",
+      "grid",
+      "legend",
+      "tooltip",
+      "series"
+    ],
+    "aliases": [
+      {
+        "library": "mui-x",
+        "name": "BarChart"
+      },
+      {
+        "library": "mui-x",
+        "name": "LineChart"
+      },
+      {
+        "library": "mui-x",
+        "name": "PieChart"
+      },
+      {
+        "library": "mui-x",
+        "name": "ScatterChart"
+      },
+      {
+        "library": "mui-x",
+        "name": "SparkLineChart"
+      },
+      {
+        "library": "mui-x",
+        "name": "Gauge"
+      },
+      {
+        "library": "mui-x",
+        "name": "RadarChart"
+      },
+      {
+        "library": "mantine",
+        "name": "BarChart"
+      },
+      {
+        "library": "mantine",
+        "name": "LineChart"
+      },
+      {
+        "library": "mantine",
+        "name": "AreaChart"
+      },
+      {
+        "library": "mantine",
+        "name": "PieChart"
+      },
+      {
+        "library": "mantine",
+        "name": "DonutChart"
+      },
+      {
+        "library": "mantine",
+        "name": "Sparkline"
+      },
+      {
+        "library": "mantine",
+        "name": "RadarChart"
+      },
+      {
+        "library": "mantine",
+        "name": "ScatterChart"
+      },
+      {
+        "library": "mantine",
+        "name": "CompositeChart"
+      },
+      {
+        "library": "mantine",
+        "name": "BubbleChart"
+      },
+      {
+        "library": "mantine",
+        "name": "FunnelChart"
+      },
+      {
+        "library": "mantine",
+        "name": "RadialBarChart"
+      },
+      {
+        "library": "mantine",
+        "name": "Heatmap"
+      },
+      {
+        "library": "mantine",
+        "name": "Treemap"
+      },
+      {
+        "library": "mantine",
+        "name": "SankeyChart"
+      },
+      {
+        "library": "shadcn",
+        "name": "chart"
+      }
+    ],
+    "features": [
+      {
+        "id": "rtl-axes",
+        "name": {
+          "ar": "محاور RTL: الأصل يمينًا ومحور القيم عند بداية السطر",
+          "en": "Axes for RTL: origin on the right, value axis on the inline start"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "محاور الزمن والفئات تمتد من اليمين إلى اليسار في التقارير العربية، ومصفوفة المالك تعدّ محاور RTL والأرقام العربية في العلامات فرصة",
+            "en": "Time and category axes run right to left in Arabic reports; the owner's matrix lists RTL axes and Arabic numerals in tick labels as an opening"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "reverse",
+            "path": "@mui/x-charts/ChartsLabel/ChartsLabelGradient.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "orientation",
+            "path": "@mantine/charts/lib/BulletChart/BulletChart.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tick-numerals",
+        "name": {
+          "ar": "علامات المحاور بأرقام النطاق وتقويمه",
+          "en": "Tick labels in the scope numerals and calendar"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "valueFormatter",
+            "path": "@mui/x-charts/BarChart/seriesConfig/bar/getSeriesWithDefaultValues.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "valueFormatter",
+            "path": "@mantine/charts/lib/PieChart/PieChart.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "svg-shaping",
+        "name": {
+          "ar": "العناوين العربية في نص SVG",
+          "en": "Arabic labels in SVG text"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مراسي نص SVG تتبع الاتجاه، وتحديد موضع كل محرف يقطع اتصال الحروف العربية، فتُرسم العناوين كسلاسل كاملة",
+            "en": "SVG text anchors (start/end) follow direction, and per-character positioning breaks Arabic joining; labels are drawn as whole strings"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "legend-order",
+        "name": {
+          "ar": "ترتيب المفتاح وجهة العلامة يتبعان الاتجاه",
+          "en": "Legend order and marker side follow direction"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "legend",
+            "path": "@mui/x-charts/ChartsLegend/chartsLegend.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withLegend",
+            "path": "@mantine/charts/lib/PieChart/PieChart.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tooltip",
+        "name": {
+          "ar": "تلميح بقيم منسّقة",
+          "en": "Tooltip with formatted values"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "tooltip",
+            "path": "@mui/x-charts/ScatterChart/ScatterChart.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withTooltip",
+            "path": "@mantine/charts/lib/PieChart/PieChart.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "a11y-table",
+        "name": {
+          "ar": "جدول بيانات بديل للتقنيات المساعدة",
+          "en": "Data table alternative for assistive technology"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "One entry for all chart types, as instructed; chart types become features when L5 plans them."
+      },
+      {
+        "topic": "scope",
+        "note": "AntD charts live in a separate project (AntV) which was not unpacked, so there is no AntD alias."
+      }
+    ],
+    "notes": "Wanted engine: chart-scale."
+  }
+}

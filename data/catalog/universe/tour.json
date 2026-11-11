@@ -1,0 +1,189 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "tour",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "tour",
+    "name": {
+      "ar": "جولة إرشادية",
+      "en": "Tour"
+    },
+    "summary": {
+      "ar": "خطوات تشير إلى أجزاء الواجهة واحدًا تلو الآخر.",
+      "en": "Steps that point at parts of the interface one after another."
+    },
+    "family": "overlay",
+    "tier": "T4",
+    "priority": "p2",
+    "engines": [
+      "overlay-layers",
+      "anchored-position",
+      "stepper",
+      "focus-scope"
+    ],
+    "anatomy": [
+      "mask",
+      "popup",
+      "title",
+      "description",
+      "indicators",
+      "prev",
+      "next",
+      "close"
+    ],
+    "dependsOn": [
+      "popover",
+      "button"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Tour"
+      },
+      {
+        "library": "mantine",
+        "name": "Tour"
+      }
+    ],
+    "features": [
+      {
+        "id": "steps",
+        "name": {
+          "ar": "خطوات مرتبطة بعناصر",
+          "en": "Steps with target"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "mask",
+        "name": {
+          "ar": "قناع",
+          "en": "Mask"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "mask",
+            "path": "@rc-component/tour/es/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withOverlay",
+            "path": "@mantine/core/lib/components/Tour/Tour.context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "placement",
+            "path": "@rc-component/tour/es/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "position",
+            "path": "@mantine/core/lib/components/Tour/TourStep/TourStep.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "indicators",
+        "name": {
+          "ar": "مؤشرات",
+          "en": "Indicators"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "indicatorsRender",
+            "path": "antd/es/tour/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "next-direction",
+        "name": {
+          "ar": "سهما التالي والسابق يتبعان اتجاه القراءة",
+          "en": "Next and previous arrows follow reading direction"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأيقونات الاتجاهية (الأسهم) يجب أن تنعكس في RTL، وغير الاتجاهية لا تنعكس",
+            "en": "Directional icons (chevrons, arrows) must mirror in RTL; non-directional ones must not"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

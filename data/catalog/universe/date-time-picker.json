@@ -1,0 +1,190 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "date-time-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "date-time-picker",
+    "name": {
+      "ar": "منتقي التاريخ والوقت",
+      "en": "Date-time picker"
+    },
+    "summary": {
+      "ar": "يختار تاريخًا ووقتًا معًا.",
+      "en": "Picks a date and a time together."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "calendar-grid",
+      "time",
+      "segmented-input",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "field",
+      "trigger",
+      "popup",
+      "calendar",
+      "time"
+    ],
+    "dependsOn": [
+      "date-picker",
+      "time-picker"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "DatePicker",
+        "note": "showTime"
+      },
+      {
+        "library": "mui-x",
+        "name": "DateTimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "DesktopDateTimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "MobileDateTimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "StaticDateTimePicker"
+      },
+      {
+        "library": "mantine",
+        "name": "DateTimePicker"
+      },
+      {
+        "library": "mantine",
+        "name": "InlineDateTimePicker"
+      },
+      {
+        "library": "react-aria",
+        "name": "DatePicker",
+        "note": "granularity of minutes or seconds"
+      }
+    ],
+    "features": [
+      {
+        "id": "time",
+        "name": {
+          "ar": "مع الوقت",
+          "en": "showTime"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "granularity",
+            "path": "@mui/x-date-pickers/internals/models/manager.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withSeconds",
+            "path": "@mantine/dates/lib/components/DateTimePicker/DateTimePicker.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "granularity",
+            "path": "react-stately/dist/types/src/datepicker/types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "zone",
+        "name": {
+          "ar": "يُخزَّن بفارق التوقيت ويُعرض بمنطقة المستخدم",
+          "en": "Stored with an offset, shown in the user zone"
+        },
+        "priority": "p1",
+        "in": [
+          "mui-x",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "timezone",
+            "path": "@mui/x-date-pickers/DateCalendar/useCalendarState.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "timeZone",
+            "path": "react-stately/dist/types/src/datepicker/utils.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

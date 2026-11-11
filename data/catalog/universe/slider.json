@@ -1,0 +1,487 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "slider",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "slider",
+    "name": {
+      "ar": "منزلق",
+      "en": "Slider"
+    },
+    "summary": {
+      "ar": "يختار قيمة أو مجالًا بسحب مقبض على مسار.",
+      "en": "Picks a value or a range by dragging a thumb along a track."
+    },
+    "family": "numeric-input",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "slider"
+    ],
+    "anatomy": [
+      "root",
+      "track",
+      "range",
+      "thumb",
+      "mark",
+      "value-label"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Slider"
+      },
+      {
+        "library": "mui",
+        "name": "Slider"
+      },
+      {
+        "library": "mantine",
+        "name": "Slider"
+      },
+      {
+        "library": "mantine",
+        "name": "RangeSlider"
+      },
+      {
+        "library": "mantine",
+        "name": "AngleSlider"
+      },
+      {
+        "library": "chakra",
+        "name": "Slider"
+      },
+      {
+        "library": "react-aria",
+        "name": "Slider"
+      },
+      {
+        "library": "base-ui",
+        "name": "Slider"
+      },
+      {
+        "library": "radix",
+        "name": "Slider"
+      },
+      {
+        "library": "shadcn",
+        "name": "slider"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "قيمة واحدة",
+          "en": "Single value"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "range",
+        "name": {
+          "ar": "نطاق",
+          "en": "Range"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "range",
+            "path": "@rc-component/slider/es/Slider.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "range",
+            "path": "@mui/material/Slider/useSlider.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "minRange",
+            "path": "@mantine/core/lib/components/Slider/RangeSlider/RangeSlider.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "range",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/slider.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "thumbAlignment",
+            "path": "@base-ui/react/slider/root/SliderRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "minStepsBetweenThumbs",
+            "path": "@radix-ui/react-slider/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "minStepsBetweenThumbs",
+            "path": "via @radix-ui/react-slider/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "marks",
+        "name": {
+          "ar": "علامات وخطوات",
+          "en": "Marks and steps"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "marks",
+            "path": "@rc-component/slider/es/Marks/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "marks",
+            "path": "@mui/material/Slider/Slider.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "marks",
+            "path": "@mantine/core/lib/components/Slider/Marks/Marks.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "marks",
+            "path": "@chakra-ui/react/dist/types/components/slider/slider.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "step",
+            "path": "react-stately/dist/types/src/slider/useSliderState.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "step",
+            "path": "@base-ui/react/slider/root/SliderRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "step",
+            "path": "@radix-ui/react-slider/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "step",
+            "path": "via @radix-ui/react-slider/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "vertical",
+        "name": {
+          "ar": "رأسي",
+          "en": "Vertical"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "orientation",
+            "path": "antd/es/slider/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "orientation",
+            "path": "@mui/material/Slider/Slider.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "orientation",
+            "path": "@mantine/core/lib/components/Slider/RangeSlider/RangeSlider.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/slider.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "orientation",
+            "path": "react-aria/dist/types/src/slider/useSliderThumb.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "orientation",
+            "path": "@base-ui/react/slider/root/SliderRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "orientation",
+            "path": "@radix-ui/react-slider/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "orientation",
+            "path": "via @radix-ui/react-slider/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tooltip",
+        "name": {
+          "ar": "تلميح القيمة",
+          "en": "Value tooltip"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "tooltip",
+            "path": "antd/es/slider/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "valueLabelDisplay",
+            "path": "@mui/material/Slider/Slider.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "label",
+            "path": "@mantine/core/lib/components/Slider/Marks/is-mark-filled.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "معكوس في RTL",
+          "en": "Reversed in RTL"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "القيمة الصغرى عند بداية السطر، فينعكس المسار ومفاتيح الأسهم في RTL",
+            "en": "The minimum sits at the inline start, so the track and arrow keys reverse in RTL"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "rtl-prop",
+        "name": {
+          "ar": "مسار يراعي الاتجاه",
+          "en": "Direction-aware track"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "radix",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "reverse",
+            "path": "@rc-component/slider/es/Slider.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "inverted",
+            "path": "@mantine/core/lib/components/Slider/Marks/Marks.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "inverted",
+            "path": "@radix-ui/react-slider/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "inverted",
+            "path": "via @radix-ui/react-slider/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "value-numerals",
+        "name": {
+          "ar": "قيمة المقبض بنظام أرقام النطاق",
+          "en": "Value label in the scope numerals"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "getAriaValueText",
+            "path": "@mui/material/Slider/Slider.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "getAriaValueText",
+            "path": "@zag-js/slider/dist/slider.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "formatOptions",
+            "path": "react-aria-components/dist/types/src/Slider.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "getAriaValueText",
+            "path": "@base-ui/react/slider/thumb/SliderThumb.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

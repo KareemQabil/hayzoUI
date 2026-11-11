@@ -1,0 +1,311 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "count-badge",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "count-badge",
+    "name": {
+      "ar": "شارة عدد",
+      "en": "Count badge"
+    },
+    "summary": {
+      "ar": "عدد أو نقطة ملحقة بزاوية عنصر آخر.",
+      "en": "A count or dot attached to the corner of another element."
+    },
+    "family": "display",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "indicator"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Badge"
+      },
+      {
+        "library": "mui",
+        "name": "Badge"
+      },
+      {
+        "library": "mantine",
+        "name": "Indicator"
+      },
+      {
+        "library": "chakra",
+        "name": "Float"
+      }
+    ],
+    "features": [
+      {
+        "id": "colors",
+        "name": {
+          "ar": "ألوان جاهزة",
+          "en": "Preset colors"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "color",
+            "path": "antd/es/badge/Badge.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "color",
+            "path": "@mui/material/Badge/Badge.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "color",
+            "path": "@mantine/core/lib/components/Indicator/Indicator.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "name": {
+          "ar": "عدّاد فوق العنصر",
+          "en": "Count overlay"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "count",
+            "path": "antd/es/badge/Badge.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "badgeContent",
+            "path": "@mui/material/Badge/Badge.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "label",
+            "path": "@mantine/core/lib/components/Indicator/Indicator.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "overflow",
+        "name": {
+          "ar": "حد العدّاد",
+          "en": "overflowCount (99+)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "overflowCount",
+            "path": "antd/es/badge/Badge.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "max",
+            "path": "@mui/material/Badge/Badge.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "dot",
+        "name": {
+          "ar": "نقطة فقط",
+          "en": "Dot only"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "dot",
+            "path": "antd/es/badge/Badge.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "dot",
+            "path": "@mui/material/Badge/badgeClasses.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "ribbon",
+        "name": {
+          "ar": "شريط",
+          "en": "Badge.Ribbon"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Ribbon",
+            "path": "antd/es/badge/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "corner",
+        "name": {
+          "ar": "الزاوية الافتراضية عند نهاية السطر",
+          "en": "Corner is the inline end by default"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مواضع البداية والنهاية تنعكس مع الاتجاه، ولا يُستخدم اليسار واليمين الفيزيائيان إلا بطلب صريح",
+            "en": "Start/end placement must mirror with direction; physical left/right only when asked for explicitly"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "placement",
+            "path": "antd/es/badge/Ribbon.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "anchorOrigin",
+            "path": "@mui/material/Badge/Badge.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "position",
+            "path": "@mantine/core/lib/components/Indicator/Indicator.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "placement",
+            "path": "@chakra-ui/react/dist/types/components/float/float.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "numerals",
+        "name": {
+          "ar": "العدد و«+٩٩» بنظام أرقام النطاق",
+          "en": "Count and \"99+\" in the scope numerals"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "صيغة التجاوز تُبقي علامة + في الجهة التي تحددها اللغة",
+            "en": "The overflow form keeps the plus sign on the side the locale puts it"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "spoken",
+        "name": {
+          "ar": "اسم منطوق بصيغة الجمع العربية",
+          "en": "Spoken label with Arabic plural"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

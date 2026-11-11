@@ -1,0 +1,294 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "time-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "time-picker",
+    "name": {
+      "ar": "منتقي الوقت",
+      "en": "Time picker"
+    },
+    "summary": {
+      "ar": "يختار وقتًا من اليوم بالمقاطع أو من قوائم.",
+      "en": "Picks a time of day by segments or from lists."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "time",
+      "segmented-input",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "field",
+      "segment",
+      "trigger",
+      "popup",
+      "column",
+      "option"
+    ],
+    "dependsOn": [
+      "field",
+      "popover"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "TimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "TimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "DesktopTimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "MobileTimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "StaticTimePicker"
+      },
+      {
+        "library": "mui-x",
+        "name": "TimeField"
+      },
+      {
+        "library": "mui-x",
+        "name": "DigitalClock"
+      },
+      {
+        "library": "mui-x",
+        "name": "MultiSectionDigitalClock"
+      },
+      {
+        "library": "mui-x",
+        "name": "TimeClock"
+      },
+      {
+        "library": "mantine",
+        "name": "TimePicker"
+      },
+      {
+        "library": "mantine",
+        "name": "TimeInput"
+      },
+      {
+        "library": "mantine",
+        "name": "TimeGrid"
+      },
+      {
+        "library": "react-aria",
+        "name": "TimeField"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "اختيار الوقت",
+          "en": "Time selection"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "format",
+        "name": {
+          "ar": "صيغة 12/24 ساعة",
+          "en": "12/24 hour format"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "ampm",
+            "path": "@mui/x-date-pickers/TimePicker/TimePickerToolbar.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "format",
+            "path": "@mantine/dates/lib/components/TimePicker/TimePicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "steps",
+        "name": {
+          "ar": "خطوات الساعات والدقائق",
+          "en": "Hour/minute/second steps"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "minutesStep",
+            "path": "@mui/x-date-pickers/TimeClock/Clock.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "minutesStep",
+            "path": "@mantine/dates/lib/components/TimePicker/TimePicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "range",
+        "name": {
+          "ar": "نطاق",
+          "en": "Range"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "RangePicker",
+            "path": "antd/es/time-picker/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled-time",
+        "name": {
+          "ar": "أوقات معطلة",
+          "en": "Disabled time"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "shouldDisableTime",
+            "path": "@mui/x-date-pickers/internals/models/validation.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "minTime",
+            "path": "@mantine/dates/lib/components/TimeInput/TimeInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "ampm-ar",
+        "name": {
+          "ar": "ص/م بالعربية",
+          "en": "Arabic AM/PM (ص/م)"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "فترة اليوم تُعرض ص / م والمقاطع تقبل الأرقام العربية كما في منتقي التاريخ",
+            "en": "The day period shows ص / م and the segments take Arabic digits, as in the date picker"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "segment-order",
+        "name": {
+          "ar": "ترتيب الساعة والدقيقة ثابت LTR وفترة اليوم تتبع اللغة",
+          "en": "Hour:minute order is fixed LTR, day period follows the locale"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "في حقل RTL يبقى الوقت المفصول بنقطتين بادئًا بالساعة، وتقع فترة اليوم حيث يضعها النمط العربي",
+            "en": "In an RTL field the colon-separated time must stay hour-first while the day period sits where the Arabic pattern puts it"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

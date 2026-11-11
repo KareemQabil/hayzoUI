@@ -1,0 +1,177 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "listbox",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "listbox",
+    "name": {
+      "ar": "قائمة اختيار",
+      "en": "Listbox"
+    },
+    "summary": {
+      "ar": "قائمة ظاهرة من الخيارات بتحديد مفرد أو متعدد.",
+      "en": "A visible list of options with single or multiple selection."
+    },
+    "family": "selection",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "listbox",
+      "collection",
+      "selection",
+      "typeahead",
+      "roving-focus"
+    ],
+    "anatomy": [
+      "root",
+      "group",
+      "group-label",
+      "option",
+      "option-indicator",
+      "empty"
+    ],
+    "aliases": [
+      {
+        "library": "chakra",
+        "name": "Listbox"
+      },
+      {
+        "library": "react-aria",
+        "name": "ListBox"
+      }
+    ],
+    "features": [
+      {
+        "id": "selection-mode",
+        "name": {
+          "ar": "تحديد مفرد أو متعدد",
+          "en": "Single or multiple selection"
+        },
+        "priority": "p0",
+        "in": [
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "selectionMode",
+            "path": "@zag-js/listbox/dist/listbox.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "typeahead",
+        "name": {
+          "ar": "الكتابة للانتقال إلى خيار",
+          "en": "Type to focus an option"
+        },
+        "priority": "p0",
+        "in": [
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "البحث بالكتابة يقارن بعد توحيد الأحرف، فكتابة الألف بلا همزة تصل إلى خيار يبدأ بألف مهموزة",
+            "en": "Typeahead compares with Arabic folding, so typing alef without hamza reaches an option that starts with a hamza form"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "typeahead",
+            "path": "@zag-js/listbox/dist/listbox.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sections",
+        "name": {
+          "ar": "أقسام بعناوين",
+          "en": "Sections with headings"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "grid-layout",
+        "name": {
+          "ar": "تنقل بتخطيط شبكي",
+          "en": "Grid layout navigation"
+        },
+        "priority": "p2",
+        "in": [
+          "chakra",
+          "react-aria"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@zag-js/listbox/dist/listbox.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "layout",
+            "path": "react-aria-components/dist/types/src/ListBox.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "virtual",
+        "name": {
+          "ar": "خيارات افتراضية العرض",
+          "en": "Virtualised options"
+        },
+        "priority": "p1",
+        "in": [
+          "react-aria"
+        ],
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "spinner",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "spinner",
+    "name": {
+      "ar": "مؤشر تحميل",
+      "en": "Spinner"
+    },
+    "summary": {
+      "ar": "تقدم غير محدد، منفردًا أو مغطيًا منطقة.",
+      "en": "Indeterminate progress, alone or covering a region."
+    },
+    "family": "feedback",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "label",
+      "overlay"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Spin"
+      },
+      {
+        "library": "antd-pro",
+        "name": "PageLoading"
+      },
+      {
+        "library": "mui",
+        "name": "CircularProgress"
+      },
+      {
+        "library": "mantine",
+        "name": "Loader"
+      },
+      {
+        "library": "mantine",
+        "name": "LoadingOverlay"
+      },
+      {
+        "library": "chakra",
+        "name": "Spinner"
+      },
+      {
+        "library": "chakra",
+        "name": "Loader"
+      },
+      {
+        "library": "shadcn",
+        "name": "spinner"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "مؤشر دوار باسم مقروء",
+          "en": "Spinner with accessible label"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام",
+          "en": "Sizes"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/spin/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/CircularProgress/CircularProgress.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/Loader/Loader.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/spinner.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "container",
+        "name": {
+          "ar": "تغطية المحتوى",
+          "en": "Wrap content (loading overlay)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "spinning",
+            "path": "antd/es/spin/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "visible",
+            "path": "@mantine/core/lib/components/LoadingOverlay/LoadingOverlay.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "visible",
+            "path": "@chakra-ui/react/dist/types/components/loader/loader.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "delay",
+        "name": {
+          "ar": "تأخير",
+          "en": "Delay"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "delay",
+            "path": "antd/es/spin/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "fullscreen",
+        "name": {
+          "ar": "ملء الشاشة",
+          "en": "Fullscreen"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fullscreen",
+            "path": "antd/es/spin/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "label",
+        "name": {
+          "ar": "اسم منطوق من نطاق اللغة",
+          "en": "Spoken label from the locale scope"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "Loading overlays (Mantine LoadingOverlay, AntD Spin wrapping content) are a feature of spinner."
+      }
+    ]
+  }
+}

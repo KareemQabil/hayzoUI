@@ -1,0 +1,741 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "select",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "select",
+    "name": {
+      "ar": "قائمة منسدلة",
+      "en": "Select"
+    },
+    "summary": {
+      "ar": "يختار خيارًا واحدًا من قائمة تُفتح من زر.",
+      "en": "Picks one option from a list that opens from a trigger."
+    },
+    "family": "selection",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "listbox",
+      "collection",
+      "selection",
+      "typeahead",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "trigger",
+      "value",
+      "icon",
+      "popup",
+      "option",
+      "group",
+      "clear"
+    ],
+    "dependsOn": [
+      "listbox",
+      "field",
+      "popover"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Select"
+      },
+      {
+        "library": "mui",
+        "name": "Select"
+      },
+      {
+        "library": "mui",
+        "name": "NativeSelect",
+        "note": "native select"
+      },
+      {
+        "library": "mantine",
+        "name": "Select"
+      },
+      {
+        "library": "mantine",
+        "name": "NativeSelect",
+        "note": "native select"
+      },
+      {
+        "library": "chakra",
+        "name": "Select"
+      },
+      {
+        "library": "chakra",
+        "name": "NativeSelect",
+        "note": "native select"
+      },
+      {
+        "library": "react-aria",
+        "name": "Select"
+      },
+      {
+        "library": "base-ui",
+        "name": "Select"
+      },
+      {
+        "library": "radix",
+        "name": "Select"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Listbox"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Select",
+        "note": "native select"
+      },
+      {
+        "library": "shadcn",
+        "name": "select"
+      },
+      {
+        "library": "shadcn",
+        "name": "native-select",
+        "note": "native select"
+      }
+    ],
+    "features": [
+      {
+        "id": "single",
+        "name": {
+          "ar": "اختيار واحد",
+          "en": "Single select"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "controlled",
+        "name": {
+          "ar": "تحكم وبدون تحكم",
+          "en": "Controlled / uncontrolled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام",
+          "en": "Sizes"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/select/index.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/select.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "size",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/select.tsx"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "معطل",
+          "en": "Disabled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/Select/SelectInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@zag-js/select/dist/select.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria/dist/types/src/select/HiddenSelect.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/select/item/SelectItem.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "disabled",
+            "path": "@radix-ui/react-select/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/listbox/listbox-machine.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "disabled",
+            "path": "via @radix-ui/react-select/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "حالة الخطأ",
+          "en": "Status / error"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "chakra",
+          "react-aria",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/select/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "error",
+            "path": "@mui/material/Select/SelectInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "invalid",
+            "path": "@zag-js/select/dist/select.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isInvalid",
+            "path": "react-aria-components/dist/types/src/Select.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "invalid",
+            "path": "@headlessui/react/dist/components/listbox/listbox-machine.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "show-search",
+        "name": {
+          "ar": "البحث داخل القائمة",
+          "en": "showSearch"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showSearch",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "searchable",
+            "path": "@mantine/core/lib/components/Select/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "filter-option",
+        "name": {
+          "ar": "تصفية مخصصة",
+          "en": "Custom filterOption"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filterOption",
+            "path": "@rc-component/select/es/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "الاختيار بلوحة المفاتيح",
+          "en": "Keyboard selection, Enter / Escape"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "allow-clear",
+        "name": {
+          "ar": "زر المسح",
+          "en": "Allow clear (reports empty)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "allowClear",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "clearable",
+            "path": "@mantine/core/lib/components/Select/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "not-found",
+        "name": {
+          "ar": "محتوى عدم وجود نتائج",
+          "en": "notFoundContent"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "notFoundContent",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "nothingFoundMessage",
+            "path": "@mantine/core/lib/components/Select/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "option-render",
+        "name": {
+          "ar": "عرض خيار مخصص",
+          "en": "Custom option render (secondary line)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "optionRender",
+            "path": "@rc-component/select/es/Select.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "renderOption",
+            "path": "@mantine/core/lib/components/Select/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "label-in-value",
+        "name": {
+          "ar": "إرجاع الخيار مع القيمة",
+          "en": "labelInValue / option in onChange"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "labelInValue",
+            "path": "@rc-component/select/es/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement-rtl",
+        "name": {
+          "ar": "القائمة محاذية لبداية الحقل في RTL",
+          "en": "Popup aligned to field start in RTL"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "groups",
+        "name": {
+          "ar": "مجموعات الخيارات",
+          "en": "Option groups"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "OptGroup",
+            "path": "@rc-component/select/es/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled-options",
+        "name": {
+          "ar": "خيارات معطلة",
+          "en": "Disabled options"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "virtual",
+        "name": {
+          "ar": "تمرير افتراضي للقوائم الكبيرة",
+          "en": "Virtual scroll for large lists"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "virtual",
+            "path": "@rc-component/select/es/Select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "remote",
+        "name": {
+          "ar": "بحث عن بعد مع تحميل",
+          "en": "Remote search with loading"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "dropdown-render",
+        "name": {
+          "ar": "محتوى مخصص للقائمة",
+          "en": "dropdownRender (custom footer)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "popupRender",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "variants",
+        "name": {
+          "ar": "الأنماط",
+          "en": "Variants outlined / filled / borderless"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "variant",
+            "path": "antd/es/select/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/Select/Select.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "variant",
+            "path": "@mantine/core/lib/components/Select/Select.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/select.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "arabic-search",
+        "name": {
+          "ar": "بحث عربي متسامح مع تمييز المطابقة",
+          "en": "Arabic-tolerant search with highlighted match"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "البحث يتجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل مع بقاء النص المخزن كما هو، وفلاتر المكتبات مطابقة نصية حرفية",
+            "en": "Search ignores hamza forms, alef maqsura, taa marbuta and diacritics while the stored text is unchanged; library filters are a plain substring test"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "digit-search",
+        "name": {
+          "ar": "البحث بأرقام الهاتف بأي نظام أرقام",
+          "en": "Search by phone/code digits in any numerals"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الرقم المحلي المكتوب بأرقام هندية يجد الخيار المخزن بالصيغة الدولية",
+            "en": "A local number typed in Arabic-Indic digits finds the option that stores the international form"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "mixed-align",
+        "name": {
+          "ar": "الأسماء اللاتينية في قائمة عربية تتبع تفضيل المحاذاة",
+          "en": "Latin names in an Arabic list follow alignment preference"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص المختلط يأخذ اتجاهه من محتواه مع عزل المقاطع المكتوبة بخط آخر",
+            "en": "Mixed-script content takes its direction from the content, with foreign runs isolated"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "native-mobile",
+        "name": {
+          "ar": "المنتقي الأصلي في أجهزة اللمس",
+          "en": "Native picker on touch devices"
+        },
+        "priority": "p2",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "Native select is an alias of select, not its own entry."
+      },
+      {
+        "topic": "split",
+        "note": "Multiple, tags and maxTag rows moved to multi-select and tags-input."
+      }
+    ]
+  }
+}

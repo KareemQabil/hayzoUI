@@ -1,0 +1,202 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "floating-action-button",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "floating-action-button",
+    "name": {
+      "ar": "زر عائم",
+      "en": "Floating action button"
+    },
+    "summary": {
+      "ar": "زر مثبت في زاوية الشاشة قد يتوسع إلى إجراءات.",
+      "en": "A button pinned to a screen corner, optionally expanding into actions."
+    },
+    "family": "action",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "press",
+      "disclosure"
+    ],
+    "anatomy": [
+      "root",
+      "trigger",
+      "action"
+    ],
+    "dependsOn": [
+      "icon-button",
+      "tooltip"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "FloatButton"
+      },
+      {
+        "library": "antd",
+        "name": "BackTop"
+      },
+      {
+        "library": "mui",
+        "name": "Fab"
+      },
+      {
+        "library": "mui",
+        "name": "SpeedDial"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "زر عائم",
+          "en": "Floating action button"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "group",
+        "name": {
+          "ar": "مجموعة بمشغّل",
+          "en": "Group with trigger (click/hover)"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "trigger",
+            "path": "antd/es/float-button/FloatButtonGroup.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "open",
+            "path": "@mui/material/SpeedDial/SpeedDial.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "back-top",
+        "name": {
+          "ar": "العودة للأعلى",
+          "en": "BackTop"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "badge",
+        "name": {
+          "ar": "شارة على الزر",
+          "en": "Badge on button"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "badge",
+            "path": "antd/es/float-button/FloatButton.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "tooltip",
+        "name": {
+          "ar": "تلميح",
+          "en": "Tooltip"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "tooltip",
+            "path": "antd/es/float-button/FloatButton.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "tooltip",
+            "path": "@mui/material/SpeedDialAction/SpeedDialAction.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "corner",
+        "name": {
+          "ar": "الزاوية عند نهاية السطر",
+          "en": "Corner is the inline end"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مواضع البداية والنهاية تنعكس مع الاتجاه، ولا يُستخدم اليسار واليمين الفيزيائيان إلا بطلب صريح",
+            "en": "Start/end placement must mirror with direction; physical left/right only when asked for explicitly"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "link",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "link",
+    "name": {
+      "ar": "رابط",
+      "en": "Link"
+    },
+    "summary": {
+      "ar": "تنقل داخل النص بحالتي رابط خارجي وصفحة حالية.",
+      "en": "Inline navigation with external and current-page states."
+    },
+    "family": "action",
+    "tier": "T1",
+    "priority": "p1",
+    "engines": [
+      "press"
+    ],
+    "anatomy": [
+      "root",
+      "icon"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Typography.Link"
+      },
+      {
+        "library": "mui",
+        "name": "Link"
+      },
+      {
+        "library": "mantine",
+        "name": "Anchor"
+      },
+      {
+        "library": "chakra",
+        "name": "Link"
+      },
+      {
+        "library": "react-aria",
+        "name": "Link"
+      }
+    ],
+    "features": [
+      {
+        "id": "underline",
+        "name": {
+          "ar": "سياسة التسطير",
+          "en": "Underline policy"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "التسطير يقطع الحروف النازلة والنقاط في العربية، فالسماكة والإزاحة تحتاجان قيمًا خاصة بالعربية",
+            "en": "Underlines cut through Arabic descenders and dots; thickness and offset need Arabic-specific values"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "underline",
+            "path": "antd/es/typography/Base/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "underline",
+            "path": "@mui/material/Link/Link.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "underline",
+            "path": "@mantine/core/lib/components/Anchor/Anchor.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "underline",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/link.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "external",
+        "name": {
+          "ar": "أيقونة الرابط الخارجي",
+          "en": "External link icon"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأيقونات الاتجاهية (الأسهم) يجب أن تنعكس في RTL، وغير الاتجاهية لا تنعكس",
+            "en": "Directional icons (chevrons, arrows) must mirror in RTL; non-directional ones must not"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "router",
+        "name": {
+          "ar": "يعمل مع موجّه التطبيق",
+          "en": "Works with a client router"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "component",
+            "path": "antd/es/typography/Base/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "component",
+            "path": "@mui/material/Link/Link.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "component",
+            "path": "@mantine/core/lib/components/Anchor/Anchor.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

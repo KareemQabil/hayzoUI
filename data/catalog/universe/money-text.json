@@ -1,0 +1,147 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "money-text",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "money-text",
+    "name": {
+      "ar": "نص مبلغ",
+      "en": "Money text"
+    },
+    "summary": {
+      "ar": "يعرض مبلغًا مخزنًا بالوحدات الصغرى مع عملته.",
+      "en": "Shows an amount stored in minor units with its currency."
+    },
+    "family": "display",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "amount",
+      "currency"
+    ],
+    "dependsOn": [
+      "number-text"
+    ],
+    "aliases": [
+      {
+        "library": "antd-pro",
+        "name": "FieldMoney"
+      }
+    ],
+    "features": [
+      {
+        "id": "minor-units",
+        "name": {
+          "ar": "المُدخل وحدات صغرى صحيحة وعملة ISO",
+          "en": "Input is integer minor units and an ISO currency"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الخانات العشرية تأتي من العملة (٢ أو ٣ أو ٠) لا من الرقم",
+            "en": "Decimals come from the currency (2, 3 or 0), never from the number"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "currency-form",
+        "name": {
+          "ar": "رمز أو كود أو اسم عربي متوافق مع العدد",
+          "en": "Symbol, code or Arabic name with plural agreement"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "«٣ جنيهات» و«١١ جنيهًا» و«١٠٠ جنيه»: اسم العملة يتغير مع العدد",
+            "en": "\"٣ جنيهات\", \"١١ جنيهًا\", \"١٠٠ جنيه\": the currency noun changes with the number"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "side",
+        "name": {
+          "ar": "جهة العملة من بيانات اللغة",
+          "en": "Currency side from locale data"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الرمز الموضوع بترتيب CSS ينتهي في الجهة الخاطئة في أحد الاتجاهين",
+            "en": "A symbol placed with CSS order ends up on the wrong side in one of the two directions"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "negative",
+        "name": {
+          "ar": "المبالغ السالبة: إشارة أو أقواس",
+          "en": "Negative amounts: minus or brackets"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأقواس تنعكس في RTL وعلامة السالب في آخر الرقم عيب شائع",
+            "en": "Brackets mirror in RTL and a trailing minus is a common rendering defect"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "new-symbols",
+        "name": {
+          "ar": "رموز العملات الجديدة مع بديل",
+          "en": "New currency symbols with a fallback"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "رمز الريال السعودي أُضيف إلى يونيكود حديثًا ومعظم الخطوط لا تحويه، والبديل هو الكود أو الاختصار العربي",
+            "en": "The Saudi riyal symbol was added to Unicode recently and most fonts lack it; the fallback is the code or the Arabic abbreviation"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

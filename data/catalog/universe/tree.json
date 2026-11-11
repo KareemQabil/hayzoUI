@@ -1,0 +1,557 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "tree",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "tree",
+    "name": {
+      "ar": "شجرة",
+      "en": "Tree"
+    },
+    "summary": {
+      "ar": "تسلسل هرمي من عقد قابلة للتوسيع مع التحديد والتأشير.",
+      "en": "A hierarchy of expandable nodes with selection and checking."
+    },
+    "family": "data",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "tree-model",
+      "collection",
+      "selection",
+      "roving-focus",
+      "typeahead",
+      "virtual-list",
+      "drag-sort"
+    ],
+    "anatomy": [
+      "root",
+      "node",
+      "indent",
+      "toggle",
+      "checkbox",
+      "icon",
+      "label",
+      "children"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Tree"
+      },
+      {
+        "library": "antd",
+        "name": "Tree.DirectoryTree"
+      },
+      {
+        "library": "mui-x",
+        "name": "SimpleTreeView"
+      },
+      {
+        "library": "mui-x",
+        "name": "RichTreeView"
+      },
+      {
+        "library": "mui-x",
+        "name": "TreeItem"
+      },
+      {
+        "library": "mantine",
+        "name": "Tree"
+      },
+      {
+        "library": "chakra",
+        "name": "TreeView"
+      },
+      {
+        "library": "react-aria",
+        "name": "Tree"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "بيانات شجرية",
+          "en": "Tree data"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "expand",
+        "name": {
+          "ar": "توسيع وطي",
+          "en": "Expand / collapse (controlled)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "expandedKeys",
+            "path": "@rc-component/tree/es/NodeList.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "expandedItems",
+            "path": "@mui/x-tree-view/internals/MinimalTreeViewStore/MinimalTreeViewStore.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "expandedState",
+            "path": "@mantine/core/lib/components/Tree/use-tree.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "expandedValue",
+            "path": "@zag-js/tree-view/dist/tree-view.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "expandedKeys",
+            "path": "react-aria-components/dist/types/src/TreeDropTargetDelegate.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "select",
+        "name": {
+          "ar": "تحديد العقد",
+          "en": "Select nodes (single / multiple)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "selectedKeys",
+            "path": "@rc-component/tree/es/NodeList.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "selectedItems",
+            "path": "@mui/x-tree-view/hooks/useApplyPropagationToSelectedItemsOnMount.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "selectionMode",
+            "path": "@zag-js/tree-view/dist/tree-view.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "selectionMode",
+            "path": "react-aria-components/dist/types/src/Tree.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "checkable",
+        "name": {
+          "ar": "تحديد بمربعات مع الحالة الجزئية",
+          "en": "Checkable with half-checked"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "checkable",
+            "path": "@rc-component/tree/es/NodeList.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "checkboxSelection",
+            "path": "@mui/x-tree-view/internals/MinimalTreeViewStore/MinimalTreeViewStore.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "checkedState",
+            "path": "@mantine/core/lib/components/Tree/use-tree.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "checkedValue",
+            "path": "@zag-js/tree-view/dist/tree-view.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "check-strictly",
+        "name": {
+          "ar": "تحديد مستقل",
+          "en": "checkStrictly"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "checkStrictly",
+            "path": "@rc-component/tree/es/Tree.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "selectionPropagation",
+            "path": "@mui/x-tree-view/hooks/useApplyPropagationToSelectedItemsOnMount.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "checkStrictly",
+            "path": "@mantine/core/lib/components/Tree/use-tree.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "async",
+        "name": {
+          "ar": "تحميل الأبناء غير متزامن",
+          "en": "Async load children"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loadData",
+            "path": "@rc-component/tree/es/Tree.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "loadChildren",
+            "path": "@zag-js/tree-view/dist/tree-view.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "draggable",
+        "name": {
+          "ar": "سحب وإفلات العقد",
+          "en": "Drag and drop nodes"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "draggable",
+            "path": "@rc-component/tree/es/Tree.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "draggable",
+            "path": "@mui/x-tree-view/SimpleTreeView/useExtractSimpleTreeViewParameters.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "draggable",
+            "path": "@mantine/core/lib/components/Tree/Tree.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "dragAndDropHooks",
+            "path": "react-aria-components/dist/types/src/Tree.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "search",
+        "name": {
+          "ar": "بحث وتمييز",
+          "en": "Search / highlight"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "filterTreeNode",
+            "path": "@rc-component/tree/es/Tree.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "filter",
+            "path": "@mantine/core/lib/components/TreeSelect/TreeSelect.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "virtual",
+        "name": {
+          "ar": "تمرير افتراضي",
+          "en": "Virtual scroll"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "virtual",
+            "path": "@rc-component/tree/es/NodeList.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "directory",
+        "name": {
+          "ar": "شجرة المجلدات",
+          "en": "DirectoryTree"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "show-line",
+        "name": {
+          "ar": "خطوط وأيقونات مخصصة",
+          "en": "Show line / custom icons"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showLine",
+            "path": "@rc-component/tree/es/Tree.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withLines",
+            "path": "@mantine/core/lib/components/Tree/Tree.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "title-render",
+        "name": {
+          "ar": "عرض العنوان المخصص",
+          "en": "titleRender"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "titleRender",
+            "path": "@rc-component/tree/es/Tree.d.ts"
+          },
+          {
+            "library": "mui-x",
+            "symbol": "getItemLabel",
+            "path": "@mui/x-tree-view/internals/MinimalTreeViewStore/MinimalTreeViewStore.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "renderNode",
+            "path": "@mantine/core/lib/components/Tree/FlatTreeNode.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "التنقل بلوحة المفاتيح",
+          "en": "Keyboard navigation (treeitem)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui-x",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "expansionTrigger",
+            "path": "@mui/x-tree-view/internals/MinimalTreeViewStore/MinimalTreeViewStore.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "expandOnClick",
+            "path": "@mantine/core/lib/components/Tree/FlatTreeNode.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "expandOnClick",
+            "path": "@zag-js/tree-view/dist/tree-view.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "المسافة البادئة وأسهم التوسيع في RTL",
+          "en": "RTL indent and expand arrows"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "السهم الأيمن يوسّع في LTR ويطوي في RTL، والمسافة البادئة وسهم التوسيع ينعكسان",
+            "en": "ArrowRight expands in LTR and collapses in RTL; indentation and the expand arrow mirror"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "inline-edit",
+        "name": {
+          "ar": "إعادة تسمية العقدة في مكانها",
+          "en": "Rename a node in place"
+        },
+        "priority": "p2",
+        "in": [
+          "mui-x"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "isItemEditable",
+            "path": "@mui/x-tree-view/internals/RichTreeViewStore/RichTreeViewStore.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "lines",
+        "name": {
+          "ar": "خطوط الإرشاد عند بداية السطر",
+          "en": "Guide lines on the inline start"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "table-of-contents",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "table-of-contents",
+    "name": {
+      "ar": "فهرس المحتويات",
+      "en": "Table of contents"
+    },
+    "summary": {
+      "ar": "روابط إلى عناوين الصفحة مع تتبع العنوان الظاهر.",
+      "en": "Links to headings of the page, tracking the one in view."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "scroll-spy"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "link",
+      "indicator"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Anchor"
+      },
+      {
+        "library": "mantine",
+        "name": "TableOfContents"
+      }
+    ],
+    "features": [
+      {
+        "id": "links",
+        "name": {
+          "ar": "روابط مرساة مع الحالة النشطة",
+          "en": "Anchor links with active state"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "items",
+            "path": "antd/es/anchor/Anchor.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "getControlProps",
+            "path": "@mantine/core/lib/components/TableOfContents/TableOfContents.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "affix",
+        "name": {
+          "ar": "مثبّت",
+          "en": "Affixed"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "affix",
+            "path": "antd/es/anchor/Anchor.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "horizontal",
+        "name": {
+          "ar": "أفقي",
+          "en": "Horizontal"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "direction",
+            "path": "antd/es/anchor/Anchor.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "offset",
+        "name": {
+          "ar": "إزاحة الهدف",
+          "en": "Target offset"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "targetOffset",
+            "path": "antd/es/anchor/Anchor.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "scrollSpyOptions",
+            "path": "@mantine/core/lib/components/TableOfContents/TableOfContents.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "indent",
+        "name": {
+          "ar": "المسافة البادئة والمؤشر عند بداية السطر",
+          "en": "Indent and indicator on the inline start"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "address-form",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "address-form",
+    "name": {
+      "ar": "نموذج العنوان",
+      "en": "Address form"
+    },
+    "summary": {
+      "ar": "حقول العنوان مرتبة ومتحقَّق منها بحسب الدولة.",
+      "en": "Address fields arranged and validated by country."
+    },
+    "family": "pattern",
+    "tier": "T5",
+    "priority": "p1",
+    "engines": [
+      "form",
+      "field",
+      "combobox"
+    ],
+    "anatomy": [
+      "root",
+      "country",
+      "field"
+    ],
+    "dependsOn": [
+      "form",
+      "country-select",
+      "combobox",
+      "text-field"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "by-country",
+        "name": {
+          "ar": "الحقول وترتيبها لكل دولة",
+          "en": "Fields and order per country"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مصر: محافظة ثم مدينة أو حي ثم شارع فمبنى فدور فشقة. العنوان الوطني السعودي: رقم المبنى والشارع والحي والمدينة والرمز البريدي والرقم الإضافي",
+            "en": "Egypt: governorate, city/district, street, building, floor, flat. Saudi national address: building number, street, district, city, postal code, additional number"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "admin-lists",
+        "name": {
+          "ar": "التقسيمات الإدارية بأسمائها العربية",
+          "en": "Administrative divisions with Arabic names"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "short-code",
+        "name": {
+          "ar": "الرمز المختصر للعنوان",
+          "en": "Short address code"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "landmark",
+        "name": {
+          "ar": "سطر أقرب معلم",
+          "en": "Landmark line"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "التوصيل في المنطقة يعتمد على وصف أقرب معلم، والنموذج يخصص له حقلًا بدل تحميله على «سطر العنوان ٢»",
+            "en": "Deliveries in the region rely on a landmark description; the form gives it a field instead of overloading \"address line 2\""
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "format",
+        "name": {
+          "ar": "مُخرج بسطر واحد أو عدة أسطر بحسب الدولة",
+          "en": "One-line and multi-line output by country"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "العناوين العربية تبدأ بالوحدة الأكبر أو الأصغر بحسب الدولة ونوع المستند",
+            "en": "Arabic addresses run from the larger unit to the smaller or the reverse depending on the country and the document"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "bilingual",
+        "name": {
+          "ar": "نسختان عربية ولاتينية لملصقات الشحن",
+          "en": "Arabic and Latin versions for shipping labels"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; L5 pattern in ARCHITECTURE.md."
+      }
+    ]
+  }
+}

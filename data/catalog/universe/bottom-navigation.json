@@ -1,0 +1,97 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "bottom-navigation",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "bottom-navigation",
+    "name": {
+      "ar": "شريط تنقل سفلي",
+      "en": "Bottom navigation"
+    },
+    "summary": {
+      "ar": "ثلاث إلى خمس وجهات رئيسية أسفل شاشة الهاتف.",
+      "en": "Three to five top-level destinations at the bottom of a phone screen."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "roving-focus",
+      "selection"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "icon",
+      "label"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "BottomNavigation"
+      }
+    ],
+    "features": [
+      {
+        "id": "order",
+        "name": {
+          "ar": "ترتيب العناصر يتبع الاتجاه",
+          "en": "Item order follows direction"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "labels",
+        "name": {
+          "ar": "العناوين دائمًا أو عند التحديد",
+          "en": "Labels always or on selection"
+        },
+        "priority": "p2",
+        "in": [
+          "mui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "showLabels",
+            "path": "@mui/material/BottomNavigation/BottomNavigation.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

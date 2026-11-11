@@ -1,0 +1,181 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "hover-card",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "hover-card",
+    "name": {
+      "ar": "بطاقة مرور",
+      "en": "Hover card"
+    },
+    "summary": {
+      "ar": "معاينة غنية تظهر عند المرور على رابط أو تركيزه.",
+      "en": "Rich preview shown when a link is hovered or focused."
+    },
+    "family": "overlay",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "tooltip",
+      "overlay-layers",
+      "anchored-position"
+    ],
+    "anatomy": [
+      "trigger",
+      "popup",
+      "arrow"
+    ],
+    "dependsOn": [
+      "popover"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "HoverCard"
+      },
+      {
+        "library": "chakra",
+        "name": "HoverCard"
+      },
+      {
+        "library": "base-ui",
+        "name": "PreviewCard"
+      },
+      {
+        "library": "radix",
+        "name": "HoverCard"
+      },
+      {
+        "library": "shadcn",
+        "name": "hover-card"
+      }
+    ],
+    "features": [
+      {
+        "id": "delays",
+        "name": {
+          "ar": "مهلتا الفتح والإغلاق",
+          "en": "Open and close delays"
+        },
+        "priority": "p2",
+        "in": [
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "openDelay",
+            "path": "@mantine/core/lib/components/HoverCard/HoverCard.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "openDelay",
+            "path": "@zag-js/hover-card/dist/hover-card.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "closeDelay",
+            "path": "@base-ui/react/preview-card/store/PreviewCardStore.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "openDelay",
+            "path": "@radix-ui/react-hover-card/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "openDelay",
+            "path": "via @radix-ui/react-hover-card/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement"
+        },
+        "priority": "p2",
+        "in": [
+          "base-ui"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "مواضع البداية والنهاية تنعكس مع الاتجاه، ولا يُستخدم اليسار واليمين الفيزيائيان إلا بطلب صريح",
+            "en": "Start/end placement must mirror with direction; physical left/right only when asked for explicitly"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "base-ui",
+            "symbol": "side",
+            "path": "@base-ui/react/preview-card/arrow/PreviewCardArrow.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

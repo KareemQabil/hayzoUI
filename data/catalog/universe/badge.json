@@ -1,0 +1,271 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "badge",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "badge",
+    "name": {
+      "ar": "شارة",
+      "en": "Badge"
+    },
+    "summary": {
+      "ar": "عنوان قصير ثابت للحالة أو التصنيف.",
+      "en": "A short static label for status or category."
+    },
+    "family": "display",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "icon",
+      "label"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Tag"
+      },
+      {
+        "library": "mui",
+        "name": "Chip"
+      },
+      {
+        "library": "mantine",
+        "name": "Badge"
+      },
+      {
+        "library": "chakra",
+        "name": "Badge"
+      },
+      {
+        "library": "chakra",
+        "name": "Status"
+      },
+      {
+        "library": "shadcn",
+        "name": "badge"
+      }
+    ],
+    "features": [
+      {
+        "id": "colors",
+        "name": {
+          "ar": "ألوان جاهزة",
+          "en": "Preset colors"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "color",
+            "path": "antd/es/tag/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "color",
+            "path": "@mui/material/Chip/Chip.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "color",
+            "path": "@mantine/core/lib/components/Badge/Badge.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "color",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/badge.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "variant",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/badge.tsx"
+          }
+        ]
+      },
+      {
+        "id": "bordered",
+        "name": {
+          "ar": "بحدود/بلا حدود",
+          "en": "Bordered / borderless"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "variant",
+            "path": "antd/es/tag/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/Chip/Chip.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "variant",
+            "path": "@mantine/core/lib/components/Badge/Badge.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/badge.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "variant",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/badge.tsx"
+          }
+        ]
+      },
+      {
+        "id": "icon",
+        "name": {
+          "ar": "أيقونة",
+          "en": "Icon"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "icon",
+            "path": "antd/es/tag/CheckableTag.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "icon",
+            "path": "@mui/material/Chip/Chip.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "leftSection",
+            "path": "@mantine/core/lib/components/Badge/Badge.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "نقطة حالة مع نص",
+          "en": "Status dot with text"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "status-word",
+        "name": {
+          "ar": "كلمات الحالة تتوافق في الجنس والعدد",
+          "en": "Status words agree in gender and number"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "عنوان الحالة المستخدم لاسم مذكر وآخر مؤنث («مدفوع» و«مدفوعة») يحتاج نصين عربيين",
+            "en": "A status label reused for a masculine and a feminine noun (\"paid\" for an invoice or an amount) needs two Arabic strings"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "badge is the static label (Mantine, Chakra, shadcn usage). AntD Badge, which overlays a count, is count-badge; AntD Tag and MUI Chip appear here for their static use and under tag for the interactive one."
+      }
+    ]
+  }
+}

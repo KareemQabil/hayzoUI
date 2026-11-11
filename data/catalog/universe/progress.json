@@ -1,0 +1,386 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "progress",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "progress",
+    "name": {
+      "ar": "شريط تقدم",
+      "en": "Progress"
+    },
+    "summary": {
+      "ar": "تقدم محدد أو غير محدد على خط.",
+      "en": "Determinate or indeterminate progress along a line."
+    },
+    "family": "feedback",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "track",
+      "range",
+      "label",
+      "value"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Progress"
+      },
+      {
+        "library": "mui",
+        "name": "LinearProgress"
+      },
+      {
+        "library": "mantine",
+        "name": "Progress"
+      },
+      {
+        "library": "chakra",
+        "name": "Progress"
+      },
+      {
+        "library": "react-aria",
+        "name": "ProgressBar"
+      },
+      {
+        "library": "base-ui",
+        "name": "Progress"
+      },
+      {
+        "library": "radix",
+        "name": "Progress"
+      },
+      {
+        "library": "shadcn",
+        "name": "progress"
+      }
+    ],
+    "features": [
+      {
+        "id": "line",
+        "name": {
+          "ar": "خطي",
+          "en": "Line"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "percent",
+            "path": "@rc-component/notification/es/Progress.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "value",
+            "path": "@mui/material/LinearProgress/LinearProgress.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "value",
+            "path": "@mantine/core/lib/components/Progress/Progress.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "percent",
+            "path": "@zag-js/progress/dist/progress.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "value",
+            "path": "@base-ui/react/progress/root/ProgressRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "value",
+            "path": "@radix-ui/react-progress/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "value",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/progress.tsx"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "الحالة",
+          "en": "Status"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/progress/progress.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "color",
+            "path": "@mui/material/LinearProgress/LinearProgress.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "color",
+            "path": "@mantine/core/lib/components/Progress/Progress.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "status",
+            "path": "@base-ui/react/progress/root/ProgressRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "steps",
+        "name": {
+          "ar": "خطوات",
+          "en": "Steps"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "steps",
+            "path": "@rc-component/progress/es/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "format",
+        "name": {
+          "ar": "تنسيق مخصص",
+          "en": "Custom format"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "format",
+            "path": "antd/es/progress/progress.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "formatOptions",
+            "path": "@zag-js/progress/dist/progress.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "format",
+            "path": "@base-ui/react/progress/root/ProgressRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "getValueLabel",
+            "path": "@radix-ui/react-progress/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "getValueLabel",
+            "path": "via @radix-ui/react-progress/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "الملء من البداية والنسبة بأرقام المستخدم",
+          "en": "Fill from inline start, percent in user numerals"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الشريط يمتلئ من بداية السطر، والنسبة تُكتب بعلامة النسبة الخاصة باللغة وبنظام أرقام النطاق",
+            "en": "The bar fills from the inline start, and the percentage is written with the locale percent sign in the scope numerals"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "segments",
+        "name": {
+          "ar": "مقاطع متراكبة",
+          "en": "Stacked segments"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "success",
+            "path": "antd/es/progress/progress.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "Section",
+            "path": "@mantine/core/lib/components/Progress/Progress.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "buffer",
+        "name": {
+          "ar": "تحميل مسبق وحالة غير محددة",
+          "en": "Buffer and indeterminate"
+        },
+        "priority": "p2",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/LinearProgress/LinearProgress.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "animated",
+            "path": "@mantine/core/lib/components/Progress/Progress.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/progress.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isIndeterminate",
+            "path": "react-aria-components/dist/types/src/ProgressBar.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

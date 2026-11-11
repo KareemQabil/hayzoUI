@@ -1,0 +1,554 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "menu",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "menu",
+    "name": {
+      "ar": "قائمة إجراءات",
+      "en": "Menu"
+    },
+    "summary": {
+      "ar": "قائمة إجراءات تُفتح من زر، بقوائم فرعية وعناصر قابلة للتحديد ومجموعات.",
+      "en": "A list of actions opened from a button, with submenus, checkable items and groups."
+    },
+    "family": "navigation",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "menu",
+      "collection",
+      "typeahead",
+      "roving-focus",
+      "overlay-layers",
+      "anchored-position"
+    ],
+    "anatomy": [
+      "trigger",
+      "popup",
+      "item",
+      "group",
+      "group-label",
+      "separator",
+      "checkbox-item",
+      "radio-item",
+      "submenu-trigger",
+      "shortcut",
+      "arrow"
+    ],
+    "dependsOn": [
+      "portal"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Dropdown"
+      },
+      {
+        "library": "mui",
+        "name": "Menu"
+      },
+      {
+        "library": "mui",
+        "name": "MenuItem"
+      },
+      {
+        "library": "mui",
+        "name": "MenuList"
+      },
+      {
+        "library": "mantine",
+        "name": "Menu"
+      },
+      {
+        "library": "chakra",
+        "name": "Menu"
+      },
+      {
+        "library": "react-aria",
+        "name": "Menu"
+      },
+      {
+        "library": "react-aria",
+        "name": "MenuTrigger"
+      },
+      {
+        "library": "react-aria",
+        "name": "SubmenuTrigger"
+      },
+      {
+        "library": "base-ui",
+        "name": "Menu"
+      },
+      {
+        "library": "radix",
+        "name": "DropdownMenu"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Menu"
+      },
+      {
+        "library": "shadcn",
+        "name": "dropdown-menu"
+      }
+    ],
+    "features": [
+      {
+        "id": "menu",
+        "name": {
+          "ar": "عناصر القائمة",
+          "en": "Menu items"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "trigger",
+        "name": {
+          "ar": "المشغّل: مرور/نقر/زر أيمن",
+          "en": "Trigger hover / click / contextMenu"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "trigger",
+            "path": "@rc-component/dropdown/es/Dropdown.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "trigger",
+            "path": "@mantine/core/lib/components/Menu/Menu.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "trigger",
+            "path": "@zag-js/menu/dist/menu.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "trigger",
+            "path": "react-aria/dist/types/src/menu/useMenuTrigger.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "openOnHover",
+            "path": "@base-ui/react/menu/submenu-trigger/MenuSubmenuTrigger.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "trigger",
+            "path": "@headlessui/react/dist/components/menu/menu-machine.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "placement",
+            "path": "@rc-component/dropdown/es/Dropdown.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "position",
+            "path": "@mantine/core/lib/components/Menu/MenuSub/MenuSub.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "side",
+            "path": "@base-ui/react/menu/arrow/MenuArrow.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "arrow",
+        "name": {
+          "ar": "سهم",
+          "en": "Arrow"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "arrow",
+            "path": "@rc-component/dropdown/es/Dropdown.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "arrow",
+            "path": "@zag-js/menu/dist/menu.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "button",
+        "name": {
+          "ar": "زر بقائمة",
+          "en": "Dropdown.Button"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Button",
+            "path": "antd/es/dropdown/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "Button",
+            "path": "@headlessui/react/dist/components/menu/menu.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "submenu",
+        "name": {
+          "ar": "قائمة فرعية",
+          "en": "Cascading submenu"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "SubMenu",
+            "path": "@rc-component/menu/es/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "Sub",
+            "path": "@mantine/core/lib/components/Menu/Menu.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "SubmenuRoot",
+            "path": "@base-ui/react/menu/filter-provider/MenuFilterProviderContext.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "التنقل بلوحة المفاتيح",
+          "en": "Keyboard navigation"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "submenu-direction",
+        "name": {
+          "ar": "القوائم الفرعية تُفتح نحو نهاية السطر ومفتاح الفتح يتبعها",
+          "en": "Submenus open toward the inline end; the opening arrow key follows"
+        },
+        "priority": "p0",
+        "in": [
+          "radix",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "في RTL السهم الأيسر يفتح القائمة الفرعية والأيمن يغلقها، ومثلث الأمان لمؤشر الفأرة ينعكس أيضًا",
+            "en": "In RTL ArrowLeft opens a submenu and ArrowRight closes it; the pointer safe-triangle must mirror too"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "radix",
+            "symbol": "dir",
+            "path": "@radix-ui/react-dropdown-menu/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "dir",
+            "path": "via @radix-ui/react-dropdown-menu/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "checkable",
+        "name": {
+          "ar": "عناصر اختيار متعددة ومفردة",
+          "en": "Checkbox and radio items"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "selectable",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "CheckboxItem",
+            "path": "@mantine/core/lib/components/Menu/Menu.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "typeahead",
+        "name": {
+          "ar": "الكتابة للانتقال إلى عنصر",
+          "en": "Type to focus an item"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "البحث بالكتابة يوحّد أشكال الحروف العربية",
+            "en": "Typeahead folds Arabic letter variants"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "disabledItemsFocusable",
+            "path": "@mui/material/MenuList/MenuList.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "typeahead",
+            "path": "@zag-js/menu/dist/menu.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "shortcut",
+        "name": {
+          "ar": "تلميح اختصار لوحة المفاتيح",
+          "en": "Keyboard shortcut hint"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نص الاختصار جزيرة LTR عند نهاية سطر العنصر",
+            "en": "Shortcut text is an LTR island at the inline end of the item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "extra",
+            "path": "@rc-component/menu/es/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "rightSection",
+            "path": "@mantine/core/lib/components/Menu/MenuCheckboxItem/MenuCheckboxItem.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "danger",
+        "name": {
+          "ar": "عنصر خطر",
+          "en": "Destructive item"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "danger",
+            "path": "antd/es/dropdown/dropdown-button.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "color",
+            "path": "@mantine/core/lib/components/Menu/MenuCheckboxItem/MenuCheckboxItem.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "variant",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/dropdown-menu.tsx"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "menu is the action menu (ARIA role menu). AntD calls it Dropdown and uses Menu for site navigation, which is navigation-menu here."
+      }
+    ]
+  }
+}

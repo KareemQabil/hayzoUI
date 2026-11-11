@@ -1,0 +1,183 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "transition",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "transition",
+    "name": {
+      "ar": "انتقال حركي",
+      "en": "Transition"
+    },
+    "summary": {
+      "ar": "يُظهر المحتوى ويزيله بحالتي دخول وخروج.",
+      "en": "Mounts and unmounts content with enter and exit states."
+    },
+    "family": "utility",
+    "tier": "T0",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "Fade"
+      },
+      {
+        "library": "mui",
+        "name": "Grow"
+      },
+      {
+        "library": "mui",
+        "name": "Slide"
+      },
+      {
+        "library": "mui",
+        "name": "Zoom"
+      },
+      {
+        "library": "mui",
+        "name": "Collapse"
+      },
+      {
+        "library": "mantine",
+        "name": "Transition"
+      },
+      {
+        "library": "chakra",
+        "name": "Presence"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Transition"
+      }
+    ],
+    "features": [
+      {
+        "id": "presence",
+        "name": {
+          "ar": "يُبقي العنصر حتى نهاية حركة الخروج",
+          "en": "Keeps the element mounted until the exit ends"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "keepMounted",
+            "path": "@mantine/core/lib/components/Transition/Transition.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "present",
+            "path": "@ark-ui/react/dist/components/presence/use-presence.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "slide-direction",
+        "name": {
+          "ar": "اتجاه الانزلاق",
+          "en": "Slide direction"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "mantine",
+          "headless-ui"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "حركات الانزلاق من البداية يجب أن تنعكس في RTL وإلا دخل الدرج من الحافة الخاطئة",
+            "en": "Slide-from-start animations must reverse in RTL or a drawer enters from the wrong edge"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "direction",
+            "path": "@mui/material/Slide/Slide.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "transition",
+            "path": "@mantine/core/lib/components/Transition/Transition.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "transition",
+            "path": "@headlessui/react/dist/components/transition/transition.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "reduced-motion",
+        "name": {
+          "ar": "يحترم تقليل الحركة",
+          "en": "Honours reduced motion"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "notes": "Wanted engine: presence."
+  }
+}

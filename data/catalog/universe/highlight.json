@@ -1,0 +1,137 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "highlight",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "highlight",
+    "name": {
+      "ar": "تمييز النص",
+      "en": "Highlight"
+    },
+    "summary": {
+      "ar": "يعلّم أجزاء النص المطابقة لاستعلام.",
+      "en": "Marks the parts of a text that match a query."
+    },
+    "family": "display",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "mark"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "Highlight"
+      },
+      {
+        "library": "mantine",
+        "name": "Mark"
+      },
+      {
+        "library": "chakra",
+        "name": "Highlight"
+      },
+      {
+        "library": "chakra",
+        "name": "Mark"
+      }
+    ],
+    "features": [
+      {
+        "id": "match",
+        "name": {
+          "ar": "يميّز استعلامًا أو أكثر",
+          "en": "Highlights one or several queries"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "highlight",
+            "path": "@mantine/core/lib/components/Highlight/Highlight.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "query",
+            "path": "@chakra-ui/react/dist/types/components/highlight/highlight.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "arabic-match",
+        "name": {
+          "ar": "مواضع المطابقة تُحسب بعد توحيد الأحرف",
+          "en": "Match ranges computed after Arabic folding"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "موضع التمييز يعود إلى النص الأصلي بتشكيله حين تُوجد المطابقة في النص الموحَّد",
+            "en": "The highlighted range maps back to the original text, diacritics included, when the match was found on folded text"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "no-break-shaping",
+        "name": {
+          "ar": "التمييز لا يقطع اتصال الحروف",
+          "en": "A mark does not break letter joining"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "تغليف جزء من كلمة عربية بعنصر قد يقطع اتصال الحروف في بعض المحركات، فيجب ألا يضيف التمييز حشوًا أو حدودًا بين الحروف",
+            "en": "Wrapping part of an Arabic word in an inline element can break cursive joining in some engines; the mark must not add padding or borders between letters"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

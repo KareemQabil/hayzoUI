@@ -1,0 +1,225 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "pro-form",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "pro-form",
+    "name": {
+      "ar": "نموذج احترافي",
+      "en": "Pro form"
+    },
+    "summary": {
+      "ar": "نماذج تُولَّد من مخطط حقول ذات أنواع، مع تخطيطات وخطوات وأغلفة حوار أو درج.",
+      "en": "Forms generated from a schema of typed fields, with layouts, steps and modal or drawer shells."
+    },
+    "family": "pattern",
+    "tier": "T5",
+    "priority": "p1",
+    "engines": [
+      "form",
+      "field",
+      "stepper",
+      "dialog"
+    ],
+    "anatomy": [
+      "root",
+      "group",
+      "field",
+      "submitter"
+    ],
+    "dependsOn": [
+      "form",
+      "field",
+      "dialog",
+      "drawer",
+      "stepper"
+    ],
+    "aliases": [
+      {
+        "library": "antd-pro",
+        "name": "ProForm"
+      },
+      {
+        "library": "antd-pro",
+        "name": "BetaSchemaForm"
+      },
+      {
+        "library": "antd-pro",
+        "name": "StepsForm"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ModalForm"
+      },
+      {
+        "library": "antd-pro",
+        "name": "DrawerForm"
+      },
+      {
+        "library": "antd-pro",
+        "name": "QueryFilter"
+      },
+      {
+        "library": "antd-pro",
+        "name": "LightFilter"
+      },
+      {
+        "library": "antd-pro",
+        "name": "LoginForm"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProField"
+      },
+      {
+        "library": "antd-pro",
+        "name": "Submitter"
+      }
+    ],
+    "features": [
+      {
+        "id": "schema",
+        "name": {
+          "ar": "حقول من مخطط بأنواع قيم",
+          "en": "Fields from a schema with value types"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "أنواع القيم تشمل الحقول العربية أولًا (مبلغ، هاتف، تاريخ بتقويمين، رقم قومي) فيحصل عليها المخطط دون عارضات مخصصة",
+            "en": "Value types include the Arabic-first fields (money, phone, dual-calendar date, national id), so a schema gets them without custom renderers"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "valueType",
+            "path": "@ant-design/pro-form/es/BaseForm/LightWrapper/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "grid",
+        "name": {
+          "ar": "تخطيط شبكي متجاوب",
+          "en": "Responsive grid layout"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "grid",
+            "path": "@ant-design/pro-form/es/components/SchemaForm/layoutType/StepsForm.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "submitter",
+        "name": {
+          "ar": "شريط إرسال مع إعادة الضبط والتحميل",
+          "en": "Submit bar with reset and loading"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "submitter",
+            "path": "@ant-design/pro-form/es/BaseForm/BaseForm.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "steps",
+        "name": {
+          "ar": "نموذج متعدد الخطوات",
+          "en": "Multi-step form"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "stepsProps",
+            "path": "@ant-design/pro-form/es/layouts/StepsForm/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "read-mode",
+        "name": {
+          "ar": "نمط قراءة يعرض القيم كنص",
+          "en": "Read mode that renders values as text"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "readonly",
+            "path": "@ant-design/pro-form/es/BaseForm/BaseForm.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "dependency",
+        "name": {
+          "ar": "حقول معتمدة على غيرها",
+          "en": "Dependent fields"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

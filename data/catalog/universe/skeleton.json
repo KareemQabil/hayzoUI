@@ -1,0 +1,285 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "skeleton",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "skeleton",
+    "name": {
+      "ar": "هيكل تحميل",
+      "en": "Skeleton"
+    },
+    "summary": {
+      "ar": "عنصر نائب بشكل المحتوى الذي يُحمَّل.",
+      "en": "A placeholder in the shape of content that is loading."
+    },
+    "family": "feedback",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Skeleton"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProSkeleton"
+      },
+      {
+        "library": "mui",
+        "name": "Skeleton"
+      },
+      {
+        "library": "mantine",
+        "name": "Skeleton"
+      },
+      {
+        "library": "chakra",
+        "name": "Skeleton"
+      },
+      {
+        "library": "shadcn",
+        "name": "skeleton"
+      }
+    ],
+    "features": [
+      {
+        "id": "block",
+        "name": {
+          "ar": "كتلة أساسية",
+          "en": "Basic block"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "presets",
+        "name": {
+          "ar": "قوالب جاهزة",
+          "en": "Avatar / title / paragraph presets"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "avatar",
+            "path": "antd/es/skeleton/Skeleton.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/Skeleton/Skeleton.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "circle",
+            "path": "@mantine/core/lib/components/Skeleton/Skeleton.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/skeleton.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "active",
+        "name": {
+          "ar": "حركة",
+          "en": "Active animation"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "active",
+            "path": "antd/es/skeleton/Element.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "active",
+            "path": "@ant-design/pro-skeleton/es/components/Descriptions/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "animation",
+            "path": "@mui/material/Skeleton/Skeleton.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "animate",
+            "path": "@mantine/core/lib/components/Skeleton/Skeleton.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "animation",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/skeleton.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "elements",
+        "name": {
+          "ar": "عناصر جاهزة",
+          "en": "Button / input / image elements"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Button",
+            "path": "antd/es/skeleton/Skeleton.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "shimmer",
+        "name": {
+          "ar": "اللمعان يتحرك في اتجاه القراءة",
+          "en": "Shimmer travels in the reading direction"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "اللمعان من اليسار إلى اليمين في تخطيط RTL يوحي بأن المحتوى يصل من النهاية",
+            "en": "A left-to-right shimmer in an RTL layout reads as content arriving from the end"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "text-lines",
+        "name": {
+          "ar": "أسطر نص مع سطر أخير قصير عند بداية السطر",
+          "en": "Text lines with a short last line at the inline start"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "rows",
+            "path": "antd/es/skeleton/Paragraph.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "noOfLines",
+            "path": "@chakra-ui/react/dist/types/components/skeleton/skeleton.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "checkbox",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "checkbox",
+    "name": {
+      "ar": "مربع اختيار",
+      "en": "Checkbox"
+    },
+    "summary": {
+      "ar": "اختيار منطقي أو جزئي مع عنوانه.",
+      "en": "A boolean or mixed choice with its label."
+    },
+    "family": "choice",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "toggle",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "indicator",
+      "label",
+      "hidden-input"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Checkbox"
+      },
+      {
+        "library": "mui",
+        "name": "Checkbox"
+      },
+      {
+        "library": "mui",
+        "name": "FormControlLabel"
+      },
+      {
+        "library": "mantine",
+        "name": "Checkbox"
+      },
+      {
+        "library": "chakra",
+        "name": "Checkbox"
+      },
+      {
+        "library": "chakra",
+        "name": "Checkmark"
+      },
+      {
+        "library": "react-aria",
+        "name": "Checkbox"
+      },
+      {
+        "library": "base-ui",
+        "name": "Checkbox"
+      },
+      {
+        "library": "radix",
+        "name": "Checkbox"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Checkbox"
+      },
+      {
+        "library": "shadcn",
+        "name": "checkbox"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "مربع اختيار",
+          "en": "Checkbox"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "indeterminate",
+        "name": {
+          "ar": "حالة غير محددة وتحديد الكل",
+          "en": "Indeterminate / check all"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "indeterminate",
+            "path": "antd/es/checkbox/Checkbox.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "indeterminate",
+            "path": "@mui/material/Checkbox/Checkbox.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "indeterminate",
+            "path": "@mantine/core/lib/components/Checkbox/CheckIcon.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "indeterminate",
+            "path": "@ark-ui/react/dist/components/checkbox/checkbox-indicator.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isIndeterminate",
+            "path": "react-aria/dist/types/src/checkbox/useCheckbox.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "indeterminate",
+            "path": "@base-ui/react/checkbox/root/CheckboxRoot.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "indeterminate",
+            "path": "@headlessui/react/dist/components/checkbox/checkbox.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "معطل",
+          "en": "Disabled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/cascader/es/OptionList/Checkbox.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/Checkbox/Checkbox.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Checkbox/CheckboxGroup/CheckboxGroup.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@ark-ui/react/dist/components/checkbox/use-checkbox-group.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria/dist/types/src/checkbox/useCheckbox.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/checkbox/root/CheckboxRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "disabled",
+            "path": "@radix-ui/react-checkbox/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/checkbox/checkbox.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "disabled",
+            "path": "via @radix-ui/react-checkbox/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "controlled",
+        "name": {
+          "ar": "متحكم به",
+          "en": "Controlled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "checked",
+            "path": "@rc-component/cascader/es/OptionList/Checkbox.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "checked",
+            "path": "@mui/material/Checkbox/Checkbox.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "checked",
+            "path": "@mantine/core/lib/components/Checkbox/CheckboxCard/CheckboxCard.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "checked",
+            "path": "@ark-ui/react/dist/components/checkbox/use-checkbox-group.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isSelected",
+            "path": "react-aria/dist/types/src/checkbox/useCheckbox.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "checked",
+            "path": "@base-ui/react/checkbox/root/CheckboxRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "checked",
+            "path": "@radix-ui/react-checkbox/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "checked",
+            "path": "@headlessui/react/dist/components/checkbox/checkbox.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "checked",
+            "path": "via @radix-ui/react-checkbox/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "label-side",
+        "name": {
+          "ar": "المربع عند بداية السطر قبل عنوانه",
+          "en": "Control at the inline start of its label"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "labelPlacement",
+            "path": "@mui/material/FormControlLabel/FormControlLabel.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "labelPosition",
+            "path": "@mantine/core/lib/components/Checkbox/Checkbox.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "split",
+        "note": "Checkbox.Group moved to checkbox-group."
+      }
+    ]
+  }
+}

@@ -1,0 +1,461 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "radio-group",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "radio-group",
+    "name": {
+      "ar": "مجموعة أزرار اختيار",
+      "en": "Radio group"
+    },
+    "summary": {
+      "ar": "اختيار واحد من خيارات قليلة ظاهرة.",
+      "en": "One choice out of a few visible options."
+    },
+    "family": "choice",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "roving-focus",
+      "selection",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "label",
+      "item",
+      "control",
+      "indicator"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Radio"
+      },
+      {
+        "library": "antd",
+        "name": "Radio.Group"
+      },
+      {
+        "library": "mui",
+        "name": "Radio"
+      },
+      {
+        "library": "mui",
+        "name": "RadioGroup"
+      },
+      {
+        "library": "mantine",
+        "name": "Radio"
+      },
+      {
+        "library": "mantine",
+        "name": "RadioGroup"
+      },
+      {
+        "library": "chakra",
+        "name": "RadioGroup"
+      },
+      {
+        "library": "chakra",
+        "name": "RadioCard",
+        "note": "card-shaped item"
+      },
+      {
+        "library": "chakra",
+        "name": "Radiomark"
+      },
+      {
+        "library": "react-aria",
+        "name": "RadioGroup"
+      },
+      {
+        "library": "react-aria",
+        "name": "Radio"
+      },
+      {
+        "library": "base-ui",
+        "name": "RadioGroup"
+      },
+      {
+        "library": "base-ui",
+        "name": "Radio"
+      },
+      {
+        "library": "radix",
+        "name": "RadioGroup"
+      },
+      {
+        "library": "headless-ui",
+        "name": "RadioGroup"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Radio"
+      },
+      {
+        "library": "shadcn",
+        "name": "radio-group"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "زر اختيار",
+          "en": "Radio"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "group",
+        "name": {
+          "ar": "مجموعة خيارات",
+          "en": "Radio.Group with options"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "value",
+            "path": "antd/es/radio/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "value",
+            "path": "@mui/material/RadioGroup/RadioGroup.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "value",
+            "path": "@mantine/core/lib/components/Radio/RadioCard/RadioCard.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "value",
+            "path": "@ark-ui/react/dist/components/radio-group/radio-group-root-provider.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "value",
+            "path": "react-aria/dist/types/src/radio/useRadio.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "value",
+            "path": "@base-ui/react/menu/radio-group/MenuRadioGroup.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "value",
+            "path": "@radix-ui/react-radio-group/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "value",
+            "path": "@headlessui/react/dist/components/radio-group/radio-group.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "value",
+            "path": "via @radix-ui/react-radio-group/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "button-style",
+        "name": {
+          "ar": "خيارات بشكل أزرار",
+          "en": "Button style options"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "optionType",
+            "path": "antd/es/radio/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "خيارات معطلة",
+          "en": "Disabled options"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "antd/es/radio/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/Radio/Radio.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Radio/RadioGroup/RadioGroup.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@zag-js/radio-group/dist/radio-group.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria-components/dist/types/src/RadioGroup.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/menu/radio-group/MenuRadioGroup.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "disabled",
+            "path": "@radix-ui/react-radio-group/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/radio-group/radio-group.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "disabled",
+            "path": "via @radix-ui/react-radio-group/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "الأسهم تتبع الاتجاه",
+          "en": "Arrow keys follow direction"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "vertical",
+        "name": {
+          "ar": "مجموعة رأسية",
+          "en": "Vertical group"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra",
+          "react-aria",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "orientation",
+            "path": "antd/es/radio/interface.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@zag-js/radio-group/dist/radio-group.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "orientation",
+            "path": "react-aria-components/dist/types/src/RadioGroup.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "orientation",
+            "path": "@radix-ui/react-radio-group/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "orientation",
+            "path": "via @radix-ui/react-radio-group/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "arrows",
+        "name": {
+          "ar": "مفاتيح الأسهم تتبع الاتجاه البصري",
+          "en": "Arrow keys follow visual direction"
+        },
+        "priority": "p0",
+        "in": [
+          "radix",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "radix",
+            "symbol": "dir",
+            "path": "@radix-ui/react-radio-group/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "dir",
+            "path": "via @radix-ui/react-radio-group/dist/index.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "radio-group: a single radio has no use alone, and five libraries name the group."
+      }
+    ]
+  }
+}

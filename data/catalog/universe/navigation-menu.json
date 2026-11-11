@@ -1,0 +1,518 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "navigation-menu",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "navigation-menu",
+    "name": {
+      "ar": "قائمة تنقل",
+      "en": "Navigation menu"
+    },
+    "summary": {
+      "ar": "تنقل الموقع أو التطبيق: أفقي بقوائم منبثقة أو رأسي بمجموعات متداخلة.",
+      "en": "Site or application navigation: horizontal with flyouts, or vertical with nested groups."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p0",
+    "engines": [
+      "roving-focus",
+      "disclosure",
+      "collection",
+      "overlay-layers",
+      "anchored-position"
+    ],
+    "anatomy": [
+      "root",
+      "list",
+      "item",
+      "trigger",
+      "content",
+      "link",
+      "indicator",
+      "group"
+    ],
+    "dependsOn": [
+      "link"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Menu"
+      },
+      {
+        "library": "mantine",
+        "name": "NavLink"
+      },
+      {
+        "library": "base-ui",
+        "name": "NavigationMenu"
+      },
+      {
+        "library": "radix",
+        "name": "NavigationMenu"
+      },
+      {
+        "library": "shadcn",
+        "name": "navigation-menu"
+      }
+    ],
+    "features": [
+      {
+        "id": "horizontal",
+        "name": {
+          "ar": "أفقية (تنقل علوي)",
+          "en": "Horizontal (top nav)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "mode",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "orientation",
+            "path": "@base-ui/react/navigation-menu/root/NavigationMenuRoot.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "orientation",
+            "path": "@radix-ui/react-navigation-menu/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "orientation",
+            "path": "via @radix-ui/react-navigation-menu/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "vertical",
+        "name": {
+          "ar": "رأسية",
+          "en": "Vertical"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "inline",
+        "name": {
+          "ar": "مضمّنة بقوائم فرعية قابلة للطي",
+          "en": "Inline with collapsible submenus"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "inlineIndent",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "collapsed",
+        "name": {
+          "ar": "مطوية (أيقونات فقط)",
+          "en": "Inline collapsed (icons only)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "inlineCollapsed",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "submenu",
+        "name": {
+          "ar": "قوائم فرعية متداخلة",
+          "en": "Nested submenus"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "groups",
+        "name": {
+          "ar": "مجموعات وفواصل",
+          "en": "Item groups and dividers"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "ItemGroup",
+            "path": "@rc-component/menu/es/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "selected",
+        "name": {
+          "ar": "مفاتيح محددة ومفتوحة متحكَّم بها",
+          "en": "Controlled selectedKeys / openKeys"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "selectedKeys",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "value",
+            "path": "@base-ui/react/navigation-menu/item/NavigationMenuItem.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "value",
+            "path": "@radix-ui/react-navigation-menu/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "value",
+            "path": "via @radix-ui/react-navigation-menu/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "multiple",
+        "name": {
+          "ar": "تحديد متعدد",
+          "en": "Multiple selection"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "multiple",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icons",
+        "name": {
+          "ar": "أيقونات العناصر",
+          "en": "Item icons"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "icon",
+            "path": "@rc-component/menu/es/Icon.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "leftSection",
+            "path": "@mantine/core/lib/components/NavLink/NavLink.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "danger",
+        "name": {
+          "ar": "عنصر خطر",
+          "en": "Danger item"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "danger",
+            "path": "antd/es/menu/MenuItem.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "عناصر معطلة",
+          "en": "Disabled items"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/NavLink/NavLink.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/navigation-menu/trigger/NavigationMenuTrigger.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "theme",
+        "name": {
+          "ar": "سمة فاتحة/داكنة",
+          "en": "Light / dark theme"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "theme",
+            "path": "antd/es/menu/MenuContext.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "overflow",
+        "name": {
+          "ar": "تجميع الزائد في «المزيد»",
+          "en": "Overflow into “more”"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "overflowedIndicator",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "التنقل بلوحة المفاتيح",
+          "en": "Keyboard navigation"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "اتجاه القوائم الفرعية وأسهمها في RTL",
+          "en": "RTL submenu direction and arrows"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "القوائم الفرعية تُفتح نحو نهاية السطر، ومفاتيح الأسهم تتبع الاتجاه البصري",
+            "en": "Submenus open toward the inline end, and arrow keys follow the visual direction"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "current",
+        "name": {
+          "ar": "تعليم الصفحة الحالية",
+          "en": "Current page marked (aria-current)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "active",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "active",
+            "path": "@mantine/core/lib/components/NavLink/NavLink.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "active",
+            "path": "@base-ui/react/navigation-menu/link/NavigationMenuLink.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "active",
+            "path": "@radix-ui/react-navigation-menu/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "active",
+            "path": "via @radix-ui/react-navigation-menu/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "indent",
+        "name": {
+          "ar": "المسافة البادئة للمتداخل من بداية السطر",
+          "en": "Nested indent from the inline start"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "inlineIndent",
+            "path": "@rc-component/menu/es/Menu.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "childrenOffset",
+            "path": "@mantine/core/lib/components/NavLink/NavLink.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "currency-input",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "currency-input",
+    "name": {
+      "ar": "حقل مبلغ",
+      "en": "Currency input"
+    },
+    "summary": {
+      "ar": "إدخال مبلغ يُخزَّن بالوحدات الصغرى الصحيحة لعملة معروفة.",
+      "en": "Amount entry stored as integer minor units of a known currency."
+    },
+    "family": "numeric-input",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "numeric-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "currency-label"
+    ],
+    "dependsOn": [
+      "number-input",
+      "field",
+      "money-text"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "minor-units",
+        "name": {
+          "ar": "يخزّن وحدات صغرى صحيحة لا كسرًا عشريًا",
+          "en": "Stores integer minor units, never a float"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "عدد الخانات العشرية يأتي من العملة: ٢ للجنيه والريال و٣ للدينار الكويتي والبحريني والأردني والتونسي والليبي والريال العماني",
+            "en": "Decimals come from the currency: 2 for EGP and SAR, 3 for KWD, BHD, OMR, JOD, TND and LYD"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "any-digits",
+        "name": {
+          "ar": "يقبل أي نظام أرقام والفواصل العربية",
+          "en": "Accepts any digit system and Arabic separators"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الإدخال يقبل الأرقام اللاتينية والهندية والفارسية أيًّا كان نظام أرقام العرض",
+            "en": "Typing accepts Latin, Arabic-Indic and Persian digits whatever the display numerals"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "ambiguous",
+        "name": {
+          "ar": "يرفض الفواصل الملتبسة مع اقتراحات",
+          "en": "Rejects ambiguous separators with suggestions"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الفاصلة اللاتينية أو العربية داخل المبلغ تُرفض مع عرض القراءتين، ولا يُقرَّب المبلغ ولا يُخمَّن",
+            "en": "A Latin comma or Arabic comma inside an amount is rejected with the two readings offered, never rounded or guessed"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "currency-name",
+        "name": {
+          "ar": "رمز العملة أو اسمها بحسب اللغة",
+          "en": "Currency symbol or name by locale"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "العربية تعرض اسم العملة بعد المبلغ بصيغة الجمع المناسبة، وجهة الرمز من بيانات اللغة",
+            "en": "Arabic shows the currency name after the amount with its plural form; the symbol side is locale data"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "no-rounding",
+        "name": {
+          "ar": "الخانات الزائدة خطأ ولا تُقرَّب",
+          "en": "Extra decimals are an error, not rounded"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "cash-rounding",
+        "name": {
+          "ar": "تلميح تقريب النقد",
+          "en": "Cash rounding hint"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "يعرض المبلغ المقرَّب للنقد حين تكون أصغر عملة معدنية أكبر من الوحدة الصغرى",
+            "en": "Shows the cash-rounded amount where the smallest coin is larger than the minor unit"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "currency-select",
+        "name": {
+          "ar": "اختيار العملة عند الحاجة",
+          "en": "Optional currency selector"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone as a component: the libraries offer number formatting options (React Aria and Base UI currency formats, ProComponents FieldMoney for display and edit) but none stores minor units or handles Arabic separators."
+      }
+    ]
+  }
+}

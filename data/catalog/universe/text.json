@@ -1,0 +1,311 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "text",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "text",
+    "name": {
+      "ar": "نص",
+      "en": "Text"
+    },
+    "summary": {
+      "ar": "نص أساسي بالحجم والوزن والنبرة والاقتطاع مع مراعاة نظام الأرقام.",
+      "en": "Body text with size, weight, tone, truncation and numerals awareness."
+    },
+    "family": "display",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Typography"
+      },
+      {
+        "library": "antd",
+        "name": "Typography.Text"
+      },
+      {
+        "library": "antd",
+        "name": "Typography.Paragraph"
+      },
+      {
+        "library": "mui",
+        "name": "Typography"
+      },
+      {
+        "library": "mantine",
+        "name": "Text"
+      },
+      {
+        "library": "chakra",
+        "name": "Text"
+      },
+      {
+        "library": "chakra",
+        "name": "Span"
+      },
+      {
+        "library": "chakra",
+        "name": "Em"
+      },
+      {
+        "library": "chakra",
+        "name": "Strong"
+      },
+      {
+        "library": "react-aria",
+        "name": "Text"
+      }
+    ],
+    "features": [
+      {
+        "id": "text-types",
+        "name": {
+          "ar": "أنواع النص (ثانوي، نجاح، تحذير، خطر)",
+          "en": "Text types (secondary, success, warning, danger)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "type",
+            "path": "antd/es/typography/Base/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "color",
+            "path": "@mui/material/Typography/Typography.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "copyable",
+        "name": {
+          "ar": "قابل للنسخ",
+          "en": "Copyable"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "copyable",
+            "path": "antd/es/typography/Base/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "editable",
+        "name": {
+          "ar": "قابل للتحرير",
+          "en": "Editable"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "editable",
+            "path": "antd/es/typography/Base/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "ellipsis",
+        "name": {
+          "ar": "اختصار النص مع التوسيع",
+          "en": "Ellipsis with expand / tooltip"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "ellipsis",
+            "path": "antd/es/typography/Base/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "noWrap",
+            "path": "@mui/material/Typography/Typography.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "truncate",
+            "path": "@mantine/core/lib/components/Text/Text.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mark-code-kbd",
+        "name": {
+          "ar": "تمييز، كود، مفتاح",
+          "en": "Mark, code, keyboard"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "numerals",
+        "name": {
+          "ar": "الأرقام تتبع تفضيل نظام الأرقام",
+          "en": "Numbers follow the numerals preference"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام داخل النص تتبع تفضيل نظام الأرقام، مع بقاء المعرّفات لاتينية والقيم الحرفية كما كُتبت",
+            "en": "Numbers inside copy follow the numerals preference, while identifiers stay Latin and literals stay verbatim"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "line-clamp",
+        "name": {
+          "ar": "الاقتصار على عدد من الأسطر",
+          "en": "Clamp to N lines"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الاقتطاع يحدث عند نهاية السطر بحسب اتجاه النص، وقد يفقد النص المختلط جزءه المهم",
+            "en": "Truncation cuts at the inline end of the text direction, and a mixed-script string can lose its meaningful part"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "rows",
+            "path": "antd/es/typography/Base/Ellipsis.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "lineClamp",
+            "path": "@mantine/core/lib/components/Text/Text.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "no-letter-spacing",
+        "name": {
+          "ar": "لا تباعد حروف في العربية",
+          "en": "No letter-spacing on Arabic"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "ارتفاع السطر يجب أن يتسع للتشكيل المتراكب، ولا يُطبَّق تباعد الحروف على العربية",
+            "en": "Line height must clear stacked diacritics; Arabic text takes no letter-spacing"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "split",
+        "note": "AntD Typography is three things; Title went to heading, Link to link, the rest stays here."
+      }
+    ]
+  }
+}

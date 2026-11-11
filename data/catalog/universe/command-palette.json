@@ -1,0 +1,191 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "command-palette",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "command-palette",
+    "name": {
+      "ar": "لوحة الأوامر",
+      "en": "Command palette"
+    },
+    "summary": {
+      "ar": "قائمة أوامر ووجهات قابلة للبحث تُفتح باختصار.",
+      "en": "A searchable list of commands and destinations opened with a shortcut."
+    },
+    "family": "navigation",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "combobox",
+      "listbox",
+      "collection",
+      "dialog",
+      "overlay-layers",
+      "focus-scope"
+    ],
+    "anatomy": [
+      "root",
+      "input",
+      "list",
+      "group",
+      "item",
+      "shortcut",
+      "empty",
+      "footer"
+    ],
+    "dependsOn": [
+      "dialog",
+      "combobox",
+      "kbd"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "Spotlight"
+      },
+      {
+        "library": "chakra",
+        "name": "Command"
+      },
+      {
+        "library": "shadcn",
+        "name": "command"
+      }
+    ],
+    "features": [
+      {
+        "id": "search",
+        "name": {
+          "ar": "بحث تقريبي متسامح مع العربية",
+          "en": "Fuzzy search tolerant of Arabic variants"
+        },
+        "priority": "p0",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "filter",
+            "path": "@mantine/spotlight/lib/Spotlight.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "filter",
+            "path": "@chakra-ui/react/dist/types/components/command/use-command-collection.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "bilingual",
+        "name": {
+          "ar": "إيجاد الأوامر بكلمات عربية أو إنجليزية",
+          "en": "Commands found by Arabic or English keywords"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "كل أمر يحمل كلمات مفتاحية باللغتين، والاستعلام المكتوب بتخطيط لوحة مفاتيح خاطئ يطابق أيضًا",
+            "en": "Each command carries keywords in both languages, and a query typed on the wrong keyboard layout still matches"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "keywords",
+            "path": "@mantine/spotlight/lib/SpotlightAction.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "keywords",
+            "path": "@chakra-ui/react/dist/types/components/command/command-score.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "shortcut",
+        "name": {
+          "ar": "اختصار عام",
+          "en": "Global shortcut"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "shortcut",
+            "path": "@mantine/spotlight/lib/SpotlightRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "groups",
+        "name": {
+          "ar": "مجموعات وصفحات متداخلة",
+          "en": "Groups and nested pages"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "app-shell",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "app-shell",
+    "name": {
+      "ar": "هيكل التطبيق",
+      "en": "App shell"
+    },
+    "summary": {
+      "ar": "إطار الصفحة: رأس وتنقل جانبي ومحتوى وتذييل، مع طيّ متجاوب.",
+      "en": "Page frame: header, side navigation, content and footer, with responsive collapse."
+    },
+    "family": "layout",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "disclosure",
+      "resize"
+    ],
+    "anatomy": [
+      "root",
+      "header",
+      "navbar",
+      "aside",
+      "main",
+      "footer"
+    ],
+    "dependsOn": [
+      "sidebar"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Layout"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProLayout"
+      },
+      {
+        "library": "antd-pro",
+        "name": "PageContainer"
+      },
+      {
+        "library": "antd-pro",
+        "name": "PageHeader"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProPageHeader"
+      },
+      {
+        "library": "antd-pro",
+        "name": "TopNavHeader"
+      },
+      {
+        "library": "antd-pro",
+        "name": "DefaultFooter"
+      },
+      {
+        "library": "antd-pro",
+        "name": "SettingDrawer"
+      },
+      {
+        "library": "mui",
+        "name": "AppBar"
+      },
+      {
+        "library": "mui",
+        "name": "Toolbar"
+      },
+      {
+        "library": "mantine",
+        "name": "AppShell"
+      }
+    ],
+    "features": [
+      {
+        "id": "header-footer-content",
+        "name": {
+          "ar": "رأس ومحتوى وتذييل",
+          "en": "Header / Content / Footer"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "sider",
+        "name": {
+          "ar": "شريط جانبي",
+          "en": "Sider"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Sider",
+            "path": "antd/es/layout/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "navbar",
+            "path": "@mantine/core/lib/components/AppShell/AppShell.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "collapsible",
+        "name": {
+          "ar": "شريط جانبي قابل للطي",
+          "en": "Collapsible sider with breakpoint"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "collapsible",
+            "path": "antd/es/layout/Sider.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "collapsed",
+            "path": "@ant-design/pro-layout/es/ProLayout.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "collapsed",
+            "path": "@mantine/core/lib/components/AppShell/AppShell.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl-sider",
+        "name": {
+          "ar": "الشريط الجانبي في بداية السطر في RTL",
+          "en": "Sider on the inline start in RTL"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "التنقل الجانبي يقع عند بداية السطر وسهم الطي ينعكس، وانعكاس القائمة الجانبية يقلب مسار التنقل أيضًا",
+            "en": "The side navigation sits on the inline start and its collapse arrow mirrors; a mirrored side menu also flips breadcrumbs"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "sticky-header",
+        "name": {
+          "ar": "رأس ثابت مع إزاحة المحتوى",
+          "en": "Fixed header with content offset"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro",
+          "mui",
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "fixedHeader",
+            "path": "@ant-design/pro-layout/es/components/PageContainer/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "position",
+            "path": "@mui/material/AppBar/AppBar.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withBorder",
+            "path": "@mantine/core/lib/components/AppShell/AppShell.context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "page-header",
+        "name": {
+          "ar": "رأس صفحة بعنوان ومسار وإجراءات",
+          "en": "Page header with title, breadcrumb and actions"
+        },
+        "priority": "p2",
+        "in": [
+          "antd-pro"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "breadcrumb",
+            "path": "@ant-design/pro-layout/es/ProLayout.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

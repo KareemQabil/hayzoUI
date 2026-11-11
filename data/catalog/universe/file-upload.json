@@ -1,0 +1,540 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "file-upload",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "file-upload",
+    "name": {
+      "ar": "رفع الملفات",
+      "en": "File upload"
+    },
+    "summary": {
+      "ar": "يختار الملفات أو يُسقطها ويتحقق منها ويتتبع رفع كل ملف.",
+      "en": "Picks or drops files, validates them and tracks each upload."
+    },
+    "family": "data",
+    "tier": "T4",
+    "priority": "p1",
+    "engines": [
+      "upload-queue",
+      "press"
+    ],
+    "anatomy": [
+      "root",
+      "dropzone",
+      "trigger",
+      "list",
+      "item",
+      "preview",
+      "progress",
+      "remove",
+      "retry"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Upload"
+      },
+      {
+        "library": "antd",
+        "name": "Upload.Dragger"
+      },
+      {
+        "library": "mantine",
+        "name": "Dropzone"
+      },
+      {
+        "library": "mantine",
+        "name": "FileInput"
+      },
+      {
+        "library": "mantine",
+        "name": "FileButton"
+      },
+      {
+        "library": "chakra",
+        "name": "FileUpload"
+      },
+      {
+        "library": "react-aria",
+        "name": "DropZone"
+      },
+      {
+        "library": "react-aria",
+        "name": "FileTrigger"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "الرفع بالنقر",
+          "en": "Click to upload"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "drag",
+        "name": {
+          "ar": "السحب والإفلات",
+          "en": "Drag and drop (Dragger)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "Dragger",
+            "path": "antd/es/upload/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "onDrop",
+            "path": "@mantine/dropzone/lib/Dropzone.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "dropzone",
+            "path": "@zag-js/file-upload/dist/file-upload.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "list",
+        "name": {
+          "ar": "قائمة الملفات مع الحالة",
+          "en": "File list with status"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fileList",
+            "path": "antd/es/upload/Upload.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "progress",
+        "name": {
+          "ar": "شريط التقدم",
+          "en": "Progress"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "progress",
+            "path": "antd/es/upload/UploadList/ListItem.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "picture",
+        "name": {
+          "ar": "بطاقات الصور",
+          "en": "Picture card / list"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "listType",
+            "path": "antd/es/upload/UploadList/ListItem.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "preview",
+        "name": {
+          "ar": "معاينة",
+          "en": "Preview"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onPreview",
+            "path": "antd/es/upload/UploadList/ListItem.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "before-upload",
+        "name": {
+          "ar": "تحقق قبل الرفع",
+          "en": "beforeUpload validation"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "beforeUpload",
+            "path": "@rc-component/upload/es/Upload.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "validator",
+            "path": "@mantine/dropzone/lib/Dropzone.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "validate",
+            "path": "@zag-js/file-upload/dist/file-upload.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "custom-request",
+        "name": {
+          "ar": "طلب مخصص",
+          "en": "customRequest"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "customRequest",
+            "path": "@rc-component/upload/es/Upload.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "multiple",
+        "name": {
+          "ar": "ملفات متعددة ومجلدات",
+          "en": "Multiple / directory"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "multiple",
+            "path": "@rc-component/upload/es/Upload.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "multiple",
+            "path": "@mantine/dropzone/lib/Dropzone.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "multiple",
+            "path": "@zag-js/file-upload/dist/file-upload.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "allowsMultiple",
+            "path": "react-aria-components/dist/types/src/FileTrigger.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "max-count",
+        "name": {
+          "ar": "حد عدد الملفات",
+          "en": "maxCount"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "maxCount",
+            "path": "antd/es/upload/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "maxFiles",
+            "path": "@mantine/dropzone/lib/Dropzone.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "maxFiles",
+            "path": "@zag-js/file-upload/dist/file-upload.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "accept",
+        "name": {
+          "ar": "أنواع مقبولة",
+          "en": "accept types"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "accept",
+            "path": "@rc-component/upload/es/interface.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "accept",
+            "path": "@mantine/dropzone/lib/Dropzone.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "accept",
+            "path": "@zag-js/file-upload/dist/file-upload.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "acceptedFileTypes",
+            "path": "react-aria-components/dist/types/src/FileTrigger.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "controlled",
+        "name": {
+          "ar": "قائمة ملفات متحكم بها",
+          "en": "Controlled fileList"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "fileList",
+            "path": "antd/es/upload/Upload.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "acceptedFiles",
+            "path": "@zag-js/file-upload/dist/file-upload.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "remove",
+        "name": {
+          "ar": "حذف وإعادة محاولة",
+          "en": "Remove / retry"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onRemove",
+            "path": "antd/es/upload/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "crop",
+        "name": {
+          "ar": "قص الصورة",
+          "en": "Image crop (antd-img-crop)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "arabic-names",
+        "name": {
+          "ar": "أسماء الملفات العربية باتجاه صحيح",
+          "en": "Arabic file names render with correct direction"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "اسم الملف العربي بامتداد لاتيني يتغير ترتيبه في النص ثنائي الاتجاه، فيحتاج الاسم عزلًا مع إبقاء الامتداد في آخره",
+            "en": "An Arabic file name with a Latin extension reorders in bidi text; the name needs isolation with the extension kept at its end"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "size-text",
+        "name": {
+          "ar": "حجم الملف منسّق بحسب اللغة",
+          "en": "File size formatted by locale"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأحجام تستخدم وحدات اللغة ونظام أرقام النطاق («٢٫٤ م.ب»)",
+            "en": "Sizes use locale units and the scope numerals (\"٢٫٤ م.ب\")"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "paste",
+        "name": {
+          "ar": "اللصق من الحافظة",
+          "en": "Paste from clipboard"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "pastable",
+            "path": "@rc-component/upload/es/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "camera",
+        "name": {
+          "ar": "الالتقاط من الكاميرا",
+          "en": "Capture from camera"
+        },
+        "priority": "p2",
+        "in": [
+          "mantine",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "capture",
+            "path": "@mantine/core/lib/components/FileInput/FileInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "capture",
+            "path": "@zag-js/file-upload/dist/file-upload.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "defaultCamera",
+            "path": "react-aria-components/dist/types/src/FileTrigger.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

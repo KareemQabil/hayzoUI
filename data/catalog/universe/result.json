@@ -1,0 +1,136 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "result",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "result",
+    "name": {
+      "ar": "صفحة نتيجة",
+      "en": "Result"
+    },
+    "summary": {
+      "ar": "نتيجة تملأ القسم: نجاح أو فشل أو خطأ HTTP.",
+      "en": "A full-section outcome: success, failure or an HTTP error."
+    },
+    "family": "feedback",
+    "tier": "T3",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "icon",
+      "title",
+      "subtitle",
+      "extra"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Result"
+      }
+    ],
+    "features": [
+      {
+        "id": "status",
+        "name": {
+          "ar": "الحالة",
+          "en": "Status success / error / info / warning"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/result/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "http",
+        "name": {
+          "ar": "صفحات الأخطاء",
+          "en": "403 / 404 / 500"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "extra",
+        "name": {
+          "ar": "إجراءات",
+          "en": "Extra actions"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "extra",
+            "path": "antd/es/result/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "codes",
+        "name": {
+          "ar": "رموز الأخطاء تبقى لاتينية",
+          "en": "Error codes stay Latin"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "رموز HTTP مثل 404 معرّفات تحتفظ بالأرقام اللاتينية حتى مع نظام الأرقام الهندية",
+            "en": "HTTP codes such as 404 are identifiers and keep Latin digits even under Arabic-Indic numerals"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

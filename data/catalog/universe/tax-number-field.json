@@ -1,0 +1,118 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "tax-number-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "tax-number-field",
+    "name": {
+      "ar": "حقل الرقم الضريبي",
+      "en": "Tax number field"
+    },
+    "summary": {
+      "ar": "إدخال رقم التسجيل الضريبي مع التحقق لكل دولة.",
+      "en": "Tax registration number entry validated per country."
+    },
+    "family": "text-input",
+    "tier": "T5",
+    "priority": "p0",
+    "engines": [
+      "segmented-input",
+      "text-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control"
+    ],
+    "dependsOn": [
+      "mask-input",
+      "ltr-island"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "rules",
+        "name": {
+          "ar": "الطول والبنية لكل جهة ضريبية",
+          "en": "Length and structure per authority"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الرقم الضريبي السعودي ١٥ خانة يبدأ وينتهي بـ٣، والمصري ٩ خانات، والإماراتي ١٥ خانة",
+            "en": "Saudi VAT numbers are 15 digits beginning and ending with 3; Egyptian registration numbers are 9 digits; the UAE TRN is 15"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "any-digits",
+        "name": {
+          "ar": "أي نظام أرقام عند الإدخال ولاتينية عند التخزين",
+          "en": "Any digit system in, Latin digits stored"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الإدخال يقبل الأرقام اللاتينية والهندية والفارسية أيًّا كان نظام أرقام العرض",
+            "en": "Typing accepts Latin, Arabic-Indic and Persian digits whatever the display numerals"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "ltr",
+        "name": {
+          "ar": "جزيرة LTR مع تجميع",
+          "en": "LTR island with grouping"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "related",
+        "name": {
+          "ar": "صيغة رقم السجل التجاري",
+          "en": "Commercial registration number variant"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone. Rule values quoted in notes are examples to be confirmed against data/finance, which is the source of truth."
+      }
+    ]
+  }
+}

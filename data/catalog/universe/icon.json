@@ -1,0 +1,201 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "icon",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "icon",
+    "name": {
+      "ar": "أيقونة",
+      "en": "Icon"
+    },
+    "summary": {
+      "ar": "أيقونة من المجموعة مع قاعدة انعكاس لكل أيقونة.",
+      "en": "An icon from the set, with a mirroring rule per icon."
+    },
+    "family": "display",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "mui",
+        "name": "Icon"
+      },
+      {
+        "library": "mui",
+        "name": "SvgIcon"
+      },
+      {
+        "library": "mantine",
+        "name": "ThemeIcon",
+        "note": "themed container for an icon"
+      },
+      {
+        "library": "chakra",
+        "name": "Icon"
+      }
+    ],
+    "features": [
+      {
+        "id": "set",
+        "name": {
+          "ar": "مكتبة أيقونات كبيرة (محددة، مصمتة، ثنائية اللون)",
+          "en": "Large icon set (outlined, filled, two-tone)"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "custom",
+        "name": {
+          "ar": "أيقونات SVG مخصصة",
+          "en": "Custom SVG icons"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "spin",
+        "name": {
+          "ar": "دوران",
+          "en": "Spin / rotate"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "a11y",
+        "name": {
+          "ar": "اسم مقروء للأيقونة",
+          "en": "Accessible label"
+        },
+        "priority": "p1",
+        "in": [
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "titleAccess",
+            "path": "@mui/material/SvgIcon/SvgIcon.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "mirroring",
+        "name": {
+          "ar": "عكس الأيقونات الاتجاهية في RTL",
+          "en": "Directional icons mirrored in RTL"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأيقونات الاتجاهية (الأسهم) يجب أن تنعكس في RTL، وغير الاتجاهية لا تنعكس",
+            "en": "Directional icons (chevrons, arrows) must mirror in RTL; non-directional ones must not"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "size-token",
+        "name": {
+          "ar": "الحجم من سلّم الخطوط",
+          "en": "Size from the type scale"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "fontSize",
+            "path": "@mui/material/Icon/Icon.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/ThemeIcon/ThemeIcon.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/icon.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "antd 6 exports no Icon component (icons live in @ant-design/icons), so there is no AntD alias and the matrix rows are kept without an `in`."
+      },
+      {
+        "topic": "scope",
+        "note": "The iconfont row is dropped: icon fonts are out of scope."
+      }
+    ]
+  }
+}

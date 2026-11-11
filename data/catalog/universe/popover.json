@@ -1,0 +1,455 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "popover",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "popover",
+    "name": {
+      "ar": "نافذة منبثقة",
+      "en": "Popover"
+    },
+    "summary": {
+      "ar": "محتوى غير حاجب مثبت عند عنصر مشغِّل.",
+      "en": "Non-modal content anchored to a trigger."
+    },
+    "family": "overlay",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "overlay-layers",
+      "anchored-position",
+      "focus-scope",
+      "disclosure"
+    ],
+    "anatomy": [
+      "trigger",
+      "popup",
+      "arrow",
+      "title",
+      "close"
+    ],
+    "dependsOn": [
+      "portal"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Popover"
+      },
+      {
+        "library": "mui",
+        "name": "Popover"
+      },
+      {
+        "library": "mui",
+        "name": "Popper",
+        "note": "positioning only"
+      },
+      {
+        "library": "mantine",
+        "name": "Popover"
+      },
+      {
+        "library": "chakra",
+        "name": "Popover"
+      },
+      {
+        "library": "react-aria",
+        "name": "Popover"
+      },
+      {
+        "library": "base-ui",
+        "name": "Popover"
+      },
+      {
+        "library": "radix",
+        "name": "Popover"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Popover"
+      },
+      {
+        "library": "shadcn",
+        "name": "popover"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عنوان ومحتوى",
+          "en": "Title and content"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "trigger",
+        "name": {
+          "ar": "المشغّل",
+          "en": "Trigger hover / click / focus"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "chakra",
+            "symbol": "trigger",
+            "path": "@zag-js/popover/dist/popover.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "trigger",
+            "path": "react-aria-components/dist/types/src/Popover.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "openOnHover",
+            "path": "@base-ui/react/popover/store/PopoverStore.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement (12 positions)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "placement",
+            "path": "@mui/material/Popper/BasePopper.types.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "placement",
+            "path": "@mantine/core/lib/components/Popover/Popover.context.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "placement",
+            "path": "react-aria-components/dist/types/src/Popover.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "side",
+            "path": "@base-ui/react/popover/arrow/PopoverArrow.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "controlled",
+        "name": {
+          "ar": "فتح متحكم به",
+          "en": "Controlled open"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "open",
+            "path": "@mui/material/Popover/Popover.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "open",
+            "path": "@mantine/core/lib/components/Popover/use-popover.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "open",
+            "path": "@zag-js/popover/dist/popover.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "open",
+            "path": "@base-ui/react/popover/arrow/PopoverArrow.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "open",
+            "path": "@radix-ui/react-popover/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "open",
+            "path": "@headlessui/react/dist/components/popover/popover-machine.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "open",
+            "path": "via @radix-ui/react-popover/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl",
+        "name": {
+          "ar": "موضع منطقي في RTL",
+          "en": "Logical placement in RTL"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الموضع المسمى left يجب أن يعني البداية، وقلب الموضع عند الاصطدام يجب أن يعمل من الجهة المعكوسة",
+            "en": "A placement called left must mean start, and collision flipping has to work from the mirrored side"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "collision",
+        "name": {
+          "ar": "القلب والإزاحة عند الاصطدام",
+          "en": "Flip and shift on collision"
+        },
+        "priority": "p0",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "flip",
+            "path": "@mantine/core/lib/components/Popover/Popover.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "dismiss",
+        "name": {
+          "ar": "الإغلاق بالنقر خارجًا و Escape",
+          "en": "Outside press and Escape"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "onClose",
+            "path": "@mui/material/Popover/Popover.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "closeOnClickOutside",
+            "path": "@mantine/core/lib/components/Popover/Popover.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "closeOnInteractOutside",
+            "path": "@zag-js/popover/dist/popover.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "name": {
+          "ar": "التركيز يدخل ثم يعود",
+          "en": "Focus moves in and returns"
+        },
+        "priority": "p0",
+        "in": [
+          "mantine",
+          "chakra",
+          "base-ui",
+          "radix",
+          "headless-ui",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "trapFocus",
+            "path": "@mantine/core/lib/components/Popover/Popover.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "autoFocus",
+            "path": "@zag-js/popover/dist/popover.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "initialFocus",
+            "path": "@base-ui/react/popover/popup/PopoverPopup.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "trapFocus",
+            "path": "@radix-ui/react-popover/dist/index.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "autoFocus",
+            "path": "@headlessui/react/dist/components/popover/popover.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "trapFocus",
+            "path": "via @radix-ui/react-popover/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "arrow",
+        "name": {
+          "ar": "سهم",
+          "en": "Arrow"
+        },
+        "priority": "p2",
+        "in": [
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "withArrow",
+            "path": "@mantine/core/lib/components/Popover/Popover.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "arrow",
+            "path": "@zag-js/popover/dist/popover.types.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

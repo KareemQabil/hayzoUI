@@ -1,0 +1,281 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "theme-provider",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "theme-provider",
+    "name": {
+      "ar": "مزوّد السمة",
+      "en": "Theme provider"
+    },
+    "summary": {
+      "ar": "نطاق يحوّل الرموز ونظام الألوان والكثافة إلى متغيرات CSS.",
+      "en": "Scope that resolves tokens, colour scheme and density to CSS variables."
+    },
+    "family": "utility",
+    "tier": "T0",
+    "priority": "p0",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "ConfigProvider"
+      },
+      {
+        "library": "mui",
+        "name": "ThemeProvider"
+      },
+      {
+        "library": "mantine",
+        "name": "MantineProvider"
+      },
+      {
+        "library": "chakra",
+        "name": "ChakraProvider"
+      },
+      {
+        "library": "chakra",
+        "name": "Theme"
+      }
+    ],
+    "features": [
+      {
+        "id": "theme",
+        "name": {
+          "ar": "رموز السمة",
+          "en": "Theme tokens"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "theme",
+            "path": "antd/es/config-provider/context.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "theme",
+            "path": "@mui/material/styles/ThemeProvider.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "theme",
+            "path": "@mantine/core/lib/core/MantineProvider/MantineCssVariables/get-css-color-variables.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "algorithm",
+        "name": {
+          "ar": "خوارزميات داكن/مضغوط",
+          "en": "Dark / compact algorithms"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "component-size",
+        "name": {
+          "ar": "حجم المكوّنات",
+          "en": "componentSize"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "componentSize",
+            "path": "antd/es/config-provider/hooks/useConfig.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "component-tokens",
+        "name": {
+          "ar": "رموز على مستوى المكوّن",
+          "en": "Component-level tokens"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "css-var",
+        "name": {
+          "ar": "نمط متغيرات CSS",
+          "en": "CSS variables mode"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "prefix",
+        "name": {
+          "ar": "بادئة الأصناف وحاوية النوافذ",
+          "en": "prefixCls / getPopupContainer"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "prefixCls",
+            "path": "antd/es/config-provider/hooks/useTheme.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "classNamesPrefix",
+            "path": "@mantine/core/lib/core/MantineProvider/Mantine.context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "color-scheme",
+        "name": {
+          "ar": "نظام الألوان: فاتح، داكن، بحسب النظام",
+          "en": "Light / dark / system colour scheme"
+        },
+        "priority": "p0",
+        "in": [
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "defaultMode",
+            "path": "@mui/material/styles/ThemeProvider.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "defaultColorScheme",
+            "path": "@mantine/core/lib/core/MantineProvider/ColorSchemeScript/ColorSchemeScript.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "appearance",
+            "path": "@chakra-ui/react/dist/types/components/theme.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "density",
+        "name": {
+          "ar": "الكثافة كإعداد للنطاق لا كخاصية",
+          "en": "Density as a scope setting, never a prop"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الكثافة المضغوطة يجب أن تتسع للتشكيل العربي، فارتفاع الصفوف يُؤخذ من ارتفاع السطر المقيس للخط العربي",
+            "en": "Compact density still has to clear Arabic diacritics: row heights come from measured line heights of the Arabic face"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "font-per-script",
+        "name": {
+          "ar": "خط لكل نظام كتابة",
+          "en": "Font family per script"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُحدَّد الخط العربي واللاتيني كلٌّ على حدة ليبقى الوزن والارتفاع متناسقين في النص المختلط",
+            "en": "Arabic and Latin faces are set separately, so mixed text keeps matched weight and x-height"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

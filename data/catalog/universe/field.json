@@ -1,0 +1,447 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "field",
+    "name": {
+      "ar": "حقل",
+      "en": "Field"
+    },
+    "summary": {
+      "ar": "يربط عنصر الإدخال بعنوانه ووصفه ورسالة الخطأ.",
+      "en": "Wires a control to its label, description and error message."
+    },
+    "family": "utility",
+    "tier": "T1",
+    "priority": "p0",
+    "engines": [
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "label",
+      "required-indicator",
+      "description",
+      "error",
+      "control"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Form.Item"
+      },
+      {
+        "library": "mui",
+        "name": "FormControl"
+      },
+      {
+        "library": "mui",
+        "name": "FormLabel"
+      },
+      {
+        "library": "mui",
+        "name": "FormHelperText"
+      },
+      {
+        "library": "mui",
+        "name": "InputLabel"
+      },
+      {
+        "library": "mantine",
+        "name": "Input.Wrapper"
+      },
+      {
+        "library": "mantine",
+        "name": "InputWrapper"
+      },
+      {
+        "library": "mantine",
+        "name": "InputLabel"
+      },
+      {
+        "library": "mantine",
+        "name": "InputError"
+      },
+      {
+        "library": "mantine",
+        "name": "InputDescription"
+      },
+      {
+        "library": "chakra",
+        "name": "Field"
+      },
+      {
+        "library": "react-aria",
+        "name": "Label"
+      },
+      {
+        "library": "react-aria",
+        "name": "FieldError"
+      },
+      {
+        "library": "base-ui",
+        "name": "Field"
+      },
+      {
+        "library": "radix",
+        "name": "Label"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Field"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Label"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Description"
+      },
+      {
+        "library": "shadcn",
+        "name": "field"
+      },
+      {
+        "library": "shadcn",
+        "name": "label"
+      }
+    ],
+    "features": [
+      {
+        "id": "item-anatomy",
+        "name": {
+          "ar": "ربط العنوان والمساعدة والخطأ",
+          "en": "Form.Item label, help, error wiring"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "label",
+            "path": "antd/es/form/Form.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "label",
+            "path": "@mui/material/FormControlLabel/FormControlLabel.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "label",
+            "path": "@mantine/core/lib/components/Input/InputLabel/InputLabel.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "label",
+            "path": "@ark-ui/react/dist/components/field/use-field.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "required-mark",
+        "name": {
+          "ar": "علامة الإلزامي/الاختياري",
+          "en": "Required / optional marks"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "required",
+            "path": "@rc-component/form/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "required",
+            "path": "@mui/material/FormControl/FormControl.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "required",
+            "path": "@mantine/core/lib/components/Input/Input.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "required",
+            "path": "@ark-ui/react/dist/components/field/use-field.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "feedback-icons",
+        "name": {
+          "ar": "أيقونات حالة التحقق",
+          "en": "hasFeedback icons"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "hasFeedback",
+            "path": "antd/es/form/FormItem/StatusProvider.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "field-disabled",
+        "name": {
+          "ar": "تعطيل حقل",
+          "en": "Field-level disabled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "base-ui",
+          "headless-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "antd/es/form/Form.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/FormControl/FormControl.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/Input/Input.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@ark-ui/react/dist/components/field/use-field.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/field/item/FieldItem.d.ts"
+          },
+          {
+            "library": "headless-ui",
+            "symbol": "disabled",
+            "path": "@headlessui/react/dist/components/field/field.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "optional-default",
+        "name": {
+          "ar": "الإلزام هو الأصل ويُعلَّم الاختياري",
+          "en": "Required is the default; optional is marked"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "error-live",
+        "name": {
+          "ar": "إعلان الخطأ عند ظهوره",
+          "en": "Error announced when it appears"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "نص الخطأ الذي يقتبس قيمة مكتوبة يعزل تلك القيمة فلا يتغير ترتيب الأرقام واللاتينية داخل الجملة العربية",
+            "en": "Error text quoting a typed value keeps that value isolated so digits and Latin do not reorder inside the Arabic sentence"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "label-side",
+        "name": {
+          "ar": "العنوان فوق الحقل أو عند بداية السطر",
+          "en": "Label above or at the inline start"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "labelAlign",
+            "path": "antd/es/form/Form.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/field.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "orientation",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/field.tsx"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "name": {
+          "ar": "عدّاد الحروف",
+          "en": "Character count"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "العدّ يكون بالحرف المرئي، فالحرف العربي مع تشكيله حرف واحد عند الكاتب",
+            "en": "Count by grapheme: an Arabic letter with diacritics is one character to the person typing"
+          }
+        },
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "Label is a part of field, not its own entry, although Radix, React Aria, Headless UI and shadcn publish it separately."
+      }
+    ]
+  }
+}

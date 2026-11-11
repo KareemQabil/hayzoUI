@@ -1,0 +1,95 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "numeric-keypad",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "numeric-keypad",
+    "name": {
+      "ar": "لوحة أرقام",
+      "en": "Numeric keypad"
+    },
+    "summary": {
+      "ar": "لوحة أرقام على الشاشة لمبالغ نقاط البيع والأكشاك.",
+      "en": "On-screen digit pad for point-of-sale and kiosk amounts."
+    },
+    "family": "numeric-input",
+    "tier": "T5",
+    "priority": "p2",
+    "engines": [
+      "press",
+      "numeric-input",
+      "grid-navigation"
+    ],
+    "anatomy": [
+      "root",
+      "key",
+      "display"
+    ],
+    "dependsOn": [
+      "button",
+      "currency-input"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "layout",
+        "name": {
+          "ar": "تخطيط المفاتيح لا ينعكس",
+          "en": "Key layout is not mirrored"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "صف ١-٢-٣ يُقرأ من اليسار إلى اليمين في كل هاتف وآلة حاسبة حتى في العربية، وتتغير العناوين فقط إلى الأرقام الهندية",
+            "en": "The 1-2-3 row reads left to right on every phone and calculator, in Arabic too; only the labels change to Arabic-Indic digits"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "decimal",
+        "name": {
+          "ar": "مفتاح الفاصلة العشرية بحسب العملة",
+          "en": "Decimal key by currency"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "touch",
+        "name": {
+          "ar": "مساحات لمس ٤٤ بكسل",
+          "en": "44 px touch targets"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; added for the point-of-sale context the owner's tokens already describe."
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "hijri-date-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "hijri-date-picker",
+    "name": {
+      "ar": "منتقي التاريخ الهجري",
+      "en": "Hijri date picker"
+    },
+    "summary": {
+      "ar": "منتقي تاريخ حقله وشبكته بتقويم هجري مع تخزين التاريخ الميلادي بصيغة ISO.",
+      "en": "Date picker whose field and grid are in a Hijri calendar, storing the Gregorian ISO date."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "calendar-grid",
+      "segmented-input",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "field",
+      "trigger",
+      "popup",
+      "calendar",
+      "gregorian-hint"
+    ],
+    "dependsOn": [
+      "date-picker"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "umm-al-qura",
+        "name": {
+          "ar": "أم القرى مع بيان مجال السنوات المدعوم",
+          "en": "Umm al-Qura with its supported year range stated"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "تقويم أم القرى جدول لا معادلة، والتواريخ خارجه تعود إلى تقويم حسابي ويبيّن الحقل ذلك",
+            "en": "Umm al-Qura is a table, not a formula; dates outside the table fall back to a calculated calendar and the field says so"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "variants",
+        "name": {
+          "ar": "إتاحة الصيغتين المدنية والحسابية",
+          "en": "Civil and tabular variants selectable"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الدول التي لا تتبع أم القرى تحتاج الصيغة المدنية أو الحسابية، وتعديل الرؤية بيوم أو يومين",
+            "en": "Countries that do not follow Umm al-Qura need the civil or tabular variant, and sighting-based adjustment by ±1 or ±2 days"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "month-names",
+        "name": {
+          "ar": "أسماء الشهور الهجرية بصيغتيها الكاملة والمختصرة",
+          "en": "Hijri month names with full and short forms"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأسماء تأتي من CLDR للتقاويم الإسلامية بلغة النطاق",
+            "en": "Names come from CLDR for the islamic calendars, in the scope language"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "month-length",
+        "name": {
+          "ar": "شهور من ٢٩ أو ٣٠ يومًا من بيانات التقويم",
+          "en": "29 or 30 day months from the calendar data"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "gregorian-hint",
+        "name": {
+          "ar": "المقابل الميلادي يُعرض بجوار القيمة",
+          "en": "Gregorian equivalent shown beside the value"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "adjustment",
+        "name": {
+          "ar": "إعداد تعديل الأيام",
+          "en": "Day adjustment setting"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone as a component. Libraries reach Hijri through adapters rather than a component: MUI X ships AdapterMomentHijri (a date adapter subpath, not a root export), and React Aria through the calendar systems of @internationalized/date. Neither is recorded as an alias."
+      }
+    ]
+  }
+}

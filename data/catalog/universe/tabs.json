@@ -1,0 +1,723 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "tabs",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Radix Primitives",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "radix-ui@1.8.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Headless UI",
+        "url": "https://github.com/tailwindlabs/headlessui",
+        "version": "@headlessui/react@2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "tabs",
+    "name": {
+      "ar": "تبويبات",
+      "en": "Tabs"
+    },
+    "summary": {
+      "ar": "تبدّل بين ألواح عرض واحد.",
+      "en": "Switches between panels of one view."
+    },
+    "family": "navigation",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "tabs",
+      "roving-focus",
+      "selection"
+    ],
+    "anatomy": [
+      "root",
+      "list",
+      "tab",
+      "indicator",
+      "panel"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Tabs"
+      },
+      {
+        "library": "mui",
+        "name": "Tabs"
+      },
+      {
+        "library": "mui",
+        "name": "Tab"
+      },
+      {
+        "library": "mui",
+        "name": "TabScrollButton"
+      },
+      {
+        "library": "mantine",
+        "name": "Tabs"
+      },
+      {
+        "library": "chakra",
+        "name": "Tabs"
+      },
+      {
+        "library": "react-aria",
+        "name": "Tabs"
+      },
+      {
+        "library": "react-aria",
+        "name": "Tab"
+      },
+      {
+        "library": "base-ui",
+        "name": "Tabs"
+      },
+      {
+        "library": "radix",
+        "name": "Tabs"
+      },
+      {
+        "library": "headless-ui",
+        "name": "TabGroup"
+      },
+      {
+        "library": "headless-ui",
+        "name": "Tab"
+      },
+      {
+        "library": "shadcn",
+        "name": "tabs"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "العناصر، تحكم وبدون تحكم",
+          "en": "Items, controlled / uncontrolled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "لوحة المفاتيح: الأسهم وHome/End",
+          "en": "Keyboard: arrows, Home/End, roving tabindex"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "selectionFollowsFocus",
+            "path": "@mui/material/Tabs/Tabs.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "loop",
+            "path": "@mantine/core/lib/components/Tabs/Tabs.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "activationMode",
+            "path": "@zag-js/tabs/dist/tabs.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "keyboardActivation",
+            "path": "react-aria/dist/types/src/tabs/useTabList.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "activateOnFocus",
+            "path": "@base-ui/react/tabs/list/TabsList.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "activationMode",
+            "path": "@radix-ui/react-tabs/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "activationMode",
+            "path": "via @radix-ui/react-tabs/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "rtl-arrows",
+        "name": {
+          "ar": "الأسهم تتبع الاتجاه البصري في RTL",
+          "en": "Arrow keys follow visual direction in RTL"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "في RTL السهم الأيسر ينتقل إلى التبويب التالي",
+            "en": "In RTL ArrowLeft selects the next tab"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "card",
+        "name": {
+          "ar": "نمط البطاقة",
+          "en": "Card type"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "type",
+            "path": "antd/es/tabs/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "variant",
+            "path": "@mui/material/Tabs/Tabs.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "variant",
+            "path": "@mantine/core/lib/components/Tabs/Tabs.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/tabs.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "variant",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/tabs.tsx"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "name": {
+          "ar": "عدّاد على التبويب",
+          "en": "Count badge on tab"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "icons",
+        "name": {
+          "ar": "أيقونات في التبويبات",
+          "en": "Icons in tabs"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "icon",
+            "path": "@rc-component/tabs/es/TabPanelList/TabPane.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "icon",
+            "path": "@mui/material/Tab/Tab.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "leftSection",
+            "path": "@mantine/core/lib/components/Tabs/TabsTab/TabsTab.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "editable",
+        "name": {
+          "ar": "إضافة وإغلاق التبويبات",
+          "en": "Editable card: add / close tabs"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "onEdit",
+            "path": "@rc-component/tabs/es/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "extra",
+        "name": {
+          "ar": "محتوى إضافي في الشريط",
+          "en": "Extra content (tabBarExtraContent)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "tabBarExtraContent",
+            "path": "@rc-component/tabs/es/Tabs.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "position",
+        "name": {
+          "ar": "موضع الشريط",
+          "en": "Position top / bottom / start / end"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "tabPlacement",
+            "path": "antd/es/tabs/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "orientation",
+            "path": "@mui/material/Tabs/Tabs.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "placement",
+            "path": "@mantine/core/lib/components/Tabs/Tabs.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@zag-js/tabs/dist/tabs.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "orientation",
+            "path": "react-aria/dist/types/src/tabs/useTabList.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "orientation",
+            "path": "@base-ui/react/tabs/indicator/TabsIndicator.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "orientation",
+            "path": "@radix-ui/react-tabs/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "orientation",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/tabs.tsx"
+          }
+        ]
+      },
+      {
+        "id": "overflow",
+        "name": {
+          "ar": "تمرير التبويبات الزائدة أو «المزيد»",
+          "en": "Overflow scroll / “more” dropdown"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "more",
+            "path": "@rc-component/tabs/es/TabNavList/OperationNode.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "scrollButtons",
+            "path": "@mui/material/Tabs/Tabs.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام",
+          "en": "Sizes"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "@rc-component/tabs/es/TabNavList/index.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/tabs.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "centered",
+        "name": {
+          "ar": "توسيط",
+          "en": "Centered"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "centered",
+            "path": "antd/es/tabs/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "centered",
+            "path": "@mui/material/Tabs/Tabs.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "grow",
+            "path": "@mantine/core/lib/components/Tabs/TabsList/TabsList.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "justify",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/tabs.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "lazy",
+        "name": {
+          "ar": "عرض كسول وإزالة غير النشط",
+          "en": "Lazy render / destroyInactiveTabPane"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "destroyOnHidden",
+            "path": "@rc-component/tabs/es/TabPanelList/TabPane.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "keepMounted",
+            "path": "@mantine/core/lib/components/Tabs/Tabs.context.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "keepMounted",
+            "path": "@base-ui/react/tabs/panel/TabsPanel.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "forceMount",
+            "path": "@radix-ui/react-tabs/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "forceMount",
+            "path": "via @radix-ui/react-tabs/dist/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "تبويب معطل",
+          "en": "Disabled tab"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/tabs/es/TabPanelList/TabPane.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "disabled",
+            "path": "@mui/material/Tab/Tab.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@zag-js/tabs/dist/tabs.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isDisabled",
+            "path": "react-aria/dist/types/src/tabs/TabsKeyboardDelegate.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disabled",
+            "path": "@base-ui/react/tabs/tab/TabsTab.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "animated",
+        "name": {
+          "ar": "مؤشر متحرك",
+          "en": "Animated ink bar"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "animated",
+            "path": "@rc-component/tabs/es/TabNavList/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "indicator",
+            "path": "@mui/material/Tabs/Tabs.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "indicator",
+            "path": "@zag-js/tabs/dist/tabs.types.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "scroll-rtl",
+        "name": {
+          "ar": "أزرار تمرير الزائد وموضعه في RTL",
+          "en": "Overflow scroll buttons and position in RTL"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "قوائم التبويب القابلة للتمرير تعتمد على scrollLeft الذي تختلف إشارته في RTL، وأسهم التمرير تتبادل",
+            "en": "Scrollable tab lists rely on scrollLeft, whose sign differs in RTL; the scroll arrows also swap"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "activation",
+        "name": {
+          "ar": "تفعيل تلقائي أو يدوي",
+          "en": "Automatic or manual activation"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "radix",
+          "shadcn"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "selectionFollowsFocus",
+            "path": "@mui/material/Tabs/Tabs.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "activationMode",
+            "path": "@zag-js/tabs/dist/tabs.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "keyboardActivation",
+            "path": "react-aria/dist/types/src/tabs/useTabList.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "activateOnFocus",
+            "path": "@base-ui/react/tabs/list/TabsList.d.ts"
+          },
+          {
+            "library": "radix",
+            "symbol": "activationMode",
+            "path": "@radix-ui/react-tabs/dist/index.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "activationMode",
+            "path": "via @radix-ui/react-tabs/dist/index.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

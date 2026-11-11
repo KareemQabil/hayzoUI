@@ -1,0 +1,480 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "drawer",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "drawer",
+    "name": {
+      "ar": "درج",
+      "en": "Drawer"
+    },
+    "summary": {
+      "ar": "لوح ينزلق من إحدى الحواف، ومن الأسفل يكون ورقة سفلية.",
+      "en": "A panel that slides in from an edge; from the bottom it is a sheet."
+    },
+    "family": "overlay",
+    "tier": "T3",
+    "priority": "p0",
+    "engines": [
+      "dialog",
+      "overlay-layers",
+      "focus-scope"
+    ],
+    "anatomy": [
+      "trigger",
+      "backdrop",
+      "popup",
+      "header",
+      "title",
+      "close",
+      "body",
+      "footer",
+      "handle"
+    ],
+    "dependsOn": [
+      "dialog"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Drawer"
+      },
+      {
+        "library": "mui",
+        "name": "Drawer"
+      },
+      {
+        "library": "mui",
+        "name": "SwipeableDrawer"
+      },
+      {
+        "library": "mantine",
+        "name": "Drawer"
+      },
+      {
+        "library": "chakra",
+        "name": "Drawer"
+      },
+      {
+        "library": "react-aria",
+        "name": "Sheet"
+      },
+      {
+        "library": "base-ui",
+        "name": "Drawer"
+      },
+      {
+        "library": "shadcn",
+        "name": "drawer"
+      },
+      {
+        "library": "shadcn",
+        "name": "sheet"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "فتح وإغلاق مع عنوان وتذييل",
+          "en": "Open / close with title, footer"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "focus",
+        "name": {
+          "ar": "دخول التركيز وحبسه وعودته",
+          "en": "Focus enters, is trapped and returns"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "escape",
+        "name": {
+          "ar": "الإغلاق بـEscape والخلفية",
+          "en": "Escape and mask close"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "keyboard",
+            "path": "@rc-component/drawer/es/DrawerPopup.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "closeOnEscape",
+            "path": "@zag-js/drawer/dist/drawer.types-DZcp55a-.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "disablePointerDismissal",
+            "path": "@base-ui/react/drawer/root/DrawerRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام",
+          "en": "Sizes"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "@rc-component/drawer/es/Drawer.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/drawer.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "placement",
+        "name": {
+          "ar": "الموضع",
+          "en": "Placement top / right / bottom / left"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "placement",
+            "path": "@rc-component/drawer/es/DrawerPopup.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "anchor",
+            "path": "@mui/material/Drawer/Drawer.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "position",
+            "path": "@mantine/core/lib/components/Drawer/DrawerRoot.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "placement",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/drawer.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "position",
+            "path": "react-aria-components/dist/types/src/Sheet.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "swipeDirection",
+            "path": "@base-ui/react/drawer/popup/DrawerPopup.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "side",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/sheet.tsx"
+          }
+        ]
+      },
+      {
+        "id": "push",
+        "name": {
+          "ar": "دفع الأدراج المتداخلة",
+          "en": "Nested push"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "push",
+            "path": "@rc-component/drawer/es/DrawerPopup.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "extra",
+        "name": {
+          "ar": "إجراءات في الرأس",
+          "en": "Extra actions in header"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "extra",
+            "path": "antd/es/drawer/DrawerPanel.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "loading",
+        "name": {
+          "ar": "تحميل",
+          "en": "Loading"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loading",
+            "path": "antd/es/drawer/DrawerPanel.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "logical-edge",
+        "name": {
+          "ar": "الحافة تُسمّى بداية ونهاية",
+          "en": "Edge named start / end"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui",
+          "shadcn"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "المكتبات تسمّي الحواف يسارًا ويمينًا، ودرج «النهاية» يجب أن يكون الحافة اليسرى في العربية مع عكس الانزلاق والسحب",
+            "en": "Libraries name edges left and right; an \"end\" drawer must be the left edge in Arabic, with its slide and swipe reversed"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "placement",
+            "path": "@rc-component/drawer/es/DrawerPopup.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "anchor",
+            "path": "@mui/material/Drawer/Drawer.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "position",
+            "path": "@mantine/core/lib/components/Drawer/DrawerRoot.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "placement",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/drawer.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "position",
+            "path": "react-aria-components/dist/types/src/Sheet.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "swipeDirection",
+            "path": "@base-ui/react/drawer/popup/DrawerPopup.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "side",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/sheet.tsx"
+          }
+        ]
+      },
+      {
+        "id": "bottom-sheet",
+        "name": {
+          "ar": "ورقة سفلية بالسحب للإغلاق ونقاط توقف",
+          "en": "Bottom sheet with drag to dismiss and snap points"
+        },
+        "priority": "p1",
+        "in": [
+          "mui",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui",
+            "symbol": "swipeAreaWidth",
+            "path": "@mui/material/SwipeableDrawer/SwipeableDrawer.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "snapPoints",
+            "path": "@zag-js/drawer/dist/drawer.types-DZcp55a-.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "snapPoints",
+            "path": "react-aria-components/dist/types/src/Sheet.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "snapPoints",
+            "path": "@base-ui/react/drawer/root/DrawerRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "resizable",
+        "name": {
+          "ar": "عرض قابل للتغيير",
+          "en": "Resizable width"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "resizable",
+            "path": "@rc-component/drawer/es/Drawer.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "merge",
+        "note": "Sheet (shadcn side panel, React Aria Sheet) and bottom sheet are the same component with an edge; the owner's plan lists \"Drawer and Sheet\" together."
+      }
+    ]
+  }
+}

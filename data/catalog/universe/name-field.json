@@ -1,0 +1,155 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "name-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "name-field",
+    "name": {
+      "ar": "حقل الاسم",
+      "en": "Name field"
+    },
+    "summary": {
+      "ar": "إدخال اسم شخصي متعدد الأجزاء بالعربية واللاتينية.",
+      "en": "Multi-part personal name entry in Arabic and Latin script."
+    },
+    "family": "text-input",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "text-input",
+      "field",
+      "form"
+    ],
+    "anatomy": [
+      "root",
+      "part",
+      "label",
+      "control",
+      "latin-control"
+    ],
+    "dependsOn": [
+      "text-field",
+      "fieldset"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "parts",
+        "name": {
+          "ar": "الأجزاء بحسب الدولة: الأول، الأب، الجد، العائلة",
+          "en": "Parts by country: first, father, grandfather, family"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأسماء الرسمية في مصر والخليج رباعية، وثنائية الاسم الأول والأخير تفقد بيانات وتُفشل المطابقة مع وثائق الهوية",
+            "en": "Official names in Egypt and the Gulf are four-part; a first/last pair loses data and breaks matching with identity documents"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "two-scripts",
+        "name": {
+          "ar": "الكتابة العربية واللاتينية جنبًا إلى جنب",
+          "en": "Arabic and Latin spellings side by side"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "جوازات السفر تحمل الكتابتين وتُدخلان ولا تُنقلان حرفيًا بصمت، ولكل حقل اتجاهه",
+            "en": "Passports carry both spellings and they are entered, not transliterated silently; each control has its own direction"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "compound",
+        "name": {
+          "ar": "الأسماء المركبة تبقى كاملة",
+          "en": "Compound names kept whole"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "«عبد الله» و«أبو بكر» و«نور الدين» اسم واحد، والفصل عند المسافات خطأ",
+            "en": "\"عبد الله\", \"أبو بكر\" and \"نور الدين\" are one given name; splitting on spaces is wrong"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "normalise",
+        "name": {
+          "ar": "مفتاح بحث بلا تشكيل مع بقاء النص المخزن",
+          "en": "Search key without diacritics, stored text unchanged"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "مطابقة متسامحة مع العربية: تجاهل أشكال الهمزة والألف المقصورة والتاء المربوطة والتشكيل، ومطابقة الأرقام بأي نظام أرقام",
+            "en": "Arabic-tolerant matching: hamza forms, alef maqsura, taa marbuta and diacritics ignored; digits match in any numeral system"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "script-check",
+        "name": {
+          "ar": "تنبيه عندما لا يطابق الخط نوع الحقل",
+          "en": "Warns when the script does not match the control"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "كتابة اللاتينية في الحقل العربي غالبًا زلة تخطيط لوحة مفاتيح ويمكن عرض تصحيحها",
+            "en": "Latin typed in the Arabic control is usually a keyboard-layout slip and can be offered back corrected"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "display",
+        "name": {
+          "ar": "قواعد اسم العرض والأحرف الأولى",
+          "en": "Display name and initials rules"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; T2 in the owner's plan."
+      }
+    ]
+  }
+}

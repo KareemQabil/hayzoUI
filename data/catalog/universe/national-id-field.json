@@ -1,0 +1,129 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "national-id-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "national-id-field",
+    "name": {
+      "ar": "حقل الرقم القومي",
+      "en": "National ID field"
+    },
+    "summary": {
+      "ar": "إدخال رقم الهوية الوطنية مع التحقق بقواعد دولته.",
+      "en": "National identity number entry validated by the rules of its country."
+    },
+    "family": "text-input",
+    "tier": "T5",
+    "priority": "p0",
+    "engines": [
+      "segmented-input",
+      "text-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "derived-hint"
+    ],
+    "dependsOn": [
+      "mask-input",
+      "ltr-island"
+    ],
+    "aliases": [],
+    "features": [
+      {
+        "id": "rules",
+        "name": {
+          "ar": "الطول والبنية ورقم التحقق لكل دولة",
+          "en": "Length, structure and check digit per country"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الرقم المصري من ١٤ خانة يرمّز القرن وتاريخ الميلاد والمحافظة والنوع، والسعودي من ١٠ خانات يبدأ بـ١ أو ٢ وله رقم تحقق",
+            "en": "The Egyptian 14-digit number encodes century, birth date, governorate and gender; the Saudi 10-digit number starts with 1 or 2 and has a Luhn-style check"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "derived",
+        "name": {
+          "ar": "عرض تاريخ الميلاد والنوع المستنتجين دون فرضهما",
+          "en": "Derived birth date and gender offered, not forced"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "any-digits",
+        "name": {
+          "ar": "أي نظام أرقام عند الإدخال ولاتينية عند التخزين",
+          "en": "Any digit system in, Latin digits stored"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الإدخال يقبل الأرقام اللاتينية والهندية والفارسية أيًّا كان نظام أرقام العرض",
+            "en": "Typing accepts Latin, Arabic-Indic and Persian digits whatever the display numerals"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "ltr",
+        "name": {
+          "ar": "جزيرة LTR",
+          "en": "LTR island"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "resident",
+        "name": {
+          "ar": "صيغ الإقامة وجواز السفر",
+          "en": "Resident and passport variants"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Ours alone; T5 in the owner's plan."
+      }
+    ]
+  }
+}

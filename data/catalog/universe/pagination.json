@@ -1,0 +1,402 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "pagination",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "pagination",
+    "name": {
+      "ar": "ترقيم الصفحات",
+      "en": "Pagination"
+    },
+    "summary": {
+      "ar": "ينتقل بين صفحات قائمة ويبيّن الموضع الحالي.",
+      "en": "Moves between pages of a list and reports where you are."
+    },
+    "family": "navigation",
+    "tier": "T3",
+    "priority": "p0",
+    "engines": [
+      "pagination"
+    ],
+    "anatomy": [
+      "root",
+      "prev",
+      "next",
+      "item",
+      "ellipsis",
+      "page-size",
+      "jump",
+      "total"
+    ],
+    "dependsOn": [
+      "button",
+      "select"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Pagination"
+      },
+      {
+        "library": "mui",
+        "name": "Pagination"
+      },
+      {
+        "library": "mui",
+        "name": "TablePagination"
+      },
+      {
+        "library": "mantine",
+        "name": "Pagination"
+      },
+      {
+        "library": "chakra",
+        "name": "Pagination"
+      },
+      {
+        "library": "shadcn",
+        "name": "pagination"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "الصفحات والصفحة الحالية",
+          "en": "Pages and current page"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "total",
+            "path": "@rc-component/pagination/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "count",
+            "path": "@mui/material/TablePagination/TablePagination.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "total",
+            "path": "@mantine/core/lib/components/Pagination/Pagination.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "count",
+            "path": "@chakra-ui/react/dist/types/components/pagination/pagination.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "size-changer",
+        "name": {
+          "ar": "تغيير حجم الصفحة",
+          "en": "Page size changer"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showSizeChanger",
+            "path": "@rc-component/pagination/es/Options.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "rowsPerPageOptions",
+            "path": "@mui/material/TablePagination/TablePagination.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "quick-jumper",
+        "name": {
+          "ar": "الانتقال السريع",
+          "en": "Quick jumper"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showQuickJumper",
+            "path": "@rc-component/pagination/es/interface.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "total",
+        "name": {
+          "ar": "عرض الإجمالي",
+          "en": "Show total"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showTotal",
+            "path": "@rc-component/pagination/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "labelDisplayedRows",
+            "path": "@mui/material/TablePagination/TablePagination.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "total",
+            "path": "@mantine/core/lib/components/Pagination/Pagination.context.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "count",
+            "path": "@chakra-ui/react/dist/types/components/pagination/pagination.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "simple",
+        "name": {
+          "ar": "نمط مبسط",
+          "en": "Simple / mini mode"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "shadcn"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "simple",
+            "path": "@rc-component/pagination/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "size",
+            "path": "@mui/material/Pagination/Pagination.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/Pagination/PaginationRoot/PaginationRoot.d.ts"
+          },
+          {
+            "library": "shadcn",
+            "symbol": "size",
+            "path": "shadcn-ui/ui:apps/v4/registry/new-york-v4/ui/pagination.tsx"
+          }
+        ]
+      },
+      {
+        "id": "controlled",
+        "name": {
+          "ar": "تحكم في الصفحة والحجم",
+          "en": "Controlled current / pageSize"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "current",
+            "path": "@rc-component/pagination/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "page",
+            "path": "@mui/material/PaginationItem/PaginationItem.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "page",
+            "path": "@mantine/core/lib/components/Pagination/PaginationLabel/PaginationLabel.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "page",
+            "path": "@chakra-ui/react/dist/types/components/pagination/pagination.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "numerals",
+        "name": {
+          "ar": "أرقام الصفحات بنظام أرقام المستخدم",
+          "en": "Page numbers in the user numerals"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "أرقام الصفحات تتبع تفضيل نظام الأرقام، و AntD يعرضها لاتينية",
+            "en": "Page numbers follow the numerals preference; AntD shows Latin page numbers"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "arrows",
+        "name": {
+          "ar": "سهما السابق والتالي ينعكسان",
+          "en": "Previous and next arrows mirror"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "الأيقونات الاتجاهية (الأسهم) يجب أن تنعكس في RTL، وغير الاتجاهية لا تنعكس",
+            "en": "Directional icons (chevrons, arrows) must mirror in RTL; non-directional ones must not"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "range-text",
+        "name": {
+          "ar": "صيغة «١١–٢٠ من ٨٧» بترتيب عربي",
+          "en": "\"11–20 of 87\" in Arabic word order"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "المجال مقطع معزول واحد فلا يتغير ترتيب الشرطة بين الأرقام الهندية، واسم المعدود يأخذ صيغة جمعه",
+            "en": "The range is one isolated run so the dash does not reorder between Arabic-Indic numbers, and the count noun takes its plural form"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "showTotal",
+            "path": "@rc-component/pagination/es/interface.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "labelDisplayedRows",
+            "path": "@mui/material/TablePagination/TablePagination.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "format",
+            "path": "@chakra-ui/react/dist/types/components/pagination/pagination.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "cursor",
+        "name": {
+          "ar": "نمط المؤشر بلا إجمالي",
+          "en": "Cursor mode without total"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

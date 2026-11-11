@@ -1,0 +1,81 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "skip-link",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "skip-link",
+    "name": {
+      "ar": "رابط التخطي",
+      "en": "Skip link"
+    },
+    "summary": {
+      "ar": "أول رابط قابل للتركيز يتجاوز التنقل إلى المحتوى الرئيسي.",
+      "en": "First focusable link that jumps past navigation to the main content."
+    },
+    "family": "navigation",
+    "tier": "T1",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "link",
+      "target"
+    ],
+    "aliases": [
+      {
+        "library": "chakra",
+        "name": "SkipNavLink"
+      },
+      {
+        "library": "chakra",
+        "name": "SkipNavContent"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "يظهر عند التركيز فقط",
+          "en": "Visible on focus only"
+        },
+        "priority": "p1",
+        "in": [
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

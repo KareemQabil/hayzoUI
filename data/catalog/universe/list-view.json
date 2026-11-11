@@ -1,0 +1,332 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "list-view",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "shadcn/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json; apps/v4/registry/new-york-v4/ui"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "list-view",
+    "name": {
+      "ar": "عرض قائمة",
+      "en": "List view"
+    },
+    "summary": {
+      "ar": "قائمة سجلات بصور ونصوص وإجراءات وتحديد وترقيم صفحات.",
+      "en": "A list of records with media, text, actions, selection and paging."
+    },
+    "family": "data",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "collection",
+      "selection",
+      "grid-navigation",
+      "virtual-list"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "media",
+      "title",
+      "description",
+      "actions",
+      "empty",
+      "footer"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "List"
+      },
+      {
+        "library": "antd",
+        "name": "Listy"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProList"
+      },
+      {
+        "library": "mui",
+        "name": "List"
+      },
+      {
+        "library": "react-aria",
+        "name": "GridList"
+      },
+      {
+        "library": "shadcn",
+        "name": "item"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عناصر مع بيانات وصفية",
+          "en": "Items with meta"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "pagination",
+        "name": {
+          "ar": "ترقيم الصفحات",
+          "en": "Pagination"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "pagination",
+            "path": "antd/es/list/index.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "pagination",
+            "path": "@ant-design/pro-list/es/ListView.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "load-more",
+        "name": {
+          "ar": "تحميل المزيد",
+          "en": "Load more / infinite"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "loadMore",
+            "path": "antd/es/list/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "grid",
+        "name": {
+          "ar": "شبكة",
+          "en": "Grid"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "grid",
+            "path": "antd/es/list/context.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "grid",
+            "path": "@ant-design/pro-list/es/Item.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "layout",
+            "path": "react-aria-components/dist/types/src/GridList.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "actions",
+        "name": {
+          "ar": "إجراءات العناصر",
+          "en": "Item actions"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro",
+          "mui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "actions",
+            "path": "antd/es/list/Item.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "actions",
+            "path": "@ant-design/pro-list/es/Item.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "secondaryAction",
+            "path": "@mui/material/ListItem/ListItem.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "virtual",
+        "name": {
+          "ar": "قائمة افتراضية",
+          "en": "Virtual list"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "virtual",
+            "path": "@rc-component/listy/es/List.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "selection",
+        "name": {
+          "ar": "تحديد الصفوف والتنقل بلوحة المفاتيح",
+          "en": "Row selection and keyboard navigation"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro",
+          "mui"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "rowSelection",
+            "path": "@ant-design/pro-list/es/ListView.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "selected",
+            "path": "@mui/material/ListItemButton/ListItemButton.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "drag-sort",
+        "name": {
+          "ar": "إعادة الترتيب بالسحب",
+          "en": "Reorder by dragging"
+        },
+        "priority": "p2",
+        "in": [
+          "react-aria"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "react-aria",
+            "symbol": "dragAndDropHooks",
+            "path": "react-aria-components/dist/types/src/GridList.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "swipe-actions",
+        "name": {
+          "ar": "إجراءات السحب تتبع الاتجاه",
+          "en": "Swipe actions follow direction"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "إجراءات السحب الأمامية والخلفية تتبادل الجهتين في RTL",
+            "en": "Leading and trailing swipe actions swap sides in RTL"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "prose",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "prose",
+    "name": {
+      "ar": "محتوى نصي منسّق",
+      "en": "Prose"
+    },
+    "summary": {
+      "ar": "تنسيقات لمحتوى HTML الطويل: عناوين وفقرات وقوائم وجداول.",
+      "en": "Styles for long-form HTML content: headings, paragraphs, lists, tables."
+    },
+    "family": "display",
+    "tier": "T2",
+    "priority": "p2",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "Typography"
+      }
+    ],
+    "features": [
+      {
+        "id": "rhythm",
+        "name": {
+          "ar": "إيقاع رأسي من ارتفاع السطر العربي المقيس",
+          "en": "Vertical rhythm from the measured Arabic line height"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "ارتفاع السطر يجب أن يتسع للتشكيل المتراكب، ولا يُطبَّق تباعد الحروف على العربية",
+            "en": "Line height must clear stacked diacritics; Arabic text takes no letter-spacing"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "per-block-dir",
+        "name": {
+          "ar": "كل كتلة تأخذ اتجاهها",
+          "en": "Each block takes its own direction"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص المختلط يأخذ اتجاهه من محتواه مع عزل المقاطع المكتوبة بخط آخر",
+            "en": "Mixed-script content takes its direction from the content, with foreign runs isolated"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "justify",
+        "name": {
+          "ar": "ضبط السطور بالكشيدة لا بتباعد الحروف",
+          "en": "Justification with kashida, never letter-spacing"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "opportunity",
+          "note": {
+            "ar": "ضبط السطور العربي يُمدّ بالكشيدة، وتباعد المحارف خاطئ للعربية",
+            "en": "Arabic justification stretches with kashida (text-justify: inter-character is wrong for Arabic)"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

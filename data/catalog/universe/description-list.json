@@ -1,0 +1,296 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "description-list",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Ant Design ProComponents",
+        "url": "https://github.com/ant-design/pro-components",
+        "version": "@ant-design/pro-components@2.8.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "description-list",
+    "name": {
+      "ar": "قائمة أوصاف",
+      "en": "Description list"
+    },
+    "summary": {
+      "ar": "أزواج عنوان وقيمة تصف سجلًا واحدًا.",
+      "en": "Label and value pairs describing one record."
+    },
+    "family": "display",
+    "tier": "T3",
+    "priority": "p1",
+    "engines": [
+      "none"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "label",
+      "value"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Descriptions"
+      },
+      {
+        "library": "antd-pro",
+        "name": "ProDescriptions"
+      },
+      {
+        "library": "mantine",
+        "name": "DataList"
+      },
+      {
+        "library": "chakra",
+        "name": "DataList"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "عنوان/قيمة",
+          "en": "Label / value items"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "bordered",
+        "name": {
+          "ar": "بحدود",
+          "en": "Bordered"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "bordered",
+            "path": "antd/es/descriptions/Cell.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "variant",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/data-list.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "columns",
+        "name": {
+          "ar": "أعمدة متجاوبة",
+          "en": "Responsive columns"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "column",
+            "path": "antd/es/descriptions/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "vertical",
+        "name": {
+          "ar": "تخطيط رأسي",
+          "en": "Vertical layout"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "layout",
+            "path": "antd/es/descriptions/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "orientation",
+            "path": "@mantine/core/lib/components/DataList/DataList.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "orientation",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/data-list.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "span",
+        "name": {
+          "ar": "امتداد العنصر",
+          "en": "Item span"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "antd-pro"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "span",
+            "path": "antd/es/descriptions/Cell.d.ts"
+          },
+          {
+            "library": "antd-pro",
+            "symbol": "span",
+            "path": "@ant-design/pro-descriptions/es/index.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام",
+          "en": "Sizes"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/descriptions/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/DataList/DataList.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/data-list.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "value-direction",
+        "name": {
+          "ar": "كل قيمة تحتفظ باتجاهها",
+          "en": "Each value keeps its own direction"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النص المختلط يأخذ اتجاهه من محتواه مع عزل المقاطع المكتوبة بخط آخر",
+            "en": "Mixed-script content takes its direction from the content, with foreign runs isolated"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "typed-values",
+        "name": {
+          "ar": "قيم ذات أنواع (مبلغ، تاريخ، هاتف، معرّف)",
+          "en": "Typed values (money, date, phone, id)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd-pro"
+        ],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "المبالغ والتواريخ والهواتف تمر بالمنسّقات نفسها المستخدمة في الإدخال، فيُقرأ السجل بالصورة نفسها في النموذج والملخص",
+            "en": "Money, dates and phones go through the same formatters as inputs, so a record reads the same in a form and in its summary"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd-pro",
+            "symbol": "valueType",
+            "path": "@ant-design/pro-descriptions/es/index.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "naming",
+        "note": "description-list (HTML dl) over Descriptions (AntD) and DataList (Chakra, Mantine)."
+      }
+    ]
+  }
+}

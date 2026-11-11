@@ -1,0 +1,292 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "color-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "color-picker",
+    "name": {
+      "ar": "منتقي الألوان",
+      "en": "Color picker"
+    },
+    "summary": {
+      "ar": "يختار لونًا بالمساحة أو المنزلقات أو العينات أو قيمة مكتوبة.",
+      "en": "Picks a colour by area, sliders, swatches or typed value."
+    },
+    "family": "data",
+    "tier": "T5",
+    "priority": "p2",
+    "engines": [
+      "color",
+      "slider",
+      "overlay-layers",
+      "anchored-position"
+    ],
+    "anatomy": [
+      "root",
+      "trigger",
+      "area",
+      "thumb",
+      "channel-slider",
+      "swatch",
+      "input"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "ColorPicker"
+      },
+      {
+        "library": "mantine",
+        "name": "ColorPicker"
+      },
+      {
+        "library": "mantine",
+        "name": "ColorInput"
+      },
+      {
+        "library": "mantine",
+        "name": "ColorSwatch"
+      },
+      {
+        "library": "mantine",
+        "name": "AlphaSlider"
+      },
+      {
+        "library": "mantine",
+        "name": "HueSlider"
+      },
+      {
+        "library": "chakra",
+        "name": "Color"
+      },
+      {
+        "library": "react-aria",
+        "name": "ColorPicker"
+      },
+      {
+        "library": "react-aria",
+        "name": "ColorArea"
+      },
+      {
+        "library": "react-aria",
+        "name": "ColorSlider"
+      },
+      {
+        "library": "react-aria",
+        "name": "ColorWheel"
+      },
+      {
+        "library": "react-aria",
+        "name": "ColorField"
+      },
+      {
+        "library": "react-aria",
+        "name": "ColorSwatch"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "اختيار لون",
+          "en": "Pick color"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "formats",
+        "name": {
+          "ar": "صيغ اللون",
+          "en": "HEX / RGB / HSB formats"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "format",
+            "path": "antd/es/color-picker/components/ColorInput.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "format",
+            "path": "@mantine/core/lib/components/ColorPicker/ColorPicker.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "format",
+            "path": "@ark-ui/react/dist/components/color-picker/color-picker-value-text.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "presets",
+        "name": {
+          "ar": "ألوان جاهزة",
+          "en": "Presets"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "presets",
+            "path": "antd/es/color-picker/components/ColorPresets.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "swatches",
+            "path": "@mantine/core/lib/components/ColorPicker/ColorPicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "alpha",
+        "name": {
+          "ar": "الشفافية",
+          "en": "Alpha"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabledAlpha",
+            "path": "@rc-component/color-picker/es/ColorPicker.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "withPicker",
+            "path": "@mantine/core/lib/components/ColorPicker/ColorPicker.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "gradient",
+        "name": {
+          "ar": "تدرج",
+          "en": "Gradient"
+        },
+        "priority": "p2",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "mode",
+            "path": "antd/es/color-picker/context.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "hex-ltr",
+        "name": {
+          "ar": "قيمة Hex باتجاه LTR وبأحرف لاتينية",
+          "en": "Hex value is LTR and Latin"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "area-axes",
+        "name": {
+          "ar": "محاور المساحة لا تنعكس",
+          "en": "Area axes are not mirrored"
+        },
+        "priority": "p2",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "التشبّع يمتد من اليسار إلى اليمين عرفًا، وعكس المساحة في RTL يربك أكثر مما يفيد",
+            "en": "Saturation runs left to right by convention; mirroring the area in RTL confuses more than it helps"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

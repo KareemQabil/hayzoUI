@@ -1,0 +1,281 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "multi-select",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://github.com/mui/material-ui",
+        "version": "@mui/material@9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "multi-select",
+    "name": {
+      "ar": "اختيار متعدد",
+      "en": "Multi-select"
+    },
+    "summary": {
+      "ar": "مربع تحرير وسرد يحمل عدة خيارات تظهر كوسوم قابلة للإزالة.",
+      "en": "Combobox that holds several chosen options, shown as removable tags."
+    },
+    "family": "selection",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "combobox",
+      "listbox",
+      "collection",
+      "selection",
+      "overlay-layers",
+      "anchored-position",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "input",
+      "tag",
+      "tag-remove",
+      "popup",
+      "option"
+    ],
+    "dependsOn": [
+      "combobox",
+      "tag"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Select",
+        "note": "mode=\"multiple\""
+      },
+      {
+        "library": "mui",
+        "name": "Autocomplete",
+        "note": "multiple"
+      },
+      {
+        "library": "mantine",
+        "name": "MultiSelect"
+      },
+      {
+        "library": "mantine",
+        "name": "PillsInput"
+      },
+      {
+        "library": "chakra",
+        "name": "Combobox",
+        "note": "multiple"
+      },
+      {
+        "library": "chakra",
+        "name": "Select",
+        "note": "multiple"
+      },
+      {
+        "library": "react-aria",
+        "name": "Select",
+        "note": "selectionMode=\"multiple\""
+      },
+      {
+        "library": "base-ui",
+        "name": "Combobox",
+        "note": "multiple"
+      },
+      {
+        "library": "base-ui",
+        "name": "Select",
+        "note": "multiple"
+      }
+    ],
+    "features": [
+      {
+        "id": "multiple",
+        "name": {
+          "ar": "تحديد متعدد",
+          "en": "Multiple mode"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "multiple",
+            "path": "@rc-component/select/es/SelectInput/index.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "multiple",
+            "path": "@zag-js/combobox/dist/combobox.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "selectionMode",
+            "path": "react-stately/dist/types/src/select/useSelectState.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "multiple",
+            "path": "@base-ui/react/combobox/root/ComboboxRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "max-tag",
+        "name": {
+          "ar": "حد الوسوم المعروضة",
+          "en": "maxTagCount / responsive tags"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "maxTagCount",
+            "path": "@rc-component/select/es/BaseSelect/index.d.ts"
+          },
+          {
+            "library": "mui",
+            "symbol": "limitTags",
+            "path": "@mui/material/Autocomplete/Autocomplete.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "maxValues",
+            "path": "@mantine/core/lib/components/MultiSelect/MultiSelect.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "backspace",
+        "name": {
+          "ar": "Backspace يحذف آخر وسم",
+          "en": "Backspace removes the last tag"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      },
+      {
+        "id": "tag-arrows",
+        "name": {
+          "ar": "الأسهم تتنقل بين الوسوم",
+          "en": "Arrow keys move between tags"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "count-summary",
+        "name": {
+          "ar": "ملخص «تم اختيار N»",
+          "en": "\"N selected\" summary"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "النصوص الداخلية تأتي من نطاق اللغة، مع صيغ الجمع العربية الست حيث يُنطق عدد",
+            "en": "Built-in strings come from the locale scope, with the six Arabic plural forms where a count is spoken"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "select-all",
+        "name": {
+          "ar": "تحديد كل الخيارات المصفّاة",
+          "en": "Select all filtered options"
+        },
+        "priority": "p2",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

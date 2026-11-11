@@ -1,0 +1,274 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "segmented-control",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "segmented-control",
+    "name": {
+      "ar": "تحكم مقسَّم",
+      "en": "Segmented control"
+    },
+    "summary": {
+      "ar": "اختيار مفرد مدمج على شكل مقاطع متصلة بمؤشر متحرك.",
+      "en": "A compact single choice shown as joined segments with a moving indicator."
+    },
+    "family": "choice",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "roving-focus",
+      "selection"
+    ],
+    "anatomy": [
+      "root",
+      "item",
+      "indicator",
+      "label"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "Segmented"
+      },
+      {
+        "library": "mantine",
+        "name": "SegmentedControl"
+      },
+      {
+        "library": "mantine",
+        "name": "FloatingIndicator"
+      },
+      {
+        "library": "chakra",
+        "name": "SegmentGroup"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "خيارات، تحكم وبدون تحكم",
+          "en": "Options, controlled / uncontrolled"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "disabled",
+        "name": {
+          "ar": "خيارات معطلة",
+          "en": "Disabled options"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "disabled",
+            "path": "@rc-component/segmented/es/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "disabled",
+            "path": "@mantine/core/lib/components/SegmentedControl/SegmentedControl.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "disabled",
+            "path": "@chakra-ui/react/dist/types/components/segment-group/segment-group.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "block",
+        "name": {
+          "ar": "بعرض كامل",
+          "en": "Block (full width)"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "block",
+            "path": "antd/es/segmented/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "fullWidth",
+            "path": "@mantine/core/lib/components/SegmentedControl/SegmentedControl.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "sizes",
+        "name": {
+          "ar": "الأحجام",
+          "en": "Sizes"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "size",
+            "path": "antd/es/segmented/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "size",
+            "path": "@mantine/core/lib/components/SegmentedControl/SegmentedControl.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "size",
+            "path": "@chakra-ui/react/dist/types/theme/recipes/segment-group.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "icons",
+        "name": {
+          "ar": "خيارات بأيقونات",
+          "en": "Icon options"
+        },
+        "priority": "p1",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "rtl-keys",
+        "name": {
+          "ar": "الأسهم تتبع الاتجاه البصري",
+          "en": "Arrow keys follow visual direction"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "wrap",
+        "name": {
+          "ar": "الالتفاف إلى سطرين",
+          "en": "Wrap onto two rows in narrow containers"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "vertical",
+        "name": {
+          "ar": "رأسي",
+          "en": "Vertical"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "orientation",
+            "path": "antd/es/segmented/index.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "orientation",
+            "path": "@mantine/core/lib/components/SegmentedControl/SegmentedControl.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "indicator",
+        "name": {
+          "ar": "المؤشر يتحرك من الحافة الصحيحة",
+          "en": "Indicator animates from the correct edge"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "إزاحات المؤشر المقيسة بـoffsetLeft تحتاج أصل RTL وإلا استقر المؤشر على المقطع المعكوس",
+            "en": "Indicator offsets measured with offsetLeft need the RTL origin or the pill lands on the mirrored segment"
+          }
+        },
+        "origin": "authored"
+      }
+    ]
+  }
+}

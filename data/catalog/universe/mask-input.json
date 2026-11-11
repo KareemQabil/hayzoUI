@@ -1,0 +1,141 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "mask-input",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "mask-input",
+    "name": {
+      "ar": "حقل بقالب",
+      "en": "Masked input"
+    },
+    "summary": {
+      "ar": "إدخال نص مقيّد بقالب من مواضع ثابتة وحرة.",
+      "en": "Text entry constrained to a pattern of fixed and free positions."
+    },
+    "family": "text-input",
+    "tier": "T2",
+    "priority": "p1",
+    "engines": [
+      "segmented-input",
+      "text-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control"
+    ],
+    "dependsOn": [
+      "text-field"
+    ],
+    "aliases": [
+      {
+        "library": "mantine",
+        "name": "MaskInput"
+      }
+    ],
+    "features": [
+      {
+        "id": "pattern",
+        "name": {
+          "ar": "قالب بمحارف ثابتة",
+          "en": "Mask pattern with literals"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "mask",
+            "path": "@mantine/core/lib/components/MaskInput/MaskInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "any-digits",
+        "name": {
+          "ar": "خانات الأرقام تقبل أي نظام أرقام",
+          "en": "Digit slots accept any digit system"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الإدخال يقبل الأرقام اللاتينية والهندية والفارسية أيًّا كان نظام أرقام العرض",
+            "en": "Typing accepts Latin, Arabic-Indic and Persian digits whatever the display numerals"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "ltr",
+        "name": {
+          "ar": "القيمة تبقى LTR",
+          "en": "Masked value stays LTR"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "القيمة جزيرة من اليسار إلى اليمين داخل نموذج RTL، فلا يتغير ترتيب الأرقام والرموز اللاتينية",
+            "en": "The value is a left-to-right island inside an RTL form: digits and Latin codes never reorder"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "raw-value",
+        "name": {
+          "ar": "يُبلّغ القيمة بلا قالب",
+          "en": "Reports the unmasked value"
+        },
+        "priority": "p1",
+        "in": [
+          "mantine"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "onChangeRaw",
+            "path": "@mantine/core/lib/components/MaskInput/MaskInput.d.ts"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "topic": "scope",
+        "note": "Base for iban-field, national-id-field and tax-number-field; only Mantine 9 publishes one."
+      }
+    ]
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "number-input",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Base UI",
+        "url": "https://github.com/mui/base-ui",
+        "version": "@base-ui/react@1.9.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "number-input",
+    "name": {
+      "ar": "حقل رقمي",
+      "en": "Number input"
+    },
+    "summary": {
+      "ar": "إدخال رقمي بالتحليل والحدود والخطوات والتنسيق بحسب اللغة.",
+      "en": "Numeric entry with parsing, limits, stepping and locale formatting."
+    },
+    "family": "numeric-input",
+    "tier": "T2",
+    "priority": "p0",
+    "engines": [
+      "numeric-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "control",
+      "increment",
+      "decrement",
+      "prefix",
+      "suffix"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "antd",
+        "name": "InputNumber"
+      },
+      {
+        "library": "mantine",
+        "name": "NumberInput"
+      },
+      {
+        "library": "chakra",
+        "name": "NumberInput"
+      },
+      {
+        "library": "react-aria",
+        "name": "NumberField"
+      },
+      {
+        "library": "base-ui",
+        "name": "NumberField"
+      }
+    ],
+    "features": [
+      {
+        "id": "basic",
+        "name": {
+          "ar": "قيمة رقمية، تحكم وبدون تحكم",
+          "en": "Numeric value, controlled / uncontrolled"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "min-max",
+        "name": {
+          "ar": "حد أدنى وأقصى",
+          "en": "Min / max"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "min",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "min",
+            "path": "@mantine/core/lib/components/NumberInput/NumberInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "min",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "minValue",
+            "path": "react-stately/dist/types/src/numberfield/useNumberFieldState.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "min",
+            "path": "@base-ui/react/number-field/root/NumberFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "step",
+        "name": {
+          "ar": "الخطوة وأزرار الزيادة والنقص",
+          "en": "Step and up/down controls"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "step",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "step",
+            "path": "@mantine/core/lib/components/NumberInput/NumberInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "step",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "step",
+            "path": "@base-ui/react/number-field/root/NumberFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "الأسهم لتغيير القيمة",
+          "en": "Arrow up/down to change value"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "keyboard",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "allowMouseWheel",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "allowWheelScrub",
+            "path": "@base-ui/react/number-field/root/NumberFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "precision",
+        "name": {
+          "ar": "الدقة العشرية",
+          "en": "Precision"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "precision",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "decimalScale",
+            "path": "@mantine/core/lib/components/NumberInput/NumberInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "formatOptions",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "formatOptions",
+            "path": "react-stately/dist/types/src/numberfield/useNumberFieldState.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "format",
+            "path": "@base-ui/react/number-field/root/NumberFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "string-mode",
+        "name": {
+          "ar": "دقة عالية",
+          "en": "High precision (stringMode)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "stringMode",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "valueIsNumericString",
+            "path": "@mantine/core/lib/components/NumberInput/NumberInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "formatter",
+        "name": {
+          "ar": "التنسيق والتحليل",
+          "en": "formatter / parser"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "formatter",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "formatter",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "formatOptions",
+            "path": "react-stately/dist/types/src/numberfield/useNumberFieldState.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "format",
+            "path": "@base-ui/react/number-field/root/NumberFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "prefix",
+        "name": {
+          "ar": "بادئة (رمز العملة)",
+          "en": "Prefix / addon (currency symbol)"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "prefix",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "prefix",
+            "path": "@mantine/core/lib/components/NumberInput/NumberInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "negative",
+        "name": {
+          "ar": "الأرقام السالبة",
+          "en": "Negative numbers"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mantine"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "mantine",
+            "symbol": "allowNegative",
+            "path": "@mantine/core/lib/components/NumberInput/NumberInput.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "name": {
+          "ar": "الحالة والتعطيل",
+          "en": "Status / disabled / read-only"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "chakra",
+          "react-aria"
+        ],
+        "origin": "owner-matrix",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "status",
+            "path": "antd/es/input-number/index.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "invalid",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "isInvalid",
+            "path": "react-aria-components/dist/types/src/NumberField.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "clear",
+        "name": {
+          "ar": "المسح",
+          "en": "Clear"
+        },
+        "priority": "p0",
+        "in": [
+          "antd"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "replace-on-focus",
+        "name": {
+          "ar": "الكتابة في حقل ممتلئ تستبدله",
+          "en": "Keyboard entry into a filled field replaces it"
+        },
+        "priority": "p0",
+        "in": [],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "arabic-digits",
+        "name": {
+          "ar": "قبول الأرقام العربية المشرقية والفارسية",
+          "en": "Arabic-Indic and Persian digits accepted"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "تُقبل الأرقام الهندية والفارسية كما تُكتب، و InputNumber في AntD يرفضها ما لم يكتب التطبيق محلِّلًا",
+            "en": "Arabic-Indic and Persian digits are accepted as typed; AntD InputNumber rejects them unless the application writes a parser"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "ambiguous-comma",
+        "name": {
+          "ar": "رفض الفاصلة الملتبسة مع اقتراح",
+          "en": "Ambiguous comma rejected with a suggestion"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الفاصلة التي تحتمل الآلاف أو الكسور لا تُخمَّن صامتًا، ويرفضها الحقل مع اقتراحات",
+            "en": "A comma that could mean thousands or decimals is never guessed silently; the field rejects it with suggestions"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "arabic-separators",
+        "name": {
+          "ar": "فواصل الآلاف والعشرية العربية",
+          "en": "Arabic thousands / decimal separators"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُحلَّل فاصل الآلاف والفاصلة العشرية العربيان ويُعرضان كمقطع اتجاهي واحد",
+            "en": "The Arabic thousands and decimal separators are parsed, and shown as one bidi run"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "bidi-paste",
+        "name": {
+          "ar": "معالجة علامات الاتجاه الملصوقة والسالب المكتوب من اليمين",
+          "en": "Pasted bidi marks and RTL minus handled"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "علامات الاتجاه غير المرئية الناتجة عن اللصق لا تغيّر القيمة، وعلامة السالب في النهاية تُرفض مع ذكر السبب",
+            "en": "Invisible direction marks from copy-paste do not change the value; a trailing minus is rejected with a reason"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "display-numerals",
+        "name": {
+          "ar": "يعرض بنظام أرقام النطاق خارج التحرير",
+          "en": "Displays in the scope numerals when not editing"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "الأرقام تُعرض بنظام أرقام النطاق (لاتينية أو هندية) بمعزل عن اللغة",
+            "en": "Numbers render in the numerals of the locale scope (Latin or Arabic-Indic), independent of language"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "stepper-side",
+        "name": {
+          "ar": "أزرار الزيادة والنقصان عند نهاية السطر",
+          "en": "Stepper buttons on the inline end"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "يُبنى بالخصائص المنطقية فتكون بداية السطر هي الحافة اليمنى في العربية",
+            "en": "Laid out with logical properties so the inline start is the right edge in Arabic"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "wheel",
+        "name": {
+          "ar": "التغيير بعجلة الفأرة والسحب",
+          "en": "Wheel and scrub change"
+        },
+        "priority": "p2",
+        "in": [
+          "antd",
+          "chakra",
+          "base-ui"
+        ],
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "changeOnWheel",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "allowMouseWheel",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "allowWheelScrub",
+            "path": "@base-ui/react/number-field/root/NumberFieldRoot.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "percent-unit",
+        "name": {
+          "ar": "صيغ النسبة والوحدات",
+          "en": "Percent and unit formats"
+        },
+        "priority": "p1",
+        "in": [
+          "antd",
+          "mantine",
+          "chakra",
+          "react-aria",
+          "base-ui"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "علامة النسبة العربية وجهتها تختلفان بحسب اللغة، والتنسيق يأتي من بيانات اللغة لا من ضم النصوص",
+            "en": "The Arabic percent sign and its side differ by locale; the format comes from locale data, not string concatenation"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "antd",
+            "symbol": "suffix",
+            "path": "@rc-component/input-number/es/InputNumber.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "suffix",
+            "path": "@mantine/core/lib/components/NumberInput/NumberInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "formatOptions",
+            "path": "@zag-js/number-input/dist/number-input.types.d.ts"
+          },
+          {
+            "library": "react-aria",
+            "symbol": "formatOptions",
+            "path": "react-stately/dist/types/src/numberfield/useNumberFieldState.d.ts"
+          },
+          {
+            "library": "base-ui",
+            "symbol": "format",
+            "path": "@base-ui/react/number-field/root/NumberFieldRoot.d.ts"
+          }
+        ]
+      }
+    ]
+  }
+}

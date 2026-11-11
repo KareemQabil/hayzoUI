@@ -1,0 +1,245 @@
+{
+  "kind": "component",
+  "schemaVersion": 1,
+  "id": "date-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "hayzoUI Ant Design parity matrix (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/atomic/parity/antd.ts"
+      },
+      {
+        "name": "hayzoUI master plan and contracts (project owner)",
+        "url": "https://github.com/KareemQabil/hayzoui",
+        "version": "9b4eb3271c64872768f0a5533796a8a36b67e6eb",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "docs/MASTER_PLAN.md §7; CONTRACTS.md"
+      },
+      {
+        "name": "Ant Design",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd@6.7.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "MUI X (community)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "@mui/x-data-grid@9.17.0, @mui/x-date-pickers@9.17.0, @mui/x-tree-view@9.17.0, @mui/x-charts@9.17.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Mantine",
+        "url": "https://github.com/mantinedev/mantine",
+        "version": "@mantine/core@9.8.0, @mantine/dates@9.8.0, @mantine/notifications@9.8.0, @mantine/dropzone@9.8.0, @mantine/spotlight@9.8.0, @mantine/carousel@9.8.0, @mantine/charts@9.8.0, @mantine/tiptap@9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "Chakra UI",
+        "url": "https://github.com/chakra-ui/chakra-ui",
+        "version": "@chakra-ui/react@3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      },
+      {
+        "name": "React Aria Components",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria-components@1.22.1",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "published type declarations (npm tarball)"
+      }
+    ],
+    "script": "tools/extract/universe/build.mjs",
+    "notes": "Judgement entry. Aliases are checked against published exports. A library in a feature's `in` is confirmed only where the feature has an `evidence` row for it. Arabic text is written for this file except feature names with origin \"owner-matrix\"."
+  },
+  "data": {
+    "id": "date-field",
+    "name": {
+      "ar": "حقل تاريخ",
+      "en": "Date field"
+    },
+    "summary": {
+      "ar": "إدخال التاريخ من لوحة المفاتيح بمقاطع (يوم، شهر، سنة) بلا نافذة.",
+      "en": "Keyboard date entry by segments (day, month, year) without a popup."
+    },
+    "family": "date-time",
+    "tier": "T4",
+    "priority": "p0",
+    "engines": [
+      "segmented-input",
+      "field"
+    ],
+    "anatomy": [
+      "root",
+      "input",
+      "segment",
+      "literal"
+    ],
+    "dependsOn": [
+      "field"
+    ],
+    "aliases": [
+      {
+        "library": "mui-x",
+        "name": "DateField"
+      },
+      {
+        "library": "mui-x",
+        "name": "DateTimeField"
+      },
+      {
+        "library": "mantine",
+        "name": "DateInput"
+      },
+      {
+        "library": "mantine",
+        "name": "MaskedDateInput"
+      },
+      {
+        "library": "chakra",
+        "name": "DateInput"
+      },
+      {
+        "library": "react-aria",
+        "name": "DateField"
+      },
+      {
+        "library": "react-aria",
+        "name": "DateInput"
+      },
+      {
+        "library": "react-aria",
+        "name": "DateSegment"
+      }
+    ],
+    "features": [
+      {
+        "id": "keyboard",
+        "name": {
+          "ar": "الإدخال بالمقاطع من لوحة المفاتيح",
+          "en": "Keyboard entry by segments"
+        },
+        "priority": "p0",
+        "in": [
+          "antd",
+          "mui-x",
+          "react-aria"
+        ],
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "any-digits",
+        "name": {
+          "ar": "المقاطع تقبل أي نظام أرقام",
+          "en": "Segments accept any digit system"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "المقاطع تقبل الأرقام اللاتينية والهندية والفارسية أيًّا كان نظام العرض، و React Aria و AntD يتجاهلان النظام الآخر أو يرفضانه",
+            "en": "Segments accept Latin, Arabic-Indic and Persian digits whatever the display numerals; React Aria and AntD drop or reject the other system"
+          }
+        },
+        "origin": "owner-matrix"
+      },
+      {
+        "id": "segment-order",
+        "name": {
+          "ar": "ترتيب المقاطع من نمط اللغة",
+          "en": "Segment order from the locale pattern"
+        },
+        "priority": "p0",
+        "in": [
+          "mui-x",
+          "mantine",
+          "chakra"
+        ],
+        "arabic": {
+          "kind": "risk",
+          "note": {
+            "ar": "نمط التاريخ العربي يوم/شهر/سنة لكن الفواصل محارف محايدة، فيجب أن تُرسم المقاطع كمقطع معزول واحد وإلا تغيّر ترتيبها",
+            "en": "Arabic date patterns are day/month/year but the separators are neutral characters; the segments must be laid out as one isolated run or they reorder"
+          }
+        },
+        "origin": "authored",
+        "evidence": [
+          {
+            "library": "mui-x",
+            "symbol": "format",
+            "path": "@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.d.ts"
+          },
+          {
+            "library": "mantine",
+            "symbol": "format",
+            "path": "@mantine/dates/lib/components/MaskedDateInput/MaskedDateInput.d.ts"
+          },
+          {
+            "library": "chakra",
+            "symbol": "format",
+            "path": "@zag-js/date-input/dist/date-input.types-Gn_SsTPE.d.ts"
+          }
+        ]
+      },
+      {
+        "id": "segment-arrows",
+        "name": {
+          "ar": "الأسهم تتنقل بين المقاطع بالترتيب البصري",
+          "en": "Arrow keys move between segments in visual order"
+        },
+        "priority": "p0",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "مفاتيح الأسهم تتبع الاتجاه البصري: في RTL السهم الأيسر ينتقل إلى العنصر التالي",
+            "en": "Arrow keys follow the visual direction: in RTL ArrowLeft moves to the next item"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "month-text",
+        "name": {
+          "ar": "الشهر كمقطع اسمي مع بحث بالكتابة",
+          "en": "Month as a name segment with typeahead"
+        },
+        "priority": "p1",
+        "in": [],
+        "arabic": {
+          "kind": "requirement",
+          "note": {
+            "ar": "كتابة أول حروف اسم الشهر العربي تختاره",
+            "en": "Typing the first letters of an Arabic month name selects it"
+          }
+        },
+        "origin": "authored"
+      },
+      {
+        "id": "paste",
+        "name": {
+          "ar": "لصق تاريخ كامل",
+          "en": "Paste a whole date"
+        },
+        "priority": "p1",
+        "in": [],
+        "origin": "authored"
+      }
+    ]
+  }
+}

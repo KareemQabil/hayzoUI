@@ -1,0 +1,3523 @@
+{
+  "source": "src/atomic/parity/antd.ts",
+  "components": [
+    {
+      "id": "button",
+      "antd": "Button",
+      "category": "general",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "variants",
+          "name": "Types / variants (primary, default, dashed, text, link)",
+          "nameAr": "الأنواع (أساسي، افتراضي، منقّط، نصي، رابط)"
+        },
+        {
+          "slug": "danger",
+          "name": "Danger tone",
+          "nameAr": "نبرة الخطر"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes small / middle / large",
+          "nameAr": "الأحجام صغير/متوسط/كبير"
+        },
+        {
+          "slug": "loading",
+          "name": "Loading state",
+          "nameAr": "حالة التحميل"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled",
+          "nameAr": "التعطيل"
+        },
+        {
+          "slug": "icon",
+          "name": "Icon with text, icon placement",
+          "nameAr": "أيقونة مع النص وموضعها"
+        },
+        {
+          "slug": "block",
+          "name": "Block (full width)",
+          "nameAr": "بعرض كامل"
+        },
+        {
+          "slug": "shape",
+          "name": "Shape circle / round",
+          "nameAr": "الشكل دائري/مستدير"
+        },
+        {
+          "slug": "href",
+          "name": "Link button (href, target)",
+          "nameAr": "زر رابط (href)"
+        },
+        {
+          "slug": "group",
+          "name": "Button group / Space.Compact",
+          "nameAr": "مجموعة أزرار"
+        },
+        {
+          "slug": "double-submit",
+          "name": "Double activation guard while pending",
+          "nameAr": "منع التنفيذ المزدوج أثناء الانتظار"
+        },
+        {
+          "slug": "busy-label",
+          "name": "Pending state announced in the scope language",
+          "nameAr": "إعلان حالة الانتظار بلغة النطاق",
+          "arabicEdge": "pending label comes from the experience language (Arabic by default), not a prop; AntD loading has no announced label"
+        }
+      ]
+    },
+    {
+      "id": "float-button",
+      "antd": "FloatButton",
+      "category": "general",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Floating action button",
+          "nameAr": "زر عائم"
+        },
+        {
+          "slug": "group",
+          "name": "Group with trigger (click/hover)",
+          "nameAr": "مجموعة بمشغّل"
+        },
+        {
+          "slug": "back-top",
+          "name": "BackTop",
+          "nameAr": "العودة للأعلى"
+        },
+        {
+          "slug": "badge",
+          "name": "Badge on button",
+          "nameAr": "شارة على الزر"
+        },
+        {
+          "slug": "tooltip",
+          "name": "Tooltip",
+          "nameAr": "تلميح"
+        }
+      ]
+    },
+    {
+      "id": "icon",
+      "antd": "Icon",
+      "category": "general",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "set",
+          "name": "Large icon set (outlined, filled, two-tone)",
+          "nameAr": "مكتبة أيقونات كبيرة (محددة، مصمتة، ثنائية اللون)"
+        },
+        {
+          "slug": "custom",
+          "name": "Custom SVG icons",
+          "nameAr": "أيقونات SVG مخصصة"
+        },
+        {
+          "slug": "spin",
+          "name": "Spin / rotate",
+          "nameAr": "دوران"
+        },
+        {
+          "slug": "a11y",
+          "name": "Accessible label",
+          "nameAr": "اسم مقروء للأيقونة"
+        },
+        {
+          "slug": "iconfont",
+          "name": "Iconfont (createFromIconfontCN)",
+          "nameAr": "خطوط الأيقونات"
+        },
+        {
+          "slug": "mirroring",
+          "name": "Directional icons mirrored in RTL",
+          "nameAr": "عكس الأيقونات الاتجاهية في RTL",
+          "arabicEdge": "risk: arrows/chevrons must flip in RTL; no mirroring rule in the icon set yet"
+        }
+      ]
+    },
+    {
+      "id": "typography",
+      "antd": "Typography",
+      "category": "general",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "title",
+          "name": "Title levels",
+          "nameAr": "مستويات العناوين"
+        },
+        {
+          "slug": "text-types",
+          "name": "Text types (secondary, success, warning, danger)",
+          "nameAr": "أنواع النص (ثانوي، نجاح، تحذير، خطر)"
+        },
+        {
+          "slug": "copyable",
+          "name": "Copyable",
+          "nameAr": "قابل للنسخ"
+        },
+        {
+          "slug": "editable",
+          "name": "Editable",
+          "nameAr": "قابل للتحرير"
+        },
+        {
+          "slug": "ellipsis",
+          "name": "Ellipsis with expand / tooltip",
+          "nameAr": "اختصار النص مع التوسيع"
+        },
+        {
+          "slug": "mark-code-kbd",
+          "name": "Mark, code, keyboard",
+          "nameAr": "تمييز، كود، مفتاح"
+        },
+        {
+          "slug": "numerals",
+          "name": "Numbers follow the numerals preference",
+          "nameAr": "الأرقام تتبع تفضيل نظام الأرقام",
+          "arabicEdge": "Digits/Prose render Arabic-Indic or Latin digits per user preference, keep identifiers Latin and literals verbatim; AntD has no numerals concept"
+        },
+        {
+          "slug": "auto-dir",
+          "name": "Mixed-script text takes direction from its content",
+          "nameAr": "النص المختلط يأخذ اتجاهه من محتواه",
+          "arabicEdge": "AutoText keeps «Dr. سامي» punctuation in place inside RTL UI"
+        }
+      ]
+    },
+    {
+      "id": "divider",
+      "antd": "Divider",
+      "category": "layout",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "horizontal",
+          "name": "Horizontal divider",
+          "nameAr": "فاصل أفقي"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical divider",
+          "nameAr": "فاصل رأسي"
+        },
+        {
+          "slug": "with-text",
+          "name": "With text and orientation",
+          "nameAr": "مع نص وموضعه"
+        },
+        {
+          "slug": "dashed",
+          "name": "Dashed / plain",
+          "nameAr": "منقّط/بسيط"
+        }
+      ]
+    },
+    {
+      "id": "flex",
+      "antd": "Flex",
+      "category": "layout",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "direction",
+          "name": "Vertical / horizontal",
+          "nameAr": "رأسي/أفقي"
+        },
+        {
+          "slug": "align-justify",
+          "name": "Align and justify",
+          "nameAr": "المحاذاة والتوزيع"
+        },
+        {
+          "slug": "gap",
+          "name": "Gap presets",
+          "nameAr": "مسافات محددة"
+        },
+        {
+          "slug": "wrap",
+          "name": "Wrap",
+          "nameAr": "الالتفاف"
+        }
+      ]
+    },
+    {
+      "id": "grid",
+      "antd": "Grid",
+      "category": "layout",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "row-col",
+          "name": "Row / Col 24-column grid",
+          "nameAr": "شبكة من 24 عمودًا"
+        },
+        {
+          "slug": "gutter",
+          "name": "Gutter",
+          "nameAr": "الفواصل بين الأعمدة"
+        },
+        {
+          "slug": "responsive",
+          "name": "Responsive spans (xs…xxl)",
+          "nameAr": "امتدادات متجاوبة"
+        },
+        {
+          "slug": "offset-order",
+          "name": "Offset, push/pull, order",
+          "nameAr": "إزاحة وترتيب"
+        },
+        {
+          "slug": "use-breakpoint",
+          "name": "useBreakpoint hook",
+          "nameAr": "خطاف نقاط التوقف"
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "antd": "Layout",
+      "category": "layout",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "header-footer-content",
+          "name": "Header / Content / Footer",
+          "nameAr": "رأس ومحتوى وتذييل"
+        },
+        {
+          "slug": "sider",
+          "name": "Sider",
+          "nameAr": "شريط جانبي"
+        },
+        {
+          "slug": "collapsible",
+          "name": "Collapsible sider with breakpoint",
+          "nameAr": "شريط جانبي قابل للطي"
+        },
+        {
+          "slug": "rtl-sider",
+          "name": "Sider on the inline start in RTL",
+          "nameAr": "الشريط الجانبي في بداية السطر في RTL",
+          "arabicEdge": "risk: sider and its collapse arrow must mirror in RTL"
+        }
+      ]
+    },
+    {
+      "id": "space",
+      "antd": "Space",
+      "category": "layout",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "size",
+          "name": "Size / gap",
+          "nameAr": "المسافة"
+        },
+        {
+          "slug": "direction",
+          "name": "Direction",
+          "nameAr": "الاتجاه"
+        },
+        {
+          "slug": "split",
+          "name": "Split element",
+          "nameAr": "فاصل بين العناصر"
+        },
+        {
+          "slug": "compact",
+          "name": "Space.Compact",
+          "nameAr": "تجميع مضغوط"
+        }
+      ]
+    },
+    {
+      "id": "splitter",
+      "antd": "Splitter",
+      "category": "layout",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "panels",
+          "name": "Resizable panels",
+          "nameAr": "ألواح قابلة لتغيير الحجم"
+        },
+        {
+          "slug": "collapsible",
+          "name": "Collapsible panels",
+          "nameAr": "ألواح قابلة للطي"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical layout",
+          "nameAr": "تخطيط رأسي"
+        },
+        {
+          "slug": "min-max",
+          "name": "Min / max size",
+          "nameAr": "حد أدنى وأقصى"
+        }
+      ]
+    },
+    {
+      "id": "anchor",
+      "antd": "Anchor",
+      "category": "navigation",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "links",
+          "name": "Anchor links with active state",
+          "nameAr": "روابط مرساة مع الحالة النشطة"
+        },
+        {
+          "slug": "affix",
+          "name": "Affixed",
+          "nameAr": "مثبّت"
+        },
+        {
+          "slug": "horizontal",
+          "name": "Horizontal",
+          "nameAr": "أفقي"
+        },
+        {
+          "slug": "offset",
+          "name": "Target offset",
+          "nameAr": "إزاحة الهدف"
+        }
+      ]
+    },
+    {
+      "id": "breadcrumb",
+      "antd": "Breadcrumb",
+      "category": "navigation",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "items",
+          "name": "Items with links",
+          "nameAr": "عناصر بروابط"
+        },
+        {
+          "slug": "separator",
+          "name": "Custom separator",
+          "nameAr": "فاصل مخصص"
+        },
+        {
+          "slug": "dropdown",
+          "name": "Dropdown menu in item",
+          "nameAr": "قائمة منسدلة داخل العنصر"
+        },
+        {
+          "slug": "routes",
+          "name": "Route params",
+          "nameAr": "معاملات المسار"
+        },
+        {
+          "slug": "rtl-separator",
+          "name": "Separator mirrored in RTL",
+          "nameAr": "عكس الفاصل في RTL",
+          "arabicEdge": "risk: «/» and chevrons must point the reading direction"
+        }
+      ]
+    },
+    {
+      "id": "dropdown",
+      "antd": "Dropdown",
+      "category": "navigation",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "menu",
+          "name": "Menu items",
+          "nameAr": "عناصر القائمة"
+        },
+        {
+          "slug": "trigger",
+          "name": "Trigger hover / click / contextMenu",
+          "nameAr": "المشغّل: مرور/نقر/زر أيمن"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement",
+          "nameAr": "الموضع"
+        },
+        {
+          "slug": "arrow",
+          "name": "Arrow",
+          "nameAr": "سهم"
+        },
+        {
+          "slug": "button",
+          "name": "Dropdown.Button",
+          "nameAr": "زر بقائمة"
+        },
+        {
+          "slug": "submenu",
+          "name": "Cascading submenu",
+          "nameAr": "قائمة فرعية"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Keyboard navigation",
+          "nameAr": "التنقل بلوحة المفاتيح"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "antd": "Menu",
+      "category": "navigation",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "horizontal",
+          "name": "Horizontal (top nav)",
+          "nameAr": "أفقية (تنقل علوي)"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical",
+          "nameAr": "رأسية"
+        },
+        {
+          "slug": "inline",
+          "name": "Inline with collapsible submenus",
+          "nameAr": "مضمّنة بقوائم فرعية قابلة للطي"
+        },
+        {
+          "slug": "collapsed",
+          "name": "Inline collapsed (icons only)",
+          "nameAr": "مطوية (أيقونات فقط)"
+        },
+        {
+          "slug": "submenu",
+          "name": "Nested submenus",
+          "nameAr": "قوائم فرعية متداخلة"
+        },
+        {
+          "slug": "groups",
+          "name": "Item groups and dividers",
+          "nameAr": "مجموعات وفواصل"
+        },
+        {
+          "slug": "selected",
+          "name": "Controlled selectedKeys / openKeys",
+          "nameAr": "مفاتيح محددة ومفتوحة متحكَّم بها"
+        },
+        {
+          "slug": "multiple",
+          "name": "Multiple selection",
+          "nameAr": "تحديد متعدد"
+        },
+        {
+          "slug": "icons",
+          "name": "Item icons",
+          "nameAr": "أيقونات العناصر"
+        },
+        {
+          "slug": "danger",
+          "name": "Danger item",
+          "nameAr": "عنصر خطر"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled items",
+          "nameAr": "عناصر معطلة"
+        },
+        {
+          "slug": "theme",
+          "name": "Light / dark theme",
+          "nameAr": "سمة فاتحة/داكنة"
+        },
+        {
+          "slug": "overflow",
+          "name": "Overflow into “more”",
+          "nameAr": "تجميع الزائد في «المزيد»"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Keyboard navigation",
+          "nameAr": "التنقل بلوحة المفاتيح"
+        },
+        {
+          "slug": "rtl",
+          "name": "RTL submenu direction and arrows",
+          "nameAr": "اتجاه القوائم الفرعية وأسهمها في RTL",
+          "arabicEdge": "risk: submenus must open toward the inline end and arrow keys must follow visual direction"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "antd": "Pagination",
+      "category": "navigation",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Pages and current page",
+          "nameAr": "الصفحات والصفحة الحالية"
+        },
+        {
+          "slug": "size-changer",
+          "name": "Page size changer",
+          "nameAr": "تغيير حجم الصفحة"
+        },
+        {
+          "slug": "quick-jumper",
+          "name": "Quick jumper",
+          "nameAr": "الانتقال السريع"
+        },
+        {
+          "slug": "total",
+          "name": "Show total",
+          "nameAr": "عرض الإجمالي"
+        },
+        {
+          "slug": "simple",
+          "name": "Simple / mini mode",
+          "nameAr": "نمط مبسط"
+        },
+        {
+          "slug": "controlled",
+          "name": "Controlled current / pageSize",
+          "nameAr": "تحكم في الصفحة والحجم"
+        },
+        {
+          "slug": "numerals",
+          "name": "Page numbers in the user numerals",
+          "nameAr": "أرقام الصفحات بنظام أرقام المستخدم",
+          "arabicEdge": "opportunity: AntD shows Latin page numbers; ours would follow Digits"
+        }
+      ]
+    },
+    {
+      "id": "steps",
+      "antd": "Steps",
+      "category": "navigation",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Horizontal steps",
+          "nameAr": "خطوات أفقية"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical",
+          "nameAr": "رأسية"
+        },
+        {
+          "slug": "status",
+          "name": "Status (wait/process/finish/error)",
+          "nameAr": "الحالة"
+        },
+        {
+          "slug": "clickable",
+          "name": "Clickable steps",
+          "nameAr": "خطوات قابلة للنقر"
+        },
+        {
+          "slug": "progress-dot",
+          "name": "Progress dot / navigation type",
+          "nameAr": "نقاط التقدم ونمط التنقل"
+        },
+        {
+          "slug": "small",
+          "name": "Small size",
+          "nameAr": "حجم صغير"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "antd": "Tabs",
+      "category": "navigation",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Items, controlled / uncontrolled",
+          "nameAr": "العناصر، تحكم وبدون تحكم"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Keyboard: arrows, Home/End, roving tabindex",
+          "nameAr": "لوحة المفاتيح: الأسهم وHome/End"
+        },
+        {
+          "slug": "rtl-arrows",
+          "name": "Arrow keys follow visual direction in RTL",
+          "nameAr": "الأسهم تتبع الاتجاه البصري في RTL",
+          "arabicEdge": "ArrowLeft is next in RTL, tested"
+        },
+        {
+          "slug": "card",
+          "name": "Card type",
+          "nameAr": "نمط البطاقة"
+        },
+        {
+          "slug": "count",
+          "name": "Count badge on tab",
+          "nameAr": "عدّاد على التبويب"
+        },
+        {
+          "slug": "icons",
+          "name": "Icons in tabs",
+          "nameAr": "أيقونات في التبويبات"
+        },
+        {
+          "slug": "editable",
+          "name": "Editable card: add / close tabs",
+          "nameAr": "إضافة وإغلاق التبويبات"
+        },
+        {
+          "slug": "extra",
+          "name": "Extra content (tabBarExtraContent)",
+          "nameAr": "محتوى إضافي في الشريط"
+        },
+        {
+          "slug": "position",
+          "name": "Position top / bottom / start / end",
+          "nameAr": "موضع الشريط"
+        },
+        {
+          "slug": "overflow",
+          "name": "Overflow scroll / “more” dropdown",
+          "nameAr": "تمرير التبويبات الزائدة أو «المزيد»"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes",
+          "nameAr": "الأحجام"
+        },
+        {
+          "slug": "centered",
+          "name": "Centered",
+          "nameAr": "توسيط"
+        },
+        {
+          "slug": "lazy",
+          "name": "Lazy render / destroyInactiveTabPane",
+          "nameAr": "عرض كسول وإزالة غير النشط"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled tab",
+          "nameAr": "تبويب معطل"
+        },
+        {
+          "slug": "animated",
+          "name": "Animated ink bar",
+          "nameAr": "مؤشر متحرك"
+        }
+      ]
+    },
+    {
+      "id": "auto-complete",
+      "antd": "AutoComplete",
+      "category": "data-entry",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "options",
+          "name": "Suggestions while typing, free text kept",
+          "nameAr": "اقتراحات أثناء الكتابة مع بقاء النص الحر"
+        },
+        {
+          "slug": "filter",
+          "name": "Filter option",
+          "nameAr": "تصفية الخيارات"
+        },
+        {
+          "slug": "custom-input",
+          "name": "Custom input (TextArea)",
+          "nameAr": "حقل مخصص"
+        },
+        {
+          "slug": "status",
+          "name": "Status",
+          "nameAr": "الحالة"
+        },
+        {
+          "slug": "allow-clear",
+          "name": "Allow clear",
+          "nameAr": "زر المسح"
+        }
+      ]
+    },
+    {
+      "id": "cascader",
+      "antd": "Cascader",
+      "category": "data-entry",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Cascading options",
+          "nameAr": "خيارات متتالية"
+        },
+        {
+          "slug": "hover-expand",
+          "name": "Expand on hover / click",
+          "nameAr": "التوسيع بالمرور أو النقر"
+        },
+        {
+          "slug": "change-on-select",
+          "name": "Select any level (changeOnSelect)",
+          "nameAr": "اختيار أي مستوى"
+        },
+        {
+          "slug": "multiple",
+          "name": "Multiple selection",
+          "nameAr": "تحديد متعدد"
+        },
+        {
+          "slug": "show-checked",
+          "name": "showCheckedStrategy",
+          "nameAr": "استراتيجية عرض المحدد"
+        },
+        {
+          "slug": "search",
+          "name": "Search across paths",
+          "nameAr": "البحث في المسارات"
+        },
+        {
+          "slug": "load-data",
+          "name": "Lazy load children",
+          "nameAr": "تحميل الأبناء عند الطلب"
+        },
+        {
+          "slug": "display-render",
+          "name": "Custom display render",
+          "nameAr": "عرض مخصص للقيمة"
+        },
+        {
+          "slug": "field-names",
+          "name": "Custom field names",
+          "nameAr": "أسماء حقول مخصصة"
+        },
+        {
+          "slug": "panel",
+          "name": "Panel only (Cascader.Panel)",
+          "nameAr": "لوحة فقط"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled options",
+          "nameAr": "خيارات معطلة"
+        },
+        {
+          "slug": "rtl",
+          "name": "Columns open toward inline end in RTL",
+          "nameAr": "الأعمدة تفتح نحو نهاية السطر في RTL",
+          "arabicEdge": "risk: column order and expand arrows must mirror; Arabic tolerant search would help (region/city names)"
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "antd": "Checkbox",
+      "category": "data-entry",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Checkbox",
+          "nameAr": "مربع اختيار"
+        },
+        {
+          "slug": "group",
+          "name": "Checkbox.Group with options",
+          "nameAr": "مجموعة خيارات"
+        },
+        {
+          "slug": "indeterminate",
+          "name": "Indeterminate / check all",
+          "nameAr": "حالة غير محددة وتحديد الكل"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled",
+          "nameAr": "معطل"
+        },
+        {
+          "slug": "controlled",
+          "name": "Controlled",
+          "nameAr": "متحكم به"
+        }
+      ]
+    },
+    {
+      "id": "color-picker",
+      "antd": "ColorPicker",
+      "category": "data-entry",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Pick color",
+          "nameAr": "اختيار لون"
+        },
+        {
+          "slug": "formats",
+          "name": "HEX / RGB / HSB formats",
+          "nameAr": "صيغ اللون"
+        },
+        {
+          "slug": "presets",
+          "name": "Presets",
+          "nameAr": "ألوان جاهزة"
+        },
+        {
+          "slug": "alpha",
+          "name": "Alpha",
+          "nameAr": "الشفافية"
+        },
+        {
+          "slug": "gradient",
+          "name": "Gradient",
+          "nameAr": "تدرج"
+        }
+      ]
+    },
+    {
+      "id": "date-picker",
+      "antd": "DatePicker",
+      "category": "data-entry",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Single date, controlled / uncontrolled",
+          "nameAr": "تاريخ واحد، تحكم وبدون تحكم"
+        },
+        {
+          "slug": "storage",
+          "name": "Stable value independent of display",
+          "nameAr": "قيمة مخزنة مستقلة عن العرض"
+        },
+        {
+          "slug": "min-max",
+          "name": "Min / max dates",
+          "nameAr": "أقل وأقصى تاريخ"
+        },
+        {
+          "slug": "disabled-date",
+          "name": "disabledDate function",
+          "nameAr": "دالة الأيام المعطلة"
+        },
+        {
+          "slug": "range",
+          "name": "RangePicker",
+          "nameAr": "اختيار نطاق"
+        },
+        {
+          "slug": "presets",
+          "name": "Presets (quick ranges)",
+          "nameAr": "نطاقات جاهزة"
+        },
+        {
+          "slug": "time",
+          "name": "showTime",
+          "nameAr": "مع الوقت"
+        },
+        {
+          "slug": "week",
+          "name": "Week picker",
+          "nameAr": "اختيار أسبوع"
+        },
+        {
+          "slug": "month",
+          "name": "Month picker",
+          "nameAr": "اختيار شهر"
+        },
+        {
+          "slug": "quarter",
+          "name": "Quarter picker",
+          "nameAr": "اختيار ربع سنة"
+        },
+        {
+          "slug": "year",
+          "name": "Year picker",
+          "nameAr": "اختيار سنة"
+        },
+        {
+          "slug": "format",
+          "name": "Custom display format",
+          "nameAr": "صيغة عرض مخصصة"
+        },
+        {
+          "slug": "locale",
+          "name": "Locale (month names, first day)",
+          "nameAr": "اللغة (أسماء الشهور، أول يوم)"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Keyboard entry by segments",
+          "nameAr": "الإدخال بالمقاطع من لوحة المفاتيح"
+        },
+        {
+          "slug": "rtl-keys",
+          "name": "Arrow keys follow visual direction in RTL",
+          "nameAr": "الأسهم تتبع الاتجاه البصري في RTL"
+        },
+        {
+          "slug": "status",
+          "name": "Status / error / helper",
+          "nameAr": "حالة الخطأ والمساعدة"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled / read-only",
+          "nameAr": "معطل/للقراءة فقط"
+        },
+        {
+          "slug": "allow-clear",
+          "name": "Allow clear",
+          "nameAr": "زر المسح"
+        },
+        {
+          "slug": "multiple",
+          "name": "Multiple dates",
+          "nameAr": "تواريخ متعددة"
+        },
+        {
+          "slug": "render-cell",
+          "name": "Custom cell render",
+          "nameAr": "عرض خلية مخصص"
+        },
+        {
+          "slug": "hijri",
+          "name": "Hijri (Umm al-Qura) display calendar",
+          "nameAr": "التقويم الهجري (أم القرى) للعرض",
+          "arabicEdge": "Hijri display with Arabic month names over the same Gregorian ISO value; AntD needs a custom dayjs calendar plugin"
+        },
+        {
+          "slug": "any-digits",
+          "name": "Segments accept any digit system",
+          "nameAr": "المقاطع تقبل أي نظام أرقام",
+          "arabicEdge": "typing ٢٠٢٦ under Latin numerals (or 2026 under Arabic) works; React Aria and AntD drop or reject the other system"
+        }
+      ]
+    },
+    {
+      "id": "form",
+      "antd": "Form",
+      "category": "data-entry",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "item-anatomy",
+          "name": "Form.Item label, help, error wiring",
+          "nameAr": "ربط العنوان والمساعدة والخطأ"
+        },
+        {
+          "slug": "required-mark",
+          "name": "Required / optional marks",
+          "nameAr": "علامة الإلزامي/الاختياري"
+        },
+        {
+          "slug": "layout",
+          "name": "Layouts horizontal / vertical / inline",
+          "nameAr": "التخطيطات أفقي/رأسي/سطري"
+        },
+        {
+          "slug": "label-align",
+          "name": "Label align / labelCol / wrapperCol",
+          "nameAr": "محاذاة العنوان وأعمدته"
+        },
+        {
+          "slug": "rules",
+          "name": "Validation rules (required, type, pattern, min/max)",
+          "nameAr": "قواعد التحقق"
+        },
+        {
+          "slug": "validator",
+          "name": "Custom validator",
+          "nameAr": "تحقق مخصص"
+        },
+        {
+          "slug": "async-validation",
+          "name": "Async validation",
+          "nameAr": "تحقق غير متزامن"
+        },
+        {
+          "slug": "validate-trigger",
+          "name": "validateTrigger (change / blur)",
+          "nameAr": "توقيت التحقق"
+        },
+        {
+          "slug": "dependencies",
+          "name": "Field dependencies",
+          "nameAr": "اعتماد الحقول على بعضها"
+        },
+        {
+          "slug": "should-update",
+          "name": "shouldUpdate / Form.useWatch",
+          "nameAr": "مراقبة القيم"
+        },
+        {
+          "slug": "list",
+          "name": "Dynamic Form.List",
+          "nameAr": "قوائم حقول ديناميكية"
+        },
+        {
+          "slug": "nested-names",
+          "name": "Nested names (namePath)",
+          "nameAr": "أسماء متداخلة"
+        },
+        {
+          "slug": "scroll-to-error",
+          "name": "Scroll to first error",
+          "nameAr": "التمرير لأول خطأ"
+        },
+        {
+          "slug": "feedback-icons",
+          "name": "hasFeedback icons",
+          "nameAr": "أيقونات حالة التحقق"
+        },
+        {
+          "slug": "instance",
+          "name": "Form instance API (getFieldsValue, setFieldsValue, validateFields)",
+          "nameAr": "واجهة نموذج برمجية"
+        },
+        {
+          "slug": "initial-values",
+          "name": "initialValues",
+          "nameAr": "القيم الابتدائية"
+        },
+        {
+          "slug": "reset",
+          "name": "resetFields",
+          "nameAr": "إعادة الضبط"
+        },
+        {
+          "slug": "disabled",
+          "name": "Form-level disabled",
+          "nameAr": "تعطيل النموذج كله"
+        },
+        {
+          "slug": "field-disabled",
+          "name": "Field-level disabled",
+          "nameAr": "تعطيل حقل"
+        },
+        {
+          "slug": "submit",
+          "name": "Submit lifecycle (onFinish / onFinishFailed)",
+          "nameAr": "دورة الإرسال"
+        },
+        {
+          "slug": "submit-guard",
+          "name": "Submit button cannot double-submit",
+          "nameAr": "زر الإرسال لا يرسل مرتين"
+        },
+        {
+          "slug": "show-validation",
+          "name": "Show errors after submit attempt",
+          "nameAr": "إظهار الأخطاء بعد محاولة الإرسال"
+        },
+        {
+          "slug": "messages-locale",
+          "name": "Validation messages localized (validateMessages)",
+          "nameAr": "رسائل تحقق مترجمة"
+        },
+        {
+          "slug": "size",
+          "name": "Form size / variant",
+          "nameAr": "حجم النموذج"
+        },
+        {
+          "slug": "null-empty",
+          "name": "Empty fields report null",
+          "nameAr": "الحقول الفارغة تبلّغ null"
+        },
+        {
+          "slug": "preserve",
+          "name": "preserve on unmount",
+          "nameAr": "الاحتفاظ بالقيم عند الإزالة"
+        },
+        {
+          "slug": "provider",
+          "name": "Form.Provider (multi-form)",
+          "nameAr": "ربط عدة نماذج"
+        }
+      ]
+    },
+    {
+      "id": "input",
+      "antd": "Input",
+      "category": "data-entry",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Basic input, controlled / uncontrolled",
+          "nameAr": "حقل نصي، تحكم وبدون تحكم"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes",
+          "nameAr": "الأحجام"
+        },
+        {
+          "slug": "status",
+          "name": "Status error / warning",
+          "nameAr": "حالة خطأ/تحذير"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled / read-only",
+          "nameAr": "معطل/للقراءة فقط"
+        },
+        {
+          "slug": "prefix-suffix",
+          "name": "Prefix / suffix",
+          "nameAr": "بادئة/لاحقة"
+        },
+        {
+          "slug": "addon",
+          "name": "addonBefore / addonAfter",
+          "nameAr": "إضافات قبل وبعد"
+        },
+        {
+          "slug": "allow-clear",
+          "name": "Allow clear",
+          "nameAr": "زر المسح"
+        },
+        {
+          "slug": "password",
+          "name": "Input.Password",
+          "nameAr": "كلمة المرور"
+        },
+        {
+          "slug": "textarea",
+          "name": "TextArea with autoSize",
+          "nameAr": "نص متعدد الأسطر"
+        },
+        {
+          "slug": "count",
+          "name": "showCount / maxLength",
+          "nameAr": "عدّاد الأحرف"
+        },
+        {
+          "slug": "search",
+          "name": "Input.Search",
+          "nameAr": "حقل البحث"
+        },
+        {
+          "slug": "otp",
+          "name": "Input.OTP",
+          "nameAr": "رمز التحقق"
+        },
+        {
+          "slug": "variants",
+          "name": "Variants outlined / filled / borderless",
+          "nameAr": "الأنماط محدد/مملوء/بلا حدود"
+        },
+        {
+          "slug": "content-dir",
+          "name": "Content direction auto / explicit LTR",
+          "nameAr": "اتجاه المحتوى تلقائي أو LTR صريح",
+          "arabicEdge": "typed Latin in an Arabic UI aligns by its first strong character; codes/emails can be pinned LTR; AntD inherits UI direction only"
+        },
+        {
+          "slug": "phone",
+          "name": "Phone input with E.164 output",
+          "nameAr": "حقل هاتف يخرج E.164",
+          "arabicEdge": "accepts Arabic-Indic digits and rejects look-alike Latin letters; AntD has no phone input"
+        }
+      ]
+    },
+    {
+      "id": "input-number",
+      "antd": "InputNumber",
+      "category": "data-entry",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Numeric value, controlled / uncontrolled",
+          "nameAr": "قيمة رقمية، تحكم وبدون تحكم"
+        },
+        {
+          "slug": "min-max",
+          "name": "Min / max",
+          "nameAr": "حد أدنى وأقصى"
+        },
+        {
+          "slug": "step",
+          "name": "Step and up/down controls",
+          "nameAr": "الخطوة وأزرار الزيادة والنقص"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Arrow up/down to change value",
+          "nameAr": "الأسهم لتغيير القيمة"
+        },
+        {
+          "slug": "precision",
+          "name": "Precision",
+          "nameAr": "الدقة العشرية"
+        },
+        {
+          "slug": "string-mode",
+          "name": "High precision (stringMode)",
+          "nameAr": "دقة عالية"
+        },
+        {
+          "slug": "formatter",
+          "name": "formatter / parser",
+          "nameAr": "التنسيق والتحليل"
+        },
+        {
+          "slug": "prefix",
+          "name": "Prefix / addon (currency symbol)",
+          "nameAr": "بادئة (رمز العملة)"
+        },
+        {
+          "slug": "negative",
+          "name": "Negative numbers",
+          "nameAr": "الأرقام السالبة"
+        },
+        {
+          "slug": "status",
+          "name": "Status / disabled / read-only",
+          "nameAr": "الحالة والتعطيل"
+        },
+        {
+          "slug": "clear",
+          "name": "Clear",
+          "nameAr": "المسح"
+        },
+        {
+          "slug": "replace-on-focus",
+          "name": "Keyboard entry into a filled field replaces it",
+          "nameAr": "الكتابة في حقل ممتلئ تستبدله"
+        },
+        {
+          "slug": "arabic-digits",
+          "name": "Arabic-Indic and Persian digits accepted",
+          "nameAr": "قبول الأرقام العربية المشرقية والفارسية",
+          "arabicEdge": "AntD InputNumber rejects ٠-٩ unless the app writes a parser"
+        },
+        {
+          "slug": "ambiguous-comma",
+          "name": "Ambiguous comma rejected with a suggestion",
+          "nameAr": "رفض الفاصلة الملتبسة مع اقتراح",
+          "arabicEdge": "«1,500» could be 1.5 or 1500 depending on habit; never guessed silently"
+        },
+        {
+          "slug": "arabic-separators",
+          "name": "Arabic thousands / decimal separators",
+          "nameAr": "فواصل الآلاف والعشرية العربية",
+          "arabicEdge": "«٬» and «٫» parsed and displayed as one bidi run"
+        },
+        {
+          "slug": "bidi-paste",
+          "name": "Pasted bidi marks and RTL minus handled",
+          "nameAr": "معالجة علامات الاتجاه الملصوقة والسالب المكتوب من اليمين",
+          "arabicEdge": "invisible RLM/LRM from copy-paste do not change the value; trailing minus is rejected with a reason"
+        }
+      ]
+    },
+    {
+      "id": "mentions",
+      "antd": "Mentions",
+      "category": "data-entry",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Mention suggestions",
+          "nameAr": "اقتراحات الإشارة"
+        },
+        {
+          "slug": "prefix",
+          "name": "Custom prefix (@, #)",
+          "nameAr": "بادئة مخصصة"
+        },
+        {
+          "slug": "async",
+          "name": "Async options",
+          "nameAr": "خيارات غير متزامنة"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement",
+          "nameAr": "الموضع"
+        }
+      ]
+    },
+    {
+      "id": "radio",
+      "antd": "Radio",
+      "category": "data-entry",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Radio",
+          "nameAr": "زر اختيار"
+        },
+        {
+          "slug": "group",
+          "name": "Radio.Group with options",
+          "nameAr": "مجموعة خيارات"
+        },
+        {
+          "slug": "button-style",
+          "name": "Button style options",
+          "nameAr": "خيارات بشكل أزرار"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled options",
+          "nameAr": "خيارات معطلة"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Arrow keys follow direction",
+          "nameAr": "الأسهم تتبع الاتجاه"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical group",
+          "nameAr": "مجموعة رأسية"
+        }
+      ]
+    },
+    {
+      "id": "rate",
+      "antd": "Rate",
+      "category": "data-entry",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Star rating",
+          "nameAr": "تقييم بالنجوم"
+        },
+        {
+          "slug": "half",
+          "name": "Half stars",
+          "nameAr": "نصف نجمة"
+        },
+        {
+          "slug": "character",
+          "name": "Custom character",
+          "nameAr": "رمز مخصص"
+        },
+        {
+          "slug": "tooltips",
+          "name": "Tooltips",
+          "nameAr": "تلميحات"
+        },
+        {
+          "slug": "rtl",
+          "name": "Fill direction in RTL",
+          "nameAr": "اتجاه الملء في RTL",
+          "arabicEdge": "risk: stars must fill from the inline start"
+        }
+      ]
+    },
+    {
+      "id": "select",
+      "antd": "Select",
+      "category": "data-entry",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "single",
+          "name": "Single select",
+          "nameAr": "اختيار واحد"
+        },
+        {
+          "slug": "controlled",
+          "name": "Controlled / uncontrolled",
+          "nameAr": "تحكم وبدون تحكم"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes",
+          "nameAr": "الأحجام"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled",
+          "nameAr": "معطل"
+        },
+        {
+          "slug": "status",
+          "name": "Status / error",
+          "nameAr": "حالة الخطأ"
+        },
+        {
+          "slug": "show-search",
+          "name": "showSearch",
+          "nameAr": "البحث داخل القائمة"
+        },
+        {
+          "slug": "filter-option",
+          "name": "Custom filterOption",
+          "nameAr": "تصفية مخصصة"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Keyboard selection, Enter / Escape",
+          "nameAr": "الاختيار بلوحة المفاتيح"
+        },
+        {
+          "slug": "allow-clear",
+          "name": "Allow clear (reports empty)",
+          "nameAr": "زر المسح"
+        },
+        {
+          "slug": "not-found",
+          "name": "notFoundContent",
+          "nameAr": "محتوى عدم وجود نتائج"
+        },
+        {
+          "slug": "option-render",
+          "name": "Custom option render (secondary line)",
+          "nameAr": "عرض خيار مخصص"
+        },
+        {
+          "slug": "label-in-value",
+          "name": "labelInValue / option in onChange",
+          "nameAr": "إرجاع الخيار مع القيمة"
+        },
+        {
+          "slug": "placement-rtl",
+          "name": "Popup aligned to field start in RTL",
+          "nameAr": "القائمة محاذية لبداية الحقل في RTL"
+        },
+        {
+          "slug": "multiple",
+          "name": "Multiple mode",
+          "nameAr": "تحديد متعدد"
+        },
+        {
+          "slug": "tags",
+          "name": "Tags mode",
+          "nameAr": "نمط الوسوم"
+        },
+        {
+          "slug": "max-tag",
+          "name": "maxTagCount / responsive tags",
+          "nameAr": "حد الوسوم المعروضة"
+        },
+        {
+          "slug": "groups",
+          "name": "Option groups",
+          "nameAr": "مجموعات الخيارات"
+        },
+        {
+          "slug": "disabled-options",
+          "name": "Disabled options",
+          "nameAr": "خيارات معطلة"
+        },
+        {
+          "slug": "virtual",
+          "name": "Virtual scroll for large lists",
+          "nameAr": "تمرير افتراضي للقوائم الكبيرة"
+        },
+        {
+          "slug": "remote",
+          "name": "Remote search with loading",
+          "nameAr": "بحث عن بعد مع تحميل"
+        },
+        {
+          "slug": "dropdown-render",
+          "name": "dropdownRender (custom footer)",
+          "nameAr": "محتوى مخصص للقائمة"
+        },
+        {
+          "slug": "variants",
+          "name": "Variants outlined / filled / borderless",
+          "nameAr": "الأنماط"
+        },
+        {
+          "slug": "arabic-search",
+          "name": "Arabic-tolerant search with highlighted match",
+          "nameAr": "بحث عربي متسامح مع تمييز المطابقة",
+          "arabicEdge": "hamza, alef maqsura, taa marbuta and diacritics ignored on match, stored text unchanged; AntD filter is a plain substring"
+        },
+        {
+          "slug": "digit-search",
+          "name": "Search by phone/code digits in any numerals",
+          "nameAr": "البحث بأرقام الهاتف بأي نظام أرقام",
+          "arabicEdge": "«٠١٠…» finds «+20 10 …»"
+        },
+        {
+          "slug": "mixed-align",
+          "name": "Latin names in an Arabic list follow alignment preference",
+          "nameAr": "الأسماء اللاتينية في قائمة عربية تتبع تفضيل المحاذاة",
+          "arabicEdge": "mixed-script options keep direction per item"
+        }
+      ]
+    },
+    {
+      "id": "slider",
+      "antd": "Slider",
+      "category": "data-entry",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Single value",
+          "nameAr": "قيمة واحدة"
+        },
+        {
+          "slug": "range",
+          "name": "Range",
+          "nameAr": "نطاق"
+        },
+        {
+          "slug": "marks",
+          "name": "Marks and steps",
+          "nameAr": "علامات وخطوات"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical",
+          "nameAr": "رأسي"
+        },
+        {
+          "slug": "tooltip",
+          "name": "Value tooltip",
+          "nameAr": "تلميح القيمة"
+        },
+        {
+          "slug": "rtl",
+          "name": "Reversed in RTL",
+          "nameAr": "معكوس في RTL",
+          "arabicEdge": "risk: min must sit at the inline start"
+        }
+      ]
+    },
+    {
+      "id": "switch",
+      "antd": "Switch",
+      "category": "data-entry",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Checked, controlled / uncontrolled",
+          "nameAr": "تشغيل/إيقاف، تحكم وبدون تحكم"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled",
+          "nameAr": "معطل"
+        },
+        {
+          "slug": "label",
+          "name": "Label and description",
+          "nameAr": "عنوان ووصف"
+        },
+        {
+          "slug": "size",
+          "name": "Size small",
+          "nameAr": "حجم صغير"
+        },
+        {
+          "slug": "loading",
+          "name": "Loading",
+          "nameAr": "تحميل"
+        },
+        {
+          "slug": "children",
+          "name": "checkedChildren / unCheckedChildren",
+          "nameAr": "نص داخل المفتاح"
+        }
+      ]
+    },
+    {
+      "id": "time-picker",
+      "antd": "TimePicker",
+      "category": "data-entry",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Time selection",
+          "nameAr": "اختيار الوقت"
+        },
+        {
+          "slug": "format",
+          "name": "12/24 hour format",
+          "nameAr": "صيغة 12/24 ساعة"
+        },
+        {
+          "slug": "steps",
+          "name": "Hour/minute/second steps",
+          "nameAr": "خطوات الساعات والدقائق"
+        },
+        {
+          "slug": "range",
+          "name": "Range",
+          "nameAr": "نطاق"
+        },
+        {
+          "slug": "disabled-time",
+          "name": "Disabled time",
+          "nameAr": "أوقات معطلة"
+        },
+        {
+          "slug": "ampm-ar",
+          "name": "Arabic AM/PM (ص/م)",
+          "nameAr": "ص/م بالعربية",
+          "arabicEdge": "opportunity: ص/م and Arabic digits in segments, as in DatePicker"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "antd": "Transfer",
+      "category": "data-entry",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Two lists with move",
+          "nameAr": "قائمتان مع نقل"
+        },
+        {
+          "slug": "search",
+          "name": "Search",
+          "nameAr": "بحث"
+        },
+        {
+          "slug": "one-way",
+          "name": "One-way",
+          "nameAr": "اتجاه واحد"
+        },
+        {
+          "slug": "custom-render",
+          "name": "Custom render / table / tree",
+          "nameAr": "عرض مخصص"
+        },
+        {
+          "slug": "pagination",
+          "name": "Pagination",
+          "nameAr": "ترقيم الصفحات"
+        },
+        {
+          "slug": "rtl",
+          "name": "Move arrows mirrored in RTL",
+          "nameAr": "عكس أسهم النقل في RTL",
+          "arabicEdge": "risk: «→» moves to the target list visually"
+        }
+      ]
+    },
+    {
+      "id": "tree-select",
+      "antd": "TreeSelect",
+      "category": "data-entry",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Tree dropdown select",
+          "nameAr": "اختيار من شجرة"
+        },
+        {
+          "slug": "multiple",
+          "name": "Multiple",
+          "nameAr": "متعدد"
+        },
+        {
+          "slug": "checkable",
+          "name": "treeCheckable",
+          "nameAr": "تحديد بمربعات"
+        },
+        {
+          "slug": "strategy",
+          "name": "showCheckedStrategy",
+          "nameAr": "استراتيجية عرض المحدد"
+        },
+        {
+          "slug": "search",
+          "name": "Search with treeNodeFilterProp",
+          "nameAr": "البحث في الشجرة"
+        },
+        {
+          "slug": "async",
+          "name": "Async load data",
+          "nameAr": "تحميل غير متزامن"
+        },
+        {
+          "slug": "tree-data",
+          "name": "treeData / simple mode",
+          "nameAr": "بيانات الشجرة"
+        },
+        {
+          "slug": "expand",
+          "name": "Default / controlled expanded keys",
+          "nameAr": "التوسيع الافتراضي والمتحكم به"
+        },
+        {
+          "slug": "tree-line",
+          "name": "Tree lines",
+          "nameAr": "خطوط الشجرة"
+        },
+        {
+          "slug": "virtual",
+          "name": "Virtual scroll",
+          "nameAr": "تمرير افتراضي"
+        },
+        {
+          "slug": "max-tag",
+          "name": "maxTagCount",
+          "nameAr": "حد الوسوم"
+        },
+        {
+          "slug": "rtl",
+          "name": "Indent and switcher mirrored in RTL",
+          "nameAr": "عكس المسافة البادئة ومفتاح التوسيع في RTL",
+          "arabicEdge": "risk: indentation from the inline start; Arabic tolerant search would apply"
+        }
+      ]
+    },
+    {
+      "id": "upload",
+      "antd": "Upload",
+      "category": "data-entry",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Click to upload",
+          "nameAr": "الرفع بالنقر"
+        },
+        {
+          "slug": "drag",
+          "name": "Drag and drop (Dragger)",
+          "nameAr": "السحب والإفلات"
+        },
+        {
+          "slug": "list",
+          "name": "File list with status",
+          "nameAr": "قائمة الملفات مع الحالة"
+        },
+        {
+          "slug": "progress",
+          "name": "Progress",
+          "nameAr": "شريط التقدم"
+        },
+        {
+          "slug": "picture",
+          "name": "Picture card / list",
+          "nameAr": "بطاقات الصور"
+        },
+        {
+          "slug": "preview",
+          "name": "Preview",
+          "nameAr": "معاينة"
+        },
+        {
+          "slug": "before-upload",
+          "name": "beforeUpload validation",
+          "nameAr": "تحقق قبل الرفع"
+        },
+        {
+          "slug": "custom-request",
+          "name": "customRequest",
+          "nameAr": "طلب مخصص"
+        },
+        {
+          "slug": "multiple",
+          "name": "Multiple / directory",
+          "nameAr": "ملفات متعددة ومجلدات"
+        },
+        {
+          "slug": "max-count",
+          "name": "maxCount",
+          "nameAr": "حد عدد الملفات"
+        },
+        {
+          "slug": "accept",
+          "name": "accept types",
+          "nameAr": "أنواع مقبولة"
+        },
+        {
+          "slug": "controlled",
+          "name": "Controlled fileList",
+          "nameAr": "قائمة ملفات متحكم بها"
+        },
+        {
+          "slug": "remove",
+          "name": "Remove / retry",
+          "nameAr": "حذف وإعادة محاولة"
+        },
+        {
+          "slug": "crop",
+          "name": "Image crop (antd-img-crop)",
+          "nameAr": "قص الصورة"
+        },
+        {
+          "slug": "arabic-names",
+          "name": "Arabic file names render with correct direction",
+          "nameAr": "أسماء الملفات العربية باتجاه صحيح",
+          "arabicEdge": "risk: «فاتورة.pdf» with extension reorders in bidi; AutoText would solve it"
+        }
+      ]
+    },
+    {
+      "id": "avatar",
+      "antd": "Avatar",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "image-icon-text",
+          "name": "Image, icon or letters",
+          "nameAr": "صورة أو أيقونة أو أحرف"
+        },
+        {
+          "slug": "size-shape",
+          "name": "Size and shape",
+          "nameAr": "الحجم والشكل"
+        },
+        {
+          "slug": "group",
+          "name": "Avatar.Group with max",
+          "nameAr": "مجموعة صور"
+        },
+        {
+          "slug": "arabic-initials",
+          "name": "Arabic initials",
+          "nameAr": "الأحرف الأولى العربية",
+          "arabicEdge": "opportunity: initials from Arabic names (skip «ال», join letters correctly)"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "antd": "Badge",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "status",
+          "name": "Status dot with text",
+          "nameAr": "نقطة حالة مع نص"
+        },
+        {
+          "slug": "colors",
+          "name": "Preset colors",
+          "nameAr": "ألوان جاهزة"
+        },
+        {
+          "slug": "count",
+          "name": "Count overlay",
+          "nameAr": "عدّاد فوق العنصر"
+        },
+        {
+          "slug": "overflow",
+          "name": "overflowCount (99+)",
+          "nameAr": "حد العدّاد"
+        },
+        {
+          "slug": "dot",
+          "name": "Dot only",
+          "nameAr": "نقطة فقط"
+        },
+        {
+          "slug": "ribbon",
+          "name": "Badge.Ribbon",
+          "nameAr": "شريط"
+        }
+      ]
+    },
+    {
+      "id": "calendar",
+      "antd": "Calendar",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "full",
+          "name": "Full calendar",
+          "nameAr": "تقويم كامل"
+        },
+        {
+          "slug": "card",
+          "name": "Card mode",
+          "nameAr": "نمط البطاقة"
+        },
+        {
+          "slug": "cell-render",
+          "name": "Cell render",
+          "nameAr": "عرض الخلايا"
+        },
+        {
+          "slug": "mode",
+          "name": "Month / year mode",
+          "nameAr": "نمط شهر/سنة"
+        },
+        {
+          "slug": "hijri",
+          "name": "Hijri calendar",
+          "nameAr": "التقويم الهجري",
+          "arabicEdge": "opportunity: reuse the DatePicker Hijri adapter"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "antd": "Card",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Title, extra, body",
+          "nameAr": "عنوان وإضافي ومحتوى"
+        },
+        {
+          "slug": "cover",
+          "name": "Cover image",
+          "nameAr": "صورة غلاف"
+        },
+        {
+          "slug": "actions",
+          "name": "Actions",
+          "nameAr": "إجراءات"
+        },
+        {
+          "slug": "loading",
+          "name": "Loading",
+          "nameAr": "تحميل"
+        },
+        {
+          "slug": "meta",
+          "name": "Card.Meta",
+          "nameAr": "بيانات وصفية"
+        },
+        {
+          "slug": "tabs",
+          "name": "With tabs",
+          "nameAr": "مع تبويبات"
+        },
+        {
+          "slug": "grid",
+          "name": "Card.Grid",
+          "nameAr": "شبكة"
+        }
+      ]
+    },
+    {
+      "id": "carousel",
+      "antd": "Carousel",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Slides",
+          "nameAr": "شرائح"
+        },
+        {
+          "slug": "autoplay",
+          "name": "Autoplay",
+          "nameAr": "تشغيل تلقائي"
+        },
+        {
+          "slug": "dots",
+          "name": "Dots position",
+          "nameAr": "موضع النقاط"
+        },
+        {
+          "slug": "fade",
+          "name": "Fade effect",
+          "nameAr": "تأثير التلاشي"
+        },
+        {
+          "slug": "rtl",
+          "name": "Swipe direction in RTL",
+          "nameAr": "اتجاه السحب في RTL",
+          "arabicEdge": "risk: next slide comes from the inline end"
+        }
+      ]
+    },
+    {
+      "id": "collapse",
+      "antd": "Collapse",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Panels",
+          "nameAr": "ألواح"
+        },
+        {
+          "slug": "accordion",
+          "name": "Accordion",
+          "nameAr": "أكورديون"
+        },
+        {
+          "slug": "nested",
+          "name": "Nested",
+          "nameAr": "متداخل"
+        },
+        {
+          "slug": "borderless-ghost",
+          "name": "Borderless / ghost",
+          "nameAr": "بلا حدود"
+        },
+        {
+          "slug": "extra",
+          "name": "Extra and custom icon",
+          "nameAr": "إضافي وأيقونة مخصصة"
+        },
+        {
+          "slug": "collapsible",
+          "name": "collapsible header / icon / disabled",
+          "nameAr": "قابلية الطي"
+        }
+      ]
+    },
+    {
+      "id": "descriptions",
+      "antd": "Descriptions",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Label / value items",
+          "nameAr": "عنوان/قيمة"
+        },
+        {
+          "slug": "bordered",
+          "name": "Bordered",
+          "nameAr": "بحدود"
+        },
+        {
+          "slug": "columns",
+          "name": "Responsive columns",
+          "nameAr": "أعمدة متجاوبة"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical layout",
+          "nameAr": "تخطيط رأسي"
+        },
+        {
+          "slug": "span",
+          "name": "Item span",
+          "nameAr": "امتداد العنصر"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes",
+          "nameAr": "الأحجام"
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "antd": "Empty",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Icon, title, description",
+          "nameAr": "أيقونة وعنوان ووصف"
+        },
+        {
+          "slug": "action",
+          "name": "Action (children)",
+          "nameAr": "إجراء"
+        },
+        {
+          "slug": "image",
+          "name": "Preset images (simple / default)",
+          "nameAr": "صور جاهزة"
+        },
+        {
+          "slug": "render-empty",
+          "name": "Global renderEmpty in ConfigProvider",
+          "nameAr": "عرض فارغ عام"
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "antd": "Image",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "preview",
+          "name": "Preview",
+          "nameAr": "معاينة"
+        },
+        {
+          "slug": "group",
+          "name": "Preview group",
+          "nameAr": "مجموعة معاينة"
+        },
+        {
+          "slug": "fallback",
+          "name": "Fallback / placeholder",
+          "nameAr": "بديل عند الفشل"
+        },
+        {
+          "slug": "toolbar",
+          "name": "Zoom / rotate toolbar",
+          "nameAr": "أدوات تكبير وتدوير"
+        }
+      ]
+    },
+    {
+      "id": "list",
+      "antd": "List",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Items with meta",
+          "nameAr": "عناصر مع بيانات وصفية"
+        },
+        {
+          "slug": "pagination",
+          "name": "Pagination",
+          "nameAr": "ترقيم الصفحات"
+        },
+        {
+          "slug": "load-more",
+          "name": "Load more / infinite",
+          "nameAr": "تحميل المزيد"
+        },
+        {
+          "slug": "grid",
+          "name": "Grid",
+          "nameAr": "شبكة"
+        },
+        {
+          "slug": "actions",
+          "name": "Item actions",
+          "nameAr": "إجراءات العناصر"
+        },
+        {
+          "slug": "virtual",
+          "name": "Virtual list",
+          "nameAr": "قائمة افتراضية"
+        }
+      ]
+    },
+    {
+      "id": "popover",
+      "antd": "Popover",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Title and content",
+          "nameAr": "عنوان ومحتوى"
+        },
+        {
+          "slug": "trigger",
+          "name": "Trigger hover / click / focus",
+          "nameAr": "المشغّل"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement (12 positions)",
+          "nameAr": "الموضع"
+        },
+        {
+          "slug": "controlled",
+          "name": "Controlled open",
+          "nameAr": "فتح متحكم به"
+        },
+        {
+          "slug": "rtl",
+          "name": "Logical placement in RTL",
+          "nameAr": "موضع منطقي في RTL",
+          "arabicEdge": "risk: «left» must mean start"
+        }
+      ]
+    },
+    {
+      "id": "qr-code",
+      "antd": "QRCode",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Render value",
+          "nameAr": "عرض القيمة"
+        },
+        {
+          "slug": "icon",
+          "name": "Icon in center",
+          "nameAr": "أيقونة في الوسط"
+        },
+        {
+          "slug": "status",
+          "name": "Status (loading / expired)",
+          "nameAr": "الحالة"
+        },
+        {
+          "slug": "type",
+          "name": "Canvas / SVG",
+          "nameAr": "الرسم بـCanvas أو SVG"
+        }
+      ]
+    },
+    {
+      "id": "segmented",
+      "antd": "Segmented",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Options, controlled / uncontrolled",
+          "nameAr": "خيارات، تحكم وبدون تحكم"
+        },
+        {
+          "slug": "disabled",
+          "name": "Disabled options",
+          "nameAr": "خيارات معطلة"
+        },
+        {
+          "slug": "block",
+          "name": "Block (full width)",
+          "nameAr": "بعرض كامل"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes",
+          "nameAr": "الأحجام"
+        },
+        {
+          "slug": "icons",
+          "name": "Icon options",
+          "nameAr": "خيارات بأيقونات"
+        },
+        {
+          "slug": "rtl-keys",
+          "name": "Arrow keys follow visual direction",
+          "nameAr": "الأسهم تتبع الاتجاه البصري"
+        },
+        {
+          "slug": "wrap",
+          "name": "Wrap onto two rows in narrow containers",
+          "nameAr": "الالتفاف إلى سطرين"
+        },
+        {
+          "slug": "vertical",
+          "name": "Vertical",
+          "nameAr": "رأسي"
+        }
+      ]
+    },
+    {
+      "id": "statistic",
+      "antd": "Statistic",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Title and value",
+          "nameAr": "عنوان وقيمة"
+        },
+        {
+          "slug": "precision",
+          "name": "Precision / formatter",
+          "nameAr": "الدقة والتنسيق"
+        },
+        {
+          "slug": "prefix-suffix",
+          "name": "Prefix / suffix",
+          "nameAr": "بادئة/لاحقة"
+        },
+        {
+          "slug": "countdown",
+          "name": "Countdown",
+          "nameAr": "عد تنازلي"
+        },
+        {
+          "slug": "numerals",
+          "name": "Value in the user numerals",
+          "nameAr": "القيمة بنظام أرقام المستخدم",
+          "arabicEdge": "opportunity: AmountText/NumberText already do this"
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "antd": "Table",
+      "category": "data-display",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "columns",
+          "name": "Columns and dataSource",
+          "nameAr": "الأعمدة ومصدر البيانات"
+        },
+        {
+          "slug": "row-key",
+          "name": "rowKey",
+          "nameAr": "مفتاح الصف"
+        },
+        {
+          "slug": "render",
+          "name": "Custom cell render",
+          "nameAr": "عرض خلية مخصص"
+        },
+        {
+          "slug": "align",
+          "name": "Column align (numeric end)",
+          "nameAr": "محاذاة الأعمدة (الأرقام للنهاية)"
+        },
+        {
+          "slug": "width",
+          "name": "Column width",
+          "nameAr": "عرض العمود"
+        },
+        {
+          "slug": "empty",
+          "name": "Empty state",
+          "nameAr": "حالة الفراغ"
+        },
+        {
+          "slug": "scroll-x",
+          "name": "Horizontal scroll inside its container",
+          "nameAr": "تمرير أفقي داخل الحاوية"
+        },
+        {
+          "slug": "scroll-y",
+          "name": "Vertical scroll (scroll.y)",
+          "nameAr": "تمرير رأسي"
+        },
+        {
+          "slug": "fixed-header",
+          "name": "Fixed header",
+          "nameAr": "رأس ثابت"
+        },
+        {
+          "slug": "responsive",
+          "name": "Responsive columns (breakpoints)",
+          "nameAr": "أعمدة متجاوبة"
+        },
+        {
+          "slug": "title-caption",
+          "name": "Title / caption",
+          "nameAr": "العنوان"
+        },
+        {
+          "slug": "row-hover",
+          "name": "Row hover",
+          "nameAr": "تمييز الصف عند المرور"
+        },
+        {
+          "slug": "row-selected",
+          "name": "Highlighted (selected) row",
+          "nameAr": "تمييز الصف المحدد"
+        },
+        {
+          "slug": "nowrap",
+          "name": "No-wrap cells",
+          "nameAr": "خلايا بلا التفاف"
+        },
+        {
+          "slug": "sort-single",
+          "name": "Sorting (single column)",
+          "nameAr": "الفرز بعمود واحد"
+        },
+        {
+          "slug": "sort-multi",
+          "name": "Multi-column sorting",
+          "nameAr": "الفرز بعدة أعمدة"
+        },
+        {
+          "slug": "sorter-custom",
+          "name": "Custom sorter / sortDirections",
+          "nameAr": "دالة فرز مخصصة واتجاهاته"
+        },
+        {
+          "slug": "sort-controlled",
+          "name": "Controlled sortOrder",
+          "nameAr": "ترتيب فرز متحكم به"
+        },
+        {
+          "slug": "filter-dropdown",
+          "name": "Filters dropdown",
+          "nameAr": "قائمة التصفية"
+        },
+        {
+          "slug": "filter-custom",
+          "name": "Custom filter dropdown",
+          "nameAr": "تصفية مخصصة"
+        },
+        {
+          "slug": "filter-search",
+          "name": "Filter search",
+          "nameAr": "البحث داخل التصفية",
+          "arabicEdge": "filters are Arabic-tolerant (hamza, diacritics) and match phones by digits in any numeral system"
+        },
+        {
+          "slug": "filter-controlled",
+          "name": "Controlled filters (filteredValue)",
+          "nameAr": "تصفية متحكم بها"
+        },
+        {
+          "slug": "pagination-client",
+          "name": "Client-side pagination",
+          "nameAr": "ترقيم صفحات محلي"
+        },
+        {
+          "slug": "pagination-server",
+          "name": "Server-side pagination (onChange)",
+          "nameAr": "ترقيم صفحات من الخادم"
+        },
+        {
+          "slug": "selection-checkbox",
+          "name": "Row selection: checkbox",
+          "nameAr": "تحديد الصفوف بمربعات"
+        },
+        {
+          "slug": "selection-radio",
+          "name": "Row selection: radio",
+          "nameAr": "تحديد صف واحد"
+        },
+        {
+          "slug": "select-all",
+          "name": "Select all / invert / custom selections",
+          "nameAr": "تحديد الكل والعكس"
+        },
+        {
+          "slug": "selection-disabled",
+          "name": "Disabled rows (getCheckboxProps)",
+          "nameAr": "صفوف غير قابلة للتحديد"
+        },
+        {
+          "slug": "selection-preserve",
+          "name": "Preserve selection across pages",
+          "nameAr": "الاحتفاظ بالتحديد بين الصفحات"
+        },
+        {
+          "slug": "expandable",
+          "name": "Expandable rows",
+          "nameAr": "صفوف قابلة للتوسيع"
+        },
+        {
+          "slug": "tree-data",
+          "name": "Tree data",
+          "nameAr": "بيانات شجرية"
+        },
+        {
+          "slug": "fixed-start",
+          "name": "Fixed columns (start)",
+          "nameAr": "أعمدة مثبتة في البداية",
+          "arabicEdge": "logical offsets: the same columns pin to the right in Arabic and the left in English with no configuration; checked while scrolling in both directions"
+        },
+        {
+          "slug": "fixed-end",
+          "name": "Fixed columns (end)",
+          "nameAr": "أعمدة مثبتة في النهاية"
+        },
+        {
+          "slug": "virtual",
+          "name": "Virtual scroll",
+          "nameAr": "تمرير افتراضي"
+        },
+        {
+          "slug": "resize",
+          "name": "Column resize",
+          "nameAr": "تغيير عرض الأعمدة"
+        },
+        {
+          "slug": "grouping",
+          "name": "Column grouping headers",
+          "nameAr": "رؤوس أعمدة مجمّعة"
+        },
+        {
+          "slug": "summary",
+          "name": "Summary row",
+          "nameAr": "صف الإجماليات",
+          "arabicEdge": "totals over all filtered rows, money exact in minor units and shown in the scope numerals"
+        },
+        {
+          "slug": "edit-cell",
+          "name": "Editable cells",
+          "nameAr": "خلايا قابلة للتحرير"
+        },
+        {
+          "slug": "edit-row",
+          "name": "Editable rows",
+          "nameAr": "صفوف قابلة للتحرير"
+        },
+        {
+          "slug": "on-row",
+          "name": "Row click / events (onRow)",
+          "nameAr": "أحداث الصف"
+        },
+        {
+          "slug": "loading",
+          "name": "Loading state",
+          "nameAr": "حالة التحميل"
+        },
+        {
+          "slug": "sticky-offset",
+          "name": "Sticky header with offset / sticky scrollbar",
+          "nameAr": "رأس لاصق بإزاحة"
+        },
+        {
+          "slug": "ellipsis",
+          "name": "Ellipsis with tooltip",
+          "nameAr": "اختصار مع تلميح"
+        },
+        {
+          "slug": "row-class",
+          "name": "rowClassName / row style",
+          "nameAr": "تنسيق الصف"
+        },
+        {
+          "slug": "size-bordered",
+          "name": "Size and bordered variants",
+          "nameAr": "الأحجام والحدود"
+        },
+        {
+          "slug": "drag-sort",
+          "name": "Drag sort rows (via dnd-kit extension)",
+          "nameAr": "ترتيب الصفوف بالسحب"
+        },
+        {
+          "slug": "col-settings",
+          "name": "Column visibility settings (ProTable)",
+          "nameAr": "إظهار وإخفاء الأعمدة"
+        },
+        {
+          "slug": "density",
+          "name": "Density setting (ProTable)",
+          "nameAr": "إعداد الكثافة"
+        },
+        {
+          "slug": "export",
+          "name": "Export (ProTable)",
+          "nameAr": "تصدير"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Keyboard navigation (grid)",
+          "nameAr": "التنقل بلوحة المفاتيح"
+        },
+        {
+          "slug": "rtl",
+          "name": "RTL layout",
+          "nameAr": "تخطيط RTL"
+        }
+      ]
+    },
+    {
+      "id": "tag",
+      "antd": "Tag",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "colors",
+          "name": "Preset colors",
+          "nameAr": "ألوان جاهزة"
+        },
+        {
+          "slug": "bordered",
+          "name": "Bordered / borderless",
+          "nameAr": "بحدود/بلا حدود"
+        },
+        {
+          "slug": "closable",
+          "name": "Closable",
+          "nameAr": "قابل للإغلاق"
+        },
+        {
+          "slug": "checkable",
+          "name": "CheckableTag",
+          "nameAr": "وسم قابل للتحديد"
+        },
+        {
+          "slug": "icon",
+          "name": "Icon",
+          "nameAr": "أيقونة"
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "antd": "Timeline",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Items",
+          "nameAr": "عناصر"
+        },
+        {
+          "slug": "color",
+          "name": "Colors / custom dot",
+          "nameAr": "ألوان ونقاط مخصصة"
+        },
+        {
+          "slug": "mode",
+          "name": "Alternate / left / right mode",
+          "nameAr": "أنماط التبادل"
+        },
+        {
+          "slug": "pending",
+          "name": "Pending",
+          "nameAr": "قيد الانتظار"
+        },
+        {
+          "slug": "reverse",
+          "name": "Reverse",
+          "nameAr": "عكس الترتيب"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "antd": "Tooltip",
+      "category": "data-display",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Tooltip on hover and focus",
+          "nameAr": "تلميح عند المرور والتركيز"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement",
+          "nameAr": "الموضع"
+        },
+        {
+          "slug": "arrow",
+          "name": "Arrow pointing at center",
+          "nameAr": "سهم"
+        },
+        {
+          "slug": "color",
+          "name": "Colors",
+          "nameAr": "الألوان"
+        },
+        {
+          "slug": "controlled",
+          "name": "Controlled open",
+          "nameAr": "فتح متحكم به"
+        },
+        {
+          "slug": "rtl",
+          "name": "Logical placement in RTL",
+          "nameAr": "موضع منطقي في RTL",
+          "arabicEdge": "risk: start/end placement must mirror"
+        }
+      ]
+    },
+    {
+      "id": "tour",
+      "antd": "Tour",
+      "category": "data-display",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "steps",
+          "name": "Steps with target",
+          "nameAr": "خطوات مرتبطة بعناصر"
+        },
+        {
+          "slug": "mask",
+          "name": "Mask",
+          "nameAr": "قناع"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement",
+          "nameAr": "الموضع"
+        },
+        {
+          "slug": "indicators",
+          "name": "Indicators",
+          "nameAr": "مؤشرات"
+        }
+      ]
+    },
+    {
+      "id": "tree",
+      "antd": "Tree",
+      "category": "data-display",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Tree data",
+          "nameAr": "بيانات شجرية"
+        },
+        {
+          "slug": "expand",
+          "name": "Expand / collapse (controlled)",
+          "nameAr": "توسيع وطي"
+        },
+        {
+          "slug": "select",
+          "name": "Select nodes (single / multiple)",
+          "nameAr": "تحديد العقد"
+        },
+        {
+          "slug": "checkable",
+          "name": "Checkable with half-checked",
+          "nameAr": "تحديد بمربعات مع الحالة الجزئية"
+        },
+        {
+          "slug": "check-strictly",
+          "name": "checkStrictly",
+          "nameAr": "تحديد مستقل"
+        },
+        {
+          "slug": "async",
+          "name": "Async load children",
+          "nameAr": "تحميل الأبناء غير متزامن"
+        },
+        {
+          "slug": "draggable",
+          "name": "Drag and drop nodes",
+          "nameAr": "سحب وإفلات العقد"
+        },
+        {
+          "slug": "search",
+          "name": "Search / highlight",
+          "nameAr": "بحث وتمييز"
+        },
+        {
+          "slug": "virtual",
+          "name": "Virtual scroll",
+          "nameAr": "تمرير افتراضي"
+        },
+        {
+          "slug": "directory",
+          "name": "DirectoryTree",
+          "nameAr": "شجرة المجلدات"
+        },
+        {
+          "slug": "show-line",
+          "name": "Show line / custom icons",
+          "nameAr": "خطوط وأيقونات مخصصة"
+        },
+        {
+          "slug": "title-render",
+          "name": "titleRender",
+          "nameAr": "عرض العنوان المخصص"
+        },
+        {
+          "slug": "keyboard",
+          "name": "Keyboard navigation (treeitem)",
+          "nameAr": "التنقل بلوحة المفاتيح"
+        },
+        {
+          "slug": "rtl",
+          "name": "RTL indent and expand arrows",
+          "nameAr": "المسافة البادئة وأسهم التوسيع في RTL",
+          "arabicEdge": "risk: ArrowRight expands in LTR but collapses in RTL"
+        }
+      ]
+    },
+    {
+      "id": "alert",
+      "antd": "Alert",
+      "category": "feedback",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "types",
+          "name": "Types success / info / warning / error",
+          "nameAr": "الأنواع"
+        },
+        {
+          "slug": "description",
+          "name": "Message and description",
+          "nameAr": "عنوان ووصف"
+        },
+        {
+          "slug": "action",
+          "name": "Action",
+          "nameAr": "إجراء"
+        },
+        {
+          "slug": "live",
+          "name": "Live region politeness",
+          "nameAr": "منطقة إعلان حي"
+        },
+        {
+          "slug": "closable",
+          "name": "Closable",
+          "nameAr": "قابل للإغلاق"
+        },
+        {
+          "slug": "banner",
+          "name": "Banner mode",
+          "nameAr": "نمط الشريط"
+        },
+        {
+          "slug": "icon",
+          "name": "Show / custom icon",
+          "nameAr": "أيقونة مخصصة"
+        }
+      ]
+    },
+    {
+      "id": "drawer",
+      "antd": "Drawer",
+      "category": "feedback",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Open / close with title, footer",
+          "nameAr": "فتح وإغلاق مع عنوان وتذييل"
+        },
+        {
+          "slug": "focus",
+          "name": "Focus enters, is trapped and returns",
+          "nameAr": "دخول التركيز وحبسه وعودته"
+        },
+        {
+          "slug": "escape",
+          "name": "Escape and mask close",
+          "nameAr": "الإغلاق بـEscape والخلفية"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes",
+          "nameAr": "الأحجام"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement top / right / bottom / left",
+          "nameAr": "الموضع"
+        },
+        {
+          "slug": "push",
+          "name": "Nested push",
+          "nameAr": "دفع الأدراج المتداخلة"
+        },
+        {
+          "slug": "extra",
+          "name": "Extra actions in header",
+          "nameAr": "إجراءات في الرأس"
+        },
+        {
+          "slug": "loading",
+          "name": "Loading",
+          "nameAr": "تحميل"
+        }
+      ]
+    },
+    {
+      "id": "message",
+      "antd": "Message",
+      "category": "feedback",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "types",
+          "name": "success / error / info / warning",
+          "nameAr": "الأنواع"
+        },
+        {
+          "slug": "duration",
+          "name": "Duration",
+          "nameAr": "المدة"
+        },
+        {
+          "slug": "hook",
+          "name": "Hook API (useMessage)",
+          "nameAr": "واجهة الخطاف"
+        },
+        {
+          "slug": "loading",
+          "name": "Loading message with update by key",
+          "nameAr": "رسالة تحميل تُحدَّث بمفتاح"
+        },
+        {
+          "slug": "dir",
+          "name": "Direction and language from the locale scope",
+          "nameAr": "الاتجاه واللغة من نطاق اللغة"
+        }
+      ]
+    },
+    {
+      "id": "modal",
+      "antd": "Modal",
+      "category": "feedback",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Title, content, footer",
+          "nameAr": "عنوان ومحتوى وتذييل"
+        },
+        {
+          "slug": "controlled",
+          "name": "Controlled open with close reason",
+          "nameAr": "فتح متحكم به مع سبب الإغلاق"
+        },
+        {
+          "slug": "focus-enter",
+          "name": "Focus enters on open",
+          "nameAr": "دخول التركيز عند الفتح"
+        },
+        {
+          "slug": "focus-trap",
+          "name": "Focus trapped",
+          "nameAr": "حبس التركيز"
+        },
+        {
+          "slug": "escape",
+          "name": "Escape closes, focus returns",
+          "nameAr": "Escape يغلق والتركيز يعود"
+        },
+        {
+          "slug": "nested",
+          "name": "Nested modals",
+          "nameAr": "حوارات متداخلة"
+        },
+        {
+          "slug": "mask-closable",
+          "name": "Mask closable",
+          "nameAr": "الإغلاق بالنقر على الخلفية"
+        },
+        {
+          "slug": "closable",
+          "name": "Close button",
+          "nameAr": "زر الإغلاق"
+        },
+        {
+          "slug": "confirm-loading",
+          "name": "confirmLoading / prevent close while busy",
+          "nameAr": "منع الإغلاق أثناء الانشغال"
+        },
+        {
+          "slug": "width",
+          "name": "Width",
+          "nameAr": "العرض"
+        },
+        {
+          "slug": "confirm",
+          "name": "Modal.confirm / info / success / error",
+          "nameAr": "حوارات التأكيد الجاهزة"
+        },
+        {
+          "slug": "use-modal",
+          "name": "useModal hook",
+          "nameAr": "خطاف الحوار"
+        },
+        {
+          "slug": "centered",
+          "name": "Centered / top offset",
+          "nameAr": "التوسيط"
+        },
+        {
+          "slug": "destroy",
+          "name": "destroyOnClose / forceRender",
+          "nameAr": "الإزالة عند الإغلاق"
+        },
+        {
+          "slug": "after-close",
+          "name": "afterClose / afterOpenChange",
+          "nameAr": "بعد الإغلاق"
+        },
+        {
+          "slug": "draggable",
+          "name": "Draggable (recipe)",
+          "nameAr": "قابل للسحب"
+        },
+        {
+          "slug": "footer-render",
+          "name": "Footer render with default buttons",
+          "nameAr": "تذييل مخصص مع الأزرار الافتراضية"
+        },
+        {
+          "slug": "inert",
+          "name": "Background made inert for assistive tech",
+          "nameAr": "جعل الخلفية خاملة لقارئات الشاشة"
+        }
+      ]
+    },
+    {
+      "id": "notification",
+      "antd": "Notification",
+      "category": "feedback",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Title and description",
+          "nameAr": "عنوان ووصف"
+        },
+        {
+          "slug": "types",
+          "name": "Types",
+          "nameAr": "الأنواع"
+        },
+        {
+          "slug": "duration",
+          "name": "Duration / persistent",
+          "nameAr": "المدة/دائم"
+        },
+        {
+          "slug": "pause-hover",
+          "name": "Pause on hover",
+          "nameAr": "إيقاف المؤقت عند المرور"
+        },
+        {
+          "slug": "close",
+          "name": "Close button",
+          "nameAr": "زر الإغلاق"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement",
+          "nameAr": "الموضع"
+        },
+        {
+          "slug": "actions",
+          "name": "Action buttons (btn)",
+          "nameAr": "أزرار إجراء"
+        },
+        {
+          "slug": "stack",
+          "name": "Stack collapse",
+          "nameAr": "تجميع المكدس"
+        },
+        {
+          "slug": "progress",
+          "name": "Progress bar of remaining time",
+          "nameAr": "شريط الوقت المتبقي"
+        }
+      ]
+    },
+    {
+      "id": "popconfirm",
+      "antd": "Popconfirm",
+      "category": "feedback",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Confirm on action",
+          "nameAr": "تأكيد قبل الإجراء"
+        },
+        {
+          "slug": "async",
+          "name": "Async confirm",
+          "nameAr": "تأكيد غير متزامن"
+        },
+        {
+          "slug": "placement",
+          "name": "Placement",
+          "nameAr": "الموضع"
+        },
+        {
+          "slug": "icon",
+          "name": "Custom icon / texts",
+          "nameAr": "أيقونة ونصوص مخصصة"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "antd": "Progress",
+      "category": "feedback",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "line",
+          "name": "Line",
+          "nameAr": "خطي"
+        },
+        {
+          "slug": "circle",
+          "name": "Circle / dashboard",
+          "nameAr": "دائري"
+        },
+        {
+          "slug": "status",
+          "name": "Status",
+          "nameAr": "الحالة"
+        },
+        {
+          "slug": "steps",
+          "name": "Steps",
+          "nameAr": "خطوات"
+        },
+        {
+          "slug": "format",
+          "name": "Custom format",
+          "nameAr": "تنسيق مخصص"
+        },
+        {
+          "slug": "rtl",
+          "name": "Fill from inline start, percent in user numerals",
+          "nameAr": "الملء من البداية والنسبة بأرقام المستخدم",
+          "arabicEdge": "opportunity: «٪٤٠» with Digits; risk: fill direction"
+        }
+      ]
+    },
+    {
+      "id": "result",
+      "antd": "Result",
+      "category": "feedback",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "status",
+          "name": "Status success / error / info / warning",
+          "nameAr": "الحالة"
+        },
+        {
+          "slug": "http",
+          "name": "403 / 404 / 500",
+          "nameAr": "صفحات الأخطاء"
+        },
+        {
+          "slug": "extra",
+          "name": "Extra actions",
+          "nameAr": "إجراءات"
+        }
+      ]
+    },
+    {
+      "id": "skeleton",
+      "antd": "Skeleton",
+      "category": "feedback",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "block",
+          "name": "Basic block",
+          "nameAr": "كتلة أساسية"
+        },
+        {
+          "slug": "presets",
+          "name": "Avatar / title / paragraph presets",
+          "nameAr": "قوالب جاهزة"
+        },
+        {
+          "slug": "active",
+          "name": "Active animation",
+          "nameAr": "حركة"
+        },
+        {
+          "slug": "elements",
+          "name": "Button / input / image elements",
+          "nameAr": "عناصر جاهزة"
+        }
+      ]
+    },
+    {
+      "id": "spin",
+      "antd": "Spin",
+      "category": "feedback",
+      "priority": "p1",
+      "features": [
+        {
+          "slug": "basic",
+          "name": "Spinner with accessible label",
+          "nameAr": "مؤشر دوار باسم مقروء"
+        },
+        {
+          "slug": "sizes",
+          "name": "Sizes",
+          "nameAr": "الأحجام"
+        },
+        {
+          "slug": "container",
+          "name": "Wrap content (loading overlay)",
+          "nameAr": "تغطية المحتوى"
+        },
+        {
+          "slug": "delay",
+          "name": "Delay",
+          "nameAr": "تأخير"
+        },
+        {
+          "slug": "fullscreen",
+          "name": "Fullscreen",
+          "nameAr": "ملء الشاشة"
+        }
+      ]
+    },
+    {
+      "id": "watermark",
+      "antd": "Watermark",
+      "category": "feedback",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "text",
+          "name": "Text watermark",
+          "nameAr": "علامة نصية"
+        },
+        {
+          "slug": "image",
+          "name": "Image watermark",
+          "nameAr": "علامة صورة"
+        },
+        {
+          "slug": "font",
+          "name": "Font / gap / rotate",
+          "nameAr": "الخط والمسافات والدوران"
+        },
+        {
+          "slug": "arabic",
+          "name": "Arabic text shaping in canvas",
+          "nameAr": "تشكيل النص العربي في Canvas",
+          "arabicEdge": "risk: canvas text needs direction set or Arabic renders disconnected/reversed"
+        }
+      ]
+    },
+    {
+      "id": "affix",
+      "antd": "Affix",
+      "category": "other",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "top-bottom",
+          "name": "offsetTop / offsetBottom",
+          "nameAr": "تثبيت أعلى/أسفل"
+        },
+        {
+          "slug": "target",
+          "name": "Custom target",
+          "nameAr": "حاوية مخصصة"
+        },
+        {
+          "slug": "on-change",
+          "name": "onChange",
+          "nameAr": "عند التغيير"
+        }
+      ]
+    },
+    {
+      "id": "app",
+      "antd": "App",
+      "category": "other",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "context",
+          "name": "message / notification / modal from context",
+          "nameAr": "الرسائل والحوارات من السياق"
+        },
+        {
+          "slug": "config",
+          "name": "Component-level config",
+          "nameAr": "إعداد على مستوى المكوّن"
+        }
+      ]
+    },
+    {
+      "id": "config-provider",
+      "antd": "ConfigProvider",
+      "category": "other",
+      "priority": "p0",
+      "features": [
+        {
+          "slug": "direction",
+          "name": "direction rtl / ltr",
+          "nameAr": "الاتجاه"
+        },
+        {
+          "slug": "locale",
+          "name": "Locale (internal strings)",
+          "nameAr": "اللغة (النصوص الداخلية)"
+        },
+        {
+          "slug": "theme",
+          "name": "Theme tokens",
+          "nameAr": "رموز السمة"
+        },
+        {
+          "slug": "algorithm",
+          "name": "Dark / compact algorithms",
+          "nameAr": "خوارزميات داكن/مضغوط"
+        },
+        {
+          "slug": "component-size",
+          "name": "componentSize",
+          "nameAr": "حجم المكوّنات"
+        },
+        {
+          "slug": "component-tokens",
+          "name": "Component-level tokens",
+          "nameAr": "رموز على مستوى المكوّن"
+        },
+        {
+          "slug": "nesting",
+          "name": "Nested providers",
+          "nameAr": "مزودات متداخلة"
+        },
+        {
+          "slug": "css-var",
+          "name": "CSS variables mode",
+          "nameAr": "نمط متغيرات CSS"
+        },
+        {
+          "slug": "prefix",
+          "name": "prefixCls / getPopupContainer",
+          "nameAr": "بادئة الأصناف وحاوية النوافذ"
+        },
+        {
+          "slug": "numerals",
+          "name": "Numerals preference (Latin / Arabic-Indic)",
+          "nameAr": "تفضيل نظام الأرقام",
+          "arabicEdge": "one provider switch moves every number on the page; AntD has no numerals setting"
+        },
+        {
+          "slug": "mixed-align",
+          "name": "Mixed-script alignment preference",
+          "nameAr": "تفضيل محاذاة النص المختلط",
+          "arabicEdge": "Latin names in Arabic UI align by UI or by content, as a regional preference"
+        },
+        {
+          "slug": "calendar",
+          "name": "Calendar system independent of locale",
+          "nameAr": "نظام التقويم مستقل عن اللغة",
+          "arabicEdge": "Hijri/Gregorian chosen separately from language and numerals"
+        }
+      ]
+    },
+    {
+      "id": "util",
+      "antd": "Util",
+      "category": "other",
+      "priority": "p2",
+      "features": [
+        {
+          "slug": "get-ref",
+          "name": "GetRef / GetProps / GetProp types",
+          "nameAr": "أنواع مساعدة"
+        }
+      ]
+    }
+  ],
+  "ecosystem": [
+    {
+      "id": "pro-table",
+      "name": "ProTable",
+      "nameAr": "جدول احترافي",
+      "kind": "pro-components",
+      "priority": "p0"
+    },
+    {
+      "id": "pro-form",
+      "name": "ProForm",
+      "nameAr": "نماذج احترافية",
+      "kind": "pro-components",
+      "priority": "p0"
+    },
+    {
+      "id": "pro-layout",
+      "name": "ProLayout",
+      "nameAr": "تخطيط احترافي",
+      "kind": "pro-components",
+      "priority": "p1",
+      "arabicEdge": "risk: mirrored side menu and breadcrumbs"
+    },
+    {
+      "id": "pro-list",
+      "name": "ProList",
+      "nameAr": "قائمة احترافية",
+      "kind": "pro-components",
+      "priority": "p2"
+    },
+    {
+      "id": "pro-descriptions",
+      "name": "ProDescriptions",
+      "nameAr": "أوصاف احترافية",
+      "kind": "pro-components",
+      "priority": "p2"
+    },
+    {
+      "id": "antv-charts",
+      "name": "AntV charts (G2 / Ant Design Charts)",
+      "nameAr": "الرسوم البيانية",
+      "kind": "charts",
+      "priority": "p1",
+      "arabicEdge": "opportunity: RTL axes and Arabic numerals in tick labels"
+    },
+    {
+      "id": "pro-templates",
+      "name": "Ant Design Pro templates",
+      "nameAr": "قوالب تطبيقات جاهزة",
+      "kind": "templates",
+      "priority": "p1"
+    },
+    {
+      "id": "antd-mobile",
+      "name": "antd-mobile",
+      "nameAr": "مكتبة الجوال",
+      "kind": "mobile",
+      "priority": "p2"
+    },
+    {
+      "id": "ant-design-x",
+      "name": "Ant Design X (AI chat UI)",
+      "nameAr": "واجهات المحادثة الذكية",
+      "kind": "ai",
+      "priority": "p2",
+      "arabicEdge": "opportunity: streaming mixed-direction text needs AutoText per message"
+    },
+    {
+      "id": "icons",
+      "name": "@ant-design/icons",
+      "nameAr": "مكتبة الأيقونات",
+      "kind": "icons",
+      "priority": "p1"
+    },
+    {
+      "id": "theme-editor",
+      "name": "Theme editor",
+      "nameAr": "محرر السمات",
+      "kind": "tooling",
+      "priority": "p2"
+    },
+    {
+      "id": "docs-site",
+      "name": "Documentation site",
+      "nameAr": "موقع التوثيق",
+      "kind": "docs",
+      "priority": "p1"
+    },
+    {
+      "id": "figma-kit",
+      "name": "Figma kit",
+      "nameAr": "مكتبة فيجما",
+      "kind": "design-kit",
+      "priority": "p2"
+    }
+  ]
+}
