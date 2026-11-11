@@ -1,0 +1,375 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "estedad",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/estedad"
+      },
+      {
+        "name": "@fontsource/estedad",
+        "url": "https://www.npmjs.com/package/@fontsource/estedad",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/estedad-arabic-{100,400,900}-normal.woff (static instances of Google Fonts v3, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Estedad",
+    "category": "sans",
+    "interfaceText": true,
+    "designers": [
+      "Amin Abedi",
+      "Fontamin"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/aminabedi68/Estedad",
+      "commit": "69e879f78a4a1c7c4594baf7da13ba1c9f65ffd3",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/estedad",
+      "npm": "@fontsource/estedad",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/estedad",
+      "version": "Version 8.5"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ],
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 100-900",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2026-04-01"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/estedad/Estedad[wght].ttf",
+        "sha256": "6e745beeeb0cae5eea7f38d3132597089548a622d87997b58944e5b1edfec5a1",
+        "fontVersion": "Version 8.5",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1001,
+            -479
+          ],
+          "singleMark": [
+            1202,
+            -781
+          ],
+          "fullStack": [
+            1202,
+            -781
+          ],
+          "latinBasic": [
+            750,
+            -280
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/estedad@5.3.0:files/estedad-arabic-100-normal.woff",
+        "sha256": "089497e2045b6146724ab01921d9f09ebb9723d35e0bd9b67612d60352e8fd89",
+        "fontVersion": "Version 8.5",
+        "weightClass": 250,
+        "extents": {
+          "unvocalised": [
+            963,
+            -458
+          ],
+          "singleMark": [
+            1180,
+            -768
+          ],
+          "fullStack": [
+            1180,
+            -768
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/estedad@5.3.0:files/estedad-arabic-400-normal.woff",
+        "sha256": "1bd5ceca1229759c489d791bc14f60698d42f560c3d38d84f66b63531a626279",
+        "fontVersion": "Version 8.5",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1001,
+            -479
+          ],
+          "singleMark": [
+            1202,
+            -781
+          ],
+          "fullStack": [
+            1202,
+            -781
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/estedad@5.3.0:files/estedad-arabic-900-normal.woff",
+        "sha256": "40e9010b289a3506af33b6488e859d9e6bbd627754d62fe204e81bcd7cd92a88",
+        "fontVersion": "Version 8.5",
+        "weightClass": 900,
+        "extents": {
+          "unvocalised": [
+            1036,
+            -515
+          ],
+          "singleMark": [
+            1249,
+            -803
+          ],
+          "fullStack": [
+            1249,
+            -803
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1025,
+        "descender": -500,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1025,
+        "descender": -500,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1025,
+        "descent": 500
+      },
+      "useTypoMetrics": true,
+      "xHeight": 490,
+      "capHeight": 655,
+      "head": {
+        "yMax": 1001,
+        "yMin": -452
+      },
+      "verticalMetricsAgree": true,
+      "naturalLineHeight": {
+        "hhea": 1.525,
+        "typo": 1.525,
+        "win": 1.525
+      },
+      "measuredFrom": "google/fonts:ofl/estedad/Estedad[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": true,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false,
+            "tnumSubstitutes": true,
+            "tnumEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false,
+            "tnumSubstitutes": true,
+            "tnumEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false,
+            "tnumSubstitutes": true,
+            "tnumEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/estedad/Estedad[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 74,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 110,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 7,
+          "attachedPairs": 675
+        },
+        "unvocalised": {
+          "top": 1001,
+          "bottom": -479,
+          "topBy": "uniFDF2",
+          "bottomBy": "uni06CC.fina + twodotshorizontalbelowar.yeh"
+        },
+        "singleMark": {
+          "top": 1202,
+          "bottom": -781,
+          "topBy": "uni0627.short + uni0654 + uni064C",
+          "bottomBy": "uni06CC.fina + twodotshorizontalbelowar.yeh + uni064D"
+        },
+        "fullStack": {
+          "top": 1202,
+          "bottom": -781,
+          "topBy": "uni0627.short + uni0654 + uni064C",
+          "bottomBy": "uni06CC.fina + twodotshorizontalbelowar.yeh + uni064D"
+        },
+        "latinBasic": {
+          "top": 750,
+          "bottom": -280,
+          "topBy": "U+0024",
+          "bottomBy": "U+0028"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 653,
+          "bottom": -217,
+          "topBy": "uni064B",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.56,
+          "containment": 1.58
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.56,
+          "containment": 1.58
+        },
+        "singleMark": {
+          "stacking": 2.06,
+          "containment": 2.11
+        },
+        "fullStack": {
+          "stacking": 2.06,
+          "containment": 2.11
+        },
+        "latinBasic": {
+          "stacking": 1.03,
+          "containment": 1.09
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.58,
+        "body": 2.06,
+        "withTashkeel": 2.06,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "c2sc",
+        "ccmp",
+        "fina",
+        "frac",
+        "init",
+        "isol",
+        "locl",
+        "medi",
+        "onum",
+        "ordn",
+        "rlig",
+        "rvrn",
+        "sinf",
+        "smcp",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss10",
+        "ss11",
+        "ss12",
+        "ss20",
+        "subs",
+        "sups",
+        "tnum",
+        "zero"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "vazir-code",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Vazir Code upstream repository",
+        "url": "https://github.com/rastikerdar/vazir-code-font",
+        "version": "abc484a90c685430c09332c4a6a65b0b1314de1f",
+        "license": "Bitstream-Vera AND LicenseRef-public-domain",
+        "retrievedAt": "2026-11-11",
+        "path": "dist"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Vazir Code",
+    "category": "monospace",
+    "interfaceText": true,
+    "designers": [
+      "Saber Rastikerdar"
+    ],
+    "license": "Bitstream-Vera AND LicenseRef-public-domain",
+    "source": {
+      "repository": "https://github.com/rastikerdar/vazir-code-font",
+      "commit": "abc484a90c685430c09332c4a6a65b0b1314de1f",
+      "npm": "vazir-code-font",
+      "npmVersion": "1.1.2",
+      "version": "Version 1.1.2"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "weights": [
+      400
+    ],
+    "weightsBasis": "OS/2 usWeightClass of the static files measured",
+    "italic": false,
+    "files": [
+      {
+        "file": "rastikerdar/vazir-code-font:Vazir-Code.ttf",
+        "sha256": "9fade07054fa2380732dbfeca5fb06fffb5904051bf9fb29faca522fdaece662",
+        "fontVersion": "Version 1.1.2",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            880,
+            -384
+          ],
+          "singleMark": [
+            1203,
+            -602
+          ],
+          "fullStack": [
+            1424,
+            -602
+          ],
+          "latinBasic": [
+            682,
+            -174
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 859,
+        "descender": -190,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 859,
+        "descender": -190,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 859,
+        "descent": 190
+      },
+      "useTypoMetrics": true,
+      "xHeight": 457,
+      "capHeight": 623,
+      "head": {
+        "yMax": 963,
+        "yMin": -384
+      },
+      "verticalMetricsAgree": true,
+      "naturalLineHeight": {
+        "hhea": 1.049,
+        "typo": 1.049,
+        "win": 1.049
+      },
+      "measuredFrom": "rastikerdar/vazir-code-font:Vazir-Code.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 8,
+          "total": 9,
+          "missing": [
+            "U+06D4"
+          ]
+        },
+        "persianUrduLetters": {
+          "present": 7,
+          "total": 13,
+          "missing": [
+            "U+0679",
+            "U+0688",
+            "U+0691",
+            "U+06BE",
+            "U+06C1",
+            "U+06D2"
+          ]
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "rastikerdar/vazir-code-font:Vazir-Code.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 120,
+          "allahLigatureForms": 0,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 6,
+          "attachedPairs": 1078
+        },
+        "unvocalised": {
+          "top": 880,
+          "bottom": -384,
+          "topBy": "uniFE84",
+          "bottomBy": "uniFEF2"
+        },
+        "singleMark": {
+          "top": 1203,
+          "bottom": -602,
+          "topBy": "uniFE84 + uni064C",
+          "bottomBy": "uni0639 + uni064D"
+        },
+        "fullStack": {
+          "top": 1424,
+          "bottom": -602,
+          "topBy": "uniFE84 + uni0651064C",
+          "bottomBy": "uni0639 + uni064D"
+        },
+        "latinBasic": {
+          "top": 682,
+          "bottom": -174,
+          "topBy": "U+0060",
+          "bottomBy": "U+0028"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 799,
+          "bottom": -225,
+          "topBy": "uni064F",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.27,
+          "containment": 1.44
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.27,
+          "containment": 1.44
+        },
+        "singleMark": {
+          "stacking": 1.81,
+          "containment": 1.88
+        },
+        "fullStack": {
+          "stacking": 2.03,
+          "containment": 2.18
+        },
+        "latinBasic": {
+          "stacking": 0.86,
+          "containment": 1.02
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.44,
+        "body": 1.81,
+        "withTashkeel": 2.03,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "case",
+        "ccmp",
+        "dnom",
+        "fina",
+        "frac",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "numr",
+        "ordn",
+        "rlig",
+        "salt",
+        "ss01",
+        "ss02",
+        "ss03",
+        "subs",
+        "sups",
+        "zero"
+      ],
+      "gpos": [
+        "mark",
+        "mkmk"
+      ]
+    },
+    "notes": "Upstream README states the project is archived and no longer developed. Single weight. License evidence: LICENSE in the repository: changes by the author are public domain, fonts are (c) Bitstream under the Bitstream Vera license. The README says the Latin comes from Inconsolata (OFL-1.1) and Hack; the LICENSE file does not mention them. Not OFL; review before shipping."
+  }
+}

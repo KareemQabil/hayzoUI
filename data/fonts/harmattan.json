@@ -1,0 +1,357 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "harmattan",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/harmattan"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Harmattan",
+    "category": "sans",
+    "interfaceText": true,
+    "designers": [
+      "SIL International"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/silnrsi/font-harmattan",
+      "commit": "b8d089bdb2cf97351cff63beaa9d68a6273dcc42",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/harmattan",
+      "npm": "@fontsource/harmattan",
+      "npmVersion": "5.3.0",
+      "version": "Version 4.400"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2020-07-03"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/harmattan/Harmattan-Regular.ttf",
+        "sha256": "5fbaafc51ad21663729b168afaff5f28d3e3087f1fc736ada32d7cd99674c0e0",
+        "fontVersion": "Version 4.400",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1504,
+            -958
+          ],
+          "singleMark": [
+            2508,
+            -1328
+          ],
+          "fullStack": [
+            3065,
+            -1328
+          ],
+          "latinBasic": [
+            1230,
+            -378
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/harmattan/Harmattan-Medium.ttf",
+        "sha256": "e83a209c87145152dcc4df18ffdd50aad8407fb563135392e168c896e932d2d5",
+        "fontVersion": "Version 4.400",
+        "weightClass": 500,
+        "extents": {
+          "unvocalised": [
+            1524,
+            -971
+          ],
+          "singleMark": [
+            2528,
+            -1346
+          ],
+          "fullStack": [
+            3085,
+            -1346
+          ],
+          "latinBasic": [
+            1230,
+            -378
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/harmattan/Harmattan-SemiBold.ttf",
+        "sha256": "83479450450a50da78412f2f48b274883095a23a01d6bf36db54e769cb09b11d",
+        "fontVersion": "Version 4.400",
+        "weightClass": 600,
+        "extents": {
+          "unvocalised": [
+            1543,
+            -982
+          ],
+          "singleMark": [
+            2548,
+            -1364
+          ],
+          "fullStack": [
+            3105,
+            -1364
+          ],
+          "latinBasic": [
+            1230,
+            -378
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/harmattan/Harmattan-Bold.ttf",
+        "sha256": "eb9de49ecb72d34e14c768bea6f9a7831f6bd2c15b062fcc2bb17b0ac967bc67",
+        "fontVersion": "Version 4.400",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            1563,
+            -995
+          ],
+          "singleMark": [
+            2578,
+            -1383
+          ],
+          "fullStack": [
+            3135,
+            -1383
+          ],
+          "latinBasic": [
+            1230,
+            -378
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 2048,
+      "hhea": {
+        "ascender": 2166,
+        "descender": -1323,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 2166,
+        "descender": -1323,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 2300,
+        "descent": 1750
+      },
+      "useTypoMetrics": true,
+      "xHeight": 778,
+      "capHeight": 1111,
+      "head": {
+        "yMax": 2133,
+        "yMin": -1308
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.704,
+        "typo": 1.704,
+        "win": 1.978
+      },
+      "measuredFrom": "google/fonts:ofl/harmattan/Harmattan-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/harmattan/Harmattan-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 129,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 9,
+          "tashkeelForms": 12,
+          "ligatedMarkPairs": 6,
+          "attachedPairs": 1694
+        },
+        "unvocalised": {
+          "top": 1504,
+          "bottom": -958,
+          "topBy": "uni0627 + uni0654",
+          "bottomBy": "uni064A.fina"
+        },
+        "singleMark": {
+          "top": 2508,
+          "bottom": -1328,
+          "topBy": "uni0623 + uni06510670",
+          "bottomBy": "uni064A.fina + uni064D"
+        },
+        "fullStack": {
+          "top": 3065,
+          "bottom": -1328,
+          "topBy": "uni0623 + uni06510670 + uni0670",
+          "bottomBy": "uni064A.fina + uni064D"
+        },
+        "latinBasic": {
+          "top": 1230,
+          "bottom": -378,
+          "topBy": "U+0028",
+          "bottomBy": "U+0067"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 1727,
+          "bottom": -521,
+          "topBy": "uni064F",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.25,
+          "containment": 1.39
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.25,
+          "containment": 1.39
+        },
+        "singleMark": {
+          "stacking": 1.94,
+          "containment": 2.11
+        },
+        "fullStack": {
+          "stacking": 2.21,
+          "containment": 2.65
+        },
+        "latinBasic": {
+          "stacking": 0.79,
+          "containment": 0.79
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.39,
+        "body": 1.94,
+        "withTashkeel": 2.21,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "calt",
+        "ccmp",
+        "cv08",
+        "cv12",
+        "cv20",
+        "cv44",
+        "cv48",
+        "cv49",
+        "cv51",
+        "cv54",
+        "cv60",
+        "cv62",
+        "cv70",
+        "cv72",
+        "cv74",
+        "cv76",
+        "cv78",
+        "cv80",
+        "cv82",
+        "cv84",
+        "cv85",
+        "cv88",
+        "fina",
+        "init",
+        "liga",
+        "medi",
+        "rlig",
+        "rtlm",
+        "salt"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

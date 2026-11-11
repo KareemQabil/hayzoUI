@@ -1,0 +1,263 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "badeen-display",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/badeendisplay"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Badeen Display",
+    "category": "display",
+    "interfaceText": false,
+    "designers": [
+      "Hani Alasadi"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/haniadnansd/Badeen-Display",
+      "commit": "c1370b602b4a9819c4ddce4af17962a42edb8bc3",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/badeendisplay",
+      "npm": "@fontsource/badeen-display",
+      "npmVersion": "5.3.0",
+      "version": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      400
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2024-11-20"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/badeendisplay/BadeenDisplay-Regular.ttf",
+        "sha256": "274805b3ee44f9b45a99bdcecf25cd44944c0a81f6cf8086b5cf30d00e860537",
+        "fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            959,
+            -110
+          ],
+          "singleMark": [
+            979,
+            -230
+          ],
+          "fullStack": [
+            1079,
+            -230
+          ],
+          "latinBasic": [
+            861,
+            -200
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1150,
+        "descender": -250,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1150,
+        "descender": -250,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 959,
+        "descent": 300
+      },
+      "useTypoMetrics": true,
+      "xHeight": 600,
+      "capHeight": 700,
+      "head": {
+        "yMax": 959,
+        "yMin": -300
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.4,
+        "typo": 1.4,
+        "win": 1.259
+      },
+      "measuredFrom": "google/fonts:ofl/badeendisplay/BadeenDisplay-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/badeendisplay/BadeenDisplay-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 129,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 7,
+          "attachedPairs": 1098
+        },
+        "unvocalised": {
+          "top": 959,
+          "bottom": -110,
+          "topBy": "uniFDF2",
+          "bottomBy": "uni0625"
+        },
+        "singleMark": {
+          "top": 979,
+          "bottom": -230,
+          "topBy": "uni0623 + uni0670",
+          "bottomBy": "uni0625 + uni064D"
+        },
+        "fullStack": {
+          "top": 1079,
+          "bottom": -230,
+          "topBy": "uni0623 + uni06510670",
+          "bottomBy": "uni0625 + uni064D"
+        },
+        "latinBasic": {
+          "top": 861,
+          "bottom": -200,
+          "topBy": "U+0060",
+          "bottomBy": "U+002C"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 859,
+          "bottom": -300,
+          "topBy": "uni0670",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.07,
+          "containment": 1.12
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.16,
+          "containment": 1.3
+        },
+        "singleMark": {
+          "stacking": 1.21,
+          "containment": 1.36
+        },
+        "fullStack": {
+          "stacking": 1.31,
+          "containment": 1.36
+        },
+        "latinBasic": {
+          "stacking": 1.07,
+          "containment": 1.3
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.3,
+        "body": 1.21,
+        "withTashkeel": 1.31,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "c2sc",
+        "case",
+        "ccmp",
+        "fina",
+        "init",
+        "locl",
+        "medi",
+        "ordn",
+        "rlig",
+        "smcp"
+      ],
+      "gpos": [
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

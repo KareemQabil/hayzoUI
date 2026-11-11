@@ -1,0 +1,361 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "marhey",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/marhey"
+      },
+      {
+        "name": "@fontsource/marhey",
+        "url": "https://www.npmjs.com/package/@fontsource/marhey",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/marhey-arabic-{300,400,700}-normal.woff (static instances of Google Fonts v8, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Marhey",
+    "category": "display",
+    "interfaceText": false,
+    "designers": [
+      "Nur Syamsi",
+      "Bustanul Arifin"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/namelatype/Marhey",
+      "commit": "535eeb5a3f4dee825fdaf13d84075b212d969f8d",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/marhey",
+      "npm": "@fontsource/marhey",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/marhey",
+      "version": "Version 1.000"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      300,
+      400,
+      500,
+      600,
+      700
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 300-700",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "max": 700,
+          "default": 300
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2022-10-07"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/marhey/Marhey[wght].ttf",
+        "sha256": "19c30686157ec965797fae8c8feb7bb142b082217227562d1a809c067df447e9",
+        "fontVersion": "Version 1.000",
+        "weightClass": 300,
+        "extents": {
+          "unvocalised": [
+            936,
+            -485
+          ],
+          "singleMark": [
+            1156,
+            -719
+          ],
+          "fullStack": [
+            1313,
+            -719
+          ],
+          "latinBasic": [
+            858,
+            -305
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/marhey@5.3.0:files/marhey-arabic-300-normal.woff",
+        "sha256": "b70497d74e57eb55318aca236b1074c53b75380edae6df3a74d87e04eb1b6587",
+        "fontVersion": "Version 1.000",
+        "weightClass": 300,
+        "extents": {
+          "unvocalised": [
+            936,
+            -485
+          ],
+          "singleMark": [
+            1156,
+            -719
+          ],
+          "fullStack": [
+            1313,
+            -719
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/marhey@5.3.0:files/marhey-arabic-400-normal.woff",
+        "sha256": "d8f0de51b39e6701e83b7fc19cb24eeecf63f2c2962eb1ebc1eccd8b6b49fe65",
+        "fontVersion": "Version 1.000",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            937,
+            -493
+          ],
+          "singleMark": [
+            1170,
+            -731
+          ],
+          "fullStack": [
+            1318,
+            -731
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/marhey@5.3.0:files/marhey-arabic-700-normal.woff",
+        "sha256": "ea5c8b76325a3ea36404106c886c1a493cbc97ae74bac83bce79201fbc1561ef",
+        "fontVersion": "Version 1.000",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            939,
+            -516
+          ],
+          "singleMark": [
+            1222,
+            -765
+          ],
+          "fullStack": [
+            1370,
+            -765
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1100,
+        "descender": -640,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1100,
+        "descender": -640,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1102,
+        "descent": 700
+      },
+      "useTypoMetrics": true,
+      "xHeight": 450,
+      "capHeight": 750,
+      "head": {
+        "yMax": 1102,
+        "yMin": -700
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.74,
+        "typo": 1.74,
+        "win": 1.802
+      },
+      "measuredFrom": "google/fonts:ofl/marhey/Marhey[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/marhey/Marhey[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 139,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 6,
+          "attachedPairs": 1323
+        },
+        "unvocalised": {
+          "top": 936,
+          "bottom": -485,
+          "topBy": "uniFDF2",
+          "bottomBy": "uni064A"
+        },
+        "singleMark": {
+          "top": 1156,
+          "bottom": -719,
+          "topBy": "uni06440623 + uni064B",
+          "bottomBy": "uni064A + uni064D"
+        },
+        "fullStack": {
+          "top": 1313,
+          "bottom": -719,
+          "topBy": "uni06440623 + uni0651064D",
+          "bottomBy": "uni064A + uni064D"
+        },
+        "latinBasic": {
+          "top": 858,
+          "bottom": -305,
+          "topBy": "U+002F",
+          "bottomBy": "U+0071"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 856,
+          "bottom": -184,
+          "topBy": "uni0670",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.46,
+          "containment": 1.5
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.46,
+          "containment": 1.5
+        },
+        "singleMark": {
+          "stacking": 1.99,
+          "containment": 1.99
+        },
+        "fullStack": {
+          "stacking": 2.14,
+          "containment": 2.28
+        },
+        "latinBasic": {
+          "stacking": 1.17,
+          "containment": 1.26
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.5,
+        "body": 1.99,
+        "withTashkeel": 2.14,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "calt",
+        "ccmp",
+        "dlig",
+        "dnom",
+        "fina",
+        "frac",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "numr",
+        "ordn",
+        "rlig",
+        "salt",
+        "sinf",
+        "subs",
+        "sups"
+      ],
+      "gpos": [
+        "abvm",
+        "blwm",
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

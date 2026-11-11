@@ -1,0 +1,341 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "reem-kufi",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/reemkufi"
+      },
+      {
+        "name": "@fontsource/reem-kufi",
+        "url": "https://www.npmjs.com/package/@fontsource/reem-kufi",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/reem-kufi-arabic-{400,700}-normal.woff (static instances of Google Fonts v28, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Reem Kufi",
+    "category": "kufi",
+    "interfaceText": true,
+    "designers": [
+      "Khaled Hosny",
+      "Santiago Orozco"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/aliftype/reem-kufi",
+      "commit": "d304c9a381a4b005d9527312c8d51508e57ed0ed",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/reemkufi",
+      "npm": "@fontsource/reem-kufi",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/reem-kufi",
+      "version": "Version 2.000"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ],
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 400-700",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2016-05-31"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/reemkufi/ReemKufi[wght].ttf",
+        "sha256": "33ead1986cd48c138c4d906c9e5a6341877268461f97623409a2014de1cd4aa4",
+        "fontVersion": "Version 2.000",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1018,
+            -358
+          ],
+          "singleMark": [
+            1427,
+            -617
+          ],
+          "fullStack": [
+            1427,
+            -617
+          ],
+          "latinBasic": [
+            792,
+            -235
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/reem-kufi@5.3.0:files/reem-kufi-arabic-400-normal.woff",
+        "sha256": "5d83e803c13414ba3df0975f5f8e1601b30d64ad1236306b3f5b3911f520c76b",
+        "fontVersion": "Version 2.000",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1018,
+            -358
+          ],
+          "singleMark": [
+            1427,
+            -617
+          ],
+          "fullStack": [
+            1427,
+            -617
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/reem-kufi@5.3.0:files/reem-kufi-arabic-700-normal.woff",
+        "sha256": "0212e7cb72feafa51093792907207c85a412ea491bc26eb408ac222691252062",
+        "fontVersion": "Version 2.000",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            1018,
+            -358
+          ],
+          "singleMark": [
+            1427,
+            -617
+          ],
+          "fullStack": [
+            1427,
+            -617
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1100,
+        "descender": -400,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1100,
+        "descender": -400,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1400,
+        "descent": 400
+      },
+      "useTypoMetrics": true,
+      "xHeight": 418,
+      "capHeight": 725,
+      "head": {
+        "yMax": 1191,
+        "yMin": -400
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.5,
+        "typo": 1.5,
+        "win": 1.8
+      },
+      "measuredFrom": "google/fonts:ofl/reemkufi/ReemKufi[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 5,
+          "total": 9,
+          "missing": [
+            "U+066A",
+            "U+066B",
+            "U+066C",
+            "U+066D"
+          ]
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/reemkufi/ReemKufi[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 109,
+          "allahLigatureForms": 0,
+          "decomposedLetterForms": 23,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 0,
+          "attachedPairs": 666
+        },
+        "unvocalised": {
+          "top": 1018,
+          "bottom": -358,
+          "topBy": "alefHamzaabove-ar",
+          "bottomBy": "yeh-ar"
+        },
+        "singleMark": {
+          "top": 1427,
+          "bottom": -617,
+          "topBy": "alef-ar.isol + hamzaabove-ar + dammatan-ar",
+          "bottomBy": "alefMaksura-ar.isol + twodotshorizontalbelow-ar + kasratan-ar"
+        },
+        "fullStack": {
+          "top": 1427,
+          "bottom": -617,
+          "topBy": "alef-ar.isol + hamzaabove-ar + dammatan-ar",
+          "bottomBy": "alefMaksura-ar.isol + twodotshorizontalbelow-ar + kasratan-ar"
+        },
+        "latinBasic": {
+          "top": 792,
+          "bottom": -235,
+          "topBy": "U+0024",
+          "bottomBy": "U+007C"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 327,
+          "bottom": -17,
+          "topBy": "dammatan-ar",
+          "bottomBy": "kasratan-ar"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.38,
+          "containment": 1.42
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.38,
+          "containment": 1.42
+        },
+        "singleMark": {
+          "stacking": 2.05,
+          "containment": 2.16
+        },
+        "fullStack": {
+          "stacking": 2.05,
+          "containment": 2.16
+        },
+        "latinBasic": {
+          "stacking": 1.03,
+          "containment": 1.17
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.42,
+        "body": 2.05,
+        "withTashkeel": 2.05,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "case",
+        "ccmp",
+        "cv01",
+        "cv02",
+        "cv03",
+        "fina",
+        "frac",
+        "init",
+        "locl",
+        "medi",
+        "ordn",
+        "rclt",
+        "rlig",
+        "sups",
+        "zero"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk",
+        "rclt"
+      ]
+    }
+  }
+}

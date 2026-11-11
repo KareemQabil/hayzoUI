@@ -1,0 +1,2948 @@
+{
+  "source": {
+    "repository": "https://github.com/google/fonts",
+    "commit": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+    "familiesRead": 2042
+  },
+  "families": [
+    {
+      "id": "alan-sans",
+      "family": "Alan Sans",
+      "path": "ofl/alansans",
+      "license": "OFL-1.1",
+      "designers": [
+        "Raphaël Ronot",
+        "Samar Zureik"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2025-09-05",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "AlanSans[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/alan-eu/Alan-Sans",
+      "upstreamCommit": "281c0703f74926de5a211b980e55e739986ace6f"
+    },
+    {
+      "id": "alexandria",
+      "family": "Alexandria",
+      "path": "ofl/alexandria",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber",
+        "Julieta Ulanovsky"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-11-04",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Alexandria[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/Gue3bara/Alexandria",
+      "upstreamCommit": "4fd1422be3488837c41fbdb84a77350f0f56a734"
+    },
+    {
+      "id": "alkalami",
+      "family": "Alkalami",
+      "path": "ofl/alkalami",
+      "license": "OFL-1.1",
+      "designers": [
+        "SIL International"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-06-10",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Alkalami-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/silnrsi/font-alkalami",
+      "upstreamCommit": "aac8fee84607803af27a8c3bdae12056b0ba0aec"
+    },
+    {
+      "id": "almarai",
+      "family": "Almarai",
+      "path": "ofl/almarai",
+      "license": "OFL-1.1",
+      "designers": [
+        "Boutros Fonts",
+        "Mourad Boutros"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2019-06-04",
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        300,
+        400,
+        700,
+        800
+      ],
+      "files": [
+        {
+          "filename": "Almarai-Light.ttf",
+          "style": "normal",
+          "weight": 300
+        },
+        {
+          "filename": "Almarai-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Almarai-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "filename": "Almarai-ExtraBold.ttf",
+          "style": "normal",
+          "weight": 800
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/JuergenWillrodt/Almarai",
+      "upstreamCommit": "7307ede5d42bcb5b9f905736a7c6eb04347afa3b"
+    },
+    {
+      "id": "alyamama",
+      "family": "Alyamama",
+      "path": "ofl/alyamama",
+      "license": "OFL-1.1",
+      "designers": [
+        "Yazeed Omar"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2026-01-09",
+      "subsets": [
+        "arabic",
+        "greek",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Alyamama[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/Mestaratype/AlYamama",
+      "upstreamCommit": "aecc9e395072c0e1d4cdd9dc296c0da5744f3360"
+    },
+    {
+      "id": "amiri",
+      "family": "Amiri",
+      "path": "ofl/amiri",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny",
+        "Sebastian Kosch"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2012-07-30",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        400,
+        700
+      ],
+      "files": [
+        {
+          "filename": "Amiri-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Amiri-Italic.ttf",
+          "style": "italic",
+          "weight": 400
+        },
+        {
+          "filename": "Amiri-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "filename": "Amiri-BoldItalic.ttf",
+          "style": "italic",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/aliftype/amiri.git",
+      "upstreamCommit": "04d40ee68cc6b8cb6870eca81a8a7451165aa95a"
+    },
+    {
+      "id": "amiri-quran",
+      "family": "Amiri Quran",
+      "path": "ofl/amiriquran",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny",
+        "Sebastian Kosch"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-08-10",
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "AmiriQuran-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/aliftype/amiri",
+      "upstreamCommit": "480bb746e99ea700bb0d6b4dbf96302d58192103"
+    },
+    {
+      "id": "aref-ruqaa",
+      "family": "Aref Ruqaa",
+      "path": "ofl/arefruqaa",
+      "license": "OFL-1.1",
+      "designers": [
+        "Abdullah Aref",
+        "Khaled Hosny",
+        "Hermann Zapf"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2016-06-20",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400,
+        700
+      ],
+      "files": [
+        {
+          "filename": "ArefRuqaa-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "ArefRuqaa-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/aliftype/aref-ruqaa",
+      "upstreamCommit": "175e1ed565e75aba8059675b80dadc0a184d53e6"
+    },
+    {
+      "id": "aref-ruqaa-ink",
+      "family": "Aref Ruqaa Ink",
+      "path": "ofl/arefruqaaink",
+      "license": "OFL-1.1",
+      "designers": [
+        "Abdullah Aref",
+        "Khaled Hosny",
+        "Hermann Zapf"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2022-02-26",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400,
+        700
+      ],
+      "files": [
+        {
+          "filename": "ArefRuqaaInk-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "ArefRuqaaInk-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/aliftype/aref-ruqaa",
+      "upstreamCommit": "cca3d1256a7cc75a451f38e50b870d2d5c1e3ffb"
+    },
+    {
+      "id": "badeen-display",
+      "family": "Badeen Display",
+      "path": "ofl/badeendisplay",
+      "license": "OFL-1.1",
+      "designers": [
+        "Hani Alasadi"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [],
+      "dateAdded": "2024-11-20",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "BadeenDisplay-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/haniadnansd/Badeen-Display",
+      "upstreamCommit": "c1370b602b4a9819c4ddce4af17962a42edb8bc3"
+    },
+    {
+      "id": "baloo-bhaijaan-2",
+      "family": "Baloo Bhaijaan 2",
+      "path": "ofl/baloobhaijaan2",
+      "license": "OFL-1.1",
+      "designers": [
+        "Ek Type"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2021-10-29",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "BalooBhaijaan2[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 800
+        }
+      ],
+      "upstream": "https://github.com/EkType/Baloo2-Variable",
+      "upstreamCommit": "da4090c1dd5798a3e72d7138e379ee1f94d6349c"
+    },
+    {
+      "id": "beiruti",
+      "family": "Beiruti",
+      "path": "ofl/beiruti",
+      "license": "OFL-1.1",
+      "designers": [
+        "Boutros Fonts",
+        "Arlette Boutros",
+        "Volker Schnebel"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2024-06-07",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Beiruti[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/googlefonts/beiruti",
+      "upstreamCommit": "bd45772aeff26f3ed83faa1efbb52a30b39608f2"
+    },
+    {
+      "id": "blaka",
+      "family": "Blaka",
+      "path": "ofl/blaka",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-04-26",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Blaka-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/Gue3bara/Blaka",
+      "upstreamCommit": "7f264eee862d3e94c2cb6a728c6429c2f3b9adc3"
+    },
+    {
+      "id": "blaka-hollow",
+      "family": "Blaka Hollow",
+      "path": "ofl/blakahollow",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-04-26",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "BlakaHollow-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/Gue3bara/Blaka",
+      "upstreamCommit": "7f264eee862d3e94c2cb6a728c6429c2f3b9adc3"
+    },
+    {
+      "id": "blaka-ink",
+      "family": "Blaka Ink",
+      "path": "ofl/blakaink",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-02-26",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "BlakaInk-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/Gue3bara/Blaka",
+      "upstreamCommit": "7f264eee862d3e94c2cb6a728c6429c2f3b9adc3"
+    },
+    {
+      "id": "cairo",
+      "family": "Cairo",
+      "path": "ofl/cairo",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber",
+        "Accademia di Belle Arti di Urbino"
+      ],
+      "googleCategory": [
+        "DISPLAY",
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2019-03-21",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Cairo[slnt,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "slnt",
+          "min": -11,
+          "max": 11
+        },
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 1000
+        }
+      ],
+      "upstream": "https://github.com/Gue3bara/Cairo",
+      "upstreamCommit": "73d16933c6a0f341c27a69e401da83dcb0d53114"
+    },
+    {
+      "id": "cairo-play",
+      "family": "Cairo Play",
+      "path": "ofl/cairoplay",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber",
+        "Accademia di Belle Arti di Urbino"
+      ],
+      "googleCategory": [
+        "DISPLAY",
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-08-05",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "CairoPlay[slnt,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "slnt",
+          "min": -11,
+          "max": 11
+        },
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 1000
+        }
+      ],
+      "upstream": "https://github.com/Gue3bara/Cairo",
+      "upstreamCommit": "73d16933c6a0f341c27a69e401da83dcb0d53114"
+    },
+    {
+      "id": "cascadia-code",
+      "family": "Cascadia Code",
+      "path": "ofl/cascadiacode",
+      "license": "OFL-1.1",
+      "designers": [
+        "Aaron Bell",
+        "Mohamad Dakak",
+        "Viktoriya Grabowska",
+        "Liron Lavi Turkenich"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2025-03-18",
+      "subsets": [
+        "arabic",
+        "braille",
+        "cyrillic",
+        "cyrillic-ext",
+        "greek",
+        "hebrew",
+        "latin",
+        "latin-ext",
+        "symbols2",
+        "vietnamese"
+      ],
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "CascadiaCode[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "CascadiaCode-Italic[wght].ttf",
+          "style": "italic",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/microsoft/cascadia-code",
+      "upstreamCommit": "56bcca3f2c1e4cb19458954f0e2bb4635960df91"
+    },
+    {
+      "id": "cascadia-mono",
+      "family": "Cascadia Mono",
+      "path": "ofl/cascadiamono",
+      "license": "OFL-1.1",
+      "designers": [
+        "Aaron Bell",
+        "Mohamad Dakak",
+        "Viktoriya Grabowska",
+        "Liron Lavi Turkenich"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2025-03-18",
+      "subsets": [
+        "arabic",
+        "braille",
+        "cyrillic",
+        "cyrillic-ext",
+        "greek",
+        "hebrew",
+        "latin",
+        "latin-ext",
+        "symbols2",
+        "vietnamese"
+      ],
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "CascadiaMono[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "CascadiaMono-Italic[wght].ttf",
+          "style": "italic",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/microsoft/cascadia-code",
+      "upstreamCommit": "56bcca3f2c1e4cb19458954f0e2bb4635960df91"
+    },
+    {
+      "id": "changa",
+      "family": "Changa",
+      "path": "ofl/changa",
+      "license": "OFL-1.1",
+      "designers": [
+        "Eduardo Tunni"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2012-10-31",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Changa[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 800
+        }
+      ],
+      "upstream": "https://github.com/googlefonts/changa-vf",
+      "upstreamCommit": "fb3207d4fe7234f610d0d4ef77dce01cfda57027"
+    },
+    {
+      "id": "el-messiri",
+      "family": "El Messiri",
+      "path": "ofl/elmessiri",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber",
+        "Jovanny Lemonad"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2016-06-20",
+      "subsets": [
+        "arabic",
+        "cyrillic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "ElMessiri[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/Gue3bara/El-Messiri",
+      "upstreamCommit": "553b98d8e374318694b50862849af666268fd278"
+    },
+    {
+      "id": "estedad",
+      "family": "Estedad",
+      "path": "ofl/estedad",
+      "license": "OFL-1.1",
+      "designers": [
+        "Amin Abedi",
+        "Fontamin"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2026-04-01",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Estedad[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/aminabedi68/Estedad",
+      "upstreamCommit": "69e879f78a4a1c7c4594baf7da13ba1c9f65ffd3"
+    },
+    {
+      "id": "firjar",
+      "family": "Firjar",
+      "path": "ofl/firjar",
+      "license": "OFL-1.1",
+      "designers": [
+        "Yazeed Omar"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2026-10-15",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Firjar[wdth,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75,
+          "max": 125
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 800
+        }
+      ],
+      "upstream": "https://github.com/Mestaratype/Firjar",
+      "upstreamCommit": "ba21292cd3b08bfeb7dba987b60ef790059a2930"
+    },
+    {
+      "id": "fustat",
+      "family": "Fustat",
+      "path": "ofl/fustat",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber",
+        "Laura Garcia Mut",
+        "Khaled Hosny"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2024-06-05",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Fustat[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 800
+        }
+      ],
+      "upstream": "https://github.com/Kief-Type-Foundry/Fustat",
+      "upstreamCommit": "642499b606f79bc6c25e63a4f8335a40afd96a13"
+    },
+    {
+      "id": "google-sans",
+      "family": "Google Sans",
+      "path": "ofl/googlesans",
+      "license": "OFL-1.1",
+      "designers": [
+        "Google"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2017-06-05",
+      "subsets": [
+        "arabic",
+        "armenian",
+        "bengali",
+        "canadian-aboriginal",
+        "cyrillic",
+        "cyrillic-ext",
+        "devanagari",
+        "ethiopic",
+        "georgian",
+        "greek",
+        "greek-ext",
+        "gujarati",
+        "gurmukhi",
+        "hebrew",
+        "kannada",
+        "khmer",
+        "lao",
+        "latin",
+        "latin-ext",
+        "malayalam",
+        "oriya",
+        "sinhala",
+        "symbols",
+        "tamil",
+        "telugu",
+        "thai",
+        "vietnamese"
+      ],
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "GoogleSans[GRAD,opsz,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "GoogleSans-Italic[GRAD,opsz,wght].ttf",
+          "style": "italic",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "GRAD",
+          "min": -50,
+          "max": 200
+        },
+        {
+          "tag": "opsz",
+          "min": 17,
+          "max": 18
+        },
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/googlefonts/googlesans",
+      "upstreamCommit": "5c8f512c5fb42a7be099b951a7c097f96209c78e"
+    },
+    {
+      "id": "gulzar",
+      "family": "Gulzar",
+      "path": "ofl/gulzar",
+      "license": "OFL-1.1",
+      "designers": [
+        "Borna Izadpanah",
+        "Fiona Ross",
+        "Alice Savoie",
+        "Simon Cozens"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2022-05-14",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Gulzar-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/simoncozens/Gulzar",
+      "upstreamCommit": "42b27958a84d56d8341ad1e2dc26b19dba03b15f"
+    },
+    {
+      "id": "handjet",
+      "family": "Handjet",
+      "path": "ofl/handjet",
+      "license": "OFL-1.1",
+      "designers": [
+        "Rosetta",
+        "David Březina"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2020-09-11",
+      "subsets": [
+        "arabic",
+        "armenian",
+        "cyrillic",
+        "cyrillic-ext",
+        "greek",
+        "hebrew",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Handjet[ELGR,ELSH,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "ELGR",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "tag": "ELSH",
+          "min": 0,
+          "max": 16
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/rosettatype/handjet",
+      "upstreamCommit": "3918b7798e06c81da6bc558e88dfddd5a6b49807"
+    },
+    {
+      "id": "harmattan",
+      "family": "Harmattan",
+      "path": "ofl/harmattan",
+      "license": "OFL-1.1",
+      "designers": [
+        "SIL International"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-07-03",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "files": [
+        {
+          "filename": "Harmattan-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Harmattan-Medium.ttf",
+          "style": "normal",
+          "weight": 500
+        },
+        {
+          "filename": "Harmattan-SemiBold.ttf",
+          "style": "normal",
+          "weight": 600
+        },
+        {
+          "filename": "Harmattan-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/silnrsi/font-harmattan",
+      "upstreamCommit": "b8d089bdb2cf97351cff63beaa9d68a6273dcc42"
+    },
+    {
+      "id": "ibm-plex-sans-arabic",
+      "family": "IBM Plex Sans Arabic",
+      "path": "ofl/ibmplexsansarabic",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mike Abbink",
+        "Bold Monday",
+        "Khajag Apelian",
+        "Wael Morcos"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2021-06-17",
+      "subsets": [
+        "arabic",
+        "cyrillic-ext",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "files": [
+        {
+          "filename": "IBMPlexSansArabic-Thin.ttf",
+          "style": "normal",
+          "weight": 100
+        },
+        {
+          "filename": "IBMPlexSansArabic-ExtraLight.ttf",
+          "style": "normal",
+          "weight": 200
+        },
+        {
+          "filename": "IBMPlexSansArabic-Light.ttf",
+          "style": "normal",
+          "weight": 300
+        },
+        {
+          "filename": "IBMPlexSansArabic-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "IBMPlexSansArabic-Medium.ttf",
+          "style": "normal",
+          "weight": 500
+        },
+        {
+          "filename": "IBMPlexSansArabic-SemiBold.ttf",
+          "style": "normal",
+          "weight": 600
+        },
+        {
+          "filename": "IBMPlexSansArabic-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/googlefonts/plex",
+      "upstreamCommit": "e80bf9282a630e70d6c1459f4125c9ec0e75316b"
+    },
+    {
+      "id": "jomhuria",
+      "family": "Jomhuria",
+      "path": "ofl/jomhuria",
+      "license": "OFL-1.1",
+      "designers": [
+        "KB Studio"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2016-06-20",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Jomhuria-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/Tarobish/Jomhuria",
+      "upstreamCommit": "d4b8f42eaf712178802609bfbe48127bd45be9c8"
+    },
+    {
+      "id": "katibeh",
+      "family": "Katibeh",
+      "path": "ofl/katibeh",
+      "license": "OFL-1.1",
+      "designers": [
+        "KB Studio"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2016-06-20",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Katibeh-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/Tarobish/Katibeh",
+      "upstreamCommit": "3fde990dc2f1648d63b7fe2841902d268529c1c2"
+    },
+    {
+      "id": "kufam",
+      "family": "Kufam",
+      "path": "ofl/kufam",
+      "license": "OFL-1.1",
+      "designers": [
+        "Original Type",
+        "Wael Morcos",
+        "Artur Schmal"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-07-14",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Kufam[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Kufam-Italic[wght].ttf",
+          "style": "italic",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/originaltype/kufam",
+      "upstreamCommit": "a2c0c9552f98295167bc33bdb9c6256dd6abdc8a"
+    },
+    {
+      "id": "lalezar",
+      "family": "Lalezar",
+      "path": "ofl/lalezar",
+      "license": "OFL-1.1",
+      "designers": [
+        "Borna Izadpanah"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2017-02-28",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Lalezar-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/BornaIz/Lalezar",
+      "upstreamCommit": "238701c4241f207e92515f845a199be9131c1109"
+    },
+    {
+      "id": "lateef",
+      "family": "Lateef",
+      "path": "ofl/lateef",
+      "license": "OFL-1.1",
+      "designers": [
+        "SIL International"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2012-01-18",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "files": [
+        {
+          "filename": "Lateef-ExtraLight.ttf",
+          "style": "normal",
+          "weight": 200
+        },
+        {
+          "filename": "Lateef-Light.ttf",
+          "style": "normal",
+          "weight": 300
+        },
+        {
+          "filename": "Lateef-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Lateef-Medium.ttf",
+          "style": "normal",
+          "weight": 500
+        },
+        {
+          "filename": "Lateef-SemiBold.ttf",
+          "style": "normal",
+          "weight": 600
+        },
+        {
+          "filename": "Lateef-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "filename": "Lateef-ExtraBold.ttf",
+          "style": "normal",
+          "weight": 800
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/silnrsi/font-lateef",
+      "upstreamCommit": "d682ea7cc0305b592058255167c83d059aa640fa"
+    },
+    {
+      "id": "lemonada",
+      "family": "Lemonada",
+      "path": "ofl/lemonada",
+      "license": "OFL-1.1",
+      "designers": [
+        "Mohamed Gaber",
+        "Eduardo Tunni"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "HANDWRITING"
+      ],
+      "dateAdded": "2016-06-20",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Lemonada[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/Gue3bara/Lemonada",
+      "upstreamCommit": "21a53a1760f6f3c3e585bc50bc3463e97f1fa7e6"
+    },
+    {
+      "id": "mada",
+      "family": "Mada",
+      "path": "ofl/mada",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny",
+        "Paul D. Hunt"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2017-05-08",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Mada[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/aliftype/mada",
+      "upstreamCommit": "2f7dea3a2bad718583bfcc1dc2030cf15401c789"
+    },
+    {
+      "id": "marhey",
+      "family": "Marhey",
+      "path": "ofl/marhey",
+      "license": "OFL-1.1",
+      "designers": [
+        "Nur Syamsi",
+        "Bustanul Arifin"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2022-10-07",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Marhey[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/namelatype/Marhey",
+      "upstreamCommit": "535eeb5a3f4dee825fdaf13d84075b212d969f8d"
+    },
+    {
+      "id": "markazi-text",
+      "family": "Markazi Text",
+      "path": "ofl/markazitext",
+      "license": "OFL-1.1",
+      "designers": [
+        "Borna Izadpanah",
+        "Florian Runge",
+        "Fiona Ross"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2018-06-06",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "MarkaziText[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/BornaIz/markazitext",
+      "upstreamCommit": "51bb67cce0bb3609f8318077ab0f74b93d365007"
+    },
+    {
+      "id": "mirza",
+      "family": "Mirza",
+      "path": "ofl/mirza",
+      "license": "OFL-1.1",
+      "designers": [
+        "KB Studio"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2016-06-20",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "files": [
+        {
+          "filename": "Mirza-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Mirza-Medium.ttf",
+          "style": "normal",
+          "weight": 500
+        },
+        {
+          "filename": "Mirza-SemiBold.ttf",
+          "style": "normal",
+          "weight": 600
+        },
+        {
+          "filename": "Mirza-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/Tarobish/Mirza",
+      "upstreamCommit": "fa7b59c92953e7f437d079a8c118a7952c507f09"
+    },
+    {
+      "id": "noto-kufi-arabic",
+      "family": "Noto Kufi Arabic",
+      "path": "ofl/notokufiarabic",
+      "license": "OFL-1.1",
+      "designers": [
+        "Google"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-11-19",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "math",
+        "symbols"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "NotoKufiArabic[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/notofonts/arabic",
+      "upstreamCommit": "652edd9688496f88c4cf41706c892fe10f9f3c92"
+    },
+    {
+      "id": "noto-naskh-arabic",
+      "family": "Noto Naskh Arabic",
+      "path": "ofl/notonaskharabic",
+      "license": "OFL-1.1",
+      "designers": [
+        "Google"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-11-19",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "math",
+        "symbols"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "NotoNaskhArabic[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/notofonts/arabic",
+      "upstreamCommit": "59f5a3fd985bf24858915c3dddfc51a537640965"
+    },
+    {
+      "id": "noto-naskh-arabic-ui",
+      "family": "Noto Naskh Arabic UI",
+      "path": "ofl/notonaskharabicui",
+      "license": "OFL-1.1",
+      "designers": [
+        "Google"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-11-19",
+      "subsets": [
+        "arabic"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "NotoNaskhArabicUI[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/notofonts/arabic",
+      "upstreamCommit": "133ccaebf922ca080a7eef22998611ac3c242df9"
+    },
+    {
+      "id": "noto-nastaliq-urdu",
+      "family": "Noto Nastaliq Urdu",
+      "path": "ofl/notonastaliqurdu",
+      "license": "OFL-1.1",
+      "designers": [
+        "Google"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-11-19",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "NotoNastaliqUrdu[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/notofonts/nastaliq",
+      "upstreamCommit": "3508acd351a8603c6b74d2cff2da66b0806374d1"
+    },
+    {
+      "id": "noto-sans-arabic",
+      "family": "Noto Sans Arabic",
+      "path": "ofl/notosansarabic",
+      "license": "OFL-1.1",
+      "designers": [
+        "Google"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-11-19",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "math",
+        "symbols"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "NotoSansArabic[wdth,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "max": 100
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/notofonts/arabic",
+      "upstreamCommit": "6c8320740db19efbb3127c3697b0ee5d0fa62319"
+    },
+    {
+      "id": "noto-sans-arabic-ui",
+      "family": "Noto Sans Arabic UI",
+      "path": "ofl/notosansarabicui",
+      "license": "OFL-1.1",
+      "designers": [
+        "Google"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2020-11-19",
+      "subsets": [
+        "arabic"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "NotoSansArabicUI[wdth,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "max": 100
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/notofonts/arabic",
+      "upstreamCommit": "78340846460d29a6d673bb2ae355e394a0d81a9d"
+    },
+    {
+      "id": "oi",
+      "family": "Oi",
+      "path": "ofl/oi",
+      "license": "OFL-1.1",
+      "designers": [
+        "Kostas Bartsokas"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2021-02-03",
+      "subsets": [
+        "arabic",
+        "cyrillic",
+        "cyrillic-ext",
+        "greek",
+        "latin",
+        "latin-ext",
+        "tamil",
+        "vietnamese"
+      ],
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Oi-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/kosbarts/Oi",
+      "upstreamCommit": "bd7ccfa844054ec4a0b2b17e56c33830646668ea"
+    },
+    {
+      "id": "parastoo",
+      "family": "Parastoo",
+      "path": "ofl/parastoo",
+      "license": "OFL-1.1",
+      "designers": [
+        "Saber Rastikerdar"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2025-05-22",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Parastoo[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/googlefonts/parastoo-font",
+      "upstreamCommit": "80a254f68aa51a80a97e33218e3e23e9d3229b10"
+    },
+    {
+      "id": "playpen-sans-arabic",
+      "family": "Playpen Sans Arabic",
+      "path": "ofl/playpensansarabic",
+      "license": "OFL-1.1",
+      "designers": [
+        "TypeTogether",
+        "Azza Alameddine",
+        "Laura Meseguer",
+        "Veronika Burian",
+        "José Scaglione"
+      ],
+      "googleCategory": [
+        "HANDWRITING"
+      ],
+      "classifications": [],
+      "dateAdded": "2025-03-11",
+      "subsets": [
+        "arabic",
+        "emoji",
+        "latin",
+        "latin-ext",
+        "math"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "PlaypenSansArabic[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 800
+        }
+      ],
+      "upstream": "https://github.com/TypeTogether/Playpen-Sans",
+      "upstreamCommit": "a4829cda744ea7e9ae73c14468a8a5672809f525"
+    },
+    {
+      "id": "qahiri",
+      "family": "Qahiri",
+      "path": "ofl/qahiri",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2021-04-03",
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Qahiri-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/aliftype/qahiri",
+      "upstreamCommit": "964c2f87c703108cba828161f1c61797c9cf099e"
+    },
+    {
+      "id": "rakkas",
+      "family": "Rakkas",
+      "path": "ofl/rakkas",
+      "license": "OFL-1.1",
+      "designers": [
+        "Zeynep Akay"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2016-06-20",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Rakkas-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/zeynepakay/Rakkas",
+      "upstreamCommit": "3bdb0ba164c9e987a5ab4de7f7cc8842a04d267a"
+    },
+    {
+      "id": "readex-pro",
+      "family": "Readex Pro",
+      "path": "ofl/readexpro",
+      "license": "OFL-1.1",
+      "designers": [
+        "Thomas Jockin",
+        "Nadine Chahine",
+        "Bonnie Shaver-Troup",
+        "Santiago Orozco",
+        "Héctor Gómez"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2021-09-16",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "ReadexPro[HEXP,wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "HEXP",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "tag": "wght",
+          "min": 160,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/ThomasJockin/readexpro",
+      "upstreamCommit": "563dfbb36ae45e52ec50829b016ce724ac2fca70"
+    },
+    {
+      "id": "reem-kufi",
+      "family": "Reem Kufi",
+      "path": "ofl/reemkufi",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny",
+        "Santiago Orozco"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2016-05-31",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "ReemKufi[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/aliftype/reem-kufi",
+      "upstreamCommit": "d304c9a381a4b005d9527312c8d51508e57ed0ed"
+    },
+    {
+      "id": "reem-kufi-fun",
+      "family": "Reem Kufi Fun",
+      "path": "ofl/reemkufifun",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny",
+        "Santiago Orozco"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2021-11-02",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "ReemKufiFun[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700
+        }
+      ],
+      "upstream": "https://github.com/aliftype/reem-kufi",
+      "upstreamCommit": "359f25e571c7d56d6ef48c844c2f641a7a124a4d"
+    },
+    {
+      "id": "reem-kufi-ink",
+      "family": "Reem Kufi Ink",
+      "path": "ofl/reemkufiink",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny",
+        "Santiago Orozco"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2021-11-02",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "ReemKufiInk-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/aliftype/reem-kufi",
+      "upstreamCommit": "359f25e571c7d56d6ef48c844c2f641a7a124a4d"
+    },
+    {
+      "id": "rubik",
+      "family": "Rubik",
+      "path": "ofl/rubik",
+      "license": "OFL-1.1",
+      "designers": [
+        "Hubert and Fischer",
+        "Meir Sadan",
+        "Cyreal",
+        "Daniel Grumer",
+        "Omaima Dajani"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2015-07-22",
+      "subsets": [
+        "arabic",
+        "cyrillic",
+        "cyrillic-ext",
+        "hebrew",
+        "latin",
+        "latin-ext"
+      ],
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Rubik[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Rubik-Italic[wght].ttf",
+          "style": "italic",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/googlefonts/rubik",
+      "upstreamCommit": "9167c98fa8699d75ee51769eba20d81beb16bcb5"
+    },
+    {
+      "id": "ruwudu",
+      "family": "Ruwudu",
+      "path": "ofl/ruwudu",
+      "license": "OFL-1.1",
+      "designers": [
+        "SIL International"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2023-07-05",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "files": [
+        {
+          "filename": "Ruwudu-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Ruwudu-Medium.ttf",
+          "style": "normal",
+          "weight": 500
+        },
+        {
+          "filename": "Ruwudu-SemiBold.ttf",
+          "style": "normal",
+          "weight": 600
+        },
+        {
+          "filename": "Ruwudu-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/silnrsi/font-ruwudu",
+      "upstreamCommit": "b5aa4e64386fa7fe286634b10b7c874a42b9d1cf"
+    },
+    {
+      "id": "scheherazade-new",
+      "family": "Scheherazade New",
+      "path": "ofl/scheherazadenew",
+      "license": "OFL-1.1",
+      "designers": [
+        "SIL International"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2021-05-12",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "files": [
+        {
+          "filename": "ScheherazadeNew-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "ScheherazadeNew-Medium.ttf",
+          "style": "normal",
+          "weight": 500
+        },
+        {
+          "filename": "ScheherazadeNew-SemiBold.ttf",
+          "style": "normal",
+          "weight": 600
+        },
+        {
+          "filename": "ScheherazadeNew-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/silnrsi/font-scheherazade",
+      "upstreamCommit": "60e64560db425905f52149398403298747f5f684"
+    },
+    {
+      "id": "tajawal",
+      "family": "Tajawal",
+      "path": "ofl/tajawal",
+      "license": "OFL-1.1",
+      "designers": [
+        "Boutros Fonts",
+        "Mourad Boutros",
+        "Soulaf Khalifeh"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2018-04-04",
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        200,
+        300,
+        400,
+        500,
+        700,
+        800,
+        900
+      ],
+      "files": [
+        {
+          "filename": "Tajawal-ExtraLight.ttf",
+          "style": "normal",
+          "weight": 200
+        },
+        {
+          "filename": "Tajawal-Light.ttf",
+          "style": "normal",
+          "weight": 300
+        },
+        {
+          "filename": "Tajawal-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Tajawal-Medium.ttf",
+          "style": "normal",
+          "weight": 500
+        },
+        {
+          "filename": "Tajawal-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "filename": "Tajawal-ExtraBold.ttf",
+          "style": "normal",
+          "weight": 800
+        },
+        {
+          "filename": "Tajawal-Black.ttf",
+          "style": "normal",
+          "weight": 900
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/googlefonts/tajawal",
+      "upstreamCommit": "2085b8942f234e7afb83dc03c77713d0d5471cc9"
+    },
+    {
+      "id": "thabit",
+      "family": "Thabit",
+      "path": "ofl/thabit",
+      "license": "OFL-1.1",
+      "designers": [
+        "Khaled Hosny"
+      ],
+      "googleCategory": [
+        "SERIF"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2010-09-21",
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        400,
+        700
+      ],
+      "files": [
+        {
+          "filename": "Thabit.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Thabit-Oblique.ttf",
+          "style": "italic",
+          "weight": 400
+        },
+        {
+          "filename": "Thabit-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "filename": "Thabit-BoldOblique.ttf",
+          "style": "italic",
+          "weight": 700
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/googlefonts/googlefontdirectory-hg",
+      "upstreamCommit": "52f780bc9d197280a9f430574e179a5f233c56b6"
+    },
+    {
+      "id": "vazirmatn",
+      "family": "Vazirmatn",
+      "path": "ofl/vazirmatn",
+      "license": "OFL-1.1",
+      "designers": [
+        "Saber Rastikerdar"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2022-03-16",
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Vazirmatn[wght].ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900
+        }
+      ],
+      "upstream": "https://github.com/rastikerdar/vazirmatn",
+      "upstreamCommit": "14f8686945b97ac535bdb144a7c3794431d894d2"
+    },
+    {
+      "id": "vibes",
+      "family": "Vibes",
+      "path": "ofl/vibes",
+      "license": "OFL-1.1",
+      "designers": [
+        "AbdElmomen Kadhim (blueMix)"
+      ],
+      "googleCategory": [
+        "DISPLAY"
+      ],
+      "classifications": [],
+      "dateAdded": "2019-04-23",
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "normal"
+      ],
+      "weights": [
+        400
+      ],
+      "files": [
+        {
+          "filename": "Vibes-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/bluemix/vibes-typeface",
+      "upstreamCommit": "4cfe8e24413fc3711d3bba4c278e17429f93fc13"
+    },
+    {
+      "id": "zain",
+      "family": "Zain",
+      "path": "ofl/zain",
+      "license": "OFL-1.1",
+      "designers": [
+        "Boutros Fonts"
+      ],
+      "googleCategory": [
+        "SANS_SERIF"
+      ],
+      "classifications": [],
+      "dateAdded": "2024-05-31",
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "primaryScript": "Arab",
+      "styles": [
+        "italic",
+        "normal"
+      ],
+      "weights": [
+        200,
+        300,
+        400,
+        700,
+        800,
+        900
+      ],
+      "files": [
+        {
+          "filename": "Zain-ExtraLight.ttf",
+          "style": "normal",
+          "weight": 200
+        },
+        {
+          "filename": "Zain-Light.ttf",
+          "style": "normal",
+          "weight": 300
+        },
+        {
+          "filename": "Zain-LightItalic.ttf",
+          "style": "italic",
+          "weight": 300
+        },
+        {
+          "filename": "Zain-Regular.ttf",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "filename": "Zain-Italic.ttf",
+          "style": "italic",
+          "weight": 400
+        },
+        {
+          "filename": "Zain-Bold.ttf",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "filename": "Zain-ExtraBold.ttf",
+          "style": "normal",
+          "weight": 800
+        },
+        {
+          "filename": "Zain-Black.ttf",
+          "style": "normal",
+          "weight": 900
+        }
+      ],
+      "axes": [],
+      "upstream": "https://github.com/googlefonts/zain",
+      "upstreamCommit": "7c4a81812cee52243a8b52cc362650042b831d28"
+    }
+  ]
+}

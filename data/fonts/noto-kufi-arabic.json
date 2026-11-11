@@ -1,0 +1,359 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "noto-kufi-arabic",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/notokufiarabic"
+      },
+      {
+        "name": "@fontsource/noto-kufi-arabic",
+        "url": "https://www.npmjs.com/package/@fontsource/noto-kufi-arabic",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/noto-kufi-arabic-arabic-{100,400,900}-normal.woff (static instances of Google Fonts v27, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Noto Kufi Arabic",
+    "category": "kufi",
+    "interfaceText": true,
+    "designers": [
+      "Google"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/notofonts/arabic",
+      "commit": "652edd9688496f88c4cf41706c892fe10f9f3c92",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/notokufiarabic",
+      "npm": "@fontsource/noto-kufi-arabic",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/noto-kufi-arabic",
+      "version": "Version 2.109"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "math",
+      "symbols"
+    ],
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 100-900",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2020-11-19"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/notokufiarabic/NotoKufiArabic[wght].ttf",
+        "sha256": "494f6b61469d7a02a2d63f0fc4930bb007388d8cfe551de5eb98354e100889f3",
+        "fontVersion": "Version 2.109",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            958,
+            -448
+          ],
+          "singleMark": [
+            1252,
+            -761
+          ],
+          "fullStack": [
+            1329,
+            -761
+          ],
+          "latinBasic": [
+            766,
+            -241
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/noto-kufi-arabic@5.3.0:files/noto-kufi-arabic-arabic-100-normal.woff",
+        "sha256": "7f98503b7e3060f9af37e92fc0ccd18cc87f75e12438f99e2d9219a01f0c6c90",
+        "fontVersion": "Version 2.109",
+        "weightClass": 250,
+        "extents": {
+          "unvocalised": [
+            966,
+            -381
+          ],
+          "singleMark": [
+            1243,
+            -668
+          ],
+          "fullStack": [
+            1322,
+            -668
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/noto-kufi-arabic@5.3.0:files/noto-kufi-arabic-arabic-400-normal.woff",
+        "sha256": "6a5af74c0a834d362fbe6afa8dc36bd69443cf2f0f830a3cf2afeb8dcffb6321",
+        "fontVersion": "Version 2.109",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            958,
+            -448
+          ],
+          "singleMark": [
+            1252,
+            -761
+          ],
+          "fullStack": [
+            1329,
+            -761
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/noto-kufi-arabic@5.3.0:files/noto-kufi-arabic-arabic-900-normal.woff",
+        "sha256": "0305c74ddeab92f46558e26ca16a1e684be15f9bd57424e86877a876bd8f7b71",
+        "fontVersion": "Version 2.109",
+        "weightClass": 900,
+        "extents": {
+          "unvocalised": [
+            1001,
+            -482
+          ],
+          "singleMark": [
+            1320,
+            -820
+          ],
+          "fullStack": [
+            1373,
+            -820
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1282,
+        "descender": -615,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1282,
+        "descender": -615,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1507,
+        "descent": 650
+      },
+      "useTypoMetrics": true,
+      "xHeight": 536,
+      "capHeight": 714,
+      "head": {
+        "yMax": 1507,
+        "yMin": -650
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.897,
+        "typo": 1.897,
+        "win": 2.157
+      },
+      "measuredFrom": "google/fonts:ofl/notokufiarabic/NotoKufiArabic[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": true,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/notokufiarabic/NotoKufiArabic[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 93,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 25,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 2,
+          "attachedPairs": 625
+        },
+        "unvocalised": {
+          "top": 958,
+          "bottom": -448,
+          "topBy": "uni0623",
+          "bottomBy": "uni064A"
+        },
+        "singleMark": {
+          "top": 1252,
+          "bottom": -761,
+          "topBy": "uni0627.short + uni0654 + uni064B",
+          "bottomBy": "uni0649 + twodotshorizontalbelowar + uni064D"
+        },
+        "fullStack": {
+          "top": 1329,
+          "bottom": -761,
+          "topBy": "uni0644.medi.rlig + uni0651064D",
+          "bottomBy": "uni0649 + twodotshorizontalbelowar + uni064D"
+        },
+        "latinBasic": {
+          "top": 766,
+          "bottom": -241,
+          "topBy": "U+0060",
+          "bottomBy": "U+007C"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 1031,
+          "bottom": -387,
+          "topBy": "uni064B",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.49,
+          "containment": 1.64
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.49,
+          "containment": 1.64
+        },
+        "singleMark": {
+          "stacking": 2.14,
+          "containment": 2.31
+        },
+        "fullStack": {
+          "stacking": 2.2,
+          "containment": 2.31
+        },
+        "latinBasic": {
+          "stacking": 1.01,
+          "containment": 1.15
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.64,
+        "body": 2.14,
+        "withTashkeel": 2.2,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "ccmp",
+        "dlig",
+        "fina",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "ordn",
+        "pnum",
+        "rlig",
+        "rtlm",
+        "tnum"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "thabit",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/thabit"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Thabit",
+    "category": "monospace",
+    "interfaceText": true,
+    "designers": [
+      "Khaled Hosny"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+      "commit": "52f780bc9d197280a9f430574e179a5f233c56b6",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/thabit",
+      "version": "0.01"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ],
+    "weights": [
+      400,
+      700
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": true,
+    "googleFonts": {
+      "category": [
+        "SERIF"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2010-09-21"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/thabit/Thabit.ttf",
+        "sha256": "3fe6f423d751919d6411b38d6de2ff823252292eef9e860c4a532faf779b674a",
+        "fontVersion": "0.01",
+        "weightClass": 500,
+        "extents": {
+          "unvocalised": [
+            786,
+            -463
+          ],
+          "singleMark": [
+            1162,
+            -735
+          ],
+          "fullStack": [
+            1374,
+            -735
+          ],
+          "latinBasic": [
+            705,
+            -185
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/thabit/Thabit-Bold.ttf",
+        "sha256": "8dded564a1f6dc6a223112b66f20d12a221ad76a7f688dd570cef794940dd124",
+        "fontVersion": "0.01",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            786,
+            -445
+          ],
+          "singleMark": [
+            1162,
+            -716
+          ],
+          "fullStack": [
+            1376,
+            -716
+          ],
+          "latinBasic": [
+            727,
+            -184
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1024,
+      "hhea": {
+        "ascender": 983,
+        "descender": -244,
+        "lineGap": 100
+      },
+      "typo": {
+        "ascender": 819,
+        "descender": 0,
+        "lineGap": 900
+      },
+      "win": {
+        "ascent": 983,
+        "descent": 528
+      },
+      "useTypoMetrics": false,
+      "head": {
+        "yMax": 983,
+        "yMin": -556
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.296,
+        "typo": 1.679,
+        "win": 1.476
+      },
+      "measuredFrom": "google/fonts:ofl/thabit/Thabit.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": false,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 8,
+          "total": 9,
+          "missing": [
+            "U+0670"
+          ]
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 7,
+          "total": 9,
+          "missing": [
+            "U+066B",
+            "U+066C"
+          ]
+        },
+        "persianUrduLetters": {
+          "present": 11,
+          "total": 13,
+          "missing": [
+            "U+06C1",
+            "U+06D2"
+          ]
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/thabit/Thabit.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 126,
+          "allahLigatureForms": 0,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 8,
+          "ligatedMarkPairs": 4,
+          "attachedPairs": 1064
+        },
+        "unvocalised": {
+          "top": 786,
+          "bottom": -463,
+          "topBy": "lamwithalefhamzaaboveisolatedd",
+          "bottomBy": "yehfinal"
+        },
+        "singleMark": {
+          "top": 1162,
+          "bottom": -735,
+          "topBy": "alefwithhamzaabovefinal + dammah",
+          "bottomBy": "yehfinal + kasratan"
+        },
+        "fullStack": {
+          "top": 1374,
+          "bottom": -735,
+          "topBy": "alefwithhamzaabovefinal + shaddahdammah",
+          "bottomBy": "yehfinal + kasratan"
+        },
+        "latinBasic": {
+          "top": 705,
+          "bottom": -185,
+          "topBy": "U+005C",
+          "bottomBy": "U+007C"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 965,
+          "bottom": -528,
+          "topBy": "fathatan",
+          "bottomBy": "kasratan"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.22,
+          "containment": 1.63
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.22,
+          "containment": 1.63
+        },
+        "singleMark": {
+          "stacking": 1.86,
+          "containment": 2.16
+        },
+        "fullStack": {
+          "stacking": 2.06,
+          "containment": 2.24
+        },
+        "latinBasic": {
+          "stacking": 0.89,
+          "containment": 1.11
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.63,
+        "body": 1.86,
+        "withTashkeel": 2.06,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "fina",
+        "init",
+        "liga",
+        "medi",
+        "rlig"
+      ],
+      "gpos": [
+        "mark"
+      ]
+    }
+  }
+}

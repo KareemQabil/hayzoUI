@@ -1,0 +1,340 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "markazi-text",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/markazitext"
+      },
+      {
+        "name": "@fontsource/markazi-text",
+        "url": "https://www.npmjs.com/package/@fontsource/markazi-text",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/markazi-text-arabic-{400,700}-normal.woff (static instances of Google Fonts v28, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Markazi Text",
+    "category": "naskh",
+    "interfaceText": true,
+    "designers": [
+      "Borna Izadpanah",
+      "Florian Runge",
+      "Fiona Ross"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/BornaIz/markazitext",
+      "commit": "51bb67cce0bb3609f8318077ab0f74b93d365007",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/markazitext",
+      "npm": "@fontsource/markazi-text",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/markazi-text",
+      "version": "Version 1.001"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ],
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 400-700",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "SERIF"
+      ],
+      "dateAdded": "2018-06-06"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/markazitext/MarkaziText[wght].ttf",
+        "sha256": "424b7331681160ff2a4b209bfc356ea9564d429a7daea43ee4dc28de8ff4f9fe",
+        "fontVersion": "Version 1.001",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1480,
+            -806
+          ],
+          "singleMark": [
+            1993,
+            -1405
+          ],
+          "fullStack": [
+            2383,
+            -1405
+          ],
+          "latinBasic": [
+            1254,
+            -352
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/markazi-text@5.3.0:files/markazi-text-arabic-400-normal.woff",
+        "sha256": "ae49b2460ae112e32f6ea78b35a01bee34fdeca1f44066c4358fc7295df47f85",
+        "fontVersion": "Version 1.001",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1480,
+            -806
+          ],
+          "singleMark": [
+            1993,
+            -1405
+          ],
+          "fullStack": [
+            2383,
+            -1405
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/markazi-text@5.3.0:files/markazi-text-arabic-700-normal.woff",
+        "sha256": "ef2ee0360796a49c873333066b7494b79012163560ed8d43b91dfd21f17caddc",
+        "fontVersion": "Version 1.001",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            1562,
+            -849
+          ],
+          "singleMark": [
+            2149,
+            -1470
+          ],
+          "fullStack": [
+            2561,
+            -1470
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 2048,
+      "hhea": {
+        "ascender": 1718,
+        "descender": -740,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1718,
+        "descender": -740,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1695,
+        "descent": 963
+      },
+      "useTypoMetrics": true,
+      "xHeight": 746,
+      "capHeight": 990,
+      "head": {
+        "yMax": 1664,
+        "yMin": -893
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.2,
+        "typo": 1.2,
+        "win": 1.298
+      },
+      "measuredFrom": "google/fonts:ofl/markazitext/MarkaziText[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 8,
+          "total": 9,
+          "missing": [
+            "U+066A"
+          ]
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/markazitext/MarkaziText[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 267,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 7,
+          "attachedPairs": 3717
+        },
+        "unvocalised": {
+          "top": 1480,
+          "bottom": -806,
+          "topBy": "uni0623",
+          "bottomBy": "uniFEF2"
+        },
+        "singleMark": {
+          "top": 1993,
+          "bottom": -1405,
+          "topBy": "uni0623 + uni064C",
+          "bottomBy": "uniFC32 + uni064D"
+        },
+        "fullStack": {
+          "top": 2383,
+          "bottom": -1405,
+          "topBy": "uni0623 + uni0651 + uni064C",
+          "bottomBy": "uniFC32 + uni064D"
+        },
+        "latinBasic": {
+          "top": 1254,
+          "bottom": -352,
+          "topBy": "U+0028",
+          "bottomBy": "U+0079"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 1069,
+          "bottom": -289,
+          "topBy": "uni064B",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.18,
+          "containment": 1.31
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.18,
+          "containment": 1.31
+        },
+        "singleMark": {
+          "stacking": 1.77,
+          "containment": 1.92
+        },
+        "fullStack": {
+          "stacking": 1.97,
+          "containment": 2.03
+        },
+        "latinBasic": {
+          "stacking": 0.79,
+          "containment": 0.83
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.31,
+        "body": 1.77,
+        "withTashkeel": 1.97,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "case",
+        "ccmp",
+        "dnom",
+        "fina",
+        "frac",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "numr",
+        "ordn",
+        "rlig",
+        "sinf",
+        "ss03",
+        "subs",
+        "sups",
+        "zero"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

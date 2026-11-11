@@ -46,8 +46,11 @@
             "monospace",
             "display",
             "ruqaa",
-            "nastaliq"
-          ]
+            "nastaliq",
+            "calligraphic",
+            "handwriting"
+          ],
+          "description": "Arabic style, authored. calligraphic: regional manuscript styles outside the other classes; handwriting: school-hand designs."
         },
         "designers": {
           "type": "array",
@@ -72,6 +75,24 @@
               "minLength": 1
             },
             "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "commit": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Upstream commit recorded by google/fonts, or the commit measured."
+            },
+            "distribution": {
+              "type": "string",
+              "format": "uri",
+              "description": "Where the measured binaries were taken from."
+            },
+            "npmVersion": {
+              "type": "string",
+              "minLength": 1
+            },
+            "npmVariable": {
               "type": "string",
               "minLength": 1
             }
@@ -189,6 +210,43 @@
             "measuredFrom": {
               "type": "string",
               "minLength": 1
+            },
+            "useTypoMetrics": {
+              "type": "boolean",
+              "description": "OS/2 fsSelection bit 7."
+            },
+            "head": {
+              "type": "object",
+              "properties": {
+                "yMax": {
+                  "type": "integer"
+                },
+                "yMin": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false,
+              "description": "Font-wide bounding box from head."
+            },
+            "verticalMetricsAgree": {
+              "type": "boolean",
+              "description": "hhea, OS/2 typo and OS/2 win describe the same ascent, descent and gap."
+            },
+            "naturalLineHeight": {
+              "type": "object",
+              "description": "Derived: (ascender - descender + lineGap) / unitsPerEm for each metrics set.",
+              "properties": {
+                "hhea": {
+                  "type": "number"
+                },
+                "typo": {
+                  "type": "number"
+                },
+                "win": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
             }
           },
           "required": [
@@ -212,7 +270,71 @@
                   "type": "boolean"
                 },
                 "tabular": {
+                  "type": "boolean",
+                  "description": "Every digit set the font has is equal-width, by default or through tnum."
+                },
+                "tnumFeature": {
                   "type": "boolean"
+                },
+                "detail": {
+                  "type": "object",
+                  "properties": {
+                    "latin": {
+                      "type": "object",
+                      "properties": {
+                        "present": {
+                          "type": "boolean"
+                        },
+                        "defaultEqualWidth": {
+                          "type": "boolean"
+                        },
+                        "tnumSubstitutes": {
+                          "type": "boolean"
+                        },
+                        "tnumEqualWidth": {
+                          "type": "boolean"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "arabicIndic": {
+                      "type": "object",
+                      "properties": {
+                        "present": {
+                          "type": "boolean"
+                        },
+                        "defaultEqualWidth": {
+                          "type": "boolean"
+                        },
+                        "tnumSubstitutes": {
+                          "type": "boolean"
+                        },
+                        "tnumEqualWidth": {
+                          "type": "boolean"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "extendedArabicIndic": {
+                      "type": "object",
+                      "properties": {
+                        "present": {
+                          "type": "boolean"
+                        },
+                        "defaultEqualWidth": {
+                          "type": "boolean"
+                        },
+                        "tnumSubstitutes": {
+                          "type": "boolean"
+                        },
+                        "tnumEqualWidth": {
+                          "type": "boolean"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
                 }
               },
               "required": [],
@@ -241,6 +363,384 @@
             "notes": {
               "type": "string",
               "minLength": 1
+            },
+            "coverage": {
+              "type": "object",
+              "description": "cmap coverage of the code point sets defined in tools/extract/fonts/build.mjs.",
+              "properties": {
+                "letters": {
+                  "type": "object",
+                  "properties": {
+                    "present": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "present",
+                    "total"
+                  ],
+                  "additionalProperties": false
+                },
+                "tashkeel": {
+                  "type": "object",
+                  "properties": {
+                    "present": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "present",
+                    "total"
+                  ],
+                  "additionalProperties": false
+                },
+                "arabicIndicDigits": {
+                  "type": "object",
+                  "properties": {
+                    "present": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "present",
+                    "total"
+                  ],
+                  "additionalProperties": false
+                },
+                "extendedArabicIndicDigits": {
+                  "type": "object",
+                  "properties": {
+                    "present": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "present",
+                    "total"
+                  ],
+                  "additionalProperties": false
+                },
+                "punctuation": {
+                  "type": "object",
+                  "properties": {
+                    "present": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "present",
+                    "total"
+                  ],
+                  "additionalProperties": false
+                },
+                "persianUrduLetters": {
+                  "type": "object",
+                  "properties": {
+                    "present": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "present",
+                    "total"
+                  ],
+                  "additionalProperties": false
+                },
+                "saudiRiyalSign": {
+                  "type": "boolean"
+                },
+                "rialSign": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            },
+            "extents": {
+              "type": "object",
+              "description": "Measured vertical ink extremes of Arabic text at the primary file (glyf bounding boxes plus GPOS mark attachment).",
+              "properties": {
+                "measured": {
+                  "type": "boolean"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "from": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "markPositioning": {
+                  "enum": [
+                    "gpos",
+                    "none"
+                  ]
+                },
+                "cursiveAttachment": {
+                  "type": "boolean"
+                },
+                "glyphsConsidered": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "integer"
+                  }
+                },
+                "unvocalised": {
+                  "type": "object",
+                  "properties": {
+                    "top": {
+                      "type": "integer"
+                    },
+                    "bottom": {
+                      "type": "integer"
+                    },
+                    "topBy": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "bottomBy": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "top",
+                    "bottom"
+                  ],
+                  "additionalProperties": false
+                },
+                "singleMark": {
+                  "type": "object",
+                  "properties": {
+                    "top": {
+                      "type": "integer"
+                    },
+                    "bottom": {
+                      "type": "integer"
+                    },
+                    "topBy": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "bottomBy": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "top",
+                    "bottom"
+                  ],
+                  "additionalProperties": false
+                },
+                "fullStack": {
+                  "type": "object",
+                  "properties": {
+                    "top": {
+                      "type": "integer"
+                    },
+                    "bottom": {
+                      "type": "integer"
+                    },
+                    "topBy": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "bottomBy": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "top",
+                    "bottom"
+                  ],
+                  "additionalProperties": false
+                },
+                "latinBasic": {
+                  "type": "object",
+                  "properties": {
+                    "top": {
+                      "type": "integer"
+                    },
+                    "bottom": {
+                      "type": "integer"
+                    },
+                    "topBy": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "bottomBy": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "top",
+                    "bottom"
+                  ],
+                  "additionalProperties": false
+                },
+                "tashkeelGlyphsAsDrawn": {
+                  "type": "object",
+                  "properties": {
+                    "top": {
+                      "type": "integer"
+                    },
+                    "bottom": {
+                      "type": "integer"
+                    },
+                    "topBy": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "bottomBy": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "top",
+                    "bottom"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "measured"
+              ],
+              "additionalProperties": false
+            },
+            "lineHeightBounds": {
+              "type": "object",
+              "description": "Derived (formulae in recommendedLineHeight.basis): smallest unitless line-height per scenario and criterion, maximum over the measured files.",
+              "properties": {
+                "unvocalised": {
+                  "type": "object",
+                  "properties": {
+                    "stacking": {
+                      "type": "number"
+                    },
+                    "containment": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "unvocalisedWithLatin": {
+                  "type": "object",
+                  "properties": {
+                    "stacking": {
+                      "type": "number"
+                    },
+                    "containment": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "singleMark": {
+                  "type": "object",
+                  "properties": {
+                    "stacking": {
+                      "type": "number"
+                    },
+                    "containment": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "fullStack": {
+                  "type": "object",
+                  "properties": {
+                    "stacking": {
+                      "type": "number"
+                    },
+                    "containment": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "latinBasic": {
+                  "type": "object",
+                  "properties": {
+                    "stacking": {
+                      "type": "number"
+                    },
+                    "containment": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
             }
           },
           "required": [],
@@ -253,6 +753,151 @@
         "notes": {
           "type": "string",
           "minLength": 1
+        },
+        "interfaceText": {
+          "type": "boolean",
+          "description": "Authored: a candidate for interface text (false for display, calligraphic and colour faces)."
+        },
+        "subsets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Subsets declared in google/fonts METADATA.pb."
+        },
+        "weightsBasis": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Where the weights list comes from."
+        },
+        "googleFonts": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "classifications": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "dateAdded": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "files": {
+          "type": "array",
+          "description": "Every font file measured, with its hash, so each number is traceable to a file at a version.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "fontVersion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "weightClass": {
+                "type": "integer"
+              },
+              "extents": {
+                "type": "object",
+                "properties": {
+                  "unvocalised": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "description": "[top, bottom] in font units."
+                  },
+                  "singleMark": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "description": "[top, bottom] in font units."
+                  },
+                  "fullStack": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "description": "[top, bottom] in font units."
+                  },
+                  "latinBasic": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "description": "[top, bottom] in font units."
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "file",
+              "sha256"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "latin": {
+          "type": "object",
+          "properties": {
+            "included": {
+              "type": "boolean"
+            },
+            "basicLetters": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "features": {
+          "type": "object",
+          "properties": {
+            "gsub": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "gpos": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false
         }
       },
       "required": [

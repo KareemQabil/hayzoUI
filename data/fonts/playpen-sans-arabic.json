@@ -1,0 +1,366 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "playpen-sans-arabic",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/playpensansarabic"
+      },
+      {
+        "name": "@fontsource/playpen-sans-arabic",
+        "url": "https://www.npmjs.com/package/@fontsource/playpen-sans-arabic",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/playpen-sans-arabic-arabic-{100,400,800}-normal.woff (static instances of Google Fonts v8, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Playpen Sans Arabic",
+    "category": "handwriting",
+    "interfaceText": false,
+    "designers": [
+      "TypeTogether",
+      "Azza Alameddine",
+      "Laura Meseguer",
+      "Veronika Burian",
+      "José Scaglione"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/TypeTogether/Playpen-Sans",
+      "commit": "a4829cda744ea7e9ae73c14468a8a5672809f525",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/playpensansarabic",
+      "npm": "@fontsource/playpen-sans-arabic",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/playpen-sans-arabic",
+      "version": "Version 2.000"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "emoji",
+      "latin",
+      "latin-ext",
+      "math"
+    ],
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 100-800",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 800,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "HANDWRITING"
+      ],
+      "dateAdded": "2025-03-11"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/playpensansarabic/PlaypenSansArabic[wght].ttf",
+        "sha256": "31122f11b6aa8a36a283f95797663a575afffbe2d52b69e496f3a2440942a226",
+        "fontVersion": "Version 2.000",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            981,
+            -515
+          ],
+          "singleMark": [
+            1289,
+            -831
+          ],
+          "fullStack": [
+            1508,
+            -831
+          ],
+          "latinBasic": [
+            882,
+            -303
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/playpen-sans-arabic@5.3.0:files/playpen-sans-arabic-arabic-100-normal.woff",
+        "sha256": "d333dd2aaa4f3ce1b40ea915894991dedbaff3ab53fd2e33cc54f4dbb2eee130",
+        "fontVersion": "Version 2.000",
+        "weightClass": 250,
+        "extents": {
+          "unvocalised": [
+            966,
+            -498
+          ],
+          "singleMark": [
+            1268,
+            -818
+          ],
+          "fullStack": [
+            1470,
+            -818
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/playpen-sans-arabic@5.3.0:files/playpen-sans-arabic-arabic-400-normal.woff",
+        "sha256": "f2f39591bc51fc0c90dc7f31c6564a5ba1ea36fba33677945d00d27c8ea22871",
+        "fontVersion": "Version 2.000",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            981,
+            -515
+          ],
+          "singleMark": [
+            1289,
+            -831
+          ],
+          "fullStack": [
+            1508,
+            -831
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/playpen-sans-arabic@5.3.0:files/playpen-sans-arabic-arabic-800-normal.woff",
+        "sha256": "174fe577d46a73880cf3a79976239de5e22ef242f51547debddaa044dda46573",
+        "fontVersion": "Version 2.000",
+        "weightClass": 800,
+        "extents": {
+          "unvocalised": [
+            1075,
+            -540
+          ],
+          "singleMark": [
+            1437,
+            -850
+          ],
+          "fullStack": [
+            1680,
+            -850
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1100,
+        "descender": -550,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1100,
+        "descender": -550,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1224,
+        "descent": 604
+      },
+      "useTypoMetrics": true,
+      "xHeight": 537,
+      "capHeight": 764,
+      "head": {
+        "yMax": 1278,
+        "yMin": -708
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.65,
+        "typo": 1.65,
+        "win": 1.828
+      },
+      "measuredFrom": "google/fonts:ofl/playpensansarabic/PlaypenSansArabic[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/playpensansarabic/PlaypenSansArabic[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": true,
+        "glyphsConsidered": {
+          "letterForms": 296,
+          "allahLigatureForms": 0,
+          "decomposedLetterForms": 26,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 7,
+          "attachedPairs": 2862
+        },
+        "unvocalised": {
+          "top": 981,
+          "bottom": -515,
+          "topBy": "U+FEF7",
+          "bottomBy": "U+FEF2"
+        },
+        "singleMark": {
+          "top": 1289,
+          "bottom": -831,
+          "topBy": "gid1481 + U+064B",
+          "bottomBy": "U+FEF2 + U+064D"
+        },
+        "fullStack": {
+          "top": 1508,
+          "bottom": -831,
+          "topBy": "gid1481 + U+0651 + U+064B",
+          "bottomBy": "U+FEF2 + U+064D"
+        },
+        "latinBasic": {
+          "top": 882,
+          "bottom": -303,
+          "topBy": "U+007B",
+          "bottomBy": "U+0071"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 796,
+          "bottom": -297,
+          "topBy": "U+064B",
+          "bottomBy": "U+064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.62,
+          "containment": 1.63
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.62,
+          "containment": 1.63
+        },
+        "singleMark": {
+          "stacking": 2.29,
+          "containment": 2.33
+        },
+        "fullStack": {
+          "stacking": 2.53,
+          "containment": 2.81
+        },
+        "latinBasic": {
+          "stacking": 1.19,
+          "containment": 1.22
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.63,
+        "body": 2.29,
+        "withTashkeel": 2.53,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only; font has cursive attachment (GPOS curs), which moves glyphs vertically and is not modelled: real extents can exceed these."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "calt",
+        "case",
+        "ccmp",
+        "fina",
+        "frac",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "ordn",
+        "rclt",
+        "rlig",
+        "rvrn",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss04"
+      ],
+      "gpos": [
+        "curs",
+        "dist",
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

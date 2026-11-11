@@ -1,0 +1,387 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "handjet",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/handjet"
+      },
+      {
+        "name": "@fontsource/handjet",
+        "url": "https://www.npmjs.com/package/@fontsource/handjet",
+        "version": "5.3.1",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/handjet-arabic-{100,400,900}-normal.woff (static instances of Google Fonts v23, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Handjet",
+    "category": "display",
+    "interfaceText": false,
+    "designers": [
+      "Rosetta",
+      "David Březina"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/rosettatype/handjet",
+      "commit": "3918b7798e06c81da6bc558e88dfddd5a6b49807",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/handjet",
+      "npm": "@fontsource/handjet",
+      "npmVersion": "5.3.1",
+      "npmVariable": "@fontsource-variable/handjet",
+      "version": "Version 2.003"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "armenian",
+      "cyrillic",
+      "cyrillic-ext",
+      "greek",
+      "hebrew",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ],
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 100-900",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "max": 900,
+          "default": 400
+        },
+        {
+          "tag": "ELGR",
+          "min": 1,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "tag": "ELSH",
+          "min": 0,
+          "max": 16,
+          "default": 2
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2020-09-11"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/handjet/Handjet[ELGR,ELSH,wght].ttf",
+        "sha256": "9262749e8bb0b73ebcae0e20428689c3c59576eebeb6c4e1020300d2d41bdf4d",
+        "fontVersion": "Version 2.003",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            7200,
+            -2400
+          ],
+          "singleMark": [
+            9120,
+            -4320
+          ],
+          "fullStack": [
+            11040,
+            -4320
+          ],
+          "latinBasic": [
+            5760,
+            -1440
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/handjet@5.3.1:files/handjet-arabic-100-normal.woff",
+        "sha256": "fa23c0edfbe54229eadcbf7a9758d877869e3d53ce241d5032881e54fb03aa97",
+        "fontVersion": "Version 2.003",
+        "weightClass": 250,
+        "extents": {
+          "unvocalised": [
+            7008,
+            -2208
+          ],
+          "singleMark": [
+            8928,
+            -4128
+          ],
+          "fullStack": [
+            10848,
+            -4128
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/handjet@5.3.1:files/handjet-arabic-400-normal.woff",
+        "sha256": "a9334844780037e3e95a5b6aec5fcdea92b3dbd04edcdd518d3d4be16d6f5daf",
+        "fontVersion": "Version 2.003",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            7200,
+            -2400
+          ],
+          "singleMark": [
+            9120,
+            -4320
+          ],
+          "fullStack": [
+            11040,
+            -4320
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/handjet@5.3.1:files/handjet-arabic-900-normal.woff",
+        "sha256": "dc1c47155bf7517916e9476c3436b3a3bdaa5b5898b5a87630906a5ed6de4906",
+        "fontVersion": "Version 2.003",
+        "weightClass": 900,
+        "extents": {
+          "unvocalised": [
+            7440,
+            -2640
+          ],
+          "singleMark": [
+            9360,
+            -4560
+          ],
+          "fullStack": [
+            11280,
+            -4560
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 8160,
+      "hhea": {
+        "ascender": 7200,
+        "descender": -1920,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 7200,
+        "descender": -1920,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 9840,
+        "descent": 3840
+      },
+      "useTypoMetrics": true,
+      "xHeight": 3840,
+      "capHeight": 5280,
+      "head": {
+        "yMax": 9840,
+        "yMin": -3840
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.118,
+        "typo": 1.118,
+        "win": 1.676
+      },
+      "measuredFrom": "google/fonts:ofl/handjet/Handjet[ELGR,ELSH,wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/handjet/Handjet[ELGR,ELSH,wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 126,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 7,
+          "attachedPairs": 1197
+        },
+        "unvocalised": {
+          "top": 7200,
+          "bottom": -2400,
+          "topBy": "arAlifHamza",
+          "bottomBy": "arYeh"
+        },
+        "singleMark": {
+          "top": 9120,
+          "bottom": -4320,
+          "topBy": "arAlifHamza + arShadda",
+          "bottomBy": "arYeh + arKasratan"
+        },
+        "fullStack": {
+          "top": 11040,
+          "bottom": -4320,
+          "topBy": "arAlifHamza + arShadda_arDamma",
+          "bottomBy": "arYeh + arKasratan"
+        },
+        "latinBasic": {
+          "top": 5760,
+          "bottom": -1440,
+          "topBy": "U+0028",
+          "bottomBy": "U+0028"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 4800,
+          "bottom": -1920,
+          "topBy": "arFathatan",
+          "bottomBy": "arKasratan"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.24,
+          "containment": 1.3
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.24,
+          "containment": 1.3
+        },
+        "singleMark": {
+          "stacking": 1.71,
+          "containment": 1.77
+        },
+        "fullStack": {
+          "stacking": 1.95,
+          "containment": 2.12
+        },
+        "latinBasic": {
+          "stacking": 0.89,
+          "containment": 1
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.3,
+        "body": 1.71,
+        "withTashkeel": 1.95,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "case",
+        "ccmp",
+        "dlig",
+        "dnom",
+        "fina",
+        "frac",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "numr",
+        "ordn",
+        "rlig",
+        "sinf",
+        "ss06",
+        "ss07",
+        "ss08",
+        "ss09",
+        "subs",
+        "sups"
+      ],
+      "gpos": [
+        "case",
+        "cpsp",
+        "kern",
+        "mark",
+        "mkmk",
+        "ss09"
+      ]
+    }
+  }
+}

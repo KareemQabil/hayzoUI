@@ -1,0 +1,271 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "vibes",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/vibes"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Vibes",
+    "category": "display",
+    "interfaceText": false,
+    "designers": [
+      "AbdElmomen Kadhim (blueMix)"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/bluemix/vibes-typeface",
+      "commit": "4cfe8e24413fc3711d3bba4c278e17429f93fc13",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/vibes",
+      "npm": "@fontsource/vibes",
+      "npmVersion": "5.3.0",
+      "version": "Version 1.100"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin"
+    ],
+    "weights": [
+      400
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2019-04-23"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/vibes/Vibes-Regular.ttf",
+        "sha256": "297d9c8499e7383ac7675932741625ab12d9bb3abd1c31d2659b385d965a7ab7",
+        "fontVersion": "Version 1.100",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            848,
+            -676
+          ],
+          "singleMark": [
+            983,
+            -676
+          ],
+          "fullStack": [
+            1125,
+            -676
+          ],
+          "latinBasic": [
+            762,
+            -477
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1105,
+        "descender": -680,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1105,
+        "descender": -680,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1105,
+        "descent": 680
+      },
+      "useTypoMetrics": true,
+      "xHeight": 500,
+      "capHeight": 38,
+      "head": {
+        "yMax": 1105,
+        "yMin": -680
+      },
+      "verticalMetricsAgree": true,
+      "naturalLineHeight": {
+        "hhea": 1.785,
+        "typo": 1.785,
+        "win": 1.785
+      },
+      "measuredFrom": "google/fonts:ofl/vibes/Vibes-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 8,
+          "total": 9,
+          "missing": [
+            "U+06D4"
+          ]
+        },
+        "persianUrduLetters": {
+          "present": 7,
+          "total": 13,
+          "missing": [
+            "U+0679",
+            "U+0688",
+            "U+0691",
+            "U+06BE",
+            "U+06C1",
+            "U+06D2"
+          ]
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/vibes/Vibes-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": true,
+        "glyphsConsidered": {
+          "letterForms": 126,
+          "allahLigatureForms": 0,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 8,
+          "ligatedMarkPairs": 5,
+          "attachedPairs": 792
+        },
+        "unvocalised": {
+          "top": 848,
+          "bottom": -676,
+          "topBy": "uniFEDC",
+          "bottomBy": "uniFEE2"
+        },
+        "singleMark": {
+          "top": 983,
+          "bottom": -676,
+          "topBy": "uni0622 + uni064B",
+          "bottomBy": "uniFEE2"
+        },
+        "fullStack": {
+          "top": 1125,
+          "bottom": -676,
+          "topBy": "uni0622 + uni0651064B.1",
+          "bottomBy": "uniFEE2"
+        },
+        "latinBasic": {
+          "top": 762,
+          "bottom": -477,
+          "topBy": "U+0026",
+          "bottomBy": "U+006A"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 777,
+          "bottom": -515,
+          "topBy": "uni064C",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.53,
+          "containment": 1.78
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.53,
+          "containment": 1.78
+        },
+        "singleMark": {
+          "stacking": 1.66,
+          "containment": 1.78
+        },
+        "fullStack": {
+          "stacking": 1.81,
+          "containment": 1.83
+        },
+        "latinBasic": {
+          "stacking": 1.24,
+          "containment": 1.38
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.78,
+        "body": 1.66,
+        "withTashkeel": 1.81,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: font has cursive attachment (GPOS curs), which moves glyphs vertically and is not modelled: real extents can exceed these."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "ccmp",
+        "fina",
+        "init",
+        "locl",
+        "medi",
+        "rlig"
+      ],
+      "gpos": [
+        "curs",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

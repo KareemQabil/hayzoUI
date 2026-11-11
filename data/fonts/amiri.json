@@ -1,0 +1,302 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "amiri",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/amiri"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Amiri",
+    "category": "naskh",
+    "interfaceText": true,
+    "designers": [
+      "Khaled Hosny",
+      "Sebastian Kosch"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/aliftype/amiri.git",
+      "commit": "04d40ee68cc6b8cb6870eca81a8a7451165aa95a",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/amiri",
+      "npm": "@fontsource/amiri",
+      "npmVersion": "5.3.0",
+      "version": "Version 1.002"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      400,
+      700
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": true,
+    "googleFonts": {
+      "category": [
+        "SERIF"
+      ],
+      "dateAdded": "2012-07-30"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/amiri/Amiri-Regular.ttf",
+        "sha256": "ab391c4147d054c48976e98322ad0eefe1427aa0e0502a12a4c75d80a70cfcd7",
+        "fontVersion": "Version 1.002",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1098,
+            -651
+          ],
+          "singleMark": [
+            1528,
+            -1007
+          ],
+          "fullStack": [
+            1653,
+            -1007
+          ],
+          "latinBasic": [
+            737,
+            -405
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/amiri/Amiri-Bold.ttf",
+        "sha256": "cfccb794268e7d573d857e6d6a67f89cf8a053e8ffd85dfa0c8ec1bb36fc4827",
+        "fontVersion": "Version 1.002",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            1112,
+            -664
+          ],
+          "singleMark": [
+            1536,
+            -1009
+          ],
+          "fullStack": [
+            1660,
+            -1009
+          ],
+          "latinBasic": [
+            749,
+            -417
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1124,
+        "descender": -634,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1124,
+        "descender": -634,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1850,
+        "descent": 910
+      },
+      "useTypoMetrics": true,
+      "xHeight": 433,
+      "capHeight": 646,
+      "head": {
+        "yMax": 1815,
+        "yMin": -900
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.758,
+        "typo": 1.758,
+        "win": 2.76
+      },
+      "measuredFrom": "google/fonts:ofl/amiri/Amiri-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/amiri/Amiri-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": true,
+        "glyphsConsidered": {
+          "letterForms": 707,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 16,
+          "ligatedMarkPairs": 0,
+          "attachedPairs": 9856
+        },
+        "unvocalised": {
+          "top": 1098,
+          "bottom": -651,
+          "topBy": "gid6128",
+          "bottomBy": "gid1982"
+        },
+        "singleMark": {
+          "top": 1528,
+          "bottom": -1007,
+          "topBy": "gid2280 + U+064C",
+          "bottomBy": "gid2091 + U+064D"
+        },
+        "fullStack": {
+          "top": 1653,
+          "bottom": -1007,
+          "topBy": "gid2280 + U+0651 + gid5467",
+          "bottomBy": "gid2091 + U+064D"
+        },
+        "latinBasic": {
+          "top": 737,
+          "bottom": -405,
+          "topBy": "U+007B",
+          "bottomBy": "U+007B"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 1232,
+          "bottom": -641,
+          "topBy": "U+064C",
+          "bottomBy": "U+064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.78,
+          "containment": 1.82
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.78,
+          "containment": 1.82
+        },
+        "singleMark": {
+          "stacking": 2.55,
+          "containment": 2.59
+        },
+        "fullStack": {
+          "stacking": 2.67,
+          "containment": 2.83
+        },
+        "latinBasic": {
+          "stacking": 1.17,
+          "containment": 1.33
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.82,
+        "body": 2.55,
+        "withTashkeel": 2.67,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: font has cursive attachment (GPOS curs), which moves glyphs vertically and is not modelled: real extents can exceed these."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "ccmp",
+        "dnom",
+        "fina",
+        "init",
+        "liga",
+        "locl",
+        "mark",
+        "medi",
+        "numr",
+        "pnum",
+        "rlig",
+        "rtlm",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss04",
+        "ss05",
+        "ss06",
+        "ss07",
+        "ss08"
+      ],
+      "gpos": [
+        "curs",
+        "kern",
+        "mark",
+        "mkmk",
+        "ss05"
+      ]
+    }
+  }
+}

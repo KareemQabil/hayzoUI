@@ -1,0 +1,435 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "lateef",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/lateef"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Lateef",
+    "category": "naskh",
+    "interfaceText": true,
+    "designers": [
+      "SIL International"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/silnrsi/font-lateef",
+      "commit": "d682ea7cc0305b592058255167c83d059aa640fa",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/lateef",
+      "npm": "@fontsource/lateef",
+      "npmVersion": "5.3.0",
+      "version": "Version 4.400"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "SERIF"
+      ],
+      "dateAdded": "2012-01-18"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/lateef/Lateef-ExtraLight.ttf",
+        "sha256": "d22920471ea9305e50b18674a285975cd9856059dd1dccb088becb101090c328",
+        "fontVersion": "Version 4.400",
+        "weightClass": 200,
+        "extents": {
+          "unvocalised": [
+            1579,
+            -740
+          ],
+          "singleMark": [
+            2307,
+            -1286
+          ],
+          "fullStack": [
+            3023,
+            -1286
+          ],
+          "latinBasic": [
+            1171,
+            -370
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/lateef/Lateef-Light.ttf",
+        "sha256": "f5c18f8c66cc30a61cc009f86b31aeecc4d81804fe4ef847cef4d2288a1e6723",
+        "fontVersion": "Version 4.400",
+        "weightClass": 300,
+        "extents": {
+          "unvocalised": [
+            1578,
+            -759
+          ],
+          "singleMark": [
+            2324,
+            -1292
+          ],
+          "fullStack": [
+            3024,
+            -1292
+          ],
+          "latinBasic": [
+            1171,
+            -370
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/lateef/Lateef-Regular.ttf",
+        "sha256": "fcbd9e0227a4d7238880defa5fd74c012d69351150709e559a8577446145c2fc",
+        "fontVersion": "Version 4.400",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1582,
+            -784
+          ],
+          "singleMark": [
+            2340,
+            -1298
+          ],
+          "fullStack": [
+            3023,
+            -1298
+          ],
+          "latinBasic": [
+            1171,
+            -370
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/lateef/Lateef-Medium.ttf",
+        "sha256": "b08e71723c6bdcc7855a1384ced2cc459f0fbbc65dfa0dfa0a94b9983d484ef1",
+        "fontVersion": "Version 4.400",
+        "weightClass": 500,
+        "extents": {
+          "unvocalised": [
+            1586,
+            -809
+          ],
+          "singleMark": [
+            2340,
+            -1320
+          ],
+          "fullStack": [
+            3030,
+            -1320
+          ],
+          "latinBasic": [
+            1171,
+            -369
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/lateef/Lateef-SemiBold.ttf",
+        "sha256": "ac0ba34269c19062340d942c5ad4ecc41ab8b9d21df92973372a7e1d7a421ff2",
+        "fontVersion": "Version 4.400",
+        "weightClass": 600,
+        "extents": {
+          "unvocalised": [
+            1589,
+            -836
+          ],
+          "singleMark": [
+            2339,
+            -1343
+          ],
+          "fullStack": [
+            3036,
+            -1343
+          ],
+          "latinBasic": [
+            1171,
+            -368
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/lateef/Lateef-Bold.ttf",
+        "sha256": "eee405eeb4e81491b0b659fb40dc016765292022d74406c616f72501e160afe2",
+        "fontVersion": "Version 4.400",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            1593,
+            -861
+          ],
+          "singleMark": [
+            2339,
+            -1366
+          ],
+          "fullStack": [
+            3042,
+            -1366
+          ],
+          "latinBasic": [
+            1171,
+            -368
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/lateef/Lateef-ExtraBold.ttf",
+        "sha256": "ee6406b63af32993054b1f7e2d6ff0fd7c91c409b0d4818bb1d686f709f0cdff",
+        "fontVersion": "Version 4.400",
+        "weightClass": 800,
+        "extents": {
+          "unvocalised": [
+            1601,
+            -888
+          ],
+          "singleMark": [
+            2338,
+            -1388
+          ],
+          "fullStack": [
+            3048,
+            -1388
+          ],
+          "latinBasic": [
+            1171,
+            -367
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 2048,
+      "hhea": {
+        "ascender": 1937,
+        "descender": -1024,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1937,
+        "descender": -1024,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 2742,
+        "descent": 1488
+      },
+      "useTypoMetrics": true,
+      "xHeight": 690,
+      "capHeight": 1022,
+      "head": {
+        "yMax": 2151,
+        "yMin": -998
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.446,
+        "typo": 1.446,
+        "win": 2.065
+      },
+      "measuredFrom": "google/fonts:ofl/lateef/Lateef-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": true,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false,
+            "tnumSubstitutes": true,
+            "tnumEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false,
+            "tnumSubstitutes": true,
+            "tnumEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/lateef/Lateef-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 128,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 12,
+          "tashkeelForms": 11,
+          "ligatedMarkPairs": 6,
+          "attachedPairs": 1446
+        },
+        "unvocalised": {
+          "top": 1582,
+          "bottom": -784,
+          "topBy": "uni0623",
+          "bottomBy": "uni064A.fina"
+        },
+        "singleMark": {
+          "top": 2340,
+          "bottom": -1298,
+          "topBy": "uni0623 + uni0670.large",
+          "bottomBy": "uni064A.fina + uni064D"
+        },
+        "fullStack": {
+          "top": 3023,
+          "bottom": -1298,
+          "topBy": "uni0623 + uni06510670 + uni0670.large",
+          "bottomBy": "uni064A.fina + uni064D"
+        },
+        "latinBasic": {
+          "top": 1171,
+          "bottom": -370,
+          "topBy": "U+007B",
+          "bottomBy": "U+006A"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 1465,
+          "bottom": -778,
+          "topBy": "uni064C",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.22,
+          "containment": 1.32
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.22,
+          "containment": 1.32
+        },
+        "singleMark": {
+          "stacking": 1.82,
+          "containment": 1.84
+        },
+        "fullStack": {
+          "stacking": 2.17,
+          "containment": 2.54
+        },
+        "latinBasic": {
+          "stacking": 0.76,
+          "containment": 0.81
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.32,
+        "body": 1.82,
+        "withTashkeel": 2.17,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "calt",
+        "ccmp",
+        "cv44",
+        "cv48",
+        "cv49",
+        "cv51",
+        "cv54",
+        "cv62",
+        "cv70",
+        "cv72",
+        "cv74",
+        "cv76",
+        "cv78",
+        "cv80",
+        "cv82",
+        "cv84",
+        "cv85",
+        "cv88",
+        "fina",
+        "init",
+        "liga",
+        "medi",
+        "pnum",
+        "rlig",
+        "rtlm",
+        "salt",
+        "tnum"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

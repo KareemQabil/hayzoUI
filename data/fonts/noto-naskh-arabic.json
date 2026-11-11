@@ -1,0 +1,334 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "noto-naskh-arabic",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/notonaskharabic"
+      },
+      {
+        "name": "@fontsource/noto-naskh-arabic",
+        "url": "https://www.npmjs.com/package/@fontsource/noto-naskh-arabic",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/noto-naskh-arabic-arabic-{400,700}-normal.woff (static instances of Google Fonts v44, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Noto Naskh Arabic",
+    "category": "naskh",
+    "interfaceText": true,
+    "designers": [
+      "Google"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/notofonts/arabic",
+      "commit": "59f5a3fd985bf24858915c3dddfc51a537640965",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/notonaskharabic",
+      "npm": "@fontsource/noto-naskh-arabic",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/noto-naskh-arabic",
+      "version": "Version 2.021"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "math",
+      "symbols"
+    ],
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 400-700",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 700,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "SERIF"
+      ],
+      "dateAdded": "2020-11-19"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/notonaskharabic/NotoNaskhArabic[wght].ttf",
+        "sha256": "67b5a525a661b607971fbd3f96a81b89d3a768e74534fca84f18ac97e6fab72f",
+        "fontVersion": "Version 2.021",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            918,
+            -434
+          ],
+          "singleMark": [
+            1202,
+            -635
+          ],
+          "fullStack": [
+            1202,
+            -635
+          ],
+          "latinBasic": [
+            770,
+            -240
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/noto-naskh-arabic@5.3.0:files/noto-naskh-arabic-arabic-400-normal.woff",
+        "sha256": "3f3d49ef3202e3fe1ce4501bb194b9480b937fe4375da826b816b1dab0650ce2",
+        "fontVersion": "Version 2.021",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            918,
+            -434
+          ],
+          "singleMark": [
+            1202,
+            -635
+          ],
+          "fullStack": [
+            1202,
+            -635
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/noto-naskh-arabic@5.3.0:files/noto-naskh-arabic-arabic-700-normal.woff",
+        "sha256": "a7e5b5c77c88d46f629547b5320392cce5b5a728337c53e90d80d831790fa0fd",
+        "fontVersion": "Version 2.021",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            955,
+            -425
+          ],
+          "singleMark": [
+            1234,
+            -628
+          ],
+          "fullStack": [
+            1234,
+            -628
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1069,
+        "descender": -634,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1069,
+        "descender": -634,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1405,
+        "descent": 634
+      },
+      "useTypoMetrics": true,
+      "xHeight": 0,
+      "capHeight": 0,
+      "head": {
+        "yMax": 1405,
+        "yMin": -590
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.703,
+        "typo": 1.703,
+        "win": 2.039
+      },
+      "measuredFrom": "google/fonts:ofl/notonaskharabic/NotoNaskhArabic[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": true,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": true,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/notonaskharabic/NotoNaskhArabic[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 90,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 23,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 4,
+          "attachedPairs": 612
+        },
+        "unvocalised": {
+          "top": 918,
+          "bottom": -434,
+          "topBy": "uni0627 + uni0654",
+          "bottomBy": "uni064A"
+        },
+        "singleMark": {
+          "top": 1202,
+          "bottom": -635,
+          "topBy": "uni0627 + uni0654 + uni0670",
+          "bottomBy": "uni0649 + twodotshorizontalbelowar + uni064D"
+        },
+        "fullStack": {
+          "top": 1202,
+          "bottom": -635,
+          "topBy": "uni0627 + uni0654 + uni0670",
+          "bottomBy": "uni0649 + twodotshorizontalbelowar + uni064D"
+        },
+        "latinBasic": {
+          "top": 770,
+          "bottom": -240,
+          "topBy": "U+0066",
+          "bottomBy": "U+004A"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 1013,
+          "bottom": -206,
+          "topBy": "uni0670",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.38,
+          "containment": 1.48
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.38,
+          "containment": 1.48
+        },
+        "singleMark": {
+          "stacking": 1.87,
+          "containment": 2.04
+        },
+        "fullStack": {
+          "stacking": 1.87,
+          "containment": 2.04
+        },
+        "latinBasic": {
+          "stacking": 1.01,
+          "containment": 1.11
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.48,
+        "body": 1.87,
+        "withTashkeel": 1.87,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "ccmp",
+        "dlig",
+        "fina",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "ordn",
+        "pnum",
+        "rlig",
+        "rtlm",
+        "tnum"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

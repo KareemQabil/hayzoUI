@@ -1,0 +1,353 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "kufam",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/kufam"
+      },
+      {
+        "name": "@fontsource/kufam",
+        "url": "https://www.npmjs.com/package/@fontsource/kufam",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/kufam-arabic-{400,900}-normal.woff (static instances of Google Fonts v26, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Kufam",
+    "category": "kufi",
+    "interfaceText": true,
+    "designers": [
+      "Original Type",
+      "Wael Morcos",
+      "Artur Schmal"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/originaltype/kufam",
+      "commit": "a2c0c9552f98295167bc33bdb9c6256dd6abdc8a",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/kufam",
+      "npm": "@fontsource/kufam",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/kufam",
+      "version": "Version 1.301; ttfautohint (v1.8.3)"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ],
+    "weights": [
+      400,
+      500,
+      600,
+      700,
+      800,
+      900
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 400-900",
+    "italic": true,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "max": 900,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2020-07-14"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/kufam/Kufam[wght].ttf",
+        "sha256": "f17a89b518c833de289598d0662bb9a07d09cc7d75b7079a15f1305f624bbcda",
+        "fontVersion": "Version 1.301; ttfautohint (v1.8.3)",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1092,
+            -285
+          ],
+          "singleMark": [
+            1287,
+            -567
+          ],
+          "fullStack": [
+            1549,
+            -567
+          ],
+          "latinBasic": [
+            860,
+            -240
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/kufam@5.3.0:files/kufam-arabic-400-normal.woff",
+        "sha256": "878c3778609efededf622f404ccbcc34f8dfef029f933a25dcd5f35723020b12",
+        "fontVersion": "Version 1.301; ttfautohint (v1.8.3)",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            1092,
+            -285
+          ],
+          "singleMark": [
+            1287,
+            -567
+          ],
+          "fullStack": [
+            1549,
+            -567
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/kufam@5.3.0:files/kufam-arabic-900-normal.woff",
+        "sha256": "6dab4c6fea3fd66eeb2c1fd9bd51737ff6ee7aa972bf282601caf867a53f903a",
+        "fontVersion": "Version 1.301; ttfautohint (v1.8.3)",
+        "weightClass": 900,
+        "extents": {
+          "unvocalised": [
+            1139,
+            -335
+          ],
+          "singleMark": [
+            1448,
+            -631
+          ],
+          "fullStack": [
+            1732,
+            -631
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 900,
+        "descender": -400,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 900,
+        "descender": -400,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1252,
+        "descent": 1050
+      },
+      "useTypoMetrics": true,
+      "xHeight": 544,
+      "capHeight": 720,
+      "head": {
+        "yMax": 1228,
+        "yMin": -1008
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.3,
+        "typo": 1.3,
+        "win": 2.302
+      },
+      "measuredFrom": "google/fonts:ofl/kufam/Kufam[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": true,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true,
+            "tnumSubstitutes": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false,
+            "tnumSubstitutes": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false,
+            "tnumSubstitutes": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/kufam/Kufam[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 149,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 15,
+          "ligatedMarkPairs": 10,
+          "attachedPairs": 1386
+        },
+        "unvocalised": {
+          "top": 1092,
+          "bottom": -285,
+          "topBy": "uniFDF2",
+          "bottomBy": "uni0625"
+        },
+        "singleMark": {
+          "top": 1287,
+          "bottom": -567,
+          "topBy": "uni0623 + uni0651",
+          "bottomBy": "uni0649 + uni064D"
+        },
+        "fullStack": {
+          "top": 1549,
+          "bottom": -567,
+          "topBy": "uni0623 + shadda_fathatanar",
+          "bottomBy": "uni0649 + uni064D"
+        },
+        "latinBasic": {
+          "top": 860,
+          "bottom": -240,
+          "topBy": "U+0024",
+          "bottomBy": "U+0067"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 853,
+          "bottom": -313,
+          "topBy": "uni064B",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.48,
+          "containment": 1.78
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.48,
+          "containment": 1.78
+        },
+        "singleMark": {
+          "stacking": 2.08,
+          "containment": 2.4
+        },
+        "fullStack": {
+          "stacking": 2.37,
+          "containment": 2.97
+        },
+        "latinBasic": {
+          "stacking": 1.1,
+          "containment": 1.22
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.78,
+        "body": 2.08,
+        "withTashkeel": 2.37,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "c2sc",
+        "calt",
+        "case",
+        "ccmp",
+        "dlig",
+        "dnom",
+        "fina",
+        "frac",
+        "hist",
+        "init",
+        "liga",
+        "lnum",
+        "locl",
+        "medi",
+        "mgrk",
+        "numr",
+        "onum",
+        "ordn",
+        "pnum",
+        "rlig",
+        "salt",
+        "sinf",
+        "smcp",
+        "ss01",
+        "subs",
+        "sups",
+        "tnum",
+        "zero"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

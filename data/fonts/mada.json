@@ -1,0 +1,357 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "mada",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/mada"
+      },
+      {
+        "name": "@fontsource/mada",
+        "url": "https://www.npmjs.com/package/@fontsource/mada",
+        "version": "5.3.0",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "files/mada-arabic-{200,400,900}-normal.woff (static instances of Google Fonts v21, Arabic subset; extents at the lightest and heaviest weight)"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Mada",
+    "category": "sans",
+    "interfaceText": true,
+    "designers": [
+      "Khaled Hosny",
+      "Paul D. Hunt"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/aliftype/mada",
+      "commit": "2f7dea3a2bad718583bfcc1dc2030cf15401c789",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/mada",
+      "npm": "@fontsource/mada",
+      "npmVersion": "5.3.0",
+      "npmVariable": "@fontsource-variable/mada",
+      "version": "Version 1.5"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900
+    ],
+    "weightsBasis": "hundreds inside the fvar wght axis 200-900",
+    "italic": false,
+    "variable": {
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "max": 900,
+          "default": 400
+        }
+      ]
+    },
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2017-05-08"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/mada/Mada[wght].ttf",
+        "sha256": "bf4d193ee78cea2fd8bdc9e64e5cb7e8a19ff76ab74f97a9a4a0e80f8f4cefde",
+        "fontVersion": "Version 1.5",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            831,
+            -291
+          ],
+          "singleMark": [
+            1117,
+            -583
+          ],
+          "fullStack": [
+            1180,
+            -583
+          ],
+          "latinBasic": [
+            750,
+            -250
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/mada@5.3.0:files/mada-arabic-200-normal.woff",
+        "sha256": "370767290f7716028e82aea45009bb6295497d108967c388c00bc9f8c3e0cb1d",
+        "fontVersion": "Version 1.5",
+        "weightClass": 250,
+        "extents": {
+          "unvocalised": [
+            807,
+            -291
+          ],
+          "singleMark": [
+            1098,
+            -591
+          ],
+          "fullStack": [
+            1149,
+            -591
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/mada@5.3.0:files/mada-arabic-400-normal.woff",
+        "sha256": "ded3930f5ce033a236db8d1d707d8531991fe05a5b65e627808ac121210e87e5",
+        "fontVersion": "Version 1.5",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            831,
+            -291
+          ],
+          "singleMark": [
+            1117,
+            -583
+          ],
+          "fullStack": [
+            1180,
+            -583
+          ]
+        }
+      },
+      {
+        "file": "npm:@fontsource/mada@5.3.0:files/mada-arabic-900-normal.woff",
+        "sha256": "3a63655ffc7a7f3625927cd9344023c93c014fd6563894dfbc45a5967685224c",
+        "fontVersion": "Version 1.5",
+        "weightClass": 900,
+        "extents": {
+          "unvocalised": [
+            896,
+            -382
+          ],
+          "singleMark": [
+            1232,
+            -791
+          ],
+          "fullStack": [
+            1312,
+            -791
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 950,
+        "descender": -350,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 950,
+        "descender": -350,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1185,
+        "descent": 420
+      },
+      "useTypoMetrics": true,
+      "xHeight": 486,
+      "capHeight": 656,
+      "head": {
+        "yMax": 1088,
+        "yMin": -403
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.3,
+        "typo": 1.3,
+        "win": 1.605
+      },
+      "measuredFrom": "google/fonts:ofl/mada/Mada[wght].ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 8,
+          "total": 9,
+          "missing": [
+            "U+066D"
+          ]
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": true,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": true
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/mada/Mada[wght].ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 65,
+          "allahLigatureForms": 0,
+          "decomposedLetterForms": 24,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 0,
+          "attachedPairs": 650
+        },
+        "unvocalised": {
+          "top": 831,
+          "bottom": -291,
+          "topBy": "U+0627 + U+0654",
+          "bottomBy": "gid421"
+        },
+        "singleMark": {
+          "top": 1117,
+          "bottom": -583,
+          "topBy": "U+0627 + U+0654 + U+064B",
+          "bottomBy": "U+0631 + U+064D"
+        },
+        "fullStack": {
+          "top": 1180,
+          "bottom": -583,
+          "topBy": "gid463 + U+0651 + U+064B",
+          "bottomBy": "U+0631 + U+064D"
+        },
+        "latinBasic": {
+          "top": 750,
+          "bottom": -250,
+          "topBy": "U+007C",
+          "bottomBy": "U+007C"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 203,
+          "bottom": -245,
+          "topBy": "U+064B",
+          "bottomBy": "U+064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.28,
+          "containment": 1.37
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.28,
+          "containment": 1.37
+        },
+        "singleMark": {
+          "stacking": 2.03,
+          "containment": 2.19
+        },
+        "fullStack": {
+          "stacking": 2.11,
+          "containment": 2.19
+        },
+        "latinBasic": {
+          "stacking": 1,
+          "containment": 1.1
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.37,
+        "body": 2.03,
+        "withTashkeel": 2.11,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: variable font: upstream file measured at its default master only."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "latinCompanion": "Source Sans Pro (upstream: Latin is a slightly modified version; included)",
+    "features": {
+      "gsub": [
+        "ccmp",
+        "dnom",
+        "fina",
+        "init",
+        "isol",
+        "locl",
+        "medi",
+        "numr",
+        "rlig",
+        "ss03",
+        "ss04"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk",
+        "ss01"
+      ]
+    }
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "ibm-plex-sans-arabic",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/ibmplexsansarabic"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "IBM Plex Sans Arabic",
+    "category": "sans",
+    "interfaceText": true,
+    "designers": [
+      "Mike Abbink",
+      "Bold Monday",
+      "Khajag Apelian",
+      "Wael Morcos"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/googlefonts/plex",
+      "commit": "e80bf9282a630e70d6c1459f4125c9ec0e75316b",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/ibmplexsansarabic",
+      "npm": "@fontsource/ibm-plex-sans-arabic",
+      "npmVersion": "5.3.0",
+      "version": "Version 1.101"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "cyrillic-ext",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2021-06-17"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-Thin.ttf",
+        "sha256": "f8e1f556f815e3d29c531f79ff2bed276bec18d403fc6470b54900922cd91a79",
+        "fontVersion": "Version 1.101",
+        "weightClass": 100,
+        "extents": {
+          "unvocalised": [
+            868,
+            -506
+          ],
+          "singleMark": [
+            1130,
+            -804
+          ],
+          "fullStack": [
+            1306,
+            -804
+          ],
+          "latinBasic": [
+            780,
+            -212
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-ExtraLight.ttf",
+        "sha256": "4d4137f37a1acd61f1b7eba47c08d0996789596b1e535f9220914ad5daf0a198",
+        "fontVersion": "Version 1.101",
+        "weightClass": 200,
+        "extents": {
+          "unvocalised": [
+            877,
+            -506
+          ],
+          "singleMark": [
+            1149,
+            -816
+          ],
+          "fullStack": [
+            1327,
+            -816
+          ],
+          "latinBasic": [
+            780,
+            -212
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-Light.ttf",
+        "sha256": "0af9d1effbb36ff74d13c64f752c771ecb9162a451cf151c5425f4d00d4daa7c",
+        "fontVersion": "Version 1.101",
+        "weightClass": 300,
+        "extents": {
+          "unvocalised": [
+            890,
+            -506
+          ],
+          "singleMark": [
+            1178,
+            -837
+          ],
+          "fullStack": [
+            1361,
+            -837
+          ],
+          "latinBasic": [
+            780,
+            -212
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf",
+        "sha256": "6f611412270a132bbac838da9259d4c68569b4175f3b3b8fa3fa36a30b56dab9",
+        "fontVersion": "Version 1.101",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            904,
+            -506
+          ],
+          "singleMark": [
+            1209,
+            -858
+          ],
+          "fullStack": [
+            1398,
+            -858
+          ],
+          "latinBasic": [
+            780,
+            -212
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-Medium.ttf",
+        "sha256": "b8363ab9f733dfa4f8e96b8b2102c24b5cf4110fb96d1d3d9a9412f6fb49cf74",
+        "fontVersion": "Version 1.101",
+        "weightClass": 500,
+        "extents": {
+          "unvocalised": [
+            917,
+            -513
+          ],
+          "singleMark": [
+            1248,
+            -886
+          ],
+          "fullStack": [
+            1449,
+            -886
+          ],
+          "latinBasic": [
+            795,
+            -212
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-SemiBold.ttf",
+        "sha256": "597bd5502e5997be4414e4c9c88834b30ff3784250c84f20bce2b20e53ebd467",
+        "fontVersion": "Version 1.101",
+        "weightClass": 600,
+        "extents": {
+          "unvocalised": [
+            925,
+            -516
+          ],
+          "singleMark": [
+            1270,
+            -903
+          ],
+          "fullStack": [
+            1479,
+            -903
+          ],
+          "latinBasic": [
+            805,
+            -212
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-Bold.ttf",
+        "sha256": "691e0c891a38637ae6bbdb69700f8042cb0724a137bee615068ffdb92244f61f",
+        "fontVersion": "Version 1.101",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            934,
+            -521
+          ],
+          "singleMark": [
+            1297,
+            -923
+          ],
+          "fullStack": [
+            1514,
+            -923
+          ],
+          "latinBasic": [
+            816,
+            -212
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 1085,
+        "descender": -415,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 1085,
+        "descender": -415,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1128,
+        "descent": 601
+      },
+      "useTypoMetrics": true,
+      "xHeight": 516,
+      "capHeight": 698,
+      "head": {
+        "yMax": 1075,
+        "yMin": -568
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.5,
+        "typo": 1.5,
+        "win": 1.729
+      },
+      "measuredFrom": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 279,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 15,
+          "ligatedMarkPairs": 7,
+          "attachedPairs": 3861
+        },
+        "unvocalised": {
+          "top": 904,
+          "bottom": -506,
+          "topBy": "uni0623",
+          "bottomBy": "uniFCFC"
+        },
+        "singleMark": {
+          "top": 1209,
+          "bottom": -858,
+          "topBy": "uni0623 + uni064B",
+          "bottomBy": "uniFCFC + uni064D"
+        },
+        "fullStack": {
+          "top": 1398,
+          "bottom": -858,
+          "topBy": "uni0623 + uni0651064B.1",
+          "bottomBy": "uniFCFC + uni064D"
+        },
+        "latinBasic": {
+          "top": 780,
+          "bottom": -212,
+          "topBy": "U+0024",
+          "bottomBy": "U+0067"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 634,
+          "bottom": 220,
+          "topBy": "uni064B",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.46,
+          "containment": 1.72
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.46,
+          "containment": 1.72
+        },
+        "singleMark": {
+          "stacking": 2.22,
+          "containment": 2.52
+        },
+        "fullStack": {
+          "stacking": 2.44,
+          "containment": 2.52
+        },
+        "latinBasic": {
+          "stacking": 1.03,
+          "containment": 1.1
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.72,
+        "body": 2.22,
+        "withTashkeel": 2.44,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "calt",
+        "ccmp",
+        "dlig",
+        "dnom",
+        "fina",
+        "frac",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "numr",
+        "ordn",
+        "rlig",
+        "salt",
+        "sinf",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss04",
+        "ss05",
+        "ss06",
+        "subs",
+        "sups",
+        "zero"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

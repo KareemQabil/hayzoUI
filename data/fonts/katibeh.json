@@ -1,0 +1,274 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "katibeh",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/katibeh"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Katibeh",
+    "category": "display",
+    "interfaceText": false,
+    "designers": [
+      "KB Studio"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/Tarobish/Katibeh",
+      "commit": "3fde990dc2f1648d63b7fe2841902d268529c1c2",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/katibeh",
+      "npm": "@fontsource/katibeh",
+      "npmVersion": "5.3.0",
+      "version": "Version 1.0010g"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      400
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "DISPLAY"
+      ],
+      "classifications": [
+        "DISPLAY"
+      ],
+      "dateAdded": "2016-06-20"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/katibeh/Katibeh-Regular.ttf",
+        "sha256": "334eeadb58eb442734fe7dea87412cbbd8c3fd00294252723aadf19a850cf11f",
+        "fontVersion": "Version 1.0010g",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            783,
+            -465
+          ],
+          "singleMark": [
+            995,
+            -707
+          ],
+          "fullStack": [
+            1152,
+            -707
+          ],
+          "latinBasic": [
+            567,
+            -166
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 490,
+        "descender": -510,
+        "lineGap": 200
+      },
+      "typo": {
+        "ascender": 800,
+        "descender": -200,
+        "lineGap": 200
+      },
+      "win": {
+        "ascent": 1000,
+        "descent": 200
+      },
+      "useTypoMetrics": false,
+      "xHeight": 500,
+      "capHeight": 700,
+      "head": {
+        "yMax": 1094,
+        "yMin": -637
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.2,
+        "typo": 1.2,
+        "win": 1.2
+      },
+      "measuredFrom": "google/fonts:ofl/katibeh/Katibeh-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/katibeh/Katibeh-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 103,
+          "allahLigatureForms": 0,
+          "decomposedLetterForms": 50,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 0,
+          "attachedPairs": 1026
+        },
+        "unvocalised": {
+          "top": 783,
+          "bottom": -465,
+          "topBy": "uni0622",
+          "bottomBy": "uni0645"
+        },
+        "singleMark": {
+          "top": 995,
+          "bottom": -707,
+          "topBy": "uni0622 + uni064F",
+          "bottomBy": "uniFEE2 + uni064D"
+        },
+        "fullStack": {
+          "top": 1152,
+          "bottom": -707,
+          "topBy": "uni0622 + uni0651 + uni064F",
+          "bottomBy": "uniFEE2 + uni064D"
+        },
+        "latinBasic": {
+          "top": 567,
+          "bottom": -166,
+          "topBy": "U+0024",
+          "bottomBy": "U+0051"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 911,
+          "bottom": -290,
+          "topBy": "uni064F",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.25,
+          "containment": 1.73
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.25,
+          "containment": 1.73
+        },
+        "singleMark": {
+          "stacking": 1.71,
+          "containment": 2.22
+        },
+        "fullStack": {
+          "stacking": 1.86,
+          "containment": 2.33
+        },
+        "latinBasic": {
+          "stacking": 0.74,
+          "containment": 1.16
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.73,
+        "body": 1.71,
+        "withTashkeel": 1.86,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "calt",
+        "ccmp",
+        "dlig",
+        "dnom",
+        "fina",
+        "frac",
+        "init",
+        "isol",
+        "liga",
+        "lnum",
+        "locl",
+        "medi",
+        "numr",
+        "onum",
+        "ordn",
+        "rlig",
+        "ss01",
+        "sups"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

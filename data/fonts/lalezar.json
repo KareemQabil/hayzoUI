@@ -1,0 +1,263 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "lalezar",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/lalezar"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Lalezar",
+    "category": "display",
+    "interfaceText": false,
+    "designers": [
+      "Borna Izadpanah"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/BornaIz/Lalezar",
+      "commit": "238701c4241f207e92515f845a199be9131c1109",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/lalezar",
+      "npm": "@fontsource/lalezar",
+      "npmVersion": "5.3.0",
+      "version": "Version 1.004"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ],
+    "weights": [
+      400
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "SANS_SERIF"
+      ],
+      "dateAdded": "2017-02-28"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/lalezar/Lalezar-Regular.ttf",
+        "sha256": "7b80807bc831f141de0f7dcf6816412bf0c548968d548c5156ca388733390ea9",
+        "fontVersion": "Version 1.004",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            816,
+            -471
+          ],
+          "singleMark": [
+            1036,
+            -699
+          ],
+          "fullStack": [
+            1222,
+            -699
+          ],
+          "latinBasic": [
+            783,
+            -340
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 979,
+        "descender": -588,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 979,
+        "descender": -588,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 979,
+        "descent": 588
+      },
+      "useTypoMetrics": true,
+      "xHeight": 186,
+      "capHeight": 570,
+      "head": {
+        "yMax": 979,
+        "yMin": -588
+      },
+      "verticalMetricsAgree": true,
+      "naturalLineHeight": {
+        "hhea": 1.567,
+        "typo": 1.567,
+        "win": 1.567
+      },
+      "measuredFrom": "google/fonts:ofl/lalezar/Lalezar-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "punctuation": {
+          "present": 9,
+          "total": 9
+        },
+        "persianUrduLetters": {
+          "present": 13,
+          "total": 13
+        },
+        "saudiRiyalSign": false,
+        "rialSign": true
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": true,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/lalezar/Lalezar-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": false,
+        "glyphsConsidered": {
+          "letterForms": 164,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 0,
+          "tashkeelForms": 9,
+          "ligatedMarkPairs": 0,
+          "attachedPairs": 1845
+        },
+        "unvocalised": {
+          "top": 816,
+          "bottom": -471,
+          "topBy": "uniFDF2",
+          "bottomBy": "uniFEF2"
+        },
+        "singleMark": {
+          "top": 1036,
+          "bottom": -699,
+          "topBy": "uni0623 + uni064C",
+          "bottomBy": "uniFEF2 + uni064D"
+        },
+        "fullStack": {
+          "top": 1222,
+          "bottom": -699,
+          "topBy": "uni0623 + uni0651 + uni064C",
+          "bottomBy": "uniFEF2 + uni064D"
+        },
+        "latinBasic": {
+          "top": 783,
+          "bottom": -340,
+          "topBy": "U+0060",
+          "bottomBy": "U+0028"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 597,
+          "bottom": -223,
+          "topBy": "uni0651",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.29,
+          "containment": 1.34
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.29,
+          "containment": 1.34
+        },
+        "singleMark": {
+          "stacking": 1.74,
+          "containment": 1.79
+        },
+        "fullStack": {
+          "stacking": 1.93,
+          "containment": 2.06
+        },
+        "latinBasic": {
+          "stacking": 1.13,
+          "containment": 1.18
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.34,
+        "body": 1.74,
+        "withTashkeel": 1.93,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      }
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "ccmp",
+        "dlig",
+        "fina",
+        "init",
+        "liga",
+        "locl",
+        "medi",
+        "rlig"
+      ],
+      "gpos": [
+        "kern",
+        "mark",
+        "mkmk"
+      ]
+    }
+  }
+}

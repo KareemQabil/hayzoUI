@@ -1,0 +1,372 @@
+{
+  "$schema": "../schema/font.schema.json",
+  "kind": "font",
+  "schemaVersion": 1,
+  "id": "ruwudu",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Google Fonts repository",
+        "url": "https://github.com/google/fonts",
+        "version": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "license": "OFL-1.1",
+        "retrievedAt": "2026-11-11",
+        "path": "ofl/ruwudu"
+      }
+    ],
+    "script": "tools/extract/fonts/build.mjs",
+    "notes": "Metrics, coverage, features and extents are read from the named font files by tools/extract/fonts/sfnt.mjs. category, interfaceText and latinCompanion are authored in tools/extract/fonts/families.json. arabic.lineHeightBounds and arabic.recommendedLineHeight are derived (formula in basis)."
+  },
+  "data": {
+    "family": "Ruwudu",
+    "category": "calligraphic",
+    "interfaceText": false,
+    "designers": [
+      "SIL International"
+    ],
+    "license": "OFL-1.1",
+    "source": {
+      "repository": "https://github.com/silnrsi/font-ruwudu",
+      "commit": "b5aa4e64386fa7fe286634b10b7c874a42b9d1cf",
+      "distribution": "https://github.com/google/fonts/tree/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/ruwudu",
+      "npm": "@fontsource/ruwudu",
+      "npmVersion": "5.3.0",
+      "version": "Version 3.000"
+    },
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "subsets": [
+      "arabic",
+      "latin",
+      "latin-ext"
+    ],
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ],
+    "weightsBasis": "static files listed in google/fonts METADATA.pb",
+    "italic": false,
+    "googleFonts": {
+      "category": [
+        "SERIF"
+      ],
+      "dateAdded": "2023-07-05"
+    },
+    "files": [
+      {
+        "file": "google/fonts:ofl/ruwudu/Ruwudu-Regular.ttf",
+        "sha256": "ed5b134e7f389eecfdabc6bbbf9605177fa8b5b9984c8b24edbec908623d2c3b",
+        "fontVersion": "Version 3.000",
+        "weightClass": 400,
+        "extents": {
+          "unvocalised": [
+            916,
+            -687
+          ],
+          "singleMark": [
+            1368,
+            -844
+          ],
+          "fullStack": [
+            1609,
+            -844
+          ],
+          "latinBasic": [
+            813,
+            -264
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ruwudu/Ruwudu-Medium.ttf",
+        "sha256": "11688c54f825b293e6554c44a645ffa863a04331f3abee3dee18711a01719a8e",
+        "fontVersion": "Version 3.000",
+        "weightClass": 500,
+        "extents": {
+          "unvocalised": [
+            936,
+            -701
+          ],
+          "singleMark": [
+            1395,
+            -863
+          ],
+          "fullStack": [
+            1638,
+            -863
+          ],
+          "latinBasic": [
+            813,
+            -264
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ruwudu/Ruwudu-SemiBold.ttf",
+        "sha256": "13f4e5c44f184bf9432cc4f4121e24853a3b81026a4223d113042710e361041d",
+        "fontVersion": "Version 3.000",
+        "weightClass": 600,
+        "extents": {
+          "unvocalised": [
+            955,
+            -713
+          ],
+          "singleMark": [
+            1422,
+            -883
+          ],
+          "fullStack": [
+            1668,
+            -883
+          ],
+          "latinBasic": [
+            813,
+            -269
+          ]
+        }
+      },
+      {
+        "file": "google/fonts:ofl/ruwudu/Ruwudu-Bold.ttf",
+        "sha256": "7f7611d534aea674b960e0b586d1f594f3975b4db3fff5f55c1b92484a34cf78",
+        "fontVersion": "Version 3.000",
+        "weightClass": 700,
+        "extents": {
+          "unvocalised": [
+            975,
+            -726
+          ],
+          "singleMark": [
+            1449,
+            -903
+          ],
+          "fullStack": [
+            1698,
+            -903
+          ],
+          "latinBasic": [
+            813,
+            -273
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "unitsPerEm": 1000,
+      "hhea": {
+        "ascender": 867,
+        "descender": -741,
+        "lineGap": 0
+      },
+      "typo": {
+        "ascender": 867,
+        "descender": -741,
+        "lineGap": 0
+      },
+      "win": {
+        "ascent": 1500,
+        "descent": 1200
+      },
+      "useTypoMetrics": true,
+      "xHeight": 430,
+      "capHeight": 660,
+      "head": {
+        "yMax": 1223,
+        "yMin": -840
+      },
+      "verticalMetricsAgree": false,
+      "naturalLineHeight": {
+        "hhea": 1.608,
+        "typo": 1.608,
+        "win": 2.7
+      },
+      "measuredFrom": "google/fonts:ofl/ruwudu/Ruwudu-Regular.ttf"
+    },
+    "arabic": {
+      "coversTashkeel": true,
+      "coverage": {
+        "letters": {
+          "present": 36,
+          "total": 36
+        },
+        "tashkeel": {
+          "present": 9,
+          "total": 9
+        },
+        "arabicIndicDigits": {
+          "present": 10,
+          "total": 10
+        },
+        "extendedArabicIndicDigits": {
+          "present": 0,
+          "total": 10,
+          "missing": [
+            "U+06F0",
+            "U+06F1",
+            "U+06F2",
+            "U+06F3",
+            "U+06F4",
+            "U+06F5",
+            "U+06F6",
+            "U+06F7",
+            "U+06F8",
+            "U+06F9"
+          ]
+        },
+        "punctuation": {
+          "present": 8,
+          "total": 9,
+          "missing": [
+            "U+06D4"
+          ]
+        },
+        "persianUrduLetters": {
+          "present": 7,
+          "total": 13,
+          "missing": [
+            "U+0686",
+            "U+0679",
+            "U+0688",
+            "U+0691",
+            "U+06BE",
+            "U+06C1"
+          ]
+        },
+        "saudiRiyalSign": false,
+        "rialSign": false
+      },
+      "digits": {
+        "arabicIndic": true,
+        "extendedArabicIndic": false,
+        "tabular": false,
+        "tnumFeature": false,
+        "detail": {
+          "latin": {
+            "present": true,
+            "defaultEqualWidth": true
+          },
+          "arabicIndic": {
+            "present": true,
+            "defaultEqualWidth": false
+          },
+          "extendedArabicIndic": {
+            "present": false
+          }
+        }
+      },
+      "extents": {
+        "measured": true,
+        "unit": "font units, y up from the baseline; [top, bottom] with the glyph sequence that reaches it",
+        "from": "google/fonts:ofl/ruwudu/Ruwudu-Regular.ttf",
+        "markPositioning": "gpos",
+        "cursiveAttachment": true,
+        "glyphsConsidered": {
+          "letterForms": 182,
+          "allahLigatureForms": 1,
+          "decomposedLetterForms": 24,
+          "tashkeelForms": 10,
+          "ligatedMarkPairs": 5,
+          "attachedPairs": 1900
+        },
+        "unvocalised": {
+          "top": 916,
+          "bottom": -687,
+          "topBy": "uni063A.medi.flat",
+          "bottomBy": "uni064A.fina.low"
+        },
+        "singleMark": {
+          "top": 1368,
+          "bottom": -844,
+          "topBy": "uni063A.medi.flat + uni06510670",
+          "bottomBy": "uni064A.fina.low + uni064D"
+        },
+        "fullStack": {
+          "top": 1609,
+          "bottom": -844,
+          "topBy": "uni063A.medi.flat + uni06510670 + uni0670",
+          "bottomBy": "uni064A.fina.low + uni064D"
+        },
+        "latinBasic": {
+          "top": 813,
+          "bottom": -264,
+          "topBy": "U+007B",
+          "bottomBy": "U+0067"
+        },
+        "tashkeelGlyphsAsDrawn": {
+          "top": 761,
+          "bottom": -184,
+          "topBy": "uni0670",
+          "bottomBy": "uni064D"
+        }
+      },
+      "lineHeightBounds": {
+        "unvocalised": {
+          "stacking": 1.71,
+          "containment": 1.83
+        },
+        "unvocalisedWithLatin": {
+          "stacking": 1.71,
+          "containment": 1.83
+        },
+        "singleMark": {
+          "stacking": 2.36,
+          "containment": 2.78
+        },
+        "fullStack": {
+          "stacking": 2.61,
+          "containment": 3.27
+        },
+        "latinBasic": {
+          "stacking": 1.09,
+          "containment": 1.5
+        }
+      },
+      "recommendedLineHeight": {
+        "ui": 1.83,
+        "body": 2.36,
+        "withTashkeel": 2.61,
+        "basis": "Derived, not measured. All values are unitless multiples of font-size, rounded up to 0.01, and are the maximum over the measured files. T and B are the measured top and bottom ink extremes above/below the baseline divided by unitsPerEm for a scenario; A and D are ascent and descent of a vertical-metrics set divided by unitsPerEm. stacking = T + B: the baseline distance at which the deepest ink of one line cannot touch the tallest ink of the next. containment = max(2T - (A - D), 2B + (A - D)): the line-height at which ink stays inside its own CSS line box (the baseline sits (L + A - D)/2 below the top of a line box of height L), taken as the maximum over the metric sets a browser may use: hhea, and OS/2 typo when USE_TYPO_METRICS is set, otherwise OS/2 win. ui = containment for unvocalised Arabic letters, both digit sets, Arabic punctuation and Basic Latin (single-line controls clip or abut at the line box). body = stacking for Arabic text carrying at most one tashkeel mark per letter. withTashkeel = stacking for fully vocalised text: shadda plus a vowel above, kasra/kasratan below, as placed by GPOS mark and mkmk at the default master. natural = (hhea.ascender - hhea.descender + hhea.lineGap) / unitsPerEm, what line-height: normal resolves to where hhea is used."
+      },
+      "notes": "Limits: font has cursive attachment (GPOS curs), which moves glyphs vertically and is not modelled: real extents can exceed these."
+    },
+    "latin": {
+      "included": true,
+      "basicLetters": "52/52"
+    },
+    "features": {
+      "gsub": [
+        "aalt",
+        "calt",
+        "ccmp",
+        "dlig",
+        "fina",
+        "frac",
+        "init",
+        "liga",
+        "locl",
+        "ltrm",
+        "medi",
+        "pnum",
+        "rlig",
+        "rtlm",
+        "salt",
+        "ss02",
+        "ss03",
+        "ss04",
+        "ss07",
+        "ss08",
+        "ss09"
+      ],
+      "gpos": [
+        "curs",
+        "kern",
+        "mark"
+      ]
+    }
+  }
+}
