@@ -1,0 +1,2339 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "chakra-ui",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@chakra-ui/react",
+        "url": "https://www.npmjs.com/package/@chakra-ui/react/v/3.38.0",
+        "version": "3.38.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "dist/esm/styled-system/preflight.js, dist/esm/theme/breakpoints.js, dist/esm/theme/global-css.js, dist/esm/theme/recipes/button.js, dist/esm/theme/recipes/input.js, dist/esm/theme/semantic-tokens/colors.js, dist/esm/theme/semantic-tokens/shadows.js, dist/esm/theme/text-styles.js, dist/esm/theme/tokens/colors.js, dist/esm/theme/tokens/durations.js, dist/esm/theme/tokens/easings.js, dist/esm/theme/tokens/font-sizes.js, dist/esm/theme/tokens/font-weights.js, dist/esm/theme/tokens/fonts.js, dist/esm/theme/tokens/letter-spacing.js, dist/esm/theme/tokens/line-heights.js, dist/esm/theme/tokens/radius.js, dist/esm/theme/tokens/sizes.js, dist/esm/theme/tokens/spacing.js, dist/esm/theme/tokens/z-indices.js"
+      }
+    ],
+    "script": "tools/extract/tokens/chakra.mjs"
+  },
+  "data": {
+    "system": {
+      "name": "Chakra UI v3 default theme",
+      "package": "@chakra-ui/react",
+      "version": "3.38.0",
+      "license": "MIT",
+      "url": "https://chakra-ui.com"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "default",
+            "name": "size 2xs…2xl",
+            "mechanism": "size-prop",
+            "description": "Recipe size variants; no density mode."
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "2xs",
+            "mode": "default",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "heightSource": "h: 6; textStyle xs",
+            "file": "dist/esm/theme/recipes/button.js"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "default",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "heightSource": "h: 8; textStyle xs",
+            "file": "dist/esm/theme/recipes/button.js"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "default",
+            "heightPx": 36,
+            "paddingInlinePx": 14,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "heightSource": "h: 9; textStyle sm",
+            "file": "dist/esm/theme/recipes/button.js"
+          },
+          {
+            "component": "button",
+            "size": "md",
+            "mode": "default",
+            "heightPx": 40,
+            "paddingInlinePx": 16,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "heightSource": "h: 10; textStyle sm",
+            "file": "dist/esm/theme/recipes/button.js",
+            "note": "default size"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "default",
+            "heightPx": 44,
+            "paddingInlinePx": 20,
+            "gapPx": 12,
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "heightSource": "h: 11; textStyle md",
+            "file": "dist/esm/theme/recipes/button.js"
+          },
+          {
+            "component": "button",
+            "size": "xl",
+            "mode": "default",
+            "heightPx": 48,
+            "paddingInlinePx": 20,
+            "gapPx": 10,
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "heightSource": "h: 12; textStyle md",
+            "file": "dist/esm/theme/recipes/button.js"
+          },
+          {
+            "component": "button",
+            "size": "2xl",
+            "mode": "default",
+            "heightPx": 64,
+            "paddingInlinePx": 28,
+            "gapPx": 12,
+            "fontSizePx": 18,
+            "lineHeightPx": 28,
+            "lineHeightRatio": 1.5556,
+            "heightSource": "h: 16; textStyle lg",
+            "file": "dist/esm/theme/recipes/button.js"
+          },
+          {
+            "component": "input",
+            "size": "2xs",
+            "mode": "default",
+            "heightPx": 28,
+            "paddingInlinePx": 8,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "heightSource": "sizes.7; textStyle xs",
+            "file": "dist/esm/theme/recipes/input.js"
+          },
+          {
+            "component": "input",
+            "size": "xs",
+            "mode": "default",
+            "heightPx": 32,
+            "paddingInlinePx": 8,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "heightSource": "sizes.8; textStyle xs",
+            "file": "dist/esm/theme/recipes/input.js"
+          },
+          {
+            "component": "input",
+            "size": "sm",
+            "mode": "default",
+            "heightPx": 36,
+            "paddingInlinePx": 10,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "heightSource": "sizes.9; textStyle sm",
+            "file": "dist/esm/theme/recipes/input.js"
+          },
+          {
+            "component": "input",
+            "size": "md",
+            "mode": "default",
+            "heightPx": 40,
+            "paddingInlinePx": 12,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "heightSource": "sizes.10; textStyle sm",
+            "file": "dist/esm/theme/recipes/input.js",
+            "note": "default size"
+          },
+          {
+            "component": "input",
+            "size": "lg",
+            "mode": "default",
+            "heightPx": 44,
+            "paddingInlinePx": 16,
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "heightSource": "sizes.11; textStyle md",
+            "file": "dist/esm/theme/recipes/input.js"
+          },
+          {
+            "component": "input",
+            "size": "xl",
+            "mode": "default",
+            "heightPx": 48,
+            "paddingInlinePx": 18,
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "heightSource": "sizes.12; textStyle md",
+            "file": "dist/esm/theme/recipes/input.js"
+          },
+          {
+            "component": "input",
+            "size": "2xl",
+            "mode": "default",
+            "heightPx": 64,
+            "paddingInlinePx": 20,
+            "fontSizePx": 18,
+            "lineHeightPx": 28,
+            "lineHeightRatio": 1.5556,
+            "heightSource": "sizes.16; textStyle lg",
+            "file": "dist/esm/theme/recipes/input.js"
+          }
+        ],
+        "touchTarget": []
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "0.5",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "1",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "1.5",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "2",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "2.5",
+            "value": "0.625rem",
+            "px": 10,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "3",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "3.5",
+            "value": "0.875rem",
+            "px": 14,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "4",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "4.5",
+            "value": "1.125rem",
+            "px": 18,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "5",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "6",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "7",
+            "value": "1.75rem",
+            "px": 28,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "8",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "9",
+            "value": "2.25rem",
+            "px": 36,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "10",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "11",
+            "value": "2.75rem",
+            "px": 44,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "12",
+            "value": "3rem",
+            "px": 48,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "14",
+            "value": "3.5rem",
+            "px": 56,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "16",
+            "value": "4rem",
+            "px": 64,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "20",
+            "value": "5rem",
+            "px": 80,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "24",
+            "value": "6rem",
+            "px": 96,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "28",
+            "value": "7rem",
+            "px": 112,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "32",
+            "value": "8rem",
+            "px": 128,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "36",
+            "value": "9rem",
+            "px": 144,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "40",
+            "value": "10rem",
+            "px": 160,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "44",
+            "value": "11rem",
+            "px": 176,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "48",
+            "value": "12rem",
+            "px": 192,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "52",
+            "value": "13rem",
+            "px": 208,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "56",
+            "value": "14rem",
+            "px": 224,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "60",
+            "value": "15rem",
+            "px": 240,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "64",
+            "value": "16rem",
+            "px": 256,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "72",
+            "value": "18rem",
+            "px": 288,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "80",
+            "value": "20rem",
+            "px": 320,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          },
+          {
+            "name": "96",
+            "value": "24rem",
+            "px": 384,
+            "file": "dist/esm/theme/tokens/spacing.js"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "none",
+            "value": "0",
+            "px": 0,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "2xs",
+            "value": "0.0625rem",
+            "px": 1,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "xs",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "sm",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "md",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "lg",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "xl",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "2xl",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "3xl",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "4xl",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/esm/theme/tokens/radius.js"
+          },
+          {
+            "name": "full",
+            "value": "9999px",
+            "px": 9999,
+            "file": "dist/esm/theme/tokens/radius.js"
+          }
+        ]
+      },
+      "focusRing": {
+        "steps": [
+          {
+            "name": "preflight outlineOffset",
+            "value": "-2px",
+            "px": -2,
+            "file": "dist/esm/styled-system/preflight.js"
+          }
+        ],
+        "note": "Focus ring is a style-engine utility (focusVisibleRing: outside|inside|mixed) rather than tokens; width and offset defaults live in the utility."
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "heading",
+            "value": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+            "file": "dist/esm/theme/tokens/fonts.js"
+          },
+          {
+            "name": "body",
+            "value": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+            "file": "dist/esm/theme/tokens/fonts.js"
+          },
+          {
+            "name": "mono",
+            "value": "SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+            "file": "dist/esm/theme/tokens/fonts.js"
+          }
+        ],
+        "steps": [
+          {
+            "name": "textStyle 2xs",
+            "fontSize": "0.625rem",
+            "fontSizePx": 10,
+            "lineHeight": "0.75rem",
+            "lineHeightPx": 12,
+            "lineHeightRatio": 1.2,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle xs",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": "1rem",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle sm",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": "1.25rem",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle md",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": "1.5rem",
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle lg",
+            "fontSize": "1.125rem",
+            "fontSizePx": 18,
+            "lineHeight": "1.75rem",
+            "lineHeightPx": 28,
+            "lineHeightRatio": 1.5556,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle xl",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": "1.875rem",
+            "lineHeightPx": 30,
+            "lineHeightRatio": 1.5,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle 2xl",
+            "fontSize": "1.5rem",
+            "fontSizePx": 24,
+            "lineHeight": "2rem",
+            "lineHeightPx": 32,
+            "lineHeightRatio": 1.3333,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle 3xl",
+            "fontSize": "1.875rem",
+            "fontSizePx": 30,
+            "lineHeight": "2.375rem",
+            "lineHeightPx": 38,
+            "lineHeightRatio": 1.2667,
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle 4xl",
+            "fontSize": "2.25rem",
+            "fontSizePx": 36,
+            "lineHeight": "2.75rem",
+            "lineHeightPx": 44,
+            "lineHeightRatio": 1.2222,
+            "letterSpacing": "-0.025em",
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle 5xl",
+            "fontSize": "3rem",
+            "fontSizePx": 48,
+            "lineHeight": "3.75rem",
+            "lineHeightPx": 60,
+            "lineHeightRatio": 1.25,
+            "letterSpacing": "-0.025em",
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle 6xl",
+            "fontSize": "3.75rem",
+            "fontSizePx": 60,
+            "lineHeight": "4.5rem",
+            "lineHeightPx": 72,
+            "lineHeightRatio": 1.2,
+            "letterSpacing": "-0.025em",
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle 7xl",
+            "fontSize": "4.5rem",
+            "fontSizePx": 72,
+            "lineHeight": "5.75rem",
+            "lineHeightPx": 92,
+            "lineHeightRatio": 1.2778,
+            "letterSpacing": "-0.025em",
+            "file": "dist/esm/theme/text-styles.js"
+          },
+          {
+            "name": "textStyle label",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": "1.25rem",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "fontWeight": 500,
+            "file": "dist/esm/theme/text-styles.js"
+          }
+        ],
+        "fontSizes": [
+          {
+            "name": "2xs",
+            "value": "0.625rem",
+            "px": 10,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "xs",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "sm",
+            "value": "0.875rem",
+            "px": 14,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "md",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "lg",
+            "value": "1.125rem",
+            "px": 18,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "xl",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "2xl",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "3xl",
+            "value": "1.875rem",
+            "px": 30,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "4xl",
+            "value": "2.25rem",
+            "px": 36,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "5xl",
+            "value": "3rem",
+            "px": 48,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "6xl",
+            "value": "3.75rem",
+            "px": 60,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "7xl",
+            "value": "4.5rem",
+            "px": 72,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "8xl",
+            "value": "6rem",
+            "px": 96,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          },
+          {
+            "name": "9xl",
+            "value": "8rem",
+            "px": 128,
+            "file": "dist/esm/theme/tokens/font-sizes.js"
+          }
+        ],
+        "lineHeights": [
+          {
+            "name": "shorter",
+            "value": 1.25,
+            "ratio": 1.25,
+            "file": "dist/esm/theme/tokens/line-heights.js"
+          },
+          {
+            "name": "short",
+            "value": 1.375,
+            "ratio": 1.375,
+            "file": "dist/esm/theme/tokens/line-heights.js"
+          },
+          {
+            "name": "moderate",
+            "value": 1.5,
+            "ratio": 1.5,
+            "file": "dist/esm/theme/tokens/line-heights.js"
+          },
+          {
+            "name": "tall",
+            "value": 1.625,
+            "ratio": 1.625,
+            "file": "dist/esm/theme/tokens/line-heights.js"
+          },
+          {
+            "name": "taller",
+            "value": 2,
+            "ratio": 2,
+            "file": "dist/esm/theme/tokens/line-heights.js"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "thin",
+            "value": 100,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "extralight",
+            "value": 200,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "light",
+            "value": 300,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "normal",
+            "value": 400,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "medium",
+            "value": 500,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "semibold",
+            "value": 600,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "bold",
+            "value": 700,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "extrabold",
+            "value": 800,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          },
+          {
+            "name": "black",
+            "value": 900,
+            "file": "dist/esm/theme/tokens/font-weights.js"
+          }
+        ],
+        "letterSpacings": [
+          {
+            "name": "tighter",
+            "value": "-0.05em",
+            "file": "dist/esm/theme/tokens/letter-spacing.js"
+          },
+          {
+            "name": "tight",
+            "value": "-0.025em",
+            "file": "dist/esm/theme/tokens/letter-spacing.js"
+          },
+          {
+            "name": "wide",
+            "value": "0.025em",
+            "file": "dist/esm/theme/tokens/letter-spacing.js"
+          },
+          {
+            "name": "wider",
+            "value": "0.05em",
+            "file": "dist/esm/theme/tokens/letter-spacing.js"
+          },
+          {
+            "name": "widest",
+            "value": "0.1em",
+            "file": "dist/esm/theme/tokens/letter-spacing.js"
+          }
+        ]
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "sm",
+            "value": "480px",
+            "px": 480,
+            "file": "dist/esm/theme/breakpoints.js"
+          },
+          {
+            "name": "md",
+            "value": "768px",
+            "px": 768,
+            "file": "dist/esm/theme/breakpoints.js"
+          },
+          {
+            "name": "lg",
+            "value": "1024px",
+            "px": 1024,
+            "file": "dist/esm/theme/breakpoints.js"
+          },
+          {
+            "name": "xl",
+            "value": "1280px",
+            "px": 1280,
+            "file": "dist/esm/theme/breakpoints.js"
+          },
+          {
+            "name": "2xl",
+            "value": "1536px",
+            "px": 1536,
+            "file": "dist/esm/theme/breakpoints.js"
+          }
+        ]
+      },
+      "containers": {
+        "steps": [
+          {
+            "name": "3xs",
+            "value": "14rem",
+            "px": 224,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "2xs",
+            "value": "16rem",
+            "px": 256,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "xs",
+            "value": "20rem",
+            "px": 320,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "sm",
+            "value": "24rem",
+            "px": 384,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "md",
+            "value": "28rem",
+            "px": 448,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "lg",
+            "value": "32rem",
+            "px": 512,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "xl",
+            "value": "36rem",
+            "px": 576,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "2xl",
+            "value": "42rem",
+            "px": 672,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "3xl",
+            "value": "48rem",
+            "px": 768,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "4xl",
+            "value": "56rem",
+            "px": 896,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "5xl",
+            "value": "64rem",
+            "px": 1024,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "6xl",
+            "value": "72rem",
+            "px": 1152,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "7xl",
+            "value": "80rem",
+            "px": 1280,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          },
+          {
+            "name": "8xl",
+            "value": "90rem",
+            "px": 1440,
+            "file": "dist/esm/theme/tokens/sizes.js"
+          }
+        ]
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "hide",
+            "value": -1,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "base",
+            "value": 0,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "docked",
+            "value": 10,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "dropdown",
+            "value": 1000,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "sticky",
+            "value": 1100,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "banner",
+            "value": 1200,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "overlay",
+            "value": 1300,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "modal",
+            "value": 1400,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "popover",
+            "value": 1500,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "skipNav",
+            "value": 1600,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "toast",
+            "value": 1700,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "tooltip",
+            "value": 1800,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          },
+          {
+            "name": "max",
+            "value": 2147483647,
+            "file": "dist/esm/theme/tokens/z-indices.js"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "xs",
+            "value": "0px 1px 2px {colors.gray.900/10}, 0px 0px 1px {colors.gray.900/20}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          },
+          {
+            "name": "sm",
+            "value": "0px 2px 4px {colors.gray.900/10}, 0px 0px 1px {colors.gray.900/30}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          },
+          {
+            "name": "md",
+            "value": "0px 4px 8px {colors.gray.900/10}, 0px 0px 1px {colors.gray.900/30}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          },
+          {
+            "name": "lg",
+            "value": "0px 8px 16px {colors.gray.900/10}, 0px 0px 1px {colors.gray.900/30}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          },
+          {
+            "name": "xl",
+            "value": "0px 16px 24px {colors.gray.900/10}, 0px 0px 1px {colors.gray.900/30}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          },
+          {
+            "name": "2xl",
+            "value": "0px 24px 40px {colors.gray.900/16}, 0px 0px 1px {colors.gray.900/30}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          },
+          {
+            "name": "inner",
+            "value": "inset 0 2px 4px 0 {black/5}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          },
+          {
+            "name": "inset",
+            "value": "inset 0 0 0 1px {black/5}",
+            "mode": "light",
+            "file": "dist/esm/theme/semantic-tokens/shadows.js"
+          }
+        ]
+      },
+      "motion": {
+        "durations": [
+          {
+            "name": "fastest",
+            "value": "50ms",
+            "ms": 50,
+            "file": "dist/esm/theme/tokens/durations.js"
+          },
+          {
+            "name": "faster",
+            "value": "100ms",
+            "ms": 100,
+            "file": "dist/esm/theme/tokens/durations.js"
+          },
+          {
+            "name": "fast",
+            "value": "150ms",
+            "ms": 150,
+            "file": "dist/esm/theme/tokens/durations.js"
+          },
+          {
+            "name": "moderate",
+            "value": "200ms",
+            "ms": 200,
+            "file": "dist/esm/theme/tokens/durations.js"
+          },
+          {
+            "name": "slow",
+            "value": "300ms",
+            "ms": 300,
+            "file": "dist/esm/theme/tokens/durations.js"
+          },
+          {
+            "name": "slower",
+            "value": "400ms",
+            "ms": 400,
+            "file": "dist/esm/theme/tokens/durations.js"
+          },
+          {
+            "name": "slowest",
+            "value": "500ms",
+            "ms": 500,
+            "file": "dist/esm/theme/tokens/durations.js"
+          }
+        ],
+        "easings": [
+          {
+            "name": "ease-in",
+            "value": "cubic-bezier(0.42, 0, 1, 1)",
+            "file": "dist/esm/theme/tokens/easings.js"
+          },
+          {
+            "name": "ease-out",
+            "value": "cubic-bezier(0, 0, 0.58, 1)",
+            "file": "dist/esm/theme/tokens/easings.js"
+          },
+          {
+            "name": "ease-in-out",
+            "value": "cubic-bezier(0.42, 0, 0.58, 1)",
+            "file": "dist/esm/theme/tokens/easings.js"
+          },
+          {
+            "name": "ease-in-smooth",
+            "value": "cubic-bezier(0.32, 0.72, 0, 1)",
+            "file": "dist/esm/theme/tokens/easings.js"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "whiteAlpha",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "blackAlpha",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "gray",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "red",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "orange",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "yellow",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "green",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "teal",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "blue",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "cyan",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "purple",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            },
+            {
+              "name": "pink",
+              "steps": 11,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "950"
+              ]
+            }
+          ],
+          "semanticRoles": [
+            "bg.DEFAULT",
+            "bg.subtle",
+            "bg.muted",
+            "bg.emphasized",
+            "bg.inverted",
+            "bg.panel",
+            "bg.error",
+            "bg.warning",
+            "bg.success",
+            "bg.info",
+            "fg.DEFAULT",
+            "fg.muted",
+            "fg.subtle",
+            "fg.inverted",
+            "fg.error",
+            "fg.warning",
+            "fg.success",
+            "fg.info",
+            "border.DEFAULT",
+            "border.muted",
+            "border.subtle",
+            "border.emphasized",
+            "border.inverted",
+            "border.error",
+            "border.warning",
+            "border.success",
+            "border.info",
+            "gray.contrast",
+            "gray.fg",
+            "gray.subtle",
+            "gray.muted",
+            "gray.emphasized",
+            "gray.solid",
+            "gray.focusRing",
+            "gray.border",
+            "red.contrast",
+            "red.fg",
+            "red.subtle",
+            "red.muted",
+            "red.emphasized",
+            "red.solid",
+            "red.focusRing",
+            "red.border",
+            "orange.contrast",
+            "orange.fg",
+            "orange.subtle",
+            "orange.muted",
+            "orange.emphasized",
+            "orange.solid",
+            "orange.focusRing",
+            "orange.border",
+            "green.contrast",
+            "green.fg",
+            "green.subtle",
+            "green.muted",
+            "green.emphasized",
+            "green.solid",
+            "green.focusRing",
+            "green.border",
+            "blue.contrast",
+            "blue.fg",
+            "blue.subtle",
+            "blue.muted",
+            "blue.emphasized",
+            "blue.solid",
+            "blue.focusRing",
+            "blue.border",
+            "yellow.contrast",
+            "yellow.fg",
+            "yellow.subtle",
+            "yellow.muted",
+            "yellow.emphasized",
+            "yellow.solid",
+            "yellow.focusRing",
+            "yellow.border",
+            "teal.contrast",
+            "teal.fg",
+            "teal.subtle",
+            "teal.muted",
+            "teal.emphasized",
+            "teal.solid",
+            "teal.focusRing",
+            "teal.border",
+            "purple.contrast",
+            "purple.fg",
+            "purple.subtle",
+            "purple.muted",
+            "purple.emphasized",
+            "purple.solid",
+            "purple.focusRing",
+            "purple.border",
+            "pink.contrast",
+            "pink.fg",
+            "pink.subtle",
+            "pink.muted",
+            "pink.emphasized",
+            "pink.solid",
+            "pink.focusRing",
+            "pink.border",
+            "cyan.contrast",
+            "cyan.fg",
+            "cyan.subtle",
+            "cyan.muted",
+            "cyan.emphasized",
+            "cyan.solid",
+            "cyan.focusRing",
+            "cyan.border"
+          ],
+          "modes": [
+            "_light",
+            "_dark"
+          ],
+          "note": "Tailwind-style ramps (50–950). Semantic groups bg, fg, border plus one group per hue with the same seven roles (contrast, fg, subtle, muted, emphasized, solid, focusRing); the virtual \"colorPalette\" (default: gray) selects a hue per component."
+        },
+        "neutral": [
+          {
+            "name": "gray",
+            "steps": [
+              {
+                "name": "gray.50",
+                "value": "#fafafa",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.100",
+                "value": "#f4f4f5",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.200",
+                "value": "#e4e4e7",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.300",
+                "value": "#d4d4d8",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.400",
+                "value": "#a1a1aa",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.500",
+                "value": "#71717a",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.600",
+                "value": "#52525b",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.700",
+                "value": "#3f3f46",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.800",
+                "value": "#27272a",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.900",
+                "value": "#18181b",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "gray.950",
+                "value": "#111111",
+                "file": "dist/esm/theme/tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "bg semantic tokens",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "bg.DEFAULT",
+                "value": "#FFFFFF",
+                "alias": "{colors.white}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.subtle",
+                "value": "#fafafa",
+                "alias": "{colors.gray.50}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.muted",
+                "value": "#f4f4f5",
+                "alias": "{colors.gray.100}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.emphasized",
+                "value": "#e4e4e7",
+                "alias": "{colors.gray.200}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.inverted",
+                "value": "#09090B",
+                "alias": "{colors.black}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.panel",
+                "value": "#FFFFFF",
+                "alias": "{colors.white}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.error",
+                "value": "#fef2f2",
+                "alias": "{colors.red.50}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.warning",
+                "value": "#fff7ed",
+                "alias": "{colors.orange.50}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.success",
+                "value": "#f0fdf4",
+                "alias": "{colors.green.50}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.info",
+                "value": "#eff6ff",
+                "alias": "{colors.blue.50}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "bg semantic tokens",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "bg.DEFAULT",
+                "value": "#09090B",
+                "alias": "{colors.black}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.subtle",
+                "value": "#111111",
+                "alias": "{colors.gray.950}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.muted",
+                "value": "#18181b",
+                "alias": "{colors.gray.900}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.emphasized",
+                "value": "#27272a",
+                "alias": "{colors.gray.800}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.inverted",
+                "value": "#FFFFFF",
+                "alias": "{colors.white}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.panel",
+                "value": "#111111",
+                "alias": "{colors.gray.950}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.error",
+                "value": "#1f0808",
+                "alias": "{colors.red.950}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.warning",
+                "value": "#220a04",
+                "alias": "{colors.orange.950}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.success",
+                "value": "#03190c",
+                "alias": "{colors.green.950}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "bg.info",
+                "value": "#0c142e",
+                "alias": "{colors.blue.950}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "fg semantic tokens",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "fg.DEFAULT",
+                "value": "#09090B",
+                "alias": "{colors.black}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.muted",
+                "value": "#52525b",
+                "alias": "{colors.gray.600}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.subtle",
+                "value": "#a1a1aa",
+                "alias": "{colors.gray.400}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.inverted",
+                "value": "#fafafa",
+                "alias": "{colors.gray.50}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.error",
+                "value": "#ef4444",
+                "alias": "{colors.red.500}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.warning",
+                "value": "#ea580c",
+                "alias": "{colors.orange.600}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.success",
+                "value": "#16a34a",
+                "alias": "{colors.green.600}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.info",
+                "value": "#2563eb",
+                "alias": "{colors.blue.600}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "fg semantic tokens",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "fg.DEFAULT",
+                "value": "#fafafa",
+                "alias": "{colors.gray.50}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.muted",
+                "value": "#a1a1aa",
+                "alias": "{colors.gray.400}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.subtle",
+                "value": "#71717a",
+                "alias": "{colors.gray.500}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.inverted",
+                "value": "#09090B",
+                "alias": "{colors.black}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.error",
+                "value": "#f87171",
+                "alias": "{colors.red.400}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.warning",
+                "value": "#fdba74",
+                "alias": "{colors.orange.300}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.success",
+                "value": "#86efac",
+                "alias": "{colors.green.300}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "fg.info",
+                "value": "#a3cfff",
+                "alias": "{colors.blue.300}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "border semantic tokens",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "border.DEFAULT",
+                "value": "#e4e4e7",
+                "alias": "{colors.gray.200}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.muted",
+                "value": "#f4f4f5",
+                "alias": "{colors.gray.100}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.subtle",
+                "value": "#fafafa",
+                "alias": "{colors.gray.50}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.emphasized",
+                "value": "#d4d4d8",
+                "alias": "{colors.gray.300}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.inverted",
+                "value": "#27272a",
+                "alias": "{colors.gray.800}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.error",
+                "value": "#ef4444",
+                "alias": "{colors.red.500}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.warning",
+                "value": "#f97316",
+                "alias": "{colors.orange.500}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.success",
+                "value": "#22c55e",
+                "alias": "{colors.green.500}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.info",
+                "value": "#3b82f6",
+                "alias": "{colors.blue.500}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "border semantic tokens",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "border.DEFAULT",
+                "value": "#27272a",
+                "alias": "{colors.gray.800}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.muted",
+                "value": "#18181b",
+                "alias": "{colors.gray.900}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.subtle",
+                "value": "#111111",
+                "alias": "{colors.gray.950}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.emphasized",
+                "value": "#3f3f46",
+                "alias": "{colors.gray.700}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.inverted",
+                "value": "#e4e4e7",
+                "alias": "{colors.gray.200}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.error",
+                "value": "#f87171",
+                "alias": "{colors.red.400}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.warning",
+                "value": "#fb923c",
+                "alias": "{colors.orange.400}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.success",
+                "value": "#4ade80",
+                "alias": "{colors.green.400}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "border.info",
+                "value": "#60a5fa",
+                "alias": "{colors.blue.400}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "blue",
+            "steps": [
+              {
+                "name": "blue.50",
+                "value": "#eff6ff",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.100",
+                "value": "#dbeafe",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.200",
+                "value": "#bfdbfe",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.300",
+                "value": "#a3cfff",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.400",
+                "value": "#60a5fa",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.500",
+                "value": "#3b82f6",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.600",
+                "value": "#2563eb",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.700",
+                "value": "#173da6",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.800",
+                "value": "#1a3478",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.900",
+                "value": "#14204a",
+                "file": "dist/esm/theme/tokens/colors.js"
+              },
+              {
+                "name": "blue.950",
+                "value": "#0c142e",
+                "file": "dist/esm/theme/tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "gray semantic tokens",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "gray.contrast",
+                "value": "#FFFFFF",
+                "alias": "{colors.white}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.fg",
+                "value": "#27272a",
+                "alias": "{colors.gray.800}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.subtle",
+                "value": "#f4f4f5",
+                "alias": "{colors.gray.100}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.muted",
+                "value": "#e4e4e7",
+                "alias": "{colors.gray.200}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.emphasized",
+                "value": "#d4d4d8",
+                "alias": "{colors.gray.300}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.solid",
+                "value": "#18181b",
+                "alias": "{colors.gray.900}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.focusRing",
+                "value": "#a1a1aa",
+                "alias": "{colors.gray.400}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.border",
+                "value": "#e4e4e7",
+                "alias": "{colors.gray.200}",
+                "mode": "light",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "gray semantic tokens",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "gray.contrast",
+                "value": "#09090B",
+                "alias": "{colors.black}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.fg",
+                "value": "#e4e4e7",
+                "alias": "{colors.gray.200}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.subtle",
+                "value": "#18181b",
+                "alias": "{colors.gray.900}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.muted",
+                "value": "#27272a",
+                "alias": "{colors.gray.800}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.emphasized",
+                "value": "#3f3f46",
+                "alias": "{colors.gray.700}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.solid",
+                "value": "#FFFFFF",
+                "alias": "{colors.white}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.focusRing",
+                "value": "#a1a1aa",
+                "alias": "{colors.gray.400}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              },
+              {
+                "name": "gray.border",
+                "value": "#27272a",
+                "alias": "{colors.gray.800}",
+                "mode": "dark",
+                "file": "dist/esm/theme/semantic-tokens/colors.js"
+              }
+            ]
+          }
+        ],
+        "note": "The default colorPalette is gray: an un-themed primary button is near-black in light mode. The blue ramp is recorded as the usual brand candidate."
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@chakra-ui/react@3.38.0 (^dist\\/esm\\/theme\\/)",
+            "files": 108
+          },
+          {
+            "package": "@chakra-ui/react@3.38.0 (^dist\\/esm\\/styled-system\\/)",
+            "files": 51
+          },
+          {
+            "package": "@chakra-ui/react@3.38.0 (^dist\\/esm\\/components\\/(locale|theme)\\/)",
+            "files": 1
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 9,
+            "files": 5,
+            "topFiles": [
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/drawer.js",
+                "hits": 4
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/marquee.js",
+                "hits": 2
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/breadcrumb.js",
+                "hits": 1
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/rating-group.js",
+                "hits": 1
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/switch.js",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/breadcrumb.js",
+                "line": 35,
+                "text": "_rtl: {"
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/drawer.js",
+                "line": 142,
+                "text": "_rtl: \"slide-from-right-full, fade-in\""
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/marquee.js",
+                "line": 63,
+                "text": "_rtl: {"
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/rating-group.js",
+                "line": 29,
+                "text": "\"--clip-path\": { base: \"inset(0 50% 0 0)\", _rtl: \"inset(0 0 0 50%)\" },"
+              }
+            ]
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 2,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/code-block.js",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/code-block.js",
+                "line": 116,
+                "text": "\"&[data-has-line-numbers][data-plaintext]\": {"
+              }
+            ]
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 38,
+            "files": 16,
+            "topFiles": [
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/tree-view.js",
+                "hits": 11
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/splitter.js",
+                "hits": 3
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/switch.js",
+                "hits": 3
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/layer-styles.js",
+                "hits": 2
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/card.js",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/layer-styles.js",
+                "line": 83,
+                "text": "insetInlineStart: \"var(--indicator-offset-x, 0)\","
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/card.js",
+                "line": 27,
+                "text": "paddingInline: \"var(--card-padding)\","
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/code-block.js",
+                "line": 117,
+                "text": "paddingInlineStart: \"calc(var(--code-block-line-number-width) + var(--code-block-line-number-margin) + var(--code-block-padding))\""
+              },
+              {
+                "file": "@chakra-ui/react:dist/esm/theme/recipes/drawer.js",
+                "line": 12,
+                "text": "insetInlineStart: 0,"
+              }
+            ]
+          }
+        ],
+        "findings": [
+          "No token for direction, language or script. Fonts are heading/body/mono with Inter first; letter-spacing tokens are Latin tracking values and textStyles 4xl and above apply −0.025em.",
+          "Direction is handled by the style engine, not by tokens: recipes are written with logical style props (px, ms, me, insetStart) and _rtl/_ltr conditions (9 lines mentioning rtl in the scanned theme and styled-system files).",
+          "Line heights for text styles are absolute rem values per size (sm 14px on 20px, md 16px on 24px, xs 12px on 16px) — the Tailwind pairs — with no language variation.",
+          "Density: no mode. Buttons and inputs have seven sizes (2xs…2xl) from 24–28px to 64px; the default is md = 40px."
+        ]
+      }
+    },
+    "gaps": [
+      "No border-width scale beyond literal 1px in recipes; focus-ring width is not a token.",
+      "No density mode, touch mode or touch-target token."
+    ]
+  }
+}

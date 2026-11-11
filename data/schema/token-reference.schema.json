@@ -64,16 +64,625 @@
           "additionalProperties": false
         },
         "scales": {
-          "type": "object"
+          "type": "object",
+          "description": "Common comparable shape. Every key is optional; a missing key means the system does not publish that scale (see data.gaps).",
+          "additionalProperties": false,
+          "properties": {
+            "controls": {
+              "type": "object",
+              "properties": {
+                "densityModes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "mechanism": {
+                        "enum": [
+                          "single",
+                          "size-prop",
+                          "algorithm",
+                          "density-scale",
+                          "platform-scale",
+                          "scaling-factor",
+                          "spacing-variant",
+                          "layout-token"
+                        ]
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "file": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "mechanism"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "sizes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/controlSize"
+                  }
+                },
+                "touchTarget": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sizes"
+              ],
+              "additionalProperties": false
+            },
+            "spacing": {
+              "$ref": "#/$defs/scale"
+            },
+            "radius": {
+              "$ref": "#/$defs/scale"
+            },
+            "borderWidth": {
+              "$ref": "#/$defs/scale"
+            },
+            "focusRing": {
+              "$ref": "#/$defs/scale"
+            },
+            "typography": {
+              "type": "object",
+              "properties": {
+                "rootFontSizePx": {
+                  "type": "number"
+                },
+                "fontStacks": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "steps": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/typeStep"
+                  }
+                },
+                "fontSizes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "lineHeights": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "fontWeights": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "letterSpacings": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "breakpoints": {
+              "$ref": "#/$defs/scale"
+            },
+            "containers": {
+              "$ref": "#/$defs/scale"
+            },
+            "zIndex": {
+              "$ref": "#/$defs/scale"
+            },
+            "elevation": {
+              "$ref": "#/$defs/scale"
+            },
+            "motion": {
+              "type": "object",
+              "properties": {
+                "durations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "easings": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "color": {
+              "type": "object",
+              "properties": {
+                "structure": {
+                  "type": "object",
+                  "properties": {
+                    "ramps": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "steps": {
+                            "type": "integer"
+                          },
+                          "stepNames": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "name"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "semanticRoles": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "modes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "algorithm": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "inputs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "outputs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "files": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "mappings": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/$defs/token"
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "neutral": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/ramp"
+                  }
+                },
+                "primary": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/ramp"
+                  }
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "i18n": {
+              "type": "object",
+              "description": "What the package ships for direction, language, script and density, measured by a text scan.",
+              "properties": {
+                "scanned": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "package": {
+                        "type": "string"
+                      },
+                      "files": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "package",
+                      "files"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "patterns": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/scanPattern"
+                  }
+                },
+                "tokens": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/token"
+                  }
+                },
+                "findings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "extra": {
+              "type": "object",
+              "description": "System-specific scales with no common shape."
+            }
+          }
         },
         "notes": {
           "type": "string",
           "minLength": 1
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Scales the system does not publish or the extractor could not read."
         }
       },
       "required": [
         "system",
         "scales"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "token": {
+      "type": "object",
+      "description": "One published token. `value` is the upstream value as written; px/ms/ratio are unit conversions made by the extractor (rem at 16px root).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ]
+        },
+        "px": {
+          "type": "number"
+        },
+        "ms": {
+          "type": "number"
+        },
+        "ratio": {
+          "type": "number"
+        },
+        "alias": {
+          "type": "string",
+          "description": "Upstream token this one points to."
+        },
+        "mode": {
+          "type": "string",
+          "description": "Theme, density or platform mode the value belongs to."
+        },
+        "file": {
+          "type": "string",
+          "description": "File inside the source package the value was read from."
+        },
+        "derived": {
+          "type": "boolean",
+          "description": "true when computed by the extractor from extracted values (formula says how) rather than read literally."
+        },
+        "formula": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "scale": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/token"
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "steps"
+      ],
+      "additionalProperties": false
+    },
+    "controlSize": {
+      "type": "object",
+      "description": "One control size in one density mode. Heights are border-box px.",
+      "properties": {
+        "component": {
+          "type": "string",
+          "description": "control (system-wide), button, input, select, …"
+        },
+        "size": {
+          "type": "string",
+          "description": "Upstream size name."
+        },
+        "mode": {
+          "type": "string",
+          "description": "Id of a densityModes entry; \"default\" when the system has one mode."
+        },
+        "heightPx": {
+          "type": "number"
+        },
+        "minHeightPx": {
+          "type": "number"
+        },
+        "paddingInlinePx": {
+          "type": "number"
+        },
+        "paddingBlockPx": {
+          "type": "number"
+        },
+        "fontSizePx": {
+          "type": "number"
+        },
+        "lineHeightPx": {
+          "type": "number"
+        },
+        "lineHeightRatio": {
+          "type": "number"
+        },
+        "radiusPx": {
+          "type": "number"
+        },
+        "gapPx": {
+          "type": "number"
+        },
+        "iconSizePx": {
+          "type": "number"
+        },
+        "touchTargetPx": {
+          "type": "number"
+        },
+        "heightSource": {
+          "type": "string",
+          "description": "Token or declaration the height came from."
+        },
+        "derived": {
+          "type": "boolean"
+        },
+        "formula": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "component",
+        "size",
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "typeStep": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "set": {
+          "type": "string",
+          "description": "Type set or mode (productive/expressive, desktop/mobile…)."
+        },
+        "fontSize": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "fontSizePx": {
+          "type": "number"
+        },
+        "lineHeight": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "lineHeightPx": {
+          "type": "number"
+        },
+        "lineHeightRatio": {
+          "type": "number"
+        },
+        "fontWeight": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "letterSpacing": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "derived": {
+          "type": "boolean"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "ramp": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/token"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "steps"
+      ],
+      "additionalProperties": false
+    },
+    "scanPattern": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "regex": {
+          "type": "string"
+        },
+        "hits": {
+          "type": "integer"
+        },
+        "files": {
+          "type": "integer"
+        },
+        "topFiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string"
+              },
+              "hits": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "file",
+              "hits"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "samples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string"
+              },
+              "line": {
+                "type": "integer"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "file",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "hits",
+        "files"
       ],
       "additionalProperties": false
     }

@@ -1,0 +1,1262 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "mantine",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@mantine/core",
+        "url": "https://www.npmjs.com/package/@mantine/core/v/9.8.0",
+        "version": "9.8.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs, esm/core/MantineProvider/default-colors.mjs, esm/core/MantineProvider/default-theme.mjs, styles.css, styles/Button.css, styles/Input.css, styles/global.css"
+      }
+    ],
+    "script": "tools/extract/tokens/mantine.mjs"
+  },
+  "data": {
+    "system": {
+      "name": "Mantine",
+      "package": "@mantine/core",
+      "version": "9.8.0",
+      "license": "MIT",
+      "url": "https://mantine.dev"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "default",
+            "name": "size xs…xl",
+            "mechanism": "size-prop",
+            "description": "Default component size is sm (36px).",
+            "file": "styles/Button.css"
+          },
+          {
+            "id": "compact",
+            "name": "size compact-xs…compact-xl (Button only)",
+            "mechanism": "size-prop",
+            "description": "Shorter and narrower buttons with the font size of the matching regular size.",
+            "file": "styles/Button.css"
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "default",
+            "heightPx": 30,
+            "paddingInlinePx": 14,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 12,
+            "heightSource": "--button-height-xs",
+            "file": "styles/Button.css",
+            "note": "label line-height is 1 (single line, centred by flex)"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "compact",
+            "heightPx": 22,
+            "paddingInlinePx": 7,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 12,
+            "heightSource": "--button-height-compact-xs",
+            "file": "styles/Button.css"
+          },
+          {
+            "component": "input",
+            "size": "xs",
+            "mode": "default",
+            "heightPx": 30,
+            "paddingInlinePx": 10,
+            "fontSizePx": 12,
+            "lineHeightPx": 28,
+            "lineHeightRatio": 2.3333,
+            "heightSource": "--input-height-xs; --input-line-height = height − 2px; --input-padding = height / 3",
+            "derived": true,
+            "formula": "line-height = input height − 0.125rem; padding-inline = input height / 3",
+            "file": "styles/Input.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "default",
+            "heightPx": 36,
+            "paddingInlinePx": 18,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 14,
+            "heightSource": "--button-height-sm",
+            "file": "styles/Button.css",
+            "note": "label line-height is 1 (single line, centred by flex)"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "compact",
+            "heightPx": 26,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 14,
+            "heightSource": "--button-height-compact-sm",
+            "file": "styles/Button.css"
+          },
+          {
+            "component": "input",
+            "size": "sm",
+            "mode": "default",
+            "heightPx": 36,
+            "paddingInlinePx": 12,
+            "fontSizePx": 14,
+            "lineHeightPx": 34,
+            "lineHeightRatio": 2.4286,
+            "heightSource": "--input-height-sm; --input-line-height = height − 2px; --input-padding = height / 3",
+            "derived": true,
+            "formula": "line-height = input height − 0.125rem; padding-inline = input height / 3",
+            "file": "styles/Input.css"
+          },
+          {
+            "component": "button",
+            "size": "md",
+            "mode": "default",
+            "heightPx": 42,
+            "paddingInlinePx": 22,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 16,
+            "heightSource": "--button-height-md",
+            "file": "styles/Button.css",
+            "note": "label line-height is 1 (single line, centred by flex)"
+          },
+          {
+            "component": "button",
+            "size": "md",
+            "mode": "compact",
+            "heightPx": 30,
+            "paddingInlinePx": 10,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 16,
+            "heightSource": "--button-height-compact-md",
+            "file": "styles/Button.css"
+          },
+          {
+            "component": "input",
+            "size": "md",
+            "mode": "default",
+            "heightPx": 42,
+            "paddingInlinePx": 14,
+            "fontSizePx": 16,
+            "lineHeightPx": 40,
+            "lineHeightRatio": 2.5,
+            "heightSource": "--input-height-md; --input-line-height = height − 2px; --input-padding = height / 3",
+            "derived": true,
+            "formula": "line-height = input height − 0.125rem; padding-inline = input height / 3",
+            "file": "styles/Input.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "default",
+            "heightPx": 50,
+            "paddingInlinePx": 26,
+            "fontSizePx": 18,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 18,
+            "heightSource": "--button-height-lg",
+            "file": "styles/Button.css",
+            "note": "label line-height is 1 (single line, centred by flex)"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "compact",
+            "heightPx": 34,
+            "paddingInlinePx": 12,
+            "fontSizePx": 18,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 18,
+            "heightSource": "--button-height-compact-lg",
+            "file": "styles/Button.css"
+          },
+          {
+            "component": "input",
+            "size": "lg",
+            "mode": "default",
+            "heightPx": 50,
+            "paddingInlinePx": 16.67,
+            "fontSizePx": 18,
+            "lineHeightPx": 48,
+            "lineHeightRatio": 2.6667,
+            "heightSource": "--input-height-lg; --input-line-height = height − 2px; --input-padding = height / 3",
+            "derived": true,
+            "formula": "line-height = input height − 0.125rem; padding-inline = input height / 3",
+            "file": "styles/Input.css"
+          },
+          {
+            "component": "button",
+            "size": "xl",
+            "mode": "default",
+            "heightPx": 60,
+            "paddingInlinePx": 32,
+            "fontSizePx": 20,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 20,
+            "heightSource": "--button-height-xl",
+            "file": "styles/Button.css",
+            "note": "label line-height is 1 (single line, centred by flex)"
+          },
+          {
+            "component": "button",
+            "size": "xl",
+            "mode": "compact",
+            "heightPx": 40,
+            "paddingInlinePx": 14,
+            "fontSizePx": 20,
+            "lineHeightRatio": 1,
+            "lineHeightPx": 20,
+            "heightSource": "--button-height-compact-xl",
+            "file": "styles/Button.css"
+          },
+          {
+            "component": "input",
+            "size": "xl",
+            "mode": "default",
+            "heightPx": 60,
+            "paddingInlinePx": 20,
+            "fontSizePx": 20,
+            "lineHeightPx": 58,
+            "lineHeightRatio": 2.9,
+            "heightSource": "--input-height-xl; --input-line-height = height − 2px; --input-padding = height / 3",
+            "derived": true,
+            "formula": "line-height = input height − 0.125rem; padding-inline = input height / 3",
+            "file": "styles/Input.css"
+          }
+        ],
+        "touchTarget": []
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "spacing.xs",
+            "value": "rem(10)",
+            "px": 10,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "spacing.sm",
+            "value": "rem(12)",
+            "px": 12,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "spacing.md",
+            "value": "rem(16)",
+            "px": 16,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "spacing.lg",
+            "value": "rem(20)",
+            "px": 20,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "spacing.xl",
+            "value": "rem(32)",
+            "px": 32,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "radius.xs",
+            "value": "rem(2)",
+            "px": 2,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "radius.sm",
+            "value": "rem(4)",
+            "px": 4,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "radius.md",
+            "value": "rem(8)",
+            "px": 8,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "radius.lg",
+            "value": "rem(16)",
+            "px": 16,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "radius.xl",
+            "value": "rem(32)",
+            "px": 32,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          }
+        ],
+        "note": "defaultRadius: md"
+      },
+      "focusRing": {
+        "steps": [
+          {
+            "name": "outline width",
+            "value": "2px",
+            "px": 2,
+            "file": "styles/global.css"
+          },
+          {
+            "name": "outline-offset",
+            "value": "calc(0.125rem * var(--mantine-scale))",
+            "px": 2,
+            "file": "styles/global.css"
+          }
+        ],
+        "note": "theme.focusRing: auto (auto = :focus-visible)"
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "fontFamily",
+            "value": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "fontFamilyMonospace",
+            "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "headings.fontFamily",
+            "value": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          }
+        ],
+        "steps": [
+          {
+            "name": "text xs",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.4,
+            "lineHeightRatio": 1.4,
+            "lineHeightPx": 16.8,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "text sm",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.45,
+            "lineHeightRatio": 1.45,
+            "lineHeightPx": 20.3,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "text md",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.55,
+            "lineHeightRatio": 1.55,
+            "lineHeightPx": 24.8,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "text lg",
+            "fontSize": "1.125rem",
+            "fontSizePx": 18,
+            "lineHeight": 1.6,
+            "lineHeightRatio": 1.6,
+            "lineHeightPx": 28.8,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "text xl",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.65,
+            "lineHeightRatio": 1.65,
+            "lineHeightPx": 33,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "h1",
+            "fontSize": "2.125rem",
+            "fontSizePx": 34,
+            "lineHeight": 1.3,
+            "lineHeightRatio": 1.3,
+            "lineHeightPx": 44.2,
+            "fontWeight": 700,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "h2",
+            "fontSize": "1.625rem",
+            "fontSizePx": 26,
+            "lineHeight": 1.35,
+            "lineHeightRatio": 1.35,
+            "lineHeightPx": 35.1,
+            "fontWeight": 700,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "h3",
+            "fontSize": "1.375rem",
+            "fontSizePx": 22,
+            "lineHeight": 1.4,
+            "lineHeightRatio": 1.4,
+            "lineHeightPx": 30.8,
+            "fontWeight": 700,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "h4",
+            "fontSize": "1.125rem",
+            "fontSizePx": 18,
+            "lineHeight": 1.45,
+            "lineHeightRatio": 1.45,
+            "lineHeightPx": 26.1,
+            "fontWeight": 700,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "h5",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 700,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "h6",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 21,
+            "fontWeight": 700,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "regular",
+            "value": 400,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "medium",
+            "value": 600,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "bold",
+            "value": 700,
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          }
+        ]
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "xs",
+            "value": "36em",
+            "px": 576,
+            "file": "esm/core/MantineProvider/default-theme.mjs",
+            "note": "em"
+          },
+          {
+            "name": "sm",
+            "value": "48em",
+            "px": 768,
+            "file": "esm/core/MantineProvider/default-theme.mjs",
+            "note": "em"
+          },
+          {
+            "name": "md",
+            "value": "62em",
+            "px": 992,
+            "file": "esm/core/MantineProvider/default-theme.mjs",
+            "note": "em"
+          },
+          {
+            "name": "lg",
+            "value": "75em",
+            "px": 1200,
+            "file": "esm/core/MantineProvider/default-theme.mjs",
+            "note": "em"
+          },
+          {
+            "name": "xl",
+            "value": "88em",
+            "px": 1408,
+            "file": "esm/core/MantineProvider/default-theme.mjs",
+            "note": "em"
+          }
+        ]
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "--mantine-z-index-app",
+            "value": 100,
+            "file": "styles.css"
+          },
+          {
+            "name": "--mantine-z-index-modal",
+            "value": 200,
+            "file": "styles.css"
+          },
+          {
+            "name": "--mantine-z-index-popover",
+            "value": 300,
+            "file": "styles.css"
+          },
+          {
+            "name": "--mantine-z-index-overlay",
+            "value": 400,
+            "file": "styles.css"
+          },
+          {
+            "name": "--mantine-z-index-max",
+            "value": 9999,
+            "file": "styles.css"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "shadows.xs",
+            "value": "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.1)",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "shadows.sm",
+            "value": "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 0.625rem 0.9375rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.4375rem 0.4375rem -0.3125rem",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "shadows.md",
+            "value": "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.25rem 1.5625rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.625rem 0.625rem -0.3125rem",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "shadows.lg",
+            "value": "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.75rem 1.4375rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 0.75rem 0.75rem -0.4375rem",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          },
+          {
+            "name": "shadows.xl",
+            "value": "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 2.25rem 1.75rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 1.0625rem 1.0625rem -0.4375rem",
+            "file": "esm/core/MantineProvider/default-theme.mjs"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "dark",
+              "steps": 10
+            },
+            {
+              "name": "gray",
+              "steps": 10
+            },
+            {
+              "name": "red",
+              "steps": 10
+            },
+            {
+              "name": "pink",
+              "steps": 10
+            },
+            {
+              "name": "grape",
+              "steps": 10
+            },
+            {
+              "name": "violet",
+              "steps": 10
+            },
+            {
+              "name": "indigo",
+              "steps": 10
+            },
+            {
+              "name": "blue",
+              "steps": 10
+            },
+            {
+              "name": "cyan",
+              "steps": 10
+            },
+            {
+              "name": "teal",
+              "steps": 10
+            },
+            {
+              "name": "green",
+              "steps": 10
+            },
+            {
+              "name": "lime",
+              "steps": 10
+            },
+            {
+              "name": "yellow",
+              "steps": 10
+            },
+            {
+              "name": "orange",
+              "steps": 10
+            }
+          ],
+          "semanticRoles": [
+            "--mantine-color-white",
+            "--mantine-color-black",
+            "--mantine-color-scheme",
+            "--mantine-color-bright",
+            "--mantine-color-text",
+            "--mantine-color-body",
+            "--mantine-color-error",
+            "--mantine-color-success",
+            "--mantine-color-placeholder",
+            "--mantine-color-anchor",
+            "--mantine-color-default",
+            "--mantine-color-default-hover",
+            "--mantine-color-default-color",
+            "--mantine-color-default-border",
+            "--mantine-color-dimmed",
+            "--mantine-color-disabled",
+            "--mantine-color-disabled-color",
+            "--mantine-color-disabled-border"
+          ],
+          "modes": [
+            "light",
+            "dark"
+          ],
+          "note": "10-shade ramps (0–9). primaryColor: blue; primaryShade: 6 in light, 8 in dark. Each ramp yields filled / light / outline variants through CSS variables; the \"dark\" ramp is the dark-scheme neutral."
+        },
+        "algorithm": {
+          "name": "variantColorResolver + generateColors (optional)",
+          "inputs": [
+            "theme.colors[name] (10 shades)",
+            "primaryShade",
+            "variant (filled, light, outline, subtle, …)",
+            "autoContrast / luminanceThreshold"
+          ],
+          "outputs": [
+            "background, hover, color, border per variant"
+          ],
+          "description": "Shades are static arrays; variants pick shades by index (filled = primaryShade, hover = the next darker shade) or mix with transparency. No ramp is generated unless the app calls a generator.",
+          "files": [
+            "esm/core/MantineProvider/color-functions/default-variant-colors-resolver/default-variant-colors-resolver.mjs"
+          ]
+        },
+        "neutral": [
+          {
+            "name": "gray",
+            "steps": [
+              {
+                "name": "gray-0",
+                "value": "#f8f9fa",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-1",
+                "value": "#f1f3f5",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-2",
+                "value": "#e9ecef",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-3",
+                "value": "#dee2e6",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-4",
+                "value": "#ced4da",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-5",
+                "value": "#adb5bd",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-6",
+                "value": "#868e96",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-7",
+                "value": "#495057",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-8",
+                "value": "#343a40",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "gray-9",
+                "value": "#212529",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              }
+            ]
+          },
+          {
+            "name": "dark",
+            "steps": [
+              {
+                "name": "dark-0",
+                "value": "#C9C9C9",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-1",
+                "value": "#b8b8b8",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-2",
+                "value": "#828282",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-3",
+                "value": "#696969",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-4",
+                "value": "#424242",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-5",
+                "value": "#3b3b3b",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-6",
+                "value": "#2e2e2e",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-7",
+                "value": "#242424",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-8",
+                "value": "#1f1f1f",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "dark-9",
+                "value": "#141414",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              }
+            ]
+          },
+          {
+            "name": "scheme variables",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "--mantine-color-text",
+                "value": "theme.black",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-body",
+                "value": "theme.white",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-error",
+                "value": "var(--mantine-color-red-6)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-placeholder",
+                "value": "var(--mantine-color-gray-5)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-anchor",
+                "value": "`var(--mantine-color-${theme.primaryColor}-${lightPrimaryShade})`",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default",
+                "value": "var(--mantine-color-white)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default-hover",
+                "value": "var(--mantine-color-gray-0)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default-color",
+                "value": "var(--mantine-color-black)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default-border",
+                "value": "var(--mantine-color-gray-4)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-dimmed",
+                "value": "var(--mantine-color-gray-6)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-disabled",
+                "value": "var(--mantine-color-gray-2)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-disabled-color",
+                "value": "var(--mantine-color-gray-5)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-disabled-border",
+                "value": "var(--mantine-color-gray-3)",
+                "mode": "light",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              }
+            ]
+          },
+          {
+            "name": "scheme variables",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "--mantine-color-text",
+                "value": "var(--mantine-color-dark-0)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-body",
+                "value": "var(--mantine-color-dark-7)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-error",
+                "value": "var(--mantine-color-red-8)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-placeholder",
+                "value": "var(--mantine-color-dark-3)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-anchor",
+                "value": "`var(--mantine-color-${theme.primaryColor}-4)`",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default",
+                "value": "var(--mantine-color-dark-6)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default-hover",
+                "value": "var(--mantine-color-dark-5)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default-color",
+                "value": "var(--mantine-color-white)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-default-border",
+                "value": "var(--mantine-color-dark-4)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-dimmed",
+                "value": "var(--mantine-color-dark-2)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-disabled",
+                "value": "var(--mantine-color-dark-6)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-disabled-color",
+                "value": "var(--mantine-color-dark-3)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              },
+              {
+                "name": "--mantine-color-disabled-border",
+                "value": "var(--mantine-color-dark-4)",
+                "mode": "dark",
+                "file": "esm/core/MantineProvider/MantineCssVariables/default-css-variables-resolver.mjs"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "blue",
+            "steps": [
+              {
+                "name": "blue-0",
+                "value": "#e7f5ff",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-1",
+                "value": "#d0ebff",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-2",
+                "value": "#a5d8ff",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-3",
+                "value": "#74c0fc",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-4",
+                "value": "#4dabf7",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-5",
+                "value": "#339af0",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-6",
+                "value": "#228be6",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-7",
+                "value": "#1c7ed6",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-8",
+                "value": "#1971c2",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              },
+              {
+                "name": "blue-9",
+                "value": "#1864ab",
+                "file": "esm/core/MantineProvider/default-colors.mjs"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@mantine/core@9.8.0 (^esm\\/core\\/MantineProvider\\/)",
+            "files": 44
+          },
+          {
+            "package": "@mantine/core@9.8.0 (^esm\\/core\\/DirectionProvider\\/)",
+            "files": 1
+          },
+          {
+            "package": "@mantine/core@9.8.0 (^styles\\/[A-Za-z]+\\.css$)",
+            "files": 106
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 22,
+            "files": 11,
+            "topFiles": [
+              {
+                "file": "@mantine/core:styles/AppShell.css",
+                "hits": 4
+              },
+              {
+                "file": "@mantine/core:esm/core/DirectionProvider/DirectionProvider.mjs",
+                "hits": 3
+              },
+              {
+                "file": "@mantine/core:styles/Cascader.css",
+                "hits": 3
+              },
+              {
+                "file": "@mantine/core:styles/Slider.css",
+                "hits": 3
+              },
+              {
+                "file": "@mantine/core:styles/Tabs.css",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mantine/core:esm/core/DirectionProvider/DirectionProvider.mjs",
+                "line": 20,
+                "text": "leDirection = () => setDirection(dir === \"ltr\" ? \"rtl\" : \"ltr\");"
+              },
+              {
+                "file": "@mantine/core:styles/AppShell.css",
+                "line": 76,
+                "text": ":where([dir=\"rtl\"]) .m_45252eee {"
+              },
+              {
+                "file": "@mantine/core:styles/Cascader.css",
+                "line": 85,
+                "text": ":where([dir=\"rtl\"]) .m_6b93b90 > svg {"
+              },
+              {
+                "file": "@mantine/core:styles/Input.css",
+                "line": 158,
+                "text": ":where([dir=\"rtl\"]) .m_6c018570 {"
+              }
+            ]
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 17,
+            "files": 10,
+            "topFiles": [
+              {
+                "file": "@mantine/core:styles/Cascader.css",
+                "hits": 3
+              },
+              {
+                "file": "@mantine/core:styles/Slider.css",
+                "hits": 3
+              },
+              {
+                "file": "@mantine/core:styles/AppShell.css",
+                "hits": 2
+              },
+              {
+                "file": "@mantine/core:styles/Input.css",
+                "hits": 2
+              },
+              {
+                "file": "@mantine/core:styles/Tabs.css",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mantine/core:styles/AppShell.css",
+                "line": 76,
+                "text": ":where([dir=\"rtl\"]) .m_45252eee {"
+              },
+              {
+                "file": "@mantine/core:styles/Cascader.css",
+                "line": 85,
+                "text": ":where([dir=\"rtl\"]) .m_6b93b90 > svg {"
+              },
+              {
+                "file": "@mantine/core:styles/Input.css",
+                "line": 158,
+                "text": ":where([dir=\"rtl\"]) .m_6c018570 {"
+              },
+              {
+                "file": "@mantine/core:styles/Menu.css",
+                "line": 117,
+                "text": ":where([dir=\"rtl\"]) .m_b85b0bed {"
+              }
+            ]
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 1,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "@mantine/core:styles/Kbd.css",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mantine/core:styles/Kbd.css",
+                "line": 16,
+                "text": "unicode-bidi: embed;"
+              }
+            ]
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 280,
+            "files": 55,
+            "topFiles": [
+              {
+                "file": "@mantine/core:styles/Timeline.css",
+                "hits": 27
+              },
+              {
+                "file": "@mantine/core:styles/Tabs.css",
+                "hits": 21
+              },
+              {
+                "file": "@mantine/core:styles/AppShell.css",
+                "hits": 18
+              },
+              {
+                "file": "@mantine/core:styles/ScrollArea.css",
+                "hits": 18
+              },
+              {
+                "file": "@mantine/core:styles/Input.css",
+                "hits": 16
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mantine/core:styles/Accordion.css",
+                "line": 25,
+                "text": "padding-inline: var(--mantine-spacing-md);"
+              },
+              {
+                "file": "@mantine/core:styles/ActionBar.css",
+                "line": 6,
+                "text": "margin-inline: auto;"
+              },
+              {
+                "file": "@mantine/core:styles/ActionIcon.css",
+                "line": 104,
+                "text": "border-inline-end-width: calc(var(--ai-border-width) / 2);"
+              },
+              {
+                "file": "@mantine/core:styles/Affix.css",
+                "line": 4,
+                "text": "inset-inline-start: var(--affix-left);"
+              }
+            ]
+          }
+        ],
+        "findings": [
+          "The default theme has no direction, language or script field: one Latin system font stack for text and headings, five body line heights (1.4–1.65) and Latin heading line heights.",
+          "Direction: a DirectionProvider sets dir on <html>, and component CSS carries explicit [dir=\"rtl\"] overrides (17 matching lines in styles/*.css) alongside logical properties (280 lines).",
+          "Density: Button has a parallel compact-xs…compact-xl size family (md 42px → compact-md 30px, same font size); inputs have no compact family. A global --mantine-scale multiplier scales every rem value.",
+          "Button label line-height is 1 and input line-height equals input height − 2px, so vertical room for Arabic marks depends only on control height, not on a text line-height token."
+        ]
+      },
+      "extra": {
+        "scale": 1,
+        "inputPaddingY": {
+          "xs": 4.5,
+          "sm": 5.5,
+          "md": 7,
+          "lg": 9.5,
+          "xl": 13
+        }
+      }
+    },
+    "gaps": [
+      "No motion duration/easing tokens and no border-width scale.",
+      "No container tokens in the theme (Container sizes are component variables).",
+      "No touch-target token or touch mode; compact sizes exist for Button only."
+    ]
+  }
+}

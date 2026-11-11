@@ -1,0 +1,1700 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "open-props",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "open-props",
+        "url": "https://www.npmjs.com/package/open-props/v/1.7.23",
+        "version": "1.7.23",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "buttons.min.css, durations.min.css, open-props.min.css, src/props.media.css"
+      }
+    ],
+    "script": "tools/extract/tokens/open-props.mjs"
+  },
+  "data": {
+    "system": {
+      "name": "Open Props",
+      "package": "open-props",
+      "version": "1.7.23",
+      "license": "MIT",
+      "url": "https://open-props.style"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [],
+        "sizes": [],
+        "touchTarget": [],
+        "note": "No control heights: buttons.min.css pads by font-relative units and sets no height."
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "size-000",
+            "value": "-0.5rem",
+            "px": -8,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-00",
+            "value": "-0.25rem",
+            "px": -4,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-1",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-2",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-3",
+            "value": "1rem",
+            "px": 16,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-4",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-5",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-6",
+            "value": "1.75rem",
+            "px": 28,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-7",
+            "value": "2rem",
+            "px": 32,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-8",
+            "value": "3rem",
+            "px": 48,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-9",
+            "value": "4rem",
+            "px": 64,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-10",
+            "value": "5rem",
+            "px": 80,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-11",
+            "value": "7.5rem",
+            "px": 120,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-12",
+            "value": "10rem",
+            "px": 160,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-13",
+            "value": "15rem",
+            "px": 240,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-14",
+            "value": "20rem",
+            "px": 320,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-15",
+            "value": "30rem",
+            "px": 480,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-000",
+            "value": "-8px",
+            "px": -8,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-00",
+            "value": "-4px",
+            "px": -4,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-1",
+            "value": "4px",
+            "px": 4,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-2",
+            "value": "8px",
+            "px": 8,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-3",
+            "value": "16px",
+            "px": 16,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-4",
+            "value": "20px",
+            "px": 20,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-5",
+            "value": "24px",
+            "px": 24,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-6",
+            "value": "28px",
+            "px": 28,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-7",
+            "value": "32px",
+            "px": 32,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-8",
+            "value": "48px",
+            "px": 48,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-9",
+            "value": "64px",
+            "px": 64,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-10",
+            "value": "80px",
+            "px": 80,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-11",
+            "value": "120px",
+            "px": 120,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-12",
+            "value": "160px",
+            "px": 160,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-13",
+            "value": "240px",
+            "px": 240,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-14",
+            "value": "320px",
+            "px": 320,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-px-15",
+            "value": "480px",
+            "px": 480,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-1",
+            "value": "max(0.5rem,min(1vw,1rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-2",
+            "value": "max(1rem,min(2vw,1.5rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-3",
+            "value": "max(1.5rem,min(3vw,2rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-4",
+            "value": "max(2rem,min(4vw,3rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-5",
+            "value": "max(4rem,min(5vw,5rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-6",
+            "value": "max(5rem,min(7vw,7.5rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-7",
+            "value": "max(7.5rem,min(10vw,10rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-8",
+            "value": "max(10rem,min(20vw,15rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-9",
+            "value": "max(15rem,min(30vw,20rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-fluid-10",
+            "value": "max(20rem,min(40vw,30rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-000",
+            "value": "-0.5ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-00",
+            "value": "-0.25ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-1",
+            "value": "0.25ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-2",
+            "value": "0.5ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-3",
+            "value": "1ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-4",
+            "value": "1.25ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-5",
+            "value": "1.5ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-6",
+            "value": "1.75ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-7",
+            "value": "2ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-8",
+            "value": "3ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-9",
+            "value": "4ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-10",
+            "value": "5ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-11",
+            "value": "7.5ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-12",
+            "value": "10ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-13",
+            "value": "15ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-14",
+            "value": "20ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-relative-15",
+            "value": "30ch",
+            "file": "open-props.min.css"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "radius-1",
+            "value": "2px",
+            "px": 2,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "radius-2",
+            "value": "5px",
+            "px": 5,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "radius-3",
+            "value": "1rem",
+            "px": 16,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "radius-4",
+            "value": "2rem",
+            "px": 32,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "radius-5",
+            "value": "4rem",
+            "px": 64,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "radius-6",
+            "value": "8rem",
+            "px": 128,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "radius-round",
+            "value": "1e5px",
+            "file": "open-props.min.css"
+          }
+        ]
+      },
+      "borderWidth": {
+        "steps": [
+          {
+            "name": "border-size-1",
+            "value": "1px",
+            "px": 1,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "border-size-2",
+            "value": "2px",
+            "px": 2,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "border-size-3",
+            "value": "5px",
+            "px": 5,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "border-size-4",
+            "value": "10px",
+            "px": 10,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "border-size-5",
+            "value": "25px",
+            "px": 25,
+            "file": "open-props.min.css"
+          }
+        ]
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "font-system-ui",
+            "value": "system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-transitional",
+            "value": "Charter,Bitstream Charter,Sitka Text,Cambria,serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-old-style",
+            "value": "Iowan Old Style,Palatino Linotype,URW Palladio L,P052,serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-humanist",
+            "value": "Seravek,Gill Sans Nova,Ubuntu,Calibri,DejaVu Sans,source-sans-pro,sans-serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-geometric-humanist",
+            "value": "Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-classical-humanist",
+            "value": "Optima,Candara,Noto Sans,source-sans-pro,sans-serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-neo-grotesque",
+            "value": "Inter,Roboto,Helvetica Neue,Arial Nova,Nimbus Sans,Arial,sans-serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-monospace-slab-serif",
+            "value": "Nimbus Mono PS,Courier New,monospace",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-monospace-code",
+            "value": "Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,Cascadia Code,Menlo,Consolas,DejaVu Sans Mono,monospace",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-industrial",
+            "value": "Bahnschrift,DIN Alternate,Franklin Gothic Medium,Nimbus Sans Narrow,sans-serif-condensed,sans-serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-rounded-sans",
+            "value": "ui-rounded,Hiragino Maru Gothic ProN,Quicksand,Comfortaa,Manjari,Arial Rounded MT,Arial Rounded MT Bold,Calibri,source-sans-pro,sans-serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-slab-serif",
+            "value": "Rockwell,Rockwell Nova,Roboto Slab,DejaVu Serif,Sitka Small,serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-antique",
+            "value": "Superclarendon,Bookman Old Style,URW Bookman,URW Bookman L,Georgia Pro,Georgia,serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-didone",
+            "value": "Didot,Bodoni MT,Noto Serif Display,URW Palladio L,P052,Sylfaen,serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-handwritten",
+            "value": "Segoe Print,Bradley Hand,Chilanka,TSCu_Comic,casual,cursive",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-sans",
+            "value": "var(--font-system-ui)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-serif",
+            "value": "ui-serif,serif",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-mono",
+            "value": "var(--font-monospace-code)",
+            "file": "open-props.min.css"
+          }
+        ],
+        "fontSizes": [
+          {
+            "name": "font-size-00",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-0",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-1",
+            "value": "1rem",
+            "px": 16,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-2",
+            "value": "1.1rem",
+            "px": 17.6,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-3",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-4",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-5",
+            "value": "2rem",
+            "px": 32,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-6",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-7",
+            "value": "3rem",
+            "px": 48,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-8",
+            "value": "3.5rem",
+            "px": 56,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-fluid-0",
+            "value": "max(0.75rem,min(2vw,1rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-fluid-1",
+            "value": "max(1rem,min(4vw,1.5rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-fluid-2",
+            "value": "max(1.5rem,min(6vw,2.5rem))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-size-fluid-3",
+            "value": "max(2rem,min(9vw,3.5rem))",
+            "file": "open-props.min.css"
+          }
+        ],
+        "lineHeights": [
+          {
+            "name": "font-lineheight-00",
+            "value": 0.95,
+            "ratio": 0.95,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-lineheight-0",
+            "value": 1.1,
+            "ratio": 1.1,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-lineheight-1",
+            "value": 1.25,
+            "ratio": 1.25,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-lineheight-2",
+            "value": 1.375,
+            "ratio": 1.375,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-lineheight-3",
+            "value": 1.5,
+            "ratio": 1.5,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-lineheight-4",
+            "value": 1.75,
+            "ratio": 1.75,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-lineheight-5",
+            "value": 2,
+            "ratio": 2,
+            "file": "open-props.min.css"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "font-weight-1",
+            "value": 100,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-2",
+            "value": 200,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-3",
+            "value": 300,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-4",
+            "value": 400,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-5",
+            "value": 500,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-6",
+            "value": 600,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-7",
+            "value": 700,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-8",
+            "value": 800,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-weight-9",
+            "value": 900,
+            "file": "open-props.min.css"
+          }
+        ],
+        "letterSpacings": [
+          {
+            "name": "font-letterspacing-0",
+            "value": "-0.05em",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-letterspacing-1",
+            "value": "0.025em",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-letterspacing-2",
+            "value": "0.050em",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-letterspacing-3",
+            "value": "0.075em",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-letterspacing-4",
+            "value": "0.150em",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-letterspacing-5",
+            "value": "0.500em",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-letterspacing-6",
+            "value": "0.750em",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "font-letterspacing-7",
+            "value": "1em",
+            "file": "open-props.min.css"
+          }
+        ],
+        "note": "Font sizes and line heights are independent scales; no size/line-height pairs."
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "xxs",
+            "value": "240px",
+            "px": 240,
+            "file": "src/props.media.css"
+          },
+          {
+            "name": "xs",
+            "value": "360px",
+            "px": 360,
+            "file": "src/props.media.css"
+          },
+          {
+            "name": "sm",
+            "value": "480px",
+            "px": 480,
+            "file": "src/props.media.css"
+          },
+          {
+            "name": "md",
+            "value": "768px",
+            "px": 768,
+            "file": "src/props.media.css"
+          },
+          {
+            "name": "lg",
+            "value": "1024px",
+            "px": 1024,
+            "file": "src/props.media.css"
+          },
+          {
+            "name": "xl",
+            "value": "1440px",
+            "px": 1440,
+            "file": "src/props.media.css"
+          },
+          {
+            "name": "xxl",
+            "value": "1920px",
+            "px": 1920,
+            "file": "src/props.media.css"
+          }
+        ],
+        "note": "lower bound of the \"-n-above\" custom media (width >= N)."
+      },
+      "containers": {
+        "steps": [
+          {
+            "name": "size-content-1",
+            "value": "20ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-content-2",
+            "value": "45ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-content-3",
+            "value": "60ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-header-1",
+            "value": "20ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-header-2",
+            "value": "25ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-header-3",
+            "value": "35ch",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-xxs",
+            "value": "240px",
+            "px": 240,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-xs",
+            "value": "360px",
+            "px": 360,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-sm",
+            "value": "480px",
+            "px": 480,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-md",
+            "value": "768px",
+            "px": 768,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-lg",
+            "value": "1024px",
+            "px": 1024,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-xl",
+            "value": "1440px",
+            "px": 1440,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "size-xxl",
+            "value": "1920px",
+            "px": 1920,
+            "file": "open-props.min.css"
+          }
+        ]
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "layer-1",
+            "value": 1,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "layer-2",
+            "value": 2,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "layer-3",
+            "value": 3,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "layer-4",
+            "value": 4,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "layer-5",
+            "value": 5,
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "layer-important",
+            "value": 2147483647,
+            "file": "open-props.min.css"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "shadow-1",
+            "value": "0 1px 2px -1px hsl(var(--shadow-color)/var(--shadow-strength-10))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "shadow-2",
+            "value": "0 3px 5px -2px hsl(var(--shadow-color)/var(--shadow-strength-4)),0 7px 14px -5px hsl(var(--shadow-color)/var(--shadow-strength-6))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "shadow-3",
+            "value": "0 -1px 3px 0 hsl(var(--shadow-color)/var(--shadow-strength-3)),0 1px 2px -5px hsl(var(--shadow-color)/var(--shadow-strength-3)),0 2px 5px -5px hsl(var(--shadow-color)/var(--shadow-strength-5)),0 4px 12px -5px hsl(var(--shadow-color)/var(--shadow-strength-6)),0 12px 15px -5px hsl(var(--shadow-color)/var(--shadow-strength-8))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "shadow-4",
+            "value": "0 -2px 5px 0 hsl(var(--shadow-color)/var(--shadow-strength-3)),0 1px 1px -2px hsl(var(--shadow-color)/var(--shadow-strength-4)),0 2px 2px -2px hsl(var(--shadow-color)/var(--shadow-strength-4)),0 5px 5px -2px hsl(var(--shadow-color)/var(--shadow-strength-5)),0 9px 9px -2px hsl(var(--shadow-color)/var(--shadow-strength-6)),0 16px 16px -2px hsl(var(--shadow-color)/var(--shadow-strength-7))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "shadow-5",
+            "value": "0 -1px 2px 0 hsl(var(--shadow-color)/var(--shadow-strength-3)),0 2px 1px -2px hsl(var(--shadow-color)/var(--shadow-strength-4)),0 5px 5px -2px hsl(var(--shadow-color)/var(--shadow-strength-4)),0 10px 10px -2px hsl(var(--shadow-color)/var(--shadow-strength-5)),0 20px 20px -2px hsl(var(--shadow-color)/var(--shadow-strength-6)),0 40px 40px -2px hsl(var(--shadow-color)/var(--shadow-strength-8))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "shadow-6",
+            "value": "0 -1px 2px 0 hsl(var(--shadow-color)/var(--shadow-strength-3)),0 3px 2px -2px hsl(var(--shadow-color)/var(--shadow-strength-4)),0 7px 5px -2px hsl(var(--shadow-color)/var(--shadow-strength-4)),0 12px 10px -2px hsl(var(--shadow-color)/var(--shadow-strength-5)),0 22px 18px -2px hsl(var(--shadow-color)/var(--shadow-strength-6)),0 41px 33px -2px hsl(var(--shadow-color)/var(--shadow-strength-7)),0 100px 80px -2px hsl(var(--shadow-color)/var(--shadow-strength-8))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "inner-shadow-0",
+            "value": "inset 0 0 0 1px hsl(var(--shadow-color)/var(--shadow-strength-10))",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "inner-shadow-1",
+            "value": "inset 0 1px 2px 0 hsl(var(--shadow-color)/var(--shadow-strength-10)),var(--inner-shadow-highlight)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "inner-shadow-2",
+            "value": "inset 0 1px 4px 0 hsl(var(--shadow-color)/var(--shadow-strength-10)),var(--inner-shadow-highlight)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "inner-shadow-3",
+            "value": "inset 0 2px 8px 0 hsl(var(--shadow-color)/var(--shadow-strength-10)),var(--inner-shadow-highlight)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "inner-shadow-4",
+            "value": "inset 0 2px 14px 0 hsl(var(--shadow-color)/var(--shadow-strength-10)),var(--inner-shadow-highlight)",
+            "file": "open-props.min.css"
+          }
+        ]
+      },
+      "motion": {
+        "durations": [
+          {
+            "name": "duration-instant",
+            "value": "0ms",
+            "ms": 0,
+            "file": "durations.min.css"
+          },
+          {
+            "name": "duration-quick-1",
+            "value": "80ms",
+            "ms": 80,
+            "file": "durations.min.css"
+          },
+          {
+            "name": "duration-quick-2",
+            "value": "120ms",
+            "ms": 120,
+            "file": "durations.min.css"
+          },
+          {
+            "name": "duration-moderate-1",
+            "value": "180ms",
+            "ms": 180,
+            "file": "durations.min.css"
+          },
+          {
+            "name": "duration-moderate-2",
+            "value": "260ms",
+            "ms": 260,
+            "file": "durations.min.css"
+          },
+          {
+            "name": "duration-gentle-1",
+            "value": "320ms",
+            "ms": 320,
+            "file": "durations.min.css"
+          },
+          {
+            "name": "duration-gentle-2",
+            "value": "420ms",
+            "ms": 420,
+            "file": "durations.min.css"
+          }
+        ],
+        "easings": [
+          {
+            "name": "ease-1",
+            "value": "cubic-bezier(.25,0,.5,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-2",
+            "value": "cubic-bezier(.25,0,.4,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-3",
+            "value": "cubic-bezier(.25,0,.3,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-4",
+            "value": "cubic-bezier(.25,0,.2,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-5",
+            "value": "cubic-bezier(.25,0,.1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-1",
+            "value": "cubic-bezier(.25,0,1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-2",
+            "value": "cubic-bezier(.50,0,1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-3",
+            "value": "cubic-bezier(.70,0,1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-4",
+            "value": "cubic-bezier(.90,0,1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-5",
+            "value": "cubic-bezier(1,0,1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-out-1",
+            "value": "cubic-bezier(0,0,.75,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-out-2",
+            "value": "cubic-bezier(0,0,.50,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-out-3",
+            "value": "cubic-bezier(0,0,.3,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-out-4",
+            "value": "cubic-bezier(0,0,.1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-out-5",
+            "value": "cubic-bezier(0,0,0,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-out-1",
+            "value": "cubic-bezier(.1,0,.9,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-out-2",
+            "value": "cubic-bezier(.3,0,.7,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-out-3",
+            "value": "cubic-bezier(.5,0,.5,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-out-4",
+            "value": "cubic-bezier(.7,0,.3,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-in-out-5",
+            "value": "cubic-bezier(.9,0,.1,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-elastic-1",
+            "value": "var(--ease-elastic-out-1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-elastic-2",
+            "value": "var(--ease-elastic-out-2)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-elastic-3",
+            "value": "var(--ease-elastic-out-3)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-elastic-4",
+            "value": "var(--ease-elastic-out-4)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-elastic-5",
+            "value": "var(--ease-elastic-out-5)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-squish-1",
+            "value": "var(--ease-elastic-in-out-1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-squish-2",
+            "value": "var(--ease-elastic-in-out-2)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-squish-3",
+            "value": "var(--ease-elastic-in-out-3)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-squish-4",
+            "value": "var(--ease-elastic-in-out-4)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-squish-5",
+            "value": "var(--ease-elastic-in-out-5)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-spring-1",
+            "value": "linear(0,0.006,0.025 2.8%,0.101 6.1%,0.539 18.9%,0.721 25.3%,0.849 31.5%,0.937 38.1%,0.968 41.8%,0.991 45.7%,1.006 50.1%,1.015 55%,1.017 63.9%,1.001)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-spring-2",
+            "value": "linear(0,0.007,0.029 2.2%,0.118 4.7%,0.625 14.4%,0.826 19%,0.902,0.962,1.008 26.1%,1.041 28.7%,1.064 32.1%,1.07 36%,1.061 40.5%,1.015 53.4%,0.999 61.6%,0.995 71.2%,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-spring-3",
+            "value": "linear(0,0.009,0.035 2.1%,0.141 4.4%,0.723 12.9%,0.938 16.7%,1.017,1.077,1.121,1.149 24.3%,1.159,1.163,1.161,1.154 29.9%,1.129 32.8%,1.051 39.6%,1.017 43.1%,0.991,0.977 51%,0.974 53.8%,0.975 57.1%,0.997 69.8%,1.003 76.9%,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-spring-4",
+            "value": "linear(0,0.009,0.037 1.7%,0.153 3.6%,0.776 10.3%,1.001,1.142 16%,1.185,1.209 19%,1.215 19.9% 20.8%,1.199,1.165 25%,1.056 30.3%,1.008 33%,0.973,0.955 39.2%,0.953 41.1%,0.957 43.3%,0.998 53.3%,1.009 59.1% 63.7%,0.998 78.9%,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-spring-5",
+            "value": "linear(0,0.01,0.04 1.6%,0.161 3.3%,0.816 9.4%,1.046,1.189 14.4%,1.231,1.254 17%,1.259,1.257 18.6%,1.236,1.194 22.3%,1.057 27%,0.999 29.4%,0.955 32.1%,0.942,0.935 34.9%,0.933,0.939 38.4%,1 47.3%,1.011,1.017 52.6%,1.016 56.4%,1 65.2%,0.996 70.2%,1.001 87.2%,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-bounce-1",
+            "value": "linear(0,0.004,0.016,0.035,0.063,0.098,0.141,0.191,0.25,0.316,0.391 36.8%,0.563,0.766,1 58.8%,0.946,0.908 69.1%,0.895,0.885,0.879,0.878,0.879,0.885,0.895,0.908 89.7%,0.946,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-bounce-2",
+            "value": "linear(0,0.004,0.016,0.035,0.063,0.098,0.141 15.1%,0.25,0.391,0.562,0.765,1,0.892 45.2%,0.849,0.815,0.788,0.769,0.757,0.753,0.757,0.769,0.788,0.815,0.85,0.892 75.2%,1 80.2%,0.973,0.954,0.943,0.939,0.943,0.954,0.973,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-bounce-3",
+            "value": "linear(0,0.004,0.016,0.035,0.062,0.098,0.141 11.4%,0.25,0.39,0.562,0.764,1 30.3%,0.847 34.8%,0.787,0.737,0.699,0.672,0.655,0.65,0.656,0.672,0.699,0.738,0.787,0.847 61.7%,1 66.2%,0.946,0.908,0.885 74.2%,0.879,0.878,0.879,0.885 79.5%,0.908,0.946,1 87.4%,0.981,0.968,0.96,0.957,0.96,0.968,0.981,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-bounce-4",
+            "value": "linear(0,0.004,0.016 3%,0.062,0.141,0.25,0.391,0.562 18.2%,1 24.3%,0.81,0.676 32.3%,0.629,0.595,0.575,0.568,0.575,0.595,0.629,0.676 48.2%,0.811,1 56.2%,0.918,0.86,0.825,0.814,0.825,0.86,0.918,1 77.2%,0.94 80.6%,0.925,0.92,0.925,0.94 87.5%,1 90.9%,0.974,0.965,0.974,1)",
+            "file": "open-props.min.css"
+          },
+          {
+            "name": "ease-bounce-5",
+            "value": "linear(0,0.004,0.016 2.5%,0.063,0.141,0.25 10.1%,0.562,1 20.2%,0.783,0.627,0.534 30.9%,0.511,0.503,0.511,0.534 38%,0.627,0.782,1 48.7%,0.892,0.815,0.769 56.3%,0.757,0.753,0.757,0.769 61.3%,0.815,0.892,1 68.8%,0.908 72.4%,0.885,0.878,0.885,0.908 79.4%,1 83%,0.954 85.5%,0.943,0.939,0.943,0.954 90.5%,1 93%,0.977,0.97,0.977,1)",
+            "file": "open-props.min.css"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "gray",
+              "steps": 13
+            },
+            {
+              "name": "stone",
+              "steps": 13
+            },
+            {
+              "name": "red",
+              "steps": 13
+            },
+            {
+              "name": "pink",
+              "steps": 13
+            },
+            {
+              "name": "purple",
+              "steps": 13
+            },
+            {
+              "name": "violet",
+              "steps": 13
+            },
+            {
+              "name": "indigo",
+              "steps": 13
+            },
+            {
+              "name": "blue",
+              "steps": 13
+            },
+            {
+              "name": "cyan",
+              "steps": 13
+            },
+            {
+              "name": "teal",
+              "steps": 13
+            },
+            {
+              "name": "green",
+              "steps": 13
+            },
+            {
+              "name": "lime",
+              "steps": 13
+            },
+            {
+              "name": "yellow",
+              "steps": 13
+            },
+            {
+              "name": "orange",
+              "steps": 13
+            },
+            {
+              "name": "choco",
+              "steps": 13
+            },
+            {
+              "name": "brown",
+              "steps": 13
+            },
+            {
+              "name": "sand",
+              "steps": 13
+            },
+            {
+              "name": "camo",
+              "steps": 13
+            },
+            {
+              "name": "jungle",
+              "steps": 13
+            },
+            {
+              "name": "color",
+              "steps": 16
+            }
+          ],
+          "semanticRoles": [],
+          "modes": [
+            "light",
+            "dark (normalize.css switches surface/text props)"
+          ],
+          "note": "Open Color style ramps (0–12). Semantic props (--text-1, --surface-1…) exist only in the optional normalize stylesheet. No primary: --brand / --link default to indigo."
+        },
+        "neutral": [
+          {
+            "name": "gray",
+            "steps": [
+              {
+                "name": "gray-0",
+                "value": "#f8f9fa",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-1",
+                "value": "#f1f3f5",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-2",
+                "value": "#e9ecef",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-3",
+                "value": "#dee2e6",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-4",
+                "value": "#ced4da",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-5",
+                "value": "#adb5bd",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-6",
+                "value": "#868e96",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-7",
+                "value": "#495057",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-8",
+                "value": "#343a40",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-9",
+                "value": "#212529",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-10",
+                "value": "#16191d",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-11",
+                "value": "#0d0f12",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "gray-12",
+                "value": "#030507",
+                "file": "open-props.min.css"
+              }
+            ]
+          },
+          {
+            "name": "stone",
+            "steps": [
+              {
+                "name": "stone-0",
+                "value": "#f8fafb",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-1",
+                "value": "#f2f4f6",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-2",
+                "value": "#ebedef",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-3",
+                "value": "#e0e4e5",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-4",
+                "value": "#d1d6d8",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-5",
+                "value": "#b1b6b9",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-6",
+                "value": "#979b9d",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-7",
+                "value": "#7e8282",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-8",
+                "value": "#666968",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-9",
+                "value": "#50514f",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-10",
+                "value": "#3a3a37",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-11",
+                "value": "#252521",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "stone-12",
+                "value": "#121210",
+                "file": "open-props.min.css"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "indigo",
+            "steps": [
+              {
+                "name": "indigo-0",
+                "value": "#edf2ff",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-1",
+                "value": "#dbe4ff",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-2",
+                "value": "#bac8ff",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-3",
+                "value": "#91a7ff",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-4",
+                "value": "#748ffc",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-5",
+                "value": "#5c7cfa",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-6",
+                "value": "#4c6ef5",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-7",
+                "value": "#4263eb",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-8",
+                "value": "#3b5bdb",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-9",
+                "value": "#364fc7",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-10",
+                "value": "#2f44ad",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-11",
+                "value": "#283a94",
+                "file": "open-props.min.css"
+              },
+              {
+                "name": "indigo-12",
+                "value": "#21307a",
+                "file": "open-props.min.css"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "open-props@1.7.23 (^src\\/.*\\.css$)",
+            "files": 136
+          },
+          {
+            "package": "open-props@1.7.23 (^src\\/extra\\/)",
+            "files": 15
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 3,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "open-props:src/props.supports.css",
+                "hits": 3
+              }
+            ],
+            "samples": [
+              {
+                "file": "open-props:src/props.supports.css",
+                "line": 10,
+                "text": "--isRTL: -1;"
+              }
+            ]
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 1,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "open-props:src/props.supports.css",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "open-props:src/props.supports.css",
+                "line": 12,
+                "text": "&:dir(rtl) {"
+              }
+            ]
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 118,
+            "files": 5,
+            "topFiles": [
+              {
+                "file": "open-props:src/extra/normalize.src.css",
+                "hits": 74
+              },
+              {
+                "file": "open-props:src/extra/buttons.css",
+                "hits": 12
+              },
+              {
+                "file": "open-props:src/extra/buttons.dark.css",
+                "hits": 12
+              },
+              {
+                "file": "open-props:src/extra/buttons.light.css",
+                "hits": 12
+              },
+              {
+                "file": "open-props:src/extra/utilities.css",
+                "hits": 8
+              }
+            ],
+            "samples": [
+              {
+                "file": "open-props:src/extra/buttons.css",
+                "line": 48,
+                "text": "padding-block: .75ch;"
+              },
+              {
+                "file": "open-props:src/extra/buttons.dark.css",
+                "line": 39,
+                "text": "padding-block: .75ch;"
+              },
+              {
+                "file": "open-props:src/extra/buttons.light.css",
+                "line": 41,
+                "text": "padding-block: .75ch;"
+              },
+              {
+                "file": "open-props:src/extra/normalize.src.css",
+                "line": 17,
+                "text": "block-size: 100%;"
+              }
+            ]
+          }
+        ],
+        "findings": [
+          "No property for direction, language or script. Font stacks are Latin system/classic stacks; line heights are seven unitless ratios (0.95–2) and letter-spacing props are Latin tracking.",
+          "Sizes are offered three ways — rem (--size-N), px (--size-px-N) and relative ch/em (--size-relative-N, --size-content-N, --size-header-N) — but nothing is bound to a control: the optional button stylesheet sizes itself from the font (padding-block .75ch, padding-inline var(--size-relative-6)), with no height.",
+          "Pointer type is exposed as custom media (--touch, --stylus, --pointer, --mouse) in props.media.css, the only touch-related affordance; no minimum target size.",
+          "The normalize/button extras use logical properties (118 matching lines in src/)."
+        ]
+      }
+    },
+    "gaps": [
+      "No control heights, density modes, focus-ring tokens or semantic colour roles in the core props.",
+      "No touch-target size."
+    ]
+  }
+}

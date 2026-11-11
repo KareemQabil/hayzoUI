@@ -1,0 +1,3578 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "spectrum",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@adobe/spectrum-tokens",
+        "url": "https://www.npmjs.com/package/@adobe/spectrum-tokens/v/15.6.0",
+        "version": "15.6.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "src/color-aliases.json, src/color-palette.json, src/layout-component.json, src/layout.json, src/semantic-color-palette.json, src/typography.json"
+      }
+    ],
+    "script": "tools/extract/tokens/spectrum.mjs"
+  },
+  "data": {
+    "system": {
+      "name": "Adobe Spectrum (Spectrum 2 tokens)",
+      "package": "@adobe/spectrum-tokens",
+      "version": "15.6.0",
+      "license": "Apache-2.0",
+      "url": "https://spectrum.adobe.com"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "desktop",
+            "name": "scale: desktop (medium)",
+            "mechanism": "platform-scale",
+            "description": "Pointer devices.",
+            "file": "src/layout.json"
+          },
+          {
+            "id": "mobile",
+            "name": "scale: mobile (large)",
+            "mechanism": "platform-scale",
+            "description": "Touch devices: sizes and font sizes are about 1.25× desktop.",
+            "file": "src/layout.json"
+          }
+        ],
+        "sizes": [
+          {
+            "component": "control",
+            "size": "xs",
+            "mode": "desktop",
+            "heightPx": 20,
+            "paddingInlinePx": 8,
+            "paddingBlockPx": 3,
+            "fontSizePx": 11,
+            "lineHeightPx": 14,
+            "lineHeightRatio": 1.2727,
+            "gapPx": 5,
+            "iconSizePx": 14,
+            "heightSource": "component-height-50; typography component-xs-regular (font-size-50 / line-height-font-size-50)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "s",
+            "mode": "desktop",
+            "heightPx": 24,
+            "paddingInlinePx": 9,
+            "paddingBlockPx": 4,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "gapPx": 5,
+            "iconSizePx": 16,
+            "heightSource": "component-height-75; typography component-s-regular (font-size-75 / line-height-font-size-75)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "m",
+            "mode": "desktop",
+            "heightPx": 32,
+            "paddingInlinePx": 12,
+            "paddingBlockPx": 6,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.2857,
+            "gapPx": 6,
+            "iconSizePx": 20,
+            "heightSource": "component-height-100; typography component-m-regular (font-size-100 / line-height-font-size-100)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "l",
+            "mode": "desktop",
+            "heightPx": 40,
+            "paddingInlinePx": 15,
+            "paddingBlockPx": 9,
+            "fontSizePx": 16,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.25,
+            "gapPx": 7,
+            "iconSizePx": 22,
+            "heightSource": "component-height-200; typography component-l-regular (font-size-200 / line-height-font-size-200)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "xl",
+            "mode": "desktop",
+            "heightPx": 48,
+            "paddingInlinePx": 18,
+            "paddingBlockPx": 12,
+            "fontSizePx": 18,
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.2222,
+            "gapPx": 8,
+            "iconSizePx": 26,
+            "heightSource": "component-height-300; typography component-xl-regular (font-size-300 / line-height-font-size-300)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "xs",
+            "mode": "mobile",
+            "heightPx": 26,
+            "paddingInlinePx": 10,
+            "paddingBlockPx": 4,
+            "fontSizePx": 13,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.2308,
+            "gapPx": 7,
+            "iconSizePx": 16,
+            "heightSource": "component-height-50; typography component-xs-regular (font-size-50 / line-height-font-size-50)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "s",
+            "mode": "mobile",
+            "heightPx": 30,
+            "paddingInlinePx": 11,
+            "paddingBlockPx": 5,
+            "fontSizePx": 15,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.3333,
+            "gapPx": 7,
+            "iconSizePx": 18,
+            "heightSource": "component-height-75; typography component-s-regular (font-size-75 / line-height-font-size-75)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "m",
+            "mode": "mobile",
+            "heightPx": 40,
+            "paddingInlinePx": 15,
+            "paddingBlockPx": 8,
+            "fontSizePx": 17,
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.2941,
+            "gapPx": 8,
+            "iconSizePx": 24,
+            "heightSource": "component-height-100; typography component-m-regular (font-size-100 / line-height-font-size-100)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "l",
+            "mode": "mobile",
+            "heightPx": 50,
+            "paddingInlinePx": 19,
+            "paddingBlockPx": 12,
+            "fontSizePx": 19,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.2632,
+            "gapPx": 9,
+            "iconSizePx": 28,
+            "heightSource": "component-height-200; typography component-l-regular (font-size-200 / line-height-font-size-200)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "xl",
+            "mode": "mobile",
+            "heightPx": 60,
+            "paddingInlinePx": 22,
+            "paddingBlockPx": 15,
+            "fontSizePx": 22,
+            "lineHeightPx": 26,
+            "lineHeightRatio": 1.1818,
+            "gapPx": 10,
+            "iconSizePx": 30,
+            "heightSource": "component-height-300; typography component-xl-regular (font-size-300 / line-height-font-size-300)",
+            "file": "src/layout.json, src/typography.json"
+          },
+          {
+            "component": "control",
+            "size": "height-400",
+            "mode": "desktop",
+            "heightPx": 56,
+            "heightSource": "component-height-400",
+            "file": "src/layout.json"
+          },
+          {
+            "component": "control",
+            "size": "height-500",
+            "mode": "desktop",
+            "heightPx": 64,
+            "heightSource": "component-height-500",
+            "file": "src/layout.json"
+          },
+          {
+            "component": "control",
+            "size": "height-400",
+            "mode": "mobile",
+            "heightPx": 70,
+            "heightSource": "component-height-400",
+            "file": "src/layout.json"
+          },
+          {
+            "component": "control",
+            "size": "height-500",
+            "mode": "mobile",
+            "heightPx": 80,
+            "heightSource": "component-height-500",
+            "file": "src/layout.json"
+          }
+        ],
+        "touchTarget": [],
+        "note": "T-shirt sizes XS–XL map to component-height-50/75/100/200/300."
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "spacing-25",
+            "value": "1px",
+            "px": 1,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-50",
+            "value": "2px",
+            "px": 2,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-75",
+            "value": "4px",
+            "px": 4,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-85",
+            "value": "6px",
+            "px": 6,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-100",
+            "value": "8px",
+            "px": 8,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-200",
+            "value": "12px",
+            "px": 12,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-300",
+            "value": "16px",
+            "px": 16,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-350",
+            "value": "20px",
+            "px": 20,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-400",
+            "value": "24px",
+            "px": 24,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-500",
+            "value": "32px",
+            "px": 32,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-600",
+            "value": "40px",
+            "px": 40,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-700",
+            "value": "48px",
+            "px": 48,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-800",
+            "value": "64px",
+            "px": 64,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-900",
+            "value": "80px",
+            "px": 80,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "spacing-1000",
+            "value": "96px",
+            "px": 96,
+            "file": "src/layout.json"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "corner-radius-0",
+            "value": "0px",
+            "px": 0,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-full",
+            "value": 0.5,
+            "alias": "{corner-radius-1000}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-none",
+            "value": "0px",
+            "px": 0,
+            "alias": "{corner-radius-0}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-75",
+            "value": "3px",
+            "px": 3,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-100",
+            "value": "4px",
+            "px": 4,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-200",
+            "value": "5px",
+            "px": 5,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-300",
+            "value": "6px",
+            "px": 6,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-400",
+            "value": "7px",
+            "px": 7,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-500",
+            "value": "8px",
+            "px": 8,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-600",
+            "value": "9px",
+            "px": 9,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-700",
+            "value": "10px",
+            "px": 10,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-800",
+            "value": "16px",
+            "px": 16,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "corner-radius-1000",
+            "value": 0.5,
+            "file": "src/layout.json"
+          }
+        ]
+      },
+      "borderWidth": {
+        "steps": [
+          {
+            "name": "border-width-100",
+            "value": "1px",
+            "px": 1,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "border-width-200",
+            "value": "2px",
+            "px": 2,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "border-width-400",
+            "value": "4px",
+            "px": 4,
+            "file": "src/layout.json"
+          }
+        ]
+      },
+      "focusRing": {
+        "steps": [
+          {
+            "name": "focus-indicator-gap",
+            "value": "2px",
+            "px": 2,
+            "file": "src/layout.json",
+            "note": "deprecated upstream"
+          },
+          {
+            "name": "focus-indicator-thickness",
+            "value": "2px",
+            "px": 2,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "focus-ring-gap",
+            "value": "2px",
+            "px": 2,
+            "alias": "{spacing-50}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "side-focus-indicator",
+            "value": "4px",
+            "px": 4,
+            "file": "src/layout.json"
+          }
+        ]
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "body-cjk-font-family",
+            "value": "Adobe Clean Han",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-sans-serif-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-serif-font-family",
+            "value": "Adobe Clean Serif",
+            "file": "src/body.json"
+          },
+          {
+            "name": "code-cjk-font-family",
+            "value": "Source Code Pro",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-font-family",
+            "value": "Source Code Pro",
+            "file": "src/code.json"
+          },
+          {
+            "name": "detail-cjk-font-family",
+            "value": "Adobe Clean Han",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-font-family",
+            "value": "Adobe Clean Serif",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "heading-cjk-font-family",
+            "value": "Adobe Clean Han",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-font-family",
+            "value": "Adobe Clean Serif",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "title-cjk-font-family",
+            "value": "Adobe Clean Han",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-sans-serif-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-serif-font-family",
+            "value": "Adobe Clean Serif",
+            "file": "src/title.json"
+          },
+          {
+            "name": "cjk-font-family",
+            "value": "Adobe Clean Han",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "default-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "sans-serif-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "serif-font-family",
+            "value": "Adobe Clean Serif",
+            "file": "src/typography.json"
+          }
+        ],
+        "steps": [
+          {
+            "name": "font-size-25",
+            "set": "desktop",
+            "fontSize": "10px",
+            "fontSizePx": 10,
+            "lineHeight": "12px",
+            "lineHeightPx": 12,
+            "lineHeightRatio": 1.2,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-50",
+            "set": "desktop",
+            "fontSize": "11px",
+            "fontSizePx": 11,
+            "lineHeight": "14px",
+            "lineHeightPx": 14,
+            "lineHeightRatio": 1.2727,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-75",
+            "set": "desktop",
+            "fontSize": "12px",
+            "fontSizePx": 12,
+            "lineHeight": "16px",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-100",
+            "set": "desktop",
+            "fontSize": "14px",
+            "fontSizePx": 14,
+            "lineHeight": "18px",
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.2857,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-200",
+            "set": "desktop",
+            "fontSize": "16px",
+            "fontSizePx": 16,
+            "lineHeight": "20px",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.25,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-300",
+            "set": "desktop",
+            "fontSize": "18px",
+            "fontSizePx": 18,
+            "lineHeight": "22px",
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.2222,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-400",
+            "set": "desktop",
+            "fontSize": "20px",
+            "fontSizePx": 20,
+            "lineHeight": "24px",
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.2,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-500",
+            "set": "desktop",
+            "fontSize": "22px",
+            "fontSizePx": 22,
+            "lineHeight": "26px",
+            "lineHeightPx": 26,
+            "lineHeightRatio": 1.1818,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-600",
+            "set": "desktop",
+            "fontSize": "25px",
+            "fontSizePx": 25,
+            "lineHeight": "30px",
+            "lineHeightPx": 30,
+            "lineHeightRatio": 1.2,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-700",
+            "set": "desktop",
+            "fontSize": "28px",
+            "fontSizePx": 28,
+            "lineHeight": "32px",
+            "lineHeightPx": 32,
+            "lineHeightRatio": 1.1429,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-800",
+            "set": "desktop",
+            "fontSize": "32px",
+            "fontSizePx": 32,
+            "lineHeight": "36px",
+            "lineHeightPx": 36,
+            "lineHeightRatio": 1.125,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-900",
+            "set": "desktop",
+            "fontSize": "36px",
+            "fontSizePx": 36,
+            "lineHeight": "42px",
+            "lineHeightPx": 42,
+            "lineHeightRatio": 1.1667,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1000",
+            "set": "desktop",
+            "fontSize": "40px",
+            "fontSizePx": 40,
+            "lineHeight": "46px",
+            "lineHeightPx": 46,
+            "lineHeightRatio": 1.15,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1100",
+            "set": "desktop",
+            "fontSize": "45px",
+            "fontSizePx": 45,
+            "lineHeight": "52px",
+            "lineHeightPx": 52,
+            "lineHeightRatio": 1.1556,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1200",
+            "set": "desktop",
+            "fontSize": "51px",
+            "fontSizePx": 51,
+            "lineHeight": "58px",
+            "lineHeightPx": 58,
+            "lineHeightRatio": 1.1373,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1300",
+            "set": "desktop",
+            "fontSize": "58px",
+            "fontSizePx": 58,
+            "lineHeight": "66px",
+            "lineHeightPx": 66,
+            "lineHeightRatio": 1.1379,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1400",
+            "set": "desktop",
+            "fontSize": "65px",
+            "fontSizePx": 65,
+            "lineHeight": "74px",
+            "lineHeightPx": 74,
+            "lineHeightRatio": 1.1385,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1500",
+            "set": "desktop",
+            "fontSize": "73px",
+            "fontSizePx": 73,
+            "lineHeight": "84px",
+            "lineHeightPx": 84,
+            "lineHeightRatio": 1.1507,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-25",
+            "set": "mobile",
+            "fontSize": "12px",
+            "fontSizePx": 12,
+            "lineHeight": "14px",
+            "lineHeightPx": 14,
+            "lineHeightRatio": 1.1667,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-50",
+            "set": "mobile",
+            "fontSize": "13px",
+            "fontSizePx": 13,
+            "lineHeight": "16px",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.2308,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-75",
+            "set": "mobile",
+            "fontSize": "15px",
+            "fontSizePx": 15,
+            "lineHeight": "20px",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.3333,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-100",
+            "set": "mobile",
+            "fontSize": "17px",
+            "fontSizePx": 17,
+            "lineHeight": "22px",
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.2941,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-200",
+            "set": "mobile",
+            "fontSize": "19px",
+            "fontSizePx": 19,
+            "lineHeight": "24px",
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.2632,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-300",
+            "set": "mobile",
+            "fontSize": "22px",
+            "fontSizePx": 22,
+            "lineHeight": "26px",
+            "lineHeightPx": 26,
+            "lineHeightRatio": 1.1818,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-400",
+            "set": "mobile",
+            "fontSize": "24px",
+            "fontSizePx": 24,
+            "lineHeight": "28px",
+            "lineHeightPx": 28,
+            "lineHeightRatio": 1.1667,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-500",
+            "set": "mobile",
+            "fontSize": "27px",
+            "fontSizePx": 27,
+            "lineHeight": "32px",
+            "lineHeightPx": 32,
+            "lineHeightRatio": 1.1852,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-600",
+            "set": "mobile",
+            "fontSize": "31px",
+            "fontSizePx": 31,
+            "lineHeight": "36px",
+            "lineHeightPx": 36,
+            "lineHeightRatio": 1.1613,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-700",
+            "set": "mobile",
+            "fontSize": "34px",
+            "fontSizePx": 34,
+            "lineHeight": "40px",
+            "lineHeightPx": 40,
+            "lineHeightRatio": 1.1765,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-800",
+            "set": "mobile",
+            "fontSize": "39px",
+            "fontSizePx": 39,
+            "lineHeight": "44px",
+            "lineHeightPx": 44,
+            "lineHeightRatio": 1.1282,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-900",
+            "set": "mobile",
+            "fontSize": "44px",
+            "fontSizePx": 44,
+            "lineHeight": "50px",
+            "lineHeightPx": 50,
+            "lineHeightRatio": 1.1364,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1000",
+            "set": "mobile",
+            "fontSize": "49px",
+            "fontSizePx": 49,
+            "lineHeight": "56px",
+            "lineHeightPx": 56,
+            "lineHeightRatio": 1.1429,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1100",
+            "set": "mobile",
+            "fontSize": "55px",
+            "fontSizePx": 55,
+            "lineHeight": "64px",
+            "lineHeightPx": 64,
+            "lineHeightRatio": 1.1636,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1200",
+            "set": "mobile",
+            "fontSize": "62px",
+            "fontSizePx": 62,
+            "lineHeight": "72px",
+            "lineHeightPx": 72,
+            "lineHeightRatio": 1.1613,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1300",
+            "set": "mobile",
+            "fontSize": "70px",
+            "fontSizePx": 70,
+            "lineHeight": "80px",
+            "lineHeightPx": 80,
+            "lineHeightRatio": 1.1429,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1400",
+            "set": "mobile",
+            "fontSize": "79px",
+            "fontSizePx": 79,
+            "lineHeight": "90px",
+            "lineHeightPx": 90,
+            "lineHeightRatio": 1.1392,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "font-size-1500",
+            "set": "mobile",
+            "fontSize": "88px",
+            "fontSizePx": 88,
+            "lineHeight": "102px",
+            "lineHeightPx": 102,
+            "lineHeightRatio": 1.1591,
+            "letterSpacing": "0em",
+            "file": "src/typography.json"
+          }
+        ],
+        "lineHeights": [
+          {
+            "name": "cjk-line-height-100",
+            "value": 1.5,
+            "ratio": 1.5,
+            "file": "src/typography.json"
+          },
+          {
+            "name": "cjk-line-height-200",
+            "value": 1.7,
+            "ratio": 1.7,
+            "file": "src/typography.json"
+          },
+          {
+            "name": "line-height-100",
+            "value": 1.3,
+            "ratio": 1.3,
+            "file": "src/typography.json"
+          },
+          {
+            "name": "line-height-200",
+            "value": 1.5,
+            "ratio": 1.5,
+            "file": "src/typography.json"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "body-cjk-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-cjk-font-weight",
+            "value": "regular",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-cjk-strong-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-cjk-strong-font-weight",
+            "value": "extra-bold",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-sans-serif-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-sans-serif-font-weight",
+            "value": "regular",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-sans-serif-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-sans-serif-strong-font-weight",
+            "value": "bold",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-serif-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-serif-font-weight",
+            "value": "regular",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-serif-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/body.json"
+          },
+          {
+            "name": "body-serif-strong-font-weight",
+            "value": "bold",
+            "file": "src/body.json"
+          },
+          {
+            "name": "code-cjk-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-cjk-font-weight",
+            "value": "regular",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-cjk-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-cjk-strong-font-weight",
+            "value": "bold",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-font-weight",
+            "value": "regular",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/code.json"
+          },
+          {
+            "name": "code-strong-font-weight",
+            "value": "bold",
+            "file": "src/code.json"
+          },
+          {
+            "name": "detail-cjk-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-cjk-font-weight",
+            "value": "bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-cjk-light-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-cjk-light-font-weight",
+            "value": "light",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-cjk-light-strong-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-cjk-light-strong-font-weight",
+            "value": "extra-bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-cjk-strong-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-cjk-strong-font-weight",
+            "value": "extra-bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-font-weight",
+            "value": "medium",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-light-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-light-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-light-strong-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-light-strong-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-sans-serif-strong-font-weight",
+            "value": "bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-emphasized-font-weight",
+            "value": "medium",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-font-weight",
+            "value": "medium",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-light-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-light-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-light-strong-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-light-strong-font-weight",
+            "value": "regular",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "detail-serif-strong-font-weight",
+            "value": "bold",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "heading-cjk-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-font-weight",
+            "value": "extra-bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-heavy-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-heavy-font-weight",
+            "value": "extra-bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-heavy-strong-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-heavy-strong-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-light-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-light-font-weight",
+            "value": "light",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-light-strong-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-light-strong-font-weight",
+            "value": "extra-bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-strong-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-cjk-strong-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-font-weight",
+            "value": "extra-bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-heavy-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-heavy-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-heavy-strong-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-heavy-strong-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-light-emphasized-font-weight",
+            "value": "light",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-light-font-weight",
+            "value": "light",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-light-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-light-strong-font-weight",
+            "value": "bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-strong-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-sans-serif-strong-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-font-weight",
+            "value": "bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-heavy-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-heavy-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-heavy-strong-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-heavy-strong-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-light-emphasized-font-weight",
+            "value": "regular",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-light-font-weight",
+            "value": "regular",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-light-strong-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-light-strong-font-weight",
+            "value": "bold",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-strong-emphasized-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "heading-serif-strong-font-weight",
+            "value": "black",
+            "file": "src/heading.json"
+          },
+          {
+            "name": "title-cjk-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-cjk-font-weight",
+            "value": "bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-cjk-strong-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-cjk-strong-font-weight",
+            "value": "extra-bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-sans-serif-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-sans-serif-font-weight",
+            "value": "bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-sans-serif-strong-emphasized-font-weight",
+            "value": "extra-bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-sans-serif-strong-font-weight",
+            "value": "extra-bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-serif-emphasized-font-weight",
+            "value": "bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-serif-font-weight",
+            "value": "bold",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-serif-strong-emphasized-font-weight",
+            "value": "black",
+            "file": "src/title.json"
+          },
+          {
+            "name": "title-serif-strong-font-weight",
+            "value": "black",
+            "file": "src/title.json"
+          },
+          {
+            "name": "black-font-weight",
+            "value": "black",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "bold-font-weight",
+            "value": "bold",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "extra-bold-font-weight",
+            "value": "extra-bold",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "light-font-weight",
+            "value": "light",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "medium-font-weight",
+            "value": "medium",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "regular-font-weight",
+            "value": "regular",
+            "file": "src/typography.json"
+          }
+        ],
+        "letterSpacings": [
+          {
+            "name": "detail-letter-spacing",
+            "value": "0.06em",
+            "file": "src/detail.json"
+          },
+          {
+            "name": "cjk-letter-spacing",
+            "value": "0em",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "letter-spacing",
+            "value": "0em",
+            "file": "src/typography.json"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "android-elevation",
+            "value": "2dp",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-blur",
+            "value": "6px",
+            "px": 6,
+            "alias": "{drop-shadow-blur-100}",
+            "file": "src/layout.json",
+            "note": "deprecated upstream"
+          },
+          {
+            "name": "drop-shadow-blur-100",
+            "value": "6px",
+            "px": 6,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-blur-200",
+            "value": "8px",
+            "px": 8,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-blur-300",
+            "value": "16px",
+            "px": 16,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-dragged-blur",
+            "value": "16px",
+            "px": 16,
+            "alias": "{drop-shadow-blur-300}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-dragged-x",
+            "value": "0px",
+            "px": 0,
+            "alias": "{drop-shadow-x-300}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-dragged-y",
+            "value": "6px",
+            "px": 6,
+            "alias": "{drop-shadow-y-300}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-elevated-blur",
+            "value": "8px",
+            "px": 8,
+            "alias": "{drop-shadow-blur-200}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-elevated-x",
+            "value": "0px",
+            "px": 0,
+            "alias": "{drop-shadow-x-200}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-elevated-y",
+            "value": "2px",
+            "px": 2,
+            "alias": "{drop-shadow-y-200}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-emphasized-default-blur",
+            "value": "6px",
+            "px": 6,
+            "alias": "{drop-shadow-blur-100}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-emphasized-default-x",
+            "value": "0px",
+            "px": 0,
+            "alias": "{drop-shadow-x-100}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-emphasized-default-y",
+            "value": "1px",
+            "px": 1,
+            "alias": "{drop-shadow-y-100}",
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-x",
+            "value": "0px",
+            "px": 0,
+            "alias": "{drop-shadow-x-100}",
+            "file": "src/layout.json",
+            "note": "deprecated upstream"
+          },
+          {
+            "name": "drop-shadow-x-100",
+            "value": "0px",
+            "px": 0,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-x-200",
+            "value": "0px",
+            "px": 0,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-x-300",
+            "value": "0px",
+            "px": 0,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-y",
+            "value": "1px",
+            "px": 1,
+            "alias": "{drop-shadow-y-100}",
+            "file": "src/layout.json",
+            "note": "deprecated upstream"
+          },
+          {
+            "name": "drop-shadow-y-100",
+            "value": "1px",
+            "px": 1,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-y-200",
+            "value": "2px",
+            "px": 2,
+            "file": "src/layout.json"
+          },
+          {
+            "name": "drop-shadow-y-300",
+            "value": "6px",
+            "px": 6,
+            "file": "src/layout.json"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "blue",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "brown",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "celery",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "chartreuse",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "cinnamon",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "cyan",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "fuchsia",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "gray",
+              "steps": 13,
+              "stepNames": [
+                "25",
+                "50",
+                "75",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "green",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "indigo",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "magenta",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "orange",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "pink",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "purple",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "red",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "seafoam",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "silver",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "static-blue",
+              "steps": 2,
+              "stepNames": [
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "static-chartreuse",
+              "steps": 3,
+              "stepNames": [
+                "400",
+                "600",
+                "800"
+              ]
+            },
+            {
+              "name": "static-cyan",
+              "steps": 3,
+              "stepNames": [
+                "400",
+                "600",
+                "800"
+              ]
+            },
+            {
+              "name": "static-fuchsia",
+              "steps": 5,
+              "stepNames": [
+                "400",
+                "600",
+                "800",
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "static-green",
+              "steps": 3,
+              "stepNames": [
+                "400",
+                "600",
+                "800"
+              ]
+            },
+            {
+              "name": "static-indigo",
+              "steps": 5,
+              "stepNames": [
+                "400",
+                "600",
+                "800",
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "static-magenta",
+              "steps": 5,
+              "stepNames": [
+                "400",
+                "600",
+                "800",
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "static-orange",
+              "steps": 3,
+              "stepNames": [
+                "400",
+                "600",
+                "800"
+              ]
+            },
+            {
+              "name": "static-purple",
+              "steps": 3,
+              "stepNames": [
+                "400",
+                "600",
+                "800"
+              ]
+            },
+            {
+              "name": "static-red",
+              "steps": 5,
+              "stepNames": [
+                "400",
+                "600",
+                "800",
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "static-turquoise",
+              "steps": 3,
+              "stepNames": [
+                "400",
+                "600",
+                "800"
+              ]
+            },
+            {
+              "name": "transparent-black",
+              "steps": 13,
+              "stepNames": [
+                "25",
+                "50",
+                "75",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "transparent-neutral",
+              "steps": 18,
+              "stepNames": [
+                "0",
+                "50",
+                "75",
+                "100",
+                "125",
+                "150",
+                "200",
+                "300",
+                "350",
+                "400",
+                "500",
+                "600",
+                "700",
+                "750",
+                "800",
+                "900",
+                "950",
+                "1000"
+              ]
+            },
+            {
+              "name": "transparent-neutral-inverse",
+              "steps": 18,
+              "stepNames": [
+                "0",
+                "50",
+                "75",
+                "100",
+                "125",
+                "150",
+                "200",
+                "300",
+                "350",
+                "400",
+                "500",
+                "600",
+                "700",
+                "750",
+                "800",
+                "900",
+                "950",
+                "1000"
+              ]
+            },
+            {
+              "name": "transparent-static-black",
+              "steps": 18,
+              "stepNames": [
+                "0",
+                "50",
+                "75",
+                "100",
+                "125",
+                "150",
+                "200",
+                "300",
+                "350",
+                "400",
+                "500",
+                "600",
+                "700",
+                "750",
+                "800",
+                "900",
+                "950",
+                "1000"
+              ]
+            },
+            {
+              "name": "transparent-static-white",
+              "steps": 18,
+              "stepNames": [
+                "0",
+                "50",
+                "75",
+                "100",
+                "125",
+                "150",
+                "200",
+                "300",
+                "350",
+                "400",
+                "500",
+                "600",
+                "700",
+                "750",
+                "800",
+                "900",
+                "950",
+                "1000"
+              ]
+            },
+            {
+              "name": "transparent-white",
+              "steps": 13,
+              "stepNames": [
+                "25",
+                "50",
+                "75",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000"
+              ]
+            },
+            {
+              "name": "turquoise",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            },
+            {
+              "name": "yellow",
+              "steps": 16,
+              "stepNames": [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "1000",
+                "1100",
+                "1200",
+                "1300",
+                "1400",
+                "1500",
+                "1600"
+              ]
+            }
+          ],
+          "semanticRoles": [
+            "accent-background-color-default",
+            "accent-background-color-down",
+            "accent-background-color-hover",
+            "accent-background-color-key-focus",
+            "accent-content-color-default",
+            "accent-content-color-down",
+            "accent-content-color-hover",
+            "accent-content-color-key-focus",
+            "accent-content-color-selected",
+            "accent-visual-color",
+            "background-base-color",
+            "background-elevated-color",
+            "background-layer-1-color",
+            "background-layer-2-color",
+            "background-opacity-default",
+            "background-opacity-down",
+            "background-opacity-hover",
+            "background-opacity-key-focus",
+            "background-pasteboard-color",
+            "blue-background-color-default",
+            "blue-subtle-background-color-default",
+            "blue-visual-color",
+            "brown-background-color-default",
+            "brown-subtle-background-color-default",
+            "brown-visual-color",
+            "celery-background-color-default",
+            "celery-subtle-background-color-default",
+            "celery-visual-color",
+            "chartreuse-background-color-default",
+            "chartreuse-subtle-background-color-default",
+            "chartreuse-visual-color",
+            "cinnamon-background-color-default",
+            "cinnamon-subtle-background-color-default",
+            "cinnamon-visual-color",
+            "cyan-background-color-default",
+            "cyan-subtle-background-color-default",
+            "cyan-visual-color",
+            "disabled-background-color",
+            "disabled-border-color",
+            "disabled-content-color",
+            "disabled-static-black-background-color",
+            "disabled-static-black-border-color",
+            "disabled-static-black-content-color",
+            "disabled-static-white-background-color",
+            "disabled-static-white-border-color",
+            "disabled-static-white-content-color",
+            "drop-shadow-ambient-color",
+            "drop-shadow-color",
+            "drop-shadow-color-100",
+            "drop-shadow-color-200",
+            "drop-shadow-color-300",
+            "drop-shadow-dragged",
+            "drop-shadow-dragged-color",
+            "drop-shadow-dragged-key-color",
+            "drop-shadow-elevated",
+            "drop-shadow-elevated-color",
+            "drop-shadow-elevated-key-color",
+            "drop-shadow-emphasized",
+            "drop-shadow-emphasized-default-color",
+            "drop-shadow-emphasized-hover",
+            "drop-shadow-emphasized-hover-color",
+            "drop-shadow-emphasized-hover-key-color",
+            "drop-shadow-emphasized-key-color",
+            "drop-shadow-transition-color",
+            "focus-indicator-color",
+            "fuchsia-background-color-default",
+            "fuchsia-subtle-background-color-default",
+            "fuchsia-visual-color",
+            "gray-background-color-default",
+            "gray-subtle-background-color-default",
+            "gray-visual-color",
+            "green-background-color-default",
+            "green-subtle-background-color-default",
+            "green-visual-color",
+            "indigo-background-color-default",
+            "indigo-subtle-background-color-default",
+            "indigo-visual-color",
+            "informative-background-color-default",
+            "informative-background-color-down",
+            "informative-background-color-hover",
+            "informative-background-color-key-focus",
+            "informative-visual-color",
+            "magenta-background-color-default",
+            "magenta-subtle-background-color-default",
+            "magenta-visual-color",
+            "negative-background-color-default",
+            "negative-background-color-down",
+            "negative-background-color-hover",
+            "negative-background-color-key-focus",
+            "negative-border-color-default",
+            "negative-border-color-down",
+            "negative-border-color-focus",
+            "negative-border-color-focus-hover",
+            "negative-border-color-hover",
+            "negative-border-color-key-focus",
+            "negative-content-color-default",
+            "negative-content-color-down",
+            "negative-content-color-hover",
+            "negative-content-color-key-focus",
+            "negative-visual-color",
+            "neutral-background-color-default",
+            "neutral-background-color-down",
+            "neutral-background-color-hover",
+            "neutral-background-color-key-focus",
+            "neutral-background-color-selected-default",
+            "neutral-background-color-selected-down",
+            "neutral-background-color-selected-hover",
+            "neutral-background-color-selected-key-focus",
+            "neutral-content-color-default",
+            "neutral-content-color-down",
+            "neutral-content-color-focus",
+            "neutral-content-color-focus-hover",
+            "neutral-content-color-hover",
+            "neutral-content-color-key-focus",
+            "neutral-content-color-selected-default",
+            "neutral-content-color-selected-hover",
+            "neutral-content-color-selected-key-focus",
+            "neutral-subdued-background-color-default",
+            "neutral-subdued-background-color-down",
+            "neutral-subdued-background-color-hover",
+            "neutral-subdued-background-color-key-focus",
+            "neutral-subdued-content-color-default",
+            "neutral-subdued-content-color-down",
+            "neutral-subdued-content-color-hover",
+            "neutral-subdued-content-color-key-focus",
+            "neutral-subdued-content-color-selected",
+            "neutral-subtle-background-color-default",
+            "neutral-visual-color",
+            "notice-background-color-default",
+            "notice-visual-color",
+            "opacity-0",
+            "opacity-100",
+            "opacity-1000",
+            "opacity-125",
+            "opacity-150",
+            "opacity-200",
+            "opacity-300",
+            "opacity-350",
+            "opacity-400",
+            "opacity-50",
+            "opacity-500",
+            "opacity-600",
+            "opacity-700",
+            "opacity-75",
+            "opacity-750",
+            "opacity-800",
+            "opacity-900",
+            "opacity-950",
+            "opacity-disabled",
+            "orange-background-color-default",
+            "orange-subtle-background-color-default",
+            "orange-visual-color",
+            "overlay-color",
+            "overlay-opacity",
+            "pink-background-color-default",
+            "pink-subtle-background-color-default",
+            "pink-visual-color",
+            "positive-background-color-default",
+            "positive-background-color-down",
+            "positive-background-color-hover",
+            "positive-background-color-key-focus",
+            "positive-visual-color",
+            "purple-background-color-default",
+            "purple-subtle-background-color-default",
+            "purple-visual-color",
+            "red-background-color-default",
+            "red-subtle-background-color-default",
+            "red-visual-color",
+            "seafoam-background-color-default",
+            "seafoam-subtle-background-color-default",
+            "seafoam-visual-color",
+            "silver-background-color-default",
+            "silver-subtle-background-color-default",
+            "silver-visual-color",
+            "stack-item-selected-background-color-highlight",
+            "static-black-focus-indicator-color",
+            "static-black-text-color",
+            "static-black-track-color",
+            "static-black-track-indicator-color",
+            "static-white-focus-indicator-color",
+            "static-white-text-color",
+            "static-white-track-color",
+            "static-white-track-indicator-color",
+            "title-color",
+            "track-color",
+            "turquoise-background-color-default",
+            "turquoise-subtle-background-color-default",
+            "turquoise-visual-color",
+            "yellow-background-color-default",
+            "yellow-subtle-background-color-default",
+            "yellow-visual-color"
+          ],
+          "modes": [
+            "light",
+            "dark",
+            "wireframe"
+          ],
+          "note": "Ramps (gray 25–1000, hues 100–1600) each with light/dark/wireframe values → semantic palette (accent, informative, negative, notice, positive → a hue ramp; accent = blue) → aliases."
+        },
+        "neutral": [
+          {
+            "name": "gray",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "gray-25",
+                "value": "rgb(255, 255, 255)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-50",
+                "value": "rgb(248, 248, 248)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-75",
+                "value": "rgb(243, 243, 243)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-100",
+                "value": "rgb(233, 233, 233)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-200",
+                "value": "rgb(225, 225, 225)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-300",
+                "value": "rgb(218, 218, 218)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-400",
+                "value": "rgb(198, 198, 198)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-500",
+                "value": "rgb(143, 143, 143)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-600",
+                "value": "rgb(113, 113, 113)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-700",
+                "value": "rgb(80, 80, 80)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-800",
+                "value": "rgb(41, 41, 41)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-900",
+                "value": "rgb(19, 19, 19)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-1000",
+                "value": "rgb(0, 0, 0)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              }
+            ]
+          },
+          {
+            "name": "gray",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "gray-25",
+                "value": "rgb(17, 17, 17)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-50",
+                "value": "rgb(27, 27, 27)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-75",
+                "value": "rgb(34, 34, 34)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-100",
+                "value": "rgb(44, 44, 44)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-200",
+                "value": "rgb(50, 50, 50)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-300",
+                "value": "rgb(57, 57, 57)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-400",
+                "value": "rgb(68, 68, 68)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-500",
+                "value": "rgb(109, 109, 109)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-600",
+                "value": "rgb(138, 138, 138)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-700",
+                "value": "rgb(175, 175, 175)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-800",
+                "value": "rgb(219, 219, 219)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-900",
+                "value": "rgb(242, 242, 242)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-1000",
+                "value": "rgb(255, 255, 255)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              }
+            ]
+          },
+          {
+            "name": "neutral aliases",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "background-base-color",
+                "value": "rgb(255, 255, 255)",
+                "alias": "{gray-25}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-elevated-color",
+                "value": "rgb(255, 255, 255)",
+                "alias": "{gray-25}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-layer-1-color",
+                "value": "rgb(248, 248, 248)",
+                "alias": "{gray-50}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-layer-2-color",
+                "value": "rgb(255, 255, 255)",
+                "alias": "{gray-25}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-pasteboard-color",
+                "value": "rgb(233, 233, 233)",
+                "alias": "{gray-100}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "disabled-background-color",
+                "value": "rgb(233, 233, 233)",
+                "alias": "{gray-100}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "disabled-border-color",
+                "value": "rgb(218, 218, 218)",
+                "alias": "{gray-300}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "disabled-content-color",
+                "value": "rgb(198, 198, 198)",
+                "alias": "{gray-400}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-background-color-default",
+                "value": "rgb(41, 41, 41)",
+                "alias": "{gray-800}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-content-color-default",
+                "value": "rgb(41, 41, 41)",
+                "alias": "{gray-800}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-subdued-background-color-default",
+                "value": "rgb(80, 80, 80)",
+                "alias": "{gray-700}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-subdued-content-color-default",
+                "value": "rgb(80, 80, 80)",
+                "alias": "{gray-700}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "gray-100",
+                "value": "rgb(233, 233, 233)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-1000",
+                "value": "rgb(0, 0, 0)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-25",
+                "value": "rgb(255, 255, 255)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-500",
+                "value": "rgb(143, 143, 143)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-800",
+                "value": "rgb(41, 41, 41)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              }
+            ]
+          },
+          {
+            "name": "neutral aliases",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "background-base-color",
+                "value": "rgb(17, 17, 17)",
+                "alias": "{gray-25}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-elevated-color",
+                "value": "rgb(34, 34, 34)",
+                "alias": "{gray-75}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-layer-1-color",
+                "value": "rgb(27, 27, 27)",
+                "alias": "{gray-50}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-layer-2-color",
+                "value": "rgb(34, 34, 34)",
+                "alias": "{gray-75}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "background-pasteboard-color",
+                "value": "rgb(17, 17, 17)",
+                "alias": "{gray-25}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "disabled-background-color",
+                "value": "rgb(44, 44, 44)",
+                "alias": "{gray-100}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "disabled-border-color",
+                "value": "rgb(57, 57, 57)",
+                "alias": "{gray-300}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "disabled-content-color",
+                "value": "rgb(68, 68, 68)",
+                "alias": "{gray-400}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-background-color-default",
+                "value": "rgb(219, 219, 219)",
+                "alias": "{gray-800}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-content-color-default",
+                "value": "rgb(219, 219, 219)",
+                "alias": "{gray-800}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-subdued-background-color-default",
+                "value": "rgb(109, 109, 109)",
+                "alias": "{gray-500}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "neutral-subdued-content-color-default",
+                "value": "rgb(175, 175, 175)",
+                "alias": "{gray-700}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "gray-100",
+                "value": "rgb(44, 44, 44)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-1000",
+                "value": "rgb(255, 255, 255)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-25",
+                "value": "rgb(17, 17, 17)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-500",
+                "value": "rgb(109, 109, 109)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "gray-800",
+                "value": "rgb(219, 219, 219)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "blue",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "blue-100",
+                "value": "rgb(245, 249, 255)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-200",
+                "value": "rgb(229, 240, 254)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-300",
+                "value": "rgb(203, 226, 254)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-400",
+                "value": "rgb(172, 207, 253)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-500",
+                "value": "rgb(142, 185, 252)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-600",
+                "value": "rgb(114, 158, 253)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-700",
+                "value": "rgb(93, 137, 255)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-800",
+                "value": "rgb(75, 117, 255)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-900",
+                "value": "rgb(59, 99, 251)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1000",
+                "value": "rgb(39, 77, 234)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1100",
+                "value": "rgb(29, 62, 207)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1200",
+                "value": "rgb(21, 50, 173)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1300",
+                "value": "rgb(16, 40, 140)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1400",
+                "value": "rgb(12, 31, 105)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1500",
+                "value": "rgb(14, 24, 67)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1600",
+                "value": "rgb(7, 11, 30)",
+                "mode": "light",
+                "file": "src/color-palette.json"
+              }
+            ]
+          },
+          {
+            "name": "blue",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "blue-100",
+                "value": "rgb(14, 23, 63)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-200",
+                "value": "rgb(15, 28, 82)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-300",
+                "value": "rgb(12, 33, 117)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-400",
+                "value": "rgb(18, 45, 154)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-500",
+                "value": "rgb(26, 58, 195)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-600",
+                "value": "rgb(37, 73, 229)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-700",
+                "value": "rgb(52, 91, 248)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-800",
+                "value": "rgb(64, 105, 253)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-900",
+                "value": "rgb(86, 129, 255)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1000",
+                "value": "rgb(105, 149, 254)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1100",
+                "value": "rgb(124, 169, 252)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1200",
+                "value": "rgb(152, 192, 252)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1300",
+                "value": "rgb(181, 213, 253)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1400",
+                "value": "rgb(213, 231, 254)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1500",
+                "value": "rgb(238, 245, 255)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              },
+              {
+                "name": "blue-1600",
+                "value": "rgb(255, 255, 255)",
+                "mode": "dark",
+                "file": "src/color-palette.json"
+              }
+            ]
+          },
+          {
+            "name": "accent aliases",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "accent-background-color-default",
+                "value": "rgb(59, 99, 251)",
+                "alias": "{accent-color-900}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-background-color-down",
+                "value": "rgb(39, 77, 234)",
+                "alias": "{accent-color-1000}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-background-color-hover",
+                "value": "rgb(39, 77, 234)",
+                "alias": "{accent-color-1000}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-background-color-key-focus",
+                "value": "rgb(39, 77, 234)",
+                "alias": "{accent-color-1000}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-default",
+                "value": "rgb(59, 99, 251)",
+                "alias": "{accent-color-900}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-down",
+                "value": "rgb(39, 77, 234)",
+                "alias": "{accent-color-1000}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-hover",
+                "value": "rgb(39, 77, 234)",
+                "alias": "{accent-color-1000}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-key-focus",
+                "value": "rgb(39, 77, 234)",
+                "alias": "{accent-color-1000}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-visual-color",
+                "value": "rgb(75, 117, 255)",
+                "alias": "{accent-color-800}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "focus-indicator-color",
+                "value": "rgb(75, 117, 255)",
+                "alias": "{blue-800}",
+                "mode": "light",
+                "file": "src/color-aliases.json"
+              }
+            ]
+          },
+          {
+            "name": "accent aliases",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "accent-background-color-default",
+                "value": "rgb(64, 105, 253)",
+                "alias": "{accent-color-800}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-background-color-down",
+                "value": "rgb(52, 91, 248)",
+                "alias": "{accent-color-700}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-background-color-hover",
+                "value": "rgb(52, 91, 248)",
+                "alias": "{accent-color-700}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-background-color-key-focus",
+                "value": "rgb(52, 91, 248)",
+                "alias": "{accent-color-700}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-default",
+                "value": "rgb(86, 129, 255)",
+                "alias": "{accent-color-900}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-down",
+                "value": "rgb(105, 149, 254)",
+                "alias": "{accent-color-1000}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-hover",
+                "value": "rgb(105, 149, 254)",
+                "alias": "{accent-color-1000}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-content-color-key-focus",
+                "value": "rgb(105, 149, 254)",
+                "alias": "{accent-color-1000}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "accent-visual-color",
+                "value": "rgb(86, 129, 255)",
+                "alias": "{accent-color-900}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              },
+              {
+                "name": "focus-indicator-color",
+                "value": "rgb(64, 105, 253)",
+                "alias": "{blue-800}",
+                "mode": "dark",
+                "file": "src/color-aliases.json"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@adobe/spectrum-tokens@15.6.0 (^src\\/)",
+            "files": 91
+          },
+          {
+            "package": "@adobe/spectrum-tokens@15.6.0 (^(README|llms|AGENTS)\\.(md|txt)$|^manifest\\.json$)",
+            "files": 3
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 141,
+            "files": 8,
+            "topFiles": [
+              {
+                "file": "@adobe/spectrum-tokens:src/heading.json",
+                "hits": 37
+              },
+              {
+                "file": "@adobe/spectrum-tokens:src/detail.json",
+                "hits": 25
+              },
+              {
+                "file": "@adobe/spectrum-tokens:src/body.json",
+                "hits": 20
+              },
+              {
+                "file": "@adobe/spectrum-tokens:src/title.json",
+                "hits": 19
+              },
+              {
+                "file": "@adobe/spectrum-tokens:src/code.json",
+                "hits": 16
+              }
+            ],
+            "samples": [
+              {
+                "file": "@adobe/spectrum-tokens:src/body.json",
+                "line": 2,
+                "text": "\"body-cjk-emphasized-font-style\": {"
+              },
+              {
+                "file": "@adobe/spectrum-tokens:src/code.json",
+                "line": 2,
+                "text": "\"code-cjk-emphasized-font-style\": {"
+              },
+              {
+                "file": "@adobe/spectrum-tokens:src/detail.json",
+                "line": 2,
+                "text": "\"detail-cjk-emphasized-font-style\": {"
+              },
+              {
+                "file": "@adobe/spectrum-tokens:src/drop-zone.json",
+                "line": 53,
+                "text": "\"drop-zone-cjk-title-font-size\": {"
+              }
+            ]
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          }
+        ],
+        "tokens": [
+          {
+            "name": "cjk-font-family",
+            "value": "Adobe Clean Han",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "cjk-letter-spacing",
+            "value": "0em",
+            "alias": "{letter-spacing}",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "cjk-line-height-100",
+            "value": "1.5",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "cjk-line-height-200",
+            "value": "1.7",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "text-align-end",
+            "value": "end",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "text-align-start",
+            "value": "start",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "default-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "sans-serif-font-family",
+            "value": "Adobe Clean Spectrum VF",
+            "file": "src/typography.json"
+          },
+          {
+            "name": "serif-font-family",
+            "value": "Adobe Clean Serif",
+            "file": "src/typography.json"
+          }
+        ],
+        "findings": [
+          "Spectrum is the only system here with script-specific line-height tokens: cjk-line-height-100 = 1.5 against line-height-100 = 1.3, and cjk-line-height-200 = 1.7 against line-height-200 = 1.5; plus cjk-font-family (Adobe Clean Han) and cjk-letter-spacing. The precedent — a script gets its own multiplier token — is exactly what Arabic needs, but no Arabic, Hebrew or RTL token exists.",
+          "Component text uses fixed px line heights tied to each font size (line-height-font-size-100 = 18px for 14px on desktop, 22px for 17px on mobile), ratio ≈ 1.29, with no CJK or other script variant for components.",
+          "Platform scale is a first-class dimension: every size token has desktop and mobile values (component-height-100 32px → 40px, font-size-100 14px → 17px): touch gets ×1.25 on height and a larger font, not just padding.",
+          "Density words appear only on a few layout tokens (117 names containing compact/spacious: list gaps, group gaps, field icon offsets), not as a global mode.",
+          "Direction: tokens use logical names (text-align-start/end, field-end-edge-…, edge-to-text); there is no direction token."
+        ]
+      },
+      "extra": {
+        "densityWordTokens": [
+          "accordion-bottom-to-text-compact-extra-large",
+          "accordion-bottom-to-text-compact-large",
+          "accordion-bottom-to-text-compact-medium",
+          "accordion-bottom-to-text-compact-small",
+          "accordion-bottom-to-text-spacious-extra-large",
+          "accordion-bottom-to-text-spacious-large",
+          "accordion-bottom-to-text-spacious-medium",
+          "accordion-bottom-to-text-spacious-small",
+          "accordion-small-top-to-text-spacious",
+          "accordion-top-to-text-compact-extra-large",
+          "accordion-top-to-text-compact-large",
+          "accordion-top-to-text-compact-medium",
+          "accordion-top-to-text-compact-small",
+          "accordion-top-to-text-spacious-extra-large",
+          "accordion-top-to-text-spacious-large",
+          "accordion-top-to-text-spacious-medium",
+          "accordion-top-to-text-spacious-small",
+          "bar-panel-spacing-extra-spacious",
+          "breadcrumbs-bottom-to-text-compact",
+          "breadcrumbs-height-compact",
+          "breadcrumbs-top-to-separator-icon-compact",
+          "breadcrumbs-top-to-text-compact",
+          "breadcrumbs-top-to-truncated-menu-compact",
+          "card-horizontal-edge-to-content-compact",
+          "card-horizontal-edge-to-content-spacious",
+          "card-edge-to-content-compact-extra-large",
+          "card-edge-to-content-compact-extra-small",
+          "card-edge-to-content-compact-large",
+          "card-edge-to-content-compact-medium",
+          "card-edge-to-content-compact-small",
+          "card-edge-to-content-spacious-extra-large",
+          "card-edge-to-content-spacious-extra-small",
+          "card-edge-to-content-spacious-large",
+          "card-edge-to-content-spacious-medium",
+          "card-edge-to-content-spacious-small",
+          "banner-padding-horizontal-compact",
+          "field-top-to-disclosure-icon-compact-extra-large",
+          "field-top-to-disclosure-icon-compact-large",
+          "field-top-to-disclosure-icon-compact-medium",
+          "field-top-to-disclosure-icon-compact-small",
+          "field-top-to-disclosure-icon-spacious-extra-large",
+          "field-top-to-disclosure-icon-spacious-large",
+          "field-top-to-disclosure-icon-spacious-medium",
+          "field-top-to-disclosure-icon-spacious-small",
+          "group-gap-compact",
+          "group-gap-extra-large-spacious",
+          "group-gap-extra-small-spacious",
+          "group-gap-large-spacious",
+          "group-gap-medium-spacious",
+          "group-gap-small-spacious",
+          "list-gap-compact",
+          "list-gap-spacious",
+          "list-item-padding-vertical-spacious",
+          "tab-item-to-tab-item-compact-horizontal-medium",
+          "standard-panel-edge-to-close-button-compact",
+          "standard-panel-edge-to-close-button-spacious",
+          "standard-panel-top-to-close-button-compact",
+          "standard-panel-top-to-close-button-spacious",
+          "swatch-group-spacing-spacious",
+          "table-item-padding-compact",
+          "table-item-padding-spacious",
+          "table-row-bottom-to-text-extra-large-compact",
+          "table-row-bottom-to-text-extra-large-spacious",
+          "table-row-bottom-to-text-large-compact",
+          "table-row-bottom-to-text-large-spacious",
+          "table-row-bottom-to-text-medium-compact",
+          "table-row-bottom-to-text-medium-spacious",
+          "table-row-bottom-to-text-small-compact",
+          "table-row-bottom-to-text-small-spacious",
+          "table-row-checkbox-to-top-extra-large-compact",
+          "table-row-checkbox-to-top-extra-large-spacious",
+          "table-row-checkbox-to-top-large-compact",
+          "table-row-checkbox-to-top-large-spacious",
+          "table-row-checkbox-to-top-medium-compact",
+          "table-row-checkbox-to-top-medium-spacious",
+          "table-row-checkbox-to-top-small-compact",
+          "table-row-checkbox-to-top-small-spacious",
+          "table-row-height-extra-large-compact",
+          "table-row-height-extra-large-spacious",
+          "table-row-height-large-compact",
+          "table-row-height-large-spacious",
+          "table-row-height-medium-compact",
+          "table-row-height-medium-spacious",
+          "table-row-height-small-compact",
+          "table-row-height-small-spacious",
+          "table-row-top-to-text-extra-large-compact",
+          "table-row-top-to-text-extra-large-spacious",
+          "table-row-top-to-text-large-compact",
+          "table-row-top-to-text-large-spacious",
+          "table-row-top-to-text-medium-compact",
+          "table-row-top-to-text-medium-spacious",
+          "table-row-top-to-text-small-compact",
+          "table-row-top-to-text-small-spacious",
+          "table-thumbnail-to-top-minimum-extra-large-compact",
+          "table-thumbnail-to-top-minimum-extra-large-spacious",
+          "table-thumbnail-to-top-minimum-large-compact",
+          "table-thumbnail-to-top-minimum-large-spacious",
+          "table-thumbnail-to-top-minimum-medium-compact",
+          "table-thumbnail-to-top-minimum-medium-spacious",
+          "table-thumbnail-to-top-minimum-small-compact",
+          "table-thumbnail-to-top-minimum-small-spacious",
+          "tab-item-bottom-to-text-compact-extra-large",
+          "tab-item-bottom-to-text-compact-large",
+          "tab-item-bottom-to-text-compact-medium",
+          "tab-item-bottom-to-text-compact-small",
+          "tab-item-compact-height-extra-large",
+          "tab-item-compact-height-large",
+          "tab-item-compact-height-medium",
+          "tab-item-compact-height-small",
+          "tab-item-top-to-text-compact-extra-large",
+          "tab-item-top-to-text-compact-large",
+          "tab-item-top-to-text-compact-medium",
+          "tab-item-top-to-text-compact-small",
+          "tab-item-top-to-workflow-icon-compact-extra-large",
+          "tab-item-top-to-workflow-icon-compact-large",
+          "tab-item-top-to-workflow-icon-compact-medium",
+          "tab-item-top-to-workflow-icon-compact-small"
+        ]
+      }
+    },
+    "gaps": [
+      "No motion (duration/easing), breakpoint, container or z-index tokens in this package.",
+      "No touch-target minimum token; touch is handled by the mobile scale.",
+      "Font weights are named (regular, medium, bold…), not numeric."
+    ]
+  }
+}

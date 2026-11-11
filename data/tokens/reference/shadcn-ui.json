@@ -1,0 +1,1238 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "shadcn-ui",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "tailwindcss",
+        "url": "https://www.npmjs.com/package/tailwindcss/v/4.3.5",
+        "version": "4.3.5",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "theme.css"
+      },
+      {
+        "name": "shadcn-ui/ui",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/app/globals.css, apps/v4/registry/new-york-v4/ui/button.tsx, apps/v4/registry/new-york-v4/ui/input.tsx, apps/v4/registry/styles/style-luma.css, apps/v4/registry/styles/style-lyra.css, apps/v4/registry/styles/style-maia.css, apps/v4/registry/styles/style-mira.css, apps/v4/registry/styles/style-nova.css, apps/v4/registry/styles/style-rhea.css, apps/v4/registry/styles/style-sera.css, apps/v4/registry/styles/style-vega.css, apps/v4/registry/themes.ts"
+      }
+    ],
+    "script": "tools/extract/tokens/shadcn.mjs",
+    "notes": "Class names are read literally; px values are derived from the pinned Tailwind theme (--spacing, --text-*). Read from the default branch at the recorded commit."
+  },
+  "data": {
+    "system": {
+      "name": "shadcn/ui",
+      "package": "shadcn-ui/ui (git)",
+      "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+      "license": "MIT",
+      "url": "https://ui.shadcn.com"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "new-york-v4",
+            "name": "new-york-v4 (classic component source)",
+            "mechanism": "size-prop",
+            "description": "Sizes are literal Tailwind classes in each copied component.",
+            "file": "apps/v4/registry/new-york-v4/ui/button.tsx"
+          },
+          {
+            "id": "style-luma",
+            "name": "style-luma",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-luma.css"
+          },
+          {
+            "id": "style-lyra",
+            "name": "style-lyra",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-lyra.css"
+          },
+          {
+            "id": "style-maia",
+            "name": "style-maia",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-maia.css"
+          },
+          {
+            "id": "style-mira",
+            "name": "style-mira",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-mira.css"
+          },
+          {
+            "id": "style-nova",
+            "name": "style-nova",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-nova.css"
+          },
+          {
+            "id": "style-rhea",
+            "name": "style-rhea",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-rhea.css"
+          },
+          {
+            "id": "style-sera",
+            "name": "style-sera",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-sera.css"
+          },
+          {
+            "id": "style-vega",
+            "name": "style-vega",
+            "mechanism": "size-prop",
+            "description": "Style preset selectable at init; redefines every component size.",
+            "file": "apps/v4/registry/styles/style-vega.css"
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "new-york-v4",
+            "heightPx": 36,
+            "paddingInlinePx": 16,
+            "paddingBlockPx": 8,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 8,
+            "heightSource": "h-9 px-4 py-2",
+            "file": "apps/v4/registry/new-york-v4/ui/button.tsx"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "new-york-v4",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 8,
+            "heightSource": "h-6 rounded-md px-2 text-xs",
+            "file": "apps/v4/registry/new-york-v4/ui/button.tsx"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "new-york-v4",
+            "heightPx": 32,
+            "paddingInlinePx": 12,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 8,
+            "heightSource": "h-8 rounded-md px-3",
+            "file": "apps/v4/registry/new-york-v4/ui/button.tsx"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "new-york-v4",
+            "heightPx": 40,
+            "paddingInlinePx": 24,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 8,
+            "heightSource": "h-10 rounded-md px-6",
+            "file": "apps/v4/registry/new-york-v4/ui/button.tsx"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "new-york-v4",
+            "heightPx": 36,
+            "paddingInlinePx": 12,
+            "paddingBlockPx": 4,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "radiusPx": 8,
+            "heightSource": "h-9 rounded-md px-3 py-1 text-base",
+            "file": "apps/v4/registry/new-york-v4/ui/input.tsx",
+            "note": "text-base below md, text-sm (14px) from md up"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-luma",
+            "heightPx": 24,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 26,
+            "heightSource": "h-6 px-2.5 text-xs",
+            "file": "apps/v4/registry/styles/style-luma.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-luma",
+            "heightPx": 32,
+            "paddingInlinePx": 12,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 26,
+            "heightSource": "h-8 px-3",
+            "file": "apps/v4/registry/styles/style-luma.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-luma",
+            "heightPx": 36,
+            "paddingInlinePx": 12,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 26,
+            "heightSource": "h-9 px-3",
+            "file": "apps/v4/registry/styles/style-luma.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-luma",
+            "heightPx": 40,
+            "paddingInlinePx": 16,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 26,
+            "heightSource": "h-10 px-4",
+            "file": "apps/v4/registry/styles/style-luma.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-luma",
+            "heightPx": 36,
+            "paddingInlinePx": 12,
+            "paddingBlockPx": 4,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "radiusPx": 22,
+            "heightSource": "h-9 rounded-3xl px-3 py-1 text-base",
+            "file": "apps/v4/registry/styles/style-luma.css"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-lyra",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-6 rounded-none px-2 text-xs",
+            "file": "apps/v4/registry/styles/style-lyra.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-lyra",
+            "heightPx": 28,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-7 rounded-none px-2.5",
+            "file": "apps/v4/registry/styles/style-lyra.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-lyra",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "gapPx": 6,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-8 px-2.5",
+            "file": "apps/v4/registry/styles/style-lyra.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-lyra",
+            "heightPx": 36,
+            "paddingInlinePx": 10,
+            "gapPx": 6,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-9 px-2.5",
+            "file": "apps/v4/registry/styles/style-lyra.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-lyra",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "paddingBlockPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-8 rounded-none px-2.5 py-1 text-xs",
+            "file": "apps/v4/registry/styles/style-lyra.css"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-maia",
+            "heightPx": 24,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 26,
+            "heightSource": "h-6 px-2.5 text-xs",
+            "file": "apps/v4/registry/styles/style-maia.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-maia",
+            "heightPx": 32,
+            "paddingInlinePx": 12,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 26,
+            "heightSource": "h-8 px-3",
+            "file": "apps/v4/registry/styles/style-maia.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-maia",
+            "heightPx": 36,
+            "paddingInlinePx": 12,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 26,
+            "heightSource": "h-9 px-3",
+            "file": "apps/v4/registry/styles/style-maia.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-maia",
+            "heightPx": 40,
+            "paddingInlinePx": 16,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 26,
+            "heightSource": "h-10 px-4",
+            "file": "apps/v4/registry/styles/style-maia.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-maia",
+            "heightPx": 36,
+            "paddingInlinePx": 12,
+            "paddingBlockPx": 4,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "radiusPx": 26,
+            "heightSource": "h-9 rounded-4xl px-3 py-1 text-base",
+            "file": "apps/v4/registry/styles/style-maia.css"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-mira",
+            "heightPx": 20,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 10,
+            "radiusPx": 6,
+            "heightSource": "h-5 rounded-sm px-2 text-[0.625rem]",
+            "file": "apps/v4/registry/styles/style-mira.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-mira",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.625,
+            "lineHeightPx": 19.5,
+            "radiusPx": 8,
+            "heightSource": "h-6 px-2 text-xs/relaxed",
+            "file": "apps/v4/registry/styles/style-mira.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-mira",
+            "heightPx": 28,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.625,
+            "lineHeightPx": 19.5,
+            "radiusPx": 8,
+            "heightSource": "h-7 px-2 text-xs/relaxed",
+            "file": "apps/v4/registry/styles/style-mira.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-mira",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.625,
+            "lineHeightPx": 19.5,
+            "radiusPx": 8,
+            "heightSource": "h-8 px-2.5 text-xs/relaxed",
+            "file": "apps/v4/registry/styles/style-mira.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-mira",
+            "heightPx": 28,
+            "paddingInlinePx": 8,
+            "paddingBlockPx": 2,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 8,
+            "heightSource": "h-7 rounded-md px-2 py-0.5 text-sm",
+            "file": "apps/v4/registry/styles/style-mira.css"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-nova",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 10,
+            "heightSource": "h-6 rounded-[min(var(--radius-md),10px)] px-2 text-xs",
+            "file": "apps/v4/registry/styles/style-nova.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-nova",
+            "heightPx": 28,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 12.8,
+            "radiusPx": 10,
+            "heightSource": "h-7 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem]",
+            "file": "apps/v4/registry/styles/style-nova.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-nova",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 10,
+            "heightSource": "h-8 px-2.5",
+            "file": "apps/v4/registry/styles/style-nova.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-nova",
+            "heightPx": 36,
+            "paddingInlinePx": 10,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 10,
+            "heightSource": "h-9 px-2.5",
+            "file": "apps/v4/registry/styles/style-nova.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-nova",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "paddingBlockPx": 4,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "radiusPx": 10,
+            "heightSource": "h-8 rounded-lg px-2.5 py-1 text-base",
+            "file": "apps/v4/registry/styles/style-nova.css"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-rhea",
+            "heightPx": 24,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 18,
+            "heightSource": "h-6 px-2.5 text-xs",
+            "file": "apps/v4/registry/styles/style-rhea.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-rhea",
+            "heightPx": 28,
+            "paddingInlinePx": 12,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 18,
+            "heightSource": "h-7 px-3",
+            "file": "apps/v4/registry/styles/style-rhea.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-rhea",
+            "heightPx": 32,
+            "paddingInlinePx": 12,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 18,
+            "heightSource": "h-8 px-3",
+            "file": "apps/v4/registry/styles/style-rhea.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-rhea",
+            "heightPx": 36,
+            "paddingInlinePx": 16,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 18,
+            "heightSource": "h-9 px-4",
+            "file": "apps/v4/registry/styles/style-rhea.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-rhea",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "paddingBlockPx": 4,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "radiusPx": 18,
+            "heightSource": "h-8 rounded-2xl px-2.5 py-1 text-base",
+            "file": "apps/v4/registry/styles/style-rhea.css"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-sera",
+            "heightPx": 28,
+            "paddingInlinePx": 12,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-7 px-3",
+            "file": "apps/v4/registry/styles/style-sera.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-sera",
+            "heightPx": 36,
+            "paddingInlinePx": 16,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-9 px-4",
+            "file": "apps/v4/registry/styles/style-sera.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-sera",
+            "heightPx": 40,
+            "paddingInlinePx": 24,
+            "gapPx": 6,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-10 px-6",
+            "file": "apps/v4/registry/styles/style-sera.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-sera",
+            "heightPx": 44,
+            "paddingInlinePx": 32,
+            "gapPx": 6,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 0,
+            "heightSource": "h-11 px-8",
+            "file": "apps/v4/registry/styles/style-sera.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-sera",
+            "heightPx": 40,
+            "paddingInlinePx": 0,
+            "paddingBlockPx": 4,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "heightSource": "h-10 px-0 py-1 text-base",
+            "file": "apps/v4/registry/styles/style-sera.css"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "style-vega",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 12,
+            "lineHeightRatio": 1.3333,
+            "lineHeightPx": 16,
+            "radiusPx": 8,
+            "heightSource": "h-6 rounded-[min(var(--radius-md),8px)] px-2 text-xs",
+            "file": "apps/v4/registry/styles/style-vega.css"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "style-vega",
+            "heightPx": 32,
+            "paddingInlinePx": 10,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 8,
+            "heightSource": "h-8 rounded-[min(var(--radius-md),10px)] px-2.5",
+            "file": "apps/v4/registry/styles/style-vega.css"
+          },
+          {
+            "component": "button",
+            "size": "default",
+            "mode": "style-vega",
+            "heightPx": 36,
+            "paddingInlinePx": 10,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 8,
+            "heightSource": "h-9 px-2.5",
+            "file": "apps/v4/registry/styles/style-vega.css"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "style-vega",
+            "heightPx": 40,
+            "paddingInlinePx": 10,
+            "gapPx": 6,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.4286,
+            "lineHeightPx": 20,
+            "radiusPx": 8,
+            "heightSource": "h-10 px-2.5",
+            "file": "apps/v4/registry/styles/style-vega.css"
+          },
+          {
+            "component": "input",
+            "size": "default",
+            "mode": "style-vega",
+            "heightPx": 36,
+            "paddingInlinePx": 10,
+            "paddingBlockPx": 4,
+            "fontSizePx": 16,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "radiusPx": 8,
+            "heightSource": "h-9 rounded-md px-2.5 py-1 text-base",
+            "file": "apps/v4/registry/styles/style-vega.css"
+          }
+        ],
+        "touchTarget": []
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "--radius",
+            "value": "0.625rem",
+            "px": 10,
+            "file": "apps/v4/registry/themes.ts"
+          },
+          {
+            "name": "radius-sm",
+            "value": "calc(var(--radius) * 0.6)",
+            "px": 6,
+            "derived": true,
+            "formula": "--radius 0.625rem",
+            "file": "apps/v4/app/globals.css"
+          },
+          {
+            "name": "radius-md",
+            "value": "calc(var(--radius) * 0.8)",
+            "px": 8,
+            "derived": true,
+            "formula": "--radius 0.625rem",
+            "file": "apps/v4/app/globals.css"
+          },
+          {
+            "name": "radius-lg",
+            "value": "var(--radius)",
+            "px": 10,
+            "derived": true,
+            "formula": "--radius 0.625rem",
+            "file": "apps/v4/app/globals.css"
+          },
+          {
+            "name": "radius-xl",
+            "value": "calc(var(--radius) * 1.4)",
+            "px": 14,
+            "derived": true,
+            "formula": "--radius 0.625rem",
+            "file": "apps/v4/app/globals.css"
+          },
+          {
+            "name": "radius-2xl",
+            "value": "calc(var(--radius) * 1.8)",
+            "px": 18,
+            "derived": true,
+            "formula": "--radius 0.625rem",
+            "file": "apps/v4/app/globals.css"
+          },
+          {
+            "name": "radius-3xl",
+            "value": "calc(var(--radius) * 2.2)",
+            "px": 22,
+            "derived": true,
+            "formula": "--radius 0.625rem",
+            "file": "apps/v4/app/globals.css"
+          },
+          {
+            "name": "radius-4xl",
+            "value": "calc(var(--radius) * 2.6)",
+            "px": 26,
+            "derived": true,
+            "formula": "--radius 0.625rem",
+            "file": "apps/v4/app/globals.css"
+          }
+        ]
+      },
+      "focusRing": {
+        "steps": [
+          {
+            "name": "focus-visible:ring width",
+            "value": "3px",
+            "px": 3,
+            "file": "apps/v4/registry/new-york-v4/ui/button.tsx",
+            "note": "ring colour var(--ring) at 50% opacity; no offset"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [],
+          "semanticRoles": [
+            "background",
+            "foreground",
+            "card",
+            "card-foreground",
+            "popover",
+            "popover-foreground",
+            "primary",
+            "primary-foreground",
+            "secondary",
+            "secondary-foreground",
+            "muted",
+            "muted-foreground",
+            "accent",
+            "accent-foreground",
+            "destructive",
+            "border",
+            "input",
+            "ring",
+            "chart-1",
+            "chart-2",
+            "chart-3",
+            "chart-4",
+            "chart-5",
+            "sidebar",
+            "sidebar-foreground",
+            "sidebar-primary",
+            "sidebar-primary-foreground",
+            "sidebar-accent",
+            "sidebar-accent-foreground",
+            "sidebar-border",
+            "sidebar-ring"
+          ],
+          "modes": [
+            "light",
+            "dark"
+          ],
+          "note": "Paired roles (x / x-foreground) as CSS variables in OKLCH. 24 themes in the registry: base colours neutral, stone, zinc, mauve, olive, mist, taupe and accent themes."
+        },
+        "neutral": [
+          {
+            "name": "neutral theme roles",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "background",
+                "value": "oklch(1 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "foreground",
+                "value": "oklch(0.145 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "card",
+                "value": "oklch(1 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "popover",
+                "value": "oklch(1 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "secondary",
+                "value": "oklch(0.97 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "muted",
+                "value": "oklch(0.97 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "muted-foreground",
+                "value": "oklch(0.556 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "accent",
+                "value": "oklch(0.97 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "border",
+                "value": "oklch(0.922 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "input",
+                "value": "oklch(0.922 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              }
+            ]
+          },
+          {
+            "name": "neutral theme roles",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "background",
+                "value": "oklch(0.145 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "foreground",
+                "value": "oklch(0.985 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "card",
+                "value": "oklch(0.205 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "popover",
+                "value": "oklch(0.205 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "secondary",
+                "value": "oklch(0.269 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "muted",
+                "value": "oklch(0.269 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "muted-foreground",
+                "value": "oklch(0.708 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "accent",
+                "value": "oklch(0.269 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "border",
+                "value": "oklch(1 0 0 / 10%)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "input",
+                "value": "oklch(1 0 0 / 15%)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "neutral theme primary",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "primary",
+                "value": "oklch(0.205 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "primary-foreground",
+                "value": "oklch(0.985 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "ring",
+                "value": "oklch(0.708 0 0)",
+                "mode": "light",
+                "file": "apps/v4/registry/themes.ts"
+              }
+            ]
+          },
+          {
+            "name": "neutral theme primary",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "primary",
+                "value": "oklch(0.922 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "primary-foreground",
+                "value": "oklch(0.205 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              },
+              {
+                "name": "ring",
+                "value": "oklch(0.556 0 0)",
+                "mode": "dark",
+                "file": "apps/v4/registry/themes.ts"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "shadcn-ui/ui@dd41d19e2f80 registry/new-york-v4/ui",
+            "files": 62
+          },
+          {
+            "package": "shadcn-ui/ui@dd41d19e2f80 registry/styles",
+            "files": 8
+          },
+          {
+            "package": "shadcn-ui/ui@dd41d19e2f80 registry/bases/*/ui",
+            "files": 188
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 1,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "shadcn-ui/ui:aria/ui/direction.tsx",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "shadcn-ui/ui:aria/ui/direction.tsx",
+                "line": 12,
+                "text": "hat forces the direction by setting the script to arabic or latin."
+              }
+            ]
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 46,
+            "files": 28,
+            "topFiles": [
+              {
+                "file": "shadcn-ui/ui:base/ui/calendar.tsx",
+                "hits": 4
+              },
+              {
+                "file": "shadcn-ui/ui:radix/ui/calendar.tsx",
+                "hits": 4
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/calendar.tsx",
+                "hits": 2
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/carousel.tsx",
+                "hits": 2
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/direction.tsx",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "shadcn-ui/ui:calendar.tsx",
+                "line": 37,
+                "text": "String.raw`rtl:**:[.rdp-button\\_next>svg]:rotate-180`,"
+              },
+              {
+                "file": "shadcn-ui/ui:message-scroller.tsx",
+                "line": 102,
+                "text": "tion=start]:data-[active=false]:-translate-y-full rtl:translate-x-1/2 data-[direction=start]:[&_svg]:rotate-180\","
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/breadcrumb.tsx",
+                "line": 72,
+                "text": "className=\"cn-rtl-flip\""
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/calendar.tsx",
+                "line": 159,
+                "text": "className=\"cn-rtl-flip size-4\""
+              }
+            ]
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 9,
+            "files": 9,
+            "topFiles": [
+              {
+                "file": "shadcn-ui/ui:aria/ui/code-block.tsx",
+                "hits": 1
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/command.tsx",
+                "hits": 1
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/sidebar.tsx",
+                "hits": 1
+              },
+              {
+                "file": "shadcn-ui/ui:base/ui/code-block.tsx",
+                "hits": 1
+              },
+              {
+                "file": "shadcn-ui/ui:base/ui/sidebar.tsx",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "shadcn-ui/ui:direction.tsx",
+                "line": 14,
+                "text": "<Direction.DirectionProvider dir={direction ?? dir}>"
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/code-block.tsx",
+                "line": 165,
+                "text": "dir=\"ltr\""
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/command.tsx",
+                "line": 51,
+                "text": "dir={dir}"
+              },
+              {
+                "file": "shadcn-ui/ui:aria/ui/sidebar.tsx",
+                "line": 190,
+                "text": "dir={dir}"
+              }
+            ]
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          }
+        ],
+        "findings": [
+          "The theme has no variable for direction, language or script, and none for font family (fonts are left to the app; Tailwind defaults apply).",
+          "Direction lives in component class names. In the classic new-york-v4 sources the scan counts 121 physical utilities (ml-, pr-, left-…) against 5 logical ones (ms-, pe-, start-…); the newer registry bases add rtl: variants and a DirectionProvider wrapper (ui/direction.tsx) — 46 lines mention rtl across all scanned sources.",
+          "Density is expressed as style presets rather than a mode. Default button height / label text per preset: new-york-v4 36px / 14px on 20px; luma 36px / 14px on 20px; lyra 32px / 12px on 16px; maia 36px / 14px on 20px; mira 28px / 12px on 19.5px; nova 32px / 14px on 20px; rhea 32px / 14px on 20px; sera 40px / 12px on 16px; vega 36px / 14px on 20px.",
+          "Inputs use 16px text below the md breakpoint and 14px above (avoids iOS zoom) at an unchanged 36px height."
+        ]
+      }
+    },
+    "notes": "Spacing, type scale, breakpoints, shadows and motion are Tailwind defaults (see tailwind.json); shadcn/ui adds only colour roles, --radius and component classes.",
+    "gaps": [
+      "No own spacing, type, breakpoint, z-index, elevation or motion scale (inherits Tailwind).",
+      "No touch-target token or touch mode.",
+      "Not a versioned package: values are from the repository default branch at the recorded commit."
+    ]
+  }
+}

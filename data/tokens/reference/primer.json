@@ -1,0 +1,2304 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "primer",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@primer/primitives",
+        "url": "https://www.npmjs.com/package/@primer/primitives/v/11.10.0",
+        "version": "11.10.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "dist/css/base/motion/motion.css, dist/css/base/size/size.css, dist/css/base/size/z-index.css, dist/css/base/typography/typography.css, dist/css/functional/motion/motion.css, dist/css/functional/size/border.css, dist/css/functional/size/breakpoints.css, dist/css/functional/size/radius.css, dist/css/functional/size/size-coarse.css, dist/css/functional/size/size-fine.css, dist/css/functional/size/size.css, dist/css/functional/size/z-index.css, dist/css/functional/spacing/space.css, dist/css/functional/themes/dark.css, dist/css/functional/themes/light.css, dist/css/functional/typography/typography.css, src/tokens/base/color/dark/dark.json5, src/tokens/base/color/light/light.json5"
+      }
+    ],
+    "script": "tools/extract/tokens/primer.mjs"
+  },
+  "data": {
+    "system": {
+      "name": "GitHub Primer primitives",
+      "package": "@primer/primitives",
+      "version": "11.10.0",
+      "license": "MIT",
+      "url": "https://primer.style"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "condensed",
+            "name": "condensed",
+            "mechanism": "spacing-variant",
+            "description": "Changes control paddingInline and stack gaps only; height is set by the size (xsmall…xlarge).",
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "id": "normal",
+            "name": "normal",
+            "mechanism": "spacing-variant",
+            "description": "Changes control paddingInline and stack gaps only; height is set by the size (xsmall…xlarge).",
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "id": "spacious",
+            "name": "spacious",
+            "mechanism": "spacing-variant",
+            "description": "Changes control paddingInline and stack gaps only; height is set by the size (xsmall…xlarge).",
+            "file": "dist/css/functional/size/size.css"
+          }
+        ],
+        "sizes": [
+          {
+            "component": "control",
+            "size": "xsmall",
+            "mode": "condensed",
+            "heightPx": 24,
+            "paddingBlockPx": 2,
+            "paddingInlinePx": 4,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-xsmall-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "xsmall",
+            "mode": "normal",
+            "heightPx": 24,
+            "paddingBlockPx": 2,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-xsmall-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "xsmall",
+            "mode": "spacious",
+            "heightPx": 24,
+            "paddingBlockPx": 2,
+            "paddingInlinePx": 12,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-xsmall-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "small",
+            "mode": "condensed",
+            "heightPx": 28,
+            "paddingBlockPx": 4,
+            "paddingInlinePx": 8,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-small-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "small",
+            "mode": "normal",
+            "heightPx": 28,
+            "paddingBlockPx": 4,
+            "paddingInlinePx": 12,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-small-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "small",
+            "mode": "spacious",
+            "heightPx": 28,
+            "paddingBlockPx": 4,
+            "paddingInlinePx": 16,
+            "gapPx": 4,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-small-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "medium",
+            "mode": "condensed",
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 8,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-medium-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "medium",
+            "mode": "normal",
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-medium-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "medium",
+            "mode": "spacious",
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 16,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-medium-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "large",
+            "mode": "condensed",
+            "heightPx": 40,
+            "paddingBlockPx": 10,
+            "paddingInlinePx": 8,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-large-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "large",
+            "mode": "normal",
+            "heightPx": 40,
+            "paddingBlockPx": 10,
+            "paddingInlinePx": 12,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-large-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "large",
+            "mode": "spacious",
+            "heightPx": 40,
+            "paddingBlockPx": 10,
+            "paddingInlinePx": 16,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-large-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "xlarge",
+            "mode": "condensed",
+            "heightPx": 48,
+            "paddingBlockPx": 14,
+            "paddingInlinePx": 8,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-xlarge-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "xlarge",
+            "mode": "normal",
+            "heightPx": 48,
+            "paddingBlockPx": 14,
+            "paddingInlinePx": 12,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-xlarge-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          },
+          {
+            "component": "control",
+            "size": "xlarge",
+            "mode": "spacious",
+            "heightPx": 48,
+            "paddingBlockPx": 14,
+            "paddingInlinePx": 16,
+            "gapPx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 6,
+            "heightSource": "--control-xlarge-size",
+            "file": "dist/css/functional/size/size.css",
+            "note": "line box = size − 2 × paddingBlock (derived); font size is text.body.size.medium, described upstream as the default UI font — the primitives do not bind a font size to a control size"
+          }
+        ],
+        "touchTarget": [
+          {
+            "name": "control-minTarget-coarse",
+            "value": "2.75rem",
+            "px": 44,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "control-minTarget-fine",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "control-minTarget-auto @media (pointer: coarse)",
+            "value": "2.75rem",
+            "px": 44,
+            "file": "dist/css/functional/size/size-coarse.css"
+          },
+          {
+            "name": "control-minTarget-auto @media (pointer: fine)",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/functional/size/size-fine.css"
+          }
+        ]
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "base-size-2",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-4",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-6",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-8",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-12",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-16",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-20",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-24",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-28",
+            "value": "1.75rem",
+            "px": 28,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-32",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-36",
+            "value": "2.25rem",
+            "px": 36,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-40",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-44",
+            "value": "2.75rem",
+            "px": 44,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-48",
+            "value": "3rem",
+            "px": 48,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-64",
+            "value": "4rem",
+            "px": 64,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-80",
+            "value": "5rem",
+            "px": 80,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-96",
+            "value": "6rem",
+            "px": 96,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-112",
+            "value": "7rem",
+            "px": 112,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "base-size-128",
+            "value": "8rem",
+            "px": 128,
+            "file": "dist/css/base/size/size.css"
+          },
+          {
+            "name": "space-lg",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/functional/spacing/space.css"
+          },
+          {
+            "name": "space-md",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/functional/spacing/space.css"
+          },
+          {
+            "name": "space-sm",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/spacing/space.css"
+          },
+          {
+            "name": "space-xl",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/functional/spacing/space.css"
+          },
+          {
+            "name": "space-xs",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/functional/spacing/space.css"
+          },
+          {
+            "name": "space-xxs",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/functional/spacing/space.css"
+          },
+          {
+            "name": "controlStack-large-gap-auto",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-large-gap-condensed",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-large-gap-spacious",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-medium-gap-auto",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-medium-gap-condensed",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-medium-gap-spacious",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-small-gap-auto",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-small-gap-condensed",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "controlStack-small-gap-spacious",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "overlay-padding-condensed",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "overlay-padding-normal",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "overlay-paddingBlock-condensed",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "overlay-paddingBlock-normal",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "stack-gap-condensed",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "stack-gap-normal",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "stack-gap-spacious",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "stack-padding-condensed",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "stack-padding-normal",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/functional/size/size.css"
+          },
+          {
+            "name": "stack-padding-spacious",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/functional/size/size.css"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "borderRadius-full",
+            "value": "624.9375rem",
+            "px": 9999,
+            "file": "dist/css/functional/size/radius.css"
+          },
+          {
+            "name": "borderRadius-large",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/functional/size/radius.css"
+          },
+          {
+            "name": "borderRadius-medium",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/css/functional/size/radius.css"
+          },
+          {
+            "name": "borderRadius-small",
+            "value": "0.1875rem",
+            "px": 3,
+            "file": "dist/css/functional/size/radius.css"
+          },
+          {
+            "name": "borderRadius-default",
+            "value": "var(--borderRadius-medium)",
+            "px": 6,
+            "alias": "borderRadius-medium",
+            "file": "dist/css/functional/size/radius.css"
+          }
+        ]
+      },
+      "borderWidth": {
+        "steps": [
+          {
+            "name": "borderWidth-thick",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/functional/size/border.css"
+          },
+          {
+            "name": "borderWidth-thicker",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/functional/size/border.css"
+          },
+          {
+            "name": "borderWidth-thin",
+            "value": "0.0625rem",
+            "px": 1,
+            "file": "dist/css/functional/size/border.css"
+          },
+          {
+            "name": "borderWidth-default",
+            "value": "var(--borderWidth-thin)",
+            "px": 1,
+            "alias": "borderWidth-thin",
+            "file": "dist/css/functional/size/border.css"
+          }
+        ]
+      },
+      "focusRing": {
+        "steps": [
+          {
+            "name": "focus-outline-offset",
+            "value": "-0.125rem",
+            "px": -2,
+            "file": "dist/css/functional/size/border.css"
+          },
+          {
+            "name": "focus-outline-width",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/functional/size/border.css"
+          }
+        ]
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "fontStack-monospace",
+            "value": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "fontStack-sansSerif",
+            "value": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Backtick Fix\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "fontStack-sansSerifDisplay",
+            "value": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Backtick Fix\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "fontStack-system",
+            "value": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Backtick Fix\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+            "file": "dist/css/functional/typography/typography.css"
+          }
+        ],
+        "steps": [
+          {
+            "name": "text-codeBlock",
+            "fontSize": "0.8125rem",
+            "fontSizePx": 13,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 19.5,
+            "fontWeight": 400,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-codeInline",
+            "fontSize": "0.9285em",
+            "fontWeight": 400,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-body-large",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 400,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-body-medium",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 21,
+            "fontWeight": 400,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-body-small",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.625,
+            "lineHeightRatio": 1.625,
+            "lineHeightPx": 19.5,
+            "fontWeight": 400,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-caption",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.25,
+            "lineHeightRatio": 1.25,
+            "lineHeightPx": 15,
+            "fontWeight": 400,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-display",
+            "fontSize": "2.5rem",
+            "fontSizePx": 40,
+            "lineHeight": 1.375,
+            "lineHeightRatio": 1.375,
+            "lineHeightPx": 55,
+            "fontWeight": 500,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-subtitle",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.625,
+            "lineHeightRatio": 1.625,
+            "lineHeightPx": 32.5,
+            "fontWeight": 400,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-title-large",
+            "fontSize": "2rem",
+            "fontSizePx": 32,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 48,
+            "fontWeight": 600,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-title-medium",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.625,
+            "lineHeightRatio": 1.625,
+            "lineHeightPx": 32.5,
+            "fontWeight": 600,
+            "file": "dist/css/functional/typography/typography.css"
+          },
+          {
+            "name": "text-title-small",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 600,
+            "file": "dist/css/functional/typography/typography.css"
+          }
+        ],
+        "fontSizes": [
+          {
+            "name": "base-text-size-xs",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-size-sm",
+            "value": "0.875rem",
+            "px": 14,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-size-md",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-size-lg",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-size-xl",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-size-2xl",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/css/base/typography/typography.css"
+          }
+        ],
+        "lineHeights": [
+          {
+            "name": "base-text-lineHeight-loose",
+            "value": 1.75,
+            "ratio": 1.75,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-lineHeight-normal",
+            "value": 1.5,
+            "ratio": 1.5,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-lineHeight-relaxed",
+            "value": 1.625,
+            "ratio": 1.625,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-lineHeight-snug",
+            "value": 1.375,
+            "ratio": 1.375,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-lineHeight-tight",
+            "value": 1.25,
+            "ratio": 1.25,
+            "file": "dist/css/base/typography/typography.css"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "base-text-weight-light",
+            "value": 300,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-weight-medium",
+            "value": 500,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-weight-normal",
+            "value": 400,
+            "file": "dist/css/base/typography/typography.css"
+          },
+          {
+            "name": "base-text-weight-semibold",
+            "value": 600,
+            "file": "dist/css/base/typography/typography.css"
+          }
+        ]
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "breakpoint-xsmall",
+            "value": "20rem",
+            "px": 320,
+            "file": "dist/css/functional/size/breakpoints.css"
+          },
+          {
+            "name": "breakpoint-small",
+            "value": "34rem",
+            "px": 544,
+            "file": "dist/css/functional/size/breakpoints.css"
+          },
+          {
+            "name": "breakpoint-medium",
+            "value": "48rem",
+            "px": 768,
+            "file": "dist/css/functional/size/breakpoints.css"
+          },
+          {
+            "name": "breakpoint-large",
+            "value": "63.25rem",
+            "px": 1012,
+            "file": "dist/css/functional/size/breakpoints.css"
+          },
+          {
+            "name": "breakpoint-xlarge",
+            "value": "80rem",
+            "px": 1280,
+            "file": "dist/css/functional/size/breakpoints.css"
+          },
+          {
+            "name": "breakpoint-xxlarge",
+            "value": "87.5rem",
+            "px": 1400,
+            "file": "dist/css/functional/size/breakpoints.css"
+          }
+        ]
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "zIndex-behind",
+            "value": -1,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "zIndex-default",
+            "value": 0,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "zIndex-dropdown",
+            "value": 200,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "zIndex-modal",
+            "value": 400,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "zIndex-overlay",
+            "value": 300,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "zIndex-popover",
+            "value": 500,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "zIndex-skipLink",
+            "value": 600,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "zIndex-sticky",
+            "value": 100,
+            "file": "dist/css/functional/size/z-index.css"
+          },
+          {
+            "name": "base-zIndex-0",
+            "value": 0,
+            "file": "dist/css/base/size/z-index.css"
+          },
+          {
+            "name": "base-zIndex-100",
+            "value": 100,
+            "file": "dist/css/base/size/z-index.css"
+          },
+          {
+            "name": "base-zIndex-200",
+            "value": 200,
+            "file": "dist/css/base/size/z-index.css"
+          },
+          {
+            "name": "base-zIndex-300",
+            "value": 300,
+            "file": "dist/css/base/size/z-index.css"
+          },
+          {
+            "name": "base-zIndex-400",
+            "value": 400,
+            "file": "dist/css/base/size/z-index.css"
+          },
+          {
+            "name": "base-zIndex-500",
+            "value": 500,
+            "file": "dist/css/base/size/z-index.css"
+          },
+          {
+            "name": "base-zIndex-600",
+            "value": 600,
+            "file": "dist/css/base/size/z-index.css"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "shadow-resting-medium",
+            "value": "0 1px 1px 0 #25292e1a, 0 3px 6px 0 #25292e1f",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          },
+          {
+            "name": "shadow-inset",
+            "value": "inset 0 1px 0 0 #1f23280a",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          },
+          {
+            "name": "shadow-resting-small",
+            "value": "0 1px 1px 0 #1f23280a, 0 1px 2px 0 #1f232808",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          },
+          {
+            "name": "shadow-resting-xsmall",
+            "value": "0 1px 1px 0 #1f23280d",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          },
+          {
+            "name": "shadow-floating-large",
+            "value": "0 0 0 1px #d1d9e000, 0 40px 80px 0 #25292e3d",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          },
+          {
+            "name": "shadow-floating-medium",
+            "value": "0 0 0 1px #d1d9e000, 0 8px 16px -4px #25292e14, 0 4px 32px -4px #25292e14, 0 24px 48px -12px #25292e14, 0 48px 96px -24px #25292e14",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          },
+          {
+            "name": "shadow-floating-small",
+            "value": "0 0 0 1px #d1d9e040, 0 6px 12px -3px #25292e0a, 0 6px 18px 0 #25292e1f",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          },
+          {
+            "name": "shadow-floating-xlarge",
+            "value": "0 0 0 1px #d1d9e000, 0 56px 112px 0 #25292e52",
+            "mode": "light",
+            "file": "dist/css/functional/themes/light.css"
+          }
+        ]
+      },
+      "motion": {
+        "durations": [
+          {
+            "name": "base-duration-0",
+            "value": "0ms",
+            "ms": 0,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-50",
+            "value": "50ms",
+            "ms": 50,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-100",
+            "value": "100ms",
+            "ms": 100,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-200",
+            "value": "200ms",
+            "ms": 200,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-300",
+            "value": "300ms",
+            "ms": 300,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-400",
+            "value": "400ms",
+            "ms": 400,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-500",
+            "value": "500ms",
+            "ms": 500,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-600",
+            "value": "600ms",
+            "ms": 600,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-700",
+            "value": "700ms",
+            "ms": 700,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-800",
+            "value": "800ms",
+            "ms": 800,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-900",
+            "value": "900ms",
+            "ms": 900,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-duration-1000",
+            "value": "1000ms",
+            "ms": 1000,
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "motion-duration-long",
+            "value": "var(--base-duration-500)",
+            "ms": 500,
+            "alias": "base-duration-500",
+            "file": "dist/css/functional/motion/motion.css"
+          },
+          {
+            "name": "motion-duration-medium",
+            "value": "var(--base-duration-300)",
+            "ms": 300,
+            "alias": "base-duration-300",
+            "file": "dist/css/functional/motion/motion.css"
+          },
+          {
+            "name": "motion-duration-micro",
+            "value": "var(--base-duration-100)",
+            "ms": 100,
+            "alias": "base-duration-100",
+            "file": "dist/css/functional/motion/motion.css"
+          },
+          {
+            "name": "motion-duration-short",
+            "value": "var(--base-duration-200)",
+            "ms": 200,
+            "alias": "base-duration-200",
+            "file": "dist/css/functional/motion/motion.css"
+          }
+        ],
+        "easings": [
+          {
+            "name": "base-easing-ease",
+            "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-easing-easeIn",
+            "value": "cubic-bezier(0.7, 0.1, 0.75, 0.9)",
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-easing-easeInOut",
+            "value": "cubic-bezier(0.6, 0, 0.2, 1)",
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-easing-easeOut",
+            "value": "cubic-bezier(0.3, 0.8, 0.6, 1)",
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "base-easing-linear",
+            "value": "cubic-bezier(0, 0, 1, 1)",
+            "file": "dist/css/base/motion/motion.css"
+          },
+          {
+            "name": "motion-easing-enter",
+            "value": "cubic-bezier(0.3, 0.8, 0.6, 1)",
+            "alias": "base-easing-easeOut",
+            "file": "dist/css/functional/motion/motion.css"
+          },
+          {
+            "name": "motion-easing-exit",
+            "value": "cubic-bezier(0.7, 0.1, 0.75, 0.9)",
+            "alias": "base-easing-easeIn",
+            "file": "dist/css/functional/motion/motion.css"
+          },
+          {
+            "name": "motion-easing-hover",
+            "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+            "alias": "base-easing-ease",
+            "file": "dist/css/functional/motion/motion.css"
+          },
+          {
+            "name": "motion-easing-linear",
+            "value": "cubic-bezier(0, 0, 1, 1)",
+            "alias": "base-easing-linear",
+            "file": "dist/css/functional/motion/motion.css"
+          },
+          {
+            "name": "motion-easing-move",
+            "value": "cubic-bezier(0.6, 0, 0.2, 1)",
+            "alias": "base-easing-easeInOut",
+            "file": "dist/css/functional/motion/motion.css"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "neutral",
+              "steps": 14,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13"
+              ]
+            },
+            {
+              "name": "blue",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "name": "green",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "name": "yellow",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "name": "orange",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "name": "red",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "name": "purple",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "name": "pink",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "name": "coral",
+              "steps": 10,
+              "stepNames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            }
+          ],
+          "semanticRoles": [
+            "bgColor-success-emphasis",
+            "fgColor-danger",
+            "bgColor-accent-emphasis",
+            "bgColor-accent-muted",
+            "bgColor-attention-emphasis",
+            "bgColor-attention-muted",
+            "bgColor-danger-emphasis",
+            "bgColor-danger-muted",
+            "bgColor-disabled",
+            "bgColor-done-emphasis",
+            "bgColor-done-muted",
+            "bgColor-emphasis",
+            "bgColor-inverse",
+            "bgColor-muted",
+            "bgColor-neutral-emphasis",
+            "bgColor-neutral-muted",
+            "bgColor-open-emphasis",
+            "bgColor-severe-emphasis",
+            "bgColor-severe-muted",
+            "bgColor-sponsors-emphasis",
+            "bgColor-sponsors-muted",
+            "bgColor-success-muted",
+            "bgColor-transparent",
+            "borderColor-accent-emphasis",
+            "borderColor-accent-muted",
+            "borderColor-attention-emphasis",
+            "borderColor-attention-muted",
+            "borderColor-danger-emphasis",
+            "borderColor-danger-muted",
+            "borderColor-default",
+            "borderColor-disabled",
+            "borderColor-done-emphasis",
+            "borderColor-done-muted",
+            "borderColor-emphasis",
+            "borderColor-neutral-emphasis",
+            "borderColor-severe-emphasis",
+            "borderColor-severe-muted",
+            "borderColor-sponsors-emphasis",
+            "borderColor-sponsors-muted",
+            "borderColor-success-emphasis",
+            "borderColor-success-muted",
+            "borderColor-transparent",
+            "fgColor-accent",
+            "fgColor-attention",
+            "fgColor-closed",
+            "fgColor-disabled",
+            "fgColor-done",
+            "fgColor-muted",
+            "fgColor-neutral",
+            "fgColor-severe",
+            "fgColor-sponsors",
+            "fgColor-success",
+            "shadow-resting-medium",
+            "bgColor-black",
+            "bgColor-closed-emphasis",
+            "bgColor-closed-muted",
+            "bgColor-default",
+            "bgColor-draft-emphasis",
+            "bgColor-draft-muted",
+            "bgColor-inset",
+            "bgColor-open-muted",
+            "bgColor-upsell-emphasis",
+            "bgColor-upsell-muted",
+            "bgColor-white",
+            "borderColor-closed-emphasis",
+            "borderColor-closed-muted",
+            "borderColor-draft-emphasis",
+            "borderColor-muted",
+            "borderColor-open-emphasis",
+            "borderColor-open-muted",
+            "borderColor-translucent",
+            "borderColor-upsell-emphasis",
+            "borderColor-upsell-muted",
+            "fgColor-black",
+            "fgColor-default",
+            "fgColor-draft",
+            "fgColor-link",
+            "fgColor-onEmphasis",
+            "fgColor-onInverse",
+            "fgColor-open",
+            "fgColor-upsell",
+            "fgColor-white",
+            "focus-outline-color",
+            "shadow-inset",
+            "shadow-resting-small",
+            "shadow-resting-xsmall",
+            "borderColor-neutral-muted",
+            "focus-outline",
+            "focus-outlineColor",
+            "borderColor-draft-muted",
+            "shadow-floating-large",
+            "shadow-floating-medium",
+            "shadow-floating-small",
+            "shadow-floating-xlarge"
+          ],
+          "modes": [
+            "dark-colorblind-high-contrast",
+            "dark-colorblind",
+            "dark-dimmed-high-contrast",
+            "dark-dimmed",
+            "dark-high-contrast",
+            "dark-tritanopia-high-contrast",
+            "dark-tritanopia",
+            "dark",
+            "light-colorblind-high-contrast",
+            "light-colorblind",
+            "light-high-contrast",
+            "light-tritanopia-high-contrast",
+            "light-tritanopia",
+            "light"
+          ],
+          "note": "Base ramps (neutral 0–13, hue ramps 0–9) feed functional roles named <property>-<role>-<emphasis> (bgColor-accent-emphasis, fgColor-muted, borderColor-default). 14 themes including colour-blind and high-contrast variants."
+        },
+        "neutral": [
+          {
+            "name": "neutral",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "neutral-0",
+                "value": "{base.color.white}",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-1",
+                "value": "#F6F8FA",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-2",
+                "value": "#EFF2F5",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-3",
+                "value": "#E6EAEF",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-4",
+                "value": "#E0E6EB",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-5",
+                "value": "#DAE0E7",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-6",
+                "value": "#D1D9E0",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-7",
+                "value": "#C8D1DA",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-8",
+                "value": "#818B98",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-9",
+                "value": "#59636E",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-10",
+                "value": "#454C54",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-11",
+                "value": "#393F46",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-12",
+                "value": "#25292E",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "neutral-13",
+                "value": "{base.color.black}",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              }
+            ]
+          },
+          {
+            "name": "neutral",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "neutral-0",
+                "value": "{base.color.black}",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-1",
+                "value": "#0D1117",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-2",
+                "value": "#151B23",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-3",
+                "value": "#212830",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-4",
+                "value": "#262C36",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-5",
+                "value": "#2A313C",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-6",
+                "value": "#2F3742",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-7",
+                "value": "#3D444D",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-8",
+                "value": "#656C76",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-9",
+                "value": "#9198A1",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-10",
+                "value": "#B7BDC8",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-11",
+                "value": "#D1D7E0",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-12",
+                "value": "#F0F6FC",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "neutral-13",
+                "value": "{base.color.white}",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              }
+            ]
+          },
+          {
+            "name": "neutral roles",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "bgColor-disabled",
+                "value": "#eff2f5",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "bgColor-emphasis",
+                "value": "#25292e",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "bgColor-inverse",
+                "value": "#25292e",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "bgColor-muted",
+                "value": "#f6f8fa",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "borderColor-default",
+                "value": "#d1d9e0",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "borderColor-disabled",
+                "value": "#818b981a",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "borderColor-emphasis",
+                "value": "#818b98",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "control-bgColor-rest",
+                "value": "#f6f8fa",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "fgColor-disabled",
+                "value": "#818b98",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "fgColor-muted",
+                "value": "#59636e",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "bgColor-default",
+                "value": "#ffffff",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "bgColor-inset",
+                "value": "var(--bgColor-muted)",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "borderColor-muted",
+                "value": "#d1d9e0b3",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "control-borderColor-rest",
+                "value": "var(--borderColor-default)",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "fgColor-default",
+                "value": "#1f2328",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "fgColor-onEmphasis",
+                "value": "#ffffff",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              }
+            ]
+          },
+          {
+            "name": "neutral roles",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "bgColor-default",
+                "value": "#0d1117",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-disabled",
+                "value": "#212830",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-emphasis",
+                "value": "#3d444d",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-muted",
+                "value": "#151b23",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "borderColor-default",
+                "value": "#3d444d",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "borderColor-disabled",
+                "value": "#656c761a",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "borderColor-emphasis",
+                "value": "#656c76",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "control-bgColor-rest",
+                "value": "#212830",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "fgColor-default",
+                "value": "#f0f6fc",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "fgColor-disabled",
+                "value": "#656c76",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "fgColor-muted",
+                "value": "#9198a1",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-inset",
+                "value": "#010409",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-inverse",
+                "value": "#ffffff",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "borderColor-muted",
+                "value": "#3d444db3",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "control-borderColor-rest",
+                "value": "var(--borderColor-default)",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "fgColor-onEmphasis",
+                "value": "#ffffff",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "blue",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "blue-0",
+                "value": "#ddf4ff",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-1",
+                "value": "#b6e3ff",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-2",
+                "value": "#80ccff",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-3",
+                "value": "#54aeff",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-4",
+                "value": "#218bff",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-5",
+                "value": "#0969da",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-6",
+                "value": "#0550ae",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-7",
+                "value": "#033d8b",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-8",
+                "value": "#0a3069",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              },
+              {
+                "name": "blue-9",
+                "value": "#002155",
+                "mode": "light",
+                "file": "src/tokens/base/color/light/light.json5"
+              }
+            ]
+          },
+          {
+            "name": "blue",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "blue-0",
+                "value": "#cae8ff",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-1",
+                "value": "#a5d6ff",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-2",
+                "value": "#79c0ff",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-3",
+                "value": "#58a6ff",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-4",
+                "value": "#388bfd",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-5",
+                "value": "#1f6feb",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-6",
+                "value": "#1158c7",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-7",
+                "value": "#0d419d",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-8",
+                "value": "#0c2d6b",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              },
+              {
+                "name": "blue-9",
+                "value": "#051d4d",
+                "mode": "dark",
+                "file": "src/tokens/base/color/dark/dark.json5"
+              }
+            ]
+          },
+          {
+            "name": "accent roles",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "bgColor-success-emphasis",
+                "value": "#1f883d",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "button-primary-bgColor-active",
+                "value": "#197935",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "button-primary-bgColor-hover",
+                "value": "#1c8139",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "bgColor-accent-emphasis",
+                "value": "#0969da",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "bgColor-accent-muted",
+                "value": "#ddf4ff",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "borderColor-accent-emphasis",
+                "value": "#0969da",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "borderColor-accent-muted",
+                "value": "#54aeff66",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "button-primary-bgColor-rest",
+                "value": "var(--bgColor-success-emphasis)",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "fgColor-accent",
+                "value": "#0969da",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "fgColor-link",
+                "value": "var(--fgColor-accent)",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              },
+              {
+                "name": "focus-outlineColor",
+                "value": "var(--focus-outline-color)",
+                "mode": "light",
+                "file": "dist/css/functional/themes/light.css"
+              }
+            ]
+          },
+          {
+            "name": "accent roles",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "button-primary-bgColor-active",
+                "value": "#2e9a40",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "button-primary-bgColor-hover",
+                "value": "#29903b",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "fgColor-accent",
+                "value": "#4493f8",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-accent-emphasis",
+                "value": "#1f6feb",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-accent-muted",
+                "value": "#388bfd1a",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "bgColor-success-emphasis",
+                "value": "#238636",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "borderColor-accent-emphasis",
+                "value": "#1f6feb",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "borderColor-accent-muted",
+                "value": "#388bfd66",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "fgColor-link",
+                "value": "var(--fgColor-accent)",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "button-primary-bgColor-rest",
+                "value": "var(--bgColor-success-emphasis)",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              },
+              {
+                "name": "focus-outlineColor",
+                "value": "var(--focus-outline-color)",
+                "mode": "dark",
+                "file": "dist/css/functional/themes/dark.css"
+              }
+            ]
+          }
+        ],
+        "note": "The accent is blue; the primary button is green (button-primary-bgColor-rest aliases bgColor-success-emphasis)."
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@primer/primitives@11.10.0 (^dist\\/css\\/)",
+            "files": 30
+          },
+          {
+            "package": "@primer/primitives@11.10.0 (^src\\/tokens\\/)",
+            "files": 63
+          },
+          {
+            "package": "@primer/primitives@11.10.0 (^(DESIGN_TOKENS_GUIDE|DESIGN_TOKENS_SPEC|README)\\.md$)",
+            "files": 3
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 28,
+            "files": 5,
+            "topFiles": [
+              {
+                "file": "@primer/primitives:dist/css/functional/size/size.css",
+                "hits": 15
+              },
+              {
+                "file": "@primer/primitives:src/tokens/functional/size/size.json5",
+                "hits": 5
+              },
+              {
+                "file": "@primer/primitives:dist/css/functional/typography/typography.css",
+                "hits": 4
+              },
+              {
+                "file": "@primer/primitives:DESIGN_TOKENS_GUIDE.md",
+                "hits": 3
+              },
+              {
+                "file": "@primer/primitives:DESIGN_TOKENS_SPEC.md",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@primer/primitives:dist/css/functional/size/size.css",
+                "line": 18,
+                "text": "--control-large-paddingInline-condensed: 0.5rem;"
+              },
+              {
+                "file": "@primer/primitives:dist/css/functional/typography/typography.css",
+                "line": 6,
+                "text": "--text-codeBlock-size: 0.8125rem;"
+              },
+              {
+                "file": "@primer/primitives:src/tokens/functional/size/size.json5",
+                "line": 53,
+                "text": "\"paddingInline\": {"
+              },
+              {
+                "file": "@primer/primitives:DESIGN_TOKENS_GUIDE.md",
+                "line": 38,
+                "text": "└── property: size | paddingInline-[density] | paddingBlock"
+              }
+            ]
+          }
+        ],
+        "findings": [
+          "No token for direction, language or script. Font stacks are Latin (Mona Sans VF, system fonts, Noto Sans) and line heights are five unitless ratios (tight 1.25 … loose 1.75) unrelated to script.",
+          "Density is tokenised as a spacing variant, not as height: every control size has paddingInline condensed / normal / spacious and stacks have gap condensed / normal / spacious; control heights do not change with density.",
+          "Touch is tokenised through the pointer media query: --control-minTarget-auto is 2.75rem under (pointer: coarse) and 1rem under (pointer: fine), and stack gaps grow on coarse pointers. This is the only system in the set that publishes a touch-target minimum as a token.",
+          "Focus ring is tokenised (width 2px, offset −2px, inset)."
+        ]
+      }
+    },
+    "gaps": [
+      "No container-width tokens (overlay widths only).",
+      "Primitives do not bind a font size or line height to a control size; the control line box here is derived.",
+      "Letter-spacing is not tokenised."
+    ]
+  }
+}

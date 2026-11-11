@@ -1,0 +1,2244 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "fluent-2",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@fluentui/tokens",
+        "url": "https://www.npmjs.com/package/@fluentui/tokens/v/1.0.0-alpha.24",
+        "version": "1.0.0-alpha.24",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "lib/alias/darkColor.js, lib/alias/lightColor.js, lib/alias/teamsFontFamilies.js, lib/global/borderRadius.js, lib/global/brandColors.js, lib/global/colors.js, lib/global/curves.js, lib/global/durations.js, lib/global/fonts.js, lib/global/spacings.js, lib/global/strokeWidths.js, lib/global/typographyStyles.js, lib/tokens.js, lib/utils/shadows.js"
+      },
+      {
+        "name": "@fluentui/theme",
+        "url": "https://www.npmjs.com/package/@fluentui/theme/v/2.7.4",
+        "version": "2.7.4",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "lib/fonts/FluentFonts.js, lib/fonts/createFontStyles.js"
+      },
+      {
+        "name": "@fluentui/react-input",
+        "url": "https://www.npmjs.com/package/@fluentui/react-input/v/9.8.9",
+        "version": "9.8.9",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "lib/components/Input/useInputStyles.styles.raw.js"
+      },
+      {
+        "name": "@fluentui/react-button",
+        "url": "https://www.npmjs.com/package/@fluentui/react-button/v/9.11.3",
+        "version": "9.11.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "lib/components/Button/useButtonStyles.styles.raw.js"
+      }
+    ],
+    "script": "tools/extract/tokens/fluent.mjs",
+    "notes": "Button heights are derived from literal paddings, line-height tokens and the border width (formula recorded); input heights are the literal fieldHeights."
+  },
+  "data": {
+    "system": {
+      "name": "Microsoft Fluent 2 (Fluent UI React v9 tokens)",
+      "package": "@fluentui/tokens",
+      "version": "1.0.0-alpha.24",
+      "license": "MIT",
+      "url": "https://fluent2.microsoft.design"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "default",
+            "name": "size prop",
+            "mechanism": "size-prop",
+            "description": "small / medium / large per component; no density mode."
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "small",
+            "mode": "default",
+            "heightPx": 24,
+            "paddingBlockPx": 3,
+            "paddingInlinePx": 8,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 4,
+            "derived": true,
+            "formula": "2 × 3px padding + 16px line + 2 × 1px border",
+            "file": "@fluentui/react-button:lib/components/Button/useButtonStyles.styles.raw.js"
+          },
+          {
+            "component": "input",
+            "size": "small",
+            "mode": "default",
+            "minHeightPx": 24,
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 4,
+            "heightSource": "fieldHeights.small (min-height); typographyStyles.caption1",
+            "file": "@fluentui/react-input:lib/components/Input/useInputStyles.styles.raw.js"
+          },
+          {
+            "component": "button",
+            "size": "medium",
+            "mode": "default",
+            "heightPx": 32,
+            "paddingBlockPx": 5,
+            "paddingInlinePx": 12,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 4,
+            "derived": true,
+            "formula": "2 × 5px padding + 20px line + 2 × 1px border",
+            "file": "@fluentui/react-button:lib/components/Button/useButtonStyles.styles.raw.js"
+          },
+          {
+            "component": "input",
+            "size": "medium",
+            "mode": "default",
+            "minHeightPx": 32,
+            "heightPx": 32,
+            "paddingInlinePx": 12,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 4,
+            "heightSource": "fieldHeights.medium (min-height); typographyStyles.body1",
+            "file": "@fluentui/react-input:lib/components/Input/useInputStyles.styles.raw.js"
+          },
+          {
+            "component": "button",
+            "size": "large",
+            "mode": "default",
+            "heightPx": 40,
+            "paddingBlockPx": 8,
+            "paddingInlinePx": 16,
+            "fontSizePx": 16,
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.375,
+            "radiusPx": 4,
+            "derived": true,
+            "formula": "2 × 8px padding + 22px line + 2 × 1px border",
+            "file": "@fluentui/react-button:lib/components/Button/useButtonStyles.styles.raw.js"
+          },
+          {
+            "component": "input",
+            "size": "large",
+            "mode": "default",
+            "minHeightPx": 40,
+            "heightPx": 40,
+            "fontSizePx": 16,
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.375,
+            "radiusPx": 4,
+            "heightSource": "fieldHeights.large (min-height); typographyStyles.body2",
+            "file": "@fluentui/react-input:lib/components/Input/useInputStyles.styles.raw.js"
+          }
+        ],
+        "touchTarget": []
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "none",
+            "value": "0",
+            "px": 0,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "xxs",
+            "value": "2px",
+            "px": 2,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "xs",
+            "value": "4px",
+            "px": 4,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "sNudge",
+            "value": "6px",
+            "px": 6,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "s",
+            "value": "8px",
+            "px": 8,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "mNudge",
+            "value": "10px",
+            "px": 10,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "m",
+            "value": "12px",
+            "px": 12,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "l",
+            "value": "16px",
+            "px": 16,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "xl",
+            "value": "20px",
+            "px": 20,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "xxl",
+            "value": "24px",
+            "px": 24,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          },
+          {
+            "name": "xxxl",
+            "value": "32px",
+            "px": 32,
+            "file": "lib/global/spacings.js",
+            "note": "exposed as spacingHorizontal* and spacingVertical*"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "borderRadiusNone",
+            "value": "0",
+            "px": 0,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadiusSmall",
+            "value": "2px",
+            "px": 2,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadiusMedium",
+            "value": "4px",
+            "px": 4,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadiusLarge",
+            "value": "6px",
+            "px": 6,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadiusXLarge",
+            "value": "8px",
+            "px": 8,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadius2XLarge",
+            "value": "12px",
+            "px": 12,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadius3XLarge",
+            "value": "16px",
+            "px": 16,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadius4XLarge",
+            "value": "24px",
+            "px": 24,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadius5XLarge",
+            "value": "32px",
+            "px": 32,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadius6XLarge",
+            "value": "40px",
+            "px": 40,
+            "file": "lib/global/borderRadius.js"
+          },
+          {
+            "name": "borderRadiusCircular",
+            "value": "10000px",
+            "px": 10000,
+            "file": "lib/global/borderRadius.js"
+          }
+        ]
+      },
+      "borderWidth": {
+        "steps": [
+          {
+            "name": "strokeWidthThin",
+            "value": "1px",
+            "px": 1,
+            "file": "lib/global/strokeWidths.js"
+          },
+          {
+            "name": "strokeWidthThick",
+            "value": "2px",
+            "px": 2,
+            "file": "lib/global/strokeWidths.js"
+          },
+          {
+            "name": "strokeWidthThicker",
+            "value": "3px",
+            "px": 3,
+            "file": "lib/global/strokeWidths.js"
+          },
+          {
+            "name": "strokeWidthThickest",
+            "value": "4px",
+            "px": 4,
+            "file": "lib/global/strokeWidths.js"
+          }
+        ]
+      },
+      "focusRing": {
+        "steps": [
+          {
+            "name": "focus outline (strokeWidthThick)",
+            "value": "2px",
+            "px": 2,
+            "file": "@fluentui/react-button:lib/components/Button/useButtonStyles.styles.raw.js",
+            "note": "transparent 2px outline plus inset box-shadows in colorStrokeFocus1/2; indicator styles come from @fluentui/react-tabster"
+          }
+        ]
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "fontFamilyBase",
+            "value": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontFamilyMonospace",
+            "value": "Consolas, 'Courier New', Courier, monospace",
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontFamilyNumeric",
+            "value": "Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontFamilyBase (Teams theme)",
+            "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "file": "lib/alias/teamsFontFamilies.js"
+          }
+        ],
+        "steps": [
+          {
+            "name": "body1",
+            "fontSize": "14px",
+            "fontSizePx": 14,
+            "lineHeight": "20px",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "fontWeight": 400,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase300 / lineHeightBase300"
+          },
+          {
+            "name": "body1Strong",
+            "fontSize": "14px",
+            "fontSizePx": 14,
+            "lineHeight": "20px",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase300 / lineHeightBase300"
+          },
+          {
+            "name": "body1Stronger",
+            "fontSize": "14px",
+            "fontSizePx": 14,
+            "lineHeight": "20px",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "fontWeight": 700,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase300 / lineHeightBase300"
+          },
+          {
+            "name": "body2",
+            "fontSize": "16px",
+            "fontSizePx": 16,
+            "lineHeight": "22px",
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.375,
+            "fontWeight": 400,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase400 / lineHeightBase400"
+          },
+          {
+            "name": "caption1",
+            "fontSize": "12px",
+            "fontSizePx": 12,
+            "lineHeight": "16px",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 400,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase200 / lineHeightBase200"
+          },
+          {
+            "name": "caption1Strong",
+            "fontSize": "12px",
+            "fontSizePx": 12,
+            "lineHeight": "16px",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase200 / lineHeightBase200"
+          },
+          {
+            "name": "caption1Stronger",
+            "fontSize": "12px",
+            "fontSizePx": 12,
+            "lineHeight": "16px",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 700,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase200 / lineHeightBase200"
+          },
+          {
+            "name": "caption2",
+            "fontSize": "10px",
+            "fontSizePx": 10,
+            "lineHeight": "14px",
+            "lineHeightPx": 14,
+            "lineHeightRatio": 1.4,
+            "fontWeight": 400,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase100 / lineHeightBase100"
+          },
+          {
+            "name": "caption2Strong",
+            "fontSize": "10px",
+            "fontSizePx": 10,
+            "lineHeight": "14px",
+            "lineHeightPx": 14,
+            "lineHeightRatio": 1.4,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase100 / lineHeightBase100"
+          },
+          {
+            "name": "subtitle1",
+            "fontSize": "20px",
+            "fontSizePx": 20,
+            "lineHeight": "28px",
+            "lineHeightPx": 28,
+            "lineHeightRatio": 1.4,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase500 / lineHeightBase500"
+          },
+          {
+            "name": "subtitle2",
+            "fontSize": "16px",
+            "fontSizePx": 16,
+            "lineHeight": "22px",
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.375,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase400 / lineHeightBase400"
+          },
+          {
+            "name": "subtitle2Stronger",
+            "fontSize": "16px",
+            "fontSizePx": 16,
+            "lineHeight": "22px",
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.375,
+            "fontWeight": 700,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase400 / lineHeightBase400"
+          },
+          {
+            "name": "title1",
+            "fontSize": "32px",
+            "fontSizePx": 32,
+            "lineHeight": "40px",
+            "lineHeightPx": 40,
+            "lineHeightRatio": 1.25,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeHero800 / lineHeightHero800"
+          },
+          {
+            "name": "title2",
+            "fontSize": "28px",
+            "fontSizePx": 28,
+            "lineHeight": "36px",
+            "lineHeightPx": 36,
+            "lineHeightRatio": 1.2857,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeHero700 / lineHeightHero700"
+          },
+          {
+            "name": "title3",
+            "fontSize": "24px",
+            "fontSizePx": 24,
+            "lineHeight": "32px",
+            "lineHeightPx": 32,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeBase600 / lineHeightBase600"
+          },
+          {
+            "name": "largeTitle",
+            "fontSize": "40px",
+            "fontSizePx": 40,
+            "lineHeight": "52px",
+            "lineHeightPx": 52,
+            "lineHeightRatio": 1.3,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeHero900 / lineHeightHero900"
+          },
+          {
+            "name": "display",
+            "fontSize": "68px",
+            "fontSizePx": 68,
+            "lineHeight": "92px",
+            "lineHeightPx": 92,
+            "lineHeightRatio": 1.3529,
+            "fontWeight": 600,
+            "file": "lib/global/typographyStyles.js",
+            "note": "fontSizeHero1000 / lineHeightHero1000"
+          }
+        ],
+        "fontSizes": [
+          {
+            "name": "fontSizeBase100",
+            "value": "10px",
+            "px": 10,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeBase200",
+            "value": "12px",
+            "px": 12,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeBase300",
+            "value": "14px",
+            "px": 14,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeBase400",
+            "value": "16px",
+            "px": 16,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeBase500",
+            "value": "20px",
+            "px": 20,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeBase600",
+            "value": "24px",
+            "px": 24,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeHero700",
+            "value": "28px",
+            "px": 28,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeHero800",
+            "value": "32px",
+            "px": 32,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeHero900",
+            "value": "40px",
+            "px": 40,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontSizeHero1000",
+            "value": "68px",
+            "px": 68,
+            "file": "lib/global/fonts.js"
+          }
+        ],
+        "lineHeights": [
+          {
+            "name": "lineHeightBase100",
+            "value": "14px",
+            "px": 14,
+            "ratio": 1.4,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightBase200",
+            "value": "16px",
+            "px": 16,
+            "ratio": 1.3333,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightBase300",
+            "value": "20px",
+            "px": 20,
+            "ratio": 1.4286,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightBase400",
+            "value": "22px",
+            "px": 22,
+            "ratio": 1.375,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightBase500",
+            "value": "28px",
+            "px": 28,
+            "ratio": 1.4,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightBase600",
+            "value": "32px",
+            "px": 32,
+            "ratio": 1.3333,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightHero700",
+            "value": "36px",
+            "px": 36,
+            "ratio": 1.2857,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightHero800",
+            "value": "40px",
+            "px": 40,
+            "ratio": 1.25,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightHero900",
+            "value": "52px",
+            "px": 52,
+            "ratio": 1.3,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "lineHeightHero1000",
+            "value": "92px",
+            "px": 92,
+            "ratio": 1.3529,
+            "file": "lib/global/fonts.js"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "fontWeightRegular",
+            "value": 400,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontWeightMedium",
+            "value": 500,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontWeightSemibold",
+            "value": 600,
+            "file": "lib/global/fonts.js"
+          },
+          {
+            "name": "fontWeightBold",
+            "value": 700,
+            "file": "lib/global/fonts.js"
+          }
+        ]
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "zIndexBackground",
+            "value": 0,
+            "file": "lib/tokens.js"
+          },
+          {
+            "name": "zIndexContent",
+            "value": 1,
+            "file": "lib/tokens.js"
+          },
+          {
+            "name": "zIndexOverlay",
+            "value": 1000,
+            "file": "lib/tokens.js"
+          },
+          {
+            "name": "zIndexPopup",
+            "value": 2000,
+            "file": "lib/tokens.js"
+          },
+          {
+            "name": "zIndexMessages",
+            "value": 3000,
+            "file": "lib/tokens.js"
+          },
+          {
+            "name": "zIndexFloating",
+            "value": 4000,
+            "file": "lib/tokens.js"
+          },
+          {
+            "name": "zIndexPriority",
+            "value": 5000,
+            "file": "lib/tokens.js"
+          },
+          {
+            "name": "zIndexDebug",
+            "value": 6000,
+            "file": "lib/tokens.js"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "shadow2",
+            "value": "0 0 2px ${ambientColor}, 0 1px 2px ${keyColor}",
+            "file": "lib/utils/shadows.js"
+          },
+          {
+            "name": "shadow4",
+            "value": "0 0 2px ${ambientColor}, 0 2px 4px ${keyColor}",
+            "file": "lib/utils/shadows.js"
+          },
+          {
+            "name": "shadow8",
+            "value": "0 0 2px ${ambientColor}, 0 4px 8px ${keyColor}",
+            "file": "lib/utils/shadows.js"
+          },
+          {
+            "name": "shadow16",
+            "value": "0 0 2px ${ambientColor}, 0 8px 16px ${keyColor}",
+            "file": "lib/utils/shadows.js"
+          },
+          {
+            "name": "shadow28",
+            "value": "0 0 8px ${ambientColor}, 0 14px 28px ${keyColor}",
+            "file": "lib/utils/shadows.js"
+          },
+          {
+            "name": "shadow64",
+            "value": "0 0 8px ${ambientColor}, 0 32px 64px ${keyColor}",
+            "file": "lib/utils/shadows.js"
+          }
+        ],
+        "note": "ambientColor / keyColor are theme alphas; a \"Brand\" suffixed set also exists."
+      },
+      "motion": {
+        "durations": [
+          {
+            "name": "durationUltraFast",
+            "value": "50ms",
+            "ms": 50,
+            "file": "lib/global/durations.js"
+          },
+          {
+            "name": "durationFaster",
+            "value": "100ms",
+            "ms": 100,
+            "file": "lib/global/durations.js"
+          },
+          {
+            "name": "durationFast",
+            "value": "150ms",
+            "ms": 150,
+            "file": "lib/global/durations.js"
+          },
+          {
+            "name": "durationNormal",
+            "value": "200ms",
+            "ms": 200,
+            "file": "lib/global/durations.js"
+          },
+          {
+            "name": "durationGentle",
+            "value": "250ms",
+            "ms": 250,
+            "file": "lib/global/durations.js"
+          },
+          {
+            "name": "durationSlow",
+            "value": "300ms",
+            "ms": 300,
+            "file": "lib/global/durations.js"
+          },
+          {
+            "name": "durationSlower",
+            "value": "400ms",
+            "ms": 400,
+            "file": "lib/global/durations.js"
+          },
+          {
+            "name": "durationUltraSlow",
+            "value": "500ms",
+            "ms": 500,
+            "file": "lib/global/durations.js"
+          }
+        ],
+        "easings": [
+          {
+            "name": "curveAccelerateMax",
+            "value": "cubic-bezier(0.9,0.1,1,0.2)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveAccelerateMid",
+            "value": "cubic-bezier(1,0,1,1)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveAccelerateMin",
+            "value": "cubic-bezier(0.8,0,0.78,1)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveDecelerateMax",
+            "value": "cubic-bezier(0.1,0.9,0.2,1)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveDecelerateMid",
+            "value": "cubic-bezier(0,0,0,1)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveDecelerateMin",
+            "value": "cubic-bezier(0.33,0,0.1,1)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveEasyEaseMax",
+            "value": "cubic-bezier(0.8,0,0.2,1)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveEasyEase",
+            "value": "cubic-bezier(0.33,0,0.67,1)",
+            "file": "lib/global/curves.js"
+          },
+          {
+            "name": "curveLinear",
+            "value": "cubic-bezier(0,0,1,1)",
+            "file": "lib/global/curves.js"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "grey",
+              "steps": 50,
+              "stepNames": [
+                "2",
+                "4",
+                "6",
+                "8",
+                "10",
+                "12",
+                "14",
+                "16",
+                "18",
+                "20",
+                "22",
+                "24",
+                "26",
+                "28",
+                "30",
+                "32",
+                "34",
+                "36",
+                "38",
+                "40",
+                "42",
+                "44",
+                "46",
+                "48",
+                "50",
+                "52",
+                "54",
+                "56",
+                "58",
+                "60",
+                "62",
+                "64",
+                "66",
+                "68",
+                "70",
+                "72",
+                "74",
+                "76",
+                "78",
+                "80",
+                "82",
+                "84",
+                "86",
+                "88",
+                "90",
+                "92",
+                "94",
+                "96",
+                "98",
+                "99"
+              ]
+            },
+            {
+              "name": "brand (brandWeb)",
+              "steps": 16,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100",
+                "110",
+                "120",
+                "130",
+                "140",
+                "150",
+                "160"
+              ]
+            }
+          ],
+          "semanticRoles": [
+            "colorNeutralForeground1",
+            "colorNeutralForeground1Hover",
+            "colorNeutralForeground1Pressed",
+            "colorNeutralForeground1Selected",
+            "colorNeutralForeground2",
+            "colorNeutralForeground2Hover",
+            "colorNeutralForeground2Pressed",
+            "colorNeutralForeground2Selected",
+            "colorNeutralForeground2BrandHover",
+            "colorNeutralForeground2BrandPressed",
+            "colorNeutralForeground2BrandSelected",
+            "colorNeutralForeground3",
+            "colorNeutralForeground3Hover",
+            "colorNeutralForeground3Pressed",
+            "colorNeutralForeground3Selected",
+            "colorNeutralForeground3BrandHover",
+            "colorNeutralForeground3BrandPressed",
+            "colorNeutralForeground3BrandSelected",
+            "colorNeutralForeground4",
+            "colorNeutralForeground5",
+            "colorNeutralForeground5Hover",
+            "colorNeutralForeground5Pressed",
+            "colorNeutralForeground5Selected",
+            "colorNeutralForegroundDisabled",
+            "colorNeutralForegroundInvertedDisabled",
+            "colorBrandForegroundLink",
+            "colorBrandForegroundLinkHover",
+            "colorBrandForegroundLinkPressed",
+            "colorBrandForegroundLinkSelected",
+            "colorNeutralForeground2Link",
+            "colorNeutralForeground2LinkHover",
+            "colorNeutralForeground2LinkPressed",
+            "colorNeutralForeground2LinkSelected",
+            "colorCompoundBrandForeground1",
+            "colorCompoundBrandForeground1Hover",
+            "colorCompoundBrandForeground1Pressed",
+            "colorBrandForeground1",
+            "colorBrandForeground2",
+            "colorBrandForeground2Hover",
+            "colorBrandForeground2Pressed",
+            "colorNeutralForeground1Static",
+            "colorNeutralForegroundStaticInverted",
+            "colorNeutralForegroundInverted",
+            "colorNeutralForegroundInvertedHover",
+            "colorNeutralForegroundInvertedPressed",
+            "colorNeutralForegroundInvertedSelected",
+            "colorNeutralForegroundInverted2",
+            "colorNeutralForegroundOnBrand",
+            "colorNeutralForegroundInvertedLink",
+            "colorNeutralForegroundInvertedLinkHover",
+            "colorNeutralForegroundInvertedLinkPressed",
+            "colorNeutralForegroundInvertedLinkSelected",
+            "colorBrandForegroundInverted",
+            "colorBrandForegroundInvertedHover",
+            "colorBrandForegroundInvertedPressed",
+            "colorBrandForegroundOnLight",
+            "colorBrandForegroundOnLightHover",
+            "colorBrandForegroundOnLightPressed",
+            "colorBrandForegroundOnLightSelected",
+            "colorNeutralBackground1",
+            "colorNeutralBackground1Hover",
+            "colorNeutralBackground1Pressed",
+            "colorNeutralBackground1Selected",
+            "colorNeutralBackground2",
+            "colorNeutralBackground2Hover",
+            "colorNeutralBackground2Pressed",
+            "colorNeutralBackground2Selected",
+            "colorNeutralBackground3",
+            "colorNeutralBackground3Hover",
+            "colorNeutralBackground3Pressed",
+            "colorNeutralBackground3Selected",
+            "colorNeutralBackground4",
+            "colorNeutralBackground4Hover",
+            "colorNeutralBackground4Pressed",
+            "colorNeutralBackground4Selected",
+            "colorNeutralBackground5",
+            "colorNeutralBackground5Hover",
+            "colorNeutralBackground5Pressed",
+            "colorNeutralBackground5Selected",
+            "colorNeutralBackground6",
+            "colorNeutralBackground7",
+            "colorNeutralBackground7Hover",
+            "colorNeutralBackground7Pressed",
+            "colorNeutralBackground7Selected",
+            "colorNeutralBackground8",
+            "colorNeutralBackgroundInverted",
+            "colorNeutralBackgroundInvertedHover",
+            "colorNeutralBackgroundInvertedPressed",
+            "colorNeutralBackgroundInvertedSelected",
+            "colorNeutralBackgroundStatic",
+            "colorNeutralBackgroundAlpha",
+            "colorNeutralBackgroundAlpha2",
+            "colorSubtleBackground",
+            "colorSubtleBackgroundHover",
+            "colorSubtleBackgroundPressed",
+            "colorSubtleBackgroundSelected",
+            "colorSubtleBackgroundLightAlphaHover",
+            "colorSubtleBackgroundLightAlphaPressed",
+            "colorSubtleBackgroundLightAlphaSelected",
+            "colorSubtleBackgroundInverted",
+            "colorSubtleBackgroundInvertedHover",
+            "colorSubtleBackgroundInvertedPressed",
+            "colorSubtleBackgroundInvertedSelected",
+            "colorTransparentBackground",
+            "colorTransparentBackgroundHover",
+            "colorTransparentBackgroundPressed",
+            "colorTransparentBackgroundSelected",
+            "colorNeutralBackgroundDisabled",
+            "colorNeutralBackgroundDisabled2",
+            "colorNeutralBackgroundInvertedDisabled",
+            "colorNeutralStencil1",
+            "colorNeutralStencil2",
+            "colorNeutralStencil1Alpha",
+            "colorNeutralStencil2Alpha",
+            "colorBackgroundOverlay",
+            "colorScrollbarOverlay",
+            "colorBrandBackground",
+            "colorBrandBackgroundHover",
+            "colorBrandBackgroundPressed",
+            "colorBrandBackgroundSelected",
+            "colorCompoundBrandBackground",
+            "colorCompoundBrandBackgroundHover",
+            "colorCompoundBrandBackgroundPressed",
+            "colorBrandBackgroundStatic",
+            "colorBrandBackground2",
+            "colorBrandBackground2Hover",
+            "colorBrandBackground2Pressed",
+            "colorBrandBackground3Static",
+            "colorBrandBackground4Static",
+            "colorBrandBackgroundInverted",
+            "colorBrandBackgroundInvertedHover",
+            "colorBrandBackgroundInvertedPressed",
+            "colorBrandBackgroundInvertedSelected",
+            "colorNeutralCardBackground",
+            "colorNeutralCardBackgroundHover",
+            "colorNeutralCardBackgroundPressed",
+            "colorNeutralCardBackgroundSelected",
+            "colorNeutralCardBackgroundDisabled",
+            "colorNeutralStrokeAccessible",
+            "colorNeutralStrokeAccessibleHover",
+            "colorNeutralStrokeAccessiblePressed",
+            "colorNeutralStrokeAccessibleSelected",
+            "colorNeutralStroke1",
+            "colorNeutralStroke1Hover",
+            "colorNeutralStroke1Pressed",
+            "colorNeutralStroke1Selected",
+            "colorNeutralStroke2",
+            "colorNeutralStroke3",
+            "colorNeutralStroke4",
+            "colorNeutralStroke4Hover",
+            "colorNeutralStroke4Pressed",
+            "colorNeutralStroke4Selected",
+            "colorNeutralStrokeSubtle",
+            "colorNeutralStrokeOnBrand",
+            "colorNeutralStrokeOnBrand2",
+            "colorNeutralStrokeOnBrand2Hover",
+            "colorNeutralStrokeOnBrand2Pressed",
+            "colorNeutralStrokeOnBrand2Selected",
+            "colorBrandStroke1",
+            "colorBrandStroke2",
+            "colorBrandStroke2Hover",
+            "colorBrandStroke2Pressed",
+            "colorBrandStroke2Contrast",
+            "colorCompoundBrandStroke",
+            "colorCompoundBrandStrokeHover",
+            "colorCompoundBrandStrokePressed",
+            "colorNeutralStrokeDisabled",
+            "colorNeutralStrokeDisabled2",
+            "colorNeutralStrokeInvertedDisabled",
+            "colorTransparentStroke",
+            "colorTransparentStrokeInteractive",
+            "colorTransparentStrokeDisabled",
+            "colorNeutralStrokeAlpha",
+            "colorNeutralStrokeAlpha2",
+            "colorStrokeFocus1",
+            "colorStrokeFocus2",
+            "colorNeutralShadowAmbient",
+            "colorNeutralShadowKey",
+            "colorNeutralShadowAmbientLighter",
+            "colorNeutralShadowKeyLighter",
+            "colorNeutralShadowAmbientDarker",
+            "colorNeutralShadowKeyDarker",
+            "colorBrandShadowAmbient",
+            "colorBrandShadowKey"
+          ],
+          "modes": [
+            "webLight",
+            "webDark",
+            "teamsLight",
+            "teamsDark",
+            "teamsHighContrast"
+          ],
+          "note": "A 16-step brand ramp (10–160) is the only theme input; createLightTheme/createDarkTheme map it and the fixed grey ramp (lightness 2–98) onto alias colour tokens."
+        },
+        "algorithm": {
+          "name": "createLightTheme(brand) / createDarkTheme(brand)",
+          "inputs": [
+            "BrandVariants: 16 colours keyed 10…160"
+          ],
+          "outputs": [
+            "alias colour tokens",
+            "shadow tokens"
+          ],
+          "description": "No colour is computed: each alias token indexes the brand ramp or the grey ramp (e.g. colorBrandBackground = brand[80] in light, brand[70] in dark).",
+          "files": [
+            "lib/utils/createLightTheme.js",
+            "lib/utils/createDarkTheme.js",
+            "lib/alias/lightColor.js",
+            "lib/alias/darkColor.js"
+          ]
+        },
+        "neutral": [
+          {
+            "name": "grey",
+            "steps": [
+              {
+                "name": "grey-2",
+                "value": "#050505",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-4",
+                "value": "#0a0a0a",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-6",
+                "value": "#0f0f0f",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-8",
+                "value": "#141414",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-10",
+                "value": "#1a1a1a",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-12",
+                "value": "#1f1f1f",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-14",
+                "value": "#242424",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-16",
+                "value": "#292929",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-18",
+                "value": "#2e2e2e",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-20",
+                "value": "#333333",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-22",
+                "value": "#383838",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-24",
+                "value": "#3d3d3d",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-26",
+                "value": "#424242",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-28",
+                "value": "#474747",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-30",
+                "value": "#4d4d4d",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-32",
+                "value": "#525252",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-34",
+                "value": "#575757",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-36",
+                "value": "#5c5c5c",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-38",
+                "value": "#616161",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-40",
+                "value": "#666666",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-42",
+                "value": "#6b6b6b",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-44",
+                "value": "#707070",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-46",
+                "value": "#757575",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-48",
+                "value": "#7a7a7a",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-50",
+                "value": "#808080",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-52",
+                "value": "#858585",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-54",
+                "value": "#8a8a8a",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-56",
+                "value": "#8f8f8f",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-58",
+                "value": "#949494",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-60",
+                "value": "#999999",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-62",
+                "value": "#9e9e9e",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-64",
+                "value": "#a3a3a3",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-66",
+                "value": "#a8a8a8",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-68",
+                "value": "#adadad",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-70",
+                "value": "#b3b3b3",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-72",
+                "value": "#b8b8b8",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-74",
+                "value": "#bdbdbd",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-76",
+                "value": "#c2c2c2",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-78",
+                "value": "#c7c7c7",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-80",
+                "value": "#cccccc",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-82",
+                "value": "#d1d1d1",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-84",
+                "value": "#d6d6d6",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-86",
+                "value": "#dbdbdb",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-88",
+                "value": "#e0e0e0",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-90",
+                "value": "#e6e6e6",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-92",
+                "value": "#ebebeb",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-94",
+                "value": "#f0f0f0",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-96",
+                "value": "#f5f5f5",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-98",
+                "value": "#fafafa",
+                "file": "lib/global/colors.js"
+              },
+              {
+                "name": "grey-99",
+                "value": "#fcfcfc",
+                "file": "lib/global/colors.js"
+              }
+            ]
+          },
+          {
+            "name": "neutral alias tokens",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "colorNeutralForeground1",
+                "value": "#242424",
+                "alias": "grey[14]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralForeground2",
+                "value": "#424242",
+                "alias": "grey[26]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralForeground3",
+                "value": "#616161",
+                "alias": "grey[38]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralForeground4",
+                "value": "#707070",
+                "alias": "grey[44]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralForegroundDisabled",
+                "value": "#bdbdbd",
+                "alias": "grey[74]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralBackground1",
+                "value": "#ffffff",
+                "alias": "white",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralBackground2",
+                "value": "#fafafa",
+                "alias": "grey[98]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralBackground3",
+                "value": "#f5f5f5",
+                "alias": "grey[96]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralBackground4",
+                "value": "#f0f0f0",
+                "alias": "grey[94]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralBackground5",
+                "value": "#ebebeb",
+                "alias": "grey[92]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralBackground6",
+                "value": "#e6e6e6",
+                "alias": "grey[90]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralBackgroundDisabled",
+                "value": "#f0f0f0",
+                "alias": "grey[94]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralStrokeAccessible",
+                "value": "#616161",
+                "alias": "grey[38]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralStroke1",
+                "value": "#d1d1d1",
+                "alias": "grey[82]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralStroke2",
+                "value": "#e0e0e0",
+                "alias": "grey[88]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralStroke3",
+                "value": "#f0f0f0",
+                "alias": "grey[94]",
+                "file": "lib/alias/lightColor.js"
+              }
+            ]
+          },
+          {
+            "name": "neutral alias tokens",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "colorNeutralForeground1",
+                "value": "#ffffff",
+                "alias": "white",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralForeground2",
+                "value": "#d6d6d6",
+                "alias": "grey[84]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralForeground3",
+                "value": "#adadad",
+                "alias": "grey[68]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralForeground4",
+                "value": "#999999",
+                "alias": "grey[60]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralForegroundDisabled",
+                "value": "#5c5c5c",
+                "alias": "grey[36]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralBackground1",
+                "value": "#292929",
+                "alias": "grey[16]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralBackground2",
+                "value": "#1f1f1f",
+                "alias": "grey[12]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralBackground3",
+                "value": "#141414",
+                "alias": "grey[8]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralBackground4",
+                "value": "#0a0a0a",
+                "alias": "grey[4]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralBackground5",
+                "value": "#000000",
+                "alias": "black",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralBackground6",
+                "value": "#333333",
+                "alias": "grey[20]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralBackgroundDisabled",
+                "value": "#141414",
+                "alias": "grey[8]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralStrokeAccessible",
+                "value": "#adadad",
+                "alias": "grey[68]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralStroke1",
+                "value": "#666666",
+                "alias": "grey[40]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralStroke2",
+                "value": "#525252",
+                "alias": "grey[32]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralStroke3",
+                "value": "#3d3d3d",
+                "alias": "grey[24]",
+                "file": "lib/alias/darkColor.js"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "brandWeb",
+            "steps": [
+              {
+                "name": "brand-10",
+                "value": "#061724",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-20",
+                "value": "#082338",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-30",
+                "value": "#0a2e4a",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-40",
+                "value": "#0c3b5e",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-50",
+                "value": "#0e4775",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-60",
+                "value": "#0f548c",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-70",
+                "value": "#115ea3",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-80",
+                "value": "#0f6cbd",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-90",
+                "value": "#2886de",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-100",
+                "value": "#479ef5",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-110",
+                "value": "#62abf5",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-120",
+                "value": "#77b7f7",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-130",
+                "value": "#96c6fa",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-140",
+                "value": "#b4d6fa",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-150",
+                "value": "#cfe4fa",
+                "file": "lib/global/brandColors.js"
+              },
+              {
+                "name": "brand-160",
+                "value": "#ebf3fc",
+                "file": "lib/global/brandColors.js"
+              }
+            ]
+          },
+          {
+            "name": "brand alias tokens",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "colorBrandForeground1",
+                "value": "#0f6cbd",
+                "alias": "brand[80]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorBrandForeground2",
+                "value": "#115ea3",
+                "alias": "brand[70]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorNeutralForegroundOnBrand",
+                "value": "#ffffff",
+                "alias": "white",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorBrandBackground",
+                "value": "#0f6cbd",
+                "alias": "brand[80]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorBrandBackgroundHover",
+                "value": "#115ea3",
+                "alias": "brand[70]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorBrandBackgroundPressed",
+                "value": "#0c3b5e",
+                "alias": "brand[40]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorCompoundBrandBackground",
+                "value": "#0f6cbd",
+                "alias": "brand[80]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorBrandStroke1",
+                "value": "#0f6cbd",
+                "alias": "brand[80]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorCompoundBrandStroke",
+                "value": "#0f6cbd",
+                "alias": "brand[80]",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorStrokeFocus1",
+                "value": "#ffffff",
+                "alias": "white",
+                "file": "lib/alias/lightColor.js"
+              },
+              {
+                "name": "colorStrokeFocus2",
+                "value": "#000000",
+                "alias": "black",
+                "file": "lib/alias/lightColor.js"
+              }
+            ]
+          },
+          {
+            "name": "brand alias tokens",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "colorBrandForeground1",
+                "value": "#479ef5",
+                "alias": "brand[100]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorBrandForeground2",
+                "value": "#62abf5",
+                "alias": "brand[110]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorNeutralForegroundOnBrand",
+                "value": "#ffffff",
+                "alias": "white",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorBrandBackground",
+                "value": "#115ea3",
+                "alias": "brand[70]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorBrandBackgroundHover",
+                "value": "#0f6cbd",
+                "alias": "brand[80]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorBrandBackgroundPressed",
+                "value": "#0c3b5e",
+                "alias": "brand[40]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorCompoundBrandBackground",
+                "value": "#479ef5",
+                "alias": "brand[100]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorBrandStroke1",
+                "value": "#479ef5",
+                "alias": "brand[100]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorCompoundBrandStroke",
+                "value": "#479ef5",
+                "alias": "brand[100]",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorStrokeFocus1",
+                "value": "#000000",
+                "alias": "black",
+                "file": "lib/alias/darkColor.js"
+              },
+              {
+                "name": "colorStrokeFocus2",
+                "value": "#ffffff",
+                "alias": "white",
+                "file": "lib/alias/darkColor.js"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@fluentui/tokens@1.0.0-alpha.24 (^lib\\/.*\\.js$)",
+            "files": 39
+          },
+          {
+            "package": "@fluentui/theme@2.7.4 (^lib\\/.*\\.js$)",
+            "files": 33
+          },
+          {
+            "package": "@fluentui/react-input@9.8.9 (\\.raw\\.js$)",
+            "files": 1
+          },
+          {
+            "package": "@fluentui/react-button@9.11.3 (\\.raw\\.js$)",
+            "files": 5
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 4,
+            "files": 3,
+            "topFiles": [
+              {
+                "file": "@fluentui/theme:lib/fonts/FluentFonts.js",
+                "hits": 2
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/DefaultFontStyles.js",
+                "hits": 1
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/createFontStyles.js",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@fluentui/theme:lib/fonts/DefaultFontStyles.js",
+                "line": 34,
+                "text": "_registerFontFaceSet(fontUrl, LocalizedFontNames.Arabic, 'segoeui-arabic');"
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/FluentFonts.js",
+                "line": 4,
+                "text": "LocalizedFontNames.Arabic = 'Segoe UI Web (Arabic)';"
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/createFontStyles.js",
+                "line": 9,
+                "text": "ar: LocalizedFontFamilies.Arabic,"
+              }
+            ]
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 1,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "@fluentui/theme:lib/createTheme.js",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@fluentui/theme:lib/createTheme.js",
+                "line": 24,
+                "text": "rtl: undefined,"
+              }
+            ]
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 1,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "@fluentui/theme:lib/fonts/createFontStyles.js",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@fluentui/theme:lib/fonts/createFontStyles.js",
+                "line": 47,
+                "text": "return LanguageToFontMap[lang];"
+              }
+            ]
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 20,
+            "files": 3,
+            "topFiles": [
+              {
+                "file": "@fluentui/theme:lib/fonts/FluentFonts.js",
+                "hits": 8
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/DefaultFontStyles.js",
+                "hits": 6
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/createFontStyles.js",
+                "hits": 6
+              }
+            ],
+            "samples": [
+              {
+                "file": "@fluentui/theme:lib/fonts/DefaultFontStyles.js",
+                "line": 33,
+                "text": "_registerFontFaceSet(fontUrl, LocalizedFontNames.Thai, 'leelawadeeui-thai', 'leelawadeeui');"
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/FluentFonts.js",
+                "line": 8,
+                "text": "LocalizedFontNames.Hebrew = 'Segoe UI Web (Hebrew)';"
+              },
+              {
+                "file": "@fluentui/theme:lib/fonts/createFontStyles.js",
+                "line": 14,
+                "text": "he: LocalizedFontFamilies.Hebrew,"
+              }
+            ]
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          }
+        ],
+        "tokens": [
+          {
+            "name": "lang ar",
+            "value": "'Segoe UI Web (Arabic)'",
+            "alias": "LocalizedFontFamilies.Arabic",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang bg",
+            "value": "'Segoe UI Web (Cyrillic)'",
+            "alias": "LocalizedFontFamilies.Cyrillic",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang cs",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang el",
+            "value": "'Segoe UI Web (Greek)'",
+            "alias": "LocalizedFontFamilies.Greek",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang et",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang he",
+            "value": "'Segoe UI Web (Hebrew)'",
+            "alias": "LocalizedFontFamilies.Hebrew",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang hi",
+            "value": "'Nirmala UI'",
+            "alias": "LocalizedFontFamilies.Hindi",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang hr",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang hu",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang ja",
+            "value": "'Yu Gothic UI', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka",
+            "alias": "LocalizedFontFamilies.Japanese",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang kk",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang ko",
+            "value": "'Malgun Gothic', Gulim",
+            "alias": "LocalizedFontFamilies.Korean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang lt",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang lv",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang pl",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang ru",
+            "value": "'Segoe UI Web (Cyrillic)'",
+            "alias": "LocalizedFontFamilies.Cyrillic",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang sk",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang sr-latn",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang th",
+            "value": "'Leelawadee UI Web', 'Kmer UI'",
+            "alias": "LocalizedFontFamilies.Thai",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang tr",
+            "value": "'Segoe UI Web (East European)'",
+            "alias": "LocalizedFontFamilies.EastEuropean",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang uk",
+            "value": "'Segoe UI Web (Cyrillic)'",
+            "alias": "LocalizedFontFamilies.Cyrillic",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang vi",
+            "value": "'Segoe UI Web (Vietnamese)'",
+            "alias": "LocalizedFontFamilies.Vietnamese",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang zh-hans",
+            "value": "'Microsoft Yahei UI', Verdana, Simsun",
+            "alias": "LocalizedFontFamilies.ChineseSimplified",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang zh-hant",
+            "value": "'Microsoft Jhenghei UI', Pmingliu",
+            "alias": "LocalizedFontFamilies.ChineseTraditional",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang hy",
+            "value": "'Segoe UI Web (Armenian)'",
+            "alias": "LocalizedFontFamilies.Armenian",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          },
+          {
+            "name": "lang ka",
+            "value": "'Segoe UI Web (Georgian)'",
+            "alias": "LocalizedFontFamilies.Georgian",
+            "file": "@fluentui/theme:lib/fonts/createFontStyles.js"
+          }
+        ],
+        "findings": [
+          "@fluentui/tokens (Fluent 2 / v9) has three font stacks (base, monospace, numeric), all Latin Segoe UI; no token varies by language, script or direction, and line heights are fixed px pairs with the font sizes (14/20, 12/16, 16/22).",
+          "Per-language stacks exist only in the older @fluentui/theme (v8): LanguageToFontMap covers 26 language prefixes; \"ar\" maps to 'Segoe UI Web (Arabic)' followed by the fallbacks ('Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif). It swaps the family only — sizes and line heights are unchanged.",
+          "RTL in v9 is done by the Griffel compiler, which emits a flipped rule for every physical declaration (the compiled styles contain both .f… {padding-left} and its right twin); raw sources are written with physical properties.",
+          "No density token or mode: controls have size small/medium/large (24/32/40px)."
+        ]
+      },
+      "extra": {
+        "localizedFontFamilies": {
+          "Arabic": "'Segoe UI Web (Arabic)'",
+          "ChineseSimplified": "'Microsoft Yahei UI', Verdana, Simsun",
+          "ChineseTraditional": "'Microsoft Jhenghei UI', Pmingliu",
+          "Cyrillic": "'Segoe UI Web (Cyrillic)'",
+          "EastEuropean": "'Segoe UI Web (East European)'",
+          "Greek": "'Segoe UI Web (Greek)'",
+          "Hebrew": "'Segoe UI Web (Hebrew)'",
+          "Hindi": "'Nirmala UI'",
+          "Japanese": "'Yu Gothic UI', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka",
+          "Korean": "'Malgun Gothic', Gulim",
+          "Selawik": "'Selawik Web'",
+          "Thai": "'Leelawadee UI Web', 'Kmer UI'",
+          "Vietnamese": "'Segoe UI Web (Vietnamese)'",
+          "WestEuropean": "'Segoe UI Web (West European)'",
+          "Armenian": "'Segoe UI Web (Armenian)'",
+          "Georgian": "'Segoe UI Web (Georgian)'"
+        },
+        "fontFamilyFallbacks": "'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif"
+      }
+    },
+    "gaps": [
+      "No breakpoint or container tokens.",
+      "No density mode and no touch-target token.",
+      "Letter-spacing is not tokenised."
+    ]
+  }
+}

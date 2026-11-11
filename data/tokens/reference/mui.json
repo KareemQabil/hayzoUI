@@ -1,0 +1,1793 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "mui",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@mui/material",
+        "url": "https://www.npmjs.com/package/@mui/material/v/9.5.0",
+        "version": "9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "Button/Button.mjs, InputBase/InputBase.mjs, MenuItem/MenuItem.mjs, OutlinedInput/OutlinedInput.mjs, TableCell/TableCell.mjs, colors/amber.mjs, colors/blue.mjs, colors/blueGrey.mjs, colors/brown.mjs, colors/common.mjs, colors/cyan.mjs, colors/deepOrange.mjs, colors/deepPurple.mjs, colors/green.mjs, colors/grey.mjs, colors/indigo.mjs, colors/lightBlue.mjs, colors/lightGreen.mjs, colors/lime.mjs, colors/orange.mjs, colors/pink.mjs, colors/purple.mjs, colors/red.mjs, colors/teal.mjs, colors/yellow.mjs, styles/createMixins.mjs, styles/createPalette.mjs, styles/createTransitions.mjs, styles/createTypography.mjs, styles/shadows.mjs, styles/zIndex.mjs"
+      },
+      {
+        "name": "@mui/system",
+        "url": "https://www.npmjs.com/package/@mui/system/v/9.5.0",
+        "version": "9.5.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "Container/createContainer.mjs, createBreakpoints/createBreakpoints.mjs, createTheme/createSpacing.mjs, createTheme/createTheme.mjs, createTheme/shape.mjs"
+      }
+    ],
+    "script": "tools/extract/tokens/mui.mjs",
+    "notes": "Scale values are literals read from source. Control heights are derived (padding + line box) because MUI sets no height on buttons or inputs; each formula is recorded and its inputs are asserted to be present in the source."
+  },
+  "data": {
+    "system": {
+      "name": "MUI (Material UI) default theme",
+      "package": "@mui/material",
+      "version": "9.5.0",
+      "license": "MIT",
+      "url": "https://mui.com/material-ui/"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "default",
+            "name": "size / dense props per component",
+            "mechanism": "size-prop",
+            "description": "No global density; small|medium(|large) per component and `dense` on lists and menus."
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "small",
+            "mode": "default",
+            "heightPx": 30.75,
+            "paddingBlockPx": 4,
+            "paddingInlinePx": 10,
+            "fontSizePx": 13,
+            "lineHeightRatio": 1.75,
+            "lineHeightPx": 22.75,
+            "derived": true,
+            "formula": "2 × 4px + 13px × 1.75 (contained variant padding '4px 10px', typography.button line-height)",
+            "file": "Button/Button.mjs"
+          },
+          {
+            "component": "button",
+            "size": "medium",
+            "mode": "default",
+            "heightPx": 36.5,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.75,
+            "lineHeightPx": 24.5,
+            "derived": true,
+            "formula": "2 × 6px + 14px × 1.75 (contained variant padding '6px 16px', typography.button line-height)",
+            "file": "Button/Button.mjs"
+          },
+          {
+            "component": "button",
+            "size": "large",
+            "mode": "default",
+            "heightPx": 42.25,
+            "paddingBlockPx": 8,
+            "paddingInlinePx": 22,
+            "fontSizePx": 15,
+            "lineHeightRatio": 1.75,
+            "lineHeightPx": 26.25,
+            "derived": true,
+            "formula": "2 × 8px + 15px × 1.75 (contained variant padding '8px 22px', typography.button line-height)",
+            "file": "Button/Button.mjs"
+          },
+          {
+            "component": "input",
+            "size": "small",
+            "mode": "default",
+            "heightPx": 40,
+            "paddingBlockPx": 8.5,
+            "paddingInlinePx": 14,
+            "fontSizePx": 16,
+            "lineHeightPx": 23,
+            "lineHeightRatio": 1.4375,
+            "derived": true,
+            "formula": "8.5px + 8.5px + 1.4375em × 16px (native input height, body1 font size)",
+            "file": "OutlinedInput/OutlinedInput.mjs"
+          },
+          {
+            "component": "input",
+            "size": "medium",
+            "mode": "default",
+            "heightPx": 56,
+            "paddingBlockPx": 16.5,
+            "paddingInlinePx": 14,
+            "fontSizePx": 16,
+            "lineHeightPx": 23,
+            "lineHeightRatio": 1.4375,
+            "derived": true,
+            "formula": "16.5px + 16.5px + 1.4375em × 16px (native input height, body1 font size)",
+            "file": "OutlinedInput/OutlinedInput.mjs"
+          },
+          {
+            "component": "input-standard",
+            "size": "medium",
+            "mode": "default",
+            "heightPx": 32,
+            "paddingBlockPx": 4,
+            "paddingInlinePx": 0,
+            "fontSizePx": 16,
+            "lineHeightPx": 23,
+            "lineHeightRatio": 1.4375,
+            "derived": true,
+            "formula": "4px + 5px + 1.4375em × 16px (native input height, body1 font size)",
+            "file": "InputBase/InputBase.mjs"
+          },
+          {
+            "component": "menu-item",
+            "size": "default",
+            "mode": "default",
+            "minHeightPx": 48,
+            "file": "MenuItem/MenuItem.mjs",
+            "note": "min-height applies below the sm breakpoint; from sm up it is 'auto'"
+          },
+          {
+            "component": "menu-item",
+            "size": "dense",
+            "mode": "default",
+            "minHeightPx": 32,
+            "file": "MenuItem/MenuItem.mjs"
+          },
+          {
+            "component": "table-cell",
+            "size": "medium",
+            "mode": "default",
+            "paddingBlockPx": 16,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.43,
+            "file": "TableCell/TableCell.mjs"
+          },
+          {
+            "component": "table-cell",
+            "size": "small",
+            "mode": "default",
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightRatio": 1.43,
+            "file": "TableCell/TableCell.mjs"
+          },
+          {
+            "component": "toolbar",
+            "size": "xs",
+            "mode": "default",
+            "minHeightPx": 56,
+            "file": "styles/createMixins.mjs"
+          },
+          {
+            "component": "toolbar",
+            "size": "xs-landscape",
+            "mode": "default",
+            "minHeightPx": 48,
+            "file": "styles/createMixins.mjs"
+          },
+          {
+            "component": "toolbar",
+            "size": "sm-up",
+            "mode": "default",
+            "minHeightPx": 64,
+            "file": "styles/createMixins.mjs"
+          }
+        ],
+        "touchTarget": [
+          {
+            "name": "MenuItem min-height (below sm)",
+            "value": 48,
+            "px": 48,
+            "file": "MenuItem/MenuItem.mjs"
+          }
+        ]
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "theme.spacing unit",
+            "value": 8,
+            "px": 8,
+            "file": "createTheme/createSpacing.mjs (@mui/system)"
+          },
+          {
+            "name": "spacing(0.5)",
+            "value": "0.5 × 8px",
+            "px": 4,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(1)",
+            "value": "1 × 8px",
+            "px": 8,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(1.5)",
+            "value": "1.5 × 8px",
+            "px": 12,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(2)",
+            "value": "2 × 8px",
+            "px": 16,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(3)",
+            "value": "3 × 8px",
+            "px": 24,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(4)",
+            "value": "4 × 8px",
+            "px": 32,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(5)",
+            "value": "5 × 8px",
+            "px": 40,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(6)",
+            "value": "6 × 8px",
+            "px": 48,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          },
+          {
+            "name": "spacing(8)",
+            "value": "8 × 8px",
+            "px": 64,
+            "derived": true,
+            "formula": "theme.spacing(n) = n × unit"
+          }
+        ],
+        "note": "A multiplier, not an enumerated scale."
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "shape.borderRadius",
+            "value": 4,
+            "px": 4,
+            "file": "createTheme/shape.mjs (@mui/system)"
+          }
+        ]
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "fontFamily",
+            "value": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+            "file": "styles/createTypography.mjs"
+          }
+        ],
+        "steps": [
+          {
+            "name": "h1",
+            "fontSize": "6rem",
+            "fontSizePx": 96,
+            "lineHeight": 1.167,
+            "lineHeightRatio": 1.167,
+            "lineHeightPx": 112.03,
+            "fontWeight": 300,
+            "letterSpacing": "-0.01562em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "h2",
+            "fontSize": "3.75rem",
+            "fontSizePx": 60,
+            "lineHeight": 1.2,
+            "lineHeightRatio": 1.2,
+            "lineHeightPx": 72,
+            "fontWeight": 300,
+            "letterSpacing": "-0.00833em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "h3",
+            "fontSize": "3rem",
+            "fontSizePx": 48,
+            "lineHeight": 1.167,
+            "lineHeightRatio": 1.167,
+            "lineHeightPx": 56.02,
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "h4",
+            "fontSize": "2.125rem",
+            "fontSizePx": 34,
+            "lineHeight": 1.235,
+            "lineHeightRatio": 1.235,
+            "lineHeightPx": 41.99,
+            "fontWeight": 400,
+            "letterSpacing": "0.00735em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "h5",
+            "fontSize": "1.5rem",
+            "fontSizePx": 24,
+            "lineHeight": 1.334,
+            "lineHeightRatio": 1.334,
+            "lineHeightPx": 32.02,
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "h6",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.6,
+            "lineHeightRatio": 1.6,
+            "lineHeightPx": 32,
+            "fontWeight": 500,
+            "letterSpacing": "0.0075em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "subtitle1",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.75,
+            "lineHeightRatio": 1.75,
+            "lineHeightPx": 28,
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "subtitle2",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.57,
+            "lineHeightRatio": 1.57,
+            "lineHeightPx": 21.98,
+            "fontWeight": 500,
+            "letterSpacing": "0.00714em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "body1",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "body2",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.43,
+            "lineHeightRatio": 1.43,
+            "lineHeightPx": 20.02,
+            "fontWeight": 400,
+            "letterSpacing": "0.01071em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "button",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.75,
+            "lineHeightRatio": 1.75,
+            "lineHeightPx": 24.5,
+            "fontWeight": 500,
+            "letterSpacing": "0.02857em",
+            "file": "styles/createTypography.mjs",
+            "note": "text-transform: uppercase"
+          },
+          {
+            "name": "caption",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.66,
+            "lineHeightRatio": 1.66,
+            "lineHeightPx": 19.92,
+            "fontWeight": 400,
+            "letterSpacing": "0.03333em",
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "overline",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 2.66,
+            "lineHeightRatio": 2.66,
+            "lineHeightPx": 31.92,
+            "fontWeight": 400,
+            "letterSpacing": "0.08333em",
+            "file": "styles/createTypography.mjs",
+            "note": "text-transform: uppercase"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "fontWeightLight",
+            "value": 300,
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "fontWeightRegular",
+            "value": 400,
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "fontWeightMedium",
+            "value": 500,
+            "file": "styles/createTypography.mjs"
+          },
+          {
+            "name": "fontWeightBold",
+            "value": 700,
+            "file": "styles/createTypography.mjs"
+          }
+        ],
+        "note": "theme.typography.fontSize = 14 (the MD2 default body size); variants are given in px and converted to rem."
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "xs",
+            "value": 0,
+            "px": 0,
+            "file": "createBreakpoints/createBreakpoints.mjs (@mui/system)"
+          },
+          {
+            "name": "sm",
+            "value": 600,
+            "px": 600,
+            "file": "createBreakpoints/createBreakpoints.mjs (@mui/system)"
+          },
+          {
+            "name": "md",
+            "value": 900,
+            "px": 900,
+            "file": "createBreakpoints/createBreakpoints.mjs (@mui/system)"
+          },
+          {
+            "name": "lg",
+            "value": 1200,
+            "px": 1200,
+            "file": "createBreakpoints/createBreakpoints.mjs (@mui/system)"
+          },
+          {
+            "name": "xl",
+            "value": 1536,
+            "px": 1536,
+            "file": "createBreakpoints/createBreakpoints.mjs (@mui/system)"
+          }
+        ]
+      },
+      "containers": {
+        "steps": [
+          {
+            "name": "xs",
+            "value": 444,
+            "px": 444,
+            "file": "Container/createContainer.mjs (@mui/system)"
+          },
+          {
+            "name": "sm",
+            "value": 600,
+            "px": 600,
+            "derived": true,
+            "formula": "maxWidth = breakpoint value"
+          },
+          {
+            "name": "md",
+            "value": 900,
+            "px": 900,
+            "derived": true,
+            "formula": "maxWidth = breakpoint value"
+          },
+          {
+            "name": "lg",
+            "value": 1200,
+            "px": 1200,
+            "derived": true,
+            "formula": "maxWidth = breakpoint value"
+          },
+          {
+            "name": "xl",
+            "value": 1536,
+            "px": 1536,
+            "derived": true,
+            "formula": "maxWidth = breakpoint value"
+          }
+        ]
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "mobileStepper",
+            "value": 1000,
+            "file": "styles/zIndex.mjs"
+          },
+          {
+            "name": "fab",
+            "value": 1050,
+            "file": "styles/zIndex.mjs"
+          },
+          {
+            "name": "speedDial",
+            "value": 1050,
+            "file": "styles/zIndex.mjs"
+          },
+          {
+            "name": "appBar",
+            "value": 1100,
+            "file": "styles/zIndex.mjs"
+          },
+          {
+            "name": "drawer",
+            "value": 1200,
+            "file": "styles/zIndex.mjs"
+          },
+          {
+            "name": "modal",
+            "value": 1300,
+            "file": "styles/zIndex.mjs"
+          },
+          {
+            "name": "snackbar",
+            "value": 1400,
+            "file": "styles/zIndex.mjs"
+          },
+          {
+            "name": "tooltip",
+            "value": 1500,
+            "file": "styles/zIndex.mjs"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "0",
+            "value": "none",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "1",
+            "value": "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "2",
+            "value": "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "3",
+            "value": "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "4",
+            "value": "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "5",
+            "value": "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "6",
+            "value": "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "7",
+            "value": "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "8",
+            "value": "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "9",
+            "value": "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "10",
+            "value": "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "11",
+            "value": "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "12",
+            "value": "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "13",
+            "value": "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "14",
+            "value": "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "15",
+            "value": "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "16",
+            "value": "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "17",
+            "value": "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "18",
+            "value": "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "19",
+            "value": "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "20",
+            "value": "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "21",
+            "value": "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "22",
+            "value": "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "23",
+            "value": "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          },
+          {
+            "name": "24",
+            "value": "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+            "file": "styles/shadows.mjs"
+          }
+        ],
+        "note": "25 levels (0–24) from MD2 elevation: umbra, penumbra and ambient layers."
+      },
+      "motion": {
+        "durations": [
+          {
+            "name": "shortest",
+            "value": 150,
+            "ms": 150,
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "shorter",
+            "value": 200,
+            "ms": 200,
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "short",
+            "value": 250,
+            "ms": 250,
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "standard",
+            "value": 300,
+            "ms": 300,
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "complex",
+            "value": 375,
+            "ms": 375,
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "enteringScreen",
+            "value": 225,
+            "ms": 225,
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "leavingScreen",
+            "value": 195,
+            "ms": 195,
+            "file": "styles/createTransitions.mjs"
+          }
+        ],
+        "easings": [
+          {
+            "name": "easeInOut",
+            "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "easeOut",
+            "value": "cubic-bezier(0.0, 0, 0.2, 1)",
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "easeIn",
+            "value": "cubic-bezier(0.4, 0, 1, 1)",
+            "file": "styles/createTransitions.mjs"
+          },
+          {
+            "name": "sharp",
+            "value": "cubic-bezier(0.4, 0, 0.6, 1)",
+            "file": "styles/createTransitions.mjs"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "amber",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "blue",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "blueGrey",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "brown",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "cyan",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "deepOrange",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "deepPurple",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "green",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "grey",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "indigo",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "lightBlue",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "lightGreen",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "lime",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "orange",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "pink",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "purple",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "red",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "teal",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            },
+            {
+              "name": "yellow",
+              "steps": 14,
+              "stepNames": [
+                "50",
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+                "A100",
+                "A200",
+                "A400",
+                "A700"
+              ]
+            }
+          ],
+          "semanticRoles": [
+            "primary",
+            "secondary",
+            "error",
+            "warning",
+            "info",
+            "success",
+            "text.primary",
+            "text.secondary",
+            "text.disabled",
+            "background.default",
+            "background.paper",
+            "divider",
+            "action.*"
+          ],
+          "modes": [
+            "light",
+            "dark"
+          ],
+          "note": "MD2 hue ramps (50–900, A100–A700). Each semantic colour is main/light/dark/contrastText; light and dark are taken from the ramp for defaults or computed from main by tonalOffset 0.2, contrastText by contrastThreshold 3."
+        },
+        "algorithm": {
+          "name": "augmentColor",
+          "inputs": [
+            "main",
+            "tonalOffset (0.2)",
+            "contrastThreshold (3)",
+            "mode"
+          ],
+          "outputs": [
+            "light",
+            "dark",
+            "contrastText"
+          ],
+          "description": "light = lighten(main, tonalOffset), dark = darken(main, tonalOffset × 1.5), contrastText = white or near-black by WCAG contrast ratio against main.",
+          "files": [
+            "styles/createPalette.mjs"
+          ]
+        },
+        "neutral": [
+          {
+            "name": "grey",
+            "steps": [
+              {
+                "name": "50",
+                "value": "#fafafa",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "100",
+                "value": "#f5f5f5",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "200",
+                "value": "#eeeeee",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "300",
+                "value": "#e0e0e0",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "400",
+                "value": "#bdbdbd",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "500",
+                "value": "#9e9e9e",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "600",
+                "value": "#757575",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "700",
+                "value": "#616161",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "800",
+                "value": "#424242",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "900",
+                "value": "#212121",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "A100",
+                "value": "#f5f5f5",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "A200",
+                "value": "#eeeeee",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "A400",
+                "value": "#bdbdbd",
+                "file": "colors/grey.mjs"
+              },
+              {
+                "name": "A700",
+                "value": "#616161",
+                "file": "colors/grey.mjs"
+              }
+            ]
+          },
+          {
+            "name": "palette text/background/action",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "text.primary",
+                "value": "rgba(0, 0, 0, 0.87)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "text.secondary",
+                "value": "rgba(0, 0, 0, 0.6)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "text.disabled",
+                "value": "rgba(0, 0, 0, 0.38)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "divider",
+                "value": "rgba(0, 0, 0, 0.12)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "background.paper",
+                "value": "#fff",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "background.default",
+                "value": "#fff",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.active",
+                "value": "rgba(0, 0, 0, 0.54)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.hover",
+                "value": "rgba(0, 0, 0, 0.04)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.hoverOpacity",
+                "value": 0.04,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.selected",
+                "value": "rgba(0, 0, 0, 0.08)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.selectedOpacity",
+                "value": 0.08,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.disabled",
+                "value": "rgba(0, 0, 0, 0.26)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.disabledBackground",
+                "value": "rgba(0, 0, 0, 0.12)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.disabledOpacity",
+                "value": 0.38,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.focus",
+                "value": "rgba(0, 0, 0, 0.12)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.focusOpacity",
+                "value": 0.12,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.activatedOpacity",
+                "value": 0.12,
+                "file": "styles/createPalette.mjs"
+              }
+            ]
+          },
+          {
+            "name": "palette text/background/action",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "text.primary",
+                "value": "#fff",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "text.secondary",
+                "value": "rgba(255, 255, 255, 0.7)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "text.disabled",
+                "value": "rgba(255, 255, 255, 0.5)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "text.icon",
+                "value": "rgba(255, 255, 255, 0.5)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "divider",
+                "value": "rgba(255, 255, 255, 0.12)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "background.paper",
+                "value": "#121212",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "background.default",
+                "value": "#121212",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.active",
+                "value": "#fff",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.hover",
+                "value": "rgba(255, 255, 255, 0.08)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.hoverOpacity",
+                "value": 0.08,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.selected",
+                "value": "rgba(255, 255, 255, 0.16)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.selectedOpacity",
+                "value": 0.16,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.disabled",
+                "value": "rgba(255, 255, 255, 0.3)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.disabledBackground",
+                "value": "rgba(255, 255, 255, 0.12)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.disabledOpacity",
+                "value": 0.38,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.focus",
+                "value": "rgba(255, 255, 255, 0.12)",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.focusOpacity",
+                "value": 0.12,
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "action.activatedOpacity",
+                "value": 0.24,
+                "file": "styles/createPalette.mjs"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "blue",
+            "steps": [
+              {
+                "name": "50",
+                "value": "#e3f2fd",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "100",
+                "value": "#bbdefb",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "200",
+                "value": "#90caf9",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "300",
+                "value": "#64b5f6",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "400",
+                "value": "#42a5f5",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "500",
+                "value": "#2196f3",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "600",
+                "value": "#1e88e5",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "700",
+                "value": "#1976d2",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "800",
+                "value": "#1565c0",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "900",
+                "value": "#0d47a1",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "A100",
+                "value": "#82b1ff",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "A200",
+                "value": "#448aff",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "A400",
+                "value": "#2979ff",
+                "file": "colors/blue.mjs"
+              },
+              {
+                "name": "A700",
+                "value": "#2962ff",
+                "file": "colors/blue.mjs"
+              }
+            ]
+          },
+          {
+            "name": "palette.primary",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "main",
+                "value": "#1976d2",
+                "alias": "blue[700]",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "light",
+                "value": "#42a5f5",
+                "alias": "blue[400]",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "dark",
+                "value": "#1565c0",
+                "alias": "blue[800]",
+                "file": "styles/createPalette.mjs"
+              }
+            ]
+          },
+          {
+            "name": "palette.primary",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "main",
+                "value": "#90caf9",
+                "alias": "blue[200]",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "light",
+                "value": "#e3f2fd",
+                "alias": "blue[50]",
+                "file": "styles/createPalette.mjs"
+              },
+              {
+                "name": "dark",
+                "value": "#42a5f5",
+                "alias": "blue[400]",
+                "file": "styles/createPalette.mjs"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@mui/material@9.5.0 (^styles\\/.*\\.mjs$)",
+            "files": 44
+          },
+          {
+            "package": "@mui/system@9.5.0 (^(createTheme|RtlProvider|createBreakpoints|spacing)\\/.*\\.mjs$)",
+            "files": 10
+          },
+          {
+            "package": "@mui/material@9.5.0 (^locale\\/.*\\.mjs$)",
+            "files": 62
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 147,
+            "files": 7,
+            "topFiles": [
+              {
+                "file": "@mui/material:locale/arEG.mjs",
+                "hits": 21
+              },
+              {
+                "file": "@mui/material:locale/arSA.mjs",
+                "hits": 21
+              },
+              {
+                "file": "@mui/material:locale/arSD.mjs",
+                "hits": 21
+              },
+              {
+                "file": "@mui/material:locale/faIR.mjs",
+                "hits": 21
+              },
+              {
+                "file": "@mui/material:locale/kuCKB.mjs",
+                "hits": 21
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mui/material:locale/arEG.mjs",
+                "line": 7,
+                "text": "(Arabic-script text; counted, not copied)"
+              },
+              {
+                "file": "@mui/material:locale/arSA.mjs",
+                "line": 7,
+                "text": "(Arabic-script text; counted, not copied)"
+              },
+              {
+                "file": "@mui/material:locale/arSD.mjs",
+                "line": 7,
+                "text": "(Arabic-script text; counted, not copied)"
+              },
+              {
+                "file": "@mui/material:locale/faIR.mjs",
+                "line": 12,
+                "text": "(Arabic-script text; counted, not copied)"
+              }
+            ]
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 3,
+            "files": 3,
+            "topFiles": [
+              {
+                "file": "@mui/material:locale/arEG.mjs",
+                "hits": 1
+              },
+              {
+                "file": "@mui/material:locale/arSA.mjs",
+                "hits": 1
+              },
+              {
+                "file": "@mui/material:locale/arSD.mjs",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mui/material:locale/arEG.mjs",
+                "line": 2,
+                "text": "const formatNumber = buildFormatNumber('ar-EG');"
+              },
+              {
+                "file": "@mui/material:locale/arSA.mjs",
+                "line": 2,
+                "text": "const formatNumber = buildFormatNumber('ar-SA');"
+              },
+              {
+                "file": "@mui/material:locale/arSD.mjs",
+                "line": 2,
+                "text": "const formatNumber = buildFormatNumber('ar-SD');"
+              }
+            ]
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 7,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "@mui/system:RtlProvider/index.mjs",
+                "hits": 7
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mui/system:RtlProvider/index.mjs",
+                "line": 6,
+                "text": "const RtlContext = /*#__PURE__*/React.createContext(undefined);"
+              }
+            ]
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 2,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "@mui/system:spacing/spacing.mjs",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "@mui/system:spacing/spacing.mjs",
+                "line": 45,
+                "text": "rginBottom', 'marginLeft', 'marginX', 'marginY', 'marginInline', 'marginInlineStart', 'marginInlineEnd', 'marginBlock', 'marginBlockStart',"
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "theme.direction",
+            "value": "ltr",
+            "file": "createTheme/createTheme.mjs (@mui/system)",
+            "note": "a flag read by components and by the RTL style plugin; it changes no scale"
+          }
+        ],
+        "findings": [
+          "The only direction datum in the theme is theme.direction ('ltr' by default). @mui/system adds RtlProvider/useRtl (a boolean context). Neither changes a scale; flipping physical properties in generated CSS is left to a plugin the application configures (not part of these packages).",
+          "One font stack (\"Roboto\", \"Helvetica\", \"Arial\", sans-serif); no per-language stack, and letter-spacing is applied only when the default family is in use (source comment: it was designed for Roboto).",
+          "Line heights are fixed unitless ratios per variant (body1 1.5, body2 1.43, button 1.75, caption 1.66) with no language adjustment. Native inputs are forced to height 1.4375em (23px at 16px).",
+          "Density: no theme-level mode. Each component has size small/medium (large on Button) or a `dense` prop (lists, menus, toolbar). Arabic locale files exist in locale/ (strings only)."
+        ]
+      }
+    },
+    "gaps": [
+      "Control heights are not tokens (derived). No border-width or focus-ring tokens (focus is a ripple).",
+      "No global density mode and no compact/touch theme.",
+      "Single radius value, no radius scale."
+    ]
+  }
+}

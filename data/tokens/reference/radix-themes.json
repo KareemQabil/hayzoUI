@@ -1,0 +1,1460 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "radix-themes",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@radix-ui/themes",
+        "url": "https://www.npmjs.com/package/@radix-ui/themes/v/3.3.0",
+        "version": "3.3.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "src/components/_internal/base-button.css, src/components/button.css, src/components/container.css, src/components/text-field.css, src/components/theme.props.tsx, src/components/theme.tsx, src/styles/breakpoints.css, src/styles/tokens/base.css, src/styles/tokens/cursor.css, src/styles/tokens/layout.css, src/styles/tokens/radius.css, src/styles/tokens/scaling.css, src/styles/tokens/shadow.css, src/styles/tokens/space.css, src/styles/tokens/typography.css"
+      },
+      {
+        "name": "@radix-ui/colors",
+        "url": "https://www.npmjs.com/package/@radix-ui/colors/v/3.0.0",
+        "version": "3.0.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "gray-dark.css, gray.css, indigo-dark.css, indigo.css"
+      }
+    ],
+    "script": "tools/extract/tokens/radix.mjs"
+  },
+  "data": {
+    "system": {
+      "name": "Radix Themes + Radix Colors",
+      "package": "@radix-ui/themes",
+      "version": "3.3.0",
+      "license": "MIT",
+      "url": "https://www.radix-ui.com/themes"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "scaling-90",
+            "name": "scaling 90%",
+            "mechanism": "scaling-factor",
+            "description": "Theme prop `scaling` multiplies every space, font-size, line-height and radius token.",
+            "file": "src/styles/tokens/scaling.css"
+          },
+          {
+            "id": "scaling-95",
+            "name": "scaling 95%",
+            "mechanism": "scaling-factor",
+            "description": "Theme prop `scaling` multiplies every space, font-size, line-height and radius token.",
+            "file": "src/styles/tokens/scaling.css"
+          },
+          {
+            "id": "scaling-100",
+            "name": "scaling 100%",
+            "mechanism": "scaling-factor",
+            "description": "Theme prop `scaling` multiplies every space, font-size, line-height and radius token.",
+            "file": "src/styles/tokens/scaling.css"
+          },
+          {
+            "id": "scaling-105",
+            "name": "scaling 105%",
+            "mechanism": "scaling-factor",
+            "description": "Theme prop `scaling` multiplies every space, font-size, line-height and radius token.",
+            "file": "src/styles/tokens/scaling.css"
+          },
+          {
+            "id": "scaling-110",
+            "name": "scaling 110%",
+            "mechanism": "scaling-factor",
+            "description": "Theme prop `scaling` multiplies every space, font-size, line-height and radius token.",
+            "file": "src/styles/tokens/scaling.css"
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "1",
+            "mode": "scaling-90",
+            "heightPx": 21.6,
+            "radiusPx": 2.7,
+            "heightSource": "--base-button-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 0.9",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 10.8,
+            "lineHeightPx": 14.4,
+            "lineHeightRatio": 1.3333
+          },
+          {
+            "component": "button",
+            "size": "1",
+            "mode": "scaling-95",
+            "heightPx": 22.8,
+            "radiusPx": 2.85,
+            "heightSource": "--base-button-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 0.95",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 11.4,
+            "lineHeightPx": 15.2,
+            "lineHeightRatio": 1.3333
+          },
+          {
+            "component": "button",
+            "size": "1",
+            "mode": "scaling-100",
+            "heightPx": 24,
+            "radiusPx": 3,
+            "heightSource": "--base-button-height: var(--space-5)",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333
+          },
+          {
+            "component": "button",
+            "size": "1",
+            "mode": "scaling-105",
+            "heightPx": 25.2,
+            "radiusPx": 3.15,
+            "heightSource": "--base-button-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 1.05",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 12.6,
+            "lineHeightPx": 16.8,
+            "lineHeightRatio": 1.3333
+          },
+          {
+            "component": "button",
+            "size": "1",
+            "mode": "scaling-110",
+            "heightPx": 26.4,
+            "radiusPx": 3.3,
+            "heightSource": "--base-button-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 1.1",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 13.2,
+            "lineHeightPx": 17.6,
+            "lineHeightRatio": 1.3333
+          },
+          {
+            "component": "button",
+            "size": "2",
+            "mode": "scaling-90",
+            "heightPx": 28.8,
+            "radiusPx": 3.6,
+            "heightSource": "--base-button-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 0.9",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 12.6,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.4286
+          },
+          {
+            "component": "button",
+            "size": "2",
+            "mode": "scaling-95",
+            "heightPx": 30.4,
+            "radiusPx": 3.8,
+            "heightSource": "--base-button-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 0.95",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 13.3,
+            "lineHeightPx": 19,
+            "lineHeightRatio": 1.4286
+          },
+          {
+            "component": "button",
+            "size": "2",
+            "mode": "scaling-100",
+            "heightPx": 32,
+            "radiusPx": 4,
+            "heightSource": "--base-button-height: var(--space-6)",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286
+          },
+          {
+            "component": "button",
+            "size": "2",
+            "mode": "scaling-105",
+            "heightPx": 33.6,
+            "radiusPx": 4.2,
+            "heightSource": "--base-button-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 1.05",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 14.7,
+            "lineHeightPx": 21,
+            "lineHeightRatio": 1.4286
+          },
+          {
+            "component": "button",
+            "size": "2",
+            "mode": "scaling-110",
+            "heightPx": 35.2,
+            "radiusPx": 4.4,
+            "heightSource": "--base-button-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 1.1",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 15.4,
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.4286
+          },
+          {
+            "component": "button",
+            "size": "3",
+            "mode": "scaling-90",
+            "heightPx": 36,
+            "radiusPx": 5.4,
+            "heightSource": "--base-button-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 0.9",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 14.4,
+            "lineHeightPx": 21.6,
+            "lineHeightRatio": 1.5
+          },
+          {
+            "component": "button",
+            "size": "3",
+            "mode": "scaling-95",
+            "heightPx": 38,
+            "radiusPx": 5.7,
+            "heightSource": "--base-button-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 0.95",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 15.2,
+            "lineHeightPx": 22.8,
+            "lineHeightRatio": 1.5
+          },
+          {
+            "component": "button",
+            "size": "3",
+            "mode": "scaling-100",
+            "heightPx": 40,
+            "radiusPx": 6,
+            "heightSource": "--base-button-height: var(--space-7)",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5
+          },
+          {
+            "component": "button",
+            "size": "3",
+            "mode": "scaling-105",
+            "heightPx": 42,
+            "radiusPx": 6.3,
+            "heightSource": "--base-button-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 1.05",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 16.8,
+            "lineHeightPx": 25.2,
+            "lineHeightRatio": 1.5
+          },
+          {
+            "component": "button",
+            "size": "3",
+            "mode": "scaling-110",
+            "heightPx": 44,
+            "radiusPx": 6.6,
+            "heightSource": "--base-button-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 1.1",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 17.6,
+            "lineHeightPx": 26.4,
+            "lineHeightRatio": 1.5
+          },
+          {
+            "component": "button",
+            "size": "4",
+            "mode": "scaling-90",
+            "heightPx": 43.2,
+            "radiusPx": 7.2,
+            "heightSource": "--base-button-height: var(--space-8)",
+            "derived": true,
+            "formula": "48px × scaling 0.9",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 16.2,
+            "lineHeightPx": 23.4,
+            "lineHeightRatio": 1.4444
+          },
+          {
+            "component": "button",
+            "size": "4",
+            "mode": "scaling-95",
+            "heightPx": 45.6,
+            "radiusPx": 7.6,
+            "heightSource": "--base-button-height: var(--space-8)",
+            "derived": true,
+            "formula": "48px × scaling 0.95",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 17.1,
+            "lineHeightPx": 24.7,
+            "lineHeightRatio": 1.4444
+          },
+          {
+            "component": "button",
+            "size": "4",
+            "mode": "scaling-100",
+            "heightPx": 48,
+            "radiusPx": 8,
+            "heightSource": "--base-button-height: var(--space-8)",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 18,
+            "lineHeightPx": 26,
+            "lineHeightRatio": 1.4444
+          },
+          {
+            "component": "button",
+            "size": "4",
+            "mode": "scaling-105",
+            "heightPx": 50.4,
+            "radiusPx": 8.4,
+            "heightSource": "--base-button-height: var(--space-8)",
+            "derived": true,
+            "formula": "48px × scaling 1.05",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 18.9,
+            "lineHeightPx": 27.3,
+            "lineHeightRatio": 1.4444
+          },
+          {
+            "component": "button",
+            "size": "4",
+            "mode": "scaling-110",
+            "heightPx": 52.8,
+            "radiusPx": 8.8,
+            "heightSource": "--base-button-height: var(--space-8)",
+            "derived": true,
+            "formula": "48px × scaling 1.1",
+            "file": "src/components/_internal/base-button.css",
+            "fontSizePx": 19.8,
+            "lineHeightPx": 28.6,
+            "lineHeightRatio": 1.4444
+          },
+          {
+            "component": "input",
+            "size": "1",
+            "mode": "scaling-90",
+            "heightPx": 21.6,
+            "fontSizePx": 10.8,
+            "lineHeightPx": 14.4,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 3.6,
+            "heightSource": "--text-field-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 0.9",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "1",
+            "mode": "scaling-95",
+            "heightPx": 22.8,
+            "fontSizePx": 11.4,
+            "lineHeightPx": 15.2,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 3.8,
+            "heightSource": "--text-field-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 0.95",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "1",
+            "mode": "scaling-100",
+            "heightPx": 24,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 4,
+            "heightSource": "--text-field-height: var(--space-5)",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "1",
+            "mode": "scaling-105",
+            "heightPx": 25.2,
+            "fontSizePx": 12.6,
+            "lineHeightPx": 16.8,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 4.2,
+            "heightSource": "--text-field-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 1.05",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "1",
+            "mode": "scaling-110",
+            "heightPx": 26.4,
+            "fontSizePx": 13.2,
+            "lineHeightPx": 17.6,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 4.4,
+            "heightSource": "--text-field-height: var(--space-5)",
+            "derived": true,
+            "formula": "24px × scaling 1.1",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "2",
+            "mode": "scaling-90",
+            "heightPx": 28.8,
+            "fontSizePx": 12.6,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 3.6,
+            "heightSource": "--text-field-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 0.9",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "2",
+            "mode": "scaling-95",
+            "heightPx": 30.4,
+            "fontSizePx": 13.3,
+            "lineHeightPx": 19,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 3.8,
+            "heightSource": "--text-field-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 0.95",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "2",
+            "mode": "scaling-100",
+            "heightPx": 32,
+            "fontSizePx": 14,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 4,
+            "heightSource": "--text-field-height: var(--space-6)",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "2",
+            "mode": "scaling-105",
+            "heightPx": 33.6,
+            "fontSizePx": 14.7,
+            "lineHeightPx": 21,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 4.2,
+            "heightSource": "--text-field-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 1.05",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "2",
+            "mode": "scaling-110",
+            "heightPx": 35.2,
+            "fontSizePx": 15.4,
+            "lineHeightPx": 22,
+            "lineHeightRatio": 1.4286,
+            "radiusPx": 4.4,
+            "heightSource": "--text-field-height: var(--space-6)",
+            "derived": true,
+            "formula": "32px × scaling 1.1",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "3",
+            "mode": "scaling-90",
+            "heightPx": 36,
+            "fontSizePx": 14.4,
+            "lineHeightPx": 21.6,
+            "lineHeightRatio": 1.5,
+            "radiusPx": 5.4,
+            "heightSource": "--text-field-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 0.9",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "3",
+            "mode": "scaling-95",
+            "heightPx": 38,
+            "fontSizePx": 15.2,
+            "lineHeightPx": 22.8,
+            "lineHeightRatio": 1.5,
+            "radiusPx": 5.7,
+            "heightSource": "--text-field-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 0.95",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "3",
+            "mode": "scaling-100",
+            "heightPx": 40,
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "radiusPx": 6,
+            "heightSource": "--text-field-height: var(--space-7)",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "3",
+            "mode": "scaling-105",
+            "heightPx": 42,
+            "fontSizePx": 16.8,
+            "lineHeightPx": 25.2,
+            "lineHeightRatio": 1.5,
+            "radiusPx": 6.3,
+            "heightSource": "--text-field-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 1.05",
+            "file": "src/components/text-field.css"
+          },
+          {
+            "component": "input",
+            "size": "3",
+            "mode": "scaling-110",
+            "heightPx": 44,
+            "fontSizePx": 17.6,
+            "lineHeightPx": 26.4,
+            "lineHeightRatio": 1.5,
+            "radiusPx": 6.6,
+            "heightSource": "--text-field-height: var(--space-7)",
+            "derived": true,
+            "formula": "40px × scaling 1.1",
+            "file": "src/components/text-field.css"
+          }
+        ],
+        "note": "Sizes 1–4 (button) and 1–3 (text field); Theme default size is 2. Heights are space tokens."
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "space-1",
+            "value": "calc(4px * var(--scaling))",
+            "px": 4,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-2",
+            "value": "calc(8px * var(--scaling))",
+            "px": 8,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-3",
+            "value": "calc(12px * var(--scaling))",
+            "px": 12,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-4",
+            "value": "calc(16px * var(--scaling))",
+            "px": 16,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-5",
+            "value": "calc(24px * var(--scaling))",
+            "px": 24,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-6",
+            "value": "calc(32px * var(--scaling))",
+            "px": 32,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-7",
+            "value": "calc(40px * var(--scaling))",
+            "px": 40,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-8",
+            "value": "calc(48px * var(--scaling))",
+            "px": 48,
+            "file": "src/styles/tokens/space.css"
+          },
+          {
+            "name": "space-9",
+            "value": "calc(64px * var(--scaling))",
+            "px": 64,
+            "file": "src/styles/tokens/space.css"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "radius-1",
+            "value": "calc(3px * var(--scaling) * var(--radius-factor))",
+            "px": 3,
+            "file": "src/styles/tokens/radius.css",
+            "note": "at radius-factor 1 (medium)"
+          },
+          {
+            "name": "radius-2",
+            "value": "calc(4px * var(--scaling) * var(--radius-factor))",
+            "px": 4,
+            "file": "src/styles/tokens/radius.css",
+            "note": "at radius-factor 1 (medium)"
+          },
+          {
+            "name": "radius-3",
+            "value": "calc(6px * var(--scaling) * var(--radius-factor))",
+            "px": 6,
+            "file": "src/styles/tokens/radius.css",
+            "note": "at radius-factor 1 (medium)"
+          },
+          {
+            "name": "radius-4",
+            "value": "calc(8px * var(--scaling) * var(--radius-factor))",
+            "px": 8,
+            "file": "src/styles/tokens/radius.css",
+            "note": "at radius-factor 1 (medium)"
+          },
+          {
+            "name": "radius-5",
+            "value": "calc(12px * var(--scaling) * var(--radius-factor))",
+            "px": 12,
+            "file": "src/styles/tokens/radius.css",
+            "note": "at radius-factor 1 (medium)"
+          },
+          {
+            "name": "radius-6",
+            "value": "calc(16px * var(--scaling) * var(--radius-factor))",
+            "px": 16,
+            "file": "src/styles/tokens/radius.css",
+            "note": "at radius-factor 1 (medium)"
+          }
+        ],
+        "note": "radius prop sets --radius-factor: 0, 0.75, 1, 1.5 (none, small, medium, large, full)"
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "default-font-family",
+            "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "heading-font-family",
+            "value": "var(--default-font-family)",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "code-font-family",
+            "value": "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "strong-font-family",
+            "value": "var(--default-font-family)",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "em-font-family",
+            "value": "'Times New Roman', 'Times', serif",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "quote-font-family",
+            "value": "'Times New Roman', 'Times', serif",
+            "file": "src/styles/tokens/typography.css"
+          }
+        ],
+        "steps": [
+          {
+            "name": "font-size-1",
+            "fontSize": "calc(12px * var(--scaling))",
+            "fontSizePx": 12,
+            "lineHeight": "calc(16px * var(--scaling))",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "letterSpacing": "0.0025em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-2",
+            "fontSize": "calc(14px * var(--scaling))",
+            "fontSizePx": 14,
+            "lineHeight": "calc(20px * var(--scaling))",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "letterSpacing": "0em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-3",
+            "fontSize": "calc(16px * var(--scaling))",
+            "fontSizePx": 16,
+            "lineHeight": "calc(24px * var(--scaling))",
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "letterSpacing": "0em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-4",
+            "fontSize": "calc(18px * var(--scaling))",
+            "fontSizePx": 18,
+            "lineHeight": "calc(26px * var(--scaling))",
+            "lineHeightPx": 26,
+            "lineHeightRatio": 1.4444,
+            "letterSpacing": "-0.0025em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-5",
+            "fontSize": "calc(20px * var(--scaling))",
+            "fontSizePx": 20,
+            "lineHeight": "calc(28px * var(--scaling))",
+            "lineHeightPx": 28,
+            "lineHeightRatio": 1.4,
+            "letterSpacing": "-0.005em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-6",
+            "fontSize": "calc(24px * var(--scaling))",
+            "fontSizePx": 24,
+            "lineHeight": "calc(30px * var(--scaling))",
+            "lineHeightPx": 30,
+            "lineHeightRatio": 1.25,
+            "letterSpacing": "-0.00625em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-7",
+            "fontSize": "calc(28px * var(--scaling))",
+            "fontSizePx": 28,
+            "lineHeight": "calc(36px * var(--scaling))",
+            "lineHeightPx": 36,
+            "lineHeightRatio": 1.2857,
+            "letterSpacing": "-0.0075em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-8",
+            "fontSize": "calc(35px * var(--scaling))",
+            "fontSizePx": 35,
+            "lineHeight": "calc(40px * var(--scaling))",
+            "lineHeightPx": 40,
+            "lineHeightRatio": 1.1429,
+            "letterSpacing": "-0.01em",
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-size-9",
+            "fontSize": "calc(60px * var(--scaling))",
+            "fontSizePx": 60,
+            "lineHeight": "calc(60px * var(--scaling))",
+            "lineHeightPx": 60,
+            "lineHeightRatio": 1,
+            "letterSpacing": "-0.025em",
+            "file": "src/styles/tokens/typography.css"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "font-weight-light",
+            "value": 300,
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-weight-regular",
+            "value": 400,
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-weight-medium",
+            "value": 500,
+            "file": "src/styles/tokens/typography.css"
+          },
+          {
+            "name": "font-weight-bold",
+            "value": 700,
+            "file": "src/styles/tokens/typography.css"
+          }
+        ]
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "xs",
+            "value": "520px",
+            "px": 520,
+            "file": "src/styles/breakpoints.css"
+          },
+          {
+            "name": "sm",
+            "value": "768px",
+            "px": 768,
+            "file": "src/styles/breakpoints.css"
+          },
+          {
+            "name": "md",
+            "value": "1024px",
+            "px": 1024,
+            "file": "src/styles/breakpoints.css"
+          },
+          {
+            "name": "lg",
+            "value": "1280px",
+            "px": 1280,
+            "file": "src/styles/breakpoints.css"
+          },
+          {
+            "name": "xl",
+            "value": "1640px",
+            "px": 1640,
+            "file": "src/styles/breakpoints.css"
+          }
+        ]
+      },
+      "containers": {
+        "steps": [
+          {
+            "name": "container-1",
+            "value": "448px",
+            "px": 448,
+            "file": "src/components/container.css"
+          },
+          {
+            "name": "container-2",
+            "value": "688px",
+            "px": 688,
+            "file": "src/components/container.css"
+          },
+          {
+            "name": "container-3",
+            "value": "880px",
+            "px": 880,
+            "file": "src/components/container.css"
+          },
+          {
+            "name": "container-4",
+            "value": "1136px",
+            "px": 1136,
+            "file": "src/components/container.css"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "shadow-1",
+            "value": "inset 0 0 0 1px var(--gray-a5), inset 0 1.5px 2px 0 var(--gray-a2), inset 0 1.5px 2px 0 var(--black-a2)",
+            "file": "src/styles/tokens/shadow.css",
+            "mode": "light"
+          },
+          {
+            "name": "shadow-2",
+            "value": "0 0 0 1px var(--gray-a3), 0 0 0 0.5px var(--black-a1), 0 1px 1px 0 var(--gray-a2), 0 2px 1px -1px var(--black-a1), 0 1px 3px 0 var(--black-a1)",
+            "file": "src/styles/tokens/shadow.css",
+            "mode": "light"
+          },
+          {
+            "name": "shadow-3",
+            "value": "0 0 0 1px var(--gray-a3), 0 2px 3px -2px var(--gray-a3), 0 3px 12px -4px var(--black-a2), 0 4px 16px -8px var(--black-a2)",
+            "file": "src/styles/tokens/shadow.css",
+            "mode": "light"
+          },
+          {
+            "name": "shadow-4",
+            "value": "0 0 0 1px var(--gray-a3), 0 8px 40px var(--black-a1), 0 12px 32px -16px var(--gray-a3)",
+            "file": "src/styles/tokens/shadow.css",
+            "mode": "light"
+          },
+          {
+            "name": "shadow-5",
+            "value": "0 0 0 1px var(--gray-a3), 0 12px 60px var(--black-a3), 0 12px 32px -16px var(--gray-a5)",
+            "file": "src/styles/tokens/shadow.css",
+            "mode": "light"
+          },
+          {
+            "name": "shadow-6",
+            "value": "0 0 0 1px var(--gray-a3), 0 12px 60px var(--black-a3), 0 16px 64px var(--gray-a2), 0 16px 36px -20px var(--gray-a7)",
+            "file": "src/styles/tokens/shadow.css",
+            "mode": "light"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "amber",
+              "steps": 12
+            },
+            {
+              "name": "blue",
+              "steps": 12
+            },
+            {
+              "name": "bronze",
+              "steps": 12
+            },
+            {
+              "name": "brown",
+              "steps": 12
+            },
+            {
+              "name": "crimson",
+              "steps": 12
+            },
+            {
+              "name": "cyan",
+              "steps": 12
+            },
+            {
+              "name": "gold",
+              "steps": 12
+            },
+            {
+              "name": "grass",
+              "steps": 12
+            },
+            {
+              "name": "gray",
+              "steps": 12
+            },
+            {
+              "name": "green",
+              "steps": 12
+            },
+            {
+              "name": "indigo",
+              "steps": 12
+            },
+            {
+              "name": "iris",
+              "steps": 12
+            },
+            {
+              "name": "jade",
+              "steps": 12
+            },
+            {
+              "name": "lime",
+              "steps": 12
+            },
+            {
+              "name": "mauve",
+              "steps": 12
+            },
+            {
+              "name": "mint",
+              "steps": 12
+            },
+            {
+              "name": "olive",
+              "steps": 12
+            },
+            {
+              "name": "orange",
+              "steps": 12
+            },
+            {
+              "name": "pink",
+              "steps": 12
+            },
+            {
+              "name": "plum",
+              "steps": 12
+            },
+            {
+              "name": "purple",
+              "steps": 12
+            },
+            {
+              "name": "red",
+              "steps": 12
+            },
+            {
+              "name": "ruby",
+              "steps": 12
+            },
+            {
+              "name": "sage",
+              "steps": 12
+            },
+            {
+              "name": "sand",
+              "steps": 12
+            },
+            {
+              "name": "sky",
+              "steps": 12
+            },
+            {
+              "name": "slate",
+              "steps": 12
+            },
+            {
+              "name": "teal",
+              "steps": 12
+            },
+            {
+              "name": "tomato",
+              "steps": 12
+            },
+            {
+              "name": "violet",
+              "steps": 12
+            },
+            {
+              "name": "yellow",
+              "steps": 12
+            }
+          ],
+          "semanticRoles": [
+            "1-2 backgrounds",
+            "3-5 interactive component backgrounds",
+            "6-8 borders and separators",
+            "9-10 solid colours",
+            "11-12 accessible text"
+          ],
+          "modes": [
+            "light",
+            "dark",
+            "light alpha",
+            "dark alpha",
+            "display-p3 variants"
+          ],
+          "note": "12-step ramps where the step number is the role. Radix Themes aliases --accent-* to one ramp (default accentColor: indigo) and --gray-* to a matching tinted gray."
+        },
+        "algorithm": {
+          "name": "Radix custom palette",
+          "inputs": [
+            "accent colour",
+            "gray colour",
+            "background colour",
+            "appearance (light/dark)"
+          ],
+          "outputs": [
+            "12-step accent ramp + alpha ramp",
+            "12-step gray ramp + alpha ramp",
+            "accent-contrast, accent-surface, accent-indicator, accent-track"
+          ],
+          "description": "The shipped ramps are hand-tuned static values. The generator for custom ramps is not in these packages (it lives in the radix website repository); it picks the nearest shipped ramps and mixes them in OKLCH so that step 9 equals the input."
+        },
+        "neutral": [
+          {
+            "name": "gray",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "gray-1",
+                "value": "#fcfcfc",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-2",
+                "value": "#f9f9f9",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-3",
+                "value": "#f0f0f0",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-4",
+                "value": "#e8e8e8",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-5",
+                "value": "#e0e0e0",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-6",
+                "value": "#d9d9d9",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-7",
+                "value": "#cecece",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-8",
+                "value": "#bbbbbb",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-9",
+                "value": "#8d8d8d",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-10",
+                "value": "#838383",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-11",
+                "value": "#646464",
+                "file": "gray.css"
+              },
+              {
+                "name": "gray-12",
+                "value": "#202020",
+                "file": "gray.css"
+              }
+            ]
+          },
+          {
+            "name": "gray",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "gray-1",
+                "value": "#111111",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-2",
+                "value": "#191919",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-3",
+                "value": "#222222",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-4",
+                "value": "#2a2a2a",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-5",
+                "value": "#313131",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-6",
+                "value": "#3a3a3a",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-7",
+                "value": "#484848",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-8",
+                "value": "#606060",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-9",
+                "value": "#6e6e6e",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-10",
+                "value": "#7b7b7b",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-11",
+                "value": "#b4b4b4",
+                "file": "gray-dark.css"
+              },
+              {
+                "name": "gray-12",
+                "value": "#eeeeee",
+                "file": "gray-dark.css"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "indigo",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "indigo-1",
+                "value": "#fdfdfe",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-2",
+                "value": "#f7f9ff",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-3",
+                "value": "#edf2fe",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-4",
+                "value": "#e1e9ff",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-5",
+                "value": "#d2deff",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-6",
+                "value": "#c1d0ff",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-7",
+                "value": "#abbdf9",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-8",
+                "value": "#8da4ef",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-9",
+                "value": "#3e63dd",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-10",
+                "value": "#3358d4",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-11",
+                "value": "#3a5bc7",
+                "file": "indigo.css"
+              },
+              {
+                "name": "indigo-12",
+                "value": "#1f2d5c",
+                "file": "indigo.css"
+              }
+            ]
+          },
+          {
+            "name": "indigo",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "indigo-1",
+                "value": "#11131f",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-2",
+                "value": "#141726",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-3",
+                "value": "#182449",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-4",
+                "value": "#1d2e62",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-5",
+                "value": "#253974",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-6",
+                "value": "#304384",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-7",
+                "value": "#3a4f97",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-8",
+                "value": "#435db1",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-9",
+                "value": "#3e63dd",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-10",
+                "value": "#5472e4",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-11",
+                "value": "#9eb1ff",
+                "file": "indigo-dark.css"
+              },
+              {
+                "name": "indigo-12",
+                "value": "#d6e1ff",
+                "file": "indigo-dark.css"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@radix-ui/themes@3.3.0 (^src\\/.*\\.css$)",
+            "files": 150
+          },
+          {
+            "package": "@radix-ui/themes@3.3.0 (^src\\/.*\\.tsx?$)",
+            "files": 149
+          },
+          {
+            "package": "@radix-ui/colors@3.0.0",
+            "files": 135
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 3,
+            "files": 2,
+            "topFiles": [
+              {
+                "file": "@radix-ui/themes:src/components/checkbox-group.primitive.tsx",
+                "hits": 2
+              },
+              {
+                "file": "@radix-ui/themes:src/components/theme.tsx",
+                "hits": 1
+              }
+            ],
+            "samples": [
+              {
+                "file": "@radix-ui/themes:src/components/checkbox-group.primitive.tsx",
+                "line": 103,
+                "text": "dir={direction}"
+              },
+              {
+                "file": "@radix-ui/themes:src/components/theme.tsx",
+                "line": 57,
+                "text": "<Direction.Provider dir=\"ltr\">"
+              }
+            ]
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          }
+        ],
+        "findings": [
+          "No token for language, script or direction. Typography tokens are one Latin-tuned set (letter-spacing-1…9 are non-zero, which must be zeroed for Arabic).",
+          "Direction: the Theme component wraps its children in <Direction.Provider dir=\"ltr\"> and removes `dir` from its own props (src/components/theme.tsx); the token and component CSS contain no rtl or :dir() rule, and component CSS uses physical padding-left/right (text-field.css). As shipped, Radix Themes is LTR-only.",
+          "Density is a single multiplier (`scaling` 90–110%) that scales type and space together; there is no mode that changes control height without changing font size."
+        ]
+      }
+    },
+    "gaps": [
+      "No border-width, focus-ring width, z-index or motion duration tokens (durations are literals inside component CSS).",
+      "No documented touch-target minimum."
+    ]
+  }
+}

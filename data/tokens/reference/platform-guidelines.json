@@ -1,0 +1,70 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "platform-guidelines",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "W3C Web Content Accessibility Guidelines 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "license": "W3C Document License",
+        "retrievedAt": "2026-11-11",
+        "path": "SC 2.5.8 Target Size (Minimum), SC 2.5.5 Target Size (Enhanced)"
+      },
+      {
+        "name": "Apple Human Interface Guidelines",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "license": "Proprietary (facts only)",
+        "retrievedAt": "2026-11-11",
+        "path": "Accessibility: control size"
+      },
+      {
+        "name": "Material Design 3 guidelines",
+        "url": "https://m3.material.io/foundations/designing/structure",
+        "license": "CC-BY-4.0",
+        "retrievedAt": "2026-11-11",
+        "path": "Accessibility: touch targets"
+      }
+    ],
+    "script": "tools/extract/tokens/guidelines.mjs",
+    "notes": "Numbers recalled from the cited documents and not re-read during this run; verify each against the page before relying on it. Only the Material 48px figure is corroborated by extracted data (material-3.json: 48px touch wrapper)."
+  },
+  "data": {
+    "system": {
+      "name": "Platform and accessibility guidance on target size",
+      "license": "Facts from the cited documents",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    "scales": {
+      "controls": {
+        "sizes": [],
+        "touchTarget": [
+          {
+            "name": "WCAG 2.2 SC 2.5.8 Target Size (Minimum), level AA",
+            "value": "24 CSS px",
+            "px": 24,
+            "note": "With exceptions (spacing, inline, user-agent, essential)."
+          },
+          {
+            "name": "WCAG 2.2 SC 2.5.5 Target Size (Enhanced), level AAA",
+            "value": "44 CSS px",
+            "px": 44
+          },
+          {
+            "name": "Apple Human Interface Guidelines minimum hit target",
+            "value": "44 pt",
+            "px": 44
+          },
+          {
+            "name": "Material Design minimum touch target",
+            "value": "48 dp",
+            "px": 48
+          }
+        ],
+        "note": "Documentation values, kept apart from the extracted files."
+      }
+    }
+  }
+}

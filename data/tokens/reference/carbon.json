@@ -1,0 +1,2908 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "carbon",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@carbon/layout",
+        "url": "https://www.npmjs.com/package/@carbon/layout/v/11.63.0",
+        "version": "11.63.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "es/index.js, tokens/layout.tokens.json"
+      },
+      {
+        "name": "@carbon/type",
+        "url": "https://www.npmjs.com/package/@carbon/type/v/11.71.0",
+        "version": "11.71.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "es/index.js, scss/_font-family.scss"
+      },
+      {
+        "name": "@carbon/motion",
+        "url": "https://www.npmjs.com/package/@carbon/motion/v/11.56.0",
+        "version": "11.56.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "tokens/motion.tokens.json"
+      },
+      {
+        "name": "@carbon/themes",
+        "url": "https://www.npmjs.com/package/@carbon/themes/v/11.85.0",
+        "version": "11.85.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "tokens/themes/g100/button.tokens.json, tokens/themes/g100/theme.tokens.json, tokens/themes/white/button.tokens.json, tokens/themes/white/theme.tokens.json"
+      },
+      {
+        "name": "@carbon/colors",
+        "url": "https://www.npmjs.com/package/@carbon/colors/v/11.62.0",
+        "version": "11.62.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "tokens/colors.tokens.json"
+      },
+      {
+        "name": "@carbon/styles",
+        "url": "https://www.npmjs.com/package/@carbon/styles/v/1.119.0",
+        "version": "1.119.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/components/text-input/_text-input.scss, scss/utilities/_focus-outline.scss, scss/utilities/_layout.scss, scss/utilities/_z-index.scss"
+      },
+      {
+        "name": "@carbon/grid",
+        "url": "https://www.npmjs.com/package/@carbon/grid/v/11.66.0",
+        "version": "11.66.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/tokens/carbon.mjs"
+  },
+  "data": {
+    "system": {
+      "name": "IBM Carbon Design System",
+      "package": "@carbon/styles",
+      "version": "1.119.0",
+      "license": "Apache-2.0",
+      "url": "https://carbondesignsystem.com"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "condensed",
+            "name": "density condensed",
+            "mechanism": "layout-token",
+            "description": "--cds-layout-density-padding-inline = spacing-03 (8px). Height is chosen separately by the size group.",
+            "file": "@carbon/styles:scss/utilities/_layout.scss"
+          },
+          {
+            "id": "normal",
+            "name": "density normal",
+            "mechanism": "layout-token",
+            "description": "--cds-layout-density-padding-inline = spacing-05 (16px). Height is chosen separately by the size group.",
+            "file": "@carbon/styles:scss/utilities/_layout.scss"
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "condensed",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-xs; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "xs",
+            "mode": "normal",
+            "heightPx": 24,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-xs; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "condensed",
+            "heightPx": 32,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-sm; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "sm",
+            "mode": "normal",
+            "heightPx": 32,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-sm; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "md",
+            "mode": "condensed",
+            "heightPx": 40,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-md; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "md",
+            "mode": "normal",
+            "heightPx": 40,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-md; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "condensed",
+            "heightPx": 48,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-lg; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss",
+            "note": "component default size"
+          },
+          {
+            "component": "button",
+            "size": "lg",
+            "mode": "normal",
+            "heightPx": 48,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-lg; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss",
+            "note": "component default size"
+          },
+          {
+            "component": "button",
+            "size": "xl",
+            "mode": "condensed",
+            "heightPx": 64,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-xl; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "xl",
+            "mode": "normal",
+            "heightPx": 64,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-xl; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "2xl",
+            "mode": "condensed",
+            "heightPx": 80,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-2xl; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "button",
+            "size": "2xl",
+            "mode": "normal",
+            "heightPx": 80,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-2xl; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/button/_button.scss, scss/components/button/_mixins.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "input",
+            "size": "xs",
+            "mode": "condensed",
+            "heightPx": 24,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-xs; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "input",
+            "size": "xs",
+            "mode": "normal",
+            "heightPx": 24,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-xs; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "input",
+            "size": "sm",
+            "mode": "condensed",
+            "heightPx": 32,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-sm; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "input",
+            "size": "sm",
+            "mode": "normal",
+            "heightPx": 32,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-sm; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "input",
+            "size": "md",
+            "mode": "condensed",
+            "heightPx": 40,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-md; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss",
+            "note": "component default size"
+          },
+          {
+            "component": "input",
+            "size": "md",
+            "mode": "normal",
+            "heightPx": 40,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-md; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss",
+            "note": "component default size"
+          },
+          {
+            "component": "input",
+            "size": "lg",
+            "mode": "condensed",
+            "heightPx": 48,
+            "paddingInlinePx": 8,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-lg; type-style body-compact-01; density padding-inline spacing-03",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "input",
+            "size": "lg",
+            "mode": "normal",
+            "heightPx": 48,
+            "paddingInlinePx": 16,
+            "fontSizePx": 14,
+            "lineHeightPx": 18,
+            "lineHeightRatio": 1.28572,
+            "heightSource": "--cds-layout-size-height-lg; type-style body-compact-01; density padding-inline spacing-05",
+            "file": "@carbon/styles:scss/components/text-input/_text-input.scss, scss/utilities/_layout.scss"
+          },
+          {
+            "component": "control",
+            "size": "xs",
+            "mode": "normal",
+            "heightPx": 24,
+            "heightSource": "size-xs",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "control",
+            "size": "sm",
+            "mode": "normal",
+            "heightPx": 32,
+            "heightSource": "size-sm",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "control",
+            "size": "md",
+            "mode": "normal",
+            "heightPx": 40,
+            "heightSource": "size-md",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "control",
+            "size": "lg",
+            "mode": "normal",
+            "heightPx": 48,
+            "heightSource": "size-lg",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "control",
+            "size": "xl",
+            "mode": "normal",
+            "heightPx": 64,
+            "heightSource": "size-xl",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "control",
+            "size": "2xl",
+            "mode": "normal",
+            "heightPx": 80,
+            "heightSource": "size-2xl",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "container",
+            "size": "container-01",
+            "mode": "normal",
+            "heightPx": 24,
+            "heightSource": "container-01",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "container",
+            "size": "container-02",
+            "mode": "normal",
+            "heightPx": 32,
+            "heightSource": "container-02",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "container",
+            "size": "container-03",
+            "mode": "normal",
+            "heightPx": 40,
+            "heightSource": "container-03",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "container",
+            "size": "container-04",
+            "mode": "normal",
+            "heightPx": 48,
+            "heightSource": "container-04",
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "component": "container",
+            "size": "container-05",
+            "mode": "normal",
+            "heightPx": 64,
+            "heightSource": "container-05",
+            "file": "tokens/layout.tokens.json"
+          }
+        ],
+        "touchTarget": []
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "spacing-01",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-02",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-03",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-04",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-05",
+            "value": "1rem",
+            "px": 16,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-06",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-07",
+            "value": "2rem",
+            "px": 32,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-08",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-09",
+            "value": "3rem",
+            "px": 48,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-10",
+            "value": "4rem",
+            "px": 64,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-11",
+            "value": "5rem",
+            "px": 80,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-12",
+            "value": "6rem",
+            "px": 96,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "spacing-13",
+            "value": "10rem",
+            "px": 160,
+            "file": "tokens/layout.tokens.json"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "border-radius-00",
+            "value": "0px",
+            "px": 0,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "border-radius-02",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "border-radius-04",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "border-radius-08",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "border-radius-16",
+            "value": "1rem",
+            "px": 16,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "border-radius-24",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "border-radius-max",
+            "value": "999999px",
+            "px": 999999,
+            "file": "tokens/layout.tokens.json"
+          }
+        ]
+      },
+      "focusRing": {
+        "steps": [
+          {
+            "name": "focus outline width",
+            "value": "1px",
+            "px": 1,
+            "file": "@carbon/styles:scss/utilities/_focus-outline.scss"
+          },
+          {
+            "name": "focus outline width",
+            "value": "2px",
+            "px": 2,
+            "file": "@carbon/styles:scss/utilities/_focus-outline.scss"
+          },
+          {
+            "name": "focus border width",
+            "value": "2px",
+            "px": 2,
+            "file": "@carbon/styles:scss/utilities/_focus-outline.scss"
+          },
+          {
+            "name": "outline-offset",
+            "value": "-2px",
+            "px": -2,
+            "file": "@carbon/styles:scss/utilities/_focus-outline.scss"
+          }
+        ],
+        "note": "Focus is a mixin, not a token: 2px outline drawn inside the control (offset −2px), 1px for the \"outline-compat\" type."
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "mono",
+            "value": "'IBM Plex Mono', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', monospace",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans",
+            "value": "'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-condensed",
+            "value": "'IBM Plex Sans Condensed', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-arabic",
+            "value": "'IBM Plex Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-devanagari",
+            "value": "'IBM Plex Sans Devanagari', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-hebrew",
+            "value": "'IBM Plex Sans Hebrew', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-jp",
+            "value": "'IBM Plex Sans JP', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-kr",
+            "value": "'IBM Plex Sans KR', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-thai-looped",
+            "value": "'IBM Plex Sans Thai Looped', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-thai",
+            "value": "'IBM Plex Sans Thai', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "serif",
+            "value": "'IBM Plex Serif', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', serif",
+            "file": "scss/_font-family.scss"
+          }
+        ],
+        "steps": [
+          {
+            "name": "body-01",
+            "set": "expressive / long-form",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.42857,
+            "lineHeightRatio": 1.42857,
+            "lineHeightPx": 20,
+            "fontWeight": 400,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "body-02",
+            "set": "expressive / long-form",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "body-compact-01",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "fontWeight": 400,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "body-compact-02",
+            "set": "productive / compact",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.375,
+            "lineHeightRatio": 1.375,
+            "lineHeightPx": 22,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "body-long-01",
+            "set": "expressive / long-form",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.42857,
+            "lineHeightRatio": 1.42857,
+            "lineHeightPx": 20,
+            "fontWeight": 400,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "body-long-02",
+            "set": "expressive / long-form",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "body-short-01",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "fontWeight": 400,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "body-short-02",
+            "set": "productive / compact",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.375,
+            "lineHeightRatio": 1.375,
+            "lineHeightPx": 22,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "caption-01",
+            "set": "productive / compact",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.33333,
+            "lineHeightRatio": 1.33333,
+            "lineHeightPx": 16,
+            "fontWeight": 400,
+            "letterSpacing": "0.32px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "caption-02",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "fontWeight": 400,
+            "letterSpacing": "0.32px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "code-01",
+            "set": "productive / compact",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.33333,
+            "lineHeightRatio": 1.33333,
+            "lineHeightPx": 16,
+            "fontWeight": 400,
+            "letterSpacing": "0.32px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "code-02",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.42857,
+            "lineHeightRatio": 1.42857,
+            "lineHeightPx": 20,
+            "fontWeight": 400,
+            "letterSpacing": "0.32px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "display-01",
+            "set": "expressive / long-form",
+            "fontSize": "2.625rem",
+            "fontSizePx": 42,
+            "lineHeight": 1.19,
+            "lineHeightRatio": 1.19,
+            "lineHeightPx": 49.98,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "display-02",
+            "set": "expressive / long-form",
+            "fontSize": "2.625rem",
+            "fontSizePx": 42,
+            "lineHeight": 1.19,
+            "lineHeightRatio": 1.19,
+            "lineHeightPx": 49.98,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "display-03",
+            "set": "expressive / long-form",
+            "fontSize": "2.625rem",
+            "fontSizePx": 42,
+            "lineHeight": 1.19,
+            "lineHeightRatio": 1.19,
+            "lineHeightPx": 49.98,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "display-04",
+            "set": "expressive / long-form",
+            "fontSize": "2.625rem",
+            "fontSizePx": 42,
+            "lineHeight": 1.19,
+            "lineHeightRatio": 1.19,
+            "lineHeightPx": 49.98,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "expressive-heading-01",
+            "set": "expressive / long-form",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.25,
+            "lineHeightRatio": 1.25,
+            "lineHeightPx": 17.5,
+            "fontWeight": 600,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "expressive-heading-02",
+            "set": "expressive / long-form",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "expressive-heading-03",
+            "set": "expressive / long-form",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.4,
+            "lineHeightRatio": 1.4,
+            "lineHeightPx": 28,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "expressive-heading-04",
+            "set": "expressive / long-form",
+            "fontSize": "1.75rem",
+            "fontSizePx": 28,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 36,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "expressive-heading-05",
+            "set": "expressive / long-form",
+            "fontSize": "2rem",
+            "fontSizePx": 32,
+            "lineHeight": 1.25,
+            "lineHeightRatio": 1.25,
+            "lineHeightPx": 40,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "expressive-heading-06",
+            "set": "expressive / long-form",
+            "fontSize": "2rem",
+            "fontSizePx": 32,
+            "lineHeight": 1.25,
+            "lineHeightRatio": 1.25,
+            "lineHeightPx": 40,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "expressive-paragraph-01",
+            "set": "expressive / long-form",
+            "fontSize": "1.5rem",
+            "fontSizePx": 24,
+            "lineHeight": 1.334,
+            "lineHeightRatio": 1.334,
+            "lineHeightPx": 32.02,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "heading-01",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.42857,
+            "lineHeightRatio": 1.42857,
+            "lineHeightPx": 20,
+            "fontWeight": 600,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-02",
+            "set": "productive / compact",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.5,
+            "lineHeightRatio": 1.5,
+            "lineHeightPx": 24,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-03",
+            "set": "expressive / long-form",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.4,
+            "lineHeightRatio": 1.4,
+            "lineHeightPx": 28,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-04",
+            "set": "expressive / long-form",
+            "fontSize": "1.75rem",
+            "fontSizePx": 28,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 36,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-05",
+            "set": "expressive / long-form",
+            "fontSize": "2rem",
+            "fontSizePx": 32,
+            "lineHeight": 1.25,
+            "lineHeightRatio": 1.25,
+            "lineHeightPx": 40,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-06",
+            "set": "expressive / long-form",
+            "fontSize": "2.625rem",
+            "fontSizePx": 42,
+            "lineHeight": 1.199,
+            "lineHeightRatio": 1.199,
+            "lineHeightPx": 50.36,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-07",
+            "set": "expressive / long-form",
+            "fontSize": "3.375rem",
+            "fontSizePx": 54,
+            "lineHeight": 1.199,
+            "lineHeightRatio": 1.199,
+            "lineHeightPx": 64.75,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-compact-01",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "fontWeight": 600,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "heading-compact-02",
+            "set": "productive / compact",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.375,
+            "lineHeightRatio": 1.375,
+            "lineHeightPx": 22,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "helper-text-01",
+            "set": "productive / compact",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.33333,
+            "lineHeightRatio": 1.33333,
+            "lineHeightPx": 16,
+            "letterSpacing": "0.32px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "helper-text-02",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "label-01",
+            "set": "productive / compact",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.33333,
+            "lineHeightRatio": 1.33333,
+            "lineHeightPx": 16,
+            "fontWeight": 400,
+            "letterSpacing": "0.32px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "label-02",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "fontWeight": 400,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "legal-01",
+            "set": "productive / compact",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": 1.33333,
+            "lineHeightRatio": 1.33333,
+            "lineHeightPx": 16,
+            "fontWeight": 400,
+            "letterSpacing": "0.32px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "legal-02",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "fontWeight": 400,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "productive-heading-01",
+            "set": "productive / compact",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 18,
+            "fontWeight": 600,
+            "letterSpacing": "0.16px",
+            "file": "es/index.js"
+          },
+          {
+            "name": "productive-heading-02",
+            "set": "productive / compact",
+            "fontSize": "1rem",
+            "fontSizePx": 16,
+            "lineHeight": 1.375,
+            "lineHeightRatio": 1.375,
+            "lineHeightPx": 22,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "productive-heading-03",
+            "set": "productive / compact",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.4,
+            "lineHeightRatio": 1.4,
+            "lineHeightPx": 28,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "productive-heading-04",
+            "set": "productive / compact",
+            "fontSize": "1.75rem",
+            "fontSizePx": 28,
+            "lineHeight": 1.28572,
+            "lineHeightRatio": 1.28572,
+            "lineHeightPx": 36,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "productive-heading-05",
+            "set": "productive / compact",
+            "fontSize": "2rem",
+            "fontSizePx": 32,
+            "lineHeight": 1.25,
+            "lineHeightRatio": 1.25,
+            "lineHeightPx": 40,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "productive-heading-06",
+            "set": "productive / compact",
+            "fontSize": "2.625rem",
+            "fontSizePx": 42,
+            "lineHeight": 1.199,
+            "lineHeightRatio": 1.199,
+            "lineHeightPx": 50.36,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "productive-heading-07",
+            "set": "productive / compact",
+            "fontSize": "3.375rem",
+            "fontSizePx": 54,
+            "lineHeight": 1.199,
+            "lineHeightRatio": 1.199,
+            "lineHeightPx": 64.75,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js"
+          },
+          {
+            "name": "quotation-01",
+            "set": "expressive / long-form",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": 1.3,
+            "lineHeightRatio": 1.3,
+            "lineHeightPx": 26,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          },
+          {
+            "name": "quotation-02",
+            "set": "expressive / long-form",
+            "fontSize": "2rem",
+            "fontSizePx": 32,
+            "lineHeight": 1.25,
+            "lineHeightRatio": 1.25,
+            "lineHeightPx": 40,
+            "fontWeight": 300,
+            "letterSpacing": "0",
+            "file": "es/index.js",
+            "note": "value at the smallest breakpoint; larger sizes at md/lg/xlg/max"
+          }
+        ],
+        "fontSizes": [
+          {
+            "name": "type-scale-1",
+            "value": 12,
+            "px": 12,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-2",
+            "value": 14,
+            "px": 14,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-3",
+            "value": 16,
+            "px": 16,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-4",
+            "value": 18,
+            "px": 18,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-5",
+            "value": 20,
+            "px": 20,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-6",
+            "value": 24,
+            "px": 24,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-7",
+            "value": 28,
+            "px": 28,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-8",
+            "value": 32,
+            "px": 32,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-9",
+            "value": 36,
+            "px": 36,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-10",
+            "value": 42,
+            "px": 42,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-11",
+            "value": 48,
+            "px": 48,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-12",
+            "value": 54,
+            "px": 54,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-13",
+            "value": 60,
+            "px": 60,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-14",
+            "value": 68,
+            "px": 68,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-15",
+            "value": 76,
+            "px": 76,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-16",
+            "value": 84,
+            "px": 84,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-17",
+            "value": 92,
+            "px": 92,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-18",
+            "value": 102,
+            "px": 102,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-19",
+            "value": 112,
+            "px": 112,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-20",
+            "value": 122,
+            "px": 122,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-21",
+            "value": 132,
+            "px": 132,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-22",
+            "value": 144,
+            "px": 144,
+            "file": "es/index.js"
+          },
+          {
+            "name": "type-scale-23",
+            "value": 156,
+            "px": 156,
+            "file": "es/index.js"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "light",
+            "value": 300,
+            "file": "es/index.js"
+          },
+          {
+            "name": "regular",
+            "value": 400,
+            "file": "es/index.js"
+          },
+          {
+            "name": "semibold",
+            "value": 600,
+            "file": "es/index.js"
+          }
+        ],
+        "note": "Scale formula (scss/_scale.scss): Yn = Yn−1 + (floor((n − 2) / 4) + 1) × 2, starting at 12px."
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "sm",
+            "value": "20rem",
+            "px": 320,
+            "file": "es/index.js",
+            "note": "4 columns, margin 0px"
+          },
+          {
+            "name": "md",
+            "value": "42rem",
+            "px": 672,
+            "file": "es/index.js",
+            "note": "8 columns, margin 16px"
+          },
+          {
+            "name": "lg",
+            "value": "66rem",
+            "px": 1056,
+            "file": "es/index.js",
+            "note": "16 columns, margin 16px"
+          },
+          {
+            "name": "xlg",
+            "value": "82rem",
+            "px": 1312,
+            "file": "es/index.js",
+            "note": "16 columns, margin 16px"
+          },
+          {
+            "name": "max",
+            "value": "99rem",
+            "px": 1584,
+            "file": "es/index.js",
+            "note": "16 columns, margin 24px"
+          }
+        ]
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "dropdown",
+            "value": 9100,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          },
+          {
+            "name": "modal",
+            "value": 9000,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          },
+          {
+            "name": "header",
+            "value": 8000,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          },
+          {
+            "name": "overlay",
+            "value": 6000,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          },
+          {
+            "name": "floating",
+            "value": 6000,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          },
+          {
+            "name": "footer",
+            "value": 5000,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          },
+          {
+            "name": "hidden",
+            "value": -1,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          },
+          {
+            "name": "overflowHidden",
+            "value": -1,
+            "file": "@carbon/styles:scss/utilities/_z-index.scss"
+          }
+        ]
+      },
+      "motion": {
+        "durations": [
+          {
+            "name": "duration-fast-01",
+            "value": "70ms",
+            "ms": 70,
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "duration-fast-02",
+            "value": "110ms",
+            "ms": 110,
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "duration-moderate-01",
+            "value": "150ms",
+            "ms": 150,
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "duration-moderate-02",
+            "value": "240ms",
+            "ms": 240,
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "duration-slow-01",
+            "value": "400ms",
+            "ms": 400,
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "duration-slow-02",
+            "value": "700ms",
+            "ms": 700,
+            "file": "tokens/motion.tokens.json"
+          }
+        ],
+        "easings": [
+          {
+            "name": "standard-productive",
+            "value": "cubic-bezier(0.2, 0, 0.38, 0.9)",
+            "mode": "productive",
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "standard-expressive",
+            "value": "cubic-bezier(0.4, 0.14, 0.3, 1)",
+            "mode": "expressive",
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "entrance-productive",
+            "value": "cubic-bezier(0, 0, 0.38, 0.9)",
+            "mode": "productive",
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "entrance-expressive",
+            "value": "cubic-bezier(0, 0, 0.3, 1)",
+            "mode": "expressive",
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "exit-productive",
+            "value": "cubic-bezier(0.2, 0, 1, 0.9)",
+            "mode": "productive",
+            "file": "tokens/motion.tokens.json"
+          },
+          {
+            "name": "exit-expressive",
+            "value": "cubic-bezier(0.4, 0.14, 1, 1)",
+            "mode": "expressive",
+            "file": "tokens/motion.tokens.json"
+          }
+        ],
+        "note": "Each easing exists in a productive and an expressive variant."
+      },
+      "color": {
+        "structure": {
+          "ramps": [
+            {
+              "name": "yellow",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "orange",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "red",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "magenta",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "purple",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "blue",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "cyan",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "teal",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "green",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "coolGray",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "gray",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            },
+            {
+              "name": "warmGray",
+              "steps": 10,
+              "stepNames": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50",
+                "60",
+                "70",
+                "80",
+                "90",
+                "100"
+              ]
+            }
+          ],
+          "semanticRoles": [
+            "background",
+            "background-active",
+            "background-selected",
+            "background-selected-hover",
+            "background-hover",
+            "background-brand",
+            "background-inverse",
+            "background-inverse-hover",
+            "layer-01",
+            "layer-active-01",
+            "layer-background-01",
+            "layer-hover-01",
+            "layer-selected-01",
+            "layer-selected-hover-01",
+            "layer-02",
+            "layer-active-02",
+            "layer-background-02",
+            "layer-hover-02",
+            "layer-selected-02",
+            "layer-selected-hover-02",
+            "layer-03",
+            "layer-active-03",
+            "layer-background-03",
+            "layer-hover-03",
+            "layer-selected-03",
+            "layer-selected-hover-03",
+            "layer-selected-inverse",
+            "layer-selected-disabled",
+            "layer-accent-01",
+            "layer-accent-active-01",
+            "layer-accent-hover-01",
+            "layer-accent-02",
+            "layer-accent-active-02",
+            "layer-accent-hover-02",
+            "layer-accent-03",
+            "layer-accent-active-03",
+            "layer-accent-hover-03",
+            "field-01",
+            "field-hover-01",
+            "field-02",
+            "field-hover-02",
+            "field-03",
+            "field-hover-03",
+            "interactive",
+            "border-subtle-00",
+            "border-subtle-01",
+            "border-subtle-selected-01",
+            "border-subtle-02",
+            "border-subtle-selected-02",
+            "border-subtle-03",
+            "border-subtle-selected-03",
+            "border-strong-01",
+            "border-strong-02",
+            "border-strong-03",
+            "border-tile-01",
+            "border-tile-02",
+            "border-tile-03",
+            "border-inverse",
+            "border-interactive",
+            "border-disabled",
+            "text-primary",
+            "text-secondary",
+            "text-placeholder",
+            "text-helper",
+            "text-error",
+            "text-inverse",
+            "text-on-color",
+            "text-on-color-disabled",
+            "text-disabled",
+            "link-primary",
+            "link-primary-hover",
+            "link-secondary",
+            "link-inverse-visited",
+            "link-visited",
+            "link-inverse",
+            "link-inverse-active",
+            "link-inverse-hover",
+            "icon-primary",
+            "icon-secondary",
+            "icon-inverse",
+            "icon-on-color",
+            "icon-on-color-disabled",
+            "icon-disabled",
+            "icon-interactive",
+            "support-error",
+            "support-success",
+            "support-warning",
+            "support-info",
+            "support-error-inverse",
+            "support-success-inverse",
+            "support-warning-inverse",
+            "support-info-inverse",
+            "support-caution-major",
+            "support-caution-minor",
+            "support-caution-undefined",
+            "syntax-comment",
+            "syntax-line-comment",
+            "syntax-block-comment",
+            "syntax-doc-comment",
+            "syntax-doc-string",
+            "syntax-keyword",
+            "syntax-operator-keyword",
+            "syntax-control-keyword",
+            "syntax-definition-keyword",
+            "syntax-module-keyword",
+            "syntax-variable",
+            "syntax-name",
+            "syntax-variable-name",
+            "syntax-label-name",
+            "syntax-attribute",
+            "syntax-attribute-name",
+            "syntax-property-name",
+            "syntax-tag",
+            "syntax-tag-name",
+            "syntax-type",
+            "syntax-type-name",
+            "syntax-class-name",
+            "syntax-namespace",
+            "syntax-macro-name",
+            "syntax-atom",
+            "syntax-literal",
+            "syntax-bool",
+            "syntax-null",
+            "syntax-self",
+            "syntax-number",
+            "syntax-integer",
+            "syntax-float",
+            "syntax-unit",
+            "syntax-string",
+            "syntax-character",
+            "syntax-attribute-value",
+            "syntax-special-string",
+            "syntax-regexp",
+            "syntax-escape",
+            "syntax-url",
+            "syntax-color",
+            "syntax-operator",
+            "syntax-deref-operator",
+            "syntax-arithmetic-operator",
+            "syntax-logic-operator",
+            "syntax-bitwise-operator",
+            "syntax-compare-operator",
+            "syntax-update-operator",
+            "syntax-definition-operator",
+            "syntax-type-operator",
+            "syntax-control-operator",
+            "syntax-modifier",
+            "syntax-punctuation",
+            "syntax-separator",
+            "syntax-bracket",
+            "syntax-angle-bracket",
+            "syntax-square-bracket",
+            "syntax-paren",
+            "syntax-brace",
+            "syntax-content",
+            "syntax-heading",
+            "syntax-heading-1",
+            "syntax-heading-2",
+            "syntax-heading-3",
+            "syntax-heading-4",
+            "syntax-heading-5",
+            "syntax-heading-6",
+            "syntax-content-separator",
+            "syntax-list",
+            "syntax-quote",
+            "syntax-emphasis",
+            "syntax-strong",
+            "syntax-monospace",
+            "syntax-link",
+            "syntax-strikethrough",
+            "syntax-invalid",
+            "syntax-meta",
+            "syntax-document-meta",
+            "syntax-annotation",
+            "syntax-processing-instruction",
+            "syntax-definition",
+            "syntax-constant",
+            "syntax-function",
+            "syntax-standard",
+            "syntax-local",
+            "syntax-special",
+            "syntax-inserted",
+            "syntax-deleted",
+            "ai-popover-background",
+            "ai-popover-shadow-outer-01",
+            "ai-popover-shadow-outer-02",
+            "ai-inner-shadow",
+            "ai-aura-start-sm",
+            "ai-aura-start",
+            "ai-aura-end",
+            "ai-aura-hover-background",
+            "ai-aura-hover-start",
+            "ai-aura-hover-end",
+            "ai-border-strong",
+            "ai-border-start",
+            "ai-border-end",
+            "ai-drop-shadow",
+            "ai-skeleton-background",
+            "ai-skeleton-element-background",
+            "ai-overlay",
+            "ai-popover-caret-center",
+            "ai-popover-caret-bottom",
+            "ai-popover-caret-bottom-background",
+            "ai-popover-caret-bottom-background-actions",
+            "chat-prompt-background",
+            "chat-prompt-border-start",
+            "chat-prompt-border-end",
+            "chat-prompt-text",
+            "chat-bubble-user",
+            "chat-bubble-user-text",
+            "chat-bubble-agent",
+            "chat-bubble-agent-text",
+            "chat-bubble-border",
+            "chat-avatar-bot",
+            "chat-avatar-agent",
+            "chat-avatar-user",
+            "chat-shell-background",
+            "chat-header-background",
+            "chat-header-text",
+            "chat-button",
+            "chat-button-hover",
+            "chat-button-text-hover",
+            "chat-button-active",
+            "chat-button-selected",
+            "chat-button-text-selected",
+            "highlight",
+            "overlay",
+            "toggle-off",
+            "shadow",
+            "focus",
+            "focus-inset",
+            "focus-inverse",
+            "skeleton-background",
+            "skeleton-element"
+          ],
+          "modes": [
+            "white",
+            "g10",
+            "g90",
+            "g100"
+          ],
+          "note": "10-step ramps (10–100). Four themes map roles to ramp steps; layer-01/02/03 roles alternate so nested surfaces stay distinguishable."
+        },
+        "neutral": [
+          {
+            "name": "gray",
+            "steps": [
+              {
+                "name": "gray-10",
+                "value": "#f4f4f4",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-20",
+                "value": "#e0e0e0",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-30",
+                "value": "#c6c6c6",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-40",
+                "value": "#a8a8a8",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-50",
+                "value": "#8d8d8d",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-60",
+                "value": "#6f6f6f",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-70",
+                "value": "#525252",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-80",
+                "value": "#393939",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-90",
+                "value": "#262626",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "gray-100",
+                "value": "#161616",
+                "file": "tokens/colors.tokens.json"
+              }
+            ]
+          },
+          {
+            "name": "white theme roles",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "background",
+                "value": "#ffffff",
+                "alias": "{white}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "layer-01",
+                "value": "#f4f4f4",
+                "alias": "{gray.10}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "layer-02",
+                "value": "#ffffff",
+                "alias": "{white}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "layer-03",
+                "value": "#f4f4f4",
+                "alias": "{gray.10}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "field-01",
+                "value": "#f4f4f4",
+                "alias": "{gray.10}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "field-02",
+                "value": "#ffffff",
+                "alias": "{white}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "border-subtle-01",
+                "value": "#c6c6c6",
+                "alias": "{gray.30}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "border-strong-01",
+                "value": "#8d8d8d",
+                "alias": "{gray.50}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "text-primary",
+                "value": "#161616",
+                "alias": "{gray.100}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "text-secondary",
+                "value": "#525252",
+                "alias": "{gray.70}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "text-placeholder",
+                "value": "{\"colorSpace\":{\"$ref\":\"#/gray/100/$value/colorSpace\"},\"components\":{\"$ref\":\"#/gr",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "text-disabled",
+                "value": "{\"colorSpace\":{\"$ref\":\"#/gray/100/$value/colorSpace\"},\"components\":{\"$ref\":\"#/gr",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "icon-primary",
+                "value": "#161616",
+                "alias": "{gray.100}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "icon-secondary",
+                "value": "#525252",
+                "alias": "{gray.70}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              }
+            ]
+          },
+          {
+            "name": "g100 theme roles",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "background",
+                "value": "#161616",
+                "alias": "{gray.100}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "layer-01",
+                "value": "#262626",
+                "alias": "{gray.90}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "layer-02",
+                "value": "#393939",
+                "alias": "{gray.80}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "layer-03",
+                "value": "#525252",
+                "alias": "{gray.70}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "field-01",
+                "value": "#262626",
+                "alias": "{gray.90}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "field-02",
+                "value": "#393939",
+                "alias": "{gray.80}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "border-subtle-01",
+                "value": "#525252",
+                "alias": "{gray.70}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "border-strong-01",
+                "value": "#6f6f6f",
+                "alias": "{gray.60}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "text-primary",
+                "value": "#f4f4f4",
+                "alias": "{gray.10}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "text-secondary",
+                "value": "#c6c6c6",
+                "alias": "{gray.30}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "text-placeholder",
+                "value": "{\"colorSpace\":{\"$ref\":\"#/gray/10/$value/colorSpace\"},\"components\":{\"$ref\":\"#/gra",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "text-disabled",
+                "value": "{\"colorSpace\":{\"$ref\":\"#/gray/10/$value/colorSpace\"},\"components\":{\"$ref\":\"#/gra",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "icon-primary",
+                "value": "#f4f4f4",
+                "alias": "{gray.10}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "icon-secondary",
+                "value": "#c6c6c6",
+                "alias": "{gray.30}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              }
+            ]
+          }
+        ],
+        "primary": [
+          {
+            "name": "blue",
+            "steps": [
+              {
+                "name": "blue-10",
+                "value": "#edf5ff",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-20",
+                "value": "#d0e2ff",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-30",
+                "value": "#a6c8ff",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-40",
+                "value": "#78a9ff",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-50",
+                "value": "#4589ff",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-60",
+                "value": "#0f62fe",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-70",
+                "value": "#0043ce",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-80",
+                "value": "#002d9c",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-90",
+                "value": "#001d6c",
+                "file": "tokens/colors.tokens.json"
+              },
+              {
+                "name": "blue-100",
+                "value": "#001141",
+                "file": "tokens/colors.tokens.json"
+              }
+            ]
+          },
+          {
+            "name": "white theme roles",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "interactive",
+                "value": "#0f62fe",
+                "alias": "{blue.60}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "focus",
+                "value": "#0f62fe",
+                "alias": "{blue.60}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "link-primary",
+                "value": "#0f62fe",
+                "alias": "{blue.60}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "link-primary-hover",
+                "value": "#0043ce",
+                "alias": "{blue.70}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "border-interactive",
+                "value": "#0f62fe",
+                "alias": "{blue.60}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "background-brand",
+                "value": "#0f62fe",
+                "alias": "{blue.60}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              },
+              {
+                "name": "highlight",
+                "value": "#d0e2ff",
+                "alias": "{blue.20}",
+                "mode": "light",
+                "file": "tokens/themes/white/theme.tokens.json"
+              }
+            ]
+          },
+          {
+            "name": "g100 theme roles",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "interactive",
+                "value": "#4589ff",
+                "alias": "{blue.50}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "focus",
+                "value": "#ffffff",
+                "alias": "{white}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "link-primary",
+                "value": "#78a9ff",
+                "alias": "{blue.40}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "link-primary-hover",
+                "value": "#a6c8ff",
+                "alias": "{blue.30}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "border-interactive",
+                "value": "#4589ff",
+                "alias": "{blue.50}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "background-brand",
+                "value": "#0f62fe",
+                "alias": "{blue.60}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              },
+              {
+                "name": "highlight",
+                "value": "#001d6c",
+                "alias": "{blue.90}",
+                "mode": "dark",
+                "file": "tokens/themes/g100/theme.tokens.json"
+              }
+            ]
+          },
+          {
+            "name": "button-primary",
+            "mode": "light",
+            "steps": [
+              {
+                "name": "button-primary",
+                "value": "#0f62fe",
+                "file": "tokens/themes/white/button.tokens.json"
+              },
+              {
+                "name": "button-primary-active",
+                "value": "#002d9c",
+                "file": "tokens/themes/white/button.tokens.json"
+              },
+              {
+                "name": "button-primary-hover",
+                "value": "{blue.60Hover}",
+                "file": "tokens/themes/white/button.tokens.json"
+              }
+            ]
+          },
+          {
+            "name": "button-primary",
+            "mode": "dark",
+            "steps": [
+              {
+                "name": "button-primary",
+                "value": "#0f62fe",
+                "file": "tokens/themes/g100/button.tokens.json"
+              },
+              {
+                "name": "button-primary-active",
+                "value": "#002d9c",
+                "file": "tokens/themes/g100/button.tokens.json"
+              },
+              {
+                "name": "button-primary-hover",
+                "value": "{blue.60Hover}",
+                "file": "tokens/themes/g100/button.tokens.json"
+              }
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@carbon/type@11.71.0",
+            "files": 32
+          },
+          {
+            "package": "@carbon/layout@11.63.0",
+            "files": 29
+          },
+          {
+            "package": "@carbon/motion@11.56.0",
+            "files": 28
+          },
+          {
+            "package": "@carbon/themes@11.85.0 (^(tokens|scss)\\/)",
+            "files": 43
+          },
+          {
+            "package": "@carbon/styles@1.119.0 (^scss\\/(utilities|type|fonts|_.*)\\b)",
+            "files": 71
+          },
+          {
+            "package": "@carbon/styles@1.119.0 (^scss\\/components\\/)",
+            "files": 291
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 17,
+            "files": 6,
+            "topFiles": [
+              {
+                "file": "@carbon/styles:scss/fonts/_index.scss",
+                "hits": 4
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/_src.scss",
+                "hits": 4
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/README.md",
+                "hits": 3
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/_sans-arabic.scss",
+                "hits": 3
+              },
+              {
+                "file": "@carbon/type:scss/_font-family.scss",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "@carbon/type:scss/_font-family.scss",
+                "line": 29,
+                "text": "'sans-arabic':"
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/README.md",
+                "line": 10,
+                "text": "| IBM Plex Sans Arabic      | ✅        | `scss/fonts/sans-arabic`      |"
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/__tests__/fonts-test.js",
+                "line": 17,
+                "text": "'sans-arabic',"
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/_index.scss",
+                "line": 12,
+                "text": "@use './sans-arabic';"
+              }
+            ]
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 101,
+            "files": 15,
+            "topFiles": [
+              {
+                "file": "@carbon/styles:scss/components/popover/_popover.scss",
+                "hits": 64
+              },
+              {
+                "file": "@carbon/styles:scss/components/accordion/_accordion.scss",
+                "hits": 5
+              },
+              {
+                "file": "@carbon/styles:scss/components/progress-bar/_progress-bar.scss",
+                "hits": 5
+              },
+              {
+                "file": "@carbon/styles:scss/components/checkbox/_checkbox.scss",
+                "hits": 4
+              },
+              {
+                "file": "@carbon/styles:scss/components/pagination/_pagination.scss",
+                "hits": 4
+              }
+            ],
+            "samples": [
+              {
+                "file": "@carbon/styles:scss/utilities/_text-truncate.scss",
+                "line": 25,
+                "text": "direction: rtl;"
+              },
+              {
+                "file": "@carbon/styles:scss/components/ConditionBuilder/_condition-builder-item.scss",
+                "line": 349,
+                "text": "direction: rtl;"
+              },
+              {
+                "file": "@carbon/styles:scss/components/accordion/_accordion.scss",
+                "line": 175,
+                "text": "transform: rotate(-270deg) #{'/*rtl:ignore*/'};"
+              },
+              {
+                "file": "@carbon/styles:scss/components/breadcrumb/_breadcrumb.scss",
+                "line": 206,
+                "text": "[dir='rtl']"
+              }
+            ]
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 83,
+            "files": 11,
+            "topFiles": [
+              {
+                "file": "@carbon/styles:scss/components/popover/_popover.scss",
+                "hits": 64
+              },
+              {
+                "file": "@carbon/styles:scss/components/checkbox/_checkbox.scss",
+                "hits": 3
+              },
+              {
+                "file": "@carbon/styles:scss/components/code-snippet/_code-snippet.scss",
+                "hits": 3
+              },
+              {
+                "file": "@carbon/styles:scss/components/pagination/_pagination.scss",
+                "hits": 3
+              },
+              {
+                "file": "@carbon/styles:scss/components/accordion/_accordion.scss",
+                "hits": 2
+              }
+            ],
+            "samples": [
+              {
+                "file": "@carbon/styles:scss/components/accordion/_accordion.scss",
+                "line": 421,
+                "text": "[dir='rtl'] .#{$prefix}--accordion--start .#{$prefix}--accordion__heading {"
+              },
+              {
+                "file": "@carbon/styles:scss/components/breadcrumb/_breadcrumb.scss",
+                "line": 206,
+                "text": "[dir='rtl']"
+              },
+              {
+                "file": "@carbon/styles:scss/components/button/_button.scss",
+                "line": 539,
+                "text": "[dir='rtl'] .#{$prefix}--btn-set .#{$prefix}--btn:not(:focus) {"
+              },
+              {
+                "file": "@carbon/styles:scss/components/checkbox/_checkbox.scss",
+                "line": 384,
+                "text": "[dir='rtl'] .#{$prefix}--checkbox-label::after {"
+              }
+            ]
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 67,
+            "files": 13,
+            "topFiles": [
+              {
+                "file": "@carbon/styles:scss/fonts/_index.scss",
+                "hits": 16
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/_src.scss",
+                "hits": 14
+              },
+              {
+                "file": "@carbon/type:scss/_font-family.scss",
+                "hits": 9
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/README.md",
+                "hits": 4
+              },
+              {
+                "file": "@carbon/styles:scss/fonts/__tests__/fonts-test.js",
+                "hits": 4
+              }
+            ],
+            "samples": [
+              {
+                "file": "@carbon/type:es/index.js",
+                "line": 83,
+                "text": "const sansHebrew = \"'IBM Plex Sans Hebrew', 'Helvetica Hebrew', 'Arial Hebrew', sans-serif\";"
+              },
+              {
+                "file": "@carbon/type:lib/fontFamily.d.ts",
+                "line": 10,
+                "text": "export declare const sansHebrew = \"'IBM Plex Sans Hebrew', 'Helvetica Hebrew', 'Arial Hebrew', sans-serif\";"
+              },
+              {
+                "file": "@carbon/type:lib/index.js",
+                "line": 84,
+                "text": "const sansHebrew = \"'IBM Plex Sans Hebrew', 'Helvetica Hebrew', 'Arial Hebrew', sans-serif\";"
+              },
+              {
+                "file": "@carbon/type:scss/_font-family.scss",
+                "line": 12,
+                "text": "/// Condensed, IBM Plex Sans Hebrew, and IBM Plex Serif"
+              }
+            ]
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 3299,
+            "files": 124,
+            "topFiles": [
+              {
+                "file": "@carbon/styles:scss/components/popover/_popover.scss",
+                "hits": 148
+              },
+              {
+                "file": "@carbon/styles:scss/components/data-table/_data-table.scss",
+                "hits": 137
+              },
+              {
+                "file": "@carbon/styles:scss/components/list-box/_list-box.scss",
+                "hits": 121
+              },
+              {
+                "file": "@carbon/styles:scss/components/add-select/_add-select.scss",
+                "hits": 95
+              },
+              {
+                "file": "@carbon/styles:scss/components/Tearsheet/_tearsheet.scss",
+                "hits": 80
+              }
+            ],
+            "samples": [
+              {
+                "file": "@carbon/motion:index.scss",
+                "line": 271,
+                "text": "// `auto` sizes, e.g. disclosure block-size, interpolate where"
+              },
+              {
+                "file": "@carbon/motion:scss/generated/_surfaces.scss",
+                "line": 14,
+                "text": "block-size: 'auto',"
+              },
+              {
+                "file": "@carbon/motion:style-dictionary/formats/scss-surfaces.js",
+                "line": 80,
+                "text": "g. \"enterEasing\" → \"enter-easing\", \"blockSize\" → \"block-size\""
+              },
+              {
+                "file": "@carbon/styles:scss/__tests__/layout-test.js",
+                "line": 85,
+                "text": "expect(output).toContain('--cds-layout-density-padding-inline-condensed');"
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "sans-arabic",
+            "value": "'IBM Plex Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-devanagari",
+            "value": "'IBM Plex Sans Devanagari', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-hebrew",
+            "value": "'IBM Plex Sans Hebrew', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-jp",
+            "value": "'IBM Plex Sans JP', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-kr",
+            "value": "'IBM Plex Sans KR', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-thai-looped",
+            "value": "'IBM Plex Sans Thai Looped', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          },
+          {
+            "name": "sans-thai",
+            "value": "'IBM Plex Sans Thai', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif",
+            "file": "scss/_font-family.scss"
+          }
+        ],
+        "findings": [
+          "@carbon/type names per-script font stacks in SCSS: sans-arabic, sans-devanagari, sans-hebrew, sans-jp, sans-kr, sans-thai-looped, sans-thai — including 'IBM Plex Sans Arabic'. The JS export has only mono, sans, sansCondensed, sansHebrew, serif, so the Arabic stack is reachable from Sass only.",
+          "The Arabic stack is a family name and nothing else: no type style, line-height, letter-spacing or weight varies by script. Productive styles keep letter-spacing 0.16px/0.32px at 12–14px, which would break Arabic joining if applied.",
+          "Two type sets are a first-class concept (productive vs expressive; \"compact\" vs \"long\" body line heights 1.28572 vs 1.42857 at 14px), and control text uses the compact set: 14px on an 18px line.",
+          "Density is two independent token groups in @carbon/styles: size (height xs 24 … 2xl 80) and density (padding-inline condensed 8px / normal 16px), set by layout context classes; there is no touch mode.",
+          "Component SCSS is written with logical properties (3299 matching lines in the scan) plus 83 lines with [dir=rtl]/:dir() overrides for what logical properties cannot express.",
+          "@carbon/styles can emit @font-face rules for IBM Plex Sans Arabic (scss/fonts, flag IBM-Plex-Sans-Arabic, off by default) and a .cds--type-sans-arabic helper class."
+        ]
+      },
+      "extra": {
+        "layoutScale": [
+          {
+            "name": "layout-01",
+            "value": "1rem",
+            "px": 16,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "layout-02",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "layout-03",
+            "value": "2rem",
+            "px": 32,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "layout-04",
+            "value": "3rem",
+            "px": 48,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "layout-05",
+            "value": "4rem",
+            "px": 64,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "layout-06",
+            "value": "6rem",
+            "px": 96,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "layout-07",
+            "value": "10rem",
+            "px": 160,
+            "file": "tokens/layout.tokens.json"
+          }
+        ],
+        "iconSize": [
+          {
+            "name": "icon-size-01",
+            "value": "1rem",
+            "px": 16,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "icon-size-02",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "tokens/layout.tokens.json"
+          }
+        ],
+        "containerScale": [
+          {
+            "name": "container-01",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "container-02",
+            "value": "2rem",
+            "px": 32,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "container-03",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "container-04",
+            "value": "3rem",
+            "px": 48,
+            "file": "tokens/layout.tokens.json"
+          },
+          {
+            "name": "container-05",
+            "value": "4rem",
+            "px": 64,
+            "file": "tokens/layout.tokens.json"
+          }
+        ]
+      }
+    },
+    "gaps": [
+      "No border-width scale and no elevation/shadow scale as tokens.",
+      "No touch density or touch-target token.",
+      "Focus ring is a Sass mixin with literal widths, not a token."
+    ]
+  }
+}

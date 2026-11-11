@@ -1,0 +1,1653 @@
+{
+  "kind": "token-reference",
+  "schemaVersion": 1,
+  "id": "polaris",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@shopify/polaris-tokens",
+        "url": "https://www.npmjs.com/package/@shopify/polaris-tokens/v/9.4.2",
+        "version": "9.4.2",
+        "license": "LicenseRef-Polaris (MIT terms with a Shopify field-of-use restriction; see LICENSE.md)",
+        "retrievedAt": "2026-11-11",
+        "path": "dist/css/media-queries.css, dist/css/styles.css"
+      },
+      {
+        "name": "@shopify/polaris",
+        "url": "https://www.npmjs.com/package/@shopify/polaris/v/13.9.5",
+        "version": "13.9.5",
+        "license": "LicenseRef-Polaris (MIT terms with a Shopify field-of-use restriction; see LICENSE.md)",
+        "retrievedAt": "2026-11-11",
+        "path": "build/esm/components/Button/Button.js, build/esm/styles.css"
+      }
+    ],
+    "script": "tools/extract/tokens/polaris.mjs",
+    "notes": "Custom licence: only measurements (numeric scales, structure) are kept; colour and shadow values are deliberately not recorded."
+  },
+  "data": {
+    "system": {
+      "name": "Shopify Polaris",
+      "package": "@shopify/polaris-tokens",
+      "version": "9.4.2",
+      "license": "LicenseRef-Polaris (MIT terms with a Shopify field-of-use restriction; see LICENSE.md)",
+      "url": "https://polaris.shopify.com"
+    },
+    "scales": {
+      "controls": {
+        "densityModes": [
+          {
+            "id": "mobile",
+            "name": "below md (48em)",
+            "mechanism": "platform-scale",
+            "description": "Base styles: larger min-heights and 16px input text.",
+            "file": "@shopify/polaris:build/esm/styles.css"
+          },
+          {
+            "id": "desktop",
+            "name": "md and up (min-width: 48em)",
+            "mechanism": "platform-scale",
+            "description": "Compact desktop sizes.",
+            "file": "@shopify/polaris:build/esm/styles.css"
+          }
+        ],
+        "sizes": [
+          {
+            "component": "button",
+            "size": "micro",
+            "mode": "mobile",
+            "minHeightPx": 28,
+            "heightPx": 28,
+            "paddingBlockPx": 4,
+            "paddingInlinePx": 8,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-700); Text variant bodySm",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "button",
+            "size": "micro",
+            "mode": "desktop",
+            "minHeightPx": 24,
+            "heightPx": 24,
+            "paddingBlockPx": 4,
+            "paddingInlinePx": 8,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-600); Text variant bodySm",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "button",
+            "size": "slim",
+            "mode": "mobile",
+            "minHeightPx": 32,
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-800); Text variant bodySm",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "button",
+            "size": "slim",
+            "mode": "desktop",
+            "minHeightPx": 28,
+            "heightPx": 28,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-700); Text variant bodySm",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "button",
+            "size": "medium",
+            "mode": "mobile",
+            "minHeightPx": 32,
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-800); Text variant bodySm",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "button",
+            "size": "medium",
+            "mode": "desktop",
+            "minHeightPx": 28,
+            "heightPx": 28,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 12,
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-700); Text variant bodySm",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "button",
+            "size": "large",
+            "mode": "mobile",
+            "minHeightPx": 36,
+            "heightPx": 36,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 13,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.5385,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-900); Text variant bodyMd",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "button",
+            "size": "large",
+            "mode": "desktop",
+            "minHeightPx": 32,
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 13,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.5385,
+            "radiusPx": 8,
+            "heightSource": "min-height var(--p-height-800); Text variant bodyMd",
+            "file": "@shopify/polaris:build/esm/styles.css, build/esm/components/Button/Button.js"
+          },
+          {
+            "component": "input",
+            "size": "medium",
+            "mode": "mobile",
+            "minHeightPx": 32,
+            "heightPx": 36,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "heightSource": "min-height var(--pg-control-height) = 2rem",
+            "derived": true,
+            "formula": "max(min-height, line-height + 2 × padding-block)",
+            "file": "@shopify/polaris:build/esm/styles.css"
+          },
+          {
+            "component": "input",
+            "size": "medium",
+            "mode": "desktop",
+            "minHeightPx": 32,
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 13,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.5385,
+            "heightSource": "min-height var(--pg-control-height) = 2rem",
+            "derived": true,
+            "formula": "max(min-height, line-height + 2 × padding-block)",
+            "file": "@shopify/polaris:build/esm/styles.css"
+          },
+          {
+            "component": "select",
+            "size": "medium",
+            "mode": "mobile",
+            "minHeightPx": 32,
+            "heightPx": 36,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 16,
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.5,
+            "heightSource": "min-height var(--pg-control-height) = 2rem",
+            "derived": true,
+            "formula": "max(min-height, line-height + 2 × padding-block)",
+            "file": "@shopify/polaris:build/esm/styles.css"
+          },
+          {
+            "component": "select",
+            "size": "medium",
+            "mode": "desktop",
+            "minHeightPx": 32,
+            "heightPx": 32,
+            "paddingBlockPx": 6,
+            "paddingInlinePx": 12,
+            "fontSizePx": 13,
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.5385,
+            "heightSource": "min-height var(--pg-control-height) = 2rem",
+            "derived": true,
+            "formula": "max(min-height, line-height + 2 × padding-block)",
+            "file": "@shopify/polaris:build/esm/styles.css"
+          },
+          {
+            "component": "input",
+            "size": "slim",
+            "mode": "desktop",
+            "minHeightPx": 28,
+            "heightPx": 28,
+            "paddingBlockPx": 2,
+            "file": "@shopify/polaris:build/esm/styles.css"
+          }
+        ],
+        "touchTarget": [],
+        "note": "Button text variant is bodySm unless (size === 'large' || hasPlainText && size !== 'micro'), then bodyMd."
+      },
+      "spacing": {
+        "steps": [
+          {
+            "name": "space-0",
+            "value": "0rem",
+            "px": 0,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-025",
+            "value": "0.0625rem",
+            "px": 1,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-050",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-100",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-150",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-200",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-300",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-400",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-500",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-600",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-800",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-1000",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-1200",
+            "value": "3rem",
+            "px": 48,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-1600",
+            "value": "4rem",
+            "px": 64,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-2000",
+            "value": "5rem",
+            "px": 80,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-2400",
+            "value": "6rem",
+            "px": 96,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-2800",
+            "value": "7rem",
+            "px": 112,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-3200",
+            "value": "8rem",
+            "px": 128,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-button-group-gap",
+            "value": "var(--p-space-200)",
+            "px": 8,
+            "alias": "space-200",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-card-gap",
+            "value": "var(--p-space-400)",
+            "px": 16,
+            "alias": "space-400",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-card-padding",
+            "value": "var(--p-space-400)",
+            "px": 16,
+            "alias": "space-400",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "space-table-cell-padding",
+            "value": "var(--p-space-150)",
+            "px": 6,
+            "alias": "space-150",
+            "file": "dist/css/styles.css"
+          }
+        ]
+      },
+      "radius": {
+        "steps": [
+          {
+            "name": "border-radius-0",
+            "value": "0rem",
+            "px": 0,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-050",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-100",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-150",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-200",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-300",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-400",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-500",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-750",
+            "value": "1.875rem",
+            "px": 30,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-radius-full",
+            "value": "624.9375rem",
+            "px": 9999,
+            "file": "dist/css/styles.css"
+          }
+        ]
+      },
+      "borderWidth": {
+        "steps": [
+          {
+            "name": "border-width-0",
+            "value": "0rem",
+            "px": 0,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-width-0165",
+            "value": "0.04125rem",
+            "px": 0.66,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-width-025",
+            "value": "0.0625rem",
+            "px": 1,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-width-050",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "border-width-100",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/styles.css"
+          }
+        ]
+      },
+      "typography": {
+        "rootFontSizePx": 16,
+        "fontStacks": [
+          {
+            "name": "font-family-sans",
+            "value": "'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-family-mono",
+            "value": "ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace",
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "steps": [
+          {
+            "name": "text-heading-3xl",
+            "fontSize": "2.25rem",
+            "fontSizePx": 36,
+            "lineHeight": "3rem",
+            "lineHeightPx": 48,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 700,
+            "letterSpacing": "-0.03375rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-heading-2xl",
+            "fontSize": "1.875rem",
+            "fontSizePx": 30,
+            "lineHeight": "2.5rem",
+            "lineHeightPx": 40,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 700,
+            "letterSpacing": "-0.01875rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-heading-xl",
+            "fontSize": "1.5rem",
+            "fontSizePx": 24,
+            "lineHeight": "2rem",
+            "lineHeightPx": 32,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 700,
+            "letterSpacing": "-0.0125rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-heading-lg",
+            "fontSize": "1.25rem",
+            "fontSizePx": 20,
+            "lineHeight": "1.5rem",
+            "lineHeightPx": 24,
+            "lineHeightRatio": 1.2,
+            "fontWeight": 650,
+            "letterSpacing": "-0.0125rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-heading-md",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": "1.25rem",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "fontWeight": 650,
+            "letterSpacing": "0rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-heading-sm",
+            "fontSize": "0.8125rem",
+            "fontSizePx": 13,
+            "lineHeight": "1.25rem",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.5385,
+            "fontWeight": 650,
+            "letterSpacing": "0rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-heading-xs",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": "1rem",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 650,
+            "letterSpacing": "0rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-body-lg",
+            "fontSize": "0.875rem",
+            "fontSizePx": 14,
+            "lineHeight": "1.25rem",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.4286,
+            "fontWeight": 450,
+            "letterSpacing": "0rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-body-md",
+            "fontSize": "0.8125rem",
+            "fontSizePx": 13,
+            "lineHeight": "1.25rem",
+            "lineHeightPx": 20,
+            "lineHeightRatio": 1.5385,
+            "fontWeight": 450,
+            "letterSpacing": "0rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-body-sm",
+            "fontSize": "0.75rem",
+            "fontSizePx": 12,
+            "lineHeight": "1rem",
+            "lineHeightPx": 16,
+            "lineHeightRatio": 1.3333,
+            "fontWeight": 450,
+            "letterSpacing": "0rem",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "text-body-xs",
+            "fontSize": "0.6875rem",
+            "fontSizePx": 11,
+            "lineHeight": "0.75rem",
+            "lineHeightPx": 12,
+            "lineHeightRatio": 1.0909,
+            "fontWeight": 450,
+            "letterSpacing": "0rem",
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "fontSizes": [
+          {
+            "name": "font-size-275",
+            "value": "0.6875rem",
+            "px": 11,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-300",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-325",
+            "value": "0.8125rem",
+            "px": 13,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-350",
+            "value": "0.875rem",
+            "px": 14,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-400",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-450",
+            "value": "1.125rem",
+            "px": 18,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-500",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-550",
+            "value": "1.375rem",
+            "px": 22,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-600",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-750",
+            "value": "1.875rem",
+            "px": 30,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-800",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-900",
+            "value": "2.25rem",
+            "px": 36,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-size-1000",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "lineHeights": [
+          {
+            "name": "font-line-height-300",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-line-height-400",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-line-height-500",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-line-height-600",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-line-height-700",
+            "value": "1.75rem",
+            "px": 28,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-line-height-800",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-line-height-1000",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-line-height-1200",
+            "value": "3rem",
+            "px": 48,
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "fontWeights": [
+          {
+            "name": "font-weight-regular",
+            "value": 450,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-weight-medium",
+            "value": 550,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-weight-semibold",
+            "value": 650,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-weight-bold",
+            "value": 700,
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "letterSpacings": [
+          {
+            "name": "font-letter-spacing-densest",
+            "value": "-0.03375rem",
+            "px": -0.54,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-letter-spacing-denser",
+            "value": "-0.01875rem",
+            "px": -0.3,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-letter-spacing-dense",
+            "value": "-0.0125rem",
+            "px": -0.2,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "font-letter-spacing-normal",
+            "value": "0rem",
+            "px": 0,
+            "file": "dist/css/styles.css"
+          }
+        ]
+      },
+      "breakpoints": {
+        "steps": [
+          {
+            "name": "breakpoints-xs",
+            "value": "0rem",
+            "px": 0,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "breakpoints-sm",
+            "value": "30.625rem",
+            "px": 490,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "breakpoints-md",
+            "value": "48rem",
+            "px": 768,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "breakpoints-lg",
+            "value": "65rem",
+            "px": 1040,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "breakpoints-xl",
+            "value": "90rem",
+            "px": 1440,
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "note": "19 custom media queries (-up, -down, -only per breakpoint) in dist/css/media-queries.css."
+      },
+      "zIndex": {
+        "steps": [
+          {
+            "name": "z-index-0",
+            "value": "auto",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-1",
+            "value": 100,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-2",
+            "value": 400,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-3",
+            "value": 510,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-4",
+            "value": 512,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-5",
+            "value": 513,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-6",
+            "value": 514,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-7",
+            "value": 515,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-8",
+            "value": 516,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-9",
+            "value": 517,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-10",
+            "value": 518,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-11",
+            "value": 519,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "z-index-12",
+            "value": 520,
+            "file": "dist/css/styles.css"
+          }
+        ]
+      },
+      "elevation": {
+        "steps": [
+          {
+            "name": "shadow-0",
+            "value": "(value not recorded — licence)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "shadow-100",
+            "value": "(value not recorded — licence)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "shadow-200",
+            "value": "(value not recorded — licence)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "shadow-300",
+            "value": "(value not recorded — licence)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "shadow-400",
+            "value": "(value not recorded — licence)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "shadow-500",
+            "value": "(value not recorded — licence)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "shadow-600",
+            "value": "(value not recorded — licence)",
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "note": "23 shadow tokens: numbered levels plus bevel, inset and button shadows."
+      },
+      "motion": {
+        "durations": [
+          {
+            "name": "motion-duration-0",
+            "value": "0ms",
+            "ms": 0,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-50",
+            "value": "50ms",
+            "ms": 50,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-100",
+            "value": "100ms",
+            "ms": 100,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-150",
+            "value": "150ms",
+            "ms": 150,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-200",
+            "value": "200ms",
+            "ms": 200,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-250",
+            "value": "250ms",
+            "ms": 250,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-300",
+            "value": "300ms",
+            "ms": 300,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-350",
+            "value": "350ms",
+            "ms": 350,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-400",
+            "value": "400ms",
+            "ms": 400,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-450",
+            "value": "450ms",
+            "ms": 450,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-500",
+            "value": "500ms",
+            "ms": 500,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-duration-5000",
+            "value": "5000ms",
+            "ms": 5000,
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "easings": [
+          {
+            "name": "motion-ease",
+            "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-ease-in",
+            "value": "cubic-bezier(0.42, 0, 1, 1)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-ease-out",
+            "value": "cubic-bezier(0.19, 0.91, 0.38, 1)",
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "motion-ease-in-out",
+            "value": "cubic-bezier(0.42, 0, 0.58, 1)",
+            "file": "dist/css/styles.css"
+          }
+        ]
+      },
+      "color": {
+        "structure": {
+          "ramps": [],
+          "semanticRoles": [
+            "color-bg",
+            "color-bg-inverse",
+            "color-bg-surface",
+            "color-bg-surface-hover",
+            "color-bg-surface-active",
+            "color-bg-surface-selected",
+            "color-bg-surface-disabled",
+            "color-bg-surface-secondary",
+            "color-bg-surface-secondary-hover",
+            "color-bg-surface-secondary-active",
+            "color-bg-surface-secondary-selected",
+            "color-bg-surface-tertiary",
+            "color-bg-surface-tertiary-hover",
+            "color-bg-surface-tertiary-active",
+            "color-bg-surface-brand",
+            "color-bg-surface-brand-hover",
+            "color-bg-surface-brand-active",
+            "color-bg-surface-brand-selected",
+            "color-bg-surface-info",
+            "color-bg-surface-info-hover",
+            "color-bg-surface-info-active",
+            "color-bg-surface-success",
+            "color-bg-surface-success-hover",
+            "color-bg-surface-success-active",
+            "color-bg-surface-caution",
+            "color-bg-surface-caution-hover",
+            "color-bg-surface-caution-active",
+            "color-bg-surface-warning",
+            "color-bg-surface-warning-hover",
+            "color-bg-surface-warning-active",
+            "color-bg-surface-critical",
+            "color-bg-surface-critical-hover",
+            "color-bg-surface-critical-active",
+            "color-bg-surface-emphasis",
+            "color-bg-surface-emphasis-hover",
+            "color-bg-surface-emphasis-active",
+            "color-bg-surface-magic",
+            "color-bg-surface-magic-hover",
+            "color-bg-surface-magic-active",
+            "color-bg-surface-inverse",
+            "color-bg-surface-transparent",
+            "color-bg-fill",
+            "color-bg-fill-hover",
+            "color-bg-fill-active",
+            "color-bg-fill-selected",
+            "color-bg-fill-disabled",
+            "color-bg-fill-secondary",
+            "color-bg-fill-secondary-hover",
+            "color-bg-fill-secondary-active",
+            "color-bg-fill-secondary-selected",
+            "color-bg-fill-tertiary",
+            "color-bg-fill-tertiary-hover",
+            "color-bg-fill-tertiary-active",
+            "color-bg-fill-brand",
+            "color-bg-fill-brand-hover",
+            "color-bg-fill-brand-active",
+            "color-bg-fill-brand-selected",
+            "color-bg-fill-brand-disabled",
+            "color-bg-fill-info",
+            "color-bg-fill-info-hover",
+            "color-bg-fill-info-active",
+            "color-bg-fill-info-secondary",
+            "color-bg-fill-success",
+            "color-bg-fill-success-hover",
+            "color-bg-fill-success-active",
+            "color-bg-fill-success-secondary",
+            "color-bg-fill-warning",
+            "color-bg-fill-warning-hover",
+            "color-bg-fill-warning-active",
+            "color-bg-fill-warning-secondary",
+            "color-bg-fill-caution",
+            "color-bg-fill-caution-hover",
+            "color-bg-fill-caution-active",
+            "color-bg-fill-caution-secondary",
+            "color-bg-fill-critical",
+            "color-bg-fill-critical-hover",
+            "color-bg-fill-critical-active",
+            "color-bg-fill-critical-selected",
+            "color-bg-fill-critical-secondary",
+            "color-bg-fill-emphasis",
+            "color-bg-fill-emphasis-hover",
+            "color-bg-fill-emphasis-active",
+            "color-bg-fill-magic",
+            "color-bg-fill-magic-secondary",
+            "color-bg-fill-magic-secondary-hover",
+            "color-bg-fill-magic-secondary-active",
+            "color-bg-fill-inverse",
+            "color-bg-fill-inverse-hover",
+            "color-bg-fill-inverse-active",
+            "color-bg-fill-transparent",
+            "color-bg-fill-transparent-hover",
+            "color-bg-fill-transparent-active",
+            "color-bg-fill-transparent-selected",
+            "color-bg-fill-transparent-secondary",
+            "color-bg-fill-transparent-secondary-hover",
+            "color-bg-fill-transparent-secondary-active",
+            "color-text",
+            "color-text-secondary",
+            "color-text-disabled",
+            "color-text-link",
+            "color-text-link-hover",
+            "color-text-link-active",
+            "color-text-brand",
+            "color-text-brand-hover",
+            "color-text-brand-on-bg-fill",
+            "color-text-brand-on-bg-fill-hover",
+            "color-text-brand-on-bg-fill-active",
+            "color-text-brand-on-bg-fill-disabled",
+            "color-text-info",
+            "color-text-info-hover",
+            "color-text-info-active",
+            "color-text-info-secondary",
+            "color-text-info-on-bg-fill",
+            "color-text-success",
+            "color-text-success-hover",
+            "color-text-success-active",
+            "color-text-success-secondary",
+            "color-text-success-on-bg-fill",
+            "color-text-caution",
+            "color-text-caution-hover",
+            "color-text-caution-active",
+            "color-text-caution-secondary",
+            "color-text-caution-on-bg-fill",
+            "color-text-warning",
+            "color-text-warning-hover",
+            "color-text-warning-active",
+            "color-text-warning-secondary",
+            "color-text-warning-on-bg-fill",
+            "color-text-critical",
+            "color-text-critical-hover",
+            "color-text-critical-active",
+            "color-text-critical-secondary",
+            "color-text-critical-on-bg-fill",
+            "color-text-emphasis",
+            "color-text-emphasis-hover",
+            "color-text-emphasis-active",
+            "color-text-emphasis-on-bg-fill",
+            "color-text-emphasis-on-bg-fill-hover",
+            "color-text-emphasis-on-bg-fill-active",
+            "color-text-magic",
+            "color-text-magic-secondary",
+            "color-text-magic-on-bg-fill",
+            "color-text-inverse",
+            "color-text-inverse-secondary",
+            "color-text-link-inverse",
+            "color-border",
+            "color-border-hover",
+            "color-border-disabled",
+            "color-border-secondary",
+            "color-border-tertiary",
+            "color-border-focus",
+            "color-border-brand",
+            "color-border-info",
+            "color-border-success",
+            "color-border-caution",
+            "color-border-warning",
+            "color-border-critical",
+            "color-border-critical-secondary",
+            "color-border-emphasis",
+            "color-border-emphasis-hover",
+            "color-border-emphasis-active",
+            "color-border-magic",
+            "color-border-magic-secondary",
+            "color-border-magic-secondary-hover",
+            "color-border-inverse",
+            "color-border-inverse-hover",
+            "color-border-inverse-active",
+            "color-tooltip-tail-down-border",
+            "color-tooltip-tail-up-border",
+            "color-icon",
+            "color-icon-hover",
+            "color-icon-active",
+            "color-icon-disabled",
+            "color-icon-secondary",
+            "color-icon-secondary-hover",
+            "color-icon-secondary-active",
+            "color-icon-brand",
+            "color-icon-info",
+            "color-icon-success",
+            "color-icon-caution",
+            "color-icon-warning",
+            "color-icon-critical",
+            "color-icon-emphasis",
+            "color-icon-emphasis-hover",
+            "color-icon-emphasis-active",
+            "color-icon-magic",
+            "color-icon-inverse",
+            "color-avatar-bg-fill",
+            "color-avatar-five-bg-fill",
+            "color-avatar-five-text-on-bg-fill",
+            "color-avatar-four-bg-fill",
+            "color-avatar-four-text-on-bg-fill",
+            "color-avatar-one-bg-fill",
+            "color-avatar-one-text-on-bg-fill",
+            "color-avatar-seven-bg-fill",
+            "color-avatar-seven-text-on-bg-fill",
+            "color-avatar-six-bg-fill",
+            "color-avatar-six-text-on-bg-fill",
+            "color-avatar-text-on-bg-fill",
+            "color-avatar-three-bg-fill",
+            "color-avatar-three-text-on-bg-fill",
+            "color-avatar-two-bg-fill",
+            "color-avatar-two-text-on-bg-fill",
+            "color-backdrop-bg",
+            "color-button-gradient-bg-fill",
+            "color-checkbox-bg-surface-disabled",
+            "color-checkbox-icon-disabled",
+            "color-input-bg-surface",
+            "color-input-bg-surface-hover",
+            "color-input-bg-surface-active",
+            "color-input-border",
+            "color-input-border-hover",
+            "color-input-border-active",
+            "color-nav-bg",
+            "color-nav-bg-surface",
+            "color-nav-bg-surface-hover",
+            "color-nav-bg-surface-active",
+            "color-nav-bg-surface-selected",
+            "color-radio-button-bg-surface-disabled",
+            "color-radio-button-icon-disabled",
+            "color-video-thumbnail-play-button-bg-fill-hover",
+            "color-video-thumbnail-play-button-bg-fill",
+            "color-video-thumbnail-play-button-text-on-bg-fill",
+            "color-scrollbar-thumb-bg-hover",
+            "color-scrollbar-thumb-bg"
+          ],
+          "modes": [
+            ":root",
+            ".p-theme-light",
+            ".p-theme-light-mobile",
+            ".p-theme-light-high-contrast-experimental",
+            ".p-theme-dark-experimental"
+          ],
+          "note": "No public ramps: 225 role tokens named color-<element>-<role>-<state> (per element: bg 96, text 49, border 22, tooltip 2, icon 18, avatar 16, backdrop 1, button 1, checkbox 2, input 6, nav 5, radio 2, video 3, scrollbar 2). Values not recorded (licence)."
+        }
+      },
+      "i18n": {
+        "scanned": [
+          {
+            "package": "@shopify/polaris-tokens@9.4.2 (^dist\\/(css|scss)\\/)",
+            "files": 4
+          },
+          {
+            "package": "@shopify/polaris-tokens@9.4.2 (^dist\\/esm\\/)",
+            "files": 24
+          },
+          {
+            "package": "@shopify/polaris@13.9.5 (^build\\/esm\\/styles\\.css$)",
+            "files": 1
+          },
+          {
+            "package": "@shopify/polaris@13.9.5 (^locales\\/)",
+            "files": 21
+          }
+        ],
+        "patterns": [
+          {
+            "id": "arabic",
+            "regex": "arabic|\\bfarsi\\b|persian|\\burdu\\b|naskh|kufi",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "arabic-script-chars",
+            "regex": "[\\u0600-\\u06FF]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "locale-ar",
+            "regex": "['\"\\[=(:_\\-/]ar(?:[-_][A-Za-z]{2})?['\"\\])]|lang\\(ar\\b|\\bar[-_](?:SA|EG|AE)\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "rtl",
+            "regex": "rtl\\b|\\brtl[A-Z_-]|right-to-left|\\bis_?rtl",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "dir-selector",
+            "regex": ":dir\\(|\\[dir[=\\]~|]|\\bdir=|:host-context\\(\\[dir",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "bidi",
+            "regex": "bidi|unicode-bidi|\\bbdi\\b|plaintext|\\u200f|\\u200e|\\\\u200[ef]|\\\\u202[a-e]|\\\\u206[6-9]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "lang-selector",
+            "regex": ":lang\\(|\\[lang[=\\]~|^]",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "other-scripts",
+            "regex": "\\bcjk\\b|\\bhan[st]?\\b|hebrew|devanagari|\\bthai\\b|japanese|korean|chinese|hangul|kana\\b",
+            "hits": 0,
+            "files": 0,
+            "topFiles": [],
+            "samples": []
+          },
+          {
+            "id": "logical-properties",
+            "regex": "(?:margin|padding|border|inset)-(?:inline|block)|inline-size|block-size|InlineStart|InlineEnd|paddingInline|marginInline",
+            "hits": 198,
+            "files": 1,
+            "topFiles": [
+              {
+                "file": "@shopify/polaris:build/esm/styles.css",
+                "hits": 198
+              }
+            ],
+            "samples": [
+              {
+                "file": "@shopify/polaris:build/esm/styles.css",
+                "line": 711,
+                "text": "padding:var(--pc-button-padding-block) var(--pc-button-padding-inline);"
+              }
+            ]
+          }
+        ],
+        "findings": [
+          "No token for direction, language or script. One sans stack led by 'Inter'; three negative letter-spacing tokens (dense, denser, densest) used by headings, which must not apply to Arabic.",
+          "Density is responsive, not a mode: controls are taller and input text larger below the md breakpoint (48em) — button medium 32px → 28px, input text 16px/24px → 13px/20px — i.e. \"touch\" is inferred from viewport width, not from pointer type. A p-theme-light-mobile theme changes shadows only.",
+          "Default desktop UI text is 13px on a 20px line (ratio 1.54); button labels are 12px on 16px (1.33).",
+          "Component CSS uses logical properties (198 matching lines in the scanned files). Locale files with Arabic strings: none."
+        ]
+      },
+      "extra": {
+        "heightScale": [
+          {
+            "name": "height-0",
+            "value": "0rem",
+            "px": 0,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-025",
+            "value": "0.0625rem",
+            "px": 1,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-050",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-100",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-150",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-200",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-300",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-400",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-500",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-600",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-700",
+            "value": "1.75rem",
+            "px": 28,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-800",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-900",
+            "value": "2.25rem",
+            "px": 36,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-1000",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-1200",
+            "value": "3rem",
+            "px": 48,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-1600",
+            "value": "4rem",
+            "px": 64,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-2000",
+            "value": "5rem",
+            "px": 80,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-2400",
+            "value": "6rem",
+            "px": 96,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-2800",
+            "value": "7rem",
+            "px": 112,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "height-3200",
+            "value": "8rem",
+            "px": 128,
+            "file": "dist/css/styles.css"
+          }
+        ],
+        "widthScale": [
+          {
+            "name": "width-0",
+            "value": "0rem",
+            "px": 0,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-025",
+            "value": "0.0625rem",
+            "px": 1,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-050",
+            "value": "0.125rem",
+            "px": 2,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-100",
+            "value": "0.25rem",
+            "px": 4,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-150",
+            "value": "0.375rem",
+            "px": 6,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-200",
+            "value": "0.5rem",
+            "px": 8,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-300",
+            "value": "0.75rem",
+            "px": 12,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-400",
+            "value": "1rem",
+            "px": 16,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-500",
+            "value": "1.25rem",
+            "px": 20,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-600",
+            "value": "1.5rem",
+            "px": 24,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-700",
+            "value": "1.75rem",
+            "px": 28,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-800",
+            "value": "2rem",
+            "px": 32,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-900",
+            "value": "2.25rem",
+            "px": 36,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-1000",
+            "value": "2.5rem",
+            "px": 40,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-1200",
+            "value": "3rem",
+            "px": 48,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-1600",
+            "value": "4rem",
+            "px": 64,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-2000",
+            "value": "5rem",
+            "px": 80,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-2400",
+            "value": "6rem",
+            "px": 96,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-2800",
+            "value": "7rem",
+            "px": 112,
+            "file": "dist/css/styles.css"
+          },
+          {
+            "name": "width-3200",
+            "value": "8rem",
+            "px": 128,
+            "file": "dist/css/styles.css"
+          }
+        ]
+      }
+    },
+    "gaps": [
+      "Colour and shadow values intentionally omitted (licence restricts use to Shopify-integrated or visually distinct applications).",
+      "No focus-ring or container tokens; no touch-target token.",
+      "No explicit density mode; responsive sizes only."
+    ]
+  }
+}
