@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "language.schema.json",
+  "title": "Language data",
+  "description": "One dataset of language knowledge (plurals, spell-out, month names, characters …). File: data/language/<lang>/<dataset>[.<scope>].json. The layer owner tightens `content` per dataset with oneOf.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "language"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "description": "BCP 47 language subtag, e.g. ar."
+        },
+        "dataset": {
+          "enum": [
+            "plural-rules",
+            "ordinal-rules",
+            "spellout",
+            "numbering-systems",
+            "gregorian-months",
+            "weekdays",
+            "day-periods",
+            "date-patterns",
+            "relative-time",
+            "list-patterns",
+            "units",
+            "characters",
+            "collation",
+            "number-patterns",
+            "honorifics",
+            "other"
+          ]
+        },
+        "scope": {
+          "description": "Locales or regions this file applies to; omitted means the whole language.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "content": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "language",
+        "dataset",
+        "content"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

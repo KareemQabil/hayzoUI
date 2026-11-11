@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Shared definitions",
+  "$defs": {
+    "localized": {
+      "description": "Text in Arabic (required, written by a person or taken from an authoritative Arabic source) and English.",
+      "type": "object",
+      "properties": {
+        "ar": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "ar",
+        "en"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "description": "Where a value came from. One entry per upstream artifact.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Release, tag, package version or commit SHA of the artifact that was read."
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1,
+          "description": "SPDX identifier when one exists, otherwise the license name."
+        },
+        "retrievedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "description": "File or section inside the source."
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "license",
+        "retrievedAt"
+      ],
+      "additionalProperties": false
+    },
+    "confidence": {
+      "description": "verified: taken mechanically from an authoritative source by a committed script, or checked against a primary source. needs-review: plausible, from a secondary source or model knowledge with a citation. unverified: no usable source yet.",
+      "enum": [
+        "verified",
+        "needs-review",
+        "unverified"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "description": "extracted: copied by script. derived: computed from extracted data. researched: read and re-expressed by a person or agent. authored: original to this project.",
+          "enum": [
+            "extracted",
+            "derived",
+            "researched",
+            "authored"
+          ]
+        },
+        "confidence": {
+          "$ref": "common.schema.json#/$defs/confidence"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/source"
+          }
+        },
+        "script": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Repo-relative path of the script that reproduces this file."
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "method",
+        "confidence",
+        "sources"
+      ],
+      "additionalProperties": false
+    },
+    "claim": {
+      "description": "One researched fact with its own evidence, for data that changes or is contested (tax rates, regulations).",
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {},
+        "asOf": {
+          "type": "string",
+          "format": "date"
+        },
+        "confidence": {
+          "$ref": "common.schema.json#/$defs/confidence"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/source"
+          }
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "key",
+        "value",
+        "confidence",
+        "sources"
+      ],
+      "additionalProperties": false
+    },
+    "priority": {
+      "enum": [
+        "p0",
+        "p1",
+        "p2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "component.schema.json",
+  "title": "Component (universe entry)",
+  "description": "One canonical component of the universe we intend to cover, with its names elsewhere, its behaviour and its Arabic requirements. File: data/catalog/universe/<id>.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "component"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "name": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "summary": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "family": {
+          "enum": [
+            "action",
+            "text-input",
+            "numeric-input",
+            "choice",
+            "selection",
+            "date-time",
+            "overlay",
+            "navigation",
+            "layout",
+            "display",
+            "feedback",
+            "data",
+            "media",
+            "utility",
+            "pattern"
+          ]
+        },
+        "tier": {
+          "description": "Build order by dependency: T0 foundations … T5 specialised.",
+          "enum": [
+            "T0",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T5"
+          ]
+        },
+        "priority": {
+          "$ref": "common.schema.json#/$defs/priority"
+        },
+        "engines": {
+          "description": "Headless engines it is built on (ids under data/catalog/engines.json).",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "patterns": {
+          "description": "Behaviour pattern ids (data/patterns).",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "anatomy": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "dependsOn": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "library": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "library",
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              },
+              "name": {
+                "$ref": "common.schema.json#/$defs/localized"
+              },
+              "priority": {
+                "$ref": "common.schema.json#/$defs/priority"
+              },
+              "in": {
+                "description": "Library ids that ship this feature.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                }
+              },
+              "arabic": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "requirement",
+                      "risk",
+                      "opportunity"
+                    ]
+                  },
+                  "note": {
+                    "$ref": "common.schema.json#/$defs/localized"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "note"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "arabic": {
+          "type": "object",
+          "properties": {
+            "requirements": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/localized"
+              }
+            },
+            "risks": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/localized"
+              }
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "family",
+        "tier",
+        "priority",
+        "aliases",
+        "features"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "hayzo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Arabic-first interface system. Phase 0: the knowledge base every later layer is generated from.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "validate": "node tools/validate.mjs",
+    "sources": "node tools/validate.mjs --sources"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "typescript": "^5.7.0"
+  }
+}

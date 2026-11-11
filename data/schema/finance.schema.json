@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "finance.schema.json",
+  "title": "Finance and identity rules",
+  "description": "One dataset for one region: VAT, e-invoicing, IBAN, national id, tax id … Every changeable fact is a claim with its own source and date. File: data/finance/<dataset>/<ISO2>.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "finance"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "dataset": {
+          "enum": [
+            "vat",
+            "e-invoicing",
+            "iban",
+            "national-id",
+            "tax-id",
+            "commercial-register",
+            "cash-rounding",
+            "bank-codes",
+            "other"
+          ]
+        },
+        "structure": {
+          "description": "For identifiers: how the value is built and checked.",
+          "type": "object",
+          "properties": {
+            "length": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            },
+            "pattern": {
+              "type": "string",
+              "minLength": 1
+            },
+            "charset": {
+              "enum": [
+                "digits",
+                "alphanumeric",
+                "other"
+              ]
+            },
+            "checksum": {
+              "type": "object",
+              "properties": {
+                "algorithm": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "algorithm"
+              ],
+              "additionalProperties": false
+            },
+            "segments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "start": {
+                    "type": "integer"
+                  },
+                  "length": {
+                    "type": "integer"
+                  },
+                  "meaning": {
+                    "$ref": "common.schema.json#/$defs/localized"
+                  },
+                  "values": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "name",
+                  "start",
+                  "length"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "example": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/claim"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "region",
+        "dataset"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

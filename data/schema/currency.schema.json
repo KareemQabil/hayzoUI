@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "currency.schema.json",
+  "title": "Currency",
+  "description": "One ISO 4217 currency with what Arabic interfaces need to write, round and speak it. File: data/currencies/<ISO>.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "currency"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "numeric": {
+          "type": "string",
+          "pattern": "^[0-9]{3}$"
+        },
+        "name": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "plural": {
+          "type": "object",
+          "properties": {
+            "ar": {
+              "type": "object",
+              "properties": {
+                "zero": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "one": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "two": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "few": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "many": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "other": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "one",
+                "two",
+                "few",
+                "many",
+                "other"
+              ],
+              "additionalProperties": false
+            },
+            "en": {
+              "type": "object",
+              "properties": {
+                "one": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "other": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "one",
+                "other"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "ar"
+          ],
+          "additionalProperties": false
+        },
+        "symbol": {
+          "type": "object",
+          "properties": {
+            "standard": {
+              "$ref": "common.schema.json#/$defs/localized"
+            },
+            "narrow": {
+              "$ref": "common.schema.json#/$defs/localized"
+            },
+            "glyph": {
+              "type": "object",
+              "properties": {
+                "char": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "codepoint": {
+                  "type": "string",
+                  "pattern": "^U\\+[0-9A-F]{4,6}$"
+                },
+                "unicodeVersion": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "note": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "char",
+                "codepoint"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "standard"
+          ],
+          "additionalProperties": false
+        },
+        "minorUnits": {
+          "description": "ISO 4217 decimal places.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "cash": {
+          "type": "object",
+          "properties": {
+            "minorUnits": {
+              "type": "integer"
+            },
+            "roundingIncrement": {
+              "type": "number"
+            },
+            "smallestCoin": {
+              "type": "number"
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "subunit": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "$ref": "common.schema.json#/$defs/localized"
+            },
+            "plural": {
+              "type": "object",
+              "properties": {
+                "ar": {
+                  "type": "object",
+                  "properties": {
+                    "zero": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "one": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "two": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "few": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "many": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "other": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "one",
+                    "two",
+                    "few",
+                    "many",
+                    "other"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            },
+            "perUnit": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "perUnit"
+          ],
+          "additionalProperties": false
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "symbol",
+        "minorUnits",
+        "regions"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

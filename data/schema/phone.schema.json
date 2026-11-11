@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phone.schema.json",
+  "title": "Phone numbering plan",
+  "description": "One region: how to recognise, validate and format its numbers. File: data/phone/<ISO2>.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "phone"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "callingCode": {
+          "type": "string",
+          "pattern": "^[0-9]{1,4}$"
+        },
+        "internationalPrefix": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nationalPrefix": {
+          "type": "string",
+          "minLength": 1
+        },
+        "numberTypes": {
+          "description": "Keyed by type: mobile, fixedLine, tollFree, premiumRate, sharedCost, voip, uan …",
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "pattern": {
+                "type": "string",
+                "minLength": 1
+              },
+              "possibleLengths": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "example": {
+                "type": "string",
+                "minLength": 1
+              },
+              "prefixes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "pattern",
+              "possibleLengths"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pattern": {
+                "type": "string",
+                "minLength": 1
+              },
+              "format": {
+                "type": "string",
+                "minLength": 1
+              },
+              "leadingDigits": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "nationalPrefixFormattingRule": {
+                "type": "string",
+                "minLength": 1
+              },
+              "intlFormat": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "pattern",
+              "format"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "operators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "$ref": "common.schema.json#/$defs/localized"
+              },
+              "prefixes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "confidence": {
+                "$ref": "common.schema.json#/$defs/confidence"
+              }
+            },
+            "required": [
+              "name",
+              "prefixes"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "region",
+        "callingCode",
+        "numberTypes",
+        "formats"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

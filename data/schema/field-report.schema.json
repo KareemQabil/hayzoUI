@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "field-report.schema.json",
+  "title": "Field reports",
+  "description": "Real Arabic/RTL defects reported against existing libraries, each reduced to the lesson it teaches. File: data/field-reports/<library>.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "field-report"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "library": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "repository": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "reports": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "category": {
+                "enum": [
+                  "bidi",
+                  "numerals",
+                  "mirroring",
+                  "layout",
+                  "input",
+                  "calendar",
+                  "typography",
+                  "keyboard",
+                  "overlay-position",
+                  "scroll",
+                  "animation",
+                  "locale-strings",
+                  "other"
+                ]
+              },
+              "components": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "state": {
+                "enum": [
+                  "open",
+                  "closed",
+                  "unknown"
+                ]
+              },
+              "lesson": {
+                "type": "string",
+                "minLength": 1
+              },
+              "confidence": {
+                "$ref": "common.schema.json#/$defs/confidence"
+              }
+            },
+            "required": [
+              "url",
+              "title",
+              "category",
+              "summary",
+              "lesson"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "library",
+        "reports"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

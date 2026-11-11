@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "icon.schema.json",
+  "title": "Icon data",
+  "description": "source-catalog: names, tags and categories of one open icon set. mirror-rules: which concepts flip in RTL and why. core-set: the icons our components need, mapped to each source. Files under data/icons/. The layer owner tightens `content` per dataset.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "icon"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "enum": [
+            "source-catalog",
+            "mirror-rules",
+            "core-set",
+            "gaps"
+          ]
+        },
+        "content": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "dataset",
+        "content"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

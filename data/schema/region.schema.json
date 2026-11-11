@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "region.schema.json",
+  "title": "Region",
+  "description": "One country or territory: everything locale-dependent that is not language. File: data/regions/<ISO2>.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "region"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "alpha3": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "numeric": {
+          "type": "string",
+          "pattern": "^[0-9]{3}$"
+        },
+        "name": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "officialName": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "arabLeague": {
+          "type": "boolean"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "enum": [
+                  "official",
+                  "national",
+                  "widely-used"
+                ]
+              }
+            },
+            "required": [
+              "code",
+              "role"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "locales": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tag": {
+                "type": "string",
+                "minLength": 1,
+                "description": "BCP 47, e.g. ar-EG."
+              },
+              "primary": {
+                "type": "boolean"
+              },
+              "defaultNumberingSystem": {
+                "description": "What CLDR uses for this locale by default.",
+                "enum": [
+                  "arab",
+                  "latn"
+                ]
+              },
+              "nativeNumberingSystem": {
+                "enum": [
+                  "arab",
+                  "latn"
+                ]
+              },
+              "hourCycle": {
+                "enum": [
+                  "h11",
+                  "h12",
+                  "h23",
+                  "h24"
+                ]
+              },
+              "gregorianMonthNames": {
+                "description": "english-derived: يناير. syriac: كانون الثاني. french-derived: جانفي.",
+                "enum": [
+                  "english-derived",
+                  "syriac",
+                  "french-derived",
+                  "mixed"
+                ]
+              }
+            },
+            "required": [
+              "tag",
+              "primary",
+              "defaultNumberingSystem"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "currency": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "alsoUsed": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$"
+              }
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "additionalProperties": false
+        },
+        "week": {
+          "type": "object",
+          "properties": {
+            "firstDay": {
+              "enum": [
+                "mon",
+                "tue",
+                "wed",
+                "thu",
+                "fri",
+                "sat",
+                "sun"
+              ]
+            },
+            "weekend": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "mon",
+                  "tue",
+                  "wed",
+                  "thu",
+                  "fri",
+                  "sat",
+                  "sun"
+                ]
+              },
+              "minItems": 1
+            },
+            "minDaysInFirstWeek": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "firstDay",
+            "weekend"
+          ],
+          "additionalProperties": false
+        },
+        "calendars": {
+          "description": "Calendar identifiers in order of preference.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "timeZones": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "measurementSystem": {
+          "enum": [
+            "metric",
+            "US",
+            "UK"
+          ]
+        },
+        "paperSize": {
+          "enum": [
+            "A4",
+            "US-Letter"
+          ]
+        },
+        "phone": {
+          "type": "object",
+          "properties": {
+            "callingCode": {
+              "type": "string",
+              "pattern": "^[0-9]{1,4}$"
+            }
+          },
+          "required": [
+            "callingCode"
+          ],
+          "additionalProperties": false
+        },
+        "dialectGroup": {
+          "enum": [
+            "egyptian",
+            "gulf",
+            "levantine",
+            "mesopotamian",
+            "maghrebi",
+            "sudanese",
+            "yemeni",
+            "other"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "code",
+        "alpha3",
+        "name",
+        "locales",
+        "currency",
+        "week",
+        "calendars",
+        "timeZones",
+        "phone"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

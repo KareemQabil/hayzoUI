@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rule.schema.json",
+  "title": "Interface rule",
+  "description": "One rule an Arabic-first interface must follow, with the reason and how it is checked. File: data/rules/<ID>.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "provenance",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "rule"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^R-[A-Z]+-[0-9]{3}$"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^R-[A-Z]+-[0-9]{3}$"
+        },
+        "title": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "statement": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "rationale": {
+          "$ref": "common.schema.json#/$defs/localized"
+        },
+        "area": {
+          "enum": [
+            "numerals",
+            "bidi",
+            "money",
+            "phone",
+            "date",
+            "search",
+            "typography",
+            "icons",
+            "layout",
+            "input",
+            "content",
+            "flow",
+            "accessibility",
+            "other"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "must",
+            "should",
+            "may"
+          ]
+        },
+        "appliesTo": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "good": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bad": {
+                "type": "string",
+                "minLength": 1
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "statement",
+        "area",
+        "severity"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
