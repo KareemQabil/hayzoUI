@@ -1,0 +1,2992 @@
+{
+  "kind": "icon",
+  "schemaVersion": 1,
+  "id": "heroicons",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "heroicons (npm)",
+        "url": "https://www.npmjs.com/package/heroicons",
+        "version": "2.2.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "{24/outline,24/solid,20/solid,16/solid}/*.svg, LICENSE"
+      }
+    ],
+    "script": "tools/extract/icons/catalogs.mjs",
+    "notes": "The package publishes no tags or categories; none are recorded."
+  },
+  "data": {
+    "dataset": "source-catalog",
+    "content": {
+      "set": {
+        "name": "Heroicons",
+        "repository": "https://github.com/tailwindlabs/heroicons",
+        "npm": "heroicons",
+        "version": "2.2.0",
+        "license": {
+          "spdx": "MIT",
+          "copyright": "Tailwind Labs, Inc.",
+          "file": "LICENSE"
+        },
+        "drawing": {
+          "model": "stroke",
+          "grid": 24,
+          "strokeWidth": 1.5
+        },
+        "styles": [
+          {
+            "id": "24/outline",
+            "iconCount": 324,
+            "drawing": {
+              "model": "stroke",
+              "grid": 24,
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "id": "24/solid",
+            "iconCount": 324,
+            "drawing": {
+              "model": "fill",
+              "grid": 24
+            }
+          },
+          {
+            "id": "20/solid",
+            "iconCount": 324,
+            "drawing": {
+              "model": "fill",
+              "grid": 20
+            }
+          },
+          {
+            "id": "16/solid",
+            "iconCount": 316,
+            "drawing": {
+              "model": "fill",
+              "grid": 16
+            }
+          }
+        ],
+        "iconCount": 324,
+        "metadata": {
+          "tags": 0,
+          "categories": 0
+        }
+      },
+      "icons": [
+        {
+          "name": "academic-cap",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "adjustments-horizontal",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "adjustments-vertical",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "archive-box",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "archive-box-arrow-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "archive-box-x-mark",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-down-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-down-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-down-on-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-down-on-square-stack",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-down-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-down-tray",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-left-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-left-end-on-rectangle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-left-on-rectangle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "arrow-left-start-on-rectangle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-long-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-long-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-long-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-long-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-path",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-path-rounded-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-right-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-right-end-on-rectangle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-right-on-rectangle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "arrow-right-start-on-rectangle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-small-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "arrow-small-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "arrow-small-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "arrow-small-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "arrow-top-right-on-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-trending-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-trending-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-down-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-down-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-left-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-left-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-right-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-right-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-up-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-turn-up-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-up-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-up-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-up-on-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-up-on-square-stack",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-up-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-up-tray",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-uturn-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-uturn-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-uturn-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrow-uturn-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrows-pointing-in",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrows-pointing-out",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrows-right-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "arrows-up-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "at-symbol",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "backspace",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "backward",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "banknotes",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-2",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-3",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-3-bottom-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-3-bottom-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-3-center-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-4",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-arrow-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bars-arrow-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "battery-0",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "battery-100",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "battery-50",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "beaker",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bell",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bell-alert",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bell-slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bell-snooze",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bold",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bolt",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bolt-slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "book-open",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bookmark",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bookmark-slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bookmark-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "briefcase",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "bug-ant",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "building-library",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "building-office",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "building-office-2",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "building-storefront",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cake",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "calculator",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "calendar",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "calendar-date-range",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "calendar-days",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "camera",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chart-bar",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chart-bar-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chart-pie",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chat-bubble-bottom-center",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chat-bubble-bottom-center-text",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chat-bubble-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chat-bubble-left-ellipsis",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chat-bubble-left-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chat-bubble-oval-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chat-bubble-oval-left-ellipsis",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "check",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "check-badge",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "check-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-double-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-double-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-double-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-double-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "chevron-up-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "circle-stack",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "clipboard",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "clipboard-document",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "clipboard-document-check",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "clipboard-document-list",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "clock",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cloud",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cloud-arrow-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cloud-arrow-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "code-bracket",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "code-bracket-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cog",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cog-6-tooth",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cog-8-tooth",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "command-line",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "computer-desktop",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cpu-chip",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "credit-card",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cube",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cube-transparent",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "currency-bangladeshi",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "currency-dollar",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "currency-euro",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "currency-pound",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "currency-rupee",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "currency-yen",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cursor-arrow-rays",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "cursor-arrow-ripple",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "device-phone-mobile",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "device-tablet",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "divide",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-arrow-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-arrow-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-chart-bar",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-check",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-currency-bangladeshi",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-currency-dollar",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-currency-euro",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-currency-pound",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-currency-rupee",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-currency-yen",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-duplicate",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-magnifying-glass",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-minus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-plus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "document-text",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "ellipsis-horizontal",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "ellipsis-horizontal-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "ellipsis-vertical",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "envelope",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "envelope-open",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "equals",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "exclamation-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "exclamation-triangle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "eye",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "eye-dropper",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "eye-slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "face-frown",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "face-smile",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "film",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "finger-print",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "fire",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "flag",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "folder",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "folder-arrow-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "folder-minus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "folder-open",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "folder-plus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "forward",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "funnel",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "gif",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "gift",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "gift-top",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "globe-alt",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "globe-americas",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "globe-asia-australia",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "globe-europe-africa",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "h1",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "h2",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "h3",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "hand-raised",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "hand-thumb-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "hand-thumb-up",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "hashtag",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "heart",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "home",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "home-modern",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "identification",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "inbox",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "inbox-arrow-down",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "inbox-stack",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "information-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "italic",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "key",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "language",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "lifebuoy",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "light-bulb",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "link",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "link-slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "list-bullet",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "lock-closed",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "lock-open",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "magnifying-glass",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "magnifying-glass-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "magnifying-glass-minus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "magnifying-glass-plus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "map",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "map-pin",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "megaphone",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "microphone",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "minus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "minus-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "minus-small",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "moon",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "musical-note",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "newspaper",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "no-symbol",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "numbered-list",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "paint-brush",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "paper-airplane",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "paper-clip",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "pause",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "pause-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "pencil",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "pencil-square",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "percent-badge",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "phone",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "phone-arrow-down-left",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "phone-arrow-up-right",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "phone-x-mark",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "photo",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "play",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "play-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "play-pause",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "plus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "plus-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "plus-small",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid"
+          ]
+        },
+        {
+          "name": "power",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "presentation-chart-bar",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "presentation-chart-line",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "printer",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "puzzle-piece",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "qr-code",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "question-mark-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "queue-list",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "radio",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "receipt-percent",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "receipt-refund",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "rectangle-group",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "rectangle-stack",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "rocket-launch",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "rss",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "scale",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "scissors",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "server",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "server-stack",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "share",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "shield-check",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "shield-exclamation",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "shopping-bag",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "shopping-cart",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "signal",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "signal-slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "sparkles",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "speaker-wave",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "speaker-x-mark",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "square-2-stack",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "square-3-stack-3d",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "squares-2x2",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "squares-plus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "star",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "stop",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "stop-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "strikethrough",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "sun",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "swatch",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "table-cells",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "tag",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "ticket",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "trash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "trophy",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "truck",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "tv",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "underline",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "user",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "user-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "user-group",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "user-minus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "user-plus",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "users",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "variable",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "video-camera",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "video-camera-slash",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "view-columns",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "viewfinder-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "wallet",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "wifi",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "window",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "wrench",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "wrench-screwdriver",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "x-circle",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        },
+        {
+          "name": "x-mark",
+          "styles": [
+            "24/outline",
+            "24/solid",
+            "20/solid",
+            "16/solid"
+          ]
+        }
+      ]
+    }
+  }
+}

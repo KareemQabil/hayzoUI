@@ -1,0 +1,386 @@
+// Authored. id | English | Arabic | mirror rule[=verdict override] | candidate names (see core-set.mjs)
+// Arabic names are the author's; needs review.
+
+# component-internals | Drawn by components | ترسمها المكوّنات نفسها
+chevron-down | Chevron down | سهم صغير للأسفل | vertical-and-symmetric | chevron-down caret-down nav-arrow-down keyboard-arrow-down
+chevron-up | Chevron up | سهم صغير للأعلى | vertical-and-symmetric | chevron-up caret-up nav-arrow-up keyboard-arrow-up
+chevron-start | Chevron toward the start (previous) | سهم صغير نحو البداية | back-forward-navigation | chevron-left caret-left nav-arrow-left
+chevron-end | Chevron toward the end (next) | سهم صغير نحو النهاية | back-forward-navigation | chevron-right caret-right nav-arrow-right
+chevrons-start | Double chevron toward the start (first page) | سهم مزدوج نحو البداية | first-last-page | chevrons-left caret-double-left chevron-double-left keyboard-double-arrow-left fast-arrow-left carbon:page--first
+chevrons-end | Double chevron toward the end (last page) | سهم مزدوج نحو النهاية | first-last-page | chevrons-right caret-double-right chevron-double-right keyboard-double-arrow-right fast-arrow-right carbon:page--last
+chevrons-up-down | Select trigger (up and down chevrons) | سهمان للأعلى والأسفل | vertical-and-symmetric | chevrons-up-down selector caret-up-down chevron-up-down unfold-more carbon:chevron--sort chevron-expand
+close | Close | إغلاق | vertical-and-symmetric | x x-mark xmark close dismiss x-lg
+check | Check | علامة صح | checkmark | check fluent:checkmark checkmark check-lg
+minus | Minus / indeterminate | ناقص | vertical-and-symmetric | minus remove dash-lg dash fluent:subtract carbon:subtract
+plus | Plus / add | إضافة | vertical-and-symmetric | plus add plus-lg
+calendar | Calendar | التقويم | calendar=never | calendar calendar-blank calendar-today fluent:calendar_ltr
+clock | Clock | الساعة | clock-time | clock schedule time
+search | Search | بحث | search-magnifier | search magnifying-glass
+sort | Sort (unsorted column) | فرز | vertical-and-symmetric | arrows-sort arrow-up-down arrows-down-up arrows-up-down swap-vert arrow-sort carbon:arrows--vertical arrow-down-up iconoir:sort
+sort-ascending | Sort ascending | فرز تصاعدي | sort-lines | arrow-up-narrow-wide sort-ascending bars-arrow-up fluent:arrow_sort_up_lines carbon:sort--ascending sort-up
+sort-descending | Sort descending | فرز تنازلي | sort-lines | arrow-down-wide-narrow sort-descending bars-arrow-down fluent:arrow_sort_down_lines carbon:sort--descending sort-down
+arrow-up | Arrow up | سهم للأعلى | vertical-and-symmetric | arrow-up arrow-upward
+arrow-down | Arrow down | سهم للأسفل | vertical-and-symmetric | arrow-down arrow-downward
+filter | Filter | تصفية | vertical-and-symmetric | funnel material-symbols:filter_alt filter
+eye | Show | إظهار | vertical-and-symmetric | eye visibility view
+eye-off | Hide | إخفاء | slash-overlay | eye-off eye-slash eye-closed visibility-off carbon:view--off
+copy | Copy | نسخ | copy-duplicate | copy content-copy document-duplicate
+upload | Upload | رفع | vertical-and-symmetric | upload upload-simple arrow-up-tray arrow-upload
+download | Download | تنزيل | vertical-and-symmetric | download download-simple arrow-down-tray arrow-download
+spinner | Loading spinner | مؤشر التحميل | spinner | loader-circle loader-2 spinner progress-activity spinner-ios
+more-horizontal | More (horizontal) | المزيد | vertical-and-symmetric | ellipsis dots dots-three ellipsis-horizontal more-horiz more-horizontal carbon:overflow-menu--horizontal three-dots
+more-vertical | More (vertical) | المزيد (رأسي) | vertical-and-symmetric | ellipsis-vertical dots-vertical dots-three-vertical more-vert more-vertical carbon:overflow-menu--vertical three-dots-vertical
+menu | Menu | القائمة | vertical-and-symmetric | menu menu-2 phosphor:list heroicons:bars-3 fluent:navigation bootstrap:list
+grip-vertical | Drag handle | مقبض السحب | vertical-and-symmetric | grip-vertical dots-six-vertical drag-indicator fluent:re_order_dots_vertical carbon:draggable carbon:drag--vertical iconoir:drag-hand-gesture
+info | Information | معلومة | non-directional | bootstrap:info-circle info info-circle information-circle information
+warning | Warning | تحذير | non-directional | triangle-alert alert-triangle phosphor:warning exclamation-triangle material-symbols:warning fluent:warning carbon:warning--alt warning-triangle
+error | Error | خطأ | non-directional | circle-alert alert-circle warning-circle exclamation-circle material-symbols:error error-circle carbon:warning carbon:error
+success | Success | نجاح | checkmark | circle-check check-circle checkmark-circle carbon:checkmark--outline
+close-circle | Clear / remove (circled close) | مسح | vertical-and-symmetric | circle-x x-circle material-symbols:cancel dismiss-circle carbon:close--outline xmark-circle
+help | Help | مساعدة | question-mark | circle-question-mark circle-help help-circle phosphor:question question-mark-circle material-symbols:help question-circle carbon:help
+star | Star | نجمة | non-directional | star
+star-half | Half star | نصف نجمة | rating-half | star-half star-half-filled star-half-dashed bootstrap:star-half
+heart | Heart / favourite | إعجاب | non-directional | heart favorite carbon:favorite
+external-link | Open in new window | فتح في نافذة جديدة | diagonal-arrows | external-link arrow-square-out arrow-top-right-on-square open-in-new fluent:open carbon:launch open-new-window box-arrow-up-right
+link | Link | رابط | share-link-attach | link link-simple
+paperclip | Attachment | مرفق | share-link-attach | paperclip attach-file fluent:attach carbon:attachment attachment
+image | Image | صورة | non-directional | image photo
+user | User | مستخدم | non-directional | user person
+circle | Radio (empty circle) | دائرة | vertical-and-symmetric | circle radio-button-unchecked carbon:radio-button
+dot | Dot | نقطة | vertical-and-symmetric | dot point circle-small material-symbols:fiber_manual_record carbon:dot-mark
+square | Checkbox (empty) | مربع | vertical-and-symmetric | square check-box-outline-blank carbon:checkbox
+square-check | Checkbox (checked) | مربع مؤشَّر | checkmark | square-check checkbox check-square check-box fluent:checkbox_checked carbon:checkbox--checked
+arrow-back | Back | رجوع | back-forward-navigation | material-symbols:arrow_back arrow-left
+arrow-forward | Forward | تقدم | back-forward-navigation | material-symbols:arrow_forward arrow-right
+panel-start | Sidebar / panel at the start | الشريط الجانبي | sidebar-panel | panel-left layout-sidebar sidebar sidebar-simple side-navigation fluent:panel_left carbon:side-panel--open view-sidebar bootstrap:layout-sidebar iconoir:sidebar-collapse
+panel-end | Panel at the end | لوحة في نهاية الصفحة | sidebar-panel | panel-right layout-sidebar-right fluent:panel_right carbon:right-panel--open bootstrap:layout-sidebar-reverse iconoir:sidebar-expand
+maximize | Maximize / full screen | ملء الشاشة | vertical-and-symmetric | maximize maximize-2 arrows-maximize arrows-out arrows-pointing-out fullscreen full-screen-maximize carbon:maximize expand arrows-fullscreen
+minimize | Minimize / exit full screen | تصغير | vertical-and-symmetric | minimize minimize-2 arrows-minimize arrows-in arrows-pointing-in fullscreen-exit full-screen-minimize carbon:minimize collapse fullscreen-exit
+zoom-in | Zoom in | تكبير | search-magnifier | zoom-in magnifying-glass-plus
+zoom-out | Zoom out | تصغير العرض | search-magnifier | zoom-out magnifying-glass-minus
+pin | Pin | تثبيت | non-directional | material-symbols:keep pin push-pin pin-angle
+columns | Columns / column settings | الأعمدة | vertical-and-symmetric | columns-3 columns-2 columns view-columns view-column column-triple carbon:column layout-three-columns iconoir:view-columns-3
+rows | Rows / density | الصفوف | vertical-and-symmetric | rows-3 layout-rows rows table-rows row-triple carbon:row
+calendar-range | Date range | نطاق تاريخ | calendar | calendar-range calendar-week date-range bootstrap:calendar-range heroicons:calendar-date-range
+color-picker | Colour picker | منتقي اللون | right-hand-tools | pipette color-picker eyedropper eye-dropper colorize carbon:eyedropper iconoir:color-picker
+palette | Palette | لوحة الألوان | non-directional | palette swatch color carbon:color-palette
+rotate-cw | Rotate clockwise | تدوير مع عقارب الساعة | refresh-sync-rotate | rotate-cw rotate-clockwise arrow-clockwise rotate-right carbon:rotate--clockwise
+rotate-ccw | Rotate counter-clockwise | تدوير عكس عقارب الساعة | refresh-sync-rotate | rotate-ccw rotate arrow-counter-clockwise arrow-counterclockwise rotate-left carbon:rotate--counterclockwise iconoir:rotate-camera-left
+crop | Crop | اقتصاص | non-directional | crop
+slider | Slider / adjust | شريط التمرير | slider=never | sliders-horizontal adjustments-horizontal tune fluent:options carbon:settings--adjust sliders
+progress | Progress | التقدم | linear-progress | tabler:progress carbon:progress-bar material-symbols:linear_scale
+
+# navigation | Navigation | التنقل
+home | Home | الرئيسية | non-directional | material-symbols:home house home
+dashboard | Dashboard | لوحة المعلومات | non-directional | layout-dashboard dashboard squares-four squares-2x2 fluent:board carbon:dashboard bootstrap:speedometer2 iconoir:dashboard
+grid | Grid view / apps | عرض شبكي | vertical-and-symmetric | layout-grid grid-dots grid-four squares-2x2 grid-view fluent:grid carbon:grid bootstrap:grid iconoir:view-grid
+list | List view | عرض القائمة | bulleted-list | phosphor:list-bullets bootstrap:list-ul list list-bullet fluent:text_bullet_list_ltr
+table | Table | جدول | vertical-and-symmetric | table table-cells fluent:table carbon:table iconoir:table-2-columns
+settings | Settings | الإعدادات | non-directional | settings gear cog-6-tooth carbon:settings
+arrow-up-end | Arrow up toward the end | سهم مائل للأعلى | diagonal-arrows | arrow-up-right arrow-outward north-east
+arrow-left | Arrow left (physical) | سهم لليسار | absolute-direction-arrows | material-symbols:arrow_back arrow-left
+arrow-right | Arrow right (physical) | سهم لليمين | absolute-direction-arrows | material-symbols:arrow_forward arrow-right
+chevron-left | Chevron left (physical) | سهم صغير لليسار | absolute-direction-arrows | chevron-left caret-left nav-arrow-left
+chevron-right | Chevron right (physical) | سهم صغير لليمين | absolute-direction-arrows | chevron-right caret-right nav-arrow-right
+corner-down-end | Sub-item / reply-thread arrow | سهم زاوية | corner-arrows | corner-down-right arrow-elbow-down-right arrow-turn-down-right subdirectory-arrow-right fluent:arrow_enter_left carbon:arrow--down-right bootstrap:arrow-return-right iconoir:long-arrow-down-right
+enter | Enter / return | إدخال | corner-arrows | corner-down-left arrow-back-up arrow-elbow-down-left arrow-turn-down-left keyboard-return fluent:arrow_enter_left bootstrap:arrow-return-left iconoir:long-arrow-down-left
+log-in | Log in | تسجيل الدخول | login-logout-exit | log-in login sign-in arrow-right-end-on-rectangle arrow-left-end-on-rectangle fluent:arrow_enter carbon:login box-arrow-in-right
+log-out | Log out | تسجيل الخروج | login-logout-exit | log-out logout sign-out arrow-right-start-on-rectangle arrow-left-start-on-rectangle fluent:sign_out carbon:logout box-arrow-right
+globe | Language / region | اللغة والمنطقة | non-directional | globe world globe-alt language fluent:globe carbon:globe
+translate | Translate | ترجمة | letters-in-icons | material-symbols:translate iconoir:translate languages language translate
+map-pin | Location | الموقع | non-directional | map-pin location-on fluent:location carbon:location geo-alt
+map | Map | خريطة | non-directional | map map-trifold carbon:map
+compass | Compass | بوصلة | non-directional | compass explore carbon:compass
+bookmark | Bookmark | إشارة مرجعية | non-directional | bookmark bookmark-simple
+tag | Tag | وسم | label-pointer=never | material-symbols:sell tag
+label | Label (pointed) | ملصق | label-pointer | tabler:label material-symbols:label iconoir:label
+flag | Flag | علم | flag | flag
+layers | Layers | طبقات | non-directional | layers stack-2 stack square-3-stack-3d fluent:layer carbon:layers
+sitemap | Hierarchy / org chart | الهيكل التنظيمي | vertical-and-symmetric | network sitemap tree-structure account-tree fluent:organization carbon:tree-view diagram-3 iconoir:network
+breadcrumb-separator | Breadcrumb separator | فاصل مسار التنقل | breadcrumb-tree-connectors | chevron-right caret-right nav-arrow-right
+kanban | Board / kanban | لوحة كانبان | vertical-and-symmetric | kanban square-kanban layout-kanban view-kanban fluent:board kanban-board
+command | Command palette | لوحة الأوامر | non-directional | command keyboard-command-key
+
+# actions | Actions | الإجراءات
+edit | Edit | تعديل | right-hand-tools | pencil edit pencil-simple carbon:edit edit-pencil
+edit-square | Edit in place / compose | تحرير | right-hand-tools | tabler:edit square-pen pencil-square note-pencil edit-square fluent:compose iconoir:edit
+trash | Delete | حذف | non-directional | trash-2 trash delete carbon:trash-can
+save | Save | حفظ | non-directional | save device-floppy floppy-disk fluent:save carbon:save floppy
+undo | Undo | تراجع | undo-redo | undo-2 undo arrow-back-up arrow-u-up-left arrow-uturn-left fluent:arrow_undo carbon:undo arrow-counterclockwise
+redo | Redo | إعادة | undo-redo | redo-2 redo arrow-forward-up arrow-u-up-right arrow-uturn-right fluent:arrow_redo carbon:redo arrow-clockwise
+refresh | Refresh | تحديث | refresh-sync-rotate | tabler:reload refresh-cw refresh arrow-clockwise arrow-path fluent:arrow_clockwise carbon:renew arrow-clockwise
+sync | Synchronize | مزامنة | refresh-sync-rotate | tabler:refresh refresh-ccw arrows-clockwise sync arrow-path fluent:arrow_sync carbon:renew arrow-repeat iconoir:refresh-double
+share | Share | مشاركة | share-link-attach | share-2 share share-network fluent:share carbon:share iconoir:share-android
+send | Send | إرسال | send | send paper-airplane paper-plane-tilt fluent:send carbon:send iconoir:send
+print | Print | طباعة | physical-objects | printer print
+scan | Scan | مسح ضوئي | codes-barcode-qr | scan scan-line fluent:scan carbon:scan viewfinder upc-scan iconoir:scanning
+qr-code | QR code | رمز الاستجابة السريعة | codes-barcode-qr | qr-code qrcode carbon:qr-code
+barcode | Barcode | باركود | codes-barcode-qr | barcode scan-barcode fluent:barcode_scanner carbon:barcode upc
+duplicate | Duplicate | تكرار | copy-duplicate | copy-plus copy-plus copy-simple document-duplicate control-point-duplicate fluent:copy_add carbon:replicate iconoir:copy bootstrap:files
+paste | Paste | لصق | non-directional | clipboard-paste clipboard clipboard-text content-paste fluent:clipboard_paste carbon:paste paste-clipboard
+cut | Cut | قص | right-hand-tools | scissors cut content-cut
+import | Import | استيراد | import-export-move | phosphor:arrow-square-in import file-import database-import fluent:arrow_import carbon:document--import bootstrap:box-arrow-in-down iconoir:import
+export | Export | تصدير | import-export-move | lucide:file-output file-export export fluent:arrow_export_ltr bootstrap:box-arrow-up
+lock | Lock | قفل | physical-objects | lock lock-closed fluent:lock_closed carbon:locked
+unlock | Unlock | فتح القفل | physical-objects | lock-open lock-open-2 lock-simple-open fluent:lock_open carbon:unlocked unlock
+key | Key | مفتاح | physical-objects | key fluent:key carbon:password
+archive | Archive | أرشفة | non-directional | archive archive-box inventory-2 fluent:archive carbon:archive
+power | Power | تشغيل وإيقاف | vertical-and-symmetric | material-symbols:power_settings_new power
+swap-horizontal | Swap / transfer | تبديل | swap-compare-horizontal | arrow-left-right arrows-left-right arrows-right-left swap-horiz fluent:arrow_swap carbon:arrows--horizontal arrow-left-right iconoir:data-transfer-both
+move | Move | نقل | vertical-and-symmetric | material-symbols:open_with move arrows-move arrows-out-cardinal fluent:arrow_move
+expand-all | Expand all | توسيع الكل | vertical-and-symmetric | chevrons-up-down unfold-more arrows-out-line-vertical fluent:arrow_expand_all carbon:expand-all arrows-expand iconoir:expand-lines
+collapse-all | Collapse all | طي الكل | vertical-and-symmetric | chevrons-down-up unfold-less arrows-in-line-vertical fluent:arrow_collapse_all carbon:collapse-all arrows-collapse iconoir:collapse-lines
+add-circle | Add (circled) | إضافة | vertical-and-symmetric | circle-plus plus-circle add-circle carbon:add--alt bootstrap:plus-circle
+remove-circle | Remove (circled) | إزالة | vertical-and-symmetric | circle-minus minus-circle do-not-disturb-on fluent:subtract_circle carbon:subtract--alt bootstrap:dash-circle
+ban | Block / not allowed | حظر | slash-overlay | ban prohibit no-symbol block fluent:prohibited carbon:error--outline iconoir:prohibition
+thumbs-up | Like / approve | إعجاب وموافقة | hands-gestures | thumbs-up thumb-up hand-thumb-up fluent:thumb_like carbon:thumbs-up hand-thumbs-up
+thumbs-down | Dislike / reject | رفض | hands-gestures | thumbs-down thumb-down hand-thumb-down fluent:thumb_dislike carbon:thumbs-down hand-thumbs-down
+wand | Automatic / AI assist | مساعد ذكي | right-hand-tools | sparkles wand-sparkles wand sparkle auto-awesome fluent:sparkle carbon:ai-generate stars iconoir:sparks magic
+play | Play / run | تشغيل | media-playback | play player-play play-arrow carbon:play
+pause | Pause | إيقاف مؤقت | media-playback | pause player-pause carbon:pause
+stop | Stop | إيقاف | media-playback | tabler:player-stop lucide:square iconoir:square stop
+history | History | السجل | clock-time | history clock-counter-clockwise carbon:recently-viewed clock-history iconoir:clock-rotate-right
+bell | Notifications | الإشعارات | non-directional | bell notifications fluent:alert carbon:notification
+bell-off | Notifications off | إيقاف الإشعارات | slash-overlay | bell-off bell-slash notifications-off fluent:alert_off carbon:notification--off
+qr-scan | Scan QR code | مسح رمز QR | codes-barcode-qr | scan-qr-code qr-code-scanner qrcode fluent:qr_code carbon:qr-code qr-code-scan iconoir:scan-qr-code
+
+# editor | Text and editor | النص والمحرّر
+bold | Bold | غامق | letters-in-icons | bold text-b format-bold fluent:text_bold carbon:text--bold type-bold
+italic | Italic | مائل | letters-in-icons | italic text-italic format-italic fluent:text_italic carbon:text--italic type-italic
+underline | Underline | تسطير | letters-in-icons | underline text-underline format-underlined fluent:text_underline carbon:text--underline type-underline
+strikethrough | Strikethrough | يتوسطه خط | letters-in-icons | strikethrough text-strikethrough strikethrough-s format-strikethrough fluent:text_strikethrough carbon:text--strikethrough type-strikethrough
+text-size | Text size | حجم الخط | letters-in-icons | a-large-small text-size text-aa format-size fluent:text_font_size carbon:text--font fonts iconoir:text-size
+heading | Heading | عنوان | letters-in-icons | heading text-h h-1 title fluent:text_header_1 carbon:heading type-h1
+text-color | Text colour | لون النص | letters-in-icons | baseline text-color text-a-underline format-color-text fluent:text_color carbon:text--color iconoir:text bootstrap:type
+align-start | Align to start | محاذاة إلى البداية | text-alignment=auto | text-align-start align-left text-align-left bars-3-bottom-left format-align-left fluent:text_align_left carbon:text--align--left text-left
+align-center | Align centre | توسيط | vertical-and-symmetric | material-symbols:format_align_center bootstrap:text-center text-align-center align-center fluent:text_align_center carbon:text--align--center
+align-end | Align to end | محاذاة إلى النهاية | text-alignment=auto | text-align-end align-right text-align-right bars-3-bottom-right format-align-right fluent:text_align_right carbon:text--align--right text-right
+align-justify | Justify | ضبط | vertical-and-symmetric | text-align-justify align-justified text-align-justify bars-4 format-align-justify fluent:text_align_justify carbon:text--align--justify justify
+align-left | Align left (physical) | محاذاة لليسار | text-alignment=never | text-align-start align-left text-align-left bars-3-bottom-left format-align-left fluent:text_align_left carbon:text--align--left text-left
+align-right | Align right (physical) | محاذاة لليمين | text-alignment=never | text-align-end align-right text-align-right bars-3-bottom-right format-align-right fluent:text_align_right carbon:text--align--right text-right
+list-bulleted | Bulleted list | قائمة نقطية | bulleted-list | phosphor:list-bullets bootstrap:list-ul list list-bullet format-list-bulleted fluent:text_bullet_list_ltr carbon:list--bulleted
+list-numbered | Numbered list | قائمة مرقمة | numbered-list | list-ordered list-numbers numbered-list format-list-numbered fluent:text_number_list_ltr carbon:list--numbered list-ol
+list-checks | Checklist | قائمة مهام | checklist | list-checks list-check list-todo checklist fluent:task_list_ltr carbon:list--checked list-check iconoir:task-list
+indent | Increase indent | زيادة المسافة البادئة | text-indent | list-indent-increase indent-increase text-indent format-indent-increase fluent:text_indent_increase_ltr carbon:text--indent--more text-indent-left indent
+outdent | Decrease indent | إنقاص المسافة البادئة | text-indent | list-indent-decrease indent-decrease text-outdent format-indent-decrease fluent:text_indent_decrease_ltr carbon:text--indent--less text-indent-right
+quote | Quote | اقتباس | quote-marks | quote text-quote quotes format-quote fluent:text_quote carbon:quotes
+code | Code | شيفرة | code-and-terminal | code code-bracket fluent:code carbon:code code-slash
+text-direction-ltr | Left-to-right text | نص من اليسار لليمين | text-direction-controls | pilcrow-right text-direction-ltr format-textdirection-l-to-r fluent:text_direction_horizontal_ltr
+text-direction-rtl | Right-to-left text | نص من اليمين لليسار | text-direction-controls | pilcrow-left text-direction-rtl format-textdirection-r-to-l fluent:text_direction_horizontal_rtl
+text | Text / paragraph | نص | text-lines | text-initial align-left text-align-left notes fluent:text_description_ltr carbon:text--long-paragraph text-paragraph iconoir:text lucide:text-align-start
+wrap-text | Wrap text | التفاف النص | text-lines | wrap-text text-wrap wrap-text fluent:text_wrap carbon:text--wrap text-wrap
+link-off | Remove link | إزالة الرابط | slash-overlay | unlink link-off link-break link-slash fluent:link_dismiss carbon:unlink
+table-insert | Insert table | إدراج جدول | vertical-and-symmetric | table-2 table-plus fluent:table_add carbon:table--split
+image-add | Insert image | إدراج صورة | non-directional | image-plus photo-plus add-photo-alternate fluent:image_add iconoir:media-image-plus
+highlighter | Highlight | تمييز | right-hand-tools | highlighter highlight highlighter-circle format-ink-highlighter fluent:highlight carbon:text--highlight
+eraser | Clear formatting | مسح التنسيق | right-hand-tools | eraser clear-formatting remove-formatting format-clear fluent:eraser carbon:erase
+sort-alpha-asc | Sort A→Z | فرز أبجدي تصاعدي | sort-alphabetical | arrow-down-a-z sort-a-z sort-by-alpha fluent:text_sort_ascending sort-alpha-down
+sort-alpha-desc | Sort Z→A | فرز أبجدي تنازلي | sort-alphabetical | arrow-down-z-a sort-z-a fluent:text_sort_descending sort-alpha-down-alt
+sort-numeric-asc | Sort 1→9 | فرز رقمي تصاعدي | digits-in-icons | arrow-down-0-1 sort-0-9 sort-ascending-numbers sort-numeric-down
+sort-numeric-desc | Sort 9→1 | فرز رقمي تنازلي | digits-in-icons | arrow-down-1-0 sort-9-0 sort-descending-numbers sort-numeric-down-alt
+spell-check | Spell check | تدقيق إملائي | letters-in-icons | spell-check text-spellcheck spellcheck fluent:text_proofing_tools carbon:spell-check
+signature | Signature | توقيع | signature-handwriting | signature fluent:signature
+keyboard | Keyboard | لوحة المفاتيح | physical-objects | keyboard carbon:keyboard
+backspace | Backspace | مسح للخلف | backspace-delete-backward | lucide:delete material-symbols:backspace carbon:delete backspace
+
+# files | Files and documents | الملفات والمستندات
+file | File | ملف | document-blank=never | file document draft fluent:document carbon:document empty-page file-earmark
+file-text | Document | مستند | document-with-text | file-text file-description document-text description article fluent:document_text carbon:document page file-earmark-text iconoir:page
+file-plus | New file | ملف جديد | document-blank=never | file-plus document-plus note-add fluent:document_add carbon:document--add file-earmark-plus iconoir:page-plus
+files | Multiple files | ملفات | document-blank=never | files file-stack file-copy fluent:document_multiple carbon:document--multiple-01 iconoir:multiple-pages bootstrap:files
+folder | Folder | مجلد | non-directional | folder
+folder-open | Open folder | مجلد مفتوح | non-directional | folder-open fluent:folder_open carbon:folder--open bootstrap:folder2-open
+folder-plus | New folder | مجلد جديد | non-directional | folder-plus create-new-folder fluent:folder_add carbon:folder--add
+file-pdf | PDF file | ملف PDF | letters-in-icons=never | file-type-pdf file-pdf picture-as-pdf fluent:document_pdf carbon:document--pdf file-earmark-pdf
+file-spreadsheet | Spreadsheet | جدول بيانات | vertical-and-symmetric | file-spreadsheet file-xls fluent:document_table bootstrap:file-earmark-spreadsheet
+file-image | Image file | ملف صورة | non-directional | file-image file-type-jpg fluent:document_image bootstrap:file-earmark-image
+file-archive | Archive file | ملف مضغوط | non-directional | file-archive file-zip folder-zip fluent:folder_zip carbon:zip bootstrap:file-earmark-zip
+file-download | Download file | تنزيل ملف | vertical-and-symmetric | file-down file-download file-arrow-down document-arrow-down fluent:document_arrow_down carbon:document--download bootstrap:file-earmark-arrow-down iconoir:page-down
+file-upload | Upload file | رفع ملف | vertical-and-symmetric | file-up file-upload file-arrow-up document-arrow-up upload-file fluent:document_arrow_up carbon:document--export? bootstrap:file-earmark-arrow-up iconoir:page-up
+file-search | Search in file | بحث في ملف | search-magnifier | file-search file-magnifying-glass document-magnifying-glass find-in-page fluent:document_search carbon:document--view? bootstrap:file-earmark-search iconoir:page-search
+file-check | Approved document | مستند معتمد | checkmark | file-check document-check task fluent:document_checkmark carbon:document--tasks bootstrap:file-earmark-check
+file-warning | Document with problem | مستند به مشكلة | non-directional | lucide:file-x file-warning file-alert phosphor:file-x fluent:document_error carbon:document--unknown
+clipboard | Clipboard | الحافظة | non-directional | clipboard content-paste
+clipboard-list | Task sheet | ورقة مهام | document-with-text | clipboard-list clipboard-text clipboard-document-list assignment fluent:clipboard_text_ltr carbon:task bootstrap:clipboard-data iconoir:clipboard-check
+book | Book / documentation | كتاب | physical-objects | tabler:book-2 book book-open book-2 fluent:book carbon:book
+book-open | Open book / guide | دليل | document-with-text | tabler:book book-open menu-book fluent:book_open carbon:notebook bootstrap:book iconoir:open-book
+cloud | Cloud | سحابة | non-directional | cloud
+cloud-upload | Upload to cloud | رفع إلى السحابة | vertical-and-symmetric | cloud-upload cloud-arrow-up fluent:cloud_arrow_up carbon:cloud--upload
+cloud-download | Download from cloud | تنزيل من السحابة | vertical-and-symmetric | cloud-download cloud-arrow-down fluent:cloud_arrow_down carbon:cloud--download
+database | Database | قاعدة بيانات | non-directional | database circle-stack fluent:database carbon:data--base bootstrap:database iconoir:database
+inbox | Inbox | الوارد | non-directional | inbox tray fluent:mail_inbox carbon:inbox? bootstrap:inbox iconoir:mail-in
+note | Note | ملاحظة | document-with-text | sticky-note note notebook-pen sticky-note-2 fluent:note carbon:notebook? bootstrap:sticky iconoir:notes
+template | Template | قالب | vertical-and-symmetric | layout-template template phosphor:layout carbon:template bootstrap:layout-text-window material-symbols:space_dashboard
+
+# commerce | Commerce and POS | التجارة ونقاط البيع
+cart | Shopping cart | عربة التسوق | cart-bag | shopping-cart fluent:cart carbon:shopping--cart cart
+cart-plus | Add to cart | إضافة إلى العربة | cart-bag | shopping-cart-plus add-shopping-cart carbon:shopping--cart--plus cart-plus
+bag | Shopping bag | حقيبة تسوق | cart-bag | shopping-bag bag fluent:shopping_bag carbon:shopping--bag
+basket | Basket | سلة | cart-bag | shopping-basket basket
+store | Store | متجر | physical-objects | store building-store storefront building-storefront fluent:building_shop carbon:store shop iconoir:shop
+package | Package / product | منتج | physical-objects | package cube package-2 fluent:box carbon:package? carbon:box box box-seam iconoir:box
+boxes | Inventory | المخزون | physical-objects | boxes packages material-symbols:inventory_2 fluent:box_multiple carbon:inventory-management
+warehouse | Warehouse | مستودع | physical-objects | warehouse building-warehouse
+truck | Delivery | توصيل | moving-things | truck truck-delivery local-shipping fluent:vehicle_truck_profile carbon:delivery-truck carbon:delivery iconoir:delivery-truck
+receipt | Receipt | إيصال | document-with-text | receipt receipt-long fluent:receipt carbon:receipt
+invoice | Invoice | فاتورة | document-with-text | receipt-text file-invoice invoice material-symbols:receipt_long fluent:receipt_money bootstrap:receipt-cutoff
+discount | Discount | خصم | percent-sign | badge-percent discount-2 discount seal-percent receipt-percent fluent:tag_percent iconoir:percentage-circle material-symbols:percent_discount bootstrap:percent
+percent | Percent | نسبة مئوية | percent-sign | heroicons:percent-badge percent percentage
+price-tag | Price tag | بطاقة السعر | label-pointer=never | material-symbols:sell tag
+tags | Tags | وسوم | label-pointer=never | tags fluent:tag_multiple carbon:tag--group
+gift | Gift / voucher | هدية | physical-objects | gift redeem fluent:gift carbon:gift
+ticket | Ticket / coupon | قسيمة | physical-objects | ticket confirmation-number fluent:ticket_diagonal carbon:ticket
+credit-card | Payment card | بطاقة دفع | physical-objects | credit-card fluent:payment carbon:purchase iconoir:credit-card
+cash-register | Point of sale / cash register | نقطة البيع | physical-objects | cash-register point-of-sale
+scale | Weighing scale | ميزان | physical-objects | scale scales
+return | Return / refund | إرجاع | undo-redo | undo-2 package-x receipt-refund arrow-u-up-left assignment-return fluent:arrow_undo carbon:undo arrow-return-left iconoir:undo heroicons:receipt-refund
+loyalty | Loyalty / rewards | الولاء والمكافآت | non-directional | material-symbols:loyalty award medal fluent:reward heroicons:trophy carbon:badge
+shipping-box | Shipment | شحنة | physical-objects | package-open package-export fluent:box_arrow_up bootstrap:box2 iconoir:box-iso
+wishlist | Wishlist | قائمة الأمنيات | non-directional | heart-plus heart heart-straight favorite fluent:heart carbon:favorite
+
+# finance | Finance and accounting | المالية والمحاسبة
+currency | Currency / money | عملة | currency-signs | circle-dollar-sign coin currency-circle-dollar currency-dollar paid fluent:money carbon:currency bootstrap:currency-exchange iconoir:coins
+banknote | Cash | نقد | currency-signs | banknote cash money banknotes payments fluent:money carbon:money cash iconoir:cash
+coins | Coins | عملات معدنية | currency-signs | coins fluent:coin_multiple bootstrap:coin
+wallet | Wallet | محفظة | physical-objects | wallet account-balance-wallet fluent:wallet carbon:wallet
+bank | Bank | بنك | physical-objects | landmark building-bank bank building-library account-balance fluent:building_bank carbon:finance bootstrap:bank iconoir:bank
+calculator | Calculator | آلة حاسبة | physical-objects | calculator calculate fluent:calculator carbon:calculator
+chart-line | Line chart | مخطط خطي | trend-arrows=never | chart-line chart-line-up show-chart presentation-chart-line fluent:data_line carbon:chart--line graph-up iconoir:graph-up lucide:chart-line
+chart-bar | Bar chart | مخطط عمودي | pie-and-bar-charts | lucide:chart-column tabler:chart-bar phosphor:chart-bar heroicons:chart-bar bar-chart fluent:data_bar_vertical carbon:chart--bar
+chart-pie | Pie chart | مخطط دائري | pie-and-bar-charts | chart-pie chart-pie pie-chart fluent:data_pie carbon:chart--pie pie-chart iconoir:pie-chart? bootstrap:pie-chart
+chart-area | Area chart | مخطط مساحي | trend-arrows=never | chart-area area-chart fluent:data_area carbon:chart--area
+trending-up | Trending up | اتجاه صاعد | trend-arrows | trending-up trend-up arrow-trending-up fluent:arrow_trending carbon:growth? carbon:arrow--up-right? graph-up-arrow iconoir:graph-up?
+trending-down | Trending down | اتجاه هابط | trend-arrows | trending-down trend-down arrow-trending-down fluent:arrow_trending_down graph-down-arrow iconoir:graph-down
+tax | Tax | ضريبة | percent-sign | receipt-tax receipt-percent percent seal-percent fluent:receipt_money? carbon:percentage iconoir:percentage-circle lucide:percent tabler:receipt-tax bootstrap:percent material-symbols:percent
+ledger | Ledger / journal | دفتر الأستاذ | document-with-text | book-open-text notebook book-text notebook menu-book fluent:notebook carbon:notebook bootstrap:journal-text iconoir:journal
+balance | Balance / reconcile | موازنة | vertical-and-symmetric | scale scales balance
+safe | Safe / vault | خزنة | physical-objects | vault building-bank vault fluent:vault carbon:vault? bootstrap:safe iconoir:safe
+hand-coins | Payment received | دفعة مستلمة | currency-signs | hand-coins hand-coins cash-banknote payments fluent:money_hand carbon:money bootstrap:cash-coin iconoir:hand-cash
+piggy-bank | Savings | مدخرات | physical-objects | piggy-bank pig savings fluent:savings carbon:piggy-bank piggy-bank iconoir:piggy-bank
+transfer | Money transfer | تحويل مالي | swap-compare-horizontal | arrow-left-right arrows-exchange arrows-left-right arrows-right-left swap-horiz fluent:arrow_swap carbon:arrows--horizontal arrow-left-right iconoir:data-transfer-both
+exchange | Currency exchange | صرف العملات | refresh-sync-rotate | arrows-exchange currency-exchange iconoir:coins-swap
+contract | Contract | عقد | signature-handwriting | file-signature file-pen contract fluent:document_signature carbon:document--signed lucide:file-pen
+stamp | Stamp / approval | ختم | physical-objects | stamp rubber-stamp approval
+budget | Budget / target | الميزانية | vertical-and-symmetric | target target-arrow bootstrap:bullseye
+report | Report | تقرير | document-with-text | phosphor:presentation-chart file-chart-column file-analytics material-symbols:analytics fluent:document_data carbon:report bootstrap:file-earmark-bar-graph iconoir:reports
+
+# people | People and organisation | الأشخاص والمؤسسة
+users | Users / team | مستخدمون | non-directional | users users-group users-three user-group group fluent:people carbon:user--multiple people iconoir:group
+user-plus | Add user | إضافة مستخدم | badged-icons | user-plus person-add fluent:person_add carbon:user--follow person-plus
+user-check | Verified user | مستخدم موثّق | checkmark | user-check person-check how-to-reg fluent:person_available carbon:user--certification? iconoir:user-badge-check? bootstrap:person-check
+user-x | Remove user | إزالة مستخدم | badged-icons | user-x user-minus person-remove fluent:person_delete carbon:user--x? iconoir:user-xmark bootstrap:person-x
+user-circle | Account | الحساب | non-directional | circle-user user-circle user-circle account-circle fluent:person_circle carbon:user--avatar person-circle iconoir:user-circle lucide:circle-user
+user-settings | User settings / role | صلاحيات المستخدم | non-directional | user-cog user-gear manage-accounts fluent:person_settings carbon:user--settings person-gear
+id-card | Identity card | بطاقة الهوية | document-with-text | id-card id identification-card identification fluent:contact_card person-vcard tabler:id
+contact-book | Contacts | جهات الاتصال | physical-objects | contact address-book contacts fluent:book_contacts bootstrap:person-lines-fill
+building | Company | شركة | physical-objects | building-2 building buildings building-office apartment fluent:building carbon:building bootstrap:building iconoir:building
+briefcase | Work / job | عمل | physical-objects | briefcase work fluent:briefcase carbon:portfolio
+shield | Security | الأمان | non-directional | shield shield-check fluent:shield carbon:security
+shield-check | Verified / protected | محمي | checkmark | shield-check verified-user fluent:shield_checkmark
+fingerprint | Biometric | بصمة | physical-objects | fingerprint fluent:fingerprint carbon:fingerprint-recognition bootstrap:fingerprint iconoir:fingerprint
+customer-service | Support agent | خدمة العملاء | physical-objects | headset headphones support-agent fluent:headset carbon:headset bootstrap:headset iconoir:headset-help heroicons:lifebuoy
+handshake | Deal / partnership | صفقة | non-directional | handshake heart-handshake carbon:partnership
+target-audience | Lead / prospect | عميل محتمل | non-directional | user-search user-focus person-search bootstrap:person-bounding-box
+crown | Admin / owner | مالك | non-directional | crown
+graduation | Training | تدريب | physical-objects | graduation-cap school academic-cap fluent:hat_graduation carbon:education bootstrap:mortarboard iconoir:graduation-cap
+
+# communication | Communication | التواصل
+mail | Email | بريد إلكتروني | non-directional | mail envelope fluent:mail carbon:email
+mail-open | Read email | بريد مقروء | non-directional | mail-open mail-opened envelope-open drafts fluent:mail_read
+phone | Phone | هاتف | phone-handset=never | phone call fluent:call carbon:phone telephone
+phone-incoming | Incoming call | مكالمة واردة | phone-handset | phone-incoming phone-arrow-down-left call-received fluent:call_inbound carbon:phone--incoming telephone-inbound iconoir:phone-income
+phone-outgoing | Outgoing call | مكالمة صادرة | phone-handset | phone-outgoing phone-arrow-up-right call-made fluent:call_outbound carbon:phone--outgoing telephone-outbound iconoir:phone-outcome
+phone-missed | Missed call | مكالمة فائتة | phone-handset | phone-missed phone-x call-missed fluent:call_missed telephone-x iconoir:phone-xmark
+smartphone | Mobile phone | هاتف محمول | physical-objects | smartphone device-mobile device-phone-mobile fluent:phone carbon:mobile phone iconoir:smartphone-device
+message | Message | رسالة | chat-bubbles | message-square message chat chat-bubble-left fluent:chat carbon:chat chat-left iconoir:chat-bubble
+messages | Conversation | محادثة | chat-bubbles | messages-square messages chats chat-bubble-left-right forum fluent:chat_multiple iconoir:chat-lines bootstrap:chat-dots
+comment | Comment | تعليق | chat-bubbles | message-circle chat-circle chat-bubble-oval-left comment bootstrap:chat iconoir:message
+comment-text | Comment with text | تعليق نصي | chat-bubbles | message-square-text message-2 chat-text chat-bubble-bottom-center-text fluent:comment_text bootstrap:chat-left-text iconoir:message-text material-symbols:chat
+reply | Reply | رد | reply-forward-mail | reply arrow-back-up arrow-bend-up-left arrow-uturn-left fluent:arrow_reply carbon:reply
+reply-all | Reply all | رد على الكل | reply-forward-mail | reply-all arrow-bend-double-up-left fluent:arrow_reply_all carbon:reply-all
+forward | Forward | إعادة توجيه | reply-forward-mail | forward arrow-forward-up arrow-bend-up-right arrow-uturn-right fluent:arrow_forward
+at-sign | Mention | إشارة | vertical-and-symmetric | at-sign at at-symbol alternate-email fluent:mention carbon:at
+megaphone | Announcement / campaign | إعلان | volume-speaker | megaphone speakerphone megaphone-simple campaign fluent:megaphone carbon:bullhorn megaphone
+rss | Feed | خلاصة | non-directional | rss rss-feed fluent:rss carbon:rss
+video | Video call | مكالمة فيديو | physical-objects | video video-camera videocam fluent:video carbon:video camera-video iconoir:video-camera
+microphone | Microphone | ميكروفون | physical-objects | mic microphone fluent:mic carbon:microphone
+microphone-off | Microphone off | كتم الميكروفون | slash-overlay | mic-off microphone-off microphone-slash fluent:mic_off carbon:microphone--off mic-mute iconoir:microphone-mute
+volume | Volume | مستوى الصوت | volume-speaker | volume-2 volume speaker-high speaker-wave volume-up fluent:speaker_2 carbon:volume--up iconoir:sound-high
+volume-off | Mute | كتم الصوت | volume-speaker | volume-x volume-off speaker-x speaker-x-mark volume-off fluent:speaker_mute carbon:volume--mute volume-mute iconoir:sound-off
+whatsapp | WhatsApp (brand) | واتساب | logos-brands | brand-whatsapp whatsapp-logo fluent:- carbon:logo--whatsapp? bootstrap:whatsapp iconoir:whatsapp
+
+# status | Status and feedback | الحالة والتنبيهات
+pending | Pending | قيد الانتظار | clock-time | clock hourglass clock-countdown pending fluent:clock carbon:pending bootstrap:hourglass-split iconoir:hourglass
+hourglass | Processing | قيد المعالجة | physical-objects | hourglass hourglass-empty fluent:hourglass carbon:hourglass
+in-progress | In progress | قيد التنفيذ | spinner | loader circle-dashed progress circle-notch arrow-path fluent:arrow_sync_circle carbon:in-progress bootstrap:arrow-repeat iconoir:refresh-circle material-symbols:progress_activity
+draft | Draft | مسودة | right-hand-tools | file-pen file-pencil edit-document pencil-square fluent:drafts carbon:document--blank? bootstrap:pencil-square iconoir:page-edit lucide:file-pen-line? phosphor:pencil-simple-line material-symbols:draft
+approved | Approved | معتمد | checkmark | badge-check rosette-discount-check seal-check check-badge verified fluent:checkmark_starburst carbon:badge bootstrap:patch-check iconoir:verified-badge
+rejected | Rejected | مرفوض | vertical-and-symmetric | circle-x x-circle cancel fluent:dismiss_circle carbon:close--outline xmark-circle tabler:circle-x
+cancelled | Cancelled | ملغى | slash-overlay | ban prohibit no-symbol block fluent:prohibited carbon:error--outline iconoir:prohibition
+overdue | Overdue | متأخر | clock-time | clock-alert clock-exclamation clock-countdown fluent:clock_alarm
+alarm | Reminder | تذكير | clock-time | alarm-clock alarm fluent:clock_alarm carbon:alarm
+lightbulb | Tip / idea | نصيحة | non-directional | lightbulb bulb light-bulb fluent:lightbulb carbon:idea iconoir:light-bulb
+bug | Bug | خلل | non-directional | bug bug-ant bug-report fluent:bug carbon:debug
+shield-alert | Security warning | تحذير أمني | non-directional | shield-alert shield-exclamation shield-warning gpp-maybe fluent:shield_error
+wifi-off | Offline | غير متصل | slash-overlay | wifi-off wifi-slash signal-slash fluent:wifi_off carbon:wifi--off wifi-off iconoir:wifi-off
+wifi | Online | متصل | vertical-and-symmetric | wifi wifi-high fluent:wifi_1 carbon:wifi
+fire | Trending / hot | رائج | non-directional | flame fire local-fire-department fluent:fire carbon:fire
+zap | Fast / instant | فوري | non-directional | zap bolt lightning bolt fluent:flash carbon:flash lightning iconoir:flash
+circle-dot | Selected radio / current step | الخطوة الحالية | vertical-and-symmetric | circle-dot radio-button-checked phosphor:radio-button fluent:radio_button carbon:radio-button--checked record-circle
+
+# data | Data and tables | البيانات والجداول
+filter-off | Clear filters | مسح التصفية | slash-overlay | funnel-x filter-x filter-off filter-alt-off fluent:filter_dismiss carbon:filter--remove
+search-off | No results | لا توجد نتائج | search-magnifier | search-x search-off zoom-cancel
+group-by | Group rows | تجميع الصفوف | vertical-and-symmetric | group layers-intersect square-stack stack fluent:group carbon:group bootstrap:collection iconoir:group? lucide:group phosphor:stack heroicons:rectangle-group material-symbols:stacks
+pivot | Pivot table | جدول محوري | vertical-and-symmetric | table-properties table-pivot pivot-table-chart
+freeze-column | Freeze column | تجميد العمود | sidebar-panel | freeze-column fluent:table_freeze_column
+column-insert | Insert column | إدراج عمود | sidebar-panel | between-vertical-start column-insert-right columns-plus-right fluent:table_insert_column carbon:column--insert? tabler:column-insert-right lucide:between-vertical-start phosphor:columns-plus-right
+row-insert | Insert row | إدراج صف | vertical-and-symmetric | between-horizontal-start row-insert-bottom rows-plus-bottom fluent:table_insert_row carbon:row--insert tabler:row-insert-bottom phosphor:rows-plus-bottom
+hash | Number / reference | رقم مرجعي | vertical-and-symmetric | hash hashtag number tag fluent:number_symbol carbon:hashtag bootstrap:hash iconoir:hashtag material-symbols:tag phosphor:hash
+function | Formula | صيغة | letters-in-icons=never | sigma function math-function fluent:math_formula heroicons:variable iconoir:sigma-function
+braces | JSON / data | بيانات | code-and-terminal | braces brackets-curly data-object fluent:braces carbon:json bootstrap:braces iconoir:code-brackets? heroicons:code-bracket-square
+api | API / integration | تكامل | non-directional | plug plug-connected plugs-connected api fluent:plug_connected carbon:api bootstrap:plug iconoir:plug-type-a? heroicons:puzzle-piece
+webhook | Automation / workflow | أتمتة | breadcrumb-tree-connectors | workflow automation flow-arrow fluent:flow carbon:flow bootstrap:diagram-2 iconoir:network-right? lucide:workflow tabler:automation
+server | Server | خادم | physical-objects | server server-2 hard-drives dns fluent:server carbon:bare-metal-server? bootstrap:server iconoir:server heroicons:server
+terminal | Terminal | الطرفية | code-and-terminal | terminal square-terminal command-line terminal-window fluent:window_console carbon:terminal bootstrap:terminal iconoir:terminal
+gauge | KPI / gauge | مؤشر أداء | vertical-and-symmetric | material-symbols:speed gauge fluent:gauge carbon:meter bootstrap:speedometer iconoir:dashboard-speed
+activity | Activity | النشاط | vertical-and-symmetric | activity activity-heartbeat pulse monitor-heart fluent:pulse carbon:activity bootstrap:activity iconoir:activity
+
+# time | Date and time | التاريخ والوقت
+calendar-plus | Add event | إضافة موعد | calendar=never | calendar-plus calendar-add-on fluent:calendar_add
+calendar-check | Confirmed date | تاريخ مؤكد | calendar=never | calendar-check event-available fluent:calendar_checkmark
+calendar-x | Cancelled date | تاريخ ملغى | calendar=never | calendar-x event-busy fluent:calendar_cancel bootstrap:calendar-x iconoir:calendar-xmark
+calendar-clock | Schedule | جدولة | calendar=never | calendar-clock calendar-time fluent:calendar_clock carbon:event--schedule
+timer | Timer | مؤقّت | clock-time | timer stopwatch fluent:timer carbon:timer
+repeat | Recurring | متكرر | refresh-sync-rotate | repeat fluent:arrow_repeat_all carbon:repeat iconoir:repeat
+sun | Day / light mode | الوضع الفاتح | vertical-and-symmetric | sun light-mode fluent:weather_sunny carbon:sun brightness-high iconoir:sun-light
+moon | Night / dark mode | الوضع الداكن | non-directional | moon dark-mode fluent:weather_moon carbon:moon iconoir:half-moon
+timeline | Timeline | خط زمني | breadcrumb-tree-connectors | chart-gantt timeline chart-no-axes-gantt fluent:timeline carbon:roadmap bootstrap:bar-chart-steps iconoir:timeline? lucide:chart-gantt tabler:timeline
+
+# devices | Devices and system | الأجهزة والنظام
+monitor | Desktop | حاسوب مكتبي | physical-objects | monitor device-desktop desktop computer-desktop desktop-windows fluent:desktop carbon:screen bootstrap:display
+laptop | Laptop | حاسوب محمول | physical-objects | laptop device-laptop computer laptop-mac fluent:laptop carbon:laptop
+tablet | Tablet | جهاز لوحي | physical-objects | tablet device-tablet tablet-mac fluent:tablet carbon:tablet
+camera | Camera | كاميرا | physical-objects | camera photo-camera fluent:camera carbon:camera
+bluetooth | Bluetooth | بلوتوث | non-directional | bluetooth fluent:bluetooth carbon:bluetooth
+usb | USB | يو إس بي | non-directional | usb fluent:usb_stick carbon:usb bootstrap:usb-symbol iconoir:usb? phosphor:usb
+battery | Battery | بطارية | linear-progress | battery battery-full battery-100 fluent:battery_10 carbon:battery--full iconoir:battery-full
+cpu | Processor | معالج | non-directional | cpu cpu-chip memory fluent:developer_board carbon:chip iconoir:cpu
+hard-drive | Storage | تخزين | physical-objects | hard-drive hard-drives fluent:hard_drive bootstrap:hdd
+plug | Power plug | قابس | physical-objects | material-symbols:power plug fluent:plug_disconnected
+
+# layout | Layout and windows | التخطيط والنوافذ
+split-horizontal | Split view | عرض منقسم | vertical-and-symmetric | columns-2 layout-columns phosphor:columns heroicons:view-columns fluent:split_vertical carbon:split-screen bootstrap:layout-split iconoir:view-columns-2
+window | Window / dialog | نافذة | vertical-and-symmetric | app-window browser app-window window web-asset fluent:window carbon:application bootstrap:window iconoir:app-window
+picture-in-picture | Picture in picture | صورة داخل صورة | sidebar-panel | picture-in-picture-2 picture-in-picture bootstrap:pip
+drag-handle-horizontal | Resize handle | مقبض تغيير الحجم | vertical-and-symmetric | grip-horizontal grip-horizontal dots-six drag-handle fluent:re_order_dots_horizontal carbon:drag--horizontal bootstrap:grip-horizontal
+sidebar-collapse | Collapse sidebar | طي الشريط الجانبي | sidebar-panel | panel-left-close layout-sidebar-left-collapse sidebar-simple left-panel-close fluent:panel_left_contract carbon:side-panel--close bootstrap:layout-sidebar-inset iconoir:sidebar-collapse
+sidebar-expand | Expand sidebar | توسيع الشريط الجانبي | sidebar-panel | panel-left-open layout-sidebar-left-expand left-panel-open fluent:panel_left_expand carbon:side-panel--open iconoir:sidebar-expand bootstrap:layout-sidebar
+tabs | Tabs | ألسنة التبويب | vertical-and-symmetric | panel-top layout-navbar tabs tab fluent:tabs carbon:tab? bootstrap:segmented-nav iconoir:multi-window? lucide:panels-top-left? material-symbols:tabs
+
+# media | Media | الوسائط
+skip-forward | Next track | المقطع التالي | media-playback | material-symbols:skip_next skip-forward player-skip-forward heroicons:forward fluent:next carbon:skip--forward skip-end iconoir:skip-next
+skip-back | Previous track | المقطع السابق | media-playback | skip-back player-skip-back skip-back backward skip-previous fluent:previous carbon:skip--back skip-start iconoir:skip-prev
+music | Audio | صوت | non-directional | music musical-note music-note music-note fluent:music_note_2 carbon:music bootstrap:music-note-beamed iconoir:music-double-note
+film | Video file | ملف فيديو | physical-objects | film movie film-strip fluent:movies_and_tv
+images | Gallery | معرض الصور | non-directional | material-symbols:photo_library images library-photo fluent:image_multiple iconoir:media-image-list

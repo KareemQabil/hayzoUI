@@ -1,0 +1,3099 @@
+{
+  "kind": "icon",
+  "schemaVersion": 1,
+  "id": "mirror-rules",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Fluent UI System Icons",
+        "url": "https://github.com/microsoft/fluentui-system-icons",
+        "version": "4bf6b786b16f120595efcee8911c74392fa29c14",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "assets/*/metadata.json, asset folder names, importer/rtl.txt"
+      },
+      {
+        "name": "Jetpack Compose material-icons-core and material-icons-extended (Google Maven)",
+        "url": "https://dl.google.com/android/maven2/androidx/compose/material/material-icons-extended-desktop/1.7.8/material-icons-extended-desktop-1.7.8.jar",
+        "version": "1.7.8",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "androidx/compose/material/icons/automirrored/filled/*Kt.class (entry names only)"
+      },
+      {
+        "name": "Material Design Icons repository (Material Symbols)",
+        "url": "https://github.com/google/material-design-icons",
+        "version": "10ecc14790612ca8fd164e3f4ffe9c16fc50d5b7",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "variablefont/*.codepoints, symbols/android/*/materialsymbolsoutlined/*_24px.xml, LICENSE"
+      },
+      {
+        "name": "Material Design guidelines — Bidirectionality (Material 1 archive)",
+        "url": "https://m1.material.io/usability/bidirectionality.html",
+        "license": "Guidance re-expressed; no text copied",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Apple Human Interface Guidelines — Right to left",
+        "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+        "license": "Guidance re-expressed; no text copied",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "The Unicode Standard, Arabic code chart",
+        "url": "https://www.unicode.org/charts/PDF/U0600.pdf",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/icons/mirror-rules.mjs",
+    "notes": "Verdicts, reasons and recommendations are written by the layer author from the cited sources. Every icon name under `evidence` was checked by the script against mirror-evidence.json or a source catalog. Rules with basis \"mechanical\" cite at least one per-icon list; \"guidance\" rules rest on the Material and Apple pages only; \"authored\" rules have no published source behind the verdict. Arabic concept names are the author's and need review by an Arabic speaker. The Material 2 bidirectionality page could not be read by script (client-rendered); the archived Material 1 page was used."
+  },
+  "data": {
+    "dataset": "mirror-rules",
+    "content": {
+      "sources": [
+        {
+          "id": "compose",
+          "name": "Jetpack Compose Icons.AutoMirrored (material-icons-core/extended 1.7.8)",
+          "kind": "mechanical",
+          "url": "https://developer.android.com/reference/kotlin/androidx/compose/material/icons/Icons.AutoMirrored",
+          "note": "List: mirror-evidence compose-automirrored."
+        },
+        {
+          "id": "material-symbols",
+          "name": "Material Symbols Android drawables (android:autoMirrored)",
+          "kind": "mechanical",
+          "url": "https://github.com/google/material-design-icons",
+          "note": "List: mirror-evidence material-symbols-automirrored; negatives from sources/material-symbols.json autoMirrored=false."
+        },
+        {
+          "id": "fluent",
+          "name": "Fluent UI System Icons metadata (directionType, LTR/RTL assets)",
+          "kind": "mechanical",
+          "url": "https://github.com/microsoft/fluentui-system-icons",
+          "note": "Lists: fluent-direction-mirror, fluent-direction-unique, fluent-ltr-rtl-assets; negatives from sources/fluent.json."
+        },
+        {
+          "id": "fluent-legacy",
+          "name": "Fluent UI System Icons importer/rtl.txt",
+          "kind": "mechanical",
+          "url": "https://github.com/microsoft/fluentui-system-icons/blob/main/importer/rtl.txt",
+          "note": "List: fluent-android-rtl-txt."
+        },
+        {
+          "id": "material-guidelines",
+          "name": "Material Design guidelines — Bidirectionality (archived Material 1 page, static HTML)",
+          "kind": "guidance",
+          "url": "https://m1.material.io/usability/bidirectionality.html",
+          "note": "Read 2026-11-11. The Material 2 page (m2.material.io/design/usability/bidirectionality.html) is rendered client-side and could not be read by script; the archived page carries the same section structure (When to mirror / When not to mirror / The passage of time / Localization)."
+        },
+        {
+          "id": "apple-hig",
+          "name": "Apple Human Interface Guidelines — Right to left",
+          "kind": "guidance",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/right-to-left",
+          "note": "Read 2026-11-11 from the page's JSON document (developer.apple.com/tutorials/data/design/human-interface-guidelines/right-to-left.json)."
+        },
+        {
+          "id": "unicode",
+          "name": "The Unicode Standard — Arabic block (U+061F ARABIC QUESTION MARK, U+066A ARABIC PERCENT SIGN, U+0660–0669 ARABIC-INDIC DIGITS)",
+          "kind": "guidance",
+          "url": "https://www.unicode.org/charts/PDF/U0600.pdf",
+          "note": "Character identities only."
+        }
+      ],
+      "principles": [
+        {
+          "id": "reading-direction",
+          "verdict": "auto",
+          "statement": "Whatever depicts movement forward or backward, the passage of linear time, or the order of items follows the reading direction and is mirrored in RTL: back/forward arrows, next/previous, progress, sliders.",
+          "sources": [
+            "material-guidelines",
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "text-representation",
+          "verdict": "auto",
+          "statement": "An icon that depicts lines of text (ragged edge, indent, bullets, alignment) is mirrored so the lines start at the right.",
+          "sources": [
+            "material-guidelines",
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "circular-time",
+          "verdict": "never",
+          "statement": "Circular time does not reverse: clocks, clockwise refresh and history arrows, circular progress keep their direction.",
+          "sources": [
+            "material-guidelines",
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "media-direction",
+          "verdict": "never",
+          "statement": "Media playback controls and the media progress bar show the direction of the medium, not of reading, and are not mirrored.",
+          "sources": [
+            "material-guidelines"
+          ]
+        },
+        {
+          "id": "physical-object",
+          "verdict": "never",
+          "statement": "Icons of real-world objects that look the same everywhere (camera, keyboard, headset, clock) are not mirrored unless the object is used to show direction.",
+          "sources": [
+            "material-guidelines",
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "right-hand",
+          "verdict": "never",
+          "statement": "Icons slanted for right-handed use (magnifier, cup, pen) are not mirrored: most RTL readers are right-handed too.",
+          "sources": [
+            "material-guidelines",
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "universal-mark",
+          "verdict": "never",
+          "statement": "Logos and universal marks such as the checkmark are never mirrored.",
+          "sources": [
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "slash-stays",
+          "verdict": "never",
+          "statement": "The slash that negates an icon keeps the same slant in both directions.",
+          "sources": [
+            "material-guidelines",
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "numerals-letters",
+          "verdict": "conditional",
+          "statement": "Digits and letters inside an icon are never flipped. Their order may reverse when they show a sequence, and the glyphs should be localized (Arabic letters, the locale's digits) rather than mirrored.",
+          "sources": [
+            "material-guidelines",
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "absolute-direction",
+          "verdict": "never",
+          "statement": "A control that refers to an actual direction or to an area of the screen keeps pointing there: \"to the right\" always points right.",
+          "sources": [
+            "apple-hig"
+          ]
+        },
+        {
+          "id": "composite",
+          "verdict": "conditional",
+          "statement": "A complex icon is judged part by part: a badge, slash or tool may stay while the base flips, and a badge that depicts real UI flips with the UI.",
+          "sources": [
+            "apple-hig"
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "id": "back-forward-navigation",
+          "concept": {
+            "ar": "أسهم الرجوع والتقدم والسابق والتالي",
+            "en": "Back / forward, previous / next arrows and chevrons"
+          },
+          "verdict": "auto",
+          "reason": "Back points to where reading came from. In RTL that is the right, so the back arrow and the \"previous\" chevron point right and \"next\" points left.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "ArrowBack",
+                "ArrowBackIos",
+                "ArrowForward",
+                "ArrowForwardIos",
+                "ArrowLeft",
+                "ArrowRight",
+                "ArrowRightAlt",
+                "KeyboardArrowLeft",
+                "KeyboardArrowRight",
+                "NavigateBefore",
+                "NavigateNext"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "arrow_back",
+                "arrow_forward",
+                "arrow_left",
+                "arrow_right",
+                "chevron_backward",
+                "chevron_forward",
+                "chevron_left",
+                "chevron_right",
+                "navigate_before",
+                "navigate_next"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_forward",
+                "arrow_next",
+                "arrow_previous"
+              ]
+            },
+            {
+              "source": "fluent-legacy",
+              "says": "mirror",
+              "names": [
+                "arrow_left",
+                "arrow_right",
+                "chevron_left",
+                "chevron_right"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "mirror",
+              "note": "Named as the most important icons to mirror."
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror"
+            }
+          ],
+          "recommendation": "Name the concept by meaning (back, forward, previous, next, chevron-start, chevron-end) and mirror it. Keep separate, never-mirrored physical left/right arrows for absolute directions (see absolute-direction-arrows).",
+          "examples": [
+            "arrow-back",
+            "arrow-forward",
+            "chevron-start",
+            "chevron-end"
+          ]
+        },
+        {
+          "id": "first-last-page",
+          "concept": {
+            "ar": "الصفحة الأولى والأخيرة والأسهم المزدوجة",
+            "en": "First page / last page, double chevrons"
+          },
+          "verdict": "auto",
+          "reason": "Pagination ends follow reading order like single chevrons do.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "LastPage"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "double_arrow",
+                "keyboard_double_arrow_left",
+                "keyboard_double_arrow_right",
+                "last_page"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "first_page"
+              ]
+            }
+          ],
+          "disagreement": "Material Symbols auto-mirrors last_page but not first_page, and Compose lists LastPage without FirstPage. A pair that is mirrored on one side only is an upstream omission, not a principle.",
+          "recommendation": "Mirror both.",
+          "examples": [
+            "chevrons-start",
+            "chevrons-end",
+            "page-first",
+            "page-last"
+          ]
+        },
+        {
+          "id": "diagonal-arrows",
+          "concept": {
+            "ar": "الأسهم المائلة: فتح في نافذة جديدة والرابط الخارجي",
+            "en": "Diagonal arrows: open in new, external link, arrow up-right"
+          },
+          "verdict": "auto",
+          "reason": "A diagonal arrow leaves toward the end side of the line; in RTL it leaves toward the top-left.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "CallMade",
+                "CallReceived",
+                "Launch",
+                "OpenInNew"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "arrow_outward",
+                "call_made",
+                "open_in_new"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_down_right"
+              ]
+            },
+            {
+              "source": "fluent-legacy",
+              "says": "mirror",
+              "names": [
+                "arrow_down_left",
+                "arrow_up_left",
+                "arrow_up_right"
+              ]
+            }
+          ],
+          "examples": [
+            "external-link",
+            "arrow-up-end"
+          ]
+        },
+        {
+          "id": "corner-arrows",
+          "concept": {
+            "ar": "أسهم الزاوية وسهم الإدخال",
+            "en": "Corner / hook arrows, sub-item arrows, enter-return"
+          },
+          "verdict": "auto",
+          "reason": "Hooked arrows show a line turning into the next line or a child item; both depend on where lines start.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "KeyboardReturn",
+                "KeyboardTab",
+                "Shortcut"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "arrow_split",
+                "keyboard_return",
+                "keyboard_tab"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "subdirectory_arrow_right"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_hook_down_left",
+                "arrow_hook_down_right",
+                "arrow_hook_up_left",
+                "arrow_hook_up_right"
+              ]
+            }
+          ],
+          "disagreement": "Material Symbols does not auto-mirror subdirectory_arrow_right although it mirrors keyboard_return. Material 1 guidance also says physical keyboards look the same everywhere, which argues for leaving key-cap glyphs alone.",
+          "recommendation": "Mirror when the arrow shows flow in a layout (reply thread, sub-row, \"press Enter to submit\"). Do not mirror inside a depiction of a physical key cap.",
+          "examples": [
+            "corner-down-end",
+            "enter"
+          ]
+        },
+        {
+          "id": "backspace-delete-backward",
+          "concept": {
+            "ar": "مسح للخلف",
+            "en": "Backspace / delete backward"
+          },
+          "verdict": "auto",
+          "reason": "The key removes the character before the caret; in RTL text that character is on the right, so the pointed side flips.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Backspace",
+                "KeyboardBackspace"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "backspace",
+                "keyboard_backspace"
+              ]
+            }
+          ],
+          "examples": [
+            "backspace"
+          ]
+        },
+        {
+          "id": "undo-redo",
+          "concept": {
+            "ar": "تراجع وإعادة",
+            "en": "Undo / redo"
+          },
+          "verdict": "auto",
+          "reason": "Undo goes back in a linear history, redo goes forward; all three mechanical sources mirror them.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Redo",
+                "Undo"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "redo",
+                "undo"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_redo",
+                "arrow_undo"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "conditional",
+              "note": "Says these icons carry both a horizontal and a circular direction and that in RTL one has to choose which to show."
+            }
+          ],
+          "disagreement": "The Material guidance leaves the choice open (horizontal time mirrors, circular time does not); Material's own icons, Compose and Fluent all mirror.",
+          "recommendation": "Mirror. Draw undo/redo as a hooked arrow whose horizontal reading dominates, not as a near-full circle, so it cannot be confused with rotate or refresh.",
+          "arabicSpecific": true,
+          "examples": [
+            "undo",
+            "redo"
+          ]
+        },
+        {
+          "id": "reply-forward-mail",
+          "concept": {
+            "ar": "رد، رد على الكل، إعادة توجيه",
+            "en": "Reply, reply all, forward (mail)"
+          },
+          "verdict": "auto",
+          "reason": "Reply points back toward the sender (the start side), forward points onward.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Forward",
+                "ForwardToInbox",
+                "Reply",
+                "ReplyAll"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "forward",
+                "forward_to_inbox",
+                "reply",
+                "reply_all"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_forward",
+                "arrow_reply",
+                "arrow_reply_all"
+              ]
+            }
+          ],
+          "arabicSpecific": true,
+          "examples": [
+            "reply",
+            "reply-all",
+            "forward"
+          ]
+        },
+        {
+          "id": "send",
+          "concept": {
+            "ar": "إرسال",
+            "en": "Send (paper plane)"
+          },
+          "verdict": "auto",
+          "reason": "The plane flies forward, away from the composer: toward the left in RTL.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "ScheduleSend",
+                "Send",
+                "SendAndArchive"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "schedule_send",
+                "send",
+                "send_money"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "send",
+                "send_clock"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror",
+              "note": "Forward-motion icons flip."
+            }
+          ],
+          "arabicSpecific": true,
+          "examples": [
+            "send"
+          ]
+        },
+        {
+          "id": "login-logout-exit",
+          "concept": {
+            "ar": "تسجيل الدخول والخروج",
+            "en": "Log in, log out, exit, enter"
+          },
+          "verdict": "auto",
+          "reason": "An arrow entering or leaving a door or frame moves along the reading direction.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "ExitToApp",
+                "Input",
+                "Login",
+                "Logout"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "exit_to_app",
+                "input",
+                "login",
+                "logout"
+              ]
+            }
+          ],
+          "examples": [
+            "log-in",
+            "log-out"
+          ]
+        },
+        {
+          "id": "import-export-move",
+          "concept": {
+            "ar": "استيراد وتصدير ونقل",
+            "en": "Import, export, move to (horizontal arrow with an object)"
+          },
+          "verdict": "auto",
+          "reason": "The arrow shows something travelling into or out of a container along the line.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "AssignmentReturn",
+                "DriveFileMove"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "drive_export",
+                "drive_file_move",
+                "move_item",
+                "move_location"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_export",
+                "arrow_import",
+                "folder_arrow_right"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "arrow_export_ltr",
+                "arrow_export_rtl"
+              ]
+            }
+          ],
+          "examples": [
+            "import",
+            "export",
+            "move-to-folder"
+          ]
+        },
+        {
+          "id": "swap-compare-horizontal",
+          "concept": {
+            "ar": "تبديل ومقارنة وتحويل",
+            "en": "Swap / compare / transfer (two opposed horizontal arrows)"
+          },
+          "verdict": "auto",
+          "reason": "Which arrow is on top encodes an order; mirroring keeps \"first goes forward\".",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "CompareArrows"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "compare_arrows"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "swap_horiz"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_swap"
+              ]
+            }
+          ],
+          "disagreement": "Material Symbols mirrors compare_arrows but not the near-identical swap_horiz.",
+          "recommendation": "Mirror; the flip is harmless when the glyph is point-symmetric.",
+          "examples": [
+            "swap-horizontal",
+            "transfer"
+          ]
+        },
+        {
+          "id": "text-lines",
+          "concept": {
+            "ar": "أسطر النص والفقرة",
+            "en": "Lines of text: paragraph, notes, subject, wrap, segment"
+          },
+          "verdict": "auto",
+          "reason": "Ragged lines must start on the right, where Arabic lines start.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Notes",
+                "Segment",
+                "ShortText",
+                "Subject",
+                "Toc",
+                "WrapText"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "notes",
+                "segment",
+                "short_text",
+                "subject",
+                "toc",
+                "wrap_text"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "text_description"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "text_description_ltr",
+                "text_description_rtl"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "mirror"
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror"
+            }
+          ],
+          "examples": [
+            "text",
+            "wrap-text"
+          ]
+        },
+        {
+          "id": "text-alignment",
+          "concept": {
+            "ar": "محاذاة النص لليمين واليسار",
+            "en": "Align text left / right"
+          },
+          "verdict": "conditional",
+          "reason": "The same two glyphs can mean \"start/end\" or physical \"left/right\", and the two readings need opposite treatment.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation",
+            "absolute-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "AlignHorizontalLeft",
+                "AlignHorizontalRight",
+                "FormatAlignLeft",
+                "FormatAlignRight"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "format_align_left",
+                "format_align_right",
+                "horizontal_align_left"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "format_align_center",
+                "format_align_justify"
+              ]
+            },
+            {
+              "source": "fluent-legacy",
+              "says": "mirror",
+              "names": [
+                "text_align_left",
+                "text_align_right"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "conditional",
+              "note": "Icons representing text alignment flip; controls that mean a physical direction do not."
+            }
+          ],
+          "disagreement": "Material and Fluent auto-mirror the align-left and align-right icons, which silently turns \"align left\" into a right-aligned picture. That is right for a control that means align-start, and wrong for a rich-text toolbar whose button applies physical left alignment.",
+          "condition": "Mirror when the control sets start/end alignment. Never mirror when it sets physical left/right alignment; in that case show the icon that matches the result.",
+          "recommendation": "Ship four concepts: align-start and align-end (auto) and align-left and align-right (never). Editors use the physical pair and order the buttons right-to-left.",
+          "arabicSpecific": true,
+          "examples": [
+            "align-start",
+            "align-end",
+            "align-left",
+            "align-right"
+          ]
+        },
+        {
+          "id": "text-indent",
+          "concept": {
+            "ar": "زيادة وإنقاص المسافة البادئة",
+            "en": "Increase / decrease indent"
+          },
+          "verdict": "auto",
+          "reason": "Indent moves the line start inward; the line start is on the right.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "FormatIndentDecrease",
+                "FormatIndentIncrease"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "format_indent_decrease",
+                "format_indent_increase"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "text_indent_decrease",
+                "text_indent_increase"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "text_indent_decrease_rtl",
+                "text_indent_increase_rtl"
+              ]
+            }
+          ],
+          "arabicSpecific": true,
+          "examples": [
+            "indent",
+            "outdent"
+          ]
+        },
+        {
+          "id": "bulleted-list",
+          "concept": {
+            "ar": "قائمة نقطية",
+            "en": "Bulleted list, list view, table of contents"
+          },
+          "verdict": "auto",
+          "reason": "Bullets sit at the start of each line.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "FormatListBulleted",
+                "List",
+                "ListAlt",
+                "ViewList"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "format_list_bulleted",
+                "list",
+                "lists",
+                "view_list"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "clipboard_bullet_list"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "text_bullet_list_ltr",
+                "text_bullet_list_rtl"
+              ]
+            }
+          ],
+          "arabicSpecific": true,
+          "examples": [
+            "list",
+            "list-bulleted"
+          ]
+        },
+        {
+          "id": "checklist",
+          "concept": {
+            "ar": "قائمة مهام",
+            "en": "Checklist / task list"
+          },
+          "verdict": "conditional",
+          "reason": "The rows flip (marks at the start) but each checkmark must keep its shape.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation",
+            "universal-mark",
+            "composite"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "FactCheck",
+                "Grading",
+                "PlaylistAddCheck",
+                "Rule"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "grading",
+                "list_alt"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "clipboard_task_list",
+                "multiselect",
+                "task_list",
+                "task_list_ltr",
+                "task_list_rtl"
+              ]
+            }
+          ],
+          "disagreement": "Material flips the whole drawable, checkmarks included. Fluent marks these icons \"unique\" and draws a separate RTL version in which the checkmark is not reversed.",
+          "condition": "Needs RTL artwork: move the marks to the right, keep the checkmark unflipped.",
+          "recommendation": "Follow Fluent: dedicated RTL artwork. A plain flip is an acceptable fallback only at sizes where the tick is a dot.",
+          "examples": [
+            "list-checks"
+          ]
+        },
+        {
+          "id": "numbered-list",
+          "concept": {
+            "ar": "قائمة مرقمة",
+            "en": "Numbered list"
+          },
+          "verdict": "conditional",
+          "reason": "Numbers move to the right of the lines but digits are never flipped, and an Arabic interface may want ١ ٢ ٣.",
+          "basis": "mechanical",
+          "principles": [
+            "numerals-letters",
+            "text-representation"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "format_list_numbered",
+                "format_list_numbered_rtl"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "text_number_list",
+                "text_number_list_ltr",
+                "text_number_list_rtl"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "conditional",
+              "note": "Icons containing numbers must be localized for locales that use other digits."
+            },
+            {
+              "source": "apple-hig",
+              "says": "conditional",
+              "note": "Reverse the order of numerals that show a sequence; never flip the numerals themselves."
+            }
+          ],
+          "condition": "Use separate RTL artwork with unflipped digits at the right. Choose Latin or Arabic-Indic digits from the locale's numbering system, not from direction.",
+          "recommendation": "Three assets: list-numbered (LTR, 1 2 3), list-numbered-rtl (1 2 3 at the right), list-numbered-arab (١ ٢ ٣ at the right). Material ships format_list_numbered_rtl as its own symbol for the same reason; no catalog ships the Arabic-Indic variant (see gaps).",
+          "arabicSpecific": true,
+          "examples": [
+            "list-numbered"
+          ]
+        },
+        {
+          "id": "document-with-text",
+          "concept": {
+            "ar": "مستند أو إيصال يظهر أسطر نص",
+            "en": "Document, note or receipt showing text lines"
+          },
+          "verdict": "auto",
+          "reason": "The lines inside the page are text lines and start on the right.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Article",
+                "Assignment",
+                "ChromeReaderMode",
+                "EventNote",
+                "Feed",
+                "LibraryBooks",
+                "MenuBook",
+                "Note",
+                "ReceiptLong",
+                "StickyNote2",
+                "TextSnippet"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "article",
+                "assignment",
+                "event_note",
+                "feed",
+                "menu_book",
+                "news",
+                "receipt_long",
+                "sticky_note_2",
+                "text_snippet"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "clipboard_text",
+                "slide_text"
+              ]
+            }
+          ],
+          "examples": [
+            "file-text",
+            "receipt",
+            "invoice",
+            "book-open"
+          ]
+        },
+        {
+          "id": "document-blank",
+          "concept": {
+            "ar": "مستند فارغ بزاوية مطوية",
+            "en": "Blank document with a folded corner"
+          },
+          "verdict": "conditional",
+          "reason": "A blank page has no reading direction; only the folded corner makes it asymmetric.",
+          "basis": "mechanical",
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "InsertDriveFile",
+                "NoteAdd"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "docs",
+                "draft",
+                "note_add"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "document"
+              ]
+            }
+          ],
+          "disagreement": "Material mirrors the blank file (the fold moves to the top-left); Fluent does not mirror Document.",
+          "condition": "No information is lost either way.",
+          "recommendation": "Do not mirror the blank file; mirror only variants that add text lines or a horizontal arrow.",
+          "examples": [
+            "file"
+          ]
+        },
+        {
+          "id": "chat-bubbles",
+          "concept": {
+            "ar": "فقاعات المحادثة والتعليق",
+            "en": "Chat, comment and message bubbles"
+          },
+          "verdict": "auto",
+          "reason": "The tail marks the speaker's side and any lines inside are text; own messages sit at the end side in RTL.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation",
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Announcement",
+                "Chat",
+                "Comment",
+                "InsertComment",
+                "Message",
+                "SpeakerNotes"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "bubble",
+                "chat",
+                "comment",
+                "speaker_notes"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "comment",
+                "comment_add",
+                "comment_multiple",
+                "comment_text"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "mirror",
+              "note": "Chat icon given as the text-in-icon example."
+            }
+          ],
+          "examples": [
+            "message",
+            "comment"
+          ]
+        },
+        {
+          "id": "volume-speaker",
+          "concept": {
+            "ar": "مكبر الصوت ومستوى الصوت",
+            "en": "Speaker / volume"
+          },
+          "verdict": "auto",
+          "reason": "Sound waves travel forward from the speaker, and the icon usually sits at the start of a volume slider that itself mirrors.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "VolumeDown",
+                "VolumeMute",
+                "VolumeOff",
+                "VolumeUp"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "no_sound",
+                "volume_down",
+                "volume_mute",
+                "volume_off",
+                "volume_up"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "speaker_2"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "mirror",
+              "note": "A volume icon with a slider is mirrored; waves emerge from the right."
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror",
+              "note": "Speaker with sound waves is the stated example of forward motion."
+            }
+          ],
+          "disagreement": "Fluent publishes no direction for its Speaker icons, so Fluent UIs do not flip them.",
+          "recommendation": "Mirror the speaker and waves; keep the mute slash unflipped (see slash-overlay).",
+          "arabicSpecific": true,
+          "examples": [
+            "volume",
+            "volume-off"
+          ]
+        },
+        {
+          "id": "linear-progress",
+          "concept": {
+            "ar": "شريط التقدم",
+            "en": "Progress bar, stepper, loading bar"
+          },
+          "verdict": "auto",
+          "reason": "Progress fills in the direction content is read: from the right in RTL.",
+          "basis": "guidance",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "material-guidelines",
+              "says": "mirror",
+              "note": "A progress bar shows 0% on the right and fills right to left."
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror"
+            }
+          ],
+          "recommendation": "An icon of a partly filled bar mirrors with the component. Exception: media progress (media-playback).",
+          "arabicSpecific": true,
+          "examples": [
+            "progress"
+          ]
+        },
+        {
+          "id": "slider",
+          "concept": {
+            "ar": "شريط التمرير",
+            "en": "Slider and range icons"
+          },
+          "verdict": "auto",
+          "reason": "A slider goes from its minimum at the start to its maximum at the end; the glyphs at each end swap with it.",
+          "basis": "guidance",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "apple-hig",
+              "says": "mirror",
+              "note": "Flip sliders and swap the images that mark the minimum and maximum."
+            }
+          ],
+          "recommendation": "A \"sliders/tune\" settings icon (several tracks with knobs) is abstract and may stay; an icon that shows one track with a filled part mirrors.",
+          "arabicSpecific": true,
+          "examples": [
+            "slider"
+          ]
+        },
+        {
+          "id": "rating-half",
+          "concept": {
+            "ar": "نصف نجمة",
+            "en": "Half star / partial rating"
+          },
+          "verdict": "auto",
+          "reason": "A rating fills from the start side, so the filled half is on the right in RTL.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "StarHalf"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "star_half"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror",
+              "note": "Rating controls are listed with progress bars and sliders."
+            }
+          ],
+          "examples": [
+            "star-half"
+          ]
+        },
+        {
+          "id": "sort-lines",
+          "concept": {
+            "ar": "فرز (أشرطة متدرجة الطول)",
+            "en": "Sort (bars of decreasing length), sort ascending / descending with bars"
+          },
+          "verdict": "auto",
+          "reason": "The bars are stylised lines of text aligned to the start; the vertical arrow, if any, does not change.",
+          "basis": "mechanical",
+          "principles": [
+            "text-representation"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Sort"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "sort"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "filter_list"
+              ]
+            }
+          ],
+          "recommendation": "Mirror start-aligned bars. Centred bars (filter-list) are symmetric and unaffected.",
+          "arabicSpecific": true,
+          "examples": [
+            "sort",
+            "sort-ascending",
+            "sort-descending"
+          ]
+        },
+        {
+          "id": "sidebar-panel",
+          "concept": {
+            "ar": "الشريط الجانبي واللوحة الجانبية",
+            "en": "Sidebar, side panel, drawer open/close, split view"
+          },
+          "verdict": "auto",
+          "reason": "The icon is a miniature of the layout, and the layout itself mirrors: the navigation panel is on the right in RTL.",
+          "basis": "mechanical",
+          "principles": [
+            "composite"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "BrandingWatermark",
+                "MenuOpen",
+                "ViewQuilt",
+                "ViewSidebar"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "arrow_menu_close",
+                "arrow_menu_open",
+                "menu_open",
+                "picture_in_picture",
+                "side_navigation",
+                "view_sidebar"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "panel_left_header",
+                "panel_left_text",
+                "panel_right_gallery"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror",
+              "note": "A part that depicts actual UI flips when the UI flips."
+            }
+          ],
+          "recommendation": "Name by logical side (panel-start, panel-end) and mirror. A control that docks to a physical side keeps physical names and is never mirrored.",
+          "examples": [
+            "panel-start",
+            "panel-end"
+          ]
+        },
+        {
+          "id": "label-pointer",
+          "concept": {
+            "ar": "ملصق مدبب",
+            "en": "Label / \"important\" marker (pentagon pointing to the end)"
+          },
+          "verdict": "auto",
+          "reason": "The point works like an arrow head toward the labelled text.",
+          "basis": "mechanical",
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "Label",
+                "LabelImportant",
+                "LabelOff"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "label",
+                "label_important"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "tag"
+              ]
+            }
+          ],
+          "disagreement": "Material mirrors its pointed label. Fluent's Tag (a hanging price tag, i.e. an object) has no direction.",
+          "recommendation": "Mirror the pointed label shape; treat a price tag with a hole and string as an object and leave it.",
+          "examples": [
+            "label"
+          ]
+        },
+        {
+          "id": "flag",
+          "concept": {
+            "ar": "علم",
+            "en": "Flag on a pole"
+          },
+          "verdict": "auto",
+          "reason": "The pole stands at the start and the cloth flies toward the end.",
+          "basis": "mechanical",
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "emoji_flags",
+                "flag"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "flag"
+              ]
+            }
+          ],
+          "disagreement": "Material Symbols mirrors flag; the older Compose list does not include Flag; Fluent has no direction for it.",
+          "recommendation": "Mirror the generic flag marker. Never mirror a depiction of a real national flag.",
+          "examples": [
+            "flag"
+          ]
+        },
+        {
+          "id": "moving-things",
+          "concept": {
+            "ar": "أشخاص ومركبات في حركة",
+            "en": "People and vehicles in motion: walk, run, bike, delivery truck"
+          },
+          "verdict": "auto",
+          "reason": "Something moving forward faces the reading direction.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "DirectionsBike",
+                "DirectionsRun",
+                "DirectionsWalk"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "airport_shuttle",
+                "directions_run",
+                "directions_walk",
+                "flight_takeoff",
+                "local_shipping",
+                "pedal_bike"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "vehicle_car_profile_ltr",
+                "vehicle_car_profile_rtl"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "mirror",
+              "note": "A bicycle or a walking person faces left in RTL."
+            },
+            {
+              "source": "apple-hig",
+              "says": "mirror"
+            }
+          ],
+          "recommendation": "Mirror side-view vehicles used for delivery and shipping status. Front-view vehicles are symmetric.",
+          "examples": [
+            "truck",
+            "delivery"
+          ]
+        },
+        {
+          "id": "trend-arrows",
+          "concept": {
+            "ar": "اتجاه صاعد وهابط",
+            "en": "Trending up / down, growth arrow"
+          },
+          "verdict": "conditional",
+          "reason": "A trend line is a tiny time-series chart, and sources disagree on whether time in charts runs right to left.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "MultilineChart",
+                "ShowChart",
+                "TrendingDown",
+                "TrendingFlat",
+                "TrendingUp"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "monitoring",
+                "moving",
+                "show_chart",
+                "trending_down",
+                "trending_up"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "stacked_line_chart",
+                "timeline"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_trending",
+                "arrow_trending_down",
+                "arrow_trending_lines"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never",
+              "note": "Lists charts and graphs among the things that are not mirrored."
+            }
+          ],
+          "disagreement": "The Material guidance says charts and graphs are not mirrored, yet Material's icons auto-mirror trending_up, show_chart and monitoring, and Fluent mirrors Arrow Trending. Material Symbols is not even consistent with itself: stacked_line_chart and timeline are not mirrored.",
+          "condition": "Follow the direction of the charts in the same product. If its time axis runs right to left in Arabic, mirror; if charts stay left-to-right (common for financial data), do not.",
+          "recommendation": "Default to mirroring the bare trend arrow used as a KPI delta, because \"up and forward\" then reads forward; keep chart-type icons (line, bar, area) tied to the chart component's axis-direction setting, default not mirrored.",
+          "arabicSpecific": true,
+          "examples": [
+            "trending-up",
+            "trending-down",
+            "chart-line"
+          ]
+        },
+        {
+          "id": "breadcrumb-tree-connectors",
+          "concept": {
+            "ar": "فواصل مسار التنقل وروابط الشجرة",
+            "en": "Breadcrumb separators, tree and thread connectors, step arrows"
+          },
+          "verdict": "auto",
+          "reason": "They draw the order of items along the line.",
+          "basis": "mechanical",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "NextPlan",
+                "ReadMore"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "next_plan",
+                "read_more"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_flow_up_right",
+                "arrow_step_over"
+              ]
+            }
+          ],
+          "examples": [
+            "breadcrumb-separator"
+          ]
+        },
+        {
+          "id": "search-magnifier",
+          "concept": {
+            "ar": "عدسة البحث",
+            "en": "Search magnifier"
+          },
+          "verdict": "never",
+          "reason": "The handle at the lower right is how a right-handed person holds the glass, not a direction.",
+          "basis": "mechanical",
+          "principles": [
+            "right-hand"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "ManageSearch"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "manage_search"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "search"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "search"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never",
+              "note": "Search is the stated right-hand example."
+            },
+            {
+              "source": "apple-hig",
+              "says": "never",
+              "note": "Names the magnifying glass as a component that stays consistent."
+            }
+          ],
+          "disagreement": "None on the plain magnifier. Composite icons that add text lines (manage_search) are mirrored by Material as a whole, which flips the glass too.",
+          "recommendation": "Never mirror the magnifier. In composites, flip only the text-line part.",
+          "arabicSpecific": true,
+          "examples": [
+            "search"
+          ]
+        },
+        {
+          "id": "clock-time",
+          "concept": {
+            "ar": "الساعة والوقت والسجل",
+            "en": "Clock, time, history, timer"
+          },
+          "verdict": "never",
+          "reason": "Clocks turn clockwise everywhere.",
+          "basis": "mechanical",
+          "principles": [
+            "circular-time"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "history",
+                "schedule"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "clock",
+                "history"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never"
+            },
+            {
+              "source": "apple-hig",
+              "says": "never"
+            }
+          ],
+          "examples": [
+            "clock",
+            "history"
+          ]
+        },
+        {
+          "id": "refresh-sync-rotate",
+          "concept": {
+            "ar": "تحديث ومزامنة وتدوير",
+            "en": "Refresh, sync, reload, rotate, repeat (circular arrows)"
+          },
+          "verdict": "never",
+          "reason": "A circular arrow shows clockwise or counter-clockwise turning, which is the same in every script.",
+          "basis": "mechanical",
+          "principles": [
+            "circular-time"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "RotateLeft",
+                "RotateRight"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "rotate_left",
+                "rotate_right"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "autorenew",
+                "cached",
+                "refresh",
+                "replay",
+                "restart_alt",
+                "sync"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_repeat_all",
+                "arrow_reset",
+                "arrow_rotate_clockwise",
+                "arrow_rotate_counterclockwise",
+                "arrow_sync"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "arrow_clockwise",
+                "arrow_counterclockwise"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never",
+              "note": "Refresh and history arrows are the stated examples."
+            }
+          ],
+          "disagreement": "Material does not mirror refresh/sync but does mirror rotate_left and rotate_right. Fluent marks Arrow Sync, Arrow Rotate Clockwise/Counterclockwise, Arrow Repeat All and Arrow Reset as \"mirror\", while its plain Arrow Clockwise has no direction. Mirroring a rotate icon makes it show the opposite rotation from the one it performs.",
+          "recommendation": "Never mirror: follow the Material and Apple principle against the two icon sets. Rotating an image 90° clockwise is the same act in Arabic.",
+          "examples": [
+            "refresh",
+            "sync",
+            "rotate-cw",
+            "rotate-ccw"
+          ]
+        },
+        {
+          "id": "spinner",
+          "concept": {
+            "ar": "مؤشر التحميل الدائري",
+            "en": "Spinner / circular progress"
+          },
+          "verdict": "never",
+          "reason": "Circular progress runs clockwise.",
+          "basis": "mechanical",
+          "principles": [
+            "circular-time"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "progress_activity"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never"
+            }
+          ],
+          "examples": [
+            "spinner"
+          ]
+        },
+        {
+          "id": "media-playback",
+          "concept": {
+            "ar": "عناصر تشغيل الوسائط",
+            "en": "Media playback: play, pause, skip, fast-forward, rewind, media progress"
+          },
+          "verdict": "never",
+          "reason": "They show the direction of the tape, not of reading.",
+          "basis": "mechanical",
+          "principles": [
+            "media-direction"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "fast_forward",
+                "fast_rewind",
+                "forward_10",
+                "pause",
+                "play_arrow",
+                "skip_next",
+                "skip_previous"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "play"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never"
+            }
+          ],
+          "recommendation": "Never mirror. Do not reuse the play triangle as a generic \"next\" or \"expand\" chevron: that meaning mirrors, this one does not.",
+          "examples": [
+            "play",
+            "pause",
+            "skip-forward",
+            "skip-back"
+          ]
+        },
+        {
+          "id": "checkmark",
+          "concept": {
+            "ar": "علامة الصح",
+            "en": "Checkmark / done"
+          },
+          "verdict": "never",
+          "reason": "A universal mark with one shape.",
+          "basis": "mechanical",
+          "principles": [
+            "universal-mark"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "check",
+                "done"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "checkmark"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "never"
+            }
+          ],
+          "examples": [
+            "check",
+            "check-circle"
+          ]
+        },
+        {
+          "id": "slash-overlay",
+          "concept": {
+            "ar": "الشرطة المائلة (إيقاف أو تعطيل)",
+            "en": "Slash through an icon (off / disabled / not allowed)"
+          },
+          "verdict": "never",
+          "reason": "The negating slash has the same slant in both directions.",
+          "basis": "mechanical",
+          "principles": [
+            "slash-stays",
+            "composite"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "LabelOff",
+                "VolumeOff"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "volume_off"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never",
+              "note": "Most RTL countries do not mirror slashes."
+            },
+            {
+              "source": "apple-hig",
+              "says": "never",
+              "note": "SF Symbols keeps the same slash in LTR and RTL."
+            }
+          ],
+          "disagreement": "Whole-drawable mirroring (Android autoMirrored, CSS scaleX(-1)) flips the slash together with the base, so Material's own volume_off contradicts the Material guidance in RTL.",
+          "recommendation": "Build \"off\" variants as base + slash layers so the base can mirror while the slash stays; otherwise ship RTL artwork.",
+          "examples": [
+            "eye-off",
+            "bell-off",
+            "volume-off"
+          ]
+        },
+        {
+          "id": "physical-objects",
+          "concept": {
+            "ar": "أشياء من الواقع: كاميرا، لوحة مفاتيح، طابعة، قفل",
+            "en": "Real-world objects: camera, keyboard, headset, printer, lock, key, calculator, building"
+          },
+          "verdict": "never",
+          "reason": "The object looks the same everywhere.",
+          "basis": "mechanical",
+          "principles": [
+            "physical-object"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "headphones",
+                "keyboard",
+                "lock",
+                "photo_camera",
+                "print"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never"
+            },
+            {
+              "source": "apple-hig",
+              "says": "never"
+            }
+          ],
+          "examples": [
+            "camera",
+            "printer",
+            "lock"
+          ]
+        },
+        {
+          "id": "right-hand-tools",
+          "concept": {
+            "ar": "أدوات تُمسك باليد اليمنى: قلم، فرشاة، كوب",
+            "en": "Tools held in the right hand: pencil, pen, brush, cup"
+          },
+          "verdict": "never",
+          "reason": "The slant shows a right hand holding the tool.",
+          "basis": "mechanical",
+          "principles": [
+            "right-hand"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "draw",
+                "edit"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "edit"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never"
+            },
+            {
+              "source": "apple-hig",
+              "says": "never"
+            }
+          ],
+          "recommendation": "Never mirror the tool. If the icon also has a text line or a page, flip that part only.",
+          "examples": [
+            "edit",
+            "pencil"
+          ]
+        },
+        {
+          "id": "phone-handset",
+          "concept": {
+            "ar": "سماعة الهاتف والمكالمات",
+            "en": "Phone handset; call with direction arrows"
+          },
+          "verdict": "conditional",
+          "reason": "The handset is an object and stays; an arrow added for incoming, outgoing, missed or forwarded follows reading direction.",
+          "basis": "mechanical",
+          "principles": [
+            "physical-object",
+            "composite",
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "CallMissed",
+                "CallMissedOutgoing",
+                "PhoneCallback",
+                "PhoneForwarded",
+                "PhoneMissed"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "phone_callback",
+                "phone_forwarded",
+                "phone_missed"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "call",
+                "phone_enabled"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "call",
+                "phone"
+              ]
+            }
+          ],
+          "disagreement": "Material mirrors the whole composite including the handset; Apple's guidance is to keep the object and flip only the directional part.",
+          "condition": "Plain handset: never. Handset plus arrow: the arrow mirrors, the handset does not.",
+          "recommendation": "Draw call-direction icons as two layers, or accept the Material behaviour (whole flip) as the fallback.",
+          "arabicSpecific": true,
+          "examples": [
+            "phone",
+            "phone-incoming",
+            "phone-outgoing",
+            "phone-missed"
+          ]
+        },
+        {
+          "id": "logos-brands",
+          "concept": {
+            "ar": "الشعارات والعلامات التجارية",
+            "en": "Logos, brand marks, payment scheme marks, national symbols"
+          },
+          "verdict": "never",
+          "reason": "A flipped logo is a different mark and may be unlawful.",
+          "basis": "guidance",
+          "principles": [
+            "universal-mark"
+          ],
+          "evidence": [
+            {
+              "source": "apple-hig",
+              "says": "never"
+            }
+          ],
+          "examples": [
+            "brand"
+          ]
+        },
+        {
+          "id": "absolute-direction-arrows",
+          "concept": {
+            "ar": "أسهم الاتجاه الفعلي: يمين ويسار",
+            "en": "Arrows that mean a physical direction: move left/right, arrow keys, turn right, dock to side"
+          },
+          "verdict": "never",
+          "reason": "\"Right\" is right in every language: map turns, canvas nudges, keyboard arrows and column pinning to a physical side.",
+          "basis": "mechanical",
+          "principles": [
+            "absolute-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "AltRoute",
+                "AssistantDirection"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "alt_route",
+                "directions"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "navigation",
+                "near_me",
+                "swipe_left",
+                "turn_left",
+                "turn_right"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "never"
+            }
+          ],
+          "disagreement": "Material mirrors some map/route signs (directions, alt_route) while leaving turn_left/turn_right alone.",
+          "recommendation": "The glyph is the same as in back-forward-navigation; the difference is meaning. The icon API must therefore make the choice explicit (logical vs physical name), not infer it from the drawing.",
+          "examples": [
+            "arrow-left",
+            "arrow-right",
+            "chevron-left",
+            "chevron-right"
+          ]
+        },
+        {
+          "id": "text-direction-controls",
+          "concept": {
+            "ar": "أزرار اتجاه النص",
+            "en": "Text direction controls (LTR / RTL paragraph direction)"
+          },
+          "verdict": "never",
+          "reason": "Each icon names one fixed direction; flipping it would make the RTL button show the LTR picture.",
+          "basis": "mechanical",
+          "principles": [
+            "absolute-direction"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "FormatTextdirectionLToR",
+                "FormatTextdirectionRToL"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "format_textdirection_l_to_r",
+                "format_textdirection_r_to_l"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "text_direction_horizontal_ltr",
+                "text_direction_horizontal_rtl"
+              ]
+            }
+          ],
+          "disagreement": "Compose lists both text-direction icons as auto-mirrored; Material Symbols does not mirror them; Fluent ships them as two fixed assets.",
+          "recommendation": "Never mirror; pick the asset by meaning.",
+          "arabicSpecific": true,
+          "examples": [
+            "text-direction-ltr",
+            "text-direction-rtl"
+          ]
+        },
+        {
+          "id": "vertical-and-symmetric",
+          "concept": {
+            "ar": "الأسهم الرأسية والأشكال المتماثلة",
+            "en": "Vertical arrows and symmetric glyphs: up/down chevrons, upload/download, plus, minus, close, menu, more, home, eye, funnel"
+          },
+          "verdict": "never",
+          "reason": "A horizontal flip changes nothing or only shifts optical details.",
+          "basis": "mechanical",
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "add",
+                "arrow_upward",
+                "close",
+                "download",
+                "expand_more",
+                "filter_alt",
+                "home",
+                "keyboard_arrow_down",
+                "menu",
+                "upload",
+                "visibility"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "arrow_up"
+              ]
+            }
+          ],
+          "disagreement": "Fluent marks Arrow Up as \"mirror\", which has no visible effect on a symmetric arrow.",
+          "recommendation": "Mark as never so no transform is applied (it keeps pixel-snapped strokes crisp).",
+          "examples": [
+            "chevron-down",
+            "chevron-up",
+            "plus",
+            "close",
+            "menu",
+            "download",
+            "upload"
+          ]
+        },
+        {
+          "id": "share-link-attach",
+          "concept": {
+            "ar": "مشاركة، رابط، مشبك ورق",
+            "en": "Share (connected nodes), link, paperclip"
+          },
+          "verdict": "never",
+          "reason": "Abstract or physical marks without a reading direction.",
+          "basis": "mechanical",
+          "principles": [
+            "physical-object"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "attach_file",
+                "link",
+                "share"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "share"
+              ]
+            }
+          ],
+          "examples": [
+            "share",
+            "link",
+            "paperclip"
+          ]
+        },
+        {
+          "id": "copy-duplicate",
+          "concept": {
+            "ar": "نسخ وتكرار",
+            "en": "Copy / duplicate (two stacked sheets)"
+          },
+          "verdict": "never",
+          "reason": "Stacked sheets carry no direction.",
+          "basis": "mechanical",
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "content_copy"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "copy"
+              ]
+            }
+          ],
+          "disagreement": "Material Symbols currently marks content_copy as auto-mirrored (the older Compose list does not include ContentCopy); Fluent does not mirror Copy.",
+          "recommendation": "Do not mirror. If a product wants the back sheet to peek out at the end side, that is a drawing decision, not a rule.",
+          "examples": [
+            "copy"
+          ]
+        },
+        {
+          "id": "cart-bag",
+          "concept": {
+            "ar": "عربة التسوق والسلة",
+            "en": "Shopping cart, basket, bag"
+          },
+          "verdict": "never",
+          "reason": "Treated as an object by every mechanical source.",
+          "basis": "mechanical",
+          "principles": [
+            "physical-object"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "shopping_cart"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "cart"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "conditional",
+              "note": "Uses a cart with a badge as the example for judging badge position separately."
+            }
+          ],
+          "recommendation": "Do not mirror the cart. Position a count badge at the top end corner in both directions.",
+          "examples": [
+            "cart",
+            "bag"
+          ]
+        },
+        {
+          "id": "codes-barcode-qr",
+          "concept": {
+            "ar": "الباركود ورمز الاستجابة السريعة",
+            "en": "Barcode, QR code, scan frames"
+          },
+          "verdict": "never",
+          "reason": "A mirrored code is a different (invalid) code; the finder patterns of a QR code have a fixed arrangement.",
+          "basis": "authored",
+          "principles": [
+            "physical-object"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "barcode",
+                "qr_code"
+              ]
+            }
+          ],
+          "examples": [
+            "barcode",
+            "qr-code"
+          ]
+        },
+        {
+          "id": "code-and-terminal",
+          "concept": {
+            "ar": "أقواس الشيفرة وموجّه الطرفية",
+            "en": "Code brackets, terminal prompt"
+          },
+          "verdict": "never",
+          "reason": "Source code and shells are left-to-right in every locale.",
+          "basis": "authored",
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "code",
+                "terminal"
+              ]
+            }
+          ],
+          "examples": [
+            "code",
+            "terminal"
+          ]
+        },
+        {
+          "id": "currency-signs",
+          "concept": {
+            "ar": "رموز العملات والنقود",
+            "en": "Currency signs and money"
+          },
+          "verdict": "never",
+          "reason": "A currency sign is a character; flipping it produces a wrong glyph.",
+          "basis": "mechanical",
+          "principles": [
+            "numerals-letters"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "send_money"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "attach_money"
+              ]
+            }
+          ],
+          "recommendation": "Never mirror the sign. Composite \"send money\" style icons mirror only their arrow.",
+          "arabicSpecific": true,
+          "examples": [
+            "currency",
+            "banknote",
+            "coins"
+          ]
+        },
+        {
+          "id": "hands-gestures",
+          "concept": {
+            "ar": "الأيدي والإيماءات",
+            "en": "Hands and gestures: thumbs up, pointing hand"
+          },
+          "verdict": "never",
+          "reason": "Hands are drawn as right hands; same reasoning as right-hand tools.",
+          "basis": "mechanical",
+          "principles": [
+            "right-hand"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "thumb_up"
+              ]
+            }
+          ],
+          "examples": [
+            "thumbs-up"
+          ]
+        },
+        {
+          "id": "pie-and-bar-charts",
+          "concept": {
+            "ar": "مخططات دائرية وعمودية",
+            "en": "Pie, donut and bar chart icons"
+          },
+          "verdict": "never",
+          "reason": "Circular charts have no reading direction, and the guidance excludes charts from mirroring.",
+          "basis": "mechanical",
+          "principles": [
+            "circular-time"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "bar_chart",
+                "pie_chart"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never",
+              "note": "Charts and graphs are listed as not mirrored."
+            }
+          ],
+          "recommendation": "Never mirror the icon. Whether the real chart component reverses its category axis in RTL is a chart setting, not an icon rule.",
+          "arabicSpecific": true,
+          "examples": [
+            "chart-pie",
+            "chart-bar"
+          ]
+        },
+        {
+          "id": "non-directional",
+          "concept": {
+            "ar": "بقية الأيقونات التي لا تحمل اتجاهاً",
+            "en": "Everything else: icons with no horizontal direction, text, sequence or handedness"
+          },
+          "verdict": "never",
+          "reason": "An icon that does not communicate direction is left unchanged. This is the default for any concept without a more specific rule.",
+          "basis": "mechanical",
+          "principles": [
+            "physical-object"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "bookmark",
+                "delete",
+                "mail",
+                "notifications",
+                "person",
+                "settings",
+                "star"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "never",
+              "note": "Icons that do not communicate direction are not changed."
+            }
+          ],
+          "examples": [
+            "settings",
+            "trash",
+            "bell",
+            "mail",
+            "user"
+          ]
+        },
+        {
+          "id": "question-mark",
+          "concept": {
+            "ar": "علامة الاستفهام والمساعدة",
+            "en": "Question mark / help"
+          },
+          "verdict": "conditional",
+          "reason": "The Arabic question mark «؟» (U+061F) is the mirror image of «?». That is a property of the script, not of direction: Persian and Urdu share it, Hebrew writes «?».",
+          "basis": "mechanical",
+          "principles": [
+            "numerals-letters"
+          ],
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "BatteryUnknown",
+                "ContactSupport",
+                "Help",
+                "HelpCenter",
+                "HelpOutline",
+                "LiveHelp",
+                "NotListedLocation"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "contact_support",
+                "help",
+                "help_center",
+                "live_help",
+                "shield_question"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "book_question_mark_rtl"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "question",
+                "question_circle"
+              ]
+            }
+          ],
+          "disagreement": "Android auto-mirrors help icons in every RTL locale, which also reverses the mark for Hebrew. Fluent leaves its Question icons unmirrored in every locale and ships one hand-drawn RTL variant (Book Question Mark RTL).",
+          "condition": "Mirror when the interface language is written in Arabic script (ar, fa, ur, ckb, ps, …). Do not mirror for Hebrew or for an LTR language shown in an RTL container.",
+          "recommendation": "Drive this rule from the locale's script, not from dir. Ship help and help-arab as two glyphs, or mirror by script at render time.",
+          "arabicSpecific": true,
+          "examples": [
+            "help",
+            "help-circle"
+          ]
+        },
+        {
+          "id": "letters-in-icons",
+          "concept": {
+            "ar": "أيقونات تحتوي على حروف",
+            "en": "Icons that contain letters: font size, bold/italic/underline, text colour, translate, spell-check"
+          },
+          "verdict": "conditional",
+          "reason": "Letters are never flipped. For an Arabic-first product a Latin «A» is the wrong letter, not the wrong direction.",
+          "basis": "mechanical",
+          "principles": [
+            "numerals-letters"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "format_bold",
+                "format_italic",
+                "translate"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "conditional",
+              "note": "Recommends a localized version of icons that display text; SF Symbols ships Arabic and Hebrew variants."
+            }
+          ],
+          "condition": "Never mirror. Swap to an Arabic-letter drawing («أ» or «ع») when the interface language is Arabic.",
+          "recommendation": "Provide -arab variants for the text-formatting group; none of the nine catalogs has them (see gaps). Arabic has no italic tradition: keep a slanted stroke icon without a letter for \"italic\".",
+          "arabicSpecific": true,
+          "examples": [
+            "text-size",
+            "bold",
+            "italic",
+            "underline",
+            "translate"
+          ]
+        },
+        {
+          "id": "sort-alphabetical",
+          "concept": {
+            "ar": "فرز أبجدي (أ ← ي)",
+            "en": "Sort A→Z / Z→A"
+          },
+          "verdict": "conditional",
+          "reason": "The letters must be localized (أ and ي); the vertical arrow is unaffected and the letters keep their own shape.",
+          "basis": "mechanical",
+          "principles": [
+            "numerals-letters"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "sort_by_alpha"
+              ]
+            }
+          ],
+          "condition": "Never mirror. Use the Arabic-letter variant for Arabic; if letters sit beside the arrow, put them on the start side.",
+          "recommendation": "Prefer a letter-free sort icon in components (sort-ascending / sort-descending with bars); offer sort-alpha and sort-alpha-arab for explicit alphabetical sort.",
+          "arabicSpecific": true,
+          "examples": [
+            "sort-alpha-asc",
+            "sort-alpha-desc"
+          ]
+        },
+        {
+          "id": "digits-in-icons",
+          "concept": {
+            "ar": "أيقونات تحتوي على أرقام",
+            "en": "Icons that contain digits: calendar date, counters, \"10 seconds\" skips, 123 keyboards"
+          },
+          "verdict": "conditional",
+          "reason": "Digits are never mirrored and never reordered inside one number; which digit shapes to draw follows the numbering system.",
+          "basis": "mechanical",
+          "principles": [
+            "numerals-letters"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "forward_10"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "conditional",
+              "note": "Icons containing numbers must be localized where other digits are used."
+            },
+            {
+              "source": "apple-hig",
+              "says": "conditional",
+              "note": "Do not reverse digits within a number."
+            }
+          ],
+          "condition": "Never mirror. Use Arabic-Indic digits only when the product's numbering system for the locale is arab; many Arabic interfaces (Maghreb, and by choice in the Gulf) use Latin digits.",
+          "recommendation": "Avoid baked-in digits in the core set; render the number as live text over a blank icon so it follows the numerals setting.",
+          "arabicSpecific": true,
+          "examples": [
+            "calendar-date",
+            "badge-count"
+          ]
+        },
+        {
+          "id": "quote-marks",
+          "concept": {
+            "ar": "علامات التنصيص والاقتباس",
+            "en": "Quotation marks / blockquote"
+          },
+          "verdict": "conditional",
+          "reason": "Arabic typography uses «…» or the same curly pair as English, with the opening mark on the right. No mechanical source mirrors its quote icon.",
+          "basis": "authored",
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "format_quote"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "not-mirrored",
+              "names": [
+                "text_quote"
+              ]
+            }
+          ],
+          "condition": "A blockquote icon made of a vertical bar plus text lines mirrors (text-lines). A pair of quote glyphs is a character: do not flip the glyph shape; choose opening or closing marks so that the opening one is at the start.",
+          "recommendation": "Use a bar-and-lines blockquote icon in the editor toolbar; if quote glyphs are wanted, ship an Arabic variant with «» rather than mirroring 66/99 marks.",
+          "arabicSpecific": true,
+          "examples": [
+            "quote",
+            "blockquote"
+          ]
+        },
+        {
+          "id": "calendar",
+          "concept": {
+            "ar": "التقويم",
+            "en": "Calendar"
+          },
+          "verdict": "conditional",
+          "reason": "A plain calendar page is symmetric. It becomes directional when it shows text lines, an arrow, or a highlighted day cell.",
+          "basis": "mechanical",
+          "evidence": [
+            {
+              "source": "compose",
+              "says": "mirror",
+              "names": [
+                "EventNote",
+                "NextWeek"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "mirror",
+              "names": [
+                "event_note",
+                "event_upcoming",
+                "next_week"
+              ]
+            },
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "calendar_month",
+                "calendar_today",
+                "event"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "mirror",
+              "names": [
+                "calendar",
+                "calendar_link"
+              ]
+            },
+            {
+              "source": "fluent",
+              "says": "separate-rtl-artwork",
+              "names": [
+                "calendar_ltr",
+                "calendar_rtl"
+              ]
+            },
+            {
+              "source": "material-guidelines",
+              "says": "conditional",
+              "note": "Says the days of a calendar run right to left (about the grid, not the icon)."
+            }
+          ],
+          "disagreement": "Fluent marks Calendar \"mirror\" and also ships Calendar LTR / Calendar RTL assets. Material does not mirror calendar_month, calendar_today or event, only the variants with lines or arrows.",
+          "condition": "Mirror only when the drawing marks a specific cell, lines or an arrow.",
+          "recommendation": "Draw the core calendar icon symmetric (header bar, two rings, no marked cell) and declare it never; variants with an arrow inherit the arrow rule.",
+          "arabicSpecific": true,
+          "examples": [
+            "calendar",
+            "calendar-range"
+          ]
+        },
+        {
+          "id": "toggle-switch",
+          "concept": {
+            "ar": "مفتاح التبديل",
+            "en": "Toggle / switch pictograms"
+          },
+          "verdict": "conditional",
+          "reason": "The \"on\" position is at the end of the track; the switch component mirrors, and an icon of it should agree with the component next to it.",
+          "basis": "authored",
+          "principles": [
+            "reading-direction"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "toggle_on"
+              ]
+            }
+          ],
+          "condition": "Mirror if the icon stands for the state of a switch that itself mirrors. Icons named by physical side (toggle-left, toggle-right) are never mirrored.",
+          "recommendation": "Name by state (toggle-on, toggle-off) and mirror.",
+          "examples": [
+            "toggle-on",
+            "toggle-off"
+          ]
+        },
+        {
+          "id": "badged-icons",
+          "concept": {
+            "ar": "أيقونات بشارة في الزاوية",
+            "en": "Icons with a corner badge (count, plus, status dot)"
+          },
+          "verdict": "conditional",
+          "reason": "The badge is a separate part: it may need to move to the other corner while the base stays, or the reverse.",
+          "basis": "guidance",
+          "principles": [
+            "composite"
+          ],
+          "evidence": [
+            {
+              "source": "apple-hig",
+              "says": "conditional"
+            }
+          ],
+          "condition": "Decide base and badge separately. A badge that mimics real UI (a notification dot) goes to the top end corner.",
+          "recommendation": "Compose badges at render time instead of baking them into the icon.",
+          "examples": [
+            "bell-dot",
+            "cart-badge",
+            "user-plus"
+          ]
+        },
+        {
+          "id": "signature-handwriting",
+          "concept": {
+            "ar": "التوقيع والكتابة باليد",
+            "en": "Signature, handwriting, text cursor"
+          },
+          "verdict": "conditional",
+          "reason": "A scribble that imitates Latin handwriting reads as foreign in Arabic; the pen itself is a right-hand tool.",
+          "basis": "mechanical",
+          "principles": [
+            "numerals-letters",
+            "right-hand"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "signature"
+              ]
+            },
+            {
+              "source": "apple-hig",
+              "says": "conditional",
+              "note": "SF Symbols provides localized signature and I-beam symbols."
+            }
+          ],
+          "condition": "Never mirror the pen. Use a script-neutral stroke or an Arabic-style signature drawing.",
+          "recommendation": "Draw the signature as a neutral wave on a baseline with the X mark at the start side; that variant mirrors as text-lines.",
+          "examples": [
+            "signature"
+          ]
+        },
+        {
+          "id": "percent-sign",
+          "concept": {
+            "ar": "النسبة المئوية والخصم",
+            "en": "Percent and discount"
+          },
+          "verdict": "conditional",
+          "reason": "The Arabic percent sign «٪» (U+066A) is a different glyph, not a mirror image, and the slash keeps its slant.",
+          "basis": "authored",
+          "principles": [
+            "numerals-letters",
+            "slash-stays"
+          ],
+          "evidence": [
+            {
+              "source": "material-symbols",
+              "says": "not-mirrored",
+              "names": [
+                "percent"
+              ]
+            }
+          ],
+          "condition": "Never mirror. Use «٪» only together with Arabic-Indic digits.",
+          "recommendation": "Keep one percent icon (%) in the core set and let live text carry the localized sign.",
+          "arabicSpecific": true,
+          "examples": [
+            "percent",
+            "discount"
+          ]
+        }
+      ]
+    }
+  }
+}

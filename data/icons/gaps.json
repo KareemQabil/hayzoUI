@@ -1,0 +1,864 @@
+{
+  "kind": "icon",
+  "schemaVersion": 1,
+  "id": "gaps",
+  "provenance": {
+    "method": "authored",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Bootstrap Icons",
+        "url": "https://github.com/twbs/icons",
+        "version": "1.13.2",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/bootstrap.json"
+      },
+      {
+        "name": "Carbon Icons",
+        "url": "https://github.com/carbon-design-system/carbon",
+        "version": "11.92.0",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/carbon.json"
+      },
+      {
+        "name": "Fluent UI System Icons",
+        "url": "https://github.com/microsoft/fluentui-system-icons",
+        "version": "1.1.345",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/fluent.json"
+      },
+      {
+        "name": "Heroicons",
+        "url": "https://github.com/tailwindlabs/heroicons",
+        "version": "2.2.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/heroicons.json"
+      },
+      {
+        "name": "Iconoir",
+        "url": "https://github.com/iconoir-icons/iconoir",
+        "version": "7.12.2",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/iconoir.json"
+      },
+      {
+        "name": "Lucide",
+        "url": "https://github.com/lucide-icons/lucide",
+        "version": "1.72.0",
+        "license": "ISC",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/lucide.json"
+      },
+      {
+        "name": "Material Symbols",
+        "url": "https://github.com/google/material-design-icons",
+        "version": "10ecc14790612ca8fd164e3f4ffe9c16fc50d5b7",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/material-symbols.json"
+      },
+      {
+        "name": "Phosphor Icons",
+        "url": "https://github.com/phosphor-icons/core",
+        "version": "2.1.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/phosphor.json"
+      },
+      {
+        "name": "Tabler Icons",
+        "url": "https://github.com/tabler/tabler-icons",
+        "version": "3.51.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "data/icons/sources/tabler.json"
+      }
+    ],
+    "script": "tools/extract/icons/gaps.mjs",
+    "notes": "Which concepts are needed, their status and priority are the author's judgement. `search.hits` is produced by the script from the nine source catalogs (names, aliases and exact tags; at most 12 names per source, full count in hitCounts), so every \"missing\" is \"no icon whose name, alias or tag matches these terms\", not a visual review. An icon can exist under a name the terms do not anticipate. Arabic names are the author's. No trademarked artwork was collected."
+  },
+  "data": {
+    "dataset": "gaps",
+    "content": {
+      "method": "Name, alias and exact-tag search over data/icons/sources/*.json; see tools/extract/icons/gaps.mjs.",
+      "gaps": [
+        {
+          "id": "saudi-riyal-sign",
+          "name": {
+            "ar": "رمز الريال السعودي",
+            "en": "Saudi riyal sign (new symbol, 2025)"
+          },
+          "status": "partial",
+          "priority": "p0",
+          "need": "Prices, totals, currency fields and currency pickers in Saudi products. The official symbol was introduced in 2025; the older ligature «﷼» is not it.",
+          "note": "Lucide has saudi-riyal. Tabler has currency-riyal, which predates the 2025 symbol and has to be checked visually before use. The other seven sets have nothing. Better still: render the sign as text from a font that carries the character (currency and font layers), and keep an icon only as fallback.",
+          "search": {
+            "terms": [
+              "riyal",
+              "saudi",
+              "(^|[-_])sar($|[-_])"
+            ],
+            "exclude": [
+              "iranian"
+            ],
+            "hits": {
+              "lucide": [
+                "saudi-riyal"
+              ],
+              "tabler": [
+                "currency-riyal"
+              ]
+            },
+            "hitCounts": {
+              "lucide": 1,
+              "tabler": 1
+            }
+          }
+        },
+        {
+          "id": "uae-dirham-sign",
+          "name": {
+            "ar": "رمز الدرهم الإماراتي",
+            "en": "UAE dirham symbol (2025)"
+          },
+          "status": "partial",
+          "priority": "p0",
+          "need": "Same uses as the riyal sign, for UAE products.",
+          "note": "Lucide has emirati-dirham; Tabler has currency-dirham (verify which drawing it is). Missing from the other seven.",
+          "search": {
+            "terms": [
+              "dirham",
+              "(^|[-_])aed($|[-_])"
+            ],
+            "hits": {
+              "lucide": [
+                "emirati-dirham"
+              ],
+              "tabler": [
+                "currency-dirham"
+              ]
+            },
+            "hitCounts": {
+              "lucide": 1,
+              "tabler": 1
+            }
+          }
+        },
+        {
+          "id": "other-arab-currency-marks",
+          "name": {
+            "ar": "رموز العملات العربية الأخرى",
+            "en": "Marks for other Arab currencies (EGP, KWD, BHD, QAR, OMR, JOD, MAD, DZD, TND, IQD, LYD …)"
+          },
+          "status": "partial",
+          "priority": "p1",
+          "need": "Currency pickers and multi-currency ledgers. Most of these currencies have no single-glyph sign; products show the Arabic abbreviation (ج.م, د.ك) as text.",
+          "note": "Only Tabler has any (currency-dinar, currency-bahraini, currency-lyd). Recommendation: no icons; a text badge component fed by the currencies layer.",
+          "search": {
+            "terms": [
+              "dinar",
+              "bahraini",
+              "currency[-_]lyd",
+              "kuwait",
+              "egypt",
+              "tag:egp",
+              "tag:kwd",
+              "tag:qar"
+            ],
+            "hits": {
+              "tabler": [
+                "currency-bahraini",
+                "currency-dinar",
+                "currency-lyd"
+              ]
+            },
+            "hitCounts": {
+              "tabler": 3
+            }
+          }
+        },
+        {
+          "id": "hijri-calendar",
+          "name": {
+            "ar": "التقويم الهجري",
+            "en": "Hijri calendar / calendar-system switch"
+          },
+          "status": "missing",
+          "priority": "p0",
+          "need": "Date pickers that switch between Gregorian and Hijri, dual-date fields, Ramadan working-hours settings.",
+          "note": "No set has a calendar icon marked as Hijri. Crescent or moon icons exist (see crescent) but mean night mode in every set. Needs original artwork: calendar page with a crescent.",
+          "search": {
+            "terms": [
+              "hijri",
+              "islamic",
+              "lunar",
+              "tag:hijri",
+              "tag:islamic calendar"
+            ],
+            "hits": {},
+            "hitCounts": {}
+          }
+        },
+        {
+          "id": "crescent",
+          "name": {
+            "ar": "هلال",
+            "en": "Crescent (as a calendar or Ramadan marker)"
+          },
+          "status": "poor",
+          "priority": "p2",
+          "need": "Building block for the Hijri calendar icon; Ramadan schedules.",
+          "note": "A moon exists in most sets but is the dark-mode icon; reusing it for Hijri would overload it. Phosphor has star-and-crescent.",
+          "search": {
+            "terms": [
+              "crescent",
+              "^moon$",
+              "star[-_]and[-_]crescent"
+            ],
+            "hits": {
+              "bootstrap": [
+                "moon"
+              ],
+              "carbon": [
+                "moon"
+              ],
+              "heroicons": [
+                "moon"
+              ],
+              "lucide": [
+                "moon"
+              ],
+              "phosphor": [
+                "moon",
+                "star-and-crescent"
+              ],
+              "tabler": [
+                "moon"
+              ]
+            },
+            "hitCounts": {
+              "bootstrap": 1,
+              "carbon": 1,
+              "heroicons": 1,
+              "lucide": 1,
+              "phosphor": 2,
+              "tabler": 1
+            }
+          }
+        },
+        {
+          "id": "arabic-letter-text-format",
+          "name": {
+            "ar": "أيقونات تنسيق النص بحرف عربي",
+            "en": "Text-format icons with an Arabic letter («أ» / «ع» instead of «A»): text size, text colour, font, spell-check"
+          },
+          "status": "missing",
+          "priority": "p0",
+          "need": "Rich-text toolbar, font and size pickers in an Arabic interface (mirror rule letters-in-icons).",
+          "note": "The only hit is Tabler alphabet-arabic (a script picker glyph, not a format icon). No set has Arabic-letter variants of bold, text-size or text-colour. Needs original artwork.",
+          "search": {
+            "terms": [
+              "arabic",
+              "abjad",
+              "alef"
+            ],
+            "exclude": [
+              "augmented",
+              "badge[-_]ar"
+            ],
+            "hits": {
+              "tabler": [
+                "alphabet-arabic"
+              ]
+            },
+            "hitCounts": {
+              "tabler": 1
+            }
+          }
+        },
+        {
+          "id": "arabic-letter-sort",
+          "name": {
+            "ar": "فرز أبجدي بحروف عربية",
+            "en": "Alphabetical sort with Arabic letters (أ → ي)"
+          },
+          "status": "missing",
+          "priority": "p1",
+          "need": "Column sort menus and list sort controls (mirror rule sort-alphabetical).",
+          "note": "Hits are the Latin A–Z icons only. Needs original artwork, or use the letter-free sort-ascending/descending icons.",
+          "search": {
+            "terms": [
+              "sort.*(arab|alef)",
+              "(arab|alef).*sort",
+              "a[-_]z",
+              "sort[-_]by[-_]alpha",
+              "sort[-_]alpha"
+            ],
+            "hits": {
+              "bootstrap": [
+                "sort-alpha-down",
+                "sort-alpha-down-alt",
+                "sort-alpha-up",
+                "sort-alpha-up-alt"
+              ],
+              "lucide": [
+                "arrow-down-a-z",
+                "arrow-up-a-z"
+              ],
+              "material-symbols": [
+                "sort_by_alpha"
+              ],
+              "tabler": [
+                "sort-a-z"
+              ]
+            },
+            "hitCounts": {
+              "bootstrap": 4,
+              "lucide": 2,
+              "material-symbols": 1,
+              "tabler": 1
+            }
+          }
+        },
+        {
+          "id": "arabic-indic-numbered-list",
+          "name": {
+            "ar": "قائمة مرقمة بأرقام عربية مشرقية",
+            "en": "Numbered list with Arabic-Indic digits (١ ٢ ٣)"
+          },
+          "status": "missing",
+          "priority": "p1",
+          "need": "Editor toolbar when the numbering system is arab (mirror rule numbered-list).",
+          "note": "Material Symbols (format_list_numbered_rtl) and Fluent (text_number_list_rtl) ship an RTL numbered list, both with Latin digits. None has Arabic-Indic digits.",
+          "search": {
+            "terms": [
+              "list.*(arab|indic)",
+              "numbered[-_]rtl",
+              "number[-_]list[-_]rtl",
+              "tag:arabic numerals"
+            ],
+            "hits": {
+              "fluent": [
+                "text_number_list_rtl",
+                "text_number_list_rtl_90",
+                "text_number_list_rtl_rotate_270",
+                "text_number_list_rtl_rotate_90"
+              ],
+              "material-symbols": [
+                "format_list_numbered_rtl"
+              ]
+            },
+            "hitCounts": {
+              "fluent": 4,
+              "material-symbols": 1
+            }
+          }
+        },
+        {
+          "id": "arabic-indic-digit-glyphs",
+          "name": {
+            "ar": "أيقونات بأرقام عربية مشرقية",
+            "en": "Digit icons with Arabic-Indic digits: 123 keyboard toggle, numeric sort, counters"
+          },
+          "status": "missing",
+          "priority": "p2",
+          "need": "Numeral-system switch, numeric sort, numeric keypad toggle.",
+          "note": "All hits use Latin digits. Prefer live text over baked digits (mirror rule digits-in-icons).",
+          "search": {
+            "terms": [
+              "^123$",
+              "number[-_]123",
+              "keyboard[-_]123",
+              "sort[-_]numeric",
+              "sort.*numbers",
+              "sort[-_]0[-_]9",
+              "arrow[-_]down[-_]0[-_]1"
+            ],
+            "hits": {
+              "bootstrap": [
+                "123",
+                "sort-numeric-down",
+                "sort-numeric-down-alt",
+                "sort-numeric-up",
+                "sort-numeric-up-alt"
+              ],
+              "fluent": [
+                "clipboard_number_123",
+                "keyboard_123"
+              ],
+              "lucide": [
+                "arrow-down-0-1"
+              ],
+              "material-symbols": [
+                "123"
+              ],
+              "tabler": [
+                "number-123",
+                "sort-0-9",
+                "sort-ascending-numbers",
+                "sort-descending-numbers"
+              ]
+            },
+            "hitCounts": {
+              "bootstrap": 5,
+              "fluent": 2,
+              "lucide": 1,
+              "material-symbols": 1,
+              "tabler": 4
+            }
+          }
+        },
+        {
+          "id": "rtl-list-variants",
+          "name": {
+            "ar": "نسخ من اليمين لليسار لأيقونات القوائم",
+            "en": "RTL variants of list icons (bulleted, numbered, checklist, indent)"
+          },
+          "status": "partial",
+          "priority": "p0",
+          "need": "Editor toolbar and any list affordance. Bulleted and indent can be mirrored; numbered and checklist need separate artwork.",
+          "note": "Only Fluent and Material Symbols publish RTL-specific list assets. The stroke sets (Lucide, Tabler, Phosphor, Heroicons, Iconoir) have none, so a Hayzo set built on them must draw list-numbered and list-checks for RTL.",
+          "search": {
+            "terms": [
+              "list.*rtl",
+              "rtl.*list",
+              "checklist[-_]rtl",
+              "indent.*rtl"
+            ],
+            "hits": {
+              "fluent": [
+                "clipboard_bullet_list_rtl",
+                "clipboard_task_list_rtl",
+                "list_rtl",
+                "task_list_rtl",
+                "task_list_square_rtl",
+                "text_bullet_list_rtl",
+                "text_bullet_list_rtl_90",
+                "text_indent_decrease_rtl",
+                "text_indent_decrease_rtl_90",
+                "text_indent_decrease_rtl_rotate_270",
+                "text_indent_increase_rtl",
+                "text_indent_increase_rtl_90"
+              ],
+              "material-symbols": [
+                "checklist_rtl",
+                "format_list_numbered_rtl"
+              ]
+            },
+            "hitCounts": {
+              "fluent": 17,
+              "material-symbols": 2
+            }
+          }
+        },
+        {
+          "id": "text-direction-pair",
+          "name": {
+            "ar": "أزرار اتجاه النص",
+            "en": "Text-direction controls (LTR / RTL paragraph)"
+          },
+          "status": "partial",
+          "priority": "p0",
+          "need": "Every editor and text field that mixes Arabic and Latin text needs both buttons.",
+          "note": "Present in Lucide, Tabler, Material Symbols and Fluent; absent from Phosphor, Heroicons, Carbon, Iconoir and Bootstrap.",
+          "search": {
+            "terms": [
+              "text[-_]?direction",
+              "textdirection",
+              "pilcrow[-_](left|right)"
+            ],
+            "hits": {
+              "fluent": [
+                "text_direction_horizontal_left",
+                "text_direction_horizontal_ltr",
+                "text_direction_horizontal_right",
+                "text_direction_horizontal_rtl",
+                "text_direction_rotate_270_right",
+                "text_direction_rotate_315_right",
+                "text_direction_rotate_45_right",
+                "text_direction_rotate_90_left",
+                "text_direction_rotate_90_ltr",
+                "text_direction_rotate_90_right",
+                "text_direction_rotate_90_rtl",
+                "text_direction_vertical"
+              ],
+              "lucide": [
+                "pilcrow-left",
+                "pilcrow-right"
+              ],
+              "material-symbols": [
+                "format_textdirection_l_to_r",
+                "format_textdirection_r_to_l",
+                "format_textdirection_vertical"
+              ],
+              "tabler": [
+                "pilcrow-left",
+                "pilcrow-right",
+                "text-direction-ltr",
+                "text-direction-rtl"
+              ]
+            },
+            "hitCounts": {
+              "fluent": 12,
+              "lucide": 2,
+              "material-symbols": 3,
+              "tabler": 4
+            }
+          }
+        },
+        {
+          "id": "arabic-question-mark",
+          "name": {
+            "ar": "أيقونة مساعدة بعلامة الاستفهام العربية",
+            "en": "Help icon with the Arabic question mark «؟»"
+          },
+          "status": "missing",
+          "priority": "p1",
+          "need": "Help, tooltips and FAQ entry points in Arabic-script locales (mirror rule question-mark).",
+          "note": "Only Fluent has one hand-drawn RTL question-mark asset (book_question_mark_rtl). Elsewhere the glyph has to be mirrored at render time, by script not by direction.",
+          "search": {
+            "terms": [
+              "question.*(rtl|arab)",
+              "(rtl|arab).*question"
+            ],
+            "hits": {
+              "fluent": [
+                "book_question_mark_rtl"
+              ]
+            },
+            "hitCounts": {
+              "fluent": 1
+            }
+          }
+        },
+        {
+          "id": "language-switch-arabic",
+          "name": {
+            "ar": "تبديل اللغة بحرف عربي",
+            "en": "Language switch showing an Arabic letter («ع» / A)"
+          },
+          "status": "poor",
+          "priority": "p1",
+          "need": "The language toggle is the most used control of a bilingual product. Existing translate icons pair a Latin A with a CJK character.",
+          "note": "No set has an Arabic/Latin pair; Tabler alphabet-arabic is the nearest. Needs original artwork (ع | A).",
+          "search": {
+            "terms": [
+              "^translate$",
+              "^languages?$",
+              "language[-_]",
+              "alphabet"
+            ],
+            "exclude": [
+              "katakana",
+              "hiragana",
+              "hangul",
+              "korean",
+              "thai",
+              "bangla",
+              "hebrew",
+              "greek",
+              "cyrillic",
+              "polish",
+              "runes",
+              "latin"
+            ],
+            "hits": {
+              "bootstrap": [
+                "alphabet",
+                "alphabet-uppercase",
+                "translate"
+              ],
+              "carbon": [
+                "ibm-watson--language-translator",
+                "ibm-watson--natural-language-classifier",
+                "ibm-watson--natural-language-understanding",
+                "language",
+                "translate"
+              ],
+              "fluent": [
+                "local_language_globe",
+                "translate"
+              ],
+              "heroicons": [
+                "language"
+              ],
+              "iconoir": [
+                "language",
+                "translate"
+              ],
+              "lucide": [
+                "languages"
+              ],
+              "material-symbols": [
+                "language",
+                "language_chinese_array",
+                "language_chinese_cangjie",
+                "language_chinese_dayi",
+                "language_chinese_pinyin",
+                "language_chinese_quick",
+                "language_chinese_wubi",
+                "language_french",
+                "language_gb_english",
+                "language_international",
+                "language_japanese_kana",
+                "language_pinyin"
+              ],
+              "phosphor": [
+                "translate"
+              ],
+              "tabler": [
+                "alphabet-arabic",
+                "alphabet-chinese",
+                "alphabet-devanagari",
+                "alphabet-ethiopic",
+                "alphabet-georgian",
+                "alphabet-japanese",
+                "language",
+                "language-off"
+              ]
+            },
+            "hitCounts": {
+              "bootstrap": 3,
+              "carbon": 5,
+              "fluent": 2,
+              "heroicons": 1,
+              "iconoir": 2,
+              "lucide": 1,
+              "material-symbols": 19,
+              "phosphor": 1,
+              "tabler": 8
+            }
+          }
+        },
+        {
+          "id": "mosque",
+          "name": {
+            "ar": "مسجد",
+            "en": "Mosque (map point, branch finder)"
+          },
+          "status": "partial",
+          "priority": "p2",
+          "need": "Store locators and maps list mosques as landmarks; not needed by ERP/POS screens themselves.",
+          "note": "Present in Lucide, Tabler, Phosphor, Material Symbols and Fluent.",
+          "search": {
+            "terms": [
+              "mosque",
+              "masjid"
+            ],
+            "hits": {
+              "fluent": [
+                "building_mosque"
+              ],
+              "lucide": [
+                "mosque"
+              ],
+              "material-symbols": [
+                "mosque"
+              ],
+              "phosphor": [
+                "mosque"
+              ],
+              "tabler": [
+                "building-mosque",
+                "mosque"
+              ]
+            },
+            "hitCounts": {
+              "fluent": 1,
+              "lucide": 1,
+              "material-symbols": 1,
+              "phosphor": 1,
+              "tabler": 2
+            }
+          }
+        },
+        {
+          "id": "prayer-times",
+          "name": {
+            "ar": "أوقات الصلاة",
+            "en": "Prayer times / prayer-break marker"
+          },
+          "status": "partial",
+          "priority": "p1",
+          "need": "Retail and scheduling: shop hours, shift planners and booking calendars in Saudi Arabia and elsewhere show prayer breaks.",
+          "note": "Material Symbols has prayer_times; Phosphor hands-praying and Tabler pray are generic. No stroke set has a schedule-oriented icon.",
+          "search": {
+            "terms": [
+              "pray",
+              "salah",
+              "salat"
+            ],
+            "exclude": [
+              "spray"
+            ],
+            "hits": {
+              "material-symbols": [
+                "prayer_times"
+              ],
+              "phosphor": [
+                "hands-praying"
+              ],
+              "tabler": [
+                "pray"
+              ]
+            },
+            "hitCounts": {
+              "material-symbols": 1,
+              "phosphor": 1,
+              "tabler": 1
+            }
+          }
+        },
+        {
+          "id": "qibla",
+          "name": {
+            "ar": "اتجاه القبلة",
+            "en": "Qibla direction / Kaaba"
+          },
+          "status": "missing",
+          "priority": "p2",
+          "need": "Hospitality and travel products only; listed for completeness, not needed by business applications.",
+          "note": "No hits in any set.",
+          "search": {
+            "terms": [
+              "qibla",
+              "kaaba",
+              "kaba",
+              "tag:qibla",
+              "tag:kaaba"
+            ],
+            "exclude": [
+              "kabaddi"
+            ],
+            "hits": {},
+            "hitCounts": {}
+          }
+        },
+        {
+          "id": "national-payment-schemes",
+          "name": {
+            "ar": "علامات شبكات الدفع الوطنية",
+            "en": "National payment scheme marks: mada, Meeza, KNET, Benefit, NAPS, OmanNet, Fawry, STC Pay, Tabby, Tamara"
+          },
+          "status": "trademark",
+          "priority": "p0",
+          "need": "Checkout, POS tender buttons, receipts and settlement reports must show the scheme the customer used.",
+          "note": "No hits. These are registered trademarks with their own brand guidelines: Hayzo should define the slot (size, clear space, monochrome fallback label) and let the integrator supply the artwork under the scheme's licence. Not collected here. International marks appear only in Tabler (brand-visa, brand-mastercard) and Iconoir (mastercard-card).",
+          "search": {
+            "terms": [
+              "(^|[-_])mada($|[-_])",
+              "meeza",
+              "knet",
+              "(^|[-_])benefit[-_]?pay",
+              "fawry",
+              "(^|[-_])stc[-_]?pay",
+              "tabby",
+              "tamara",
+              "omannet",
+              "(^|[-_])naps($|[-_])"
+            ],
+            "hits": {},
+            "hitCounts": {}
+          }
+        },
+        {
+          "id": "cash-on-delivery",
+          "name": {
+            "ar": "الدفع عند الاستلام",
+            "en": "Cash on delivery"
+          },
+          "status": "missing",
+          "priority": "p1",
+          "need": "A dominant payment method in MENA e-commerce: checkout option, order status, courier reconciliation.",
+          "note": "No hits. Compose from hand-coins/banknote plus truck, or draw one.",
+          "search": {
+            "terms": [
+              "cash[-_]on",
+              "(^|[-_])cod($|[-_])",
+              "tag:cash on delivery",
+              "tag:cod"
+            ],
+            "hits": {},
+            "hitCounts": {}
+          }
+        },
+        {
+          "id": "installments-bnpl",
+          "name": {
+            "ar": "التقسيط والدفع الآجل",
+            "en": "Instalments / buy now pay later"
+          },
+          "status": "poor",
+          "priority": "p1",
+          "need": "Checkout and invoices with split payments.",
+          "note": "Only a loose match: credit_card_clock in Material Symbols and Fluent.",
+          "search": {
+            "terms": [
+              "installment",
+              "instalment",
+              "pay[-_]later",
+              "bnpl",
+              "credit[-_]card[-_]clock",
+              "tag:installments"
+            ],
+            "hits": {
+              "fluent": [
+                "credit_card_clock"
+              ],
+              "material-symbols": [
+                "credit_card_clock"
+              ]
+            },
+            "hitCounts": {
+              "fluent": 1,
+              "material-symbols": 1
+            }
+          }
+        },
+        {
+          "id": "halal-mark",
+          "name": {
+            "ar": "علامة حلال",
+            "en": "Halal certification marker"
+          },
+          "status": "trademark",
+          "priority": "p2",
+          "need": "Product catalogues and food POS show certification.",
+          "note": "No hits. Certification marks belong to the certifying bodies; treat like payment marks (slot plus text fallback «حلال»).",
+          "search": {
+            "terms": [
+              "halal",
+              "tag:halal"
+            ],
+            "hits": {},
+            "hitCounts": {}
+          }
+        },
+        {
+          "id": "e-invoice-qr",
+          "name": {
+            "ar": "فاتورة ضريبية برمز QR",
+            "en": "Tax invoice with QR code (e-invoicing)"
+          },
+          "status": "missing",
+          "priority": "p1",
+          "need": "ZATCA-style simplified tax invoices carry a QR code; lists and status chips distinguish them from plain receipts.",
+          "note": "No hits; compose receipt + qr-code.",
+          "search": {
+            "terms": [
+              "(invoice|receipt).*qr",
+              "qr.*(invoice|receipt)"
+            ],
+            "hits": {},
+            "hitCounts": {}
+          }
+        }
+      ]
+    }
+  }
+}
