@@ -1,0 +1,27 @@
+{
+  "note": "Authored by this project, not taken from any source: a coarse grouping of the dominant colloquial Arabic of each country for copy and voice decisions. Countries with several varieties (SA: Najdi, Hejazi and Gulf; IQ; SD) are given one group; KM, DJ and SO, where Arabic is official but not the main home language, are \"other\".",
+  "groups": {
+    "AE": "gulf",
+    "BH": "gulf",
+    "DJ": "other",
+    "DZ": "maghrebi",
+    "EG": "egyptian",
+    "IQ": "mesopotamian",
+    "JO": "levantine",
+    "KM": "other",
+    "KW": "gulf",
+    "LB": "levantine",
+    "LY": "maghrebi",
+    "MA": "maghrebi",
+    "MR": "maghrebi",
+    "OM": "gulf",
+    "PS": "levantine",
+    "QA": "gulf",
+    "SA": "gulf",
+    "SD": "sudanese",
+    "SO": "other",
+    "SY": "levantine",
+    "TN": "maghrebi",
+    "YE": "yemeni"
+  }
+}

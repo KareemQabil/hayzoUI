@@ -1,0 +1,49 @@
+{
+  "note": "Researched sentences appended to symbol.glyph.note. The character, code point and Unicode version come from the UCD, not from here.",
+  "notes": {
+    "SAR": {
+      "note": "Sign of the Saudi riyal approved by King Salman on 20 February 2025 (21/08/1446 AH) and published by the Saudi Central Bank; encoded in Unicode 17.0. CLDR 49 offers it only as the alt=\"variant\" symbol, so formatters keep the letter abbreviation by default.",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "Saudi Central Bank (SAMA): Saudi riyal symbol",
+          "url": "https://sama.gov.sa/ar-sa/Currency/SRS/Pages/default.aspx",
+          "license": "Official publication; facts only",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "AED": {
+      "note": "Sign of the UAE dirham unveiled by the Central Bank of the UAE on 27 March 2025 (a Latin D with two horizontal bars; the Digital Dirham mark encloses it in a circle and is not this character); encoded in Unicode 18.0. CLDR 49 offers it only as the alt=\"variant\" symbol. Fonts and systems that predate Unicode 18.0 will not render it.",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "Central Bank of the UAE: press release, new Dirham symbol",
+          "url": "https://centralbank.ae/media/ckkp3s3f/cbuae-unveils-new-dirham-symbol-en.pdf",
+          "version": "2025-03-27",
+          "license": "Official publication; facts only",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "OMR": {
+      "note": "Sign of the Omani rial launched by the Central Bank of Oman, reported on 19 November 2025; encoded in Unicode 18.0. CLDR 49 offers it only as the alt=\"variant\" symbol. The central bank's own page could not be retrieved (HTTP 503), so the date rests on press coverage.",
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Oman Observer: Symbol for Omani Rial launched",
+          "url": "https://www.omanobserver.om/article/1179940/business/economy/symbol-for-omani-rial-launched",
+          "version": "2025-11-19",
+          "license": "Press report; facts only",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Central Bank of Oman: news item 700 (not retrievable on the retrieval date)",
+          "url": "https://cbo.gov.om/news/700",
+          "license": "Official publication; facts only",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    }
+  }
+}

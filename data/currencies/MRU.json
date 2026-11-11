@@ -1,0 +1,122 @@
+{
+  "kind": "currency",
+  "schemaVersion": 1,
+  "id": "MRU",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core supplemental/currencyData.json, codeMappings.json; cldr-numbers-full main/ar, main/ar-*, main/en currencies.json"
+      },
+      {
+        "name": "ISO 4217 list one (SIX, ISO 4217 Maintenance Agency)",
+        "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+        "version": "2026-09-17",
+        "license": "Published free of charge by the ISO 4217 Maintenance Agency; codes and minor units recorded as facts",
+        "retrievedAt": "2026-11-11",
+        "path": "list-one.xml"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs",
+    "notes": "Every field is extracted by the script and verified, except those listed in data.fieldProvenance, which carry their own method, confidence and sources. The file-level confidence is the lowest of them."
+  },
+  "data": {
+    "code": "MRU",
+    "numeric": "929",
+    "name": {
+      "ar": "أوقية موريتانية",
+      "en": "Mauritanian Ouguiya"
+    },
+    "plural": {
+      "ar": {
+        "one": "أوقية موريتانية",
+        "two": "أوقية موريتانية",
+        "few": "أوقية موريتانية",
+        "many": "أوقية موريتانية",
+        "other": "أوقية موريتانية"
+      },
+      "arStated": [
+        "other"
+      ],
+      "en": {
+        "one": "Mauritanian ouguiya",
+        "other": "Mauritanian ouguiyas"
+      }
+    },
+    "symbol": {
+      "standard": {
+        "ar": "أ.م.",
+        "en": "MRU"
+      }
+    },
+    "minorUnits": 2,
+    "cldrFractions": {
+      "digits": 2,
+      "rounding": 0,
+      "stated": true
+    },
+    "cash": {
+      "minorUnits": 2,
+      "roundingIncrement": 20,
+      "stated": true
+    },
+    "subunit": {
+      "name": {
+        "ar": "خُمس",
+        "en": "khoums"
+      },
+      "plural": {
+        "ar": {
+          "one": "خُمس",
+          "two": "خُمسان",
+          "few": "أخماس",
+          "many": "خُمسًا",
+          "other": "خُمس"
+        }
+      },
+      "perUnit": 5,
+      "note": "One ouguiya is 5 khoums, so the subunit is 0.2 and does not match the two ISO 4217 minor units."
+    },
+    "regions": [
+      "MR"
+    ],
+    "arabLeagueRegions": [
+      "MR"
+    ],
+    "fieldProvenance": [
+      {
+        "path": "subunit",
+        "method": "researched",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia (en): List of circulating currencies",
+            "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+            "version": "revision 1384536529",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Wikipedia (ar): قائمة العملات المتداولة",
+            "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+            "version": "revision 75971711",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "path": "subunit.plural",
+        "method": "authored",
+        "confidence": "needs-review",
+        "note": "Arabic number forms of the subunit name were written by hand from standard grammar (singular; dual in -ان; plural for 3-10; singular accusative for 11-99, where the tanwin is not visible on names ending in ة). They come from no source."
+      }
+    ]
+  }
+}

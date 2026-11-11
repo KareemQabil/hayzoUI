@@ -1,0 +1,59 @@
+{
+  "note": "Pinned upstream artifacts. build.mjs refuses to run when what it is given does not match these versions. sha256 values are of the files as downloaded by fetch.sh on retrievedAt.",
+  "sources": {
+    "cldr": {
+      "name": "Unicode CLDR",
+      "url": "https://github.com/unicode-org/cldr-json",
+      "version": "49.0.0",
+      "license": "Unicode-3.0",
+      "retrievedAt": "2026-11-11",
+      "artifacts": {
+        "cldr-core-49.0.0.tgz": "085b1c7d83f00692505c79d575c21eea89534466eb3e70b455688851a45c87bc",
+        "cldr-numbers-full-49.0.0.tgz": "753da9481ac5c0d0566a23ab89c3945d7e4cb1dae6f6d5a87c0329a8640e7593",
+        "cldr-dates-full-49.0.0.tgz": "3e194fae3317cfceb1548a223f849407d4f97c827015c1280ddd981eca4214a6",
+        "cldr-localenames-full-49.0.0.tgz": "d00bafb534848f142b3645d6046be81a1094fb00e809cd2c519f5e031198ba11"
+      }
+    },
+    "tzdb": {
+      "name": "IANA Time Zone Database",
+      "url": "https://data.iana.org/time-zones/releases/tzdata2026f.tar.gz",
+      "version": "2026f",
+      "license": "Public domain",
+      "retrievedAt": "2026-11-11",
+      "artifacts": {
+        "tzdata2026f.tar.gz": "01b4a91cec5167ed48c11e8ab78f2048cead78ce94b0cafcad0ae8c5a3044d3d"
+      }
+    },
+    "iso4217": {
+      "name": "ISO 4217 list one (SIX, ISO 4217 Maintenance Agency)",
+      "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+      "version": "2026-09-17",
+      "license": "Published free of charge by the ISO 4217 Maintenance Agency; codes and minor units recorded as facts",
+      "retrievedAt": "2026-11-11",
+      "artifacts": {
+        "list-one.xml": "33139b438657d1cee116ba737807ea71d19d6de4b90f799a09c56f0cc6a1b0ff"
+      }
+    },
+    "ucd": {
+      "name": "Unicode Character Database",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+      "version": "18.0.0",
+      "license": "Unicode-3.0",
+      "retrievedAt": "2026-11-11",
+      "artifacts": {
+        "UnicodeData.txt": "0736451de439ae7baf1425136617da495e09ee5afbe6e394374db7009ea08950",
+        "DerivedAge.txt": "58b04334e3a31f9612694bbc3f6bff4a302b7d424565bca9c47e30aa74f8dbac"
+      }
+    },
+    "libphonenumber": {
+      "name": "Google libphonenumber",
+      "url": "https://github.com/google/libphonenumber",
+      "version": "v9.0.43",
+      "license": "Apache-2.0",
+      "retrievedAt": "2026-11-11",
+      "artifacts": {
+        "PhoneNumberMetadata.xml": "5bbfb6f2e63ba1131fc867cd1cf48aa131047772523723a10c230db12fb6e2df"
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "kind": "currency",
+  "schemaVersion": 1,
+  "id": "DJF",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core supplemental/currencyData.json, codeMappings.json; cldr-numbers-full main/ar, main/ar-*, main/en currencies.json"
+      },
+      {
+        "name": "ISO 4217 list one (SIX, ISO 4217 Maintenance Agency)",
+        "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+        "version": "2026-09-17",
+        "license": "Published free of charge by the ISO 4217 Maintenance Agency; codes and minor units recorded as facts",
+        "retrievedAt": "2026-11-11",
+        "path": "list-one.xml"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs"
+  },
+  "data": {
+    "code": "DJF",
+    "numeric": "262",
+    "name": {
+      "ar": "فرنك جيبوتي",
+      "en": "Djiboutian Franc"
+    },
+    "plural": {
+      "ar": {
+        "one": "فرنك جيبوتي",
+        "two": "فرنك جيبوتي",
+        "few": "فرنك جيبوتي",
+        "many": "فرنك جيبوتي",
+        "other": "فرنك جيبوتي"
+      },
+      "arStated": [
+        "other"
+      ],
+      "en": {
+        "one": "Djiboutian franc",
+        "other": "Djiboutian francs"
+      }
+    },
+    "symbol": {
+      "standard": {
+        "ar": "DJF",
+        "en": "DJF"
+      },
+      "codeFallback": [
+        "ar"
+      ],
+      "byLocale": {
+        "ar-DJ": {
+          "standard": "Fdj"
+        }
+      }
+    },
+    "minorUnits": 0,
+    "cldrFractions": {
+      "digits": 0,
+      "rounding": 0,
+      "stated": true
+    },
+    "cash": {
+      "minorUnits": 0,
+      "roundingIncrement": 0,
+      "stated": false
+    },
+    "regions": [
+      "DJ"
+    ],
+    "arabLeagueRegions": [
+      "DJ"
+    ]
+  }
+}

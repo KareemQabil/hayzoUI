@@ -84,6 +84,20 @@
               ],
               "additionalProperties": false
             },
+            "arStated": {
+              "description": "The count categories CLDR states for Arabic. Categories in ar that are not listed here hold the count-other form, which is the fallback LDML prescribes.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "zero",
+                  "one",
+                  "two",
+                  "few",
+                  "many",
+                  "other"
+                ]
+              }
+            },
             "en": {
               "type": "object",
               "properties": {
@@ -116,6 +130,38 @@
             },
             "narrow": {
               "$ref": "common.schema.json#/$defs/localized"
+            },
+            "variant": {
+              "$ref": "common.schema.json#/$defs/localized",
+              "description": "CLDR alt=\"variant\" symbol."
+            },
+            "codeFallback": {
+              "description": "Languages for which CLDR states no symbol, so standard holds the ISO code.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ar",
+                  "en"
+                ]
+              }
+            },
+            "byLocale": {
+              "description": "ar-XX locales whose symbol differs from ar.",
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "standard": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "narrow": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": false
+              }
             },
             "glyph": {
               "type": "object",
@@ -155,6 +201,27 @@
           "minimum": 0,
           "maximum": 4
         },
+        "cldrFractions": {
+          "description": "CLDR currencyData fractions: the decimals CLDR-based formatters (ICU, Intl) use, which can differ from ISO 4217. stated is false when CLDR has no entry and its DEFAULT applies.",
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "integer"
+            },
+            "rounding": {
+              "type": "integer"
+            },
+            "stated": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "digits",
+            "rounding",
+            "stated"
+          ],
+          "additionalProperties": false
+        },
         "cash": {
           "type": "object",
           "properties": {
@@ -163,6 +230,9 @@
             },
             "roundingIncrement": {
               "type": "number"
+            },
+            "stated": {
+              "type": "boolean"
             },
             "smallestCoin": {
               "type": "number"
@@ -173,7 +243,8 @@
             }
           },
           "required": [],
-          "additionalProperties": false
+          "additionalProperties": false,
+          "description": "CLDR cashDigits and cashRounding. roundingIncrement is in units of 10^-minorUnits, as in CLDR; 0 means no increment beyond the digits. stated is false when CLDR has no cash values and they default to the non-cash ones."
         },
         "subunit": {
           "type": "object",
@@ -227,6 +298,30 @@
             },
             "perUnit": {
               "type": "integer"
+            },
+            "others": {
+              "description": "Further fractional units, each with how many make one unit.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "common.schema.json#/$defs/localized"
+                  },
+                  "perUnit": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "name",
+                  "perUnit"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -240,6 +335,55 @@
           "items": {
             "type": "string",
             "pattern": "^[A-Z]{2}$"
+          }
+        },
+        "arabLeagueRegions": {
+          "description": "The subset of regions that has a file in data/regions.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          }
+        },
+        "fieldProvenance": {
+          "description": "Fields whose method or confidence differs from the file-level provenance. The file-level values describe everything not listed here.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Dot path inside data."
+              },
+              "method": {
+                "enum": [
+                  "extracted",
+                  "derived",
+                  "researched",
+                  "authored"
+                ]
+              },
+              "confidence": {
+                "$ref": "common.schema.json#/$defs/confidence"
+              },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/source"
+                }
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "path",
+              "method",
+              "confidence"
+            ],
+            "additionalProperties": false
           }
         },
         "notes": {

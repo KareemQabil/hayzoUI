@@ -1,0 +1,154 @@
+{
+  "kind": "currency",
+  "schemaVersion": 1,
+  "id": "AED",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core supplemental/currencyData.json, codeMappings.json; cldr-numbers-full main/ar, main/ar-*, main/en currencies.json"
+      },
+      {
+        "name": "ISO 4217 list one (SIX, ISO 4217 Maintenance Agency)",
+        "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+        "version": "2026-09-17",
+        "license": "Published free of charge by the ISO 4217 Maintenance Agency; codes and minor units recorded as facts",
+        "retrievedAt": "2026-11-11",
+        "path": "list-one.xml"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "version": "18.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "ucd/UnicodeData.txt, ucd/DerivedAge.txt"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs",
+    "notes": "Every field is extracted by the script and verified, except those listed in data.fieldProvenance, which carry their own method, confidence and sources. The file-level confidence is the lowest of them."
+  },
+  "data": {
+    "code": "AED",
+    "numeric": "784",
+    "name": {
+      "ar": "درهم إماراتي",
+      "en": "United Arab Emirates Dirham"
+    },
+    "plural": {
+      "ar": {
+        "one": "درهم إماراتي",
+        "two": "درهم إماراتي",
+        "few": "درهم إماراتي",
+        "many": "درهم إماراتي",
+        "other": "درهم إماراتي"
+      },
+      "arStated": [
+        "other"
+      ],
+      "en": {
+        "one": "UAE dirham",
+        "other": "UAE dirhams"
+      }
+    },
+    "symbol": {
+      "standard": {
+        "ar": "د.إ.\u200f",
+        "en": "AED"
+      },
+      "variant": {
+        "ar": "⃃",
+        "en": "⃃"
+      },
+      "glyph": {
+        "char": "⃃",
+        "codepoint": "U+20C3",
+        "unicodeVersion": "18.0",
+        "note": "UAE DIRHAM SIGN. Sign of the UAE dirham unveiled by the Central Bank of the UAE on 27 March 2025 (a Latin D with two horizontal bars; the Digital Dirham mark encloses it in a circle and is not this character); encoded in Unicode 18.0. CLDR 49 offers it only as the alt=\"variant\" symbol. Fonts and systems that predate Unicode 18.0 will not render it."
+      }
+    },
+    "minorUnits": 2,
+    "cldrFractions": {
+      "digits": 2,
+      "rounding": 0,
+      "stated": false
+    },
+    "cash": {
+      "minorUnits": 2,
+      "roundingIncrement": 0,
+      "stated": false
+    },
+    "subunit": {
+      "name": {
+        "ar": "فلس",
+        "en": "fils"
+      },
+      "plural": {
+        "ar": {
+          "one": "فلس",
+          "two": "فلسان",
+          "few": "فلوس",
+          "many": "فلسًا",
+          "other": "فلس"
+        }
+      },
+      "perUnit": 100
+    },
+    "regions": [
+      "AE"
+    ],
+    "arabLeagueRegions": [
+      "AE"
+    ],
+    "fieldProvenance": [
+      {
+        "path": "symbol.glyph.note",
+        "method": "researched",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Central Bank of the UAE: press release, new Dirham symbol",
+            "url": "https://centralbank.ae/media/ckkp3s3f/cbuae-unveils-new-dirham-symbol-en.pdf",
+            "version": "2025-03-27",
+            "license": "Official publication; facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "char, codepoint and unicodeVersion are extracted from the UCD; only the sentence after the character name is researched."
+      },
+      {
+        "path": "subunit",
+        "method": "researched",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia (en): List of circulating currencies",
+            "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+            "version": "revision 1384536529",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Wikipedia (ar): قائمة العملات المتداولة",
+            "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+            "version": "revision 75971711",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "path": "subunit.plural",
+        "method": "authored",
+        "confidence": "needs-review",
+        "note": "Arabic number forms of the subunit name were written by hand from standard grammar (singular; dual in -ان; plural for 3-10; singular accusative for 11-99, where the tanwin is not visible on names ending in ة). They come from no source."
+      }
+    ]
+  }
+}

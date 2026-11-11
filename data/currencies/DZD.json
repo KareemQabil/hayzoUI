@@ -1,0 +1,127 @@
+{
+  "kind": "currency",
+  "schemaVersion": 1,
+  "id": "DZD",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core supplemental/currencyData.json, codeMappings.json; cldr-numbers-full main/ar, main/ar-*, main/en currencies.json"
+      },
+      {
+        "name": "ISO 4217 list one (SIX, ISO 4217 Maintenance Agency)",
+        "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+        "version": "2026-09-17",
+        "license": "Published free of charge by the ISO 4217 Maintenance Agency; codes and minor units recorded as facts",
+        "retrievedAt": "2026-11-11",
+        "path": "list-one.xml"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs",
+    "notes": "Every field is extracted by the script and verified, except those listed in data.fieldProvenance, which carry their own method, confidence and sources. The file-level confidence is the lowest of them."
+  },
+  "data": {
+    "code": "DZD",
+    "numeric": "012",
+    "name": {
+      "ar": "دينار جزائري",
+      "en": "Algerian Dinar"
+    },
+    "plural": {
+      "ar": {
+        "zero": "دينار جزائري",
+        "one": "دينار جزائري",
+        "two": "ديناران جزائريان",
+        "few": "دينارات جزائرية",
+        "many": "دينارًا جزائريًا",
+        "other": "دينار جزائري"
+      },
+      "arStated": [
+        "zero",
+        "one",
+        "two",
+        "few",
+        "many",
+        "other"
+      ],
+      "en": {
+        "one": "Algerian dinar",
+        "other": "Algerian dinars"
+      }
+    },
+    "symbol": {
+      "standard": {
+        "ar": "د.ج.\u200f",
+        "en": "DZD"
+      }
+    },
+    "minorUnits": 2,
+    "cldrFractions": {
+      "digits": 2,
+      "rounding": 0,
+      "stated": false
+    },
+    "cash": {
+      "minorUnits": 2,
+      "roundingIncrement": 0,
+      "stated": false
+    },
+    "subunit": {
+      "name": {
+        "ar": "سنتيم",
+        "en": "centime"
+      },
+      "plural": {
+        "ar": {
+          "one": "سنتيم",
+          "two": "سنتيمان",
+          "few": "سنتيمات",
+          "many": "سنتيمًا",
+          "other": "سنتيم"
+        }
+      },
+      "perUnit": 100
+    },
+    "regions": [
+      "DZ"
+    ],
+    "arabLeagueRegions": [
+      "DZ"
+    ],
+    "fieldProvenance": [
+      {
+        "path": "subunit",
+        "method": "researched",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia (en): List of circulating currencies",
+            "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+            "version": "revision 1384536529",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Wikipedia (ar): قائمة العملات المتداولة",
+            "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+            "version": "revision 75971711",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "path": "subunit.plural",
+        "method": "authored",
+        "confidence": "needs-review",
+        "note": "Arabic number forms of the subunit name were written by hand from standard grammar (singular; dual in -ان; plural for 3-10; singular accusative for 11-99, where the tanwin is not visible on names ending in ة). They come from no source."
+      }
+    ]
+  }
+}

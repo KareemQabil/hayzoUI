@@ -1,0 +1,139 @@
+{
+  "kind": "region",
+  "schemaVersion": 1,
+  "id": "KM",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core (supplemental, availableLocales, defaultContent); cldr-numbers-full, cldr-dates-full, cldr-localenames-full main/ar, main/ar-*, main/en"
+      },
+      {
+        "name": "IANA Time Zone Database",
+        "url": "https://data.iana.org/time-zones/releases/tzdata2026f.tar.gz",
+        "version": "2026f",
+        "license": "Public domain",
+        "retrievedAt": "2026-11-11",
+        "path": "zone.tab, backward"
+      },
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs",
+    "notes": "Every field is extracted by the script and verified, except those listed in data.fieldProvenance, which carry their own method, confidence and sources. The file-level confidence is the lowest of them."
+  },
+  "data": {
+    "code": "KM",
+    "alpha3": "COM",
+    "numeric": "174",
+    "name": {
+      "ar": "جزر القمر",
+      "en": "Comoros"
+    },
+    "arabLeague": true,
+    "languages": [
+      {
+        "code": "ar",
+        "role": "official",
+        "cldrStatus": "official",
+        "populationPercent": 66
+      },
+      {
+        "code": "zdj",
+        "role": "official",
+        "cldrStatus": "official",
+        "populationPercent": 37
+      },
+      {
+        "code": "wni",
+        "role": "official",
+        "cldrStatus": "official",
+        "populationPercent": 34
+      },
+      {
+        "code": "fr",
+        "role": "official",
+        "cldrStatus": "official",
+        "populationPercent": 26
+      }
+    ],
+    "locales": [
+      {
+        "tag": "ar-KM",
+        "primary": true,
+        "defaultNumberingSystem": "arab",
+        "nativeNumberingSystem": "arab",
+        "hourCycle": "h23",
+        "gregorianMonthNames": "english-derived"
+      }
+    ],
+    "otherLocales": [
+      "fr-KM"
+    ],
+    "currency": {
+      "primary": "KMF"
+    },
+    "week": {
+      "firstDay": "mon",
+      "weekend": [
+        "sat",
+        "sun"
+      ],
+      "minDaysInFirstWeek": 1
+    },
+    "calendars": [
+      "gregorian",
+      "islamic",
+      "islamic-civil",
+      "islamic-tbla"
+    ],
+    "timeZones": [
+      "Indian/Comoro"
+    ],
+    "tzdbLinks": {
+      "Indian/Comoro": "Africa/Nairobi"
+    },
+    "timeData": {
+      "preferred": "H",
+      "allowed": [
+        "H",
+        "h",
+        "hB",
+        "hb"
+      ]
+    },
+    "measurementSystem": "metric",
+    "paperSize": "A4",
+    "phone": {
+      "callingCode": "269"
+    },
+    "dialectGroup": "other",
+    "worldDefaults": [
+      "week.firstDay",
+      "week.weekend",
+      "week.minDaysInFirstWeek",
+      "measurementSystem",
+      "paperSize"
+    ],
+    "fieldProvenance": [
+      {
+        "path": "dialectGroup",
+        "method": "authored",
+        "confidence": "needs-review",
+        "note": "Authored by this project, not taken from any source: a coarse grouping of the dominant colloquial Arabic of each country for copy and voice decisions. Countries with several varieties (SA: Najdi, Hejazi and Gulf; IQ; SD) are given one group; KM, DJ and SO, where Arabic is official but not the main home language, are \"other\"."
+      }
+    ]
+  }
+}

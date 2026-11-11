@@ -1,0 +1,160 @@
+{
+  "kind": "currency",
+  "schemaVersion": 1,
+  "id": "OMR",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core supplemental/currencyData.json, codeMappings.json; cldr-numbers-full main/ar, main/ar-*, main/en currencies.json"
+      },
+      {
+        "name": "ISO 4217 list one (SIX, ISO 4217 Maintenance Agency)",
+        "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+        "version": "2026-09-17",
+        "license": "Published free of charge by the ISO 4217 Maintenance Agency; codes and minor units recorded as facts",
+        "retrievedAt": "2026-11-11",
+        "path": "list-one.xml"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "version": "18.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "ucd/UnicodeData.txt, ucd/DerivedAge.txt"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs",
+    "notes": "Every field is extracted by the script and verified, except those listed in data.fieldProvenance, which carry their own method, confidence and sources. The file-level confidence is the lowest of them."
+  },
+  "data": {
+    "code": "OMR",
+    "numeric": "512",
+    "name": {
+      "ar": "ريال عماني",
+      "en": "Omani Rial"
+    },
+    "plural": {
+      "ar": {
+        "one": "ريال عماني",
+        "two": "ريال عماني",
+        "few": "ريال عماني",
+        "many": "ريال عماني",
+        "other": "ريال عماني"
+      },
+      "arStated": [
+        "other"
+      ],
+      "en": {
+        "one": "Omani rial",
+        "other": "Omani rials"
+      }
+    },
+    "symbol": {
+      "standard": {
+        "ar": "ر.ع.\u200f",
+        "en": "OMR"
+      },
+      "variant": {
+        "ar": "⃄",
+        "en": "⃄"
+      },
+      "glyph": {
+        "char": "⃄",
+        "codepoint": "U+20C4",
+        "unicodeVersion": "18.0",
+        "note": "OMANI RIAL SIGN. Sign of the Omani rial launched by the Central Bank of Oman, reported on 19 November 2025; encoded in Unicode 18.0. CLDR 49 offers it only as the alt=\"variant\" symbol. The central bank's own page could not be retrieved (HTTP 503), so the date rests on press coverage."
+      }
+    },
+    "minorUnits": 3,
+    "cldrFractions": {
+      "digits": 3,
+      "rounding": 0,
+      "stated": true
+    },
+    "cash": {
+      "minorUnits": 3,
+      "roundingIncrement": 0,
+      "stated": false
+    },
+    "subunit": {
+      "name": {
+        "ar": "بيسة",
+        "en": "baisa"
+      },
+      "plural": {
+        "ar": {
+          "one": "بيسة",
+          "two": "بيستان",
+          "few": "بيسات",
+          "many": "بيسة",
+          "other": "بيسة"
+        }
+      },
+      "perUnit": 1000
+    },
+    "regions": [
+      "OM"
+    ],
+    "arabLeagueRegions": [
+      "OM"
+    ],
+    "fieldProvenance": [
+      {
+        "path": "symbol.glyph.note",
+        "method": "researched",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Oman Observer: Symbol for Omani Rial launched",
+            "url": "https://www.omanobserver.om/article/1179940/business/economy/symbol-for-omani-rial-launched",
+            "version": "2025-11-19",
+            "license": "Press report; facts only",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Central Bank of Oman: news item 700 (not retrievable on the retrieval date)",
+            "url": "https://cbo.gov.om/news/700",
+            "license": "Official publication; facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "char, codepoint and unicodeVersion are extracted from the UCD; only the sentence after the character name is researched."
+      },
+      {
+        "path": "subunit",
+        "method": "researched",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia (en): List of circulating currencies",
+            "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+            "version": "revision 1384536529",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Wikipedia (ar): قائمة العملات المتداولة",
+            "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+            "version": "revision 75971711",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "path": "subunit.plural",
+        "method": "authored",
+        "confidence": "needs-review",
+        "note": "Arabic number forms of the subunit name were written by hand from standard grammar (singular; dual in -ان; plural for 3-10; singular accusative for 11-99, where the tanwin is not visible on names ending in ة). They come from no source."
+      }
+    ]
+  }
+}

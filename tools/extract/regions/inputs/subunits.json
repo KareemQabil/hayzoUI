@@ -1,0 +1,796 @@
+{
+  "note": "Researched. CLDR and ISO 4217 carry no subunit names. Names and ratios are those of two pinned Wikipedia revisions (a secondary source), which agree with each other except where a note says otherwise; none was checked against a central-bank publication, so every entry is needs-review. English names are lower-case singulars; Arabic names are as the Arabic list writes them.",
+  "pluralNote": "Arabic number forms of the subunit name were written by hand from standard grammar (singular; dual in -ان; plural for 3-10; singular accusative for 11-99, where the tanwin is not visible on names ending in ة). They come from no source.",
+  "omitted": {
+    "DJF": "The English list gives no subunit; the Arabic list gives سنتيم, 100. ISO 4217 has 0 minor units and no centime coin circulates, so the file follows the English list and has no subunit.",
+    "KMF": "The English list gives no subunit; the Arabic list gives سنتيم, 100. ISO 4217 has 0 minor units and no centime coin circulates, so the file follows the English list and has no subunit."
+  },
+  "currencies": {
+    "AED": {
+      "name": {
+        "ar": "فلس",
+        "en": "fils"
+      },
+      "plural": {
+        "ar": {
+          "one": "فلس",
+          "two": "فلسان",
+          "few": "فلوس",
+          "many": "فلسًا",
+          "other": "فلس"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "BHD": {
+      "name": {
+        "ar": "فلس",
+        "en": "fils"
+      },
+      "plural": {
+        "ar": {
+          "one": "فلس",
+          "two": "فلسان",
+          "few": "فلوس",
+          "many": "فلسًا",
+          "other": "فلس"
+        }
+      },
+      "perUnit": 1000,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "DZD": {
+      "name": {
+        "ar": "سنتيم",
+        "en": "centime"
+      },
+      "plural": {
+        "ar": {
+          "one": "سنتيم",
+          "two": "سنتيمان",
+          "few": "سنتيمات",
+          "many": "سنتيمًا",
+          "other": "سنتيم"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "EGP": {
+      "name": {
+        "ar": "قرش",
+        "en": "piastre"
+      },
+      "plural": {
+        "ar": {
+          "one": "قرش",
+          "two": "قرشان",
+          "few": "قروش",
+          "many": "قرشًا",
+          "other": "قرش"
+        }
+      },
+      "perUnit": 100,
+      "others": [
+        {
+          "name": {
+            "ar": "ميليم",
+            "en": "millieme"
+          },
+          "perUnit": 1000
+        }
+      ],
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "EUR": {
+      "name": {
+        "ar": "سنت",
+        "en": "cent"
+      },
+      "plural": {
+        "ar": {
+          "one": "سنت",
+          "two": "سنتان",
+          "few": "سنتات",
+          "many": "سنتًا",
+          "other": "سنت"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "GBP": {
+      "name": {
+        "ar": "بنس",
+        "en": "penny"
+      },
+      "plural": {
+        "ar": {
+          "one": "بنس",
+          "two": "بنسان",
+          "few": "بنسات",
+          "many": "بنسًا",
+          "other": "بنس"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "ILS": {
+      "name": {
+        "ar": "أغورة",
+        "en": "agora"
+      },
+      "plural": {
+        "ar": {
+          "one": "أغورة",
+          "two": "أغورتان",
+          "few": "أغورات",
+          "many": "أغورة",
+          "other": "أغورة"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "IQD": {
+      "name": {
+        "ar": "فلس",
+        "en": "fils"
+      },
+      "plural": {
+        "ar": {
+          "one": "فلس",
+          "two": "فلسان",
+          "few": "فلوس",
+          "many": "فلسًا",
+          "other": "فلس"
+        }
+      },
+      "perUnit": 1000,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "JOD": {
+      "name": {
+        "ar": "فلس",
+        "en": "fils"
+      },
+      "plural": {
+        "ar": {
+          "one": "فلس",
+          "two": "فلسان",
+          "few": "فلوس",
+          "many": "فلسًا",
+          "other": "فلس"
+        }
+      },
+      "perUnit": 1000,
+      "others": [
+        {
+          "name": {
+            "ar": "قرش",
+            "en": "piastre"
+          },
+          "perUnit": 100
+        },
+        {
+          "name": {
+            "ar": "درهم",
+            "en": "dirham"
+          },
+          "perUnit": 10
+        }
+      ],
+      "provenanceNote": "Both lists name the piastre (قرش, 100) as the fractional unit and give the fils (1000) and dirham (10) in a footnote. The file makes the fils primary because it is the unit that ISO 4217's three minor units count; the piastre is under others.",
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "KWD": {
+      "name": {
+        "ar": "فلس",
+        "en": "fils"
+      },
+      "plural": {
+        "ar": {
+          "one": "فلس",
+          "two": "فلسان",
+          "few": "فلوس",
+          "many": "فلسًا",
+          "other": "فلس"
+        }
+      },
+      "perUnit": 1000,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "LBP": {
+      "name": {
+        "ar": "قرش",
+        "en": "piastre"
+      },
+      "plural": {
+        "ar": {
+          "one": "قرش",
+          "two": "قرشان",
+          "few": "قروش",
+          "many": "قرشًا",
+          "other": "قرش"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "LYD": {
+      "name": {
+        "ar": "درهم",
+        "en": "dirham"
+      },
+      "plural": {
+        "ar": {
+          "one": "درهم",
+          "two": "درهمان",
+          "few": "دراهم",
+          "many": "درهمًا",
+          "other": "درهم"
+        }
+      },
+      "perUnit": 1000,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "MAD": {
+      "name": {
+        "ar": "سنتيم",
+        "en": "centime"
+      },
+      "plural": {
+        "ar": {
+          "one": "سنتيم",
+          "two": "سنتيمان",
+          "few": "سنتيمات",
+          "many": "سنتيمًا",
+          "other": "سنتيم"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "MRU": {
+      "name": {
+        "ar": "خُمس",
+        "en": "khoums"
+      },
+      "plural": {
+        "ar": {
+          "one": "خُمس",
+          "two": "خُمسان",
+          "few": "أخماس",
+          "many": "خُمسًا",
+          "other": "خُمس"
+        }
+      },
+      "perUnit": 5,
+      "note": "One ouguiya is 5 khoums, so the subunit is 0.2 and does not match the two ISO 4217 minor units.",
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "OMR": {
+      "name": {
+        "ar": "بيسة",
+        "en": "baisa"
+      },
+      "plural": {
+        "ar": {
+          "one": "بيسة",
+          "two": "بيستان",
+          "few": "بيسات",
+          "many": "بيسة",
+          "other": "بيسة"
+        }
+      },
+      "perUnit": 1000,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "QAR": {
+      "name": {
+        "ar": "درهم",
+        "en": "dirham"
+      },
+      "plural": {
+        "ar": {
+          "one": "درهم",
+          "two": "درهمان",
+          "few": "دراهم",
+          "many": "درهمًا",
+          "other": "درهم"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "SAR": {
+      "name": {
+        "ar": "هللة",
+        "en": "halala"
+      },
+      "plural": {
+        "ar": {
+          "one": "هللة",
+          "two": "هللتان",
+          "few": "هللات",
+          "many": "هللة",
+          "other": "هللة"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "SDG": {
+      "name": {
+        "ar": "قرش",
+        "en": "piastre"
+      },
+      "plural": {
+        "ar": {
+          "one": "قرش",
+          "two": "قرشان",
+          "few": "قروش",
+          "many": "قرشًا",
+          "other": "قرش"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "SOS": {
+      "name": {
+        "ar": "سنت",
+        "en": "cent"
+      },
+      "plural": {
+        "ar": {
+          "one": "سنت",
+          "two": "سنتان",
+          "few": "سنتات",
+          "many": "سنتًا",
+          "other": "سنت"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "SYP": {
+      "name": {
+        "ar": "قرش",
+        "en": "piastre"
+      },
+      "plural": {
+        "ar": {
+          "one": "قرش",
+          "two": "قرشان",
+          "few": "قروش",
+          "many": "قرشًا",
+          "other": "قرش"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "TND": {
+      "name": {
+        "ar": "مليم",
+        "en": "millime"
+      },
+      "plural": {
+        "ar": {
+          "one": "مليم",
+          "two": "مليمان",
+          "few": "مليمات",
+          "many": "مليمًا",
+          "other": "مليم"
+        }
+      },
+      "perUnit": 1000,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "USD": {
+      "name": {
+        "ar": "سنت",
+        "en": "cent"
+      },
+      "plural": {
+        "ar": {
+          "one": "سنت",
+          "two": "سنتان",
+          "few": "سنتات",
+          "many": "سنتًا",
+          "other": "سنت"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    },
+    "YER": {
+      "name": {
+        "ar": "فلس",
+        "en": "fils"
+      },
+      "plural": {
+        "ar": {
+          "one": "فلس",
+          "two": "فلسان",
+          "few": "فلوس",
+          "many": "فلسًا",
+          "other": "فلس"
+        }
+      },
+      "perUnit": 100,
+      "confidence": "needs-review",
+      "sources": [
+        {
+          "name": "Wikipedia (en): List of circulating currencies",
+          "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+          "version": "revision 1384536529",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "name": "Wikipedia (ar): قائمة العملات المتداولة",
+          "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+          "version": "revision 75971711",
+          "license": "CC-BY-SA-4.0",
+          "retrievedAt": "2026-11-11"
+        }
+      ]
+    }
+  }
+}

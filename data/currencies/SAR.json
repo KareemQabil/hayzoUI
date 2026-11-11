@@ -1,0 +1,153 @@
+{
+  "kind": "currency",
+  "schemaVersion": 1,
+  "id": "SAR",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core supplemental/currencyData.json, codeMappings.json; cldr-numbers-full main/ar, main/ar-*, main/en currencies.json"
+      },
+      {
+        "name": "ISO 4217 list one (SIX, ISO 4217 Maintenance Agency)",
+        "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+        "version": "2026-09-17",
+        "license": "Published free of charge by the ISO 4217 Maintenance Agency; codes and minor units recorded as facts",
+        "retrievedAt": "2026-11-11",
+        "path": "list-one.xml"
+      },
+      {
+        "name": "Unicode Character Database",
+        "url": "https://www.unicode.org/Public/18.0.0/ucd/",
+        "version": "18.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "ucd/UnicodeData.txt, ucd/DerivedAge.txt"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs",
+    "notes": "Every field is extracted by the script and verified, except those listed in data.fieldProvenance, which carry their own method, confidence and sources. The file-level confidence is the lowest of them."
+  },
+  "data": {
+    "code": "SAR",
+    "numeric": "682",
+    "name": {
+      "ar": "ريال سعودي",
+      "en": "Saudi Riyal"
+    },
+    "plural": {
+      "ar": {
+        "one": "ريال سعودي",
+        "two": "ريال سعودي",
+        "few": "ريال سعودي",
+        "many": "ريال سعودي",
+        "other": "ريال سعودي"
+      },
+      "arStated": [
+        "other"
+      ],
+      "en": {
+        "one": "Saudi riyal",
+        "other": "Saudi riyals"
+      }
+    },
+    "symbol": {
+      "standard": {
+        "ar": "ر.س.\u200f",
+        "en": "SAR"
+      },
+      "variant": {
+        "ar": "⃁",
+        "en": "⃁"
+      },
+      "glyph": {
+        "char": "⃁",
+        "codepoint": "U+20C1",
+        "unicodeVersion": "17.0",
+        "note": "SAUDI RIYAL SIGN. Sign of the Saudi riyal approved by King Salman on 20 February 2025 (21/08/1446 AH) and published by the Saudi Central Bank; encoded in Unicode 17.0. CLDR 49 offers it only as the alt=\"variant\" symbol, so formatters keep the letter abbreviation by default."
+      }
+    },
+    "minorUnits": 2,
+    "cldrFractions": {
+      "digits": 2,
+      "rounding": 0,
+      "stated": false
+    },
+    "cash": {
+      "minorUnits": 2,
+      "roundingIncrement": 0,
+      "stated": false
+    },
+    "subunit": {
+      "name": {
+        "ar": "هللة",
+        "en": "halala"
+      },
+      "plural": {
+        "ar": {
+          "one": "هللة",
+          "two": "هللتان",
+          "few": "هللات",
+          "many": "هللة",
+          "other": "هللة"
+        }
+      },
+      "perUnit": 100
+    },
+    "regions": [
+      "SA"
+    ],
+    "arabLeagueRegions": [
+      "SA"
+    ],
+    "fieldProvenance": [
+      {
+        "path": "symbol.glyph.note",
+        "method": "researched",
+        "confidence": "verified",
+        "sources": [
+          {
+            "name": "Saudi Central Bank (SAMA): Saudi riyal symbol",
+            "url": "https://sama.gov.sa/ar-sa/Currency/SRS/Pages/default.aspx",
+            "license": "Official publication; facts only",
+            "retrievedAt": "2026-11-11"
+          }
+        ],
+        "note": "char, codepoint and unicodeVersion are extracted from the UCD; only the sentence after the character name is researched."
+      },
+      {
+        "path": "subunit",
+        "method": "researched",
+        "confidence": "needs-review",
+        "sources": [
+          {
+            "name": "Wikipedia (en): List of circulating currencies",
+            "url": "https://en.wikipedia.org/w/index.php?title=List_of_circulating_currencies&oldid=1384536529",
+            "version": "revision 1384536529",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          },
+          {
+            "name": "Wikipedia (ar): قائمة العملات المتداولة",
+            "url": "https://ar.wikipedia.org/w/index.php?oldid=75971711",
+            "version": "revision 75971711",
+            "license": "CC-BY-SA-4.0",
+            "retrievedAt": "2026-11-11"
+          }
+        ]
+      },
+      {
+        "path": "subunit.plural",
+        "method": "authored",
+        "confidence": "needs-review",
+        "note": "Arabic number forms of the subunit name were written by hand from standard grammar (singular; dual in -ان; plural for 3-10; singular accusative for 11-99, where the tanwin is not visible on names ending in ة). They come from no source."
+      }
+    ]
+  }
+}

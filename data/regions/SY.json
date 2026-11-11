@@ -1,0 +1,123 @@
+{
+  "kind": "region",
+  "schemaVersion": 1,
+  "id": "SY",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "Unicode CLDR",
+        "url": "https://github.com/unicode-org/cldr-json",
+        "version": "49.0.0",
+        "license": "Unicode-3.0",
+        "retrievedAt": "2026-11-11",
+        "path": "cldr-core (supplemental, availableLocales, defaultContent); cldr-numbers-full, cldr-dates-full, cldr-localenames-full main/ar, main/ar-*, main/en"
+      },
+      {
+        "name": "IANA Time Zone Database",
+        "url": "https://data.iana.org/time-zones/releases/tzdata2026f.tar.gz",
+        "version": "2026f",
+        "license": "Public domain",
+        "retrievedAt": "2026-11-11",
+        "path": "zone.tab, backward"
+      },
+      {
+        "name": "Google libphonenumber",
+        "url": "https://github.com/google/libphonenumber",
+        "version": "v9.0.43",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11",
+        "path": "resources/PhoneNumberMetadata.xml"
+      }
+    ],
+    "script": "tools/extract/regions/build.mjs",
+    "notes": "Every field is extracted by the script and verified, except those listed in data.fieldProvenance, which carry their own method, confidence and sources. The file-level confidence is the lowest of them."
+  },
+  "data": {
+    "code": "SY",
+    "alpha3": "SYR",
+    "numeric": "760",
+    "name": {
+      "ar": "سوريا",
+      "en": "Syria"
+    },
+    "arabLeague": true,
+    "languages": [
+      {
+        "code": "ar",
+        "role": "official",
+        "cldrStatus": "official",
+        "populationPercent": 80
+      },
+      {
+        "code": "apc",
+        "role": "widely-used",
+        "populationPercent": 85
+      }
+    ],
+    "locales": [
+      {
+        "tag": "ar-SY",
+        "primary": true,
+        "defaultNumberingSystem": "arab",
+        "nativeNumberingSystem": "arab",
+        "hourCycle": "h12",
+        "gregorianMonthNames": "syriac"
+      }
+    ],
+    "otherLocales": [
+      "fr-SY",
+      "ku-Latn-SY",
+      "syr-SY"
+    ],
+    "currency": {
+      "primary": "SYP"
+    },
+    "week": {
+      "firstDay": "sat",
+      "weekend": [
+        "fri",
+        "sat"
+      ],
+      "minDaysInFirstWeek": 1
+    },
+    "calendars": [
+      "gregorian",
+      "islamic",
+      "islamic-civil",
+      "islamic-tbla"
+    ],
+    "timeZones": [
+      "Asia/Damascus"
+    ],
+    "timeData": {
+      "preferred": "h",
+      "allowed": [
+        "h",
+        "hB",
+        "hb",
+        "H"
+      ]
+    },
+    "measurementSystem": "metric",
+    "paperSize": "A4",
+    "phone": {
+      "callingCode": "963"
+    },
+    "dialectGroup": "levantine",
+    "worldDefaults": [
+      "week.minDaysInFirstWeek",
+      "measurementSystem",
+      "paperSize"
+    ],
+    "fieldProvenance": [
+      {
+        "path": "dialectGroup",
+        "method": "authored",
+        "confidence": "needs-review",
+        "note": "Authored by this project, not taken from any source: a coarse grouping of the dominant colloquial Arabic of each country for copy and voice decisions. Countries with several varieties (SA: Najdi, Hejazi and Gulf; IQ; SD) are given one group; KM, DJ and SO, where Arabic is official but not the main home language, are \"other\"."
+      }
+    ]
+  }
+}

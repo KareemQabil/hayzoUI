@@ -48,6 +48,16 @@
         "name": {
           "$ref": "common.schema.json#/$defs/localized"
         },
+        "nameVariants": {
+          "description": "Other names CLDR gives the territory (alt=\"short\").",
+          "type": "object",
+          "properties": {
+            "short": {
+              "$ref": "common.schema.json#/$defs/localized"
+            }
+          },
+          "additionalProperties": false
+        },
         "officialName": {
           "$ref": "common.schema.json#/$defs/localized"
         },
@@ -66,9 +76,23 @@
               "role": {
                 "enum": [
                   "official",
+                  "official-regional",
                   "national",
                   "widely-used"
                 ]
+              },
+              "cldrStatus": {
+                "description": "officialStatus in CLDR territoryInfo, verbatim.",
+                "enum": [
+                  "official",
+                  "de_facto_official",
+                  "official_regional",
+                  "official_minority"
+                ]
+              },
+              "populationPercent": {
+                "description": "Share of the population that uses the language, per CLDR territoryInfo.",
+                "type": "number"
               }
             },
             "required": [
@@ -120,6 +144,22 @@
                   "french-derived",
                   "mixed"
                 ]
+              },
+              "monthNamesSharedWith": {
+                "description": "Only when gregorianMonthNames is mixed: how many of the 12 wide month names equal those of each family.",
+                "type": "object",
+                "properties": {
+                  "english-derived": {
+                    "type": "integer"
+                  },
+                  "syriac": {
+                    "type": "integer"
+                  },
+                  "french-derived": {
+                    "type": "integer"
+                  }
+                },
+                "additionalProperties": false
               }
             },
             "required": [
@@ -130,6 +170,14 @@
             "additionalProperties": false
           },
           "minItems": 1
+        },
+        "otherLocales": {
+          "description": "Locales of other languages that CLDR ships for the region (availableLocales full, plus defaultContent).",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "currency": {
           "type": "object",
@@ -207,6 +255,36 @@
           },
           "minItems": 1
         },
+        "tzdbLinks": {
+          "description": "Zones in timeZones that tzdb keeps only as a Link in its backward file, with the Zone each points to.",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "timeData": {
+          "description": "CLDR timeData for the region: pattern symbols for the preferred and allowed hour formats (h, H, hb, hB).",
+          "type": "object",
+          "properties": {
+            "preferred": {
+              "type": "string",
+              "minLength": 1
+            },
+            "allowed": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "preferred",
+            "allowed"
+          ],
+          "additionalProperties": false
+        },
         "measurementSystem": {
           "enum": [
             "metric",
@@ -244,6 +322,55 @@
             "yemeni",
             "other"
           ]
+        },
+        "worldDefaults": {
+          "description": "Fields CLDR does not state for this region; the value is the one CLDR gives territory 001.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fieldProvenance": {
+          "description": "Fields whose method or confidence differs from the file-level provenance. The file-level values describe everything not listed here.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Dot path inside data."
+              },
+              "method": {
+                "enum": [
+                  "extracted",
+                  "derived",
+                  "researched",
+                  "authored"
+                ]
+              },
+              "confidence": {
+                "$ref": "common.schema.json#/$defs/confidence"
+              },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/source"
+                }
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "path",
+              "method",
+              "confidence"
+            ],
+            "additionalProperties": false
+          }
         },
         "notes": {
           "type": "string",
