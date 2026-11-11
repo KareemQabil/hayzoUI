@@ -1,0 +1,3 @@
+{ "id": "tanstack-react-table", "name": "TanStack Table", "package": "@tanstack/react-table", "version": "9.3.1", "kind": "data-grid", "retrievedAt": "2026-11-11",
+  "interfaces": ["TableOptions_All", "ColumnDefBase_All"],
+  "install": ["@tanstack/react-table@9.3.1", "react@19.3.1", "react-dom@19.3.1", "@types/react@19.3.0", "@types/react-dom@19.3.0"] }

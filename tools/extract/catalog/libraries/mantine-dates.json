@@ -1,0 +1,21 @@
+{
+  "id": "mantine-dates",
+  "name": "Mantine Dates",
+  "package": "@mantine/dates",
+  "version": "9.8.0",
+  "kind": "styled",
+  "retrievedAt": "2026-11-11",
+  "install": [
+    "@mantine/dates@9.8.0",
+    "@mantine/core@9.8.0",
+    "@mantine/hooks@9.8.0",
+    "dayjs@1.11.23",
+    "react@19.3.1",
+    "react-dom@19.3.1",
+    "@types/react@19.3.0",
+    "@types/react-dom@19.3.0"
+  ],
+  "styleInterfaces": [
+    "MantineStyleProps"
+  ]
+}

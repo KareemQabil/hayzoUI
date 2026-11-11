@@ -1,0 +1,1094 @@
+{
+  "kind": "library-api",
+  "schemaVersion": 1,
+  "id": "shadcn-ui",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "shadcn/ui registry",
+        "url": "https://github.com/shadcn-ui/ui",
+        "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "apps/v4/public/r/index.json"
+      }
+    ],
+    "script": "tools/extract/catalog/extract-shadcn.mjs",
+    "notes": "Registry index apps/v4/public/r/index.json at commit dd41d19e2f80ff6891951f7ced74c2c9a650b065: 65 items. shadcn/ui ships source files, not typed packages, so props are not recorded (props is empty for every item); parts lists the PascalCase names each item file exports, read from the syntax tree of the first of apps/v4/registry/new-york-v4, apps/v4/registry/bases/radix that has the file. dependencies and registryDependencies are the ones the index declares; the index is shared by the base, aria and radix variants, so the primitive package each variant imports is not in it. No source file found for: form, toast."
+  },
+  "data": {
+    "library": {
+      "name": "shadcn/ui",
+      "package": "shadcn",
+      "version": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+      "license": "MIT",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "homepage": "https://ui.shadcn.com",
+      "kind": "copy-paste"
+    },
+    "components": [
+      {
+        "name": "accordion",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/accordion.tsx",
+        "parts": [
+          "Accordion",
+          "AccordionContent",
+          "AccordionItem",
+          "AccordionTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "alert",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/alert.tsx",
+        "parts": [
+          "Alert",
+          "AlertDescription",
+          "AlertTitle"
+        ],
+        "props": []
+      },
+      {
+        "name": "alert-dialog",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/alert-dialog.tsx",
+        "parts": [
+          "AlertDialog",
+          "AlertDialogAction",
+          "AlertDialogCancel",
+          "AlertDialogContent",
+          "AlertDialogDescription",
+          "AlertDialogFooter",
+          "AlertDialogHeader",
+          "AlertDialogMedia",
+          "AlertDialogOverlay",
+          "AlertDialogPortal",
+          "AlertDialogTitle",
+          "AlertDialogTrigger"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ]
+      },
+      {
+        "name": "aspect-ratio",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/aspect-ratio.tsx",
+        "parts": [
+          "AspectRatio"
+        ],
+        "props": []
+      },
+      {
+        "name": "attachment",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/attachment.tsx",
+        "parts": [
+          "Attachment",
+          "AttachmentAction",
+          "AttachmentActions",
+          "AttachmentContent",
+          "AttachmentDescription",
+          "AttachmentGroup",
+          "AttachmentMedia",
+          "AttachmentTitle",
+          "AttachmentTrigger"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ]
+      },
+      {
+        "name": "avatar",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/avatar.tsx",
+        "parts": [
+          "Avatar",
+          "AvatarBadge",
+          "AvatarFallback",
+          "AvatarGroup",
+          "AvatarGroupCount",
+          "AvatarImage"
+        ],
+        "props": []
+      },
+      {
+        "name": "badge",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/badge.tsx",
+        "parts": [
+          "Badge"
+        ],
+        "props": []
+      },
+      {
+        "name": "breadcrumb",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/breadcrumb.tsx",
+        "parts": [
+          "Breadcrumb",
+          "BreadcrumbEllipsis",
+          "BreadcrumbItem",
+          "BreadcrumbLink",
+          "BreadcrumbList",
+          "BreadcrumbPage",
+          "BreadcrumbSeparator"
+        ],
+        "props": []
+      },
+      {
+        "name": "bubble",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/bubble.tsx",
+        "parts": [
+          "Bubble",
+          "BubbleContent",
+          "BubbleGroup",
+          "BubbleReactions"
+        ],
+        "props": []
+      },
+      {
+        "name": "button",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/button.tsx",
+        "parts": [
+          "Button"
+        ],
+        "props": []
+      },
+      {
+        "name": "button-group",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/button-group.tsx",
+        "parts": [
+          "ButtonGroup",
+          "ButtonGroupSeparator",
+          "ButtonGroupText"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "separator"
+        ]
+      },
+      {
+        "name": "calendar",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/calendar.tsx",
+        "parts": [
+          "Calendar",
+          "CalendarDayButton"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ],
+        "dependencies": [
+          "date-fns",
+          "react-day-picker@latest"
+        ]
+      },
+      {
+        "name": "card",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/card.tsx",
+        "parts": [
+          "Card",
+          "CardAction",
+          "CardContent",
+          "CardDescription",
+          "CardFooter",
+          "CardHeader",
+          "CardTitle"
+        ],
+        "props": []
+      },
+      {
+        "name": "carousel",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/carousel.tsx",
+        "parts": [
+          "Carousel",
+          "CarouselContent",
+          "CarouselItem",
+          "CarouselNext",
+          "CarouselPrevious"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ],
+        "dependencies": [
+          "embla-carousel-react"
+        ]
+      },
+      {
+        "name": "chart",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/chart.tsx",
+        "parts": [
+          "ChartContainer",
+          "ChartLegend",
+          "ChartLegendContent",
+          "ChartStyle",
+          "ChartTooltip",
+          "ChartTooltipContent"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "card"
+        ],
+        "dependencies": [
+          "recharts@3.8.0"
+        ]
+      },
+      {
+        "name": "checkbox",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/checkbox.tsx",
+        "parts": [
+          "Checkbox"
+        ],
+        "props": []
+      },
+      {
+        "name": "code-block",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/bases/radix/ui/code-block.tsx",
+        "parts": [
+          "CodeBlock",
+          "CodeBlockActions",
+          "CodeBlockContent",
+          "CodeBlockCopyButton",
+          "CodeBlockFooter",
+          "CodeBlockHeader",
+          "CodeBlockLine",
+          "CodeBlockTitle"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button",
+          "use-highlighted-code"
+        ]
+      },
+      {
+        "name": "collapsible",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/collapsible.tsx",
+        "parts": [
+          "Collapsible",
+          "CollapsibleContent",
+          "CollapsibleTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "combobox",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/combobox.tsx",
+        "parts": [
+          "Combobox",
+          "ComboboxChip",
+          "ComboboxChips",
+          "ComboboxChipsInput",
+          "ComboboxCollection",
+          "ComboboxContent",
+          "ComboboxEmpty",
+          "ComboboxGroup",
+          "ComboboxInput",
+          "ComboboxItem",
+          "ComboboxLabel",
+          "ComboboxList",
+          "ComboboxSeparator",
+          "ComboboxTrigger",
+          "ComboboxValue"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button",
+          "input-group"
+        ],
+        "dependencies": [
+          "@base-ui/react"
+        ]
+      },
+      {
+        "name": "command",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/command.tsx",
+        "parts": [
+          "Command",
+          "CommandDialog",
+          "CommandEmpty",
+          "CommandGroup",
+          "CommandInput",
+          "CommandItem",
+          "CommandList",
+          "CommandSeparator",
+          "CommandShortcut"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "dialog",
+          "input-group"
+        ],
+        "dependencies": [
+          "cmdk"
+        ]
+      },
+      {
+        "name": "context-menu",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/context-menu.tsx",
+        "parts": [
+          "ContextMenu",
+          "ContextMenuCheckboxItem",
+          "ContextMenuContent",
+          "ContextMenuGroup",
+          "ContextMenuItem",
+          "ContextMenuLabel",
+          "ContextMenuPortal",
+          "ContextMenuRadioGroup",
+          "ContextMenuRadioItem",
+          "ContextMenuSeparator",
+          "ContextMenuShortcut",
+          "ContextMenuSub",
+          "ContextMenuSubContent",
+          "ContextMenuSubTrigger",
+          "ContextMenuTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "dialog",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/dialog.tsx",
+        "parts": [
+          "Dialog",
+          "DialogClose",
+          "DialogContent",
+          "DialogDescription",
+          "DialogFooter",
+          "DialogHeader",
+          "DialogOverlay",
+          "DialogPortal",
+          "DialogTitle",
+          "DialogTrigger"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ]
+      },
+      {
+        "name": "direction",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/direction.tsx",
+        "parts": [
+          "DirectionProvider"
+        ],
+        "props": [],
+        "dependencies": [
+          "@base-ui/react"
+        ]
+      },
+      {
+        "name": "drawer",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/drawer.tsx",
+        "parts": [
+          "Drawer",
+          "DrawerClose",
+          "DrawerContent",
+          "DrawerDescription",
+          "DrawerFooter",
+          "DrawerHeader",
+          "DrawerOverlay",
+          "DrawerPortal",
+          "DrawerTitle",
+          "DrawerTrigger"
+        ],
+        "props": [],
+        "dependencies": [
+          "@base-ui/react"
+        ]
+      },
+      {
+        "name": "dropdown-menu",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/dropdown-menu.tsx",
+        "parts": [
+          "DropdownMenu",
+          "DropdownMenuCheckboxItem",
+          "DropdownMenuContent",
+          "DropdownMenuGroup",
+          "DropdownMenuItem",
+          "DropdownMenuLabel",
+          "DropdownMenuPortal",
+          "DropdownMenuRadioGroup",
+          "DropdownMenuRadioItem",
+          "DropdownMenuSeparator",
+          "DropdownMenuShortcut",
+          "DropdownMenuSub",
+          "DropdownMenuSubContent",
+          "DropdownMenuSubTrigger",
+          "DropdownMenuTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "empty",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/empty.tsx",
+        "parts": [
+          "Empty",
+          "EmptyContent",
+          "EmptyDescription",
+          "EmptyHeader",
+          "EmptyMedia",
+          "EmptyTitle"
+        ],
+        "props": []
+      },
+      {
+        "name": "field",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/field.tsx",
+        "parts": [
+          "Field",
+          "FieldContent",
+          "FieldDescription",
+          "FieldError",
+          "FieldGroup",
+          "FieldLabel",
+          "FieldLegend",
+          "FieldSeparator",
+          "FieldSet",
+          "FieldTitle"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "label",
+          "separator"
+        ]
+      },
+      {
+        "name": "form",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "props": []
+      },
+      {
+        "name": "hover-card",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/hover-card.tsx",
+        "parts": [
+          "HoverCard",
+          "HoverCardContent",
+          "HoverCardTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "input",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/input.tsx",
+        "parts": [
+          "Input"
+        ],
+        "props": []
+      },
+      {
+        "name": "input-group",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/input-group.tsx",
+        "parts": [
+          "InputGroup",
+          "InputGroupAddon",
+          "InputGroupButton",
+          "InputGroupInput",
+          "InputGroupText",
+          "InputGroupTextarea"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button",
+          "input",
+          "textarea"
+        ]
+      },
+      {
+        "name": "input-otp",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/input-otp.tsx",
+        "parts": [
+          "InputOTP",
+          "InputOTPGroup",
+          "InputOTPSeparator",
+          "InputOTPSlot"
+        ],
+        "props": [],
+        "dependencies": [
+          "input-otp"
+        ]
+      },
+      {
+        "name": "item",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/item.tsx",
+        "parts": [
+          "Item",
+          "ItemActions",
+          "ItemContent",
+          "ItemDescription",
+          "ItemFooter",
+          "ItemGroup",
+          "ItemHeader",
+          "ItemMedia",
+          "ItemSeparator",
+          "ItemTitle"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "separator"
+        ]
+      },
+      {
+        "name": "kbd",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/kbd.tsx",
+        "parts": [
+          "Kbd",
+          "KbdGroup"
+        ],
+        "props": []
+      },
+      {
+        "name": "label",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/label.tsx",
+        "parts": [
+          "Label"
+        ],
+        "props": []
+      },
+      {
+        "name": "marker",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/marker.tsx",
+        "parts": [
+          "Marker",
+          "MarkerContent",
+          "MarkerIcon"
+        ],
+        "props": []
+      },
+      {
+        "name": "menubar",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/menubar.tsx",
+        "parts": [
+          "Menubar",
+          "MenubarCheckboxItem",
+          "MenubarContent",
+          "MenubarGroup",
+          "MenubarItem",
+          "MenubarLabel",
+          "MenubarMenu",
+          "MenubarPortal",
+          "MenubarRadioGroup",
+          "MenubarRadioItem",
+          "MenubarSeparator",
+          "MenubarShortcut",
+          "MenubarSub",
+          "MenubarSubContent",
+          "MenubarSubTrigger",
+          "MenubarTrigger"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "dropdown-menu"
+        ]
+      },
+      {
+        "name": "message",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/message.tsx",
+        "parts": [
+          "Message",
+          "MessageAvatar",
+          "MessageContent",
+          "MessageFooter",
+          "MessageGroup",
+          "MessageHeader"
+        ],
+        "props": []
+      },
+      {
+        "name": "message-scroller",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/message-scroller.tsx",
+        "parts": [
+          "MessageScroller",
+          "MessageScrollerButton",
+          "MessageScrollerContent",
+          "MessageScrollerItem",
+          "MessageScrollerProvider",
+          "MessageScrollerViewport"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ],
+        "dependencies": [
+          "@shadcn/react"
+        ]
+      },
+      {
+        "name": "native-select",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/native-select.tsx",
+        "parts": [
+          "NativeSelect",
+          "NativeSelectOptGroup",
+          "NativeSelectOption"
+        ],
+        "props": []
+      },
+      {
+        "name": "navigation-menu",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/navigation-menu.tsx",
+        "parts": [
+          "NavigationMenu",
+          "NavigationMenuContent",
+          "NavigationMenuIndicator",
+          "NavigationMenuItem",
+          "NavigationMenuLink",
+          "NavigationMenuList",
+          "NavigationMenuTrigger",
+          "NavigationMenuViewport"
+        ],
+        "props": []
+      },
+      {
+        "name": "pagination",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/pagination.tsx",
+        "parts": [
+          "Pagination",
+          "PaginationContent",
+          "PaginationEllipsis",
+          "PaginationItem",
+          "PaginationLink",
+          "PaginationNext",
+          "PaginationPrevious"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ]
+      },
+      {
+        "name": "popover",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/popover.tsx",
+        "parts": [
+          "Popover",
+          "PopoverAnchor",
+          "PopoverContent",
+          "PopoverDescription",
+          "PopoverHeader",
+          "PopoverTitle",
+          "PopoverTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "progress",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/progress.tsx",
+        "parts": [
+          "Progress"
+        ],
+        "props": []
+      },
+      {
+        "name": "questionnaire",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/bases/radix/ui/questionnaire.tsx",
+        "parts": [
+          "Questionnaire",
+          "QuestionnaireActions",
+          "QuestionnaireChoice",
+          "QuestionnaireChoiceDescription",
+          "QuestionnaireChoices",
+          "QuestionnaireDescription",
+          "QuestionnaireError",
+          "QuestionnaireInput",
+          "QuestionnaireItem",
+          "QuestionnaireNext",
+          "QuestionnairePrevious",
+          "QuestionnaireProgress",
+          "QuestionnaireSkip",
+          "QuestionnaireSubmit",
+          "QuestionnaireTitle"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ],
+        "dependencies": [
+          "@shadcn/react"
+        ]
+      },
+      {
+        "name": "radio-group",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/radio-group.tsx",
+        "parts": [
+          "RadioGroup",
+          "RadioGroupItem"
+        ],
+        "props": []
+      },
+      {
+        "name": "resizable",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/resizable.tsx",
+        "parts": [
+          "ResizableHandle",
+          "ResizablePanel",
+          "ResizablePanelGroup"
+        ],
+        "props": [],
+        "dependencies": [
+          "react-resizable-panels"
+        ]
+      },
+      {
+        "name": "scroll-area",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/scroll-area.tsx",
+        "parts": [
+          "ScrollArea",
+          "ScrollBar"
+        ],
+        "props": []
+      },
+      {
+        "name": "select",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/select.tsx",
+        "parts": [
+          "Select",
+          "SelectContent",
+          "SelectGroup",
+          "SelectItem",
+          "SelectLabel",
+          "SelectScrollDownButton",
+          "SelectScrollUpButton",
+          "SelectSeparator",
+          "SelectTrigger",
+          "SelectValue"
+        ],
+        "props": []
+      },
+      {
+        "name": "separator",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/separator.tsx",
+        "parts": [
+          "Separator"
+        ],
+        "props": []
+      },
+      {
+        "name": "sheet",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/sheet.tsx",
+        "parts": [
+          "Sheet",
+          "SheetClose",
+          "SheetContent",
+          "SheetDescription",
+          "SheetFooter",
+          "SheetHeader",
+          "SheetTitle",
+          "SheetTrigger"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ]
+      },
+      {
+        "name": "sidebar",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/sidebar.tsx",
+        "parts": [
+          "Sidebar",
+          "SidebarContent",
+          "SidebarFooter",
+          "SidebarGroup",
+          "SidebarGroupAction",
+          "SidebarGroupContent",
+          "SidebarGroupLabel",
+          "SidebarHeader",
+          "SidebarInput",
+          "SidebarInset",
+          "SidebarMenu",
+          "SidebarMenuAction",
+          "SidebarMenuBadge",
+          "SidebarMenuButton",
+          "SidebarMenuItem",
+          "SidebarMenuSkeleton",
+          "SidebarMenuSub",
+          "SidebarMenuSubButton",
+          "SidebarMenuSubItem",
+          "SidebarProvider",
+          "SidebarRail",
+          "SidebarSeparator",
+          "SidebarTrigger"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "button",
+          "input",
+          "separator",
+          "sheet",
+          "skeleton",
+          "tooltip",
+          "use-mobile"
+        ]
+      },
+      {
+        "name": "skeleton",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/skeleton.tsx",
+        "parts": [
+          "Skeleton"
+        ],
+        "props": []
+      },
+      {
+        "name": "slider",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/slider.tsx",
+        "parts": [
+          "Slider"
+        ],
+        "props": []
+      },
+      {
+        "name": "sonner",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/sonner.tsx",
+        "parts": [
+          "Toaster"
+        ],
+        "props": [],
+        "dependencies": [
+          "next-themes",
+          "sonner"
+        ]
+      },
+      {
+        "name": "spinner",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/spinner.tsx",
+        "parts": [
+          "Spinner"
+        ],
+        "props": []
+      },
+      {
+        "name": "switch",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/switch.tsx",
+        "parts": [
+          "Switch"
+        ],
+        "props": []
+      },
+      {
+        "name": "table",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/table.tsx",
+        "parts": [
+          "Table",
+          "TableBody",
+          "TableCaption",
+          "TableCell",
+          "TableFooter",
+          "TableHead",
+          "TableHeader",
+          "TableRow"
+        ],
+        "props": []
+      },
+      {
+        "name": "tabs",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/tabs.tsx",
+        "parts": [
+          "Tabs",
+          "TabsContent",
+          "TabsList",
+          "TabsTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "textarea",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/textarea.tsx",
+        "parts": [
+          "Textarea"
+        ],
+        "props": []
+      },
+      {
+        "name": "toast",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "props": [],
+        "registryDependencies": [
+          "button"
+        ],
+        "dependencies": [
+          "@base-ui/react"
+        ]
+      },
+      {
+        "name": "toggle",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/toggle.tsx",
+        "parts": [
+          "Toggle"
+        ],
+        "props": []
+      },
+      {
+        "name": "toggle-group",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/toggle-group.tsx",
+        "parts": [
+          "ToggleGroup",
+          "ToggleGroupItem"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "toggle"
+        ]
+      },
+      {
+        "name": "tooltip",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/new-york-v4/ui/tooltip.tsx",
+        "parts": [
+          "Tooltip",
+          "TooltipContent",
+          "TooltipProvider",
+          "TooltipTrigger"
+        ],
+        "props": []
+      },
+      {
+        "name": "trace",
+        "kind": "registry-item",
+        "category": "registry:ui",
+        "source": "apps/v4/registry/bases/radix/ui/trace.tsx",
+        "parts": [
+          "Trace",
+          "TraceCollapsible",
+          "TraceCollapsibleContent",
+          "TraceCollapsibleTrigger",
+          "TraceDescription",
+          "TraceIcon",
+          "TraceLine",
+          "TraceTitle"
+        ],
+        "props": [],
+        "registryDependencies": [
+          "collapsible"
+        ]
+      }
+    ],
+    "stats": {
+      "components": 65,
+      "props": 0,
+      "medianProps": 0,
+      "families": 65,
+      "parts": 355
+    }
+  }
+}

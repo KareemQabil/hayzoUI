@@ -1,0 +1,2 @@
+{ "id": "antd", "name": "Ant Design", "package": "antd", "version": "6.7.0", "kind": "styled", "retrievedAt": "2026-11-11",
+  "install": ["antd@6.7.0", "react@19.3.1", "react-dom@19.3.1", "@types/react@19.3.0", "@types/react-dom@19.3.0"] }

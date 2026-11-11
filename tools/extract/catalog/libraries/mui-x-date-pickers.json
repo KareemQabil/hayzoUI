@@ -1,0 +1,2 @@
+{ "id": "mui-x-date-pickers", "name": "MUI X Date and Time Pickers", "package": "@mui/x-date-pickers", "version": "9.17.0", "kind": "styled", "retrievedAt": "2026-11-11",
+  "install": ["@mui/x-date-pickers@9.17.0", "@mui/material@9.5.0", "@emotion/react@11.14.0", "@emotion/styled@11.14.1", "dayjs@1.11.23", "react@19.3.1", "react-dom@19.3.1", "@types/react@19.3.0", "@types/react-dom@19.3.0"] }

@@ -1,0 +1,882 @@
+{
+  "kind": "library-api",
+  "schemaVersion": 1,
+  "id": "tanstack-react-table",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@tanstack/react-table",
+        "url": "https://www.npmjs.com/package/@tanstack/react-table/v/9.3.1",
+        "version": "9.3.1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "./dist/index.d.ts"
+      }
+    ],
+    "script": "tools/extract/catalog/extract-api.mjs",
+    "notes": "Read from the type declarations of @tanstack/react-table@9.3.1 with TypeScript 5.9.3; nothing was executed. Not recorded: 0 props declared in React's typings, csstype or the DOM lib (HTMLAttributes, AriaAttributes, DOMAttributes, ref, key, CSS properties) — counted per component in excluded.dom. 0 components accept the DOM dir attribute through those excluded typings."
+  },
+  "data": {
+    "library": {
+      "name": "TanStack Table",
+      "package": "@tanstack/react-table",
+      "version": "9.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/TanStack/table",
+      "homepage": "https://tanstack.com/table",
+      "kind": "data-grid",
+      "entryPoints": [
+        "@tanstack/react-table"
+      ]
+    },
+    "components": [
+      {
+        "name": "FlexRender",
+        "source": "dist/FlexRender.d.ts",
+        "propsType": "FlexRenderProps",
+        "typeParameters": [
+          "TFeatures",
+          "TData",
+          "TValue"
+        ],
+        "props": [
+          {
+            "name": "cell",
+            "type": "Cell<TFeatures, TData, TValue> | undefined",
+            "required": false
+          },
+          {
+            "name": "footer",
+            "type": "undefined | Header<TFeatures, TData, TValue>",
+            "required": false
+          },
+          {
+            "name": "header",
+            "type": "undefined | Header<TFeatures, TData, TValue>",
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "Subscribe",
+        "source": "dist/Subscribe.d.ts",
+        "propsType": "SubscribePropsWithSourceIdentity",
+        "typeParameters": [
+          "TSourceValue",
+          "TSelected",
+          "TFeatures"
+        ],
+        "props": [
+          {
+            "name": "children",
+            "type": "ReactNode | ((state: TSourceValue) => ReactNode) | ReactNode | ((state: TSelected) => ReactNode)",
+            "required": true
+          },
+          {
+            "name": "selector",
+            "type": "undefined | (state: TSourceValue) => TSelected | (state: ExtractFeatureMapTypes<TFeatures, TableState_FeatureMap>) => TSelected",
+            "required": false
+          },
+          {
+            "name": "source",
+            "type": "SubscribeSource<TSourceValue> | SubscribeSource<ExtractFeatureMapTypes<TFeatures, TableState_FeatureMap>>",
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "TableOptions_All",
+        "kind": "interface",
+        "source": "@tanstack/table-core/dist/types/TableOptions.d.ts",
+        "typeParameters": [
+          "TFeatures",
+          "TData"
+        ],
+        "props": [
+          {
+            "name": "atoms",
+            "type": "Partial<{ [K in keyof ExtractFeatureMapTypes<TFeatures, TableState_FeatureMap>]: Atom<ExtractFeatureMapTypes<TFeatures, TableState_FeatureMap>[K]>; }>",
+            "required": false,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "autoResetAll",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "autoResetCellSelection",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "autoResetExpanded",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowExpanding",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "autoResetPageIndex",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPagination",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "autoResetSorting",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "columnResizeDirection",
+            "type": "ColumnResizeDirection = \"ltr\" | \"rtl\"",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnResizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "columnResizeMode",
+            "type": "ColumnResizeMode = \"onChange\" | \"onEnd\"",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnResizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "columns",
+            "type": "readonly ColumnDef<TFeatures, TData, unknown>[]",
+            "required": true,
+            "inheritedFrom": "TableOptions_Columns",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "data",
+            "type": "readonly TData[]",
+            "required": true,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "defaultColumn",
+            "type": "Partial<ColumnDef<TFeatures, TData, unknown>>",
+            "required": false,
+            "inheritedFrom": "TableOptions_Columns",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableCellRangeSelection",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableCellSelection",
+            "type": "boolean | ((cell: Cell<TFeatures, TData, any>) => boolean)",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableCellSelectionDrag",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableCellSpanning",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSpanning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableColumnFilters",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableColumnPinning",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnPinning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableColumnResizing",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnResizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableExpanding",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowExpanding",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableFilters",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableGlobalFilter",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_GlobalFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableGrouping",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnGrouping",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableHiding",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnVisibility",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableMultiCellRangeSelection",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableMultiRemove",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableMultiRowSelection",
+            "type": "boolean | ((row: Row<TFeatures, TData>) => boolean)",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableMultiSort",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableRowPinning",
+            "type": "boolean | ((row: Row<TFeatures, TData>) => boolean)",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPinning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableRowRangeSelection",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableRowSelection",
+            "type": "boolean | ((row: Row<TFeatures, TData>) => boolean)",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableSorting",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableSortingRemoval",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableSubRowSelection",
+            "type": "boolean | ((row: Row<TFeatures, TData>) => boolean)",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "features",
+            "type": "TFeatures & ValidateFeatureSlots<TFeatures>",
+            "required": true,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "filterFromLeafRows",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getColumnCanGlobalFilter",
+            "type": "<TFeatures extends TableFeatures, TData extends RowData, TValue extends CellData = unknown>(column: Column<TFeatures, TData, TValue>) => boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_GlobalFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getIsRowExpanded",
+            "type": "(row: Row<TFeatures, TData>) => boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowExpanding",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getRowCanExpand",
+            "type": "(row: Row<TFeatures, TData>) => boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowExpanding",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getRowId",
+            "type": "(originalRow: TData, index: number, parent?: Row<TFeatures, TData> | undefined) => string",
+            "required": false,
+            "inheritedFrom": "TableOptions_Rows",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getSubRows",
+            "type": "(originalRow: TData, index: number) => readonly TData[] | undefined",
+            "required": false,
+            "inheritedFrom": "TableOptions_Rows",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "globalFilterFn",
+            "type": "FilterFnOption<TFeatures, TData>",
+            "required": false,
+            "inheritedFrom": "TableOptions_GlobalFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "groupedColumnMode",
+            "type": "false | \"reorder\" | \"remove\"",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnGrouping",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "initialState",
+            "type": "Partial<ExtractFeatureMapTypes<TFeatures, TableState_FeatureMap>>",
+            "required": false,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "isCellRangeSelectionEvent",
+            "type": "(event: unknown) => boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "isMultiCellRangeSelectionEvent",
+            "type": "(event: unknown) => boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "isMultiSortEvent",
+            "type": "(e: unknown) => boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "isRowRangeSelectionEvent",
+            "type": "(event: unknown) => boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "keepPinnedRows",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPinning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "key",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "manualAggregation",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowAggregation",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "manualExpanding",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowExpanding",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "manualFiltering",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "manualGrouping",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnGrouping",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "manualPagination",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPagination",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "manualSorting",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "maxLeafRowFilterDepth",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "maxMultiSortColCount",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "mergeOptions",
+            "type": "(defaultOptions: TableOptions<TFeatures, TData>, options: Partial<TableOptions<TFeatures, TData>>) => TableOptions<TFeatures, TData>",
+            "required": false,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "meta",
+            "type": "ExtractTableMeta<TFeatures, TData>",
+            "required": false,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onCellSelectionChange",
+            "type": "OnChangeFn<CellSelectionState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onColumnFiltersChange",
+            "type": "OnChangeFn<ColumnFiltersState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onColumnOrderChange",
+            "type": "OnChangeFn<ColumnOrderState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnOrdering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onColumnPinningChange",
+            "type": "OnChangeFn<ColumnPinningState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnPinning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onColumnResizingChange",
+            "type": "OnChangeFn<columnResizingState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnResizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onColumnSizingChange",
+            "type": "OnChangeFn<ColumnSizingState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnSizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onColumnVisibilityChange",
+            "type": "OnChangeFn<ColumnVisibilityState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnVisibility",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onExpandedChange",
+            "type": "OnChangeFn<ExpandedState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowExpanding",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onGlobalFilterChange",
+            "type": "OnChangeFn<any>",
+            "required": false,
+            "inheritedFrom": "TableOptions_GlobalFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onGroupingChange",
+            "type": "OnChangeFn<GroupingState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_ColumnGrouping",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onPaginationChange",
+            "type": "OnChangeFn<PaginationState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPagination",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onRowPinningChange",
+            "type": "OnChangeFn<RowPinningState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPinning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onRowSelectionChange",
+            "type": "OnChangeFn<RowSelectionState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "onSortingChange",
+            "type": "OnChangeFn<SortingState>",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "pageCount",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPagination",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "paginateExpandedRows",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowExpanding",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "renderFallbackValue",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "TableOptions_Cell",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "rowCount",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowPagination",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "sortDescFirst",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TableOptions_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "state",
+            "type": "Partial<ExtractFeatureMapTypes<TFeatures, TableState_FeatureMap>>",
+            "required": false,
+            "inheritedFrom": "TableOptions_Table",
+            "declaredIn": "@tanstack/table-core"
+          }
+        ]
+      },
+      {
+        "name": "ColumnDefBase_All",
+        "kind": "interface",
+        "source": "@tanstack/table-core/dist/types/ColumnDef.d.ts",
+        "typeParameters": [
+          "TFeatures",
+          "TData",
+          "TValue"
+        ],
+        "props": [
+          {
+            "name": "aggregatedCell",
+            "type": "ColumnDefTemplate<ReturnType<Cell<TFeatures, TData, TValue>[\"getContext\"]>>",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowAggregation",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "aggregationFn",
+            "type": "AggregationFnOption<TFeatures, TData, TValue>",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowAggregation",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "cell",
+            "type": "ColumnDefTemplate<CellContext<TFeatures, TData, TValue>>",
+            "required": false,
+            "inheritedFrom": "ColumnDefBase_Core",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableCellSelection",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_CellSelection",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableCellSpanning",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_CellSpanning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableColumnFilter",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableGlobalFilter",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_GlobalFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableGrouping",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnGrouping",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableHiding",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnVisibility",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableMultiSort",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enablePinning",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnPinning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableResizing",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnResizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "enableSorting",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "filterFn",
+            "type": "FilterFnOption<TFeatures, TData>",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnFiltering",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "footer",
+            "type": "ColumnDefTemplate<HeaderContext<TFeatures, TData, TValue>>",
+            "required": false,
+            "inheritedFrom": "ColumnDefBase_Core",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getAggregationValue",
+            "type": "(context: AggregationValueContext<TFeatures, TData, TValue>) => AggregationValueResult<unknown> | undefined",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowAggregation",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getGroupingValue",
+            "type": "(originalRow: TData, index: number, row: Row<TFeatures, TData>) => any",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnGrouping",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "getUniqueValues",
+            "type": "AccessorFn<TData, readonly unknown[]>",
+            "required": false,
+            "inheritedFrom": "ColumnDefBase_Core",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "invertSorting",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "maxAggregationDepth",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowAggregation",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "maxSize",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnSizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "meta",
+            "type": "ExtractColumnMeta<TFeatures, TData, TValue>",
+            "required": false,
+            "inheritedFrom": "ColumnDefBase_Core",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "minSize",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnSizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "size",
+            "type": "number",
+            "required": false,
+            "inheritedFrom": "ColumnDef_ColumnSizing",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "sortDescFirst",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "sortFn",
+            "type": "SortFnOption<TFeatures, TData>",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "sortUndefined",
+            "type": "false | 1 | -1 | \"first\" | \"last\"",
+            "required": false,
+            "inheritedFrom": "ColumnDef_RowSorting",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "spanColumns",
+            "type": "number | ((context: ColSpanContext<TFeatures, TData, TValue>) => number)",
+            "required": false,
+            "inheritedFrom": "ColumnDef_CellSpanning",
+            "declaredIn": "@tanstack/table-core"
+          },
+          {
+            "name": "spanRows",
+            "type": "boolean | ((context: RowSpanContext<TFeatures, TData, TValue>) => boolean)",
+            "required": false,
+            "inheritedFrom": "ColumnDef_CellSpanning",
+            "declaredIn": "@tanstack/table-core"
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "components": 4,
+      "props": 114,
+      "medianProps": 16,
+      "families": 2,
+      "namespaces": 0,
+      "interfaces": 2,
+      "aliases": 0,
+      "excludedDomProps": 0,
+      "excludedStyleProps": 0,
+      "componentsAcceptingDomDir": 0
+    }
+  }
+}

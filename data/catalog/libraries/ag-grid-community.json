@@ -1,0 +1,3758 @@
+{
+  "kind": "library-api",
+  "schemaVersion": 1,
+  "id": "ag-grid-community",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "ag-grid-community",
+        "url": "https://www.npmjs.com/package/ag-grid-community/v/36.3.0",
+        "version": "36.3.0",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "./dist/types/src/main.d.ts"
+      }
+    ],
+    "script": "tools/extract/catalog/extract-api.mjs",
+    "notes": "Read from the type declarations of ag-grid-community@36.3.0 with TypeScript 5.9.3; nothing was executed. Not recorded: 0 props declared in React's typings, csstype or the DOM lib (HTMLAttributes, AriaAttributes, DOMAttributes, ref, key, CSS properties) — counted per component in excluded.dom. 0 components accept the DOM dir attribute through those excluded typings."
+  },
+  "data": {
+    "library": {
+      "name": "AG Grid Community",
+      "package": "ag-grid-community",
+      "version": "36.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/ag-grid/ag-grid",
+      "homepage": "https://www.ag-grid.com/",
+      "kind": "data-grid",
+      "entryPoints": [
+        "ag-grid-community"
+      ]
+    },
+    "components": [
+      {
+        "name": "GridOptions",
+        "kind": "interface",
+        "source": "dist/types/src/entities/gridOptions.d.ts",
+        "typeParameters": [
+          "TData"
+        ],
+        "props": [
+          {
+            "name": "accentedSort",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "activeOverlay",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "activeOverlayParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "advancedFilterBuilderParams",
+            "type": "IAdvancedFilterBuilderParams",
+            "required": false
+          },
+          {
+            "name": "advancedFilterParams",
+            "type": "IAdvancedFilterParams",
+            "required": false
+          },
+          {
+            "name": "advancedFilterParent",
+            "type": "HTMLElement | null",
+            "required": false
+          },
+          {
+            "name": "aggFuncs",
+            "type": "IAggFuncs<TData>",
+            "required": false
+          },
+          {
+            "name": "aggregateOnlyChangedColumns",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "alignedGrids",
+            "type": "AlignedGrid[] | (() => AlignedGrid[])",
+            "required": false
+          },
+          {
+            "name": "allowContextMenuWithControlKey",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "allowDragFromColumnsToolPanel",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "allowShowChangeAfterFilter",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "alwaysAggregateAtRootLevel",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "alwaysMultiSort",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "alwaysPassFilter",
+            "type": "AlwaysPassFilter<TData>",
+            "required": false
+          },
+          {
+            "name": "alwaysShowGrandTotalRow",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "alwaysShowHorizontalScroll",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "alwaysShowVerticalScroll",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "animateColumnResizing",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "animateRows",
+            "type": "boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "applyQuickFilterBeforePivotOrAgg",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "asyncTransactionWaitMillis",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "autoGenerateColumnDefs",
+            "type": "boolean | AutoGenerateColumnDefsOptions",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "autoGroupColumnDef",
+            "type": "AutoGroupColumnDef<TData, any>",
+            "required": false
+          },
+          {
+            "name": "autoSizePadding",
+            "type": "number",
+            "required": false,
+            "default": "20"
+          },
+          {
+            "name": "autoSizeStrategy",
+            "type": "AutoSizeStrategy<TData>",
+            "required": false
+          },
+          {
+            "name": "blockLoadDebounceMillis",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "cacheBlockSize",
+            "type": "number",
+            "required": false,
+            "default": "100"
+          },
+          {
+            "name": "cacheOverflowSize",
+            "type": "number",
+            "required": false,
+            "default": "1"
+          },
+          {
+            "name": "cacheQuickFilter",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "calculatedColumns",
+            "type": "CalculatedColumnsGridOption<TData>",
+            "required": false
+          },
+          {
+            "name": "cellFadeDuration",
+            "type": "number",
+            "required": false,
+            "default": "1000"
+          },
+          {
+            "name": "cellFlashDuration",
+            "type": "number",
+            "required": false,
+            "default": "500"
+          },
+          {
+            "name": "cellSelection",
+            "type": "boolean | CellSelectionOptions<TData, any>",
+            "required": false
+          },
+          {
+            "name": "chartMenuItems",
+            "type": "(DefaultChartMenuItem | MenuItemDef<TData, any>)[] | GetChartMenuItems<TData, any>",
+            "required": false
+          },
+          {
+            "name": "chartThemeOverrides",
+            "type": "AgChartThemeOverrides<any, unknown>",
+            "required": false
+          },
+          {
+            "name": "chartThemes",
+            "type": "string[]",
+            "required": false,
+            "default": "['ag-default', 'ag-material', 'ag-sheets', 'ag-polychroma', 'ag-vivid'];"
+          },
+          {
+            "name": "chartToolPanelsDef",
+            "type": "ChartToolPanelsDef",
+            "required": false
+          },
+          {
+            "name": "clipboardDelimiter",
+            "type": "string",
+            "required": false,
+            "default": "'\\t'"
+          },
+          {
+            "name": "colResizeDefault",
+            "type": "\"shift\"",
+            "required": false
+          },
+          {
+            "name": "columnDefs",
+            "type": "(ColDef<TData, any> | ColGroupDef<TData>)[] | null",
+            "required": false
+          },
+          {
+            "name": "columnHeaderEdit",
+            "type": "ColumnHeaderEditOptions",
+            "required": false
+          },
+          {
+            "name": "columnHoverHighlight",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "columnMenu",
+            "type": "\"legacy\" | \"new\"",
+            "required": false,
+            "default": "'new'"
+          },
+          {
+            "name": "columnTypes",
+            "type": "ColTypeDefs<TData>",
+            "required": false
+          },
+          {
+            "name": "components",
+            "type": "Components",
+            "required": false
+          },
+          {
+            "name": "contentVisibilityAutoDelay",
+            "type": "number",
+            "required": false,
+            "default": "1000"
+          },
+          {
+            "name": "context",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "copyGroupHeadersToClipboard",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "copyHeadersToClipboard",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "createChartContainer",
+            "type": "CreateChartContainer<TData, any>",
+            "required": false
+          },
+          {
+            "name": "customChartThemes",
+            "type": "CustomChartThemes",
+            "required": false
+          },
+          {
+            "name": "dataTypeDefinitions",
+            "type": "DataTypeDefinitions<TData>",
+            "required": false
+          },
+          {
+            "name": "datasource",
+            "type": "IDatasource",
+            "required": false
+          },
+          {
+            "name": "debounceVerticalScrollbar",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "debug",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "defaultColDef",
+            "type": "ColDef<TData, any>",
+            "required": false
+          },
+          {
+            "name": "defaultColGroupDef",
+            "type": "Partial<ColGroupDef<TData>>",
+            "required": false
+          },
+          {
+            "name": "defaultCsvExportParams",
+            "type": "CsvExportParams",
+            "required": false
+          },
+          {
+            "name": "defaultExcelExportParams",
+            "type": "ExcelExportParams",
+            "required": false
+          },
+          {
+            "name": "defaultPdfExportParams",
+            "type": "PdfExportParams",
+            "required": false
+          },
+          {
+            "name": "deltaSort",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "detailCellRenderer",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "detailCellRendererParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "detailRowAutoHeight",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "detailRowHeight",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "doesExternalFilterPass",
+            "type": "DoesExternalFilterPass<TData>",
+            "required": false
+          },
+          {
+            "name": "domLayout",
+            "type": "DomLayoutType = \"autoHeight\" | \"normal\" | \"print\"",
+            "required": false,
+            "default": "'normal'"
+          },
+          {
+            "name": "dragAndDropImageComponent",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "dragAndDropImageComponentParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "editType",
+            "type": "EditStrategyType = \"singleCell\" | \"fullRow\"",
+            "required": false
+          },
+          {
+            "name": "embedFullWidthRows",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "enableAdvancedFilter",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableBrowserTooltips",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableCellEditingOnBackspace",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "enableCellExpressions",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableCellSpan",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableCellTextSelection",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableCharts",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableContentVisibilityAuto",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableFillHandle",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "enableFilterHandlers",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "enableGroupEdit",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "enableInputAutoComplete",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableRangeHandle",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "enableRangeSelection",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "enableRowPinning",
+            "type": "boolean | \"top\" | \"bottom\"",
+            "required": false
+          },
+          {
+            "name": "enableRtl",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableStrictPivotColumnOrder",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "ensureDomOrder",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enterNavigatesVertically",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enterNavigatesVerticallyAfterEdit",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "excelStyles",
+            "type": "ExcelStyle[]",
+            "required": false
+          },
+          {
+            "name": "excludeChildrenWhenTreeDataFiltering",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "fillHandleDirection",
+            "type": "\"x\" | \"y\" | \"xy\"",
+            "required": false,
+            "default": "'xy'",
+            "deprecated": true
+          },
+          {
+            "name": "fillOperation",
+            "type": "FillOperation<TData>",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "filterHandlers",
+            "type": "FilterHandlers<TData>",
+            "required": false
+          },
+          {
+            "name": "findOptions",
+            "type": "FindOptions",
+            "required": false
+          },
+          {
+            "name": "findSearchValue",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "floatingFiltersHeight",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "focusGridInnerElement",
+            "type": "FocusGridInnerElement<TData>",
+            "required": false
+          },
+          {
+            "name": "formulaDataSource",
+            "type": "FormulaDataSource",
+            "required": false
+          },
+          {
+            "name": "formulaFuncs",
+            "type": "FormulaFuncs",
+            "required": false
+          },
+          {
+            "name": "fullWidthCellRenderer",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "fullWidthCellRendererParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "functionsReadOnly",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "getBusinessKeyForNode",
+            "type": "GetBusinessKeyForNode<TData>",
+            "required": false
+          },
+          {
+            "name": "getChartToolbarItems",
+            "type": "GetChartToolbarItems<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getChildCount",
+            "type": "GetChildCount",
+            "required": false
+          },
+          {
+            "name": "getColumnDropZoneMenuItems",
+            "type": "GetColumnDropZoneMenuItems<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getColumnMenuItems",
+            "type": "GetColumnMenuItems<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getContextMenuItems",
+            "type": "GetContextMenuItems<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getDataPath",
+            "type": "GetDataPath<TData>",
+            "required": false
+          },
+          {
+            "name": "getDocument",
+            "type": "GetDocument",
+            "required": false
+          },
+          {
+            "name": "getFullRowEditValidationErrors",
+            "type": "GetFullRowEditValidationErrors",
+            "required": false
+          },
+          {
+            "name": "getGroupRowAgg",
+            "type": "GetGroupRowAgg<TData>",
+            "required": false
+          },
+          {
+            "name": "getLocaleText",
+            "type": "GetLocaleText<TData>",
+            "required": false
+          },
+          {
+            "name": "getMainMenuItems",
+            "type": "GetMainMenuItems<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getRowClass",
+            "type": "GetRowClass<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getRowHeight",
+            "type": "GetRowHeight<TData>",
+            "required": false
+          },
+          {
+            "name": "getRowId",
+            "type": "GetRowIdFunc<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getRowStyle",
+            "type": "GetRowStyle<TData, any>",
+            "required": false
+          },
+          {
+            "name": "getServerSideGroupKey",
+            "type": "GetServerSideGroupKey",
+            "required": false
+          },
+          {
+            "name": "getServerSideGroupLevelParams",
+            "type": "GetServerSideGroupLevelParams<TData>",
+            "required": false
+          },
+          {
+            "name": "grandTotalRow",
+            "type": "\"top\" | \"bottom\" | \"pinnedTop\" | \"pinnedBottom\"",
+            "required": false
+          },
+          {
+            "name": "gridId",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "groupAggFiltering",
+            "type": "boolean | IsRowFilterable<TData, any>",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "groupAllowUnbalanced",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "groupDefaultExpanded",
+            "type": "number",
+            "required": false,
+            "default": "0"
+          },
+          {
+            "name": "groupDisplayType",
+            "type": "RowGroupingDisplayType = \"singleColumn\" | \"multipleColumns\" | \"groupRows\" | \"custom\"",
+            "required": false
+          },
+          {
+            "name": "groupHeaderHeight",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "groupHideColumnsUntilExpanded",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "groupHideOpenParents",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "groupHideParentOfSingleChild",
+            "type": "boolean | \"leafGroupsOnly\"",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "groupHierarchyConfig",
+            "type": "GroupHierarchyConfig",
+            "required": false
+          },
+          {
+            "name": "groupLockGroupColumns",
+            "type": "number",
+            "required": false,
+            "default": "0"
+          },
+          {
+            "name": "groupMaintainOrder",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "groupRemoveLowestSingleChildren",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "groupRemoveSingleChildren",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "groupRowRenderer",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "groupRowRendererParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "groupSelectsChildren",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "groupSelectsFiltered",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "groupSuppressBlankHeader",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "groupTotalRow",
+            "type": "\"top\" | \"bottom\" | UseGroupTotalRow<TData, any>",
+            "required": false
+          },
+          {
+            "name": "headerHeight",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "hidePaddedHeaderRows",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "icons",
+            "type": "Icons",
+            "required": false
+          },
+          {
+            "name": "includeHiddenColumnsInAdvancedFilter",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "includeHiddenColumnsInCharts",
+            "type": "boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "includeHiddenColumnsInQuickFilter",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "infiniteInitialRowCount",
+            "type": "number",
+            "required": false,
+            "default": "1"
+          },
+          {
+            "name": "initialGroupOrderComparator",
+            "type": "InitialGroupOrderComparator<TData>",
+            "required": false
+          },
+          {
+            "name": "initialState",
+            "type": "GridState",
+            "required": false
+          },
+          {
+            "name": "invalidEditValueMode",
+            "type": "EditValidationCommitType = \"revert\" | \"block\"",
+            "required": false
+          },
+          {
+            "name": "isApplyServerSideTransaction",
+            "type": "IsApplyServerSideTransaction<TData, any>",
+            "required": false
+          },
+          {
+            "name": "isExternalFilterPresent",
+            "type": "IsExternalFilterPresent<TData>",
+            "required": false
+          },
+          {
+            "name": "isFullWidthRow",
+            "type": "IsFullWidthRow<TData>",
+            "required": false
+          },
+          {
+            "name": "isGroupOpenByDefault",
+            "type": "IsGroupOpenByDefault<TData>",
+            "required": false
+          },
+          {
+            "name": "isMasterOpenByDefault",
+            "type": "IsMasterOpenByDefault<TData>",
+            "required": false
+          },
+          {
+            "name": "isRowMaster",
+            "type": "IsRowMaster<TData>",
+            "required": false
+          },
+          {
+            "name": "isRowPinnable",
+            "type": "IsRowPinnable<TData>",
+            "required": false
+          },
+          {
+            "name": "isRowPinned",
+            "type": "IsRowPinned<TData>",
+            "required": false
+          },
+          {
+            "name": "isRowSelectable",
+            "type": "IsRowSelectable<TData>",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "isRowValidDropPosition",
+            "type": "IsRowValidDropPositionCallback<TData>",
+            "required": false
+          },
+          {
+            "name": "isServerSideGroup",
+            "type": "IsServerSideGroup",
+            "required": false
+          },
+          {
+            "name": "isServerSideGroupOpenByDefault",
+            "type": "IsServerSideGroupOpenByDefault<TData>",
+            "required": false
+          },
+          {
+            "name": "keepDetailRows",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "keepDetailRowsCount",
+            "type": "number",
+            "required": false,
+            "default": "10"
+          },
+          {
+            "name": "loadThemeGoogleFonts",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "loading",
+            "type": "boolean",
+            "required": false,
+            "default": "undefined"
+          },
+          {
+            "name": "loadingCellRenderer",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "loadingCellRendererParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "loadingCellRendererSelector",
+            "type": "LoadingCellRendererSelectorFunc<TData, any, any>",
+            "required": false
+          },
+          {
+            "name": "loadingOverlayComponent",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "loadingOverlayComponentParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "loadingRows",
+            "type": "boolean | LoadingRowsOptions",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "localeText",
+            "type": "LocaleText",
+            "required": false
+          },
+          {
+            "name": "maintainColumnOrder",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "masterDefaultExpanded",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "masterDetail",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "maxBlocksInCache",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "maxConcurrentDatasourceRequests",
+            "type": "number",
+            "required": false,
+            "default": "2"
+          },
+          {
+            "name": "multiSortKey",
+            "type": "\"ctrl\"",
+            "required": false
+          },
+          {
+            "name": "navigateToNextCell",
+            "type": "NavigateToNextCell<TData>",
+            "required": false
+          },
+          {
+            "name": "navigateToNextHeader",
+            "type": "NavigateToNextHeader<TData>",
+            "required": false
+          },
+          {
+            "name": "noRowsOverlayComponent",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "noRowsOverlayComponentParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "noteHideDelay",
+            "type": "number",
+            "required": false,
+            "default": "220"
+          },
+          {
+            "name": "noteShowDelay",
+            "type": "number",
+            "required": false,
+            "default": "180"
+          },
+          {
+            "name": "noteTrigger",
+            "type": "\"hover\" | \"click\"",
+            "required": false,
+            "default": "'hover'"
+          },
+          {
+            "name": "notesDataSource",
+            "type": "NotesDataSource<any> | FullWidthNotesDataSource<any>",
+            "required": false
+          },
+          {
+            "name": "onAdvancedFilterBuilderVisibleChanged",
+            "type": "(event: AdvancedFilterBuilderVisibleChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onAsyncTransactionsFlushed",
+            "type": "(event: AsyncTransactionsFlushedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onBatchEditingStarted",
+            "type": "(event: BatchEditingStartedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onBatchEditingStopped",
+            "type": "(event: BatchEditingStoppedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onBodyScroll",
+            "type": "(event: BodyScrollEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onBodyScrollEnd",
+            "type": "(event: BodyScrollEndEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onBulkEditingStarted",
+            "type": "(event: BulkEditingStartedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onBulkEditingStopped",
+            "type": "(event: BulkEditingStoppedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCalculatedColumnChanged",
+            "type": "(event: CalculatedColumnChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCalculatedColumnCreated",
+            "type": "(event: CalculatedColumnCreatedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCalculatedColumnExpressionChanged",
+            "type": "(event: CalculatedColumnExpressionChangedEvent<TData, any>) => void",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "onCalculatedColumnRemoved",
+            "type": "(event: CalculatedColumnRemovedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCalculatedColumnValidationStateChanged",
+            "type": "(event: CalculatedColumnValidationStateChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellClicked",
+            "type": "(event: CellClickedEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellContextMenu",
+            "type": "(event: CellContextMenuEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellDoubleClicked",
+            "type": "(event: CellDoubleClickedEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellEditRequest",
+            "type": "(event: CellEditRequestEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellEditingStarted",
+            "type": "(event: CellEditingStartedEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellEditingStopped",
+            "type": "(event: CellEditingStoppedEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellFocused",
+            "type": "(event: CellFocusedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellKeyDown",
+            "type": "(event: CellKeyDownEvent<TData, any, any> | FullWidthCellKeyDownEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellMouseDown",
+            "type": "(event: CellMouseDownEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellMouseOut",
+            "type": "(event: CellMouseOutEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellMouseOver",
+            "type": "(event: CellMouseOverEvent<TData, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellSelectionChanged",
+            "type": "(event: CellSelectionChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellSelectionDeleteEnd",
+            "type": "(event: CellSelectionDeleteEndEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellSelectionDeleteStart",
+            "type": "(event: CellSelectionDeleteStartEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellValueChanged",
+            "type": "(event: CellValueChangedEvent<TData, any, any, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onChartCreated",
+            "type": "(event: ChartCreatedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onChartDestroyed",
+            "type": "(event: ChartDestroyedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onChartOptionsChanged",
+            "type": "(event: ChartOptionsChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onChartRangeSelectionChanged",
+            "type": "(event: ChartRangeSelectionChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnEverythingChanged",
+            "type": "(event: ColumnEverythingChangedEvent<TData, any>) => void",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "onColumnGroupOpened",
+            "type": "(event: ColumnGroupOpenedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnHeaderClicked",
+            "type": "(event: ColumnHeaderClickedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnHeaderContextMenu",
+            "type": "(event: ColumnHeaderContextMenuEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnHeaderMouseLeave",
+            "type": "(event: ColumnHeaderMouseLeaveEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnHeaderMouseOver",
+            "type": "(event: ColumnHeaderMouseOverEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnHeaderNameChanged",
+            "type": "(event: ColumnHeaderNameChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnMenuVisibleChanged",
+            "type": "(event: ColumnMenuVisibleChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnMoved",
+            "type": "(event: ColumnMovedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnPinned",
+            "type": "(event: ColumnPinnedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnPivotChanged",
+            "type": "(event: ColumnPivotChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnPivotModeChanged",
+            "type": "(event: ColumnPivotModeChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnResized",
+            "type": "(event: ColumnResizedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnRowGroupChanged",
+            "type": "(event: ColumnRowGroupChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnValueChanged",
+            "type": "(event: ColumnValueChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnVisible",
+            "type": "(event: ColumnVisibleEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onColumnsReset",
+            "type": "(event: ColumnsResetEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onComponentStateChanged",
+            "type": "(event: ComponentStateChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onContextMenuVisibleChanged",
+            "type": "(event: ContextMenuVisibleChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCutEnd",
+            "type": "(event: CutEndEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCutStart",
+            "type": "(event: CutStartEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onDisplayedColumnsChanged",
+            "type": "(event: DisplayedColumnsChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onDragCancelled",
+            "type": "(event: DragCancelledEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onDragStarted",
+            "type": "(event: DragStartedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onDragStopped",
+            "type": "(event: DragStoppedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onExpandOrCollapseAll",
+            "type": "(event: ExpandOrCollapseAllEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFillEnd",
+            "type": "(event: FillEndEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFillStart",
+            "type": "(event: FillStartEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFilterChanged",
+            "type": "(event: FilterChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFilterModified",
+            "type": "(event: FilterModifiedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFilterOpened",
+            "type": "(event: FilterOpenedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFilterUiChanged",
+            "type": "(event: FilterUiChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFindChanged",
+            "type": "(event: FindChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFirstDataRendered",
+            "type": "(event: FirstDataRenderedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onFloatingFilterUiChanged",
+            "type": "(event: FloatingFilterUiChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onGridColumnsChanged",
+            "type": "(event: GridColumnsChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onGridPreDestroyed",
+            "type": "(event: GridPreDestroyedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onGridReady",
+            "type": "(event: GridReadyEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onGridSizeChanged",
+            "type": "(event: GridSizeChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onHeaderFocused",
+            "type": "(event: HeaderFocusedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onIssueRaised",
+            "type": "(event: IssueRaisedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onModelUpdated",
+            "type": "(event: ModelUpdatedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onNewColumnsLoaded",
+            "type": "(event: NewColumnsLoadedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onPaginationChanged",
+            "type": "(event: PaginationChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onPasteEnd",
+            "type": "(event: PasteEndEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onPasteStart",
+            "type": "(event: PasteStartEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onPinnedRowDataChanged",
+            "type": "(event: PinnedRowDataChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onPinnedRowsChanged",
+            "type": "(event: PinnedRowsChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onPivotMaxColumnsExceeded",
+            "type": "(event: PivotMaxColumnsExceededEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRangeDeleteEnd",
+            "type": "(event: RangeDeleteEndEvent<TData, any>) => void",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "onRangeDeleteStart",
+            "type": "(event: RangeDeleteStartEvent<TData, any>) => void",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "onRangeSelectionChanged",
+            "type": "(event: RangeSelectionChangedEvent<TData, any>) => void",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "onRedoEnded",
+            "type": "(event: RedoEndedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRedoStarted",
+            "type": "(event: RedoStartedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowClicked",
+            "type": "(event: RowClickedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowDataUpdated",
+            "type": "(event: RowDataUpdatedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowDoubleClicked",
+            "type": "(event: RowDoubleClickedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowDragCancel",
+            "type": "(event: RowDragCancelEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowDragEnd",
+            "type": "(event: RowDragEndEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowDragEnter",
+            "type": "(event: RowDragEnterEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowDragLeave",
+            "type": "(event: RowDragLeaveEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowDragMove",
+            "type": "(event: RowDragMoveEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowEditingStarted",
+            "type": "(event: RowEditingStartedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowEditingStopped",
+            "type": "(event: RowEditingStoppedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowGroupOpened",
+            "type": "(event: RowGroupOpenedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowResizeEnded",
+            "type": "(event: RowResizeEndedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowResizeStarted",
+            "type": "(event: RowResizeStartedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowSelected",
+            "type": "(event: RowSelectedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onRowValueChanged",
+            "type": "(event: RowValueChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onSelectionChanged",
+            "type": "(event: SelectionChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onSortChanged",
+            "type": "(event: SortChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onStateUpdated",
+            "type": "(event: StateUpdatedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onStoreRefreshed",
+            "type": "(event: StoreRefreshedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onToolPanelSizeChanged",
+            "type": "(event: ToolPanelSizeChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onToolPanelVisibleChanged",
+            "type": "(event: ToolPanelVisibleChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onTooltipHide",
+            "type": "(event?: TooltipHideEvent<TData, any> | undefined) => void",
+            "required": false
+          },
+          {
+            "name": "onTooltipShow",
+            "type": "(event?: TooltipShowEvent<TData, any> | undefined) => void",
+            "required": false
+          },
+          {
+            "name": "onUndoEnded",
+            "type": "(event: UndoEndedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onUndoStarted",
+            "type": "(event: UndoStartedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onViewportChanged",
+            "type": "(event: ViewportChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onVirtualColumnsChanged",
+            "type": "(event: VirtualColumnsChangedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onVirtualRowRemoved",
+            "type": "(event: VirtualRowRemovedEvent<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "overlayComponent",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "overlayComponentParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "overlayComponentSelector",
+            "type": "OverlaySelectorFunc<TData>",
+            "required": false
+          },
+          {
+            "name": "overlayLoadingTemplate",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "overlayNoRowsTemplate",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "paginateChildRows",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "pagination",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "paginationAutoPageSize",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "paginationNumberFormatter",
+            "type": "PaginationNumberFormatter<TData>",
+            "required": false
+          },
+          {
+            "name": "paginationPageSize",
+            "type": "number",
+            "required": false,
+            "default": "100"
+          },
+          {
+            "name": "paginationPageSizeSelector",
+            "type": "boolean | number[]",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "paginationPanels",
+            "type": "PaginationPanel[]",
+            "required": false
+          },
+          {
+            "name": "pinnedBottomRowData",
+            "type": "any[]",
+            "required": false
+          },
+          {
+            "name": "pinnedTopRowData",
+            "type": "any[]",
+            "required": false
+          },
+          {
+            "name": "pivotColumnGroupTotals",
+            "type": "PivotColumnGroupTotals = \"before\" | \"after\"",
+            "required": false
+          },
+          {
+            "name": "pivotDefaultExpanded",
+            "type": "number",
+            "required": false,
+            "default": "0"
+          },
+          {
+            "name": "pivotGroupHeaderHeight",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "pivotHeaderHeight",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "pivotMaxGeneratedColumns",
+            "type": "number",
+            "required": false,
+            "default": "-1"
+          },
+          {
+            "name": "pivotMode",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "pivotPanelShow",
+            "type": "\"always\" | \"onlyWhenPivoting\" | \"never\"",
+            "required": false,
+            "default": "'never'"
+          },
+          {
+            "name": "pivotPanelSuppressSort",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "pivotRowTotals",
+            "type": "PivotRowTotals = \"before\" | \"after\"",
+            "required": false
+          },
+          {
+            "name": "pivotSuppressAutoColumn",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "popupParent",
+            "type": "HTMLElement | null",
+            "required": false
+          },
+          {
+            "name": "postProcessPopup",
+            "type": "PostProcessPopup<TData>",
+            "required": false
+          },
+          {
+            "name": "postSortRows",
+            "type": "PostSortRows<TData>",
+            "required": false
+          },
+          {
+            "name": "preventDefaultOnContextMenu",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "processAutoGeneratedColumnDefs",
+            "type": "ProcessAutoGeneratedColumnDefs<TData, any>",
+            "required": false
+          },
+          {
+            "name": "processCellForClipboard",
+            "type": "ProcessCellForClipboard<TData>",
+            "required": false
+          },
+          {
+            "name": "processCellFromClipboard",
+            "type": "ProcessCellFromClipboard<TData>",
+            "required": false
+          },
+          {
+            "name": "processDataFromClipboard",
+            "type": "ProcessDataFromClipboard<TData>",
+            "required": false
+          },
+          {
+            "name": "processFileInput",
+            "type": "(params: ProcessFileInputParams<TData, any>) => void",
+            "required": false
+          },
+          {
+            "name": "processGroupHeaderForClipboard",
+            "type": "ProcessGroupHeaderForClipboard<TData>",
+            "required": false
+          },
+          {
+            "name": "processHeaderForClipboard",
+            "type": "ProcessHeaderForClipboard<TData>",
+            "required": false
+          },
+          {
+            "name": "processPivotResultColDef",
+            "type": "ProcessPivotResultColDef<TData, any>",
+            "required": false
+          },
+          {
+            "name": "processPivotResultColGroupDef",
+            "type": "ProcessPivotResultColGroupDef<TData>",
+            "required": false
+          },
+          {
+            "name": "processRowPostCreate",
+            "type": "ProcessRowPostCreate<TData>",
+            "required": false
+          },
+          {
+            "name": "processUnpinnedColumns",
+            "type": "ProcessUnpinnedColumns<TData>",
+            "required": false
+          },
+          {
+            "name": "purgeClosedRowNodes",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "quickFilterMatcher",
+            "type": "QuickFilterMatcher",
+            "required": false
+          },
+          {
+            "name": "quickFilterParser",
+            "type": "QuickFilterParser",
+            "required": false
+          },
+          {
+            "name": "quickFilterText",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "reactiveCustomComponents",
+            "type": "boolean",
+            "required": false,
+            "default": "true",
+            "deprecated": true
+          },
+          {
+            "name": "readOnlyEdit",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "refreshAfterGroupEdit",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "removePivotHeaderRowWhenSingleValueColumn",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "renderingMode",
+            "type": "\"legacy\" | \"default\"",
+            "required": false,
+            "default": "'default'"
+          },
+          {
+            "name": "resetRowDataOnUpdate",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowBuffer",
+            "type": "number",
+            "required": false,
+            "default": "10"
+          },
+          {
+            "name": "rowClass",
+            "type": "string | string[]",
+            "required": false
+          },
+          {
+            "name": "rowClassRules",
+            "type": "RowClassRules<TData, any>",
+            "required": false
+          },
+          {
+            "name": "rowData",
+            "type": "TData[] | null",
+            "required": false
+          },
+          {
+            "name": "rowDragEntireRow",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowDragInsertDelay",
+            "type": "number",
+            "required": false,
+            "default": "500"
+          },
+          {
+            "name": "rowDragManaged",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowDragMultiRow",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowDragText",
+            "type": "RowDragTextFunc",
+            "required": false
+          },
+          {
+            "name": "rowGroupPanelShow",
+            "type": "\"always\" | \"never\" | \"onlyWhenGrouping\"",
+            "required": false,
+            "default": "'never'"
+          },
+          {
+            "name": "rowGroupPanelSuppressSort",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowHeight",
+            "type": "number",
+            "required": false,
+            "default": "25"
+          },
+          {
+            "name": "rowModelType",
+            "type": "RowModelType = \"infinite\" | \"viewport\" | \"clientSide\" | \"serverSide\"",
+            "required": false,
+            "default": "'clientSide'"
+          },
+          {
+            "name": "rowMultiSelectWithClick",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "rowNumbers",
+            "type": "boolean | RowNumbersOptions",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowSelection",
+            "type": "RowSelectionOptions<TData, any, any> | \"single\" | \"multiple\"",
+            "required": false
+          },
+          {
+            "name": "rowStyle",
+            "type": "RowStyle",
+            "required": false
+          },
+          {
+            "name": "scrollbarWidth",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "selectionColumnDef",
+            "type": "SelectionColumnDef",
+            "required": false
+          },
+          {
+            "name": "sendToClipboard",
+            "type": "SendToClipboard<TData>",
+            "required": false
+          },
+          {
+            "name": "serverSideDatasource",
+            "type": "IServerSideDatasource<any>",
+            "required": false
+          },
+          {
+            "name": "serverSideEnableClientSideSort",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "serverSideInitialRowCount",
+            "type": "number",
+            "required": false,
+            "default": "1"
+          },
+          {
+            "name": "serverSideOnlyRefreshFilteredGroups",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "serverSidePivotResultFieldSeparator",
+            "type": "string",
+            "required": false,
+            "default": "'_'"
+          },
+          {
+            "name": "serverSideSortAllLevels",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "showOpenedGroup",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "sideBar",
+            "type": "string | boolean | SideBarDef | string[] | null",
+            "required": false
+          },
+          {
+            "name": "singleClickEdit",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "skipHeaderOnAutoSize",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "sortingOrder",
+            "type": "SortDirection[]",
+            "required": false,
+            "default": "['asc', 'desc', null]",
+            "deprecated": true
+          },
+          {
+            "name": "ssrmExpandAllAffectsAllRows",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "statusBar",
+            "type": "StatusBar",
+            "required": false
+          },
+          {
+            "name": "stickyRowsMaxViewportRatio",
+            "type": "number",
+            "required": false,
+            "default": "0.5"
+          },
+          {
+            "name": "stopEditingWhenCellsLoseFocus",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "styleNonce",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "suppressAdvancedFilterEval",
+            "type": "boolean",
+            "required": false,
+            "default": "true",
+            "deprecated": true
+          },
+          {
+            "name": "suppressAggFilteredOnly",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressAggFuncInHeader",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressAnimationFrame",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressAutoSize",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressBrowserResizeObserver",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressCellFocus",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressChangeDetection",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressClearOnFillReduction",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressClickEdit",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressClipboardApi",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressClipboardPaste",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressColumnMoveAnimation",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressColumnVirtualisation",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressContentVisibilityAuto",
+            "type": "boolean",
+            "required": false,
+            "default": "true",
+            "deprecated": true
+          },
+          {
+            "name": "suppressContextMenu",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressCopyRowsToClipboard",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressCopySingleCellRanges",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressCsvExport",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressCutToClipboard",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressDragLeaveHidesColumns",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressExcelExport",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressExpandablePivotGroups",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressFieldDotNotation",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressFocusAfterRefresh",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressGroupChangesColumnVisibility",
+            "type": "boolean | \"suppressHideOnGroup\" | \"suppressShowOnUngroup\"",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressGroupRowsSticky",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressHeaderFocus",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressHorizontalScroll",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressInputClearButton",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressLastEmptyLineOnPaste",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressLoadingOverlay",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressMaintainUnsortedOrder",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressMakeColumnVisibleAfterUnGroup",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressMaxRenderedRowRestriction",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressMenuHide",
+            "type": "boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "suppressMiddleClickScrolls",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressModelUpdateAfterUpdateTransaction",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressMovableColumns",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressMoveWhenColumnDragging",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressMoveWhenRowDragging",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressMultiRangeSelection",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressMultiSort",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressNoRowsOverlay",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressOverlays",
+            "type": "OverlayType[]",
+            "required": false
+          },
+          {
+            "name": "suppressPaginationPanel",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressPdfExport",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressPreventDefaultOnMouseWheel",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressPropertyNamesCheck",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressRowClickSelection",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressRowDeselection",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressRowDrag",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressRowGroupHidesColumns",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "suppressRowHoverHighlight",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressRowTransform",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressRowVirtualisation",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressScrollOnNewData",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressScrollWhenPopupsAreOpen",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressServerSideFullWidthLoadingRow",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "suppressSetFilterByDefault",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressStartEditOnTab",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "suppressStickyTotalRow",
+            "type": "boolean | \"group\" | \"grand\"",
+            "required": false
+          },
+          {
+            "name": "suppressTouch",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "tabIndex",
+            "type": "number",
+            "required": false,
+            "default": "0"
+          },
+          {
+            "name": "tabToNextCell",
+            "type": "TabToNextCell<TData>",
+            "required": false
+          },
+          {
+            "name": "tabToNextGridContainer",
+            "type": "TabToNextGridContainer<TData>",
+            "required": false
+          },
+          {
+            "name": "tabToNextHeader",
+            "type": "TabToNextHeader<TData>",
+            "required": false
+          },
+          {
+            "name": "theme",
+            "type": "\"legacy\" | Theme",
+            "required": false,
+            "default": "themeQuartz"
+          },
+          {
+            "name": "themeCssLayer",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "themeStyleContainer",
+            "type": "HTMLElement | (() => void | HTMLElement)",
+            "required": false
+          },
+          {
+            "name": "toolbar",
+            "type": "Toolbar",
+            "required": false
+          },
+          {
+            "name": "tooltipHideDelay",
+            "type": "number",
+            "required": false,
+            "default": "10000"
+          },
+          {
+            "name": "tooltipInteraction",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "tooltipMouseTrack",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "tooltipShowDelay",
+            "type": "number",
+            "required": false,
+            "default": "2000"
+          },
+          {
+            "name": "tooltipShowMode",
+            "type": "\"standard\" | \"whenTruncated\"",
+            "required": false,
+            "default": "standard"
+          },
+          {
+            "name": "tooltipSwitchShowDelay",
+            "type": "number",
+            "required": false,
+            "default": "200"
+          },
+          {
+            "name": "tooltipTrigger",
+            "type": "\"hover\" | \"focus\"",
+            "required": false,
+            "default": "'hover'"
+          },
+          {
+            "name": "treeData",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "treeDataChildrenField",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "treeDataDisplayType",
+            "type": "TreeDataDisplayType = \"custom\" | \"auto\"",
+            "required": false
+          },
+          {
+            "name": "treeDataParentIdField",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "unSortIcon",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "undoRedoCellEditing",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "undoRedoCellEditingLimit",
+            "type": "number",
+            "required": false,
+            "default": "10"
+          },
+          {
+            "name": "valueCache",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "valueCacheNeverExpires",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "viewportDatasource",
+            "type": "IViewportDatasource",
+            "required": false
+          },
+          {
+            "name": "viewportRowModelBufferSize",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "viewportRowModelPageSize",
+            "type": "number",
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "ColDef",
+        "kind": "interface",
+        "source": "dist/types/src/entities/colDef.d.ts",
+        "typeParameters": [
+          "TData",
+          "TValue"
+        ],
+        "props": [
+          {
+            "name": "aggFunc",
+            "type": "string | IAggFunc<TData, TValue, any> | null",
+            "required": false
+          },
+          {
+            "name": "allowFormula",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "allowedAggFuncs",
+            "type": "string[]",
+            "required": false
+          },
+          {
+            "name": "autoHeaderHeight",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "autoHeight",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "calculatedColumnReadOnly",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "calculatedExpression",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "cellAriaRole",
+            "type": "string",
+            "required": false,
+            "default": "'gridcell'",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "cellClass",
+            "type": "string | string[] | CellClassFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "cellClassRules",
+            "type": "CellClassRules<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "cellDataType",
+            "type": "string | boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "cellEditor",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "cellEditorParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "cellEditorPopup",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "cellEditorPopupPosition",
+            "type": "\"over\" | \"under\"",
+            "required": false,
+            "default": "'over'"
+          },
+          {
+            "name": "cellEditorSelector",
+            "type": "CellEditorSelectorFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "cellRenderer",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "cellRendererParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "cellRendererSelector",
+            "type": "CellRendererSelectorFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "cellStyle",
+            "type": "CellStyle | CellStyleFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "chartDataType",
+            "type": "\"category\" | \"series\" | \"time\" | \"excluded\"",
+            "required": false
+          },
+          {
+            "name": "checkboxSelection",
+            "type": "boolean | CheckboxSelectionCallback<TData, TValue, any>",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "colId",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "colSpan",
+            "type": "ColSpanFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "columnChooserParams",
+            "type": "ColumnChooserParams",
+            "required": false
+          },
+          {
+            "name": "columnGroupShow",
+            "type": "ColumnGroupShowType = \"open\" | \"closed\"",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "columnMenuItems",
+            "type": "(MenuItemDef<TData, any> | DefaultColumnMenuItem)[] | GetColumnMenuItems<TData>",
+            "required": false
+          },
+          {
+            "name": "comparator",
+            "type": "SortComparatorFn<TData, TValue> | Partial<Record<SortType, SortComparatorFn<TData, TValue>>>",
+            "required": false
+          },
+          {
+            "name": "context",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "contextMenuItems",
+            "type": "(DefaultMenuItem | MenuItemDef<TData, any>)[] | GetContextMenuItems<TData>",
+            "required": false
+          },
+          {
+            "name": "dateComponent",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "dateComponentParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "defaultAggFunc",
+            "type": "string",
+            "required": false,
+            "default": "'sum'"
+          },
+          {
+            "name": "dndSource",
+            "type": "boolean | DndSourceCallback<TData, TValue, any>",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "dndSourceOnRowDrag",
+            "type": "DndSourceOnRowDragFunc<TData, any>",
+            "required": false
+          },
+          {
+            "name": "editable",
+            "type": "boolean | EditableCallback<TData, TValue, any>",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableCellChangeFlash",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enablePivot",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableRowGroup",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableShowValuesAs",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enableValue",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "equals",
+            "type": "EqualsFunc<TValue>",
+            "required": false
+          },
+          {
+            "name": "field",
+            "type": "ColDefField<TData, TValue>",
+            "required": false
+          },
+          {
+            "name": "filter",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "IFilterDef"
+          },
+          {
+            "name": "filterParams",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "IFilterDef"
+          },
+          {
+            "name": "filterValueGetter",
+            "type": "string | ValueGetterFunc<TData, any, any>",
+            "required": false
+          },
+          {
+            "name": "flex",
+            "type": "number | null",
+            "required": false
+          },
+          {
+            "name": "floatingFilter",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "floatingFilterComponent",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "IFilterDef"
+          },
+          {
+            "name": "floatingFilterComponentParams",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "IFilterDef"
+          },
+          {
+            "name": "getFindText",
+            "type": "GetFindTextFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "getQuickFilterText",
+            "type": "GetQuickFilterText<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "groupHierarchy",
+            "type": "(string | ColDef<TData, TValue>)[]",
+            "required": false
+          },
+          {
+            "name": "groupRowEditable",
+            "type": "boolean | GroupRowEditableCallback<TData, TValue>",
+            "required": false
+          },
+          {
+            "name": "groupRowValueSetter",
+            "type": "boolean | GroupRowValueSetterFunc<TData, TValue> | GroupRowValueSetterOptions<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "headerCheckboxSelection",
+            "type": "boolean | HeaderCheckboxSelectionCallback<TData, TValue, any>",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "headerCheckboxSelectionCurrentPageOnly",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "headerCheckboxSelectionFilteredOnly",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "headerClass",
+            "type": "HeaderClass<TData, TValue, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerComponent",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "headerComponentParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "headerName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerNameEditable",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerStyle",
+            "type": "HeaderStyle | HeaderStyleFunc<TData, TValue, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerTooltip",
+            "type": "TooltipDefinition<TData, TValue>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerTooltipValueGetter",
+            "type": "HeaderTooltipValueGetterFunc<TData, TValue, any>",
+            "required": false,
+            "deprecated": true,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerValueGetter",
+            "type": "string | HeaderValueGetterFunc<TData, TValue, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "hide",
+            "type": "boolean | null",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "icons",
+            "type": "Icons",
+            "required": false
+          },
+          {
+            "name": "initialAggFunc",
+            "type": "string | IAggFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "initialFlex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "initialHide",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "initialPinned",
+            "type": "boolean | \"left\" | \"right\"",
+            "required": false
+          },
+          {
+            "name": "initialPivot",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "initialPivotIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "initialPivotSort",
+            "type": "SortDirection = \"asc\" | \"desc\" | null",
+            "required": false
+          },
+          {
+            "name": "initialRowGroup",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "initialRowGroupIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "initialShowValuesAs",
+            "type": "ShowValuesAsType | ShowValuesAs",
+            "required": false
+          },
+          {
+            "name": "initialSort",
+            "type": "SortDirection | SortDef",
+            "required": false
+          },
+          {
+            "name": "initialSortIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "initialValueIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "initialWidth",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "keyCreator",
+            "type": "KeyCreatorFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "loadingCellRenderer",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "loadingCellRendererParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "loadingCellRendererSelector",
+            "type": "ILoadingCellRendererSelectorFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "lockPinned",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "lockPosition",
+            "type": "boolean | \"left\" | \"right\"",
+            "required": false
+          },
+          {
+            "name": "lockVisible",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "mainMenuItems",
+            "type": "(DefaultMenuItem | MenuItemDef<TData, any>)[] | GetMainMenuItems<TData>",
+            "required": false
+          },
+          {
+            "name": "maxWidth",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "menuTabs",
+            "type": "ColumnMenuTab[]",
+            "required": false
+          },
+          {
+            "name": "minWidth",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "onCellClicked",
+            "type": "(event: CellClickedEvent<TData, TValue, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellContextMenu",
+            "type": "(event: CellContextMenuEvent<TData, TValue, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellDoubleClicked",
+            "type": "(event: CellDoubleClickedEvent<TData, TValue, any>) => void",
+            "required": false
+          },
+          {
+            "name": "onCellValueChanged",
+            "type": "(event: NewValueParams<TData, TValue, any>) => void",
+            "required": false
+          },
+          {
+            "name": "pinned",
+            "type": "boolean | \"left\" | \"right\" | null",
+            "required": false
+          },
+          {
+            "name": "pivot",
+            "type": "boolean | null",
+            "required": false
+          },
+          {
+            "name": "pivotComparator",
+            "type": "PivotComparatorFunc",
+            "required": false
+          },
+          {
+            "name": "pivotIndex",
+            "type": "number | null",
+            "required": false
+          },
+          {
+            "name": "pivotKeys",
+            "type": "string[]",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "pivotSort",
+            "type": "SortDirection = \"asc\" | \"desc\" | null",
+            "required": false,
+            "default": "'asc'"
+          },
+          {
+            "name": "pivotTotalColumnIds",
+            "type": "string[]",
+            "required": false
+          },
+          {
+            "name": "pivotValueColumn",
+            "type": "Column<any> | null",
+            "required": false
+          },
+          {
+            "name": "refData",
+            "type": "RefData",
+            "required": false
+          },
+          {
+            "name": "resizable",
+            "type": "boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "rowDrag",
+            "type": "boolean | RowDragCallback<TData, TValue, any>",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowDragText",
+            "type": "RowDragTextFunc",
+            "required": false
+          },
+          {
+            "name": "rowGroup",
+            "type": "boolean | null",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "rowGroupIndex",
+            "type": "number | null",
+            "required": false
+          },
+          {
+            "name": "rowGroupingHierarchy",
+            "type": "(string | ColDef<TData, TValue>)[]",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "rowSpan",
+            "type": "RowSpanFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "showDisabledCheckboxes",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "deprecated": true
+          },
+          {
+            "name": "showRowGroup",
+            "type": "string | boolean",
+            "required": false
+          },
+          {
+            "name": "showValuesAs",
+            "type": "ShowValuesAsType | ShowValuesAs | null",
+            "required": false
+          },
+          {
+            "name": "showValuesAsDef",
+            "type": "ShowValuesAsDef<TData, TValue> | null",
+            "required": false
+          },
+          {
+            "name": "singleClickEdit",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "sort",
+            "type": "SortDirection | SortDef",
+            "required": false
+          },
+          {
+            "name": "sortIndex",
+            "type": "number | null",
+            "required": false
+          },
+          {
+            "name": "sortable",
+            "type": "boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "sortingOrder",
+            "type": "(SortDirection | SortDef)[]",
+            "required": false
+          },
+          {
+            "name": "spanRows",
+            "type": "boolean | SpanRowsFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "suppressAutoSize",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressColumnsToolPanel",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressFillHandle",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "suppressFiltersToolPanel",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressFloatingFilterButton",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "suppressHeaderContextMenu",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressHeaderFilterButton",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressHeaderKeyboardEvent",
+            "type": "SuppressHeaderKeyboardEventFunc<TData, TValue, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressHeaderMenuButton",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressKeyboardEvent",
+            "type": "SuppressKeyboardEventFunc<TData, TValue, any>",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressMovable",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressNavigable",
+            "type": "boolean | SuppressNavigableCallback<TData, TValue, any>",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressNoteActions",
+            "type": "boolean | SuppressNoteActionsCallback<TData, TValue, any>",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressPaste",
+            "type": "boolean | SuppressPasteCallback<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "suppressSizeToFit",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "suppressSpanHeaderHeight",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "toolPanelClass",
+            "type": "ToolPanelClass<TData, TValue, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "tooltip",
+            "type": "TooltipDefinition<TData, TValue>",
+            "required": false
+          },
+          {
+            "name": "tooltipComponent",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "tooltipComponentParams",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "tooltipComponentSelector",
+            "type": "TooltipComponentSelectorFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "tooltipField",
+            "type": "ColDefField<TData, any>",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "tooltipValueGetter",
+            "type": "TooltipValueGetterFunc<TData, TValue, any>",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "type",
+            "type": "string | string[]",
+            "required": false
+          },
+          {
+            "name": "unSortIcon",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "useValueFormatterForExport",
+            "type": "boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "useValueParserForImport",
+            "type": "boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "valueFormatter",
+            "type": "string | ValueFormatterFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "valueGetter",
+            "type": "string | ValueGetterFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "valueIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "valueParser",
+            "type": "string | ValueParserFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "valueSetter",
+            "type": "string | ValueSetterFunc<TData, TValue, any>",
+            "required": false
+          },
+          {
+            "name": "width",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "wrapHeaderText",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "wrapText",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          }
+        ]
+      },
+      {
+        "name": "ColGroupDef",
+        "kind": "interface",
+        "source": "dist/types/src/entities/colDef.d.ts",
+        "typeParameters": [
+          "TData"
+        ],
+        "props": [
+          {
+            "name": "autoHeaderHeight",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "cellAriaRole",
+            "type": "string",
+            "required": false,
+            "default": "'gridcell'",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "children",
+            "type": "(ColGroupDef<TData> | ColDef<TData, any>)[]",
+            "required": true
+          },
+          {
+            "name": "columnGroupShow",
+            "type": "ColumnGroupShowType = \"open\" | \"closed\"",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "columnMenuItems",
+            "type": "(DefaultColumnMenuItem | MenuItemDef<TData, any>)[] | GetColumnMenuItems<TData>",
+            "required": false
+          },
+          {
+            "name": "context",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "groupId",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "headerClass",
+            "type": "HeaderClass<TData, any, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerGroupComponent",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "headerGroupComponentParams",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "headerName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerNameEditable",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerStyle",
+            "type": "HeaderStyle | HeaderStyleFunc<TData, any, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerTooltip",
+            "type": "TooltipDefinition<TData, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerTooltipValueGetter",
+            "type": "HeaderTooltipValueGetterFunc<TData, any, any>",
+            "required": false,
+            "deprecated": true,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "headerValueGetter",
+            "type": "string | HeaderValueGetterFunc<TData, any, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "mainMenuItems",
+            "type": "(DefaultMenuItem | MenuItemDef<TData, any>)[] | GetMainMenuItems<TData>",
+            "required": false
+          },
+          {
+            "name": "marryChildren",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "openByDefault",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "pivotKeys",
+            "type": "string[]",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressColumnsToolPanel",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressFiltersToolPanel",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressHeaderContextMenu",
+            "type": "boolean",
+            "required": false,
+            "default": "false",
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressHeaderKeyboardEvent",
+            "type": "SuppressHeaderKeyboardEventFunc<TData, any, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "suppressStickyLabel",
+            "type": "boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "toolPanelClass",
+            "type": "ToolPanelClass<TData, any, any>",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "tooltipComponent",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "tooltipComponentParams",
+            "type": "any",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          },
+          {
+            "name": "wrapHeaderText",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "AbstractColDef"
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "components": 3,
+      "props": 669,
+      "medianProps": 159,
+      "families": 0,
+      "namespaces": 0,
+      "interfaces": 3,
+      "aliases": 0,
+      "excludedDomProps": 0,
+      "excludedStyleProps": 0,
+      "componentsAcceptingDomDir": 0
+    }
+  }
+}

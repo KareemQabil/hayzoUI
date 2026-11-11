@@ -1,0 +1,3 @@
+{ "id": "primereact", "name": "PrimeReact", "package": "primereact", "version": "10.9.9", "kind": "styled", "retrievedAt": "2026-11-11", "entries": "subpackages",
+  "install": ["primereact@10.9.9", "react@19.3.1", "react-dom@19.3.1", "@types/react@19.3.0", "@types/react-dom@19.3.0"],
+  "notes": "10.9.9 (dist-tag v10-stable) is the last MIT release; the npm latest, 11.2.2, ships under the commercial PrimeUI License and was not read." }

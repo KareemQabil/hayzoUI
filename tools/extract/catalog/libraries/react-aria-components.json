@@ -1,0 +1,19 @@
+{
+  "id": "react-aria-components",
+  "name": "React Aria Components",
+  "package": "react-aria-components",
+  "version": "1.22.1",
+  "kind": "headless",
+  "retrievedAt": "2026-11-11",
+  "install": [
+    "react-aria-components@1.22.1",
+    "react@19.3.1",
+    "react-dom@19.3.1",
+    "@types/react@19.3.0",
+    "@types/react-dom@19.3.0"
+  ],
+  "domInterfaces": [
+    "GlobalDOMEvents",
+    "GlobalDOMAttributes"
+  ]
+}

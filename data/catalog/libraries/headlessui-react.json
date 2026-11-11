@@ -1,0 +1,4187 @@
+{
+  "kind": "library-api",
+  "schemaVersion": 1,
+  "id": "headlessui-react",
+  "provenance": {
+    "method": "extracted",
+    "confidence": "verified",
+    "sources": [
+      {
+        "name": "@headlessui/react",
+        "url": "https://www.npmjs.com/package/@headlessui/react/v/2.2.10",
+        "version": "2.2.10",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11",
+        "path": "dist/index.d.ts"
+      }
+    ],
+    "script": "tools/extract/catalog/extract-api.mjs",
+    "notes": "Read from the type declarations of @headlessui/react@2.2.10 with TypeScript 5.9.3; nothing was executed. Not recorded: 15030 props declared in React's typings, csstype or the DOM lib (HTMLAttributes, AriaAttributes, DOMAttributes, ref, key, CSS properties) — counted per component in excluded.dom. 0 components accept the DOM dir attribute through those excluded typings. 38 exports are a second name for a recorded component and are listed under aliases."
+  },
+  "data": {
+    "library": {
+      "name": "Headless UI",
+      "package": "@headlessui/react",
+      "version": "2.2.10",
+      "license": "MIT",
+      "repository": "https://github.com/tailwindlabs/headlessui",
+      "kind": "headless",
+      "entryPoints": [
+        "@headlessui/react"
+      ]
+    },
+    "components": [
+      {
+        "name": "Button",
+        "source": "dist/components/button/button.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ButtonRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ButtonRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "type",
+            "type": "\"button\" | \"submit\" | \"reset\"",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Checkbox",
+        "source": "dist/components/checkbox/checkbox.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "checked",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: CheckboxRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: CheckboxRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultChecked",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "form",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "indeterminate",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "onChange",
+            "type": "(checked: boolean) => void",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "tabIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 226,
+          "style": 0
+        }
+      },
+      {
+        "name": "CloseButton",
+        "source": "dist/components/close-button/close-button.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ButtonProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ButtonRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ButtonRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "ButtonProps"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "type",
+            "type": "\"button\" | \"submit\" | \"reset\"",
+            "required": false,
+            "inheritedFrom": "ButtonProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Combobox",
+        "source": "dist/components/combobox/combobox.d.ts",
+        "parts": [
+          "Combobox.Button",
+          "Combobox.Input",
+          "Combobox.Label",
+          "Combobox.Option",
+          "Combobox.Options"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TValue",
+          "TMultiple",
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "__demoMode",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "by",
+            "type": "ByComparator<TMultiple extends true ? EnsureArray<NoInfer<TValue>>[number] : NoInfer<TValue>>",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ComboboxRenderPropArg<NoInfer<TValue>, NoInfer<TValue>>) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ComboboxRenderPropArg<NoInfer<TValue>, NoInfer<TValue>>) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultValue",
+            "type": "TMultiple extends true ? EnsureArray<NoInfer<TValue>> : NoInfer<TValue>",
+            "required": false
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "form",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "immediate",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "invalid",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "multiple",
+            "type": "TMultiple",
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "nullable",
+            "type": "boolean",
+            "required": false,
+            "deprecated": true
+          },
+          {
+            "name": "onChange",
+            "type": "(value: TMultiple extends true ? EnsureArray<TValue> : TValue | null) => void",
+            "required": false
+          },
+          {
+            "name": "onClose",
+            "type": "() => void",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TMultiple extends true ? EnsureArray<TValue> : TValue",
+            "required": false
+          },
+          {
+            "name": "virtual",
+            "type": "{ options: TMultiple extends true ? EnsureArray<NoInfer<TValue>> : NoInfer<TValue>[]; disabled?: ((value: TMultiple extends true ? EnsureArray<NoInfer<TValue>>[number] : NoInfer<TValue>) => boolean) …",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Combobox.Button",
+        "source": "dist/components/combobox/combobox.d.ts",
+        "aliases": [
+          "ComboboxButton"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ButtonRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ButtonRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLButtonElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 228,
+          "style": 0
+        }
+      },
+      {
+        "name": "Combobox.Input",
+        "source": "dist/components/combobox/combobox.d.ts",
+        "aliases": [
+          "ComboboxInput"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TType",
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: InputRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: InputRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultValue",
+            "type": "TType",
+            "required": false
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "displayValue",
+            "type": "(item: TType) => string",
+            "required": false
+          },
+          {
+            "name": "onChange",
+            "type": "(event: ChangeEvent<HTMLInputElement, Element>) => void",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLInputElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 226,
+          "style": 0
+        }
+      },
+      {
+        "name": "Combobox.Label",
+        "source": "dist/components/combobox/combobox.d.ts",
+        "aliases": [
+          "ComboboxLabel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "htmlFor",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "passive",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLLabelElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Combobox.Option",
+        "source": "dist/components/combobox/combobox.d.ts",
+        "aliases": [
+          "ComboboxOption"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: OptionRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: OptionRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "order",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": true
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "Combobox.Options",
+        "source": "dist/components/combobox/combobox.d.ts",
+        "aliases": [
+          "ComboboxOptions"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "anchor",
+            "type": "AnchorProps",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: OptionsRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: OptionsRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "hold",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "modal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "portal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "DataInteractive",
+        "source": "dist/components/data-interactive/data-interactive.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: DataInteractiveRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: DataInteractiveRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Description",
+        "source": "dist/components/description/description.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Dialog",
+        "source": "dist/components/dialog/dialog.d.ts",
+        "parts": [
+          "Dialog.Description",
+          "Dialog.Panel",
+          "Dialog.Title"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "__demoMode",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: DialogRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: DialogRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "initialFocus",
+            "type": "MutableRefObject<HTMLElement | null>",
+            "required": false
+          },
+          {
+            "name": "onClose",
+            "type": "(value: boolean) => void",
+            "required": true
+          },
+          {
+            "name": "open",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "role",
+            "type": "\"dialog\" | \"alertdialog\"",
+            "required": false
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "Dialog.Description",
+        "source": "dist/components/dialog/dialog.d.ts",
+        "aliases": [
+          "DialogDescription"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Dialog.Panel",
+        "source": "dist/components/dialog/dialog.d.ts",
+        "aliases": [
+          "DialogPanel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: PanelRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: PanelRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Dialog.Title",
+        "source": "dist/components/dialog/dialog.d.ts",
+        "aliases": [
+          "DialogTitle"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: TitleRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: TitleRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "DialogBackdrop",
+        "source": "dist/components/dialog/dialog.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: BackdropRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: BackdropRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Disclosure",
+        "source": "dist/components/disclosure/disclosure.d.ts",
+        "parts": [
+          "Disclosure.Button",
+          "Disclosure.Panel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: DisclosureRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: DisclosureRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultOpen",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Disclosure.Button",
+        "source": "dist/components/disclosure/disclosure.d.ts",
+        "aliases": [
+          "DisclosureButton"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ButtonRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ButtonRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLButtonElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 231,
+          "style": 0
+        }
+      },
+      {
+        "name": "Disclosure.Panel",
+        "source": "dist/components/disclosure/disclosure.d.ts",
+        "aliases": [
+          "DisclosurePanel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: PanelRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: PanelRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Field",
+        "source": "dist/components/field/field.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: FieldRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: FieldRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Fieldset",
+        "source": "dist/components/fieldset/fieldset.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: FieldsetRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: FieldsetRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 230,
+          "style": 0
+        }
+      },
+      {
+        "name": "FocusTrap",
+        "source": "dist/components/focus-trap/focus-trap.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: FocusTrapRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: FocusTrapRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "containers",
+            "type": "Containers",
+            "required": false
+          },
+          {
+            "name": "features",
+            "type": "FocusTrapFeatures",
+            "required": false
+          },
+          {
+            "name": "initialFocus",
+            "type": "MutableRefObject<HTMLElement | null>",
+            "required": false
+          },
+          {
+            "name": "initialFocusFallback",
+            "type": "MutableRefObject<HTMLElement | null>",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Input",
+        "source": "dist/components/input/input.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: InputRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: InputRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "invalid",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 231,
+          "style": 0
+        }
+      },
+      {
+        "name": "Label",
+        "source": "dist/components/label/label.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "htmlFor",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "passive",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLLabelElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Legend",
+        "source": "dist/components/legend/legend.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: LegendRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: LegendRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Listbox",
+        "source": "dist/components/listbox/listbox.d.ts",
+        "parts": [
+          "Listbox.Button",
+          "Listbox.Label",
+          "Listbox.Option",
+          "Listbox.Options",
+          "Listbox.SelectedOption"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType",
+          "TActualType"
+        ],
+        "props": [
+          {
+            "name": "__demoMode",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "by",
+            "type": "ByComparator<TActualType>",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ListboxRenderPropArg<TType>) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ListboxRenderPropArg<TType>) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultValue",
+            "type": "TType",
+            "required": false
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "form",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "horizontal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "invalid",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "multiple",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "onChange",
+            "type": "(value: TType) => void",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Listbox.Button",
+        "source": "dist/components/listbox/listbox.d.ts",
+        "aliases": [
+          "ListboxButton"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ButtonRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ButtonRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLButtonElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "Listbox.Label",
+        "source": "dist/components/listbox/listbox.d.ts",
+        "aliases": [
+          "ListboxLabel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "htmlFor",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "passive",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLLabelElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Listbox.Option",
+        "source": "dist/components/listbox/listbox.d.ts",
+        "aliases": [
+          "ListboxOption"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: OptionRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: OptionRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": true
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "Listbox.Options",
+        "source": "dist/components/listbox/listbox.d.ts",
+        "aliases": [
+          "ListboxOptions"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "anchor",
+            "type": "AnchorPropsWithSelection",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: OptionsRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: OptionsRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "modal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "portal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 227,
+          "style": 0
+        }
+      },
+      {
+        "name": "Listbox.SelectedOption",
+        "source": "dist/components/listbox/listbox.d.ts",
+        "aliases": [
+          "ListboxSelectedOption"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: SelectedOptionRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: SelectedOptionRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "options",
+            "type": "ReactNode",
+            "required": true
+          },
+          {
+            "name": "placeholder",
+            "type": "ReactNode",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Menu",
+        "source": "dist/components/menu/menu.d.ts",
+        "parts": [
+          "Menu.Button",
+          "Menu.Heading",
+          "Menu.Item",
+          "Menu.Items",
+          "Menu.Section",
+          "Menu.Separator"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "__demoMode",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: MenuRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: MenuRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Menu.Button",
+        "source": "dist/components/menu/menu.d.ts",
+        "aliases": [
+          "MenuButton"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ButtonRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ButtonRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLButtonElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 230,
+          "style": 0
+        }
+      },
+      {
+        "name": "Menu.Heading",
+        "source": "dist/components/menu/menu.d.ts",
+        "aliases": [
+          "MenuHeading"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: HeadingRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: HeadingRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Menu.Item",
+        "source": "dist/components/menu/menu.d.ts",
+        "aliases": [
+          "MenuItem"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ItemRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ItemRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 228,
+          "style": 0
+        }
+      },
+      {
+        "name": "Menu.Items",
+        "source": "dist/components/menu/menu.d.ts",
+        "aliases": [
+          "MenuItems"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "anchor",
+            "type": "AnchorProps",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ItemsRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ItemsRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "modal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "portal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "Menu.Section",
+        "source": "dist/components/menu/menu.d.ts",
+        "aliases": [
+          "MenuSection"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: SectionRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: SectionRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 231,
+          "style": 0
+        }
+      },
+      {
+        "name": "Menu.Separator",
+        "source": "dist/components/menu/menu.d.ts",
+        "aliases": [
+          "MenuSeparator"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: SeparatorRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: SeparatorRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Popover",
+        "source": "dist/components/popover/popover.d.ts",
+        "parts": [
+          "Popover.Backdrop",
+          "Popover.Button",
+          "Popover.Group",
+          "Popover.Overlay",
+          "Popover.Panel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "__demoMode",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: PopoverRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: PopoverRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Popover.Backdrop",
+        "source": "dist/components/popover/popover.d.ts",
+        "aliases": [
+          "PopoverBackdrop"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: BackdropRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: BackdropRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Popover.Button",
+        "source": "dist/components/popover/popover.d.ts",
+        "aliases": [
+          "PopoverButton"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ButtonRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ButtonRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLButtonElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 231,
+          "style": 0
+        }
+      },
+      {
+        "name": "Popover.Group",
+        "source": "dist/components/popover/popover.d.ts",
+        "aliases": [
+          "PopoverGroup"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: GroupRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: GroupRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Popover.Overlay",
+        "source": "dist/components/popover/popover.d.ts",
+        "aliases": [
+          "PopoverOverlay"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: BackdropRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: BackdropRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PopoverBackdropProps"
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Popover.Panel",
+        "source": "dist/components/popover/popover.d.ts",
+        "aliases": [
+          "PopoverPanel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "anchor",
+            "type": "AnchorProps",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: PanelRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: PanelRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "focus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "modal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "portal",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Portal",
+        "source": "dist/components/portal/portal.d.ts",
+        "parts": [
+          "Portal.Group"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: PortalRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: PortalRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "enabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ownerDocument",
+            "type": "Document | null",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Portal.Group",
+        "source": "dist/components/portal/portal.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: GroupRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: GroupRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "target",
+            "type": "MutableRefObject<HTMLElement | null>",
+            "required": true
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Radio",
+        "source": "dist/components/radio-group/radio-group.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: RadioRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: RadioRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": true
+          }
+        ],
+        "excluded": {
+          "dom": 228,
+          "style": 0
+        }
+      },
+      {
+        "name": "RadioGroup",
+        "source": "dist/components/radio-group/radio-group.d.ts",
+        "parts": [
+          "RadioGroup.Description",
+          "RadioGroup.Label",
+          "RadioGroup.Option",
+          "RadioGroup.Radio"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "by",
+            "type": "ByComparator<TType>",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: RadioGroupRenderPropArg<TType>) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: RadioGroupRenderPropArg<TType>) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultValue",
+            "type": "TType",
+            "required": false
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "form",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "onChange",
+            "type": "(value: TType) => void",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "RadioGroup.Description",
+        "source": "dist/components/radio-group/radio-group.d.ts",
+        "aliases": [
+          "RadioGroupDescription"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "RadioGroup.Label",
+        "source": "dist/components/radio-group/radio-group.d.ts",
+        "aliases": [
+          "RadioGroupLabel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "htmlFor",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "passive",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLLabelElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "RadioGroup.Option",
+        "source": "dist/components/radio-group/radio-group.d.ts",
+        "aliases": [
+          "RadioGroupOption"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "RadioOptionProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: OptionRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: OptionRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "RadioOptionProps"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": true,
+            "inheritedFrom": "RadioOptionProps"
+          }
+        ],
+        "excluded": {
+          "dom": 228,
+          "style": 0
+        }
+      },
+      {
+        "name": "RadioGroup.Radio",
+        "source": "dist/components/radio-group/radio-group.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag",
+          "TType"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: RadioRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: RadioRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "value",
+            "type": "TType",
+            "required": true
+          }
+        ],
+        "excluded": {
+          "dom": 228,
+          "style": 0
+        }
+      },
+      {
+        "name": "Select",
+        "source": "dist/components/select/select.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: SelectRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: SelectRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "invalid",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 231,
+          "style": 0
+        }
+      },
+      {
+        "name": "Switch",
+        "source": "dist/components/switch/switch.d.ts",
+        "parts": [
+          "Switch.Description",
+          "Switch.Group",
+          "Switch.Label"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "checked",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: SwitchRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: SwitchRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultChecked",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "form",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "onChange",
+            "type": "(checked: boolean) => void",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLButtonElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "tabIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 227,
+          "style": 0
+        }
+      },
+      {
+        "name": "Switch.Description",
+        "source": "dist/components/switch/switch.d.ts",
+        "aliases": [
+          "SwitchDescription"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Switch.Group",
+        "source": "dist/components/switch/switch.d.ts",
+        "aliases": [
+          "SwitchGroup"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<unknown>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Switch.Label",
+        "source": "dist/components/switch/switch.d.ts",
+        "aliases": [
+          "SwitchLabel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: {}) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: {}) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "htmlFor",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "passive",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLLabelElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Tab",
+        "source": "dist/components/tabs/tabs.d.ts",
+        "parts": [
+          "Tab.Group",
+          "Tab.List",
+          "Tab.Panel",
+          "Tab.Panels"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: TabRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: TabRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "Tab.Group",
+        "source": "dist/components/tabs/tabs.d.ts",
+        "aliases": [
+          "TabGroup"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: TabsRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: TabsRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "defaultIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "manual",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "onChange",
+            "type": "(index: number) => void",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "selectedIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "vertical",
+            "type": "boolean",
+            "required": false
+          }
+        ],
+        "excluded": {
+          "dom": 232,
+          "style": 0
+        }
+      },
+      {
+        "name": "Tab.List",
+        "source": "dist/components/tabs/tabs.d.ts",
+        "aliases": [
+          "TabList"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: ListRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: ListRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 231,
+          "style": 0
+        }
+      },
+      {
+        "name": "Tab.Panel",
+        "source": "dist/components/tabs/tabs.d.ts",
+        "aliases": [
+          "TabPanel"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: PanelRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: PanelRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "tabIndex",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 229,
+          "style": 0
+        }
+      },
+      {
+        "name": "Tab.Panels",
+        "source": "dist/components/tabs/tabs.d.ts",
+        "aliases": [
+          "TabPanels"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: PanelsRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: PanelsRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Textarea",
+        "source": "dist/components/textarea/textarea.d.ts",
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "autoFocus",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: TextareaRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: TextareaRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "invalid",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          }
+        ],
+        "excluded": {
+          "dom": 231,
+          "style": 0
+        }
+      },
+      {
+        "name": "Transition",
+        "source": "dist/components/transition/transition.d.ts",
+        "parts": [
+          "Transition.Child"
+        ],
+        "aliases": [
+          "Transition.Root"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "afterEnter",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "afterLeave",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "appear",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TransitionChildProps"
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "beforeEnter",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "beforeLeave",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: TransitionChildRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: TransitionChildRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "enter",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "enterFrom",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "enterTo",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "entered",
+            "type": "string",
+            "required": false,
+            "deprecated": true,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "leave",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "leaveFrom",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "leaveTo",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "show",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "TransitionChildProps"
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      },
+      {
+        "name": "Transition.Child",
+        "source": "dist/components/transition/transition.d.ts",
+        "aliases": [
+          "TransitionChild"
+        ],
+        "propsType": "CleanProps",
+        "typeParameters": [
+          "TTag"
+        ],
+        "props": [
+          {
+            "name": "afterEnter",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "afterLeave",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "appear",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "as",
+            "type": "TTag",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "beforeEnter",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "beforeLeave",
+            "type": "() => void",
+            "required": false,
+            "inheritedFrom": "TransitionEvents"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode | ((bag: TransitionChildRenderPropArg) => ReactElement<unknown, string | JSXElementConstructor<any>>)",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "className",
+            "type": "PropsOf<TTag>[\"className\"] | ((bag: TransitionChildRenderPropArg) => string)",
+            "required": false,
+            "inheritedFrom": "ClassNameOverride"
+          },
+          {
+            "name": "enter",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "enterFrom",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "enterTo",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "entered",
+            "type": "string",
+            "required": false,
+            "deprecated": true,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "leave",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "leaveFrom",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "leaveTo",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "TransitionClasses"
+          },
+          {
+            "name": "ref",
+            "type": "Ref<HTMLElement>",
+            "required": false,
+            "inheritedFrom": "RefProp"
+          },
+          {
+            "name": "refName",
+            "type": "string",
+            "required": false,
+            "inheritedFrom": "OurProps"
+          },
+          {
+            "name": "static",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          },
+          {
+            "name": "transition",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "unmount",
+            "type": "boolean",
+            "required": false,
+            "inheritedFrom": "PropsForFeatures"
+          }
+        ],
+        "excluded": {
+          "dom": 233,
+          "style": 0
+        }
+      }
+    ],
+    "stats": {
+      "components": 65,
+      "props": 533,
+      "medianProps": 7,
+      "families": 26,
+      "namespaces": 0,
+      "interfaces": 0,
+      "aliases": 38,
+      "excludedDomProps": 15030,
+      "excludedStyleProps": 0,
+      "componentsAcceptingDomDir": 0
+    }
+  }
+}

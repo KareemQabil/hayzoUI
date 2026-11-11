@@ -1,0 +1,2 @@
+{ "id": "mui-material", "name": "Material UI", "package": "@mui/material", "version": "9.5.0", "kind": "styled", "retrievedAt": "2026-11-11",
+  "install": ["@mui/material@9.5.0", "@emotion/react@11.14.0", "@emotion/styled@11.14.1", "react@19.3.1", "react-dom@19.3.1", "@types/react@19.3.0", "@types/react-dom@19.3.0"] }

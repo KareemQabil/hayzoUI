@@ -1,0 +1,2 @@
+{ "id": "mui-x-data-grid", "name": "MUI X Data Grid", "package": "@mui/x-data-grid", "version": "9.17.0", "kind": "data-grid", "retrievedAt": "2026-11-11",
+  "install": ["@mui/x-data-grid@9.17.0", "@mui/material@9.5.0", "@emotion/react@11.14.0", "@emotion/styled@11.14.1", "react@19.3.1", "react-dom@19.3.1", "@types/react@19.3.0", "@types/react-dom@19.3.0"] }

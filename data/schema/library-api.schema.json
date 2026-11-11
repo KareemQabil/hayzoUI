@@ -68,6 +68,14 @@
                 "data-grid",
                 "other"
               ]
+            },
+            "entryPoints": {
+              "description": "Module specifiers whose exports were read.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
             }
           },
           "required": [
@@ -88,6 +96,15 @@
                 "type": "string",
                 "minLength": 1
               },
+              "kind": {
+                "description": "Omitted for a component. namespace: an export that only groups parts and takes no props. interface: an options object (TableOptions, GridOptions, ColDef) recorded with the same prop shape. registry-item: an entry of a copy-paste registry.",
+                "enum": [
+                  "component",
+                  "namespace",
+                  "interface",
+                  "registry-item"
+                ]
+              },
               "category": {
                 "type": "string",
                 "minLength": 1
@@ -95,10 +112,31 @@
               "source": {
                 "type": "string",
                 "minLength": 1,
-                "description": "Type file inside the package."
+                "description": "Type file inside the package; prefixed with the package name when the declaration lives in a dependency."
               },
               "parts": {
-                "description": "Sub-components or slots, e.g. Dialog.Title.",
+                "description": "Sub-components, as the names of their own records (Dialog.Title), or — for a registry item — the component names its file exports.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "aliases": {
+                "description": "Other exported names that resolve to this same component (DialogRoot for Dialog.Root).",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "propsType": {
+                "description": "Name of the props type, when it has one.",
+                "type": "string",
+                "minLength": 1
+              },
+              "typeParameters": {
+                "description": "Type parameters of a generic component or interface.",
                 "type": "array",
                 "items": {
                   "type": "string",
@@ -134,6 +172,12 @@
                     },
                     "inheritedFrom": {
                       "type": "string",
+                      "minLength": 1,
+                      "description": "Interface or type alias the prop is declared in, when that is not the component's own props type."
+                    },
+                    "declaredIn": {
+                      "description": "npm package that declares the prop, when it is not the library itself.",
+                      "type": "string",
                       "minLength": 1
                     }
                   },
@@ -144,23 +188,101 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "excluded": {
+                "description": "Props counted but not recorded: dom — declared in React's typings, csstype or the DOM lib; style — members of the style-prop interfaces listed in data.styleProps.",
+                "type": "object",
+                "properties": {
+                  "dom": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "style": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "dom",
+                  "style"
+                ],
+                "additionalProperties": false
+              },
+              "registryDependencies": {
+                "description": "Other registry items a copy-paste item needs.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "dependencies": {
+                "description": "npm packages a copy-paste item declares.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
               }
             },
             "required": [
               "name",
               "props"
             ],
-            "additionalProperties": false
+            "additionalProperties": false,
+            "description": "A component, a compound member (dotted name, e.g. Dialog.Root), a namespace that only groups members, an options interface of a table engine, or an item of a copy-paste registry."
           }
         },
         "stats": {
           "type": "object",
           "properties": {
             "components": {
-              "type": "integer"
+              "type": "integer",
+              "description": "Records that take props: components, compound members and interfaces. Namespaces are not counted."
             },
             "props": {
               "type": "integer"
+            },
+            "medianProps": {
+              "description": "Median number of recorded props per counted record.",
+              "type": "number",
+              "minimum": 0
+            },
+            "families": {
+              "description": "Distinct top-level export names.",
+              "type": "integer",
+              "minimum": 0
+            },
+            "namespaces": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "interfaces": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "aliases": {
+              "description": "Exported names folded into another record.",
+              "type": "integer",
+              "minimum": 0
+            },
+            "excludedDomProps": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "excludedStyleProps": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "componentsAcceptingDomDir": {
+              "description": "Components whose props include the DOM dir attribute through the excluded typings.",
+              "type": "integer",
+              "minimum": 0
+            },
+            "parts": {
+              "description": "Component names exported by registry items.",
+              "type": "integer",
+              "minimum": 0
             }
           },
           "required": [
@@ -168,6 +290,36 @@
             "props"
           ],
           "additionalProperties": false
+        },
+        "styleProps": {
+          "description": "Style-prop interfaces whose members were left out of every component and are listed once here.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "components": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "props": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "name",
+              "components",
+              "props"
+            ],
+            "additionalProperties": false
+          }
         }
       },
       "required": [

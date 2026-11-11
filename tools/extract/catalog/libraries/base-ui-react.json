@@ -1,0 +1,2 @@
+{ "id": "base-ui-react", "name": "Base UI", "package": "@base-ui/react", "version": "1.9.0", "kind": "headless", "retrievedAt": "2026-11-11",
+  "install": ["@base-ui/react@1.9.0", "react@19.3.1", "react-dom@19.3.1", "@types/react@19.3.0", "@types/react-dom@19.3.0"] }
