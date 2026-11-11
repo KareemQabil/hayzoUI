@@ -146,11 +146,40 @@
                 "type": "boolean"
               },
               "rtl": {
-                "description": "mirror-horizontal: ArrowLeft and ArrowRight swap meaning.",
+                "description": "What happens to the binding in a right-to-left context. none: unchanged. mirror-horizontal: ArrowLeft and ArrowRight swap meaning (the action text is written for LTR; in RTL the ArrowLeft binding performs the ArrowRight action and the reverse). visual: the key keeps its physical direction (ArrowLeft acts toward the left edge of the screen in both directions), so the logical target or the value change it produces differs in RTL and is resolved from layout.",
                 "enum": [
                   "none",
-                  "mirror-horizontal"
+                  "mirror-horizontal",
+                  "visual"
                 ]
+              },
+              "group": {
+                "description": "Sub-context of the pattern the binding belongs to (a variant, a popup type, a selection model). Bindings without a group apply to the whole pattern.",
+                "type": "string",
+                "minLength": 1
+              },
+              "origin": {
+                "description": "Where the binding comes from. apg: the APG pattern page. Others: the named library or a cross-library convention; hayzo: our own decision.",
+                "enum": [
+                  "apg",
+                  "react-aria",
+                  "base-ui",
+                  "radix",
+                  "material",
+                  "mui-x",
+                  "ant-design",
+                  "convention",
+                  "hayzo"
+                ]
+              },
+              "debatable": {
+                "description": "True when the RTL treatment of this binding is contested between sources; decision names the entry in rtlDecisions.",
+                "type": "boolean"
+              },
+              "decision": {
+                "description": "Id of the rtlDecisions entry that governs this binding.",
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
               }
             },
             "required": [
@@ -188,6 +217,11 @@
             "note": {
               "type": "string",
               "minLength": 1
+            },
+            "tabStops": {
+              "description": "How many tab stops the pattern contributes to the page sequence, and which element holds each.",
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -208,6 +242,242 @@
             "type": "string",
             "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
           }
+        },
+        "uses": {
+          "description": "Other patterns whose contract applies inside this one (ids of data/patterns files).",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "orientation": {
+          "description": "Orientation axis of the composite, when it has one.",
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                "horizontal",
+                "vertical",
+                "both",
+                "none"
+              ]
+            },
+            "supported": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "horizontal",
+                  "vertical",
+                  "both"
+                ]
+              }
+            }
+          },
+          "required": [
+            "default"
+          ],
+          "additionalProperties": false
+        },
+        "apg": {
+          "description": "Link to the mechanical APG skeleton (tools/extract/patterns/apg-skeleton.json) used as a completeness check.",
+          "type": "object",
+          "properties": {
+            "pages": {
+              "description": "Directory names under content/patterns/ in w3c/aria-practices.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            },
+            "keysNotBound": {
+              "description": "Key combinations the page names in <kbd> that are deliberately not a binding here, with the reason.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "key",
+                  "reason"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "pages"
+          ],
+          "additionalProperties": false
+        },
+        "ariaRequired": {
+          "description": "Derived from WAI-ARIA 1.2 by tools/extract/patterns/aria-roles.mjs for every role the pattern uses that has a requirement.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "requiredStatesAndProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "requiredOwnedElements": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "requiredContextRole": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "role"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "rtlDecisions": {
+          "description": "Contested or divergent RTL behaviour: what each source does, and what Hayzo does.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              },
+              "question": {
+                "type": "string",
+                "minLength": 1
+              },
+              "apg": {
+                "description": "What the APG says, or that it is silent.",
+                "type": "string",
+                "minLength": 1
+              },
+              "libraries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "library": {
+                      "enum": [
+                        "react-aria",
+                        "base-ui",
+                        "radix",
+                        "material",
+                        "mui-x",
+                        "ant-design"
+                      ]
+                    },
+                    "version": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "behaviour": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "evidence": {
+                      "description": "File inside the library source or published package that was read.",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "checked": {
+                      "description": "source-read: the cited file was read for this claim. not-found: the library has no such component or handler in the version read.",
+                      "enum": [
+                        "source-read",
+                        "not-found"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "library",
+                    "behaviour",
+                    "checked"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "recommendation": {
+                "enum": [
+                  "none",
+                  "mirror-horizontal",
+                  "visual",
+                  "do-not-bind"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "description": "consensus: every library that implements it agrees. divergent: libraries disagree. open: no library evidence, our judgement.",
+                "enum": [
+                  "consensus",
+                  "divergent",
+                  "open"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "question",
+              "apg",
+              "libraries",
+              "recommendation",
+              "reason",
+              "status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "verification": {
+          "description": "What was checked, per part. The envelope confidence is the lowest of these.",
+          "type": "object",
+          "properties": {
+            "keyboard": {
+              "$ref": "common.schema.json#/$defs/confidence"
+            },
+            "keyboardCheckedAgainst": {
+              "type": "string",
+              "minLength": 1
+            },
+            "arabicName": {
+              "$ref": "common.schema.json#/$defs/confidence"
+            },
+            "rtl": {
+              "description": "Confidence of the RTL fields: verified when every rtl value follows an rtlDecisions entry backed by source-read evidence or is none on a non-horizontal key.",
+              "$ref": "common.schema.json#/$defs/confidence"
+            }
+          },
+          "required": [
+            "keyboard",
+            "arabicName"
+          ],
+          "additionalProperties": false
         },
         "notes": {
           "type": "string",

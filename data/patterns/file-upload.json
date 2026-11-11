@@ -1,0 +1,191 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "file-upload",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "file-upload",
+    "name": {
+      "ar": "رفع الملفات",
+      "en": "File upload (dropzone)"
+    },
+    "reference": {
+      "name": "APG: Button Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/button/"
+    },
+    "roles": [
+      {
+        "role": "button",
+        "on": "the control that opens the system file dialog",
+        "required": true,
+        "note": "A native input type=file, or a button that forwards to a hidden one."
+      },
+      {
+        "role": "list",
+        "on": "the chosen files",
+        "required": false
+      },
+      {
+        "role": "listitem",
+        "on": "each file",
+        "required": false
+      },
+      {
+        "role": "progressbar",
+        "on": "upload progress of a file",
+        "required": false
+      },
+      {
+        "role": "status",
+        "on": "visually hidden live region for results",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-describedby",
+        "on": "button",
+        "values": "IDREF of the constraints text (types, size, count)",
+        "required": false
+      },
+      {
+        "name": "aria-label",
+        "on": "remove and retry buttons",
+        "values": "include the file name",
+        "required": true
+      },
+      {
+        "name": "aria-valuenow",
+        "on": "progressbar",
+        "values": "0 to 100; omitted while indeterminate",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "progressbar",
+        "values": "IDREF of the file name",
+        "required": true
+      },
+      {
+        "name": "aria-invalid",
+        "on": "button or the field group",
+        "values": "true after a rejected file, with the error referenced by aria-describedby",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "On the upload button or the focusable dropzone: open the system file dialog.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move from the button through each file's controls (remove, retry, cancel) in order.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Delete",
+          "Backspace"
+        ],
+        "action": "With focus on a file item: remove it, then focus the next item, else the previous, else the upload button.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Control+V",
+          "Meta+V"
+        ],
+        "action": "With focus in the dropzone: add files from the clipboard.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "While a drag is over the zone: nothing to bind (the operating system cancels the drag). During an upload, with focus on its item: optionally cancel it.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "The upload button.",
+      "restore": "After the file dialog closes, the browser returns focus to the button. After removing a file: next item, else previous, else the button.",
+      "tabStops": "The button, plus the controls of each listed file."
+    },
+    "variants": [
+      "button only",
+      "dropzone with button",
+      "multiple files with queue",
+      "directory upload",
+      "image with preview and crop"
+    ],
+    "components": [
+      "file-upload"
+    ],
+    "uses": [
+      "button"
+    ],
+    "ariaRequired": [
+      {
+        "role": "list",
+        "requiredOwnedElements": [
+          "listitem"
+        ]
+      },
+      {
+        "role": "listitem",
+        "requiredContextRole": [
+          "directory",
+          "list"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Dropping files has no keyboard equivalent, so the button is the contract and the dropzone is an enhancement: every dropzone contains or is a real button. Results (added, rejected with reason, uploaded, failed) are announced through a polite status region. Not direction-sensitive. Arabic-first: file names are bidirectional strings (an Arabic name with a Latin extension); isolate each name and keep the extension visible when truncating; sizes use the locale's digits and units."
+  }
+}

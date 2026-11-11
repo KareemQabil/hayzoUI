@@ -1,0 +1,165 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "date-range-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "date-range-picker",
+    "name": {
+      "ar": "منتقي نطاق التاريخ",
+      "en": "Date range picker"
+    },
+    "reference": {
+      "name": "React Aria: useDateRangePicker",
+      "url": "https://react-spectrum.adobe.com/react-aria/useDateRangePicker.html"
+    },
+    "roles": [
+      {
+        "role": "group",
+        "on": "the whole control, and each of the two fields",
+        "required": true
+      },
+      {
+        "role": "spinbutton",
+        "on": "segments of the start and end fields",
+        "required": true
+      },
+      {
+        "role": "button",
+        "on": "the control that opens the calendar",
+        "required": true
+      },
+      {
+        "role": "dialog",
+        "on": "the calendar popup",
+        "required": true
+      },
+      {
+        "role": "grid",
+        "on": "each visible month",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "start field group, end field group",
+        "values": "localized \"start date\", \"end date\"",
+        "required": true
+      },
+      {
+        "name": "aria-multiselectable",
+        "on": "grid",
+        "values": "true",
+        "required": true
+      },
+      {
+        "name": "aria-selected",
+        "on": "gridcell",
+        "values": "true on every date in the range",
+        "required": true
+      },
+      {
+        "name": "aria-haspopup",
+        "on": "button",
+        "values": "dialog",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "button",
+        "values": "true | false",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "On a date with no anchor: set the range start (anchor). With an anchor: set the range end, commit, and close.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "While an anchor is set: cancel the pending range and keep the dialog open. Otherwise close the dialog.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Alt+ArrowDown"
+        ],
+        "action": "From either field: open the calendar.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "field",
+        "origin": "react-aria"
+      }
+    ],
+    "focus": {
+      "strategy": "focus-trap",
+      "entry": "Into the grid on the range start, else today.",
+      "exit": "Escape or completing the range.",
+      "restore": "To the calendar button or the field.",
+      "tabStops": "Closed: segments of the start field, then of the end field, then the button."
+    },
+    "variants": [
+      "two fields and one calendar",
+      "two visible months",
+      "with presets"
+    ],
+    "components": [
+      "date-range-picker"
+    ],
+    "uses": [
+      "date-field",
+      "calendar-grid",
+      "dialog-modal"
+    ],
+    "ariaRequired": [
+      {
+        "role": "grid",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Only the range-specific glue is bound here; day movement is calendar-grid and segment editing is date-field, including their RTL rules. While selecting, moving focus with the arrows previews the range between the anchor and the focused date. In RTL the start field is on the right and the range highlight runs right-to-left; with two months visible the earlier month is on the right, and moving past the edge of one month continues into the other in the same visual direction."
+  }
+}

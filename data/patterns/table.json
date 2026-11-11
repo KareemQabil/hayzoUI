@@ -1,0 +1,209 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "table",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/table/table-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "table",
+    "name": {
+      "ar": "جدول",
+      "en": "Table"
+    },
+    "reference": {
+      "name": "APG: Table Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/table/"
+    },
+    "roles": [
+      {
+        "role": "table",
+        "on": "container",
+        "required": true,
+        "note": "A native table element is preferred."
+      },
+      {
+        "role": "rowgroup",
+        "on": "optional grouping of rows",
+        "required": false
+      },
+      {
+        "role": "row",
+        "on": "each row",
+        "required": true
+      },
+      {
+        "role": "columnheader",
+        "on": "column title cell",
+        "required": false
+      },
+      {
+        "role": "rowheader",
+        "on": "row title cell",
+        "required": false
+      },
+      {
+        "role": "cell",
+        "on": "every other cell",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "table",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-describedby",
+        "on": "table",
+        "values": "IDREF of a caption or description",
+        "required": false
+      },
+      {
+        "name": "aria-sort",
+        "on": "columnheader or rowheader of the sorted column or row",
+        "values": "ascending | descending | other | none",
+        "required": false,
+        "note": "Only when the grid sorts."
+      },
+      {
+        "name": "aria-colcount",
+        "on": "table",
+        "values": "total number of columns",
+        "required": false,
+        "note": "When some columns are hidden or not in the DOM."
+      },
+      {
+        "name": "aria-rowcount",
+        "on": "table",
+        "values": "total number of rows; -1 when unknown",
+        "required": false,
+        "note": "When some rows are hidden or not in the DOM."
+      },
+      {
+        "name": "aria-colindex",
+        "on": "cell",
+        "values": "1-based column position",
+        "required": false,
+        "note": "With aria-colcount."
+      },
+      {
+        "name": "aria-rowindex",
+        "on": "row",
+        "values": "1-based row position",
+        "required": false,
+        "note": "With aria-rowcount."
+      },
+      {
+        "name": "aria-colspan",
+        "on": "cell",
+        "values": "integer",
+        "required": false,
+        "note": "As described in the grid and table properties practice."
+      },
+      {
+        "name": "aria-rowspan",
+        "on": "cell",
+        "values": "integer",
+        "required": false,
+        "note": "As described in the grid and table properties practice."
+      }
+    ],
+    "keyboard": [],
+    "focus": {
+      "strategy": "none",
+      "note": "A static table is not a widget and has no tab stop; interactive content inside cells keeps its own."
+    },
+    "components": [
+      "data-table",
+      "description-list"
+    ],
+    "apg": {
+      "pages": [
+        "table"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "table",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      },
+      {
+        "role": "rowgroup",
+        "requiredOwnedElements": [
+          "row"
+        ],
+        "requiredContextRole": [
+          "grid",
+          "table",
+          "treegrid"
+        ]
+      },
+      {
+        "role": "row",
+        "requiredOwnedElements": [
+          "cell",
+          "columnheader",
+          "gridcell",
+          "rowheader"
+        ],
+        "requiredContextRole": [
+          "grid",
+          "rowgroup",
+          "table",
+          "treegrid"
+        ]
+      },
+      {
+        "role": "columnheader",
+        "requiredContextRole": [
+          "row"
+        ]
+      },
+      {
+        "role": "rowheader",
+        "requiredContextRole": [
+          "row"
+        ]
+      },
+      {
+        "role": "cell",
+        "requiredContextRole": [
+          "row"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/table/table-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "No keyboard interaction. Use grid instead when cells are interactive or navigable. In RTL the first column is on the right: layout only."
+  }
+}

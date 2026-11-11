@@ -1,0 +1,91 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "breadcrumb",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/breadcrumb/breadcrumb-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "breadcrumb",
+    "name": {
+      "ar": "مسار التنقل",
+      "en": "Breadcrumb"
+    },
+    "reference": {
+      "name": "APG: Breadcrumb Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/"
+    },
+    "roles": [
+      {
+        "role": "navigation",
+        "on": "container",
+        "required": true,
+        "note": "A nav element."
+      },
+      {
+        "role": "link",
+        "on": "each ancestor page",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "navigation",
+        "values": "label text, or aria-labelledby",
+        "required": true
+      },
+      {
+        "name": "aria-current",
+        "on": "link to the current page",
+        "values": "page",
+        "required": true,
+        "note": "Optional when the current page is not rendered as a link."
+      }
+    ],
+    "keyboard": [],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Each link is a tab stop.",
+      "tabStops": "One per link."
+    },
+    "components": [
+      "breadcrumb"
+    ],
+    "uses": [
+      "link"
+    ],
+    "apg": {
+      "pages": [
+        "breadcrumb"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/breadcrumb/breadcrumb-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "No keyboard interaction beyond links. In RTL the trail starts at the right and the separator glyph mirrors; that is layout and icon data, not a key binding."
+  }
+}

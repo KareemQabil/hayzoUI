@@ -1,0 +1,547 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "treegrid",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/treegrid/treegrid-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "MUI X (mui/mui-x)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "9.17.0 @ bb99a92f284a804fcc70f508a10e21de6f02bb12",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "treegrid",
+    "name": {
+      "ar": "شبكة شجرية",
+      "en": "Treegrid"
+    },
+    "reference": {
+      "name": "APG: Treegrid Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/"
+    },
+    "roles": [
+      {
+        "role": "treegrid",
+        "on": "container",
+        "required": true
+      },
+      {
+        "role": "rowgroup",
+        "on": "optional grouping of rows",
+        "required": false
+      },
+      {
+        "role": "row",
+        "on": "each row",
+        "required": true
+      },
+      {
+        "role": "columnheader",
+        "on": "column title cell",
+        "required": false
+      },
+      {
+        "role": "rowheader",
+        "on": "row title cell",
+        "required": false
+      },
+      {
+        "role": "gridcell",
+        "on": "every other cell",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-expanded",
+        "on": "parent row, or a cell in it",
+        "values": "true | false",
+        "required": true,
+        "note": "Never on rows without children."
+      },
+      {
+        "name": "aria-multiselectable",
+        "on": "treegrid",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "treegrid",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-describedby",
+        "on": "treegrid",
+        "values": "IDREF of a caption or description",
+        "required": false
+      },
+      {
+        "name": "aria-sort",
+        "on": "columnheader or rowheader of the sorted column or row",
+        "values": "ascending | descending | other | none",
+        "required": false,
+        "note": "Only when the grid sorts."
+      },
+      {
+        "name": "aria-selected",
+        "on": "selected gridcell or row; every cell of a selected column",
+        "values": "true | false",
+        "required": false,
+        "note": "Only when the grid supports selection."
+      },
+      {
+        "name": "aria-readonly",
+        "on": "gridcell whose editing is disabled, or the container when no cell is editable",
+        "values": "true",
+        "required": false,
+        "note": "Never present on a grid that has no editing."
+      },
+      {
+        "name": "aria-colcount",
+        "on": "treegrid",
+        "values": "total number of columns",
+        "required": false,
+        "note": "When some columns are hidden or not in the DOM."
+      },
+      {
+        "name": "aria-rowcount",
+        "on": "treegrid",
+        "values": "total number of rows; -1 when unknown",
+        "required": false,
+        "note": "When some rows are hidden or not in the DOM."
+      },
+      {
+        "name": "aria-colindex",
+        "on": "cell",
+        "values": "1-based column position",
+        "required": false,
+        "note": "With aria-colcount."
+      },
+      {
+        "name": "aria-rowindex",
+        "on": "row",
+        "values": "1-based row position",
+        "required": false,
+        "note": "With aria-rowcount."
+      },
+      {
+        "name": "aria-colspan",
+        "on": "cell",
+        "values": "integer",
+        "required": false,
+        "note": "Only when the container is not an HTML table."
+      },
+      {
+        "name": "aria-rowspan",
+        "on": "cell",
+        "values": "integer",
+        "required": false,
+        "note": "Only when the container is not an HTML table."
+      },
+      {
+        "name": "aria-level",
+        "on": "row",
+        "values": "1-based depth",
+        "required": false,
+        "note": "Not listed on the pattern page; defined for row in a treegrid by WAI-ARIA 1.2."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "With cell-only focus, on the first cell that carries aria-expanded: open or close the child rows. Otherwise perform the default action of the cell.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "If the focused row has focusable elements, move to the next one; from the last one leave the treegrid to the next focusable element.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Collapsed row: expand it. Expanded row or row without children: move focus to its first cell. Cell: move one cell toward the row end; stay on the last cell.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "decision": "tree-expand-collapse"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Expanded row: collapse it. Collapsed row or row without children: nothing. First cell: move focus to the row if rows are focusable, else nothing. Other cell: move one cell toward the row start.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "decision": "tree-expand-collapse"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Row: move one row down. Cell: move one cell down. Stay at the bottom.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Row: move one row up. Cell: move one cell up. Stay at the top.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Move focus down by an author-defined number of rows (keeping the column when on a cell); stay in the last row.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Move focus up by an author-defined number of rows (keeping the column when on a cell); stay in the first row.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Row: move to the first row. Cell: move to the first cell of the row.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Row: move to the last row. Cell: move to the last cell of the row.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Home"
+        ],
+        "action": "Row: move to the first row. Cell: move to the cell in the first row of the same column.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+End"
+        ],
+        "action": "Row: move to the last row. Cell: move to the cell in the last row of the same column.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Space"
+        ],
+        "action": "Row: select all cells. Cell: select its column.",
+        "when": "The treegrid supports selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "selection",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Space"
+        ],
+        "action": "Select the row that has or contains focus; with a checkbox column, a shortcut for checking the row.",
+        "when": "The treegrid supports selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "selection",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+A"
+        ],
+        "action": "Select all cells.",
+        "when": "The treegrid supports selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "selection",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+ArrowRight"
+        ],
+        "action": "Row: no change. Cell: extend the selection one cell toward the row end.",
+        "when": "The treegrid supports selection.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "selection",
+        "origin": "apg",
+        "decision": "grid-cell-navigation"
+      },
+      {
+        "keys": [
+          "Shift+ArrowLeft"
+        ],
+        "action": "Row: no change. Cell: extend the selection one cell toward the row start.",
+        "when": "The treegrid supports selection.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "selection",
+        "origin": "apg",
+        "decision": "grid-cell-navigation"
+      },
+      {
+        "keys": [
+          "Shift+ArrowDown"
+        ],
+        "action": "Row: extend the selection to all cells of the next row. Cell: extend one cell down.",
+        "when": "The treegrid supports selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "selection",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+ArrowUp"
+        ],
+        "action": "Row: extend the selection to all cells of the previous row. Cell: extend one cell up.",
+        "when": "The treegrid supports selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "selection",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "Tab focuses the first row or the first cell, depending on whether rows are focusable (an author choice).",
+      "exit": "Tab from the last focusable element of the row leaves the treegrid.",
+      "tabStops": "One.",
+      "note": "Three focus models: rows only, cells only, or rows first then cells. Cell content follows the grid rules for focusing a cell or the widget inside it, and for entering a cell."
+    },
+    "variants": [
+      "row focus",
+      "cell focus",
+      "row then cell focus",
+      "with selection",
+      "with editable cells"
+    ],
+    "components": [
+      "data-grid",
+      "data-table"
+    ],
+    "uses": [
+      "grid"
+    ],
+    "orientation": {
+      "default": "both",
+      "supported": [
+        "both"
+      ]
+    },
+    "apg": {
+      "pages": [
+        "treegrid"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "treegrid",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      },
+      {
+        "role": "rowgroup",
+        "requiredOwnedElements": [
+          "row"
+        ],
+        "requiredContextRole": [
+          "grid",
+          "table",
+          "treegrid"
+        ]
+      },
+      {
+        "role": "row",
+        "requiredOwnedElements": [
+          "cell",
+          "columnheader",
+          "gridcell",
+          "rowheader"
+        ],
+        "requiredContextRole": [
+          "grid",
+          "rowgroup",
+          "table",
+          "treegrid"
+        ]
+      },
+      {
+        "role": "columnheader",
+        "requiredContextRole": [
+          "row"
+        ]
+      },
+      {
+        "role": "rowheader",
+        "requiredContextRole": [
+          "row"
+        ]
+      },
+      {
+        "role": "gridcell",
+        "requiredContextRole": [
+          "row"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "grid-cell-navigation",
+        "question": "Do ArrowLeft and ArrowRight move by visual cell or by column index in an RTL grid?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right Arrow moves \"one cell to the right\".",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "The grid keyboard delegate resolves the key right of and left of a cell against direction, so movement is visual.",
+            "evidence": "packages/react-aria/src/grid/GridKeyboardDelegate.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "Grid navigation in the composite takes an rtl flag and swaps the horizontal keys.",
+            "evidence": "packages/react/src/internals/composite/root/gridNavigation.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "mui-x",
+            "behaviour": "Data grid keyboard navigation computes left and right targets with isRtl.",
+            "evidence": "packages/x-data-grid/src/hooks/features/keyboardNavigation/utils.ts",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Columns are laid out from inline-start, so the first column is on the right. Following the APG wording literally (move one cell to the right) and mirroring are the same thing here: the key moves focus in the direction it points.",
+        "status": "consensus"
+      },
+      {
+        "id": "tree-expand-collapse",
+        "question": "Which arrow expands a tree node and which collapses it in RTL?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right arrow opens a closed node, Left arrow closes an open one.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "Expansion keys are keyed by direction: rtl expands with ArrowLeft and collapses with ArrowRight.",
+            "evidence": "packages/react-aria/src/gridlist/useGridListItem.ts (EXPANSION_KEYS)",
+            "checked": "source-read"
+          },
+          {
+            "library": "mui-x",
+            "behaviour": "Tree view expands on ArrowLeft and collapses on ArrowRight when isRtl.",
+            "evidence": "packages/x-tree-view/src/internals/plugins/keyboardNavigation/TreeViewKeyboardNavigationPlugin.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Does not swap: ArrowLeft always collapses or moves to the parent, ArrowRight always expands, although direction is passed for drag positioning.",
+            "evidence": "@rc-component/tree es/Tree.js (onKeyDown)",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "No tree component.",
+            "checked": "not-found"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "No tree component in 1.9.0.",
+            "checked": "not-found"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Children are indented toward inline-end and the disclosure chevron points there; the arrow that points into the indentation expands.",
+        "status": "divergent"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/treegrid/treegrid-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Note the difference from grid: Control+Home and Control+End keep the column. RTL: ArrowLeft expands a row, enters its cells and moves toward the row end; ArrowRight collapses and moves toward the row start or back to the row. One binding carries both the tree and the cell meaning, so both decisions (tree-expand-collapse, grid-cell-navigation) apply and agree."
+  }
+}

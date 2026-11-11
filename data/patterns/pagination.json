@@ -1,0 +1,169 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "pagination",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "pagination",
+    "name": {
+      "ar": "ترقيم الصفحات",
+      "en": "Pagination"
+    },
+    "reference": {
+      "name": "APG: Link Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/link/"
+    },
+    "roles": [
+      {
+        "role": "navigation",
+        "on": "container",
+        "required": true,
+        "note": "A nav element."
+      },
+      {
+        "role": "list",
+        "on": "the page items",
+        "required": false
+      },
+      {
+        "role": "listitem",
+        "on": "each item",
+        "required": false
+      },
+      {
+        "role": "link",
+        "on": "page, previous and next controls when they navigate",
+        "required": true,
+        "note": "Buttons instead, when they change state in place."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "navigation",
+        "values": "localized \"pagination\", made unique when there are several",
+        "required": true
+      },
+      {
+        "name": "aria-current",
+        "on": "the current page link",
+        "values": "page",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "page link",
+        "values": "localized \"page 3\"; previous and next need a text name, not an arrow glyph",
+        "required": true
+      },
+      {
+        "name": "aria-disabled",
+        "on": "previous on the first page, next on the last",
+        "values": "true",
+        "required": false,
+        "note": "Keep the element focusable so its position is discoverable."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move through previous, the page links and next in page order.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move backward.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Follow the focused link (go to that page).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Activate the focused control when it is a button.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Each control is a tab stop.",
+      "restore": "After an in-place page change, focus stays on the activated control (or moves to the start of the new results when the control disappears); it must not be lost to the document body.",
+      "tabStops": "One per rendered control; the ellipsis is not focusable."
+    },
+    "variants": [
+      "numbered",
+      "previous/next only",
+      "with page-size select",
+      "with jump-to-page field",
+      "load more (a button; see feed for endless lists)"
+    ],
+    "components": [
+      "pagination",
+      "data-table"
+    ],
+    "uses": [
+      "link",
+      "button"
+    ],
+    "ariaRequired": [
+      {
+        "role": "list",
+        "requiredOwnedElements": [
+          "listitem"
+        ]
+      },
+      {
+        "role": "listitem",
+        "requiredContextRole": [
+          "directory",
+          "list"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "No arrow-key bindings, so nothing is direction-sensitive in the keyboard contract. RTL is entirely visual here: \"previous\" is on the right with a right-pointing chevron and \"next\" on the left with a left-pointing one (icon mirroring), page numbers run right-to-left and use the locale's digits. Some libraries offer optional ArrowLeft/ArrowRight page shortcuts; if added they must mirror, and they must not be bound at page level where they would steal caret keys."
+  }
+}

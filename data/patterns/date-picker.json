@@ -1,0 +1,205 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "date-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "date-picker",
+    "name": {
+      "ar": "منتقي التاريخ",
+      "en": "Date picker"
+    },
+    "reference": {
+      "name": "APG example: Date Picker Dialog",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/"
+    },
+    "roles": [
+      {
+        "role": "group",
+        "on": "field and button together",
+        "required": true
+      },
+      {
+        "role": "spinbutton",
+        "on": "date segments (segmented variant)",
+        "required": false
+      },
+      {
+        "role": "button",
+        "on": "the control that opens the calendar",
+        "required": true
+      },
+      {
+        "role": "dialog",
+        "on": "the calendar popup",
+        "required": true
+      },
+      {
+        "role": "grid",
+        "on": "the calendar",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-haspopup",
+        "on": "button",
+        "values": "dialog",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "button",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "button",
+        "values": "action name that includes the selected date once there is one",
+        "required": true
+      },
+      {
+        "name": "aria-modal",
+        "on": "dialog",
+        "values": "true",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "dialog",
+        "values": "localized \"choose date\"",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "On the calendar button: open the dialog and focus the selected date, or today when none is selected.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "field",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Alt+ArrowDown"
+        ],
+        "action": "From the field: open the calendar.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "field",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the dialog without changing the value and return focus to the calendar button.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "dialog",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Cycle through the dialog: navigation buttons, the grid (one stop), then any confirm and cancel buttons, wrapping.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "dialog",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Cycle backward through the dialog.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "dialog",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "On a date: select it, close the dialog, update the field and return focus to the calendar button.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "dialog",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "focus-trap",
+      "entry": "Into the grid, on the selected date or today.",
+      "exit": "Escape, selecting a date, or the cancel button.",
+      "restore": "To the calendar button (APG) or the field.",
+      "tabStops": "Closed: the field's segments and the button. Open: trapped in the dialog."
+    },
+    "variants": [
+      "text input and button",
+      "segmented field and button",
+      "inline calendar (no dialog)",
+      "popover instead of modal dialog on large screens"
+    ],
+    "components": [
+      "date-picker"
+    ],
+    "uses": [
+      "date-field",
+      "calendar-grid",
+      "dialog-modal",
+      "button"
+    ],
+    "ariaRequired": [
+      {
+        "role": "grid",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "A composition: the field follows date-field, the popup follows dialog-modal, the grid follows calendar-grid; only the glue is bound here. Direction-sensitive bindings live in those files. In RTL the calendar button sits at inline-end of the field (left)."
+  }
+}

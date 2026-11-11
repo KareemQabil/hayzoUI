@@ -1,0 +1,332 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "data-grid-editing",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "MUI X (mui/mui-x)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "9.17.0 @ bb99a92f284a804fcc70f508a10e21de6f02bb12",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "data-grid-editing",
+    "name": {
+      "ar": "تحرير خلايا شبكة البيانات",
+      "en": "Data grid cell editing"
+    },
+    "reference": {
+      "name": "APG: Grid Pattern, Editing and Navigating Inside a Cell",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/grid/#gridNav_inside"
+    },
+    "roles": [
+      {
+        "role": "grid",
+        "on": "container",
+        "required": true
+      },
+      {
+        "role": "row",
+        "on": "each row",
+        "required": true
+      },
+      {
+        "role": "gridcell",
+        "on": "each cell",
+        "required": true
+      },
+      {
+        "role": "textbox",
+        "on": "the editor of a text cell",
+        "required": false,
+        "note": "Or the role of whatever editor the column uses."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-readonly",
+        "on": "gridcell that cannot be edited, or the grid when none can",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-invalid",
+        "on": "the editor, or the cell after a rejected commit",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-describedby",
+        "on": "the editor",
+        "values": "IDREF of the validation message",
+        "required": false
+      },
+      {
+        "name": "aria-required",
+        "on": "the editor",
+        "values": "true",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Start editing the focused cell with its current content, caret at the end.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "navigation mode",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "F2"
+        ],
+        "action": "Start editing the focused cell with its current content.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "navigation mode",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Start editing and replace the content with the typed character. Ignored during input-method composition, which starts editing itself.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "navigation mode",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Delete",
+          "Backspace"
+        ],
+        "action": "Clear the cell (enter edit mode with empty content and commit, or clear in place).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "navigation mode",
+        "origin": "mui-x"
+      },
+      {
+        "keys": [
+          "Control+V",
+          "Meta+V"
+        ],
+        "action": "Start editing with the pasted content.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "navigation mode",
+        "origin": "mui-x"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Commit the edit, leave edit mode and move focus to the cell below.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "mui-x"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Commit the edit and move focus to the next cell in the row (inline-end).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "mui-x"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Commit the edit and move focus to the previous cell in the row (inline-start).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "mui-x"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Discard the edit, restore the previous value and return to navigation mode with focus on the cell.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "F2"
+        ],
+        "action": "Leave edit mode and restore grid navigation, keeping the edit.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Belongs to the editor (caret movement); never moves to another cell while editing.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "text-caret"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Belongs to the editor (caret movement); never moves to another cell while editing.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "text-caret"
+      },
+      {
+        "keys": [
+          "ArrowUp",
+          "ArrowDown",
+          "Home",
+          "End"
+        ],
+        "action": "Belong to the editor while editing.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "edit mode",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "Navigation mode: one tab stop, focus on a cell. Edit mode: DOM focus is in the editor inside the cell.",
+      "exit": "Enter, Tab, F2 commit; Escape cancels; focus moving outside the cell commits (or cancels, by configuration).",
+      "restore": "To the edited cell, or to the neighbour named by the committing key.",
+      "tabStops": "One for the grid.",
+      "note": "Two modes with different key maps; the engine exposes the mode as state. A rejected commit keeps edit mode open, marks the editor invalid and announces the message."
+    },
+    "variants": [
+      "cell editing",
+      "row editing (all cells of a row at once; Enter commits the row)",
+      "always-editable cells (no mode; then cells hold widgets and the grid's \"inside a cell\" rules apply)",
+      "commit on blur vs cancel on blur"
+    ],
+    "components": [
+      "data-grid",
+      "data-table"
+    ],
+    "uses": [
+      "grid"
+    ],
+    "ariaRequired": [
+      {
+        "role": "grid",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      },
+      {
+        "role": "row",
+        "requiredOwnedElements": [
+          "cell",
+          "columnheader",
+          "gridcell",
+          "rowheader"
+        ],
+        "requiredContextRole": [
+          "grid",
+          "rowgroup",
+          "table",
+          "treegrid"
+        ]
+      },
+      {
+        "role": "gridcell",
+        "requiredContextRole": [
+          "row"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "text-caret",
+        "question": "Does the engine remap ArrowLeft, ArrowRight, Home and End while a text input inside a composite (combobox, tag input, grid cell editor, spinbutton) has focus?",
+        "apg": "The combobox page says Left and Right Arrow move the input cursor one character and warns that scripts must not interfere with browser-provided text editing keys.",
+        "libraries": [
+          {
+            "library": "base-ui",
+            "behaviour": "The composite returns to native textbox behaviour unless the caret is at the edge it is leaving by and the selection is collapsed.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Autocomplete lets the browser move the caret; it acts on ArrowLeft only when the caret is at index 0 with nothing selected.",
+            "evidence": "packages/mui-material/src/useAutocomplete/useAutocomplete.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "none",
+        "reason": "Caret movement in bidirectional text is the platform's job (visual or logical by OS) and users expect it unchanged. The engine never swaps these keys inside a text input; it only decides when a key leaves the input (see input-edge-handoff).",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Navigation-mode cell movement is the grid file, including its mirrored horizontal arrows. RTL in edit mode: the arrows are the caret's and are not remapped (decision text-caret). MUI X records the focus target after Tab as \"right\" and after Shift+Tab as \"left\"; we state it logically: Tab commits and goes to the next cell in row order, which is the cell to the left in RTL. Numeric and currency editors accept Arabic-Indic digits; a cell holding a number or Latin text inside an RTL grid needs its own direction (dir=\"auto\" or isolation), which also determines which side the caret starts on."
+  }
+}

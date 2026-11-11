@@ -1,0 +1,5629 @@
+{
+  "source": {
+    "name": "WAI-ARIA Authoring Practices Guide (APG)",
+    "repository": "https://github.com/w3c/aria-practices",
+    "commit": "0f765e4dc33e966026114ac12a8380db1de3b787",
+    "license": "W3C-20150513"
+  },
+  "counts": {
+    "patterns": 30,
+    "keyItems": 278,
+    "distinctKeys": 39
+  },
+  "patterns": [
+    {
+      "dir": "accordion",
+      "file": "content/patterns/accordion/accordion-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/",
+      "title": "Accordion Pattern (Sections With Show/Hide Functionality)",
+      "roles": [
+        "button",
+        "heading",
+        "region"
+      ],
+      "states": [
+        "aria-disabled",
+        "aria-expanded"
+      ],
+      "properties": [
+        "aria-controls",
+        "aria-labelledby",
+        "aria-level"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter",
+            "Space"
+          ],
+          "keysRaw": [
+            "Enter",
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "c27855bb99437e0435d8fea8e7caf875813435d4"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab",
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "69e00ea030c5d0103ac68729c63af157ae6feb68"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+Tab",
+            "Tab"
+          ],
+          "keysRaw": [
+            "Shift + Tab",
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "db2501e429ccdd8654f24e62ce977df41aa69caa"
+        }
+      ],
+      "keys": [
+        "Enter",
+        "Shift+Tab",
+        "Space",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "alert",
+      "file": "content/patterns/alert/alert-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/alert/",
+      "title": "Alert Pattern",
+      "roles": [
+        "alert"
+      ],
+      "states": [],
+      "properties": [],
+      "keyItems": [],
+      "keys": []
+    },
+    {
+      "dir": "alertdialog",
+      "file": "content/patterns/alertdialog/alertdialog-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/",
+      "title": "Alert and Message Dialogs Pattern",
+      "roles": [
+        "alertdialog"
+      ],
+      "states": [
+        "aria-hidden"
+      ],
+      "properties": [
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby",
+        "aria-modal"
+      ],
+      "keyItems": [],
+      "keys": []
+    },
+    {
+      "dir": "breadcrumb",
+      "file": "content/patterns/breadcrumb/breadcrumb-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/",
+      "title": "Breadcrumb Pattern",
+      "roles": [],
+      "states": [],
+      "properties": [
+        "aria-current",
+        "aria-label",
+        "aria-labelledby"
+      ],
+      "keyItems": [],
+      "keys": []
+    },
+    {
+      "dir": "button",
+      "file": "content/patterns/button/button-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/button/",
+      "title": "Button Pattern",
+      "roles": [
+        "button"
+      ],
+      "states": [
+        "aria-disabled",
+        "aria-pressed"
+      ],
+      "properties": [
+        "aria-describedby",
+        "aria-haspopup",
+        "aria-label",
+        "aria-labelledby"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "71f46ff2c6e5b304cf518b995a0c0bcf790191af"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "c799b588f3ecbd5458845b9468070315bc728580"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Alt+U",
+            "Alt+U"
+          ],
+          "keysRaw": [
+            "Alt + U",
+            "Alt + U"
+          ],
+          "optional": false,
+          "textSha1": "8743f1d0c25c1f38d8b7a81f7256ddb6c139de19"
+        }
+      ],
+      "keys": [
+        "Alt+U",
+        "Enter",
+        "Space"
+      ]
+    },
+    {
+      "dir": "carousel",
+      "file": "content/patterns/carousel/carousel-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/carousel/",
+      "title": "Carousel (Slide Show or Image Rotator) Pattern",
+      "roles": [
+        "group",
+        "group.",
+        "region",
+        "tabpanel"
+      ],
+      "states": [],
+      "properties": [
+        "aria-atomic",
+        "aria-disabled",
+        "aria-label",
+        "aria-labelledby",
+        "aria-live",
+        "aria-posinset",
+        "aria-roledescription",
+        "aria-setsize"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab",
+            "Shift+Tab",
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Shift + Tab",
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "7440be62afdf80f4ea9903d0215ac4fb585d8adb"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "04369e07f2559670315051672d599ba3091f9621"
+        },
+        {
+          "section": "roles_states_properties",
+          "context": [
+            "WAI-ARIA Roles, States, and Properties",
+            "Grouped Carousel Elements"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "0138fa62cd7a72e2c519e7e5001be3d87a6370cc"
+        }
+      ],
+      "keys": [
+        "Shift+Tab",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "checkbox",
+      "file": "content/patterns/checkbox/checkbox-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/",
+      "title": "Checkbox Pattern",
+      "roles": [
+        "checkbox",
+        "group"
+      ],
+      "states": [
+        "aria-checked"
+      ],
+      "properties": [
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "edb6d83de1b0361b63b6b64f4e630ae29e898e54"
+        }
+      ],
+      "keys": [
+        "Space"
+      ]
+    },
+    {
+      "dir": "combobox",
+      "file": "content/patterns/combobox/combobox-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "title": "Combobox Pattern",
+      "roles": [
+        "combobox",
+        "dialog",
+        "grid",
+        "listbox",
+        "tree"
+      ],
+      "states": [
+        "aria-expanded",
+        "aria-selected"
+      ],
+      "properties": [
+        "aria-activedescendant",
+        "aria-autocomplete",
+        "aria-controls",
+        "aria-haspopup",
+        "aria-label",
+        "aria-labelledby",
+        "aria-orientation",
+        "aria-owns"
+      ],
+      "keyItems": [
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "583519b713a91dc190257edb45a87d976fe3bb6f"
+        },
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Escape",
+            "Escape"
+          ],
+          "keysRaw": [
+            "escape",
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "cfcc4fd0904c39f857e3d79841ae3e1d5ea3f73e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab",
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "6ce857d09a71cda1d464d7d66993649f6cd26a68"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "7a2a773fc785ff0a72b7f5f6e19b40d5b9c37f4f"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Combobox Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "3254fc3f24fd083f80afb21d67fc3a2e2ba36260"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Combobox Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "2b9c73ab0bcc6eb8f9ec806cad60adb02e26a0ae"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Combobox Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "86d18ffbdc491ef84668bb602568582ea40b24dd"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Combobox Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape",
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape",
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "dacb4d1c43da9f69e59d52805e94ef66e17479f4"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Combobox Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "45dc57be1f96c981c69a9204e24878afb51b6f26"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Combobox Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Alt+ArrowDown"
+          ],
+          "keysRaw": [
+            "Alt + Down Arrow"
+          ],
+          "optional": true,
+          "textSha1": "4eb0b8c87db48844111650fa4a05471b541a86bd"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Combobox Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Alt+ArrowUp"
+          ],
+          "keysRaw": [
+            "Alt + Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "8a83fcd19a0baf701d4f915a11429b9bd540b562"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "75fd573510ebaa4d392c8a7233b2da069e8ce93e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "1728ad49a176ca8fa43a964c92ec0ef559d288d5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "883f81a7c0ec46d89bf69447a04d7dd87bce91b4"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "bb022fac6115b852ce8bac29dd4b382d1898ddd1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "e0ecc8aeb67d754a530a7f67a32661fc010361c1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "ba813feecfc49942ec32664915a6e632de2ca514"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": true,
+          "textSha1": "cf3e617977d68a4544853102561cec49a27acea2"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": true,
+          "textSha1": "1e23e84deb4bec1ef51539fecc4acfc2152d45b4"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Backspace"
+          ],
+          "keysRaw": [
+            "Backspace"
+          ],
+          "optional": true,
+          "textSha1": "efd35d5ef63ce0f18bb74f61bbadc332f70fe1f3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Listbox Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Delete"
+          ],
+          "keysRaw": [
+            "Delete"
+          ],
+          "optional": true,
+          "textSha1": "5890df1312335a0382ec544533f65d92bd51bc1f"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "1316a8aa0a5a81d8fe2e3952a9814c54047dde71"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "1728ad49a176ca8fa43a964c92ec0ef559d288d5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "149ede156f78f6eb9b1b72257f4d63d2ae14356c"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "839df2311ffbd210fea4b047b136031be60860f9"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "e3cfd7aad4b316bf982867f8e0f79cbefae710cd"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "c75cfe89f92557a6d5ccc235bf19453071e7f5c1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageDown"
+          ],
+          "keysRaw": [
+            "Page Down"
+          ],
+          "optional": true,
+          "textSha1": "2d635bd370efa9d3b8f9f40444deaf26256db7e7"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageUp"
+          ],
+          "keysRaw": [
+            "Page Up"
+          ],
+          "optional": true,
+          "textSha1": "790081d7666ea86234340578a57f5f6f2d377a91"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": true,
+          "textSha1": "180d8aa2d6f947a912dfc32648ae0fedc5ffb691"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": true,
+          "textSha1": "9387baaf779b761c1063091389e3e90b5a9f270a"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Home"
+          ],
+          "keysRaw": [
+            "Control + Home"
+          ],
+          "optional": true,
+          "textSha1": "370111661a3524eb18f927193c805125938d1035"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "Control + End"
+          ],
+          "optional": true,
+          "textSha1": "7f84d7057e32ae5b76cf6c0a82e28caa9fa53a7c"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Backspace"
+          ],
+          "keysRaw": [
+            "Backspace"
+          ],
+          "optional": true,
+          "textSha1": "efd35d5ef63ce0f18bb74f61bbadc332f70fe1f3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Grid Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Delete"
+          ],
+          "keysRaw": [
+            "Delete"
+          ],
+          "optional": true,
+          "textSha1": "5890df1312335a0382ec544533f65d92bd51bc1f"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "1316a8aa0a5a81d8fe2e3952a9814c54047dde71"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "3e57d3da3baea06d9199c32f3019c4c4ac0fad70"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right arrow"
+          ],
+          "optional": false,
+          "textSha1": "2cb49517b5268872863b519dd3ef785e751aae4e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left arrow"
+          ],
+          "optional": false,
+          "textSha1": "bb543eaf030aa5cc41adc093689abd5e0b4747d1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "8d604d82a5be65096de94bf35b0b064120d9503d"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "13091d9626ece3e72efd5b3e78abb7a803e688d3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "b3c2502e29902233d6d17e01045992c5a5765c34"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "513aae19826c94fc930a6fbac40b770f314766ae"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Down Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "456071e976d9ed5c36f317e50575eda958bba1be"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Tree Popup Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp",
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "3928f25d7f27c0e32b89fd8e2a2d08dc47dfd810"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Dialog Popup Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "5d8ad662a1cb6c60daea239687ba5d3e90ad4b34"
+        }
+      ],
+      "keys": [
+        "Alt+ArrowDown",
+        "Alt+ArrowUp",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "Backspace",
+        "Control+End",
+        "Control+Home",
+        "Delete",
+        "End",
+        "Enter",
+        "Escape",
+        "Home",
+        "PageDown",
+        "PageUp",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "dialog-modal",
+      "file": "content/patterns/dialog-modal/dialog-modal-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "title": "Dialog (Modal) Pattern",
+      "roles": [
+        "alertdialog",
+        "dialog"
+      ],
+      "states": [
+        "aria-hidden"
+      ],
+      "properties": [
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby",
+        "aria-modal"
+      ],
+      "keyItems": [
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Tab",
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "bb75dbda11c4391125f04ceeb3d17f1a2d3584a7"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "c5a3b0854903a618ba90d9bf7fe93237f42cd397"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "4c9ba88f79321bac07a759be0151363969c09637"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "beb9ab053d0169f363aeabe27098018632ecb6c9"
+        }
+      ],
+      "keys": [
+        "Escape",
+        "Shift+Tab",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "disclosure",
+      "file": "content/patterns/disclosure/disclosure-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/",
+      "title": "Disclosure (Show/Hide) Pattern",
+      "roles": [
+        "button"
+      ],
+      "states": [
+        "aria-expanded"
+      ],
+      "properties": [
+        "aria-controls"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "9af6f1283b537a6a690f95c7598fc29a4190dc9e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "569f18fd8557a62268570f69a9586851c66777a2"
+        }
+      ],
+      "keys": [
+        "Enter",
+        "Space"
+      ]
+    },
+    {
+      "dir": "feed",
+      "file": "content/patterns/feed/feed-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/feed/",
+      "title": "Feed Pattern",
+      "roles": [
+        "article",
+        "feed"
+      ],
+      "states": [
+        "aria-busy"
+      ],
+      "properties": [
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby",
+        "aria-posinset",
+        "aria-setsize"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageDown"
+          ],
+          "keysRaw": [
+            "Page Down"
+          ],
+          "optional": false,
+          "textSha1": "9b653895d07f69b31bc919181c43e09c5ff0f7d0"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageUp"
+          ],
+          "keysRaw": [
+            "Page Up"
+          ],
+          "optional": false,
+          "textSha1": "33a34393859b207eb8221a12d9ef85fc91aa5996"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "Control + End"
+          ],
+          "optional": false,
+          "textSha1": "ddbbd8fc0351275177ead6598f0a9d40d4a4266b"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Home"
+          ],
+          "keysRaw": [
+            "Control + Home"
+          ],
+          "optional": false,
+          "textSha1": "a5cf754f091aa58d39b3b73ed08c92b939b20160"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "d46bb4a75e2a9e2c0edb14980f326006f6988efb"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Alt+PageDown"
+          ],
+          "keysRaw": [
+            "Alt + Page Down"
+          ],
+          "optional": false,
+          "textSha1": "fd089bcb164b304d250ff26e84bb1eddc21e4d92"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "Control + End"
+          ],
+          "optional": false,
+          "textSha1": "79a96dc23940cc067fb6e4000e499232b1b38d0f"
+        }
+      ],
+      "keys": [
+        "Alt+PageDown",
+        "Control+End",
+        "Control+Home",
+        "PageDown",
+        "PageUp",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "grid",
+      "file": "content/patterns/grid/grid-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/grid/",
+      "title": "Grid (Interactive Tabular Data and Layout Containers) Pattern",
+      "roles": [
+        "columnheader",
+        "grid",
+        "gridcell",
+        "row",
+        "rowgroup",
+        "rowheader",
+        "textbox"
+      ],
+      "states": [
+        "aria-readonly",
+        "aria-selected"
+      ],
+      "properties": [
+        "aria-colcount",
+        "aria-colindex",
+        "aria-colspan",
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby",
+        "aria-owns",
+        "aria-rowcount",
+        "aria-rowindex",
+        "aria-rowspan",
+        "aria-sort"
+      ],
+      "keyItems": [
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Home",
+            "End"
+          ],
+          "keysRaw": [
+            "Home",
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "699f2df119706bd47694e85415217f322ff0ab6c"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "0976aecaa479f7f1c3a4aaa11622823022262be7"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "81d88942e7c225f1b4591b7fe9660f8a8deecb4c"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "d7b2abe3f5f22330d6a7ce302810cca70ce192ec"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "0dfc3fb78d2b33e00cfb4ab13dd7e78a083bc402"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "1baec025c208bd3016245aaa6148aff3991bf939"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageDown"
+          ],
+          "keysRaw": [
+            "Page Down"
+          ],
+          "optional": false,
+          "textSha1": "13e1b5d3bd7a7cc07f11462fa523d75c5aa4a599"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageUp"
+          ],
+          "keysRaw": [
+            "Page Up"
+          ],
+          "optional": false,
+          "textSha1": "ff371ed26d6f4cbf649c9200d21550e17475c54d"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "2d063888efd99a20a4ead3f2ceb6059c1abbcc72"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "3402895d0f469488bdcf895cf92c7d4828e281b9"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Home"
+          ],
+          "keysRaw": [
+            "Control + Home"
+          ],
+          "optional": false,
+          "textSha1": "61a5e7049f2db32acef03156608126907e937316"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "Control + End"
+          ],
+          "optional": false,
+          "textSha1": "e003cbfbfd4c67372ea502a3f7b482ccf65436f1"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "Control + End"
+          ],
+          "optional": false,
+          "textSha1": "2a5433ae73d95628b5a66d64b1f9745acdd8c671"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Space"
+          ],
+          "keysRaw": [
+            "Control + Space"
+          ],
+          "optional": false,
+          "textSha1": "797490acaed1232713cc13aaeb4b5e5acbad4097"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+Space"
+          ],
+          "keysRaw": [
+            "Shift + Space"
+          ],
+          "optional": false,
+          "textSha1": "7d1c48573a906fac284ab149f0ac0459a7244282"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+A"
+          ],
+          "keysRaw": [
+            "Control + A"
+          ],
+          "optional": false,
+          "textSha1": "c1b76b40abc73bc89f1f397056e5eb0875d204cd"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowRight"
+          ],
+          "keysRaw": [
+            "Shift + Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "b78057251861ee7dcb9a672366baaf4a0b0717f3"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowLeft"
+          ],
+          "keysRaw": [
+            "Shift + Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "290d14b7f7dcd9ef33204ed0de43317bead51aee"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowDown"
+          ],
+          "keysRaw": [
+            "Shift + Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "b0dc35b9d128e6ee1a7609c6025b182c02e7c380"
+        },
+        {
+          "section": "dataGrid",
+          "context": [
+            "Data Grids For Presenting Tabular Information",
+            "Keyboard Interaction For Data Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowUp"
+          ],
+          "keysRaw": [
+            "Shift + Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "b5683c29f1f5862fefa5b28d8eb3b657d95ba2d2"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "ArrowRight",
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Right Arrow",
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a950819b4157fe6861e43835b97ccfdbef777c93"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "0976aecaa479f7f1c3a4aaa11622823022262be7"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "8c1d71da0efbdfdd1568fb14c8a410a3fcefcc15"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "49d6208b6aecf8ef55187c278eb90e9e2b56a0a1"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "5bf45d88e0b1cd81007386838508cb90b476df14"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "17ac60243b7ffc85da2e747d793a0e0653d721bb"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageDown"
+          ],
+          "keysRaw": [
+            "Page Down"
+          ],
+          "optional": true,
+          "textSha1": "2d635bd370efa9d3b8f9f40444deaf26256db7e7"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageUp"
+          ],
+          "keysRaw": [
+            "Page Up"
+          ],
+          "optional": true,
+          "textSha1": "790081d7666ea86234340578a57f5f6f2d377a91"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "f11a9fcfd6488e6a6818f5b21f6f3135672755a3"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "f2c17728de7a49c0969f14b447c1996c138b0440"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Home"
+          ],
+          "keysRaw": [
+            "Control + Home"
+          ],
+          "optional": true,
+          "textSha1": "a5ab9f15668a8d2015e8dbc2ef203c5c6f7b5ddd"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "Control + End"
+          ],
+          "optional": true,
+          "textSha1": "1fbe3ecd152046fc4187a7237c801abb56f83a91"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "control + End"
+          ],
+          "optional": false,
+          "textSha1": "427163b4fe207e52ec83e5c99bea96b00896b15e"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Space"
+          ],
+          "keysRaw": [
+            "Control + Space"
+          ],
+          "optional": false,
+          "textSha1": "797490acaed1232713cc13aaeb4b5e5acbad4097"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+Space"
+          ],
+          "keysRaw": [
+            "Shift + Space"
+          ],
+          "optional": false,
+          "textSha1": "7d1c48573a906fac284ab149f0ac0459a7244282"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+A"
+          ],
+          "keysRaw": [
+            "Control + A"
+          ],
+          "optional": false,
+          "textSha1": "c1b76b40abc73bc89f1f397056e5eb0875d204cd"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowRight"
+          ],
+          "keysRaw": [
+            "Shift + Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "b78057251861ee7dcb9a672366baaf4a0b0717f3"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowLeft"
+          ],
+          "keysRaw": [
+            "Shift + Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "290d14b7f7dcd9ef33204ed0de43317bead51aee"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowDown"
+          ],
+          "keysRaw": [
+            "Shift + Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "b0dc35b9d128e6ee1a7609c6025b182c02e7c380"
+        },
+        {
+          "section": "layoutGrid",
+          "context": [
+            "Layout Grids for Grouping Widgets",
+            "Keyboard Interaction For Layout Grids",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowUp"
+          ],
+          "keysRaw": [
+            "Shift + Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "b5683c29f1f5862fefa5b28d8eb3b657d95ba2d2"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "6cab949eb6ce90c703da09d2007f6c2fdb8af351"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "286ffc4206462a08bf3762a6267f72aad5cc11a2"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "F2"
+          ],
+          "keysRaw": [
+            "F2"
+          ],
+          "optional": false,
+          "textSha1": "ea342f8ab9e17cdba94edd4ccc9c03252e70557e"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "F2"
+          ],
+          "keysRaw": [
+            "F2"
+          ],
+          "optional": false,
+          "textSha1": "2da991111e8a61647bdc500c43ab3e55ca9ff6f3"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "F2"
+          ],
+          "keysRaw": [
+            "F2"
+          ],
+          "optional": false,
+          "textSha1": "ca062bc186e847ab8446a060b4c4fb5f539c4c86"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "3cddc9903866899d8aa2a074b3b84b25e72eff9b"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight",
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Right Arrow",
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "0feb6ecf6bfa840b0df5ad0ade46f56aae5edf37"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft",
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Left Arrow",
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "175315b63fef5083274925658e301e432bab6428"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "f641ae58883eb30cf1f5daab5e7171a604b5cb30"
+        },
+        {
+          "section": "gridNav_inside",
+          "context": [
+            "Keyboard Interaction - Setting Focus and Navigating Inside Cells",
+            "Editing and Navigating Inside a Cell"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "8ad476bc09d6ebd5fa7a5a5111697bc7a729a718"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "Control+A",
+        "Control+End",
+        "Control+Home",
+        "Control+Space",
+        "End",
+        "Enter",
+        "Escape",
+        "F2",
+        "Home",
+        "PageDown",
+        "PageUp",
+        "Shift+ArrowDown",
+        "Shift+ArrowLeft",
+        "Shift+ArrowRight",
+        "Shift+ArrowUp",
+        "Shift+Space",
+        "Shift+Tab",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "landmarks",
+      "file": "content/patterns/landmarks/landmarks-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/",
+      "title": "Landmarks Pattern",
+      "roles": [
+        "Landmarks",
+        "main"
+      ],
+      "states": [],
+      "properties": [],
+      "keyItems": [],
+      "keys": []
+    },
+    {
+      "dir": "link",
+      "file": "content/patterns/link/link-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/link/",
+      "title": "Link Pattern",
+      "roles": [
+        "link"
+      ],
+      "states": [],
+      "properties": [],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "ffb6641a99db217fe6f6d2b81b4eb38eb374c8e5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+F10"
+          ],
+          "keysRaw": [
+            "Shift + F10"
+          ],
+          "optional": true,
+          "textSha1": "0c6bc0e11ac83dee0e39bdcd1a32c160948660b2"
+        }
+      ],
+      "keys": [
+        "Enter",
+        "Shift+F10"
+      ]
+    },
+    {
+      "dir": "listbox",
+      "file": "content/patterns/listbox/listbox-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/",
+      "title": "Listbox Pattern",
+      "roles": [
+        "group",
+        "listbox",
+        "option"
+      ],
+      "states": [
+        "aria-checked",
+        "aria-selected"
+      ],
+      "properties": [
+        "aria-activedescendant",
+        "aria-label",
+        "aria-labelledby",
+        "aria-multiselectable",
+        "aria-orientation",
+        "aria-owns",
+        "aria-posinset",
+        "aria-setsize"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "aa604edf442f23b06f6f6f811b9f03d71a2cc646"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "26b163515c97f7a2125cec14abb72fe4bab88742"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": true,
+          "textSha1": "43149451ab795e1a8a1b062fac1f90f129d17f0a"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": true,
+          "textSha1": "027ce28f6a8d594f1b2207e4d56c062cb3b5253d"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "913944de929cc4fc199adb0d55e7626877e4da07"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowDown"
+          ],
+          "keysRaw": [
+            "Shift + Down Arrow"
+          ],
+          "optional": true,
+          "textSha1": "e4ed228cf1a853851f345f5647b653230bf34d06"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowUp"
+          ],
+          "keysRaw": [
+            "Shift + Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "cca19b796f39a8af9b70842a071ec9f93a5aa4fa"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+Space"
+          ],
+          "keysRaw": [
+            "Shift + Space"
+          ],
+          "optional": true,
+          "textSha1": "062a39cdade765bf42d792e49c5ee0e83a32ab58"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+Home"
+          ],
+          "keysRaw": [
+            "Control + Shift + Home"
+          ],
+          "optional": true,
+          "textSha1": "65527e6a97f3f09aa69ce245c3d4005fa1a1f27b"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+End"
+          ],
+          "keysRaw": [
+            "Control + Shift + End"
+          ],
+          "optional": true,
+          "textSha1": "0f9f4d65734b96323eafbfa30a029da62307db74"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+A"
+          ],
+          "keysRaw": [
+            "Control + A"
+          ],
+          "optional": true,
+          "textSha1": "24aabd8481c7a5591dbeda908666c616d0ade982"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowDown"
+          ],
+          "keysRaw": [
+            "Shift + Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "65f1b033a4c517d58584ddfadecee0f95f3f4775"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowUp"
+          ],
+          "keysRaw": [
+            "Shift + Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "9c4616597ae9006e92a41f945d974b10e08c6e51"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+ArrowDown"
+          ],
+          "keysRaw": [
+            "Control + Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "bbe3b6ff78bdddeea2e12a0b6e76b7c75c9375a1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+ArrowUp"
+          ],
+          "keysRaw": [
+            "Control + Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a5102602fd85fed3538e367c026dbac80e6e6395"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Space"
+          ],
+          "keysRaw": [
+            "Control + Space"
+          ],
+          "optional": false,
+          "textSha1": "52624ce11fc8cdc6ab5dcb76a0c85f24ad1fba33"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+Space"
+          ],
+          "keysRaw": [
+            "Shift + Space"
+          ],
+          "optional": true,
+          "textSha1": "062a39cdade765bf42d792e49c5ee0e83a32ab58"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+Home"
+          ],
+          "keysRaw": [
+            "Control + Shift + Home"
+          ],
+          "optional": true,
+          "textSha1": "65527e6a97f3f09aa69ce245c3d4005fa1a1f27b"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+End"
+          ],
+          "keysRaw": [
+            "Control + Shift + End"
+          ],
+          "optional": true,
+          "textSha1": "0f9f4d65734b96323eafbfa30a029da62307db74"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+A"
+          ],
+          "keysRaw": [
+            "Control + A"
+          ],
+          "optional": true,
+          "textSha1": "24aabd8481c7a5591dbeda908666c616d0ade982"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Shift",
+            "Control"
+          ],
+          "keysRaw": [
+            "Shift",
+            "Control"
+          ],
+          "optional": false,
+          "textSha1": "632206828a8d7f1082da41e28736d8834603dd74"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift",
+            "Control"
+          ],
+          "keysRaw": [
+            "Shift",
+            "Control"
+          ],
+          "optional": false,
+          "textSha1": "c7d4e8fd8540679a6bec6ae21a8ab97fe9fa186f"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Down Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "456071e976d9ed5c36f317e50575eda958bba1be"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp",
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "3928f25d7f27c0e32b89fd8e2a2d08dc47dfd810"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "Control",
+        "Control+A",
+        "Control+ArrowDown",
+        "Control+ArrowUp",
+        "Control+Shift+End",
+        "Control+Shift+Home",
+        "Control+Space",
+        "End",
+        "Home",
+        "Shift",
+        "Shift+ArrowDown",
+        "Shift+ArrowUp",
+        "Shift+Space",
+        "Space"
+      ]
+    },
+    {
+      "dir": "menu-button",
+      "file": "content/patterns/menu-button/menu-button-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/",
+      "title": "Menu Button Pattern",
+      "roles": [
+        "button",
+        "menu"
+      ],
+      "states": [
+        "aria-expanded"
+      ],
+      "properties": [
+        "aria-controls",
+        "aria-haspopup"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "dd8e831512189eb1448a770c1f46ebdd9d00e1f5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "d6a79a7bff697401ec46189268e5eb0a1b1e2f2a"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": true,
+          "textSha1": "9a1e22f274d7dc5724cbff41cc1c262fb1a0c523"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "93c7f2a05bd5e3897cc4dff41a782ab023a14c50"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowUp",
+        "Enter",
+        "Space"
+      ]
+    },
+    {
+      "dir": "menubar",
+      "file": "content/patterns/menubar/menu-and-menubar-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+      "title": "Menu and Menubar Pattern",
+      "roles": [
+        "menu",
+        "menubar",
+        "menuitem",
+        "menuitemcheckbox",
+        "menuitemradio",
+        "separator",
+        "separators"
+      ],
+      "states": [
+        "aria-disabled"
+      ],
+      "properties": [
+        "aria-activedescendant",
+        "aria-checked",
+        "aria-expanded",
+        "aria-haspopup",
+        "aria-label",
+        "aria-labelledby",
+        "aria-orientation",
+        "aria-owns"
+      ],
+      "keyItems": [
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Shift+F10"
+          ],
+          "keysRaw": [
+            "Shift + F10"
+          ],
+          "optional": false,
+          "textSha1": "83db7571ea7d0517330c335970a3200bdd27e797"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Tab",
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "2561feb364345233a3fc01fb04589d4e0fc69022"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Tab",
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "2ecffebd48f4846a0c0c7c11032cae63d7a97f90"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab",
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "b624a345e187e27950ce1efa3c00cb117d34c1e1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "34c62a88a5e3db0d5b2c998e286ef0f9fbbdd53e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "69ae9c37be2f3b661bf4271a07e58b6b0bd4414e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "50284cc25aa28fb532d0f621f1ae07bd4c5636f2"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a6995ae2ccd5555b399423330ecdae5f9a20d6f3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "b10cd0894b871a2773dd432769496ddc30e970a8"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "50e1172d60269ef6dd7983338fbd09c920b99ce0"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "308732d8521c47d4e0678174109a4d20574d5445"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "17f8d046de07127b832bb56941bdc12cd15c6365"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "dda988ea9b596c05123902ae6daaaf733a3e739e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "5540671881c73cc2c5337b947bea665fba879272"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Escape",
+            "Enter",
+            "Alt+F10",
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape",
+            "Enter",
+            "alt + F10",
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "c57ca3a62751a9677d8a7b88edddf1e71e6c0d48"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter",
+            "Space",
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Enter",
+            "Space",
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "0634b232c5f4b9ca8984416a8a07b21e55b4c80c"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Down Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "456071e976d9ed5c36f317e50575eda958bba1be"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp",
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "3928f25d7f27c0e32b89fd8e2a2d08dc47dfd810"
+        }
+      ],
+      "keys": [
+        "Alt+F10",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "End",
+        "Enter",
+        "Escape",
+        "Home",
+        "Shift+F10",
+        "Shift+Tab",
+        "Space",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "meter",
+      "file": "content/patterns/meter/meter-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/meter/",
+      "title": "Meter Pattern",
+      "roles": [
+        "meter",
+        "progressbar"
+      ],
+      "states": [],
+      "properties": [
+        "aria-label",
+        "aria-labelledby",
+        "aria-valuemax",
+        "aria-valuemin",
+        "aria-valuenow",
+        "aria-valuetext"
+      ],
+      "keyItems": [],
+      "keys": []
+    },
+    {
+      "dir": "radio",
+      "file": "content/patterns/radio/radio-group-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/radio/",
+      "title": "Radio Group Pattern",
+      "roles": [
+        "radio",
+        "radiogroup"
+      ],
+      "states": [
+        "aria-checked"
+      ],
+      "properties": [
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Groups Not Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab",
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "c0bdad6e48e3b89a63a1ea3327f2541b4766c630"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Groups Not Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "297850e905e7b81f536dcfd9d1e2361f9e6cd98f"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Groups Not Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight",
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Right Arrow",
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "d69f95a2028195a6b23f70870ea635fa8ff4aa05"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Groups Not Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft",
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Left Arrow",
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "6feadffaf9f74498409cd3ea3cad9688ee8a55aa"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "765e08d80a8e53625968fda149ee506605f1b814"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Group Contained in a Toolbar"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "95c36a4fd9a13dae2279a567dfd7561c1bc15923"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Group Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "a4662dc07660dc4bc8347822293c3ab2b26151e8"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Group Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": true,
+          "textSha1": "40a67336975b0eac5893ba18f1637b9a05a32ae5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Group Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "50e1172d60269ef6dd7983338fbd09c920b99ce0"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Group Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "308732d8521c47d4e0678174109a4d20574d5445"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Group Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": true,
+          "textSha1": "0c5fd4733022bfa16c153b5d71008a3095e2e699"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "For Radio Group Contained in a Toolbar"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "5f187b832b2637e48d24c25b8d9158f40c62c8b1"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "Enter",
+        "Shift+Tab",
+        "Space",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "slider",
+      "file": "content/patterns/slider/slider-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/slider/",
+      "title": "Slider Pattern",
+      "roles": [
+        "slider"
+      ],
+      "states": [],
+      "properties": [
+        "aria-label",
+        "aria-labelledby",
+        "aria-orientation",
+        "aria-valuemax",
+        "aria-valuemin",
+        "aria-valuenow",
+        "aria-valuetext"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "0ba4ca4348121aa3e2d6009e98f5c6c561bf1ccf"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "86d29298df0a1f1bdd3b5ab69be645a1ca25b27b"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "3a7504ecc7271537e49f6bb4745e1cf355025d7b"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "5b41d48ccecb3314a1f96abe9b5a7f1bb881e4b6"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "e6c69342009084769ae09c1a8b53c58bbee07553"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "e76d87e51d1a175e188f93387dff1844bfc0a688"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageUp",
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Page Up",
+            "Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "c8133523324b390473cb086e209d6d3b2eb7becf"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageDown",
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Page Down",
+            "Down Arrow"
+          ],
+          "optional": true,
+          "textSha1": "bf64ff9215befa7962a8bfbeeee74eb7cfb99f76"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "4db1eebb22fd41a6efa5da0398438dbbb4b8cf94"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "End",
+        "Home",
+        "PageDown",
+        "PageUp"
+      ]
+    },
+    {
+      "dir": "slider-multithumb",
+      "file": "content/patterns/slider-multithumb/slider-multithumb-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/slider-multithumb/",
+      "title": "Slider (Multi-Thumb) Pattern",
+      "roles": [
+        "slider"
+      ],
+      "states": [],
+      "properties": [
+        "aria-label",
+        "aria-labelledby",
+        "aria-orientation",
+        "aria-valuemax",
+        "aria-valuemin",
+        "aria-valuenow",
+        "aria-valuetext"
+      ],
+      "keyItems": [],
+      "keys": []
+    },
+    {
+      "dir": "spinbutton",
+      "file": "content/patterns/spinbutton/spinbutton-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/",
+      "title": "Spinbutton Pattern",
+      "roles": [
+        "spinbutton"
+      ],
+      "states": [
+        "aria-invalid"
+      ],
+      "properties": [
+        "aria-label",
+        "aria-labelledby",
+        "aria-valuemax",
+        "aria-valuemin",
+        "aria-valuenow",
+        "aria-valuetext"
+      ],
+      "keyItems": [
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "ArrowUp",
+            "ArrowDown",
+            "PageUp",
+            "PageDown"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Down Arrow",
+            "Page Up",
+            "Page Down"
+          ],
+          "optional": false,
+          "textSha1": "1f6a987b1633223024a1fd1be54d49acc8e5b1c4"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "00dca18723a7b21e88d6426adb2152b1116035e3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "068681d47cdeba5aeab6e5f3a4ba99eb753cab61"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "d22d14360a4dae10e88586a17fdb18fa720ef213"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "3577615bbe237f3e33ef4579a0ef05be3d131bae"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageUp",
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Page Up",
+            "Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "83a109cfcfba4d1653d707ae396c22bebab93ade"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageDown",
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Page Down",
+            "Down Arrow"
+          ],
+          "optional": true,
+          "textSha1": "75730e2565b67af467994aa075d04330c16fc624"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowUp",
+        "End",
+        "Home",
+        "PageDown",
+        "PageUp"
+      ]
+    },
+    {
+      "dir": "switch",
+      "file": "content/patterns/switch/switch-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/switch/",
+      "title": "Switch Pattern",
+      "roles": [
+        "group",
+        "switch"
+      ],
+      "states": [
+        "aria-checked"
+      ],
+      "properties": [
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "3e48c013dbbb3850c07590f37208c3a196e53e35"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": true,
+          "textSha1": "daebab2199ebeccd7ee441d747d0cd6d7285d328"
+        }
+      ],
+      "keys": [
+        "Enter",
+        "Space"
+      ]
+    },
+    {
+      "dir": "table",
+      "file": "content/patterns/table/table-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/table/",
+      "title": "Table Pattern",
+      "roles": [
+        "cell",
+        "columnheader",
+        "row",
+        "rowgroup",
+        "rowheader",
+        "table"
+      ],
+      "states": [],
+      "properties": [
+        "aria-colcount",
+        "aria-colindex",
+        "aria-colspan",
+        "aria-describedby",
+        "aria-label",
+        "aria-labelledby",
+        "aria-owns",
+        "aria-rowcount",
+        "aria-rowindex",
+        "aria-rowspan",
+        "aria-sort"
+      ],
+      "keyItems": [],
+      "keys": []
+    },
+    {
+      "dir": "tabs",
+      "file": "content/patterns/tabs/tabs-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "title": "Tabs Pattern",
+      "roles": [
+        "tab",
+        "tablist",
+        "tabpanel"
+      ],
+      "states": [
+        "aria-selected"
+      ],
+      "properties": [
+        "aria-controls",
+        "aria-haspopup",
+        "aria-label",
+        "aria-labelledby",
+        "aria-orientation"
+      ],
+      "keyItems": [
+        {
+          "section": "examples",
+          "context": [
+            "Examples"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Space",
+            "Enter"
+          ],
+          "keysRaw": [
+            "Space",
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "4de6116704f739115a71b61bce98c74998d89df8"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "c5a3b0854903a618ba90d9bf7fe93237f42cd397"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "294b7a46412af21a67ba751ca1f58dc3827535c7"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "c02a6830cce4154874afd51e5851d722edb50cc7"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Space",
+            "Enter"
+          ],
+          "keysRaw": [
+            "Space or Enter"
+          ],
+          "optional": false,
+          "textSha1": "8c6f6df809b74513fe5ee8fc956e56f85a3e9e1d"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": true,
+          "textSha1": "67dfa8675c3bf1977a2ac4895d263616b4c5c0b5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": true,
+          "textSha1": "6b8a64fc740095357be25b2598619628b4b64df1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Shift+F10"
+          ],
+          "keysRaw": [
+            "Shift + F10"
+          ],
+          "optional": false,
+          "textSha1": "0e7344caee411cd90bea336c5d44bfc84167d930"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Delete",
+            "Delete",
+            "Delete"
+          ],
+          "keysRaw": [
+            "Delete",
+            "Delete",
+            "Delete"
+          ],
+          "optional": true,
+          "textSha1": "0669e52590dfa33796d472e9e339a8ffd28fc044"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Down Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "0adf5c9239af2e35b73d250fd095a290a516c08a"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp",
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a12a0974bc1e865ac04726fdfd0601f151a9312e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown",
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Down Arrow",
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "eaf474584f3705360b98b4959109b6bba1de78bd"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "Delete",
+        "End",
+        "Enter",
+        "Home",
+        "Shift+F10",
+        "Space",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "toolbar",
+      "file": "content/patterns/toolbar/toolbar-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/",
+      "title": "Toolbar Pattern",
+      "roles": [
+        "toolbar"
+      ],
+      "states": [],
+      "properties": [
+        "aria-label",
+        "aria-labelledby",
+        "aria-orientation"
+      ],
+      "keyItems": [
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowUp",
+            "ArrowDown",
+            "ArrowLeft",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Left Arrow",
+            "Right Arrow",
+            "Up Arrow",
+            "Down Arrow",
+            "Left Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "356d5e4b10301e670fb53fb0ace8734a9be5d5eb"
+        },
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp",
+            "ArrowDown",
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowUp",
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Down Arrow",
+            "Left Arrow",
+            "Right Arrow",
+            "Up Arrow",
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "3362475b6b189e608d9cd275573977f48c6bdcb6"
+        },
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowLeft",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Left Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "2d5ae12b5d6c63924714687aa0ef3de365aeb309"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab",
+            "Shift+Tab"
+          ],
+          "keysRaw": [
+            "Tab",
+            "Shift + Tab"
+          ],
+          "optional": false,
+          "textSha1": "1fc44973a45b73675a73f8883c94954743aed8bc"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "00f7febf0d0e3ae183f386b65ffcc08871e22f74"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "cf7a351f8582c354c6ab82a869dd4740935d303d"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": true,
+          "textSha1": "758b022a55dea66cf6ea378f99dded5e8566f128"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": true,
+          "textSha1": "f15d01d8e10fb440b170450e133ae9ad46756653"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Down Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "0adf5c9239af2e35b73d250fd095a290a516c08a"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp",
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a12a0974bc1e865ac04726fdfd0601f151a9312e"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "End",
+        "Home",
+        "Shift+Tab",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "tooltip",
+      "file": "content/patterns/tooltip/tooltip-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/",
+      "title": "Tooltip Pattern",
+      "roles": [
+        "tooltip"
+      ],
+      "states": [],
+      "properties": [
+        "aria-describedby"
+      ],
+      "keyItems": [
+        {
+          "section": "about",
+          "context": [
+            "About This Pattern"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "c28b749ff227fd4cdbe082cabf23f4f5e4d59152"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Escape"
+          ],
+          "keysRaw": [
+            "Escape"
+          ],
+          "optional": false,
+          "textSha1": "d7b513181bb5ca937290afef4998a7f97aaaeae1"
+        }
+      ],
+      "keys": [
+        "Escape"
+      ]
+    },
+    {
+      "dir": "treegrid",
+      "file": "content/patterns/treegrid/treegrid-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/",
+      "title": "Treegrid Pattern",
+      "roles": [
+        "columnheader",
+        "gridcell",
+        "row",
+        "rowgroup",
+        "rowheader",
+        "treegrid"
+      ],
+      "states": [
+        "aria-readonly",
+        "aria-selected"
+      ],
+      "properties": [
+        "aria-colcount",
+        "aria-colindex",
+        "aria-colspan",
+        "aria-describedby",
+        "aria-expanded",
+        "aria-label",
+        "aria-labelledby",
+        "aria-multiselectable",
+        "aria-owns",
+        "aria-rowcount",
+        "aria-rowindex",
+        "aria-rowspan",
+        "aria-selected",
+        "aria-sort"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "p",
+          "depth": 0,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "1bbc91ece7644b16b9e58e0bac639a3bd254bedf"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "274b3720d4c05f754d7240b903a531cda4b8c555"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Tab"
+          ],
+          "keysRaw": [
+            "Tab"
+          ],
+          "optional": false,
+          "textSha1": "2bd8dc1b78cc003c3decbcb91036c2b78ddc6195"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "50e1172d60269ef6dd7983338fbd09c920b99ce0"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "308732d8521c47d4e0678174109a4d20574d5445"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "50284cc25aa28fb532d0f621f1ae07bd4c5636f2"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a6995ae2ccd5555b399423330ecdae5f9a20d6f3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageDown"
+          ],
+          "keysRaw": [
+            "Page Down"
+          ],
+          "optional": false,
+          "textSha1": "c2dadf19b07d66ea937c6125df9f600fa9659871"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "PageUp"
+          ],
+          "keysRaw": [
+            "Page Up"
+          ],
+          "optional": false,
+          "textSha1": "29b469ec983e215727808568a9ee589acfc60537"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "821caa8f3ae3ef9be39c4709cfefb5b6439e05de"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "b8ce37a1915f47c32fb322b44608243744a4dafd"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Home"
+          ],
+          "keysRaw": [
+            "Control + Home"
+          ],
+          "optional": false,
+          "textSha1": "df730523710398347b46d5893bfaf95b2df6455a"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "Control + End"
+          ],
+          "optional": false,
+          "textSha1": "4602ebf1e9753b38d4ec705a4d043ae7ab0e24f2"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+End"
+          ],
+          "keysRaw": [
+            "control + End"
+          ],
+          "optional": false,
+          "textSha1": "427163b4fe207e52ec83e5c99bea96b00896b15e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+Space"
+          ],
+          "keysRaw": [
+            "Control + Space"
+          ],
+          "optional": false,
+          "textSha1": "7a0751593c76b51625cf26b80eb7568f034ddfa6"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+Space"
+          ],
+          "keysRaw": [
+            "Shift + Space"
+          ],
+          "optional": false,
+          "textSha1": "c0f40e405c7b3a56b60c0c25fa4fd83852e1db96"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Control+A"
+          ],
+          "keysRaw": [
+            "Control + A"
+          ],
+          "optional": false,
+          "textSha1": "c1b76b40abc73bc89f1f397056e5eb0875d204cd"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowRight"
+          ],
+          "keysRaw": [
+            "Shift + Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "be7f854385a3e1b40ff2b5d1e3d27dc1394f48c5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowLeft"
+          ],
+          "keysRaw": [
+            "Shift + Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "7f71c50aba2658fc3655424ed4bcffa1b53433a2"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowDown"
+          ],
+          "keysRaw": [
+            "Shift + Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "f437d39a7f8a4d3f968fad0daa4d4402bf3ae77b"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift+ArrowUp"
+          ],
+          "keysRaw": [
+            "Shift + Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "774429df97d431ae37e591216f6ecd1f690bbf3d"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "Control+A",
+        "Control+End",
+        "Control+Home",
+        "Control+Space",
+        "End",
+        "Enter",
+        "Home",
+        "PageDown",
+        "PageUp",
+        "Shift+ArrowDown",
+        "Shift+ArrowLeft",
+        "Shift+ArrowRight",
+        "Shift+ArrowUp",
+        "Shift+Space",
+        "Tab"
+      ]
+    },
+    {
+      "dir": "treeview",
+      "file": "content/patterns/treeview/treeview-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/",
+      "title": "Tree View Pattern",
+      "roles": [
+        "group",
+        "tree",
+        "treeitem"
+      ],
+      "states": [
+        "aria-checked",
+        "aria-selected"
+      ],
+      "properties": [
+        "aria-activedescendant",
+        "aria-expanded",
+        "aria-label",
+        "aria-labelledby",
+        "aria-level",
+        "aria-multiselectable",
+        "aria-orientation",
+        "aria-owns",
+        "aria-posinset",
+        "aria-setsize"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right arrow"
+          ],
+          "optional": false,
+          "textSha1": "2cb49517b5268872863b519dd3ef785e751aae4e"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left arrow"
+          ],
+          "optional": false,
+          "textSha1": "bb543eaf030aa5cc41adc093689abd5e0b4747d1"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a668268650cca15818d266a53c34d5b913045e5f"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "25ffba5920a4fde050f77bb69956584303af6dc3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": false,
+          "textSha1": "52abbb823552f176ed93a7ae12f1adbe4d4e4333"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": false,
+          "textSha1": "d85e490bbac523c2307367a4b33e88da0958e5d6"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "83b26a255642c19a47fabb38fadfba89fa6da4f0"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "*"
+          ],
+          "keysRaw": [
+            "*"
+          ],
+          "optional": true,
+          "textSha1": "55caa86029c961ca050c47073a8f6e7525d6a944"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Space"
+          ],
+          "keysRaw": [
+            "Space"
+          ],
+          "optional": false,
+          "textSha1": "bd4f5125b611b525a5eb06b7620bfe9fba2e2539"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowDown"
+          ],
+          "keysRaw": [
+            "Shift + Down Arrow"
+          ],
+          "optional": true,
+          "textSha1": "60921514d25a79d8dcad809eb559debcb3c907b8"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowUp"
+          ],
+          "keysRaw": [
+            "Shift + Up Arrow"
+          ],
+          "optional": true,
+          "textSha1": "cbf07b2371af5f1970a649136560e663593a9513"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+Space"
+          ],
+          "keysRaw": [
+            "Shift + Space"
+          ],
+          "optional": true,
+          "textSha1": "e72d1caf83f3200b1f3be529bb546afbb9155349"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+Home"
+          ],
+          "keysRaw": [
+            "Control + Shift + Home"
+          ],
+          "optional": true,
+          "textSha1": "4cbfad521ef82f689c0c9671c4c1bb8b9a30b307"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+End"
+          ],
+          "keysRaw": [
+            "Control + Shift + End"
+          ],
+          "optional": true,
+          "textSha1": "dca719f0724f60bcff4ab9cb8eb32ec982687f95"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+A"
+          ],
+          "keysRaw": [
+            "Control + A"
+          ],
+          "optional": true,
+          "textSha1": "2ae457a4ecfedc82cb52ce634c7b809d6b08cba5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowDown"
+          ],
+          "keysRaw": [
+            "Shift + Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "17dcafca32c729dfe2699e2834f4b4f5394661b7"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+ArrowUp"
+          ],
+          "keysRaw": [
+            "Shift + Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "be74d6c075d40d20947bb073514ec555fec34c2d"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+ArrowDown"
+          ],
+          "keysRaw": [
+            "Control + Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "8a935d0bb33183610562477432e8c2405b00dd08"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+ArrowUp"
+          ],
+          "keysRaw": [
+            "Control + Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "0555dce5b25d1fdb9db6f760232b9f0e2b2127b8"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Space"
+          ],
+          "keysRaw": [
+            "Control + Space"
+          ],
+          "optional": false,
+          "textSha1": "e400a7836d4480992eedb6619b1bce0e8cd164e4"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Shift+Space"
+          ],
+          "keysRaw": [
+            "Shift + Space"
+          ],
+          "optional": true,
+          "textSha1": "e72d1caf83f3200b1f3be529bb546afbb9155349"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+Home"
+          ],
+          "keysRaw": [
+            "Control + Shift + Home"
+          ],
+          "optional": true,
+          "textSha1": "4cbfad521ef82f689c0c9671c4c1bb8b9a30b307"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+Shift+End"
+          ],
+          "keysRaw": [
+            "Control + Shift + End"
+          ],
+          "optional": true,
+          "textSha1": "dca719f0724f60bcff4ab9cb8eb32ec982687f95"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 3,
+          "keys": [
+            "Control+A"
+          ],
+          "keysRaw": [
+            "Control + A"
+          ],
+          "optional": true,
+          "textSha1": "2ae457a4ecfedc82cb52ce634c7b809d6b08cba5"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "Shift",
+            "Control"
+          ],
+          "keysRaw": [
+            "Shift",
+            "Control"
+          ],
+          "optional": false,
+          "textSha1": "5d452638f76463298b9b5231c9ac5c7a84faa319"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Shift",
+            "Control"
+          ],
+          "keysRaw": [
+            "Shift",
+            "Control"
+          ],
+          "optional": false,
+          "textSha1": "f51a22190a43ffbf2475e120b01fb53ec28149e3"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowDown",
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Down Arrow",
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "456071e976d9ed5c36f317e50575eda958bba1be"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction",
+            "Note"
+          ],
+          "in": "li",
+          "depth": 2,
+          "keys": [
+            "ArrowUp",
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Up Arrow",
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "3928f25d7f27c0e32b89fd8e2a2d08dc47dfd810"
+        }
+      ],
+      "keys": [
+        "*",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "Control",
+        "Control+A",
+        "Control+ArrowDown",
+        "Control+ArrowUp",
+        "Control+Shift+End",
+        "Control+Shift+Home",
+        "Control+Space",
+        "End",
+        "Enter",
+        "Home",
+        "Shift",
+        "Shift+ArrowDown",
+        "Shift+ArrowUp",
+        "Shift+Space",
+        "Space"
+      ]
+    },
+    {
+      "dir": "windowsplitter",
+      "file": "content/patterns/windowsplitter/windowsplitter-pattern.html",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/",
+      "title": "Window Splitter Pattern",
+      "roles": [
+        "separator"
+      ],
+      "states": [],
+      "properties": [
+        "aria-controls",
+        "aria-label",
+        "aria-labelledby",
+        "aria-valuemax",
+        "aria-valuemin",
+        "aria-valuenow"
+      ],
+      "keyItems": [
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowLeft"
+          ],
+          "keysRaw": [
+            "Left Arrow"
+          ],
+          "optional": false,
+          "textSha1": "7c5ba1d9a288d506a858b1d3a2146033a6ede5f4"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowRight"
+          ],
+          "keysRaw": [
+            "Right Arrow"
+          ],
+          "optional": false,
+          "textSha1": "a0912fa54cb1ace84ff13e1ceb75f68ed2770a76"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowUp"
+          ],
+          "keysRaw": [
+            "Up Arrow"
+          ],
+          "optional": false,
+          "textSha1": "8ab0bec5ff93f137ea235d077b0e992ba9a15d6a"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "ArrowDown"
+          ],
+          "keysRaw": [
+            "Down Arrow"
+          ],
+          "optional": false,
+          "textSha1": "e83c7bb08314f200c6b457f0181916283d1837e0"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Enter"
+          ],
+          "keysRaw": [
+            "Enter"
+          ],
+          "optional": false,
+          "textSha1": "7ce8df87aa26608e11275d031f05333ee2f4c891"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "Home"
+          ],
+          "keysRaw": [
+            "Home"
+          ],
+          "optional": true,
+          "textSha1": "1cabadf8a478fe3e07ca014a5716e84694b0bb6c"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "End"
+          ],
+          "keysRaw": [
+            "End"
+          ],
+          "optional": true,
+          "textSha1": "45c2cb447c5576ff17414d5bcf3243b9766375ec"
+        },
+        {
+          "section": "keyboard_interaction",
+          "context": [
+            "Keyboard Interaction"
+          ],
+          "in": "li",
+          "depth": 1,
+          "keys": [
+            "F6"
+          ],
+          "keysRaw": [
+            "F6"
+          ],
+          "optional": true,
+          "textSha1": "eda29f01a35b5c9b4068dc859a756d5a778a4eb5"
+        }
+      ],
+      "keys": [
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "End",
+        "Enter",
+        "F6",
+        "Home"
+      ]
+    }
+  ]
+}

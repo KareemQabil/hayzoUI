@@ -1,0 +1,326 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "tabs",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/tabs/tabs-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "tabs",
+    "name": {
+      "ar": "علامات تبويب",
+      "en": "Tabs"
+    },
+    "reference": {
+      "name": "APG: Tabs Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/"
+    },
+    "roles": [
+      {
+        "role": "tablist",
+        "on": "container of the tabs",
+        "required": true
+      },
+      {
+        "role": "tab",
+        "on": "each tab",
+        "required": true
+      },
+      {
+        "role": "tabpanel",
+        "on": "each content panel",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "tablist",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-controls",
+        "on": "tab",
+        "values": "IDREF of its tabpanel",
+        "required": true
+      },
+      {
+        "name": "aria-selected",
+        "on": "tab",
+        "values": "true on the active tab, false on the others",
+        "required": true
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "tabpanel",
+        "values": "IDREF of its tab",
+        "required": true
+      },
+      {
+        "name": "aria-haspopup",
+        "on": "tab with a popup menu",
+        "values": "menu | true",
+        "required": false
+      },
+      {
+        "name": "aria-orientation",
+        "on": "tablist",
+        "values": "vertical",
+        "required": false,
+        "note": "Default is horizontal."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Into the tab list: focus the active tab. From the tab list: move to the next element in the page sequence, which is the tabpanel unless its first meaningful element is focusable.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus to the previous tab, wrapping from first to last; optionally activate it.",
+        "when": "Horizontal tab list.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus to the next tab, wrapping from last to first; optionally activate it.",
+        "when": "Horizontal tab list.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next tab, wrapping; optionally activate it. Not handled in a horizontal tab list, so the page can scroll.",
+        "when": "Vertical tab list (aria-orientation=vertical).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous tab, wrapping; optionally activate it. Not handled in a horizontal tab list.",
+        "when": "Vertical tab list (aria-orientation=vertical).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space",
+          "Enter"
+        ],
+        "action": "Activate the focused tab if it was not activated on focus.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first tab; optionally activate it.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last tab; optionally activate it.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+F10"
+        ],
+        "action": "If the tab has a popup menu, open it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Delete"
+        ],
+        "action": "If deletion is allowed: close the tab and its panel, focus the following tab (or the preceding one if it was last) and optionally activate it; if no tab remains, focus a logical element elsewhere.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "The active tab.",
+      "exit": "Tab goes to the tabpanel, which has tabindex 0 when it contains no focusable element or its first content element is not focusable.",
+      "tabStops": "One for the tab list, plus the panel.",
+      "note": "Automatic activation on focus is recommended when panels show without noticeable delay; otherwise manual activation."
+    },
+    "variants": [
+      "automatic activation",
+      "manual activation",
+      "vertical",
+      "with deletable tabs",
+      "with a popup menu per tab"
+    ],
+    "components": [
+      "tabs",
+      "carousel",
+      "segmented-control"
+    ],
+    "orientation": {
+      "default": "horizontal",
+      "supported": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "apg": {
+      "pages": [
+        "tabs"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "tablist",
+        "requiredOwnedElements": [
+          "tab"
+        ]
+      },
+      {
+        "role": "tab",
+        "requiredContextRole": [
+          "tablist"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "roving-horizontal",
+        "question": "In a horizontal roving-focus composite (tabs, toolbar, menubar, radio group, toggle group), which arrow moves to the next item in RTL?",
+        "apg": "Silent, apart from one aside in the tabs page that calls the last tab the right-most \"in a left-to-right horizontal tab list\". Keys are named physically: Right Arrow is next.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "ArrowLeft is next in RTL for tabs, toolbar and horizontal radio groups; vertical arrows never flip.",
+            "evidence": "packages/react-aria/src/tabs/TabsKeyboardDelegate.ts, packages/react-aria/src/toolbar/useToolbar.ts, packages/react-aria/src/radio/useRadioGroup.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "The composite root swaps the forward and backward horizontal keys when direction is rtl.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "The roving focus group swaps ArrowLeft and ArrowRight before mapping a key to a focus intent when dir is rtl; toggle group, tabs, toolbar, radio group and menubar all pass dir through it.",
+            "evidence": "packages/react/roving-focus/src/roving-focus-group.tsx (getDirectionAwareKey)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Tabs and ToggleButtonGroup pass isRtl to the roving tabindex root.",
+            "evidence": "packages/mui-material/src/Tabs/Tabs.js, packages/mui-material/src/ToggleButtonGroup/ToggleButtonGroup.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Tabs flip the arrow offset when rtl and the tab bar is top or bottom; a horizontal menu maps Left to next when rtl.",
+            "evidence": "@rc-component/tabs es/TabNavList/index.js, @rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Items are laid out from inline-start, so the arrow that points at the visually following item must move to it. All five libraries agree.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/tabs/tabs-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "RTL: in a horizontal tab list the first tab is on the right, ArrowLeft goes to the next tab and ArrowRight to the previous; Home and End still mean first and last. React Aria applies the swap in vertical tab lists too (its left/right delegate follows the locale direction regardless of orientation), which only matters if a vertical list listens to horizontal arrows; the page does not bind them there. After Delete in RTL \"the following tab\" is the one to the left."
+  }
+}

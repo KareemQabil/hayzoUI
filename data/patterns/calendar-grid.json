@@ -1,0 +1,365 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "calendar-grid",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "MUI X (mui/mui-x)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "9.17.0 @ bb99a92f284a804fcc70f508a10e21de6f02bb12",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "calendar-grid",
+    "name": {
+      "ar": "شبكة التقويم",
+      "en": "Calendar grid"
+    },
+    "reference": {
+      "name": "APG example: Date Picker Dialog",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/"
+    },
+    "roles": [
+      {
+        "role": "grid",
+        "on": "the month table",
+        "required": true
+      },
+      {
+        "role": "row",
+        "on": "each week",
+        "required": true
+      },
+      {
+        "role": "columnheader",
+        "on": "weekday header",
+        "required": true,
+        "note": "Abbreviated visible text with the full weekday name as its accessible name."
+      },
+      {
+        "role": "gridcell",
+        "on": "each day",
+        "required": true
+      },
+      {
+        "role": "button",
+        "on": "previous and next month (and year) controls",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "grid",
+        "values": "IDREF of the visible month and year heading",
+        "required": true
+      },
+      {
+        "name": "aria-selected",
+        "on": "gridcell",
+        "values": "true on the selected date or dates",
+        "required": true
+      },
+      {
+        "name": "aria-disabled",
+        "on": "gridcell",
+        "values": "true for unavailable dates",
+        "required": false
+      },
+      {
+        "name": "aria-current",
+        "on": "gridcell of today",
+        "values": "date",
+        "required": false
+      },
+      {
+        "name": "aria-live",
+        "on": "month and year heading",
+        "values": "polite",
+        "required": false,
+        "note": "So a month change is announced."
+      },
+      {
+        "name": "aria-multiselectable",
+        "on": "grid",
+        "values": "true for range or multiple selection",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus to the next day.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "calendar-day-arrows"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus to the previous day.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "calendar-day-arrows"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the same weekday of the next week.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the same weekday of the previous week.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first day of the current week (the locale's first weekday).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last day of the current week.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Show the previous month and focus the same day number, or the last day of that month if it does not exist.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Show the next month and focus the same day number, or the last day of that month if it does not exist.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+PageUp"
+        ],
+        "action": "Show the same month of the previous year, with the same day rule.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+PageDown"
+        ],
+        "action": "Show the same month of the next year, with the same day rule.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "Select the focused date.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Alternative: move focus to the first day of the month.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "react-aria variant",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Alternative: move focus to the last day of the month.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "react-aria variant",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Leave the grid to the next control (month buttons, dialog buttons); the grid is one tab stop.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "The selected date, else today, else the first available day of the visible month.",
+      "exit": "Tab leaves the grid.",
+      "restore": "Focus stays on a date across month changes: the grid re-renders and the same day number (or the last day) is focused.",
+      "tabStops": "One for the grid; one per navigation button."
+    },
+    "variants": [
+      "single date",
+      "range",
+      "multiple dates",
+      "several visible months",
+      "month and year views"
+    ],
+    "components": [
+      "calendar",
+      "date-picker",
+      "date-range-picker"
+    ],
+    "uses": [
+      "grid",
+      "button"
+    ],
+    "orientation": {
+      "default": "both",
+      "supported": [
+        "both"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "grid",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      },
+      {
+        "role": "row",
+        "requiredOwnedElements": [
+          "cell",
+          "columnheader",
+          "gridcell",
+          "rowheader"
+        ],
+        "requiredContextRole": [
+          "grid",
+          "rowgroup",
+          "table",
+          "treegrid"
+        ]
+      },
+      {
+        "role": "columnheader",
+        "requiredContextRole": [
+          "row"
+        ]
+      },
+      {
+        "role": "gridcell",
+        "requiredContextRole": [
+          "row"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "calendar-day-arrows",
+        "question": "In a calendar grid in RTL, does ArrowLeft move to the previous or the next day?",
+        "apg": "No calendar pattern page; the date picker dialog example binds Left Arrow to the previous day and is silent on RTL.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "ArrowLeft focuses the next day and ArrowRight the previous day when direction is rtl.",
+            "evidence": "packages/react-aria/src/calendar/useCalendarGrid.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "mui-x",
+            "behaviour": "ArrowLeft adds one day and ArrowRight subtracts one when isRtl.",
+            "evidence": "packages/x-date-pickers/src/DateCalendar/DayCalendar.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "No arrow-key day navigation found in the panel of @rc-component/picker 1.17.0; only the masked input handles arrows.",
+            "evidence": "@rc-component/picker es/",
+            "checked": "not-found"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "No calendar component in 1.9.0.",
+            "checked": "not-found"
+          },
+          {
+            "library": "radix",
+            "behaviour": "No calendar component.",
+            "checked": "not-found"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "The week row runs from inline-start, so the first weekday is the right-most column in RTL and time flows leftward; ArrowLeft must go forward one day. Both libraries that implement the grid agree.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "RTL: the week row starts on the right, so ArrowLeft goes to the next day and ArrowRight to the previous; ArrowUp/ArrowDown, PageUp/PageDown, Home and End are unchanged (Home is still the first weekday, now the right-most column). React Aria and MUI X both swap. The previous-month button sits at inline-start and its chevron mirrors. Home/End differ between sources: APG example = week, React Aria = month; we follow APG. Arabic-first requirements that are data, not keys: the first weekday comes from the region (Saturday in much of the Gulf, Sunday or Monday elsewhere), the calendar system may be Hijri (Umm al-Qura), and day numbers use the locale's numbering system; \"same day number\" must be computed in the displayed calendar, where months have 29 or 30 days."
+  }
+}

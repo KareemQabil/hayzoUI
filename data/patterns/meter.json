@@ -1,0 +1,107 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "meter",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/meter/meter-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "meter",
+    "name": {
+      "ar": "مقياس",
+      "en": "Meter"
+    },
+    "reference": {
+      "name": "APG: Meter Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/meter/"
+    },
+    "roles": [
+      {
+        "role": "meter",
+        "on": "the gauge",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-valuenow",
+        "on": "meter",
+        "values": "current value (decimal)",
+        "required": true
+      },
+      {
+        "name": "aria-valuemin",
+        "on": "meter",
+        "values": "minimum allowed value",
+        "required": true
+      },
+      {
+        "name": "aria-valuemax",
+        "on": "meter",
+        "values": "maximum allowed value",
+        "required": true
+      },
+      {
+        "name": "aria-valuetext",
+        "on": "meter",
+        "values": "human-readable value when the number alone is not meaningful",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "meter",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      }
+    ],
+    "keyboard": [],
+    "focus": {
+      "strategy": "none",
+      "note": "Not focusable and not interactive."
+    },
+    "components": [
+      "meter",
+      "progress"
+    ],
+    "apg": {
+      "pages": [
+        "meter"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "meter",
+        "requiredStatesAndProperties": [
+          "aria-valuenow"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/meter/meter-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "No keyboard interaction. aria-valuemin must be less than aria-valuemax and the value between them. Not for progress of a task (that is the progressbar role). In RTL the bar fills from the right: styling only."
+  }
+}

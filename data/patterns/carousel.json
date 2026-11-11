@@ -1,0 +1,189 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "carousel",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/carousel/carousel-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "carousel",
+    "name": {
+      "ar": "عارض شرائح دوّار",
+      "en": "Carousel"
+    },
+    "reference": {
+      "name": "APG: Carousel (Slide Show or Image Rotator) Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/carousel/"
+    },
+    "roles": [
+      {
+        "role": "region",
+        "on": "carousel container",
+        "required": true,
+        "note": "Or group, depending on whether it deserves a landmark."
+      },
+      {
+        "role": "group",
+        "on": "each slide (basic and grouped styles); the slide-picker container (grouped style)",
+        "required": true
+      },
+      {
+        "role": "button",
+        "on": "rotation control, previous and next controls, picker buttons (grouped style)",
+        "required": true
+      },
+      {
+        "role": "tablist",
+        "on": "slide picker (tabbed style)",
+        "required": false
+      },
+      {
+        "role": "tab",
+        "on": "each picker control (tabbed style)",
+        "required": false
+      },
+      {
+        "role": "tabpanel",
+        "on": "each slide (tabbed style)",
+        "required": false,
+        "note": "Replaces group and carries no aria-roledescription."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-roledescription",
+        "on": "carousel container",
+        "values": "localized word for \"carousel\"",
+        "required": true
+      },
+      {
+        "name": "aria-roledescription",
+        "on": "slide with role group",
+        "values": "localized word for \"slide\"",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "carousel container",
+        "values": "label without the word carousel; or aria-labelledby",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "slide",
+        "values": "unique name, or \"3 of 10\"; or aria-labelledby",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "rotation control",
+        "values": "changes with the action (stop / start rotation); no aria-pressed",
+        "required": true
+      },
+      {
+        "name": "aria-live",
+        "on": "wrapper of the slides",
+        "values": "off while auto-rotating, polite otherwise",
+        "required": false
+      },
+      {
+        "name": "aria-atomic",
+        "on": "wrapper of the slides",
+        "values": "false",
+        "required": false
+      },
+      {
+        "name": "aria-disabled",
+        "on": "picker button of the current slide (grouped style)",
+        "values": "true",
+        "required": false,
+        "note": "Preferred over disabled so the button stays in the tab sequence."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move through the interactive elements of the carousel in page order; the rotation control, when present, comes first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move backward through the interactive elements of the carousel.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Rotation control first, before the rotating content. Automatic rotation stops as soon as any element inside receives keyboard focus (and while the pointer hovers) and resumes only on explicit request.",
+      "restore": "Activating previous, next or the rotation control does not move focus.",
+      "tabStops": "Basic: rotation, previous, next, plus slide content. Tabbed: one more for the tablist. Grouped: one per picker button."
+    },
+    "variants": [
+      "basic",
+      "tabbed",
+      "grouped",
+      "auto-rotating"
+    ],
+    "components": [
+      "carousel"
+    ],
+    "uses": [
+      "button",
+      "tabs"
+    ],
+    "apg": {
+      "pages": [
+        "carousel"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "tablist",
+        "requiredOwnedElements": [
+          "tab"
+        ]
+      },
+      {
+        "role": "tab",
+        "requiredContextRole": [
+          "tablist"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/carousel/carousel-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "APG gives the carousel no arrow keys of its own; in the tabbed style the picker follows tabs, whose horizontal arrows mirror in RTL. In RTL the next control sits at inline-end (left) and its chevron mirrors; slide order follows the inline direction. aria-roledescription values must be translated."
+  }
+}

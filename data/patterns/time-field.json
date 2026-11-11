@@ -1,0 +1,264 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "time-field",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "MUI X (mui/mui-x)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "9.17.0 @ bb99a92f284a804fcc70f508a10e21de6f02bb12",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "time-field",
+    "name": {
+      "ar": "حقل الوقت",
+      "en": "Time field"
+    },
+    "reference": {
+      "name": "React Aria: useTimeField",
+      "url": "https://react-spectrum.adobe.com/react-aria/useTimeField.html"
+    },
+    "roles": [
+      {
+        "role": "group",
+        "on": "the field",
+        "required": true
+      },
+      {
+        "role": "spinbutton",
+        "on": "hour, minute, second and day-period segments",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "group",
+        "values": "IDREF of the field label",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "spinbutton",
+        "values": "localized segment name",
+        "required": true
+      },
+      {
+        "name": "aria-valuenow",
+        "on": "spinbutton",
+        "values": "numeric value",
+        "required": true
+      },
+      {
+        "name": "aria-valuetext",
+        "on": "spinbutton",
+        "values": "formatted value, including the day period for the hour in a 12-hour clock",
+        "required": true
+      },
+      {
+        "name": "aria-valuemin",
+        "on": "spinbutton",
+        "values": "segment minimum",
+        "required": true
+      },
+      {
+        "name": "aria-valuemax",
+        "on": "spinbutton",
+        "values": "segment maximum",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus to the segment visually to the right.",
+        "directionSensitive": true,
+        "rtl": "visual",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "date-segments"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus to the segment visually to the left.",
+        "directionSensitive": true,
+        "rtl": "visual",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "date-segments"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Increase the focused segment by one, wrapping within its range; on an empty segment start from the placeholder time.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Decrease the focused segment by one, wrapping within its range.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Increase the focused segment by a larger step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Decrease the focused segment by a larger step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Set the focused segment to its minimum.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Set the focused segment to its maximum.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Backspace",
+          "Delete"
+        ],
+        "action": "Remove the last typed digit of the focused segment; when it becomes empty show the placeholder; on an already empty segment move to the previous segment.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "A digit (in any digit set the locale accepts) is appended to the focused segment; when no further digit could be valid, focus advances to the next segment. Letters match a month name or day period by prefix.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move to the next segment, then out of the field; each segment is a tab stop.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "react-aria"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "The hour segment.",
+      "exit": "Tab from the last segment.",
+      "tabStops": "One per segment."
+    },
+    "variants": [
+      "12-hour with day period",
+      "24-hour",
+      "with seconds",
+      "with time zone (read-only segment)"
+    ],
+    "components": [
+      "time-picker",
+      "date-picker"
+    ],
+    "uses": [
+      "spinbutton",
+      "date-field"
+    ],
+    "rtlDecisions": [
+      {
+        "id": "date-segments",
+        "question": "In a segmented date or time field in RTL, which segment does ArrowLeft move to?",
+        "apg": "No segmented-field page. Each segment is a spinbutton, whose page binds only vertical arrows.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "In RTL the group finds the neighbouring segment by geometry (bounding rectangles), not DOM order, so ArrowLeft goes to the segment visually on the left.",
+            "evidence": "packages/react-aria/src/datepicker/useDatePickerGroup.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "mui-x",
+            "behaviour": "ArrowRight moves to the section recorded as the right-hand neighbour in a visual section order computed with isRtl.",
+            "evidence": "packages/x-date-pickers/src/internals/hooks/useField/useFieldRootProps.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "The masked input moves the cell index by -1 on ArrowLeft and +1 on ArrowRight with no direction test.",
+            "evidence": "@rc-component/picker es/PickerInput/Selector/Input.mjs",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "visual",
+        "reason": "Numeric date and time segments form left-to-right runs inside right-to-left text, so DOM order and visual order disagree in ways a simple swap cannot express. The key must move to the segment it points at; the engine resolves that from the rendered order.",
+        "status": "divergent"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Same contract as date-field. RTL: hours, the separator and minutes form one left-to-right run (10:30 reads hour-first from the left) even in Arabic, while the day-period segment (ص / م) is right-to-left text placed after it in logical order, so it appears to the left of the digits. Movement is visual, as in date-field. On the day-period segment ArrowUp and ArrowDown toggle it; typing the first letter of the localized period selects it (React Aria also accepts a and p)."
+  }
+}

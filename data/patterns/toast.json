@@ -1,0 +1,178 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "toast",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "toast",
+    "name": {
+      "ar": "إشعار مؤقت",
+      "en": "Toast (notification region)"
+    },
+    "reference": {
+      "name": "Radix Primitives: Toast",
+      "url": "https://www.radix-ui.com/primitives/docs/components/toast"
+    },
+    "roles": [
+      {
+        "role": "region",
+        "on": "viewport that holds every toast",
+        "required": true,
+        "note": "A labelled landmark, so it can be reached by landmark navigation."
+      },
+      {
+        "role": "status",
+        "on": "a toast with low urgency",
+        "required": false,
+        "note": "Implies aria-live=polite."
+      },
+      {
+        "role": "alert",
+        "on": "a toast that needs immediate attention",
+        "required": false,
+        "note": "Implies aria-live=assertive; use sparingly."
+      },
+      {
+        "role": "button",
+        "on": "action and close controls",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "viewport region",
+        "values": "localized name; Radix includes the hotkey in it",
+        "required": true
+      },
+      {
+        "name": "aria-live",
+        "on": "toast",
+        "values": "polite | assertive (implied by the role)",
+        "required": false
+      },
+      {
+        "name": "aria-atomic",
+        "on": "toast",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "tabindex",
+        "on": "viewport region",
+        "values": "-1",
+        "required": true,
+        "note": "Focusable by the hotkey only."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "F8"
+        ],
+        "action": "From anywhere in the page: move focus to the toast viewport.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "region hotkey",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "F6"
+        ],
+        "action": "From anywhere in the page: move focus to the toast viewport.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "region hotkey",
+        "origin": "base-ui"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Inside the viewport: move through toasts and their controls, newest first; leaving returns to the page.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Inside the viewport: move backward.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "With focus in a toast: close that toast.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "On an action or close button: activate it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      }
+    ],
+    "focus": {
+      "strategy": "none",
+      "entry": "A toast never takes focus when it appears. The user reaches the region with the hotkey or landmark navigation.",
+      "exit": "Tab out of the region. Timers pause while focus or the pointer is inside the region, and while the window is blurred.",
+      "restore": "When the focused toast closes, focus moves to the next toast, or back to where it was before the hotkey.",
+      "tabStops": "None in the page sequence."
+    },
+    "variants": [
+      "foreground (assertive)",
+      "background (polite)",
+      "with action",
+      "persistent (no timer)"
+    ],
+    "components": [
+      "toast"
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "The two libraries disagree on the hotkey (Radix F8, Base UI F6, both read from source); we make it configurable with F8 as default, since F6 is the browser's pane-cycling key. An action in a toast must have an alternative path, because the toast may expire. Not direction-sensitive for keys. Swipe-to-dismiss is a pointer gesture whose default direction is toward inline-end and therefore mirrors (leftward in RTL)."
+  }
+}

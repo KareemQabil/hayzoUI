@@ -1,0 +1,336 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "color-picker",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "color-picker",
+    "name": {
+      "ar": "منتقي الألوان",
+      "en": "Color picker"
+    },
+    "reference": {
+      "name": "React Aria: useColorArea",
+      "url": "https://react-spectrum.adobe.com/react-aria/useColorArea.html"
+    },
+    "roles": [
+      {
+        "role": "group",
+        "on": "the two-dimensional colour area",
+        "required": true,
+        "note": "Holds two visually hidden range inputs, one per channel."
+      },
+      {
+        "role": "slider",
+        "on": "x and y channel of the area; hue and alpha strips",
+        "required": true
+      },
+      {
+        "role": "textbox",
+        "on": "hex or channel value field",
+        "required": false
+      },
+      {
+        "role": "listbox",
+        "on": "swatch palette",
+        "required": false
+      },
+      {
+        "role": "option",
+        "on": "each swatch",
+        "required": false
+      },
+      {
+        "role": "button",
+        "on": "trigger that opens the picker; eyedropper",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-roledescription",
+        "on": "the area sliders",
+        "values": "localized \"2D slider\"",
+        "required": false
+      },
+      {
+        "name": "aria-valuetext",
+        "on": "slider",
+        "values": "channel name and value, plus the resulting colour name where available",
+        "required": true
+      },
+      {
+        "name": "aria-valuenow",
+        "on": "slider",
+        "values": "channel value",
+        "required": true
+      },
+      {
+        "name": "aria-orientation",
+        "on": "y-channel slider of the area",
+        "values": "vertical",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "slider",
+        "values": "localized channel name (hue, saturation, brightness, alpha)",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Increase the x channel by one step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "color-area-arrows"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Decrease the x channel by one step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "color-area-arrows"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Increase the y channel by one step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Decrease the y channel by one step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Shift+ArrowRight"
+        ],
+        "action": "Increase the x channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "color-area-arrows"
+      },
+      {
+        "keys": [
+          "Shift+ArrowLeft"
+        ],
+        "action": "Decrease the x channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "color-area-arrows"
+      },
+      {
+        "keys": [
+          "Shift+ArrowUp"
+        ],
+        "action": "Increase the y channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Shift+ArrowDown"
+        ],
+        "action": "Decrease the y channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Increase the y channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Decrease the y channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Decrease the x channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Increase the x channel by a page step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "area",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Increase the channel of a horizontal hue or alpha strip by one step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "channel strip",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "color-area-arrows"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Decrease the channel of a horizontal hue or alpha strip by one step.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "channel strip",
+        "origin": "react-aria",
+        "debatable": true,
+        "decision": "color-area-arrows"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move between area, strips, value fields and swatches; each is one tab stop.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "The area thumb.",
+      "exit": "Tab.",
+      "tabStops": "One for the area (its two inputs share the thumb), one per strip, one per field, one for the swatch list."
+    },
+    "variants": [
+      "inline",
+      "in a popover behind a swatch button",
+      "area plus hue strip",
+      "colour wheel",
+      "swatches only"
+    ],
+    "components": [
+      "color-picker"
+    ],
+    "uses": [
+      "slider",
+      "listbox",
+      "popover"
+    ],
+    "ariaRequired": [
+      {
+        "role": "slider",
+        "requiredStatesAndProperties": [
+          "aria-valuenow"
+        ]
+      },
+      {
+        "role": "listbox",
+        "requiredOwnedElements": [
+          "group > option",
+          "option"
+        ]
+      },
+      {
+        "role": "option",
+        "requiredStatesAndProperties": [
+          "aria-selected"
+        ],
+        "requiredContextRole": [
+          "group",
+          "listbox"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "color-area-arrows",
+        "question": "Is a two-dimensional colour area (and its hue or alpha strip) mirrored in RTL, with its horizontal arrows?",
+        "apg": "No colour picker page.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "Mirrors: in RTL ArrowLeft increments the x channel, the pointer x is inverted, and Home and End swap (Home increments x by a page step).",
+            "evidence": "packages/react-aria/src/color/useColorArea.ts",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "none",
+        "reason": "A colour plane is a picture of a colour space, not a reading-order control: mirroring it changes where every colour sits relative to other tools. Keep the plane and its strips physical, with ArrowRight always increasing the x channel, and expose an opt-in to mirror. React Aria takes the opposite view; this needs a decision by a designer who works in Arabic.",
+        "status": "open"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "needs-review"
+    },
+    "notes": "RTL is an open decision (color-area-arrows). React Aria mirrors the area: in RTL ArrowLeft increments x, the pointer mapping is inverted, and Home and End swap. We record the bindings as not mirrored, on the argument that the colour plane is a picture and should match other tools, and flag them debatable; whichever way it is decided, the strip and the area must agree with each other, and Home/End must follow the arrows. Hex values are always left-to-right (isolate the field). The swatch list, by contrast, is ordinary content: a horizontal or grid listbox whose arrows mirror."
+  }
+}

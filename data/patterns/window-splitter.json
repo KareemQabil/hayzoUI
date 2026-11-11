@@ -1,0 +1,251 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "window-splitter",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/windowsplitter/windowsplitter-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "window-splitter",
+    "name": {
+      "ar": "فاصل النوافذ",
+      "en": "Window splitter"
+    },
+    "reference": {
+      "name": "APG: Window Splitter Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/"
+    },
+    "roles": [
+      {
+        "role": "separator",
+        "on": "the focusable splitter",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-valuenow",
+        "on": "separator",
+        "values": "position of the splitter, as the size of the primary pane",
+        "required": true
+      },
+      {
+        "name": "aria-valuemin",
+        "on": "separator",
+        "values": "position at the smallest primary pane, usually 0",
+        "required": true
+      },
+      {
+        "name": "aria-valuemax",
+        "on": "separator",
+        "values": "position at the largest primary pane, usually 100",
+        "required": true
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "separator",
+        "values": "IDREF of the visible label of the primary pane; otherwise aria-label",
+        "required": true,
+        "note": "The splitter is named after the primary pane."
+      },
+      {
+        "name": "aria-controls",
+        "on": "separator",
+        "values": "IDREF of the primary pane",
+        "required": true
+      },
+      {
+        "name": "aria-orientation",
+        "on": "separator",
+        "values": "vertical for a splitter between side-by-side panes",
+        "required": false,
+        "note": "Not on the pattern page. WAI-ARIA 1.2 defaults separator to horizontal, so a vertical splitter must say so."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move a vertical splitter to the left.",
+        "directionSensitive": true,
+        "rtl": "visual",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "splitter-arrows"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move a vertical splitter to the right.",
+        "directionSensitive": true,
+        "rtl": "visual",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "splitter-arrows"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move a horizontal splitter up.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move a horizontal splitter down.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "If the primary pane is not collapsed, collapse it; if it is collapsed, restore the splitter to its previous position.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move the splitter to where the primary pane has its smallest allowed size (possibly fully collapsed).",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move the splitter to where the primary pane has its largest allowed size (possibly collapsing the secondary pane).",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "F6"
+        ],
+        "action": "Cycle focus through the window panes.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "The splitter is one tab stop.",
+      "tabStops": "One per splitter.",
+      "note": "A fixed-size splitter (toggle only) omits the arrow keys."
+    },
+    "variants": [
+      "variable",
+      "fixed (collapse and restore only)",
+      "vertical (side-by-side panes)",
+      "horizontal (stacked panes)"
+    ],
+    "components": [
+      "splitter",
+      "sidebar"
+    ],
+    "orientation": {
+      "default": "vertical",
+      "supported": [
+        "vertical",
+        "horizontal"
+      ]
+    },
+    "apg": {
+      "pages": [
+        "windowsplitter"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "separator",
+        "requiredStatesAndProperties": [
+          "aria-valuenow"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "splitter-arrows",
+        "question": "In RTL, does ArrowLeft move a vertical splitter left on screen, or shrink the primary pane?",
+        "apg": "Physical wording: Left Arrow moves a vertical splitter to the left. Silent on RTL. aria-valuenow tracks the primary pane size.",
+        "libraries": [
+          {
+            "library": "ant-design",
+            "behaviour": "The separator of Splitter has no arrow-key handler; only its collapse buttons are focusable. Pointer deltas are reversed for a horizontal splitter in RTL.",
+            "evidence": "components/splitter/SplitBar.tsx, components/splitter/Splitter.tsx",
+            "checked": "not-found"
+          },
+          {
+            "library": "react-aria",
+            "behaviour": "No splitter. Table column resizing reverses the horizontal delta in RTL so that the divider follows the arrow.",
+            "evidence": "packages/react-aria/src/table/useTableColumnResize.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "No splitter component.",
+            "checked": "not-found"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "No splitter component in 1.9.0.",
+            "checked": "not-found"
+          }
+        ],
+        "recommendation": "visual",
+        "reason": "The APG binding is physical and a divider is a physical object: it must go where the arrow points. The primary pane is at inline-start, so in RTL ArrowLeft grows it and raises aria-valuenow.",
+        "status": "open"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/windowsplitter/windowsplitter-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "needs-review"
+    },
+    "notes": "Terminology trap: a \"vertical splitter\" is a vertical line between side-by-side panes, moved with the horizontal arrows. RTL: the page words the arrows physically and we keep them physical (rtl: visual): ArrowLeft always moves the divider left. The primary pane is the inline-start pane, on the right in RTL, so there ArrowLeft enlarges it and raises aria-valuenow, while in LTR ArrowLeft lowers it. Home and End are defined by pane size, not side, and do not change. A test must therefore assert the value change with the sign flipped in RTL and the pixel movement unchanged. No library studied implements arrow keys on a splitter (Ant Design's separator is pointer-only), so this decision is ours."
+  }
+}

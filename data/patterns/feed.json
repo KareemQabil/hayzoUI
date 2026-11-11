@@ -1,0 +1,169 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "feed",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/feed/feed-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "feed",
+    "name": {
+      "ar": "موجز",
+      "en": "Feed"
+    },
+    "reference": {
+      "name": "APG: Feed Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/feed/"
+    },
+    "roles": [
+      {
+        "role": "feed",
+        "on": "container of the articles",
+        "required": true
+      },
+      {
+        "role": "article",
+        "on": "each unit of content",
+        "required": true,
+        "note": "All feed content is inside an article."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "feed",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "article",
+        "values": "IDREF of elements inside it that distinguish it",
+        "required": true
+      },
+      {
+        "name": "aria-describedby",
+        "on": "article",
+        "values": "IDREF of its primary content",
+        "required": false,
+        "note": "Strongly recommended."
+      },
+      {
+        "name": "aria-posinset",
+        "on": "article",
+        "values": "1-based position",
+        "required": true
+      },
+      {
+        "name": "aria-setsize",
+        "on": "article",
+        "values": "number loaded, or total; -1 when unknown",
+        "required": true
+      },
+      {
+        "name": "aria-busy",
+        "on": "feed",
+        "values": "true while articles are being added or removed, then false",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Move focus to the next article.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Move focus to the previous article.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+End"
+        ],
+        "action": "Move focus to the first focusable element after the feed (in a nested feed: to the next article of the outer feed).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Home"
+        ],
+        "action": "Move focus to the first focusable element before the feed.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Articles are focusable (tabindex 0 or -1); focus may be on an article or on an element inside it. New articles load as focus approaches the end.",
+      "exit": "Control+End or Control+Home, since Tab alone could never reach the end of an endless feed.",
+      "tabStops": "Focusable content of the loaded articles."
+    },
+    "components": [
+      "list-view",
+      "timeline"
+    ],
+    "apg": {
+      "pages": [
+        "feed"
+      ],
+      "keysNotBound": [
+        {
+          "key": "Tab",
+          "reason": "Named only as one option for entering a nested feed; Tab keeps its page-sequence meaning."
+        },
+        {
+          "key": "Alt+PageDown",
+          "reason": "An example of a key an author may add for entering a nested feed, not a binding of the pattern."
+        }
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "feed",
+        "requiredOwnedElements": [
+          "article"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/feed/feed-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "The role has no established keyboard convention; the bindings are a recommendation and need discoverable documentation. Not direction-sensitive."
+  }
+}

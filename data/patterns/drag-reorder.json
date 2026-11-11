@@ -1,0 +1,324 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "drag-reorder",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "drag-reorder",
+    "name": {
+      "ar": "إعادة الترتيب بالسحب والإفلات",
+      "en": "Drag-and-drop reordering (with keyboard)"
+    },
+    "reference": {
+      "name": "React Aria: Drag and Drop",
+      "url": "https://react-spectrum.adobe.com/react-aria/dnd.html"
+    },
+    "roles": [
+      {
+        "role": "listbox",
+        "on": "the reorderable collection",
+        "required": true,
+        "note": "Or grid, tree or list, whatever the collection already is; reordering adds no role of its own."
+      },
+      {
+        "role": "option",
+        "on": "each item",
+        "required": true
+      },
+      {
+        "role": "button",
+        "on": "a drag handle inside an item",
+        "required": false,
+        "note": "Needed when the item itself has another primary action."
+      },
+      {
+        "role": "status",
+        "on": "visually hidden live region for instructions and results",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-describedby",
+        "on": "item or handle",
+        "values": "IDREF of the instruction text (\"press Space to reorder\")",
+        "required": true
+      },
+      {
+        "name": "aria-roledescription",
+        "on": "handle or item",
+        "values": "localized \"sortable\"",
+        "required": false
+      },
+      {
+        "name": "aria-pressed",
+        "on": "handle",
+        "values": "true while the item is picked up",
+        "required": false
+      },
+      {
+        "name": "aria-live",
+        "on": "status region",
+        "values": "assertive for pick-up, move, drop and cancel messages",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Space",
+          "Enter"
+        ],
+        "action": "On an item or its handle: pick the item up. Announce its position (\"item 2 of 5\").",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "While picked up in a vertical list: move the item one position later and announce the new position.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "While picked up in a vertical list: move the item one position earlier.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "While picked up in a horizontal list or grid: move the item one position later.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "move mode (arrows)",
+        "origin": "hayzo",
+        "debatable": true,
+        "decision": "reorder-arrows"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "While picked up in a horizontal list or grid: move the item one position earlier.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "move mode (arrows)",
+        "origin": "hayzo",
+        "debatable": true,
+        "decision": "reorder-arrows"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "While picked up: move the item to the first position.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "While picked up: move the item to the last position.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Space",
+          "Enter"
+        ],
+        "action": "While picked up: drop the item at its current position and announce the result.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "While picked up: cancel, return the item to where it started and announce it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "While picked up: drop (or cancel, by configuration) and move on; a picked-up item must not survive loss of focus.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "move mode (arrows)",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "On a draggable item: start a keyboard drag.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "drop-target mode (React Aria)",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "During a keyboard drag: move to the next valid drop target (between items, on an item, or another collection).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "drop-target mode (React Aria)",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "During a keyboard drag: move to the previous valid drop target.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "drop-target mode (React Aria)",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "During a keyboard drag: drop on the focused target.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "drop-target mode (React Aria)",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "During a keyboard drag: cancel.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "drop-target mode (React Aria)",
+        "origin": "react-aria"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "The collection keeps its own strategy; the picked-up item keeps DOM focus while it moves.",
+      "exit": "Drop, cancel, or focus leaving the collection.",
+      "restore": "After drop or cancel, focus is on the moved item at its final position.",
+      "tabStops": "As the underlying collection.",
+      "note": "Two models exist. Move mode keeps focus on the item and moves it with arrows (the common sortable-list model). Drop-target mode (React Aria, read from source) keeps the item in place and cycles focus through drop targets with Tab, which also covers dragging between collections."
+    },
+    "variants": [
+      "vertical list",
+      "horizontal list",
+      "grid",
+      "tree (with nesting by horizontal arrows)",
+      "between lists",
+      "explicit move buttons (move up, move down) as the non-drag alternative"
+    ],
+    "components": [
+      "list-view",
+      "data-table",
+      "tree",
+      "tags-input"
+    ],
+    "uses": [
+      "listbox"
+    ],
+    "orientation": {
+      "default": "vertical",
+      "supported": [
+        "vertical",
+        "horizontal",
+        "both"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "listbox",
+        "requiredOwnedElements": [
+          "group > option",
+          "option"
+        ]
+      },
+      {
+        "role": "option",
+        "requiredStatesAndProperties": [
+          "aria-selected"
+        ],
+        "requiredContextRole": [
+          "group",
+          "listbox"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "reorder-arrows",
+        "question": "While an item of a horizontal list is picked up for keyboard reordering in RTL, which arrow moves it later in the order?",
+        "apg": "No drag-and-drop page.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "Keyboard drag does not use arrows: Enter starts, Tab cycles drop targets, Enter drops, Escape cancels. Drop-position maths treats a horizontal list in RTL as reversed.",
+            "evidence": "packages/react-aria/src/dnd/DragManager.ts, packages/react-aria/src/dnd/useDrag.ts, packages/react-aria/src/dnd/ListDropTargetDelegate.ts",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "The picked-up item must travel in the direction of the arrow; in RTL the later positions are to the left.",
+        "status": "open"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "needs-review"
+    },
+    "notes": "WCAG 2.2 success criterion 2.5.7 requires a non-dragging alternative for pointer users as well; move buttons or a \"move to\" menu satisfy it. Move-mode bindings are convention (as in dnd-kit and similar libraries, whose source was not read) and need review. RTL: in a horizontal list the later positions are to the left, so ArrowLeft moves the item later (decision reorder-arrows, ours; no library evidence for arrow-based horizontal moves). Vertical moves are unaffected. In a tree, the arrow that indents (nests under the previous sibling) is the one that points to inline-end. Announcements carry positions as numbers and need Arabic plural forms."
+  }
+}

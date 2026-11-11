@@ -1,0 +1,85 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "tooltip",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/tooltip/tooltip-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "tooltip",
+    "name": {
+      "ar": "تلميح",
+      "en": "Tooltip"
+    },
+    "reference": {
+      "name": "APG: Tooltip Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/"
+    },
+    "roles": [
+      {
+        "role": "tooltip",
+        "on": "the popup",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-describedby",
+        "on": "trigger",
+        "values": "IDREF of the tooltip",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Dismiss the tooltip.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "none",
+      "entry": "Focus stays on the trigger while the tooltip shows; the tooltip never receives focus.",
+      "exit": "A tooltip shown on focus hides on blur; one shown on hover stays while the pointer is over the trigger or the tooltip."
+    },
+    "components": [
+      "tooltip"
+    ],
+    "apg": {
+      "pages": [
+        "tooltip"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/tooltip/tooltip-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "The page is marked by APG as work in progress without task-force consensus. A tooltip holds no focusable content; use popover for that. Not direction-sensitive; placement start/end is positioning data."
+  }
+}

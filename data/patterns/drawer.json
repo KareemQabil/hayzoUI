@@ -1,0 +1,126 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "drawer",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "drawer",
+    "name": {
+      "ar": "درج جانبي",
+      "en": "Drawer"
+    },
+    "reference": {
+      "name": "Base UI: Drawer",
+      "url": "https://base-ui.com/react/components/drawer"
+    },
+    "roles": [
+      {
+        "role": "dialog",
+        "on": "drawer panel",
+        "required": true
+      },
+      {
+        "role": "button",
+        "on": "close control",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-modal",
+        "on": "dialog",
+        "values": "true",
+        "required": true,
+        "note": "For a modal drawer."
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "dialog",
+        "values": "IDREF of the title; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-describedby",
+        "on": "dialog",
+        "values": "IDREF of a short description",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move to the next tabbable element inside the drawer, wrapping from last to first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move to the previous tabbable element inside the drawer, wrapping from first to last.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the drawer.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "focus-trap",
+      "entry": "As dialog-modal.",
+      "exit": "Escape, the close control, or a press on the backdrop.",
+      "restore": "To the element that opened the drawer.",
+      "tabStops": "The tabbable elements inside, cycling."
+    },
+    "variants": [
+      "modal",
+      "non-modal (persistent side panel: no trap, a complementary landmark instead of a dialog)",
+      "side: start | end | top | bottom",
+      "bottom sheet with snap points"
+    ],
+    "components": [
+      "drawer",
+      "sidebar"
+    ],
+    "uses": [
+      "dialog-modal"
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Keyboard contract is exactly dialog-modal (bindings repeated from that APG page). Not direction-sensitive for keys. The side must be logical: \"start\" is the right edge in RTL, and the swipe-to-close gesture travels toward that edge. Base UI exposes swipe direction as data attributes; we derive it from side and direction."
+  }
+}

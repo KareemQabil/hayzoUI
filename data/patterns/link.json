@@ -1,0 +1,90 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "link",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/link/link-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "link",
+    "name": {
+      "ar": "رابط",
+      "en": "Link"
+    },
+    "reference": {
+      "name": "APG: Link Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/link/"
+    },
+    "roles": [
+      {
+        "role": "link",
+        "on": "the element with the link text or graphic",
+        "required": true,
+        "note": "A native anchor with href is preferred."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Follow the link and move focus to its target.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+F10"
+        ],
+        "action": "Open the context menu of the link.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "One tab stop.",
+      "tabStops": "One."
+    },
+    "components": [
+      "link",
+      "breadcrumb",
+      "pagination"
+    ],
+    "apg": {
+      "pages": [
+        "link"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/link/link-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Space does not activate a link. Not direction-sensitive."
+  }
+}

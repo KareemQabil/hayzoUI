@@ -1,0 +1,103 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "disclosure",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/disclosure/disclosure-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "disclosure",
+    "name": {
+      "ar": "إظهار وإخفاء",
+      "en": "Disclosure (show/hide)"
+    },
+    "reference": {
+      "name": "APG: Disclosure (Show/Hide) Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/"
+    },
+    "roles": [
+      {
+        "role": "button",
+        "on": "the control that shows and hides the content",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-expanded",
+        "on": "button",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-controls",
+        "on": "button",
+        "values": "IDREF of the content",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Toggle the visibility of the content.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Toggle the visibility of the content.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "The button is one tab stop.",
+      "restore": "Focus stays on the button.",
+      "tabStops": "One, plus the content when shown."
+    },
+    "components": [
+      "collapsible",
+      "accordion",
+      "navigation-menu"
+    ],
+    "apg": {
+      "pages": [
+        "disclosure"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/disclosure/disclosure-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Not direction-sensitive. The chevron that points to inline-end when closed mirrors in RTL (icon data)."
+  }
+}

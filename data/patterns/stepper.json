@@ -1,0 +1,166 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "stepper",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "stepper",
+    "name": {
+      "ar": "خطوات متتابعة",
+      "en": "Stepper (wizard steps)"
+    },
+    "reference": {
+      "name": "WAI-ARIA 1.2: aria-current",
+      "url": "https://www.w3.org/TR/wai-aria-1.2/#aria-current"
+    },
+    "roles": [
+      {
+        "role": "navigation",
+        "on": "container, when steps are navigable",
+        "required": false
+      },
+      {
+        "role": "list",
+        "on": "the ordered steps",
+        "required": true,
+        "note": "An ol element."
+      },
+      {
+        "role": "listitem",
+        "on": "each step",
+        "required": true
+      },
+      {
+        "role": "link",
+        "on": "a step the user may jump to",
+        "required": false,
+        "note": "Or a button."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-current",
+        "on": "the active step",
+        "values": "step",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "list or navigation",
+        "values": "localized name such as \"progress\"",
+        "required": true
+      },
+      {
+        "name": "aria-disabled",
+        "on": "a step that cannot be visited yet",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-label",
+        "on": "step",
+        "values": "includes the state in words (completed, current, not completed) when it is shown only by an icon",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move through the steps that are interactive, in order; non-interactive steps are skipped.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move backward.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "Go to the focused step, if it may be visited.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Interactive steps are tab stops.",
+      "restore": "On a step change, focus moves to the heading or first field of the new step and the change is announced.",
+      "tabStops": "One per interactive step; none for a read-only stepper."
+    },
+    "variants": [
+      "read-only progress indicator",
+      "navigable (linear: only visited steps)",
+      "navigable (non-linear)",
+      "vertical with inline content",
+      "tabs-like (then use tabs)"
+    ],
+    "components": [
+      "stepper"
+    ],
+    "uses": [
+      "link",
+      "button"
+    ],
+    "orientation": {
+      "default": "horizontal",
+      "supported": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "list",
+        "requiredOwnedElements": [
+          "listitem"
+        ]
+      },
+      {
+        "role": "listitem",
+        "requiredContextRole": [
+          "directory",
+          "list"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "APG has no stepper page; the contract is an ordered list with aria-current=\"step\". No arrow keys, so no direction-sensitive binding. RTL: step 1 is on the right, connectors and the progress fill run right-to-left, and the Next button sits at inline-end (left) with a mirrored chevron. Step numbers use the locale's digits."
+  }
+}

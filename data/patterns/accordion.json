@@ -1,0 +1,165 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "accordion",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/accordion/accordion-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "accordion",
+    "name": {
+      "ar": "أكورديون",
+      "en": "Accordion"
+    },
+    "reference": {
+      "name": "APG: Accordion Pattern (Sections With Show/Hide Functionality)",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/"
+    },
+    "roles": [
+      {
+        "role": "heading",
+        "on": "wrapper of each header button",
+        "required": true,
+        "note": "A native heading element is preferred; the button is its only child."
+      },
+      {
+        "role": "button",
+        "on": "accordion header",
+        "required": true
+      },
+      {
+        "role": "region",
+        "on": "panel",
+        "required": false,
+        "note": "Avoid when more than about six panels can be open at once."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-level",
+        "on": "heading",
+        "values": "integer matching the page outline",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "header button",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-controls",
+        "on": "header button",
+        "values": "IDREF of its panel",
+        "required": true
+      },
+      {
+        "name": "aria-disabled",
+        "on": "header button of an open panel that may not be collapsed",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "panel with role region",
+        "values": "IDREF of its header button",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "On the header of a collapsed panel: expand it; if only one panel may be open, collapse the other. On the header of an expanded panel: collapse it, if collapsing is allowed.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move to the next focusable element; every header and every focusable element in open panels is in the page sequence.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move to the previous focusable element in the page sequence.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Each header is its own tab stop.",
+      "exit": "Tab leaves in page order.",
+      "restore": "Focus stays on the header after toggling.",
+      "tabStops": "One per header, plus the focusable content of open panels."
+    },
+    "variants": [
+      "single-open",
+      "multi-open",
+      "always-one-open (no collapse)"
+    ],
+    "components": [
+      "accordion",
+      "collapsible"
+    ],
+    "uses": [
+      "disclosure"
+    ],
+    "orientation": {
+      "default": "vertical",
+      "supported": [
+        "vertical"
+      ]
+    },
+    "apg": {
+      "pages": [
+        "accordion"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "heading",
+        "requiredStatesAndProperties": [
+          "aria-level"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/accordion/accordion-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "APG defines no arrow keys for accordion; Radix and Base UI add ArrowDown/ArrowUp/Home/End between headers as an extra. None of the keys is direction-sensitive. The expand chevron is an icon concern (it points to inline-end when collapsed in some designs and must mirror)."
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "autocomplete",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "autocomplete",
+    "name": {
+      "ar": "إكمال تلقائي",
+      "en": "Autocomplete (and how it differs from combobox and select)"
+    },
+    "reference": {
+      "name": "APG: Combobox Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/"
+    },
+    "roles": [
+      {
+        "role": "combobox",
+        "on": "the text input",
+        "required": true
+      },
+      {
+        "role": "listbox",
+        "on": "suggestions popup",
+        "required": true
+      },
+      {
+        "role": "option",
+        "on": "each suggestion",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-autocomplete",
+        "on": "combobox",
+        "values": "list | both",
+        "required": true,
+        "note": "list: suggestions only. both: also inline completion."
+      },
+      {
+        "name": "aria-controls",
+        "on": "combobox",
+        "values": "IDREF of the listbox",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "combobox",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-activedescendant",
+        "on": "combobox",
+        "values": "IDREF of the highlighted suggestion",
+        "required": false
+      },
+      {
+        "name": "aria-selected",
+        "on": "option",
+        "values": "true on the highlighted suggestion",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Open the suggestions if closed; highlight the next suggestion.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Open the suggestions if closed; highlight the previous suggestion.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "With a suggestion highlighted: put its text in the input and close. With none: keep the typed text and let the form handle Enter.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the suggestions; when already closed, optionally clear the input.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Belongs to the caret; clears the highlight and keeps the popup open.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "text-caret"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Belongs to the caret; with inline completion, moving the caret to the end accepts the completion text.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "text-caret"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Belongs to the caret (logical start of the text).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Belongs to the caret (logical end of the text).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Edit the text; the suggestions are refiltered and the popup opens.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Leave the input; the typed text stays as the value. Optionally accept the highlighted suggestion first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      }
+    ],
+    "focus": {
+      "strategy": "active-descendant",
+      "entry": "DOM focus stays in the input.",
+      "exit": "Tab.",
+      "restore": "Focus never leaves the input.",
+      "tabStops": "One."
+    },
+    "variants": [
+      "list autocomplete, manual selection",
+      "list autocomplete, automatic highlight of the first match",
+      "inline completion (both)",
+      "free text allowed (this pattern)"
+    ],
+    "components": [
+      "combobox",
+      "search-field",
+      "mentions",
+      "address-form"
+    ],
+    "uses": [
+      "combobox",
+      "listbox"
+    ],
+    "ariaRequired": [
+      {
+        "role": "combobox",
+        "requiredStatesAndProperties": [
+          "aria-controls",
+          "aria-expanded"
+        ]
+      },
+      {
+        "role": "listbox",
+        "requiredOwnedElements": [
+          "group > option",
+          "option"
+        ]
+      },
+      {
+        "role": "option",
+        "requiredStatesAndProperties": [
+          "aria-selected"
+        ],
+        "requiredContextRole": [
+          "group",
+          "listbox"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "text-caret",
+        "question": "Does the engine remap ArrowLeft, ArrowRight, Home and End while a text input inside a composite (combobox, tag input, grid cell editor, spinbutton) has focus?",
+        "apg": "The combobox page says Left and Right Arrow move the input cursor one character and warns that scripts must not interfere with browser-provided text editing keys.",
+        "libraries": [
+          {
+            "library": "base-ui",
+            "behaviour": "The composite returns to native textbox behaviour unless the caret is at the edge it is leaving by and the selection is collapsed.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Autocomplete lets the browser move the caret; it acts on ArrowLeft only when the caret is at index 0 with nothing selected.",
+            "evidence": "packages/mui-material/src/useAutocomplete/useAutocomplete.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "none",
+        "reason": "Caret movement in bidirectional text is the platform's job (visual or logical by OS) and users expect it unchanged. The engine never swaps these keys inside a text input; it only decides when a key leaves the input (see input-edge-handoff).",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "The distinction, as the engine must model it. select: no text input; the value is always one of the options. combobox: a text input that filters, but the committed value must be one of the options (typed text that matches nothing is reverted or rejected on blur). autocomplete: a text input whose value is the text itself; options are only suggestions, and nothing is \"selected\" after commit. Base UI ships these as three components (select, combobox, autocomplete); Material UI covers the last two with one component and a freeSolo flag. All three are the ARIA combobox role; the difference is the value model and aria-autocomplete. RTL: the input may hold right-to-left, left-to-right or mixed text, so the horizontal arrows, Home and End are never interpreted by the engine. Inline completion appends at the logical end of the text, which is the visual left for Arabic."
+  }
+}

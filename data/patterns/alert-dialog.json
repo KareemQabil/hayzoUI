@@ -1,0 +1,92 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "alert-dialog",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/alertdialog/alertdialog-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "alert-dialog",
+    "name": {
+      "ar": "مربع حوار تنبيه",
+      "en": "Alert dialog"
+    },
+    "reference": {
+      "name": "APG: Alert and Message Dialogs Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/"
+    },
+    "roles": [
+      {
+        "role": "alertdialog",
+        "on": "dialog container",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-modal",
+        "on": "dialog container",
+        "values": "true",
+        "required": true
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "dialog container",
+        "values": "IDREF of the visible title; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-describedby",
+        "on": "dialog container",
+        "values": "IDREF of the alert message",
+        "required": true
+      }
+    ],
+    "keyboard": [],
+    "focus": {
+      "strategy": "focus-trap",
+      "entry": "As dialog-modal; for an irreversible action the least destructive button receives focus.",
+      "exit": "As dialog-modal.",
+      "restore": "As dialog-modal."
+    },
+    "components": [
+      "alert-dialog",
+      "popconfirm"
+    ],
+    "uses": [
+      "dialog-modal"
+    ],
+    "apg": {
+      "pages": [
+        "alertdialog"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/alertdialog/alertdialog-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "The page defers its whole keyboard contract to the modal dialog pattern, so this file has no bindings of its own: apply dialog-modal. Radix and Base UI do not close an alert dialog on outside press."
+  }
+}

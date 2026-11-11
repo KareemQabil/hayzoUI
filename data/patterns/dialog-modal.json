@@ -1,0 +1,135 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "dialog-modal",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/dialog-modal/dialog-modal-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "dialog-modal",
+    "name": {
+      "ar": "مربع حوار نمطي",
+      "en": "Dialog (modal)"
+    },
+    "reference": {
+      "name": "APG: Dialog (Modal) Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+    },
+    "roles": [
+      {
+        "role": "dialog",
+        "on": "dialog container",
+        "required": true,
+        "note": "Everything needed to operate the dialog is a descendant."
+      },
+      {
+        "role": "button",
+        "on": "a visible close or cancel control in the tab sequence",
+        "required": false,
+        "note": "Strongly recommended."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-modal",
+        "on": "dialog container",
+        "values": "true",
+        "required": true,
+        "note": "Only when content outside is truly inert and visually obscured."
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "dialog container",
+        "values": "IDREF of the visible title; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-describedby",
+        "on": "dialog container",
+        "values": "IDREF of a short description",
+        "required": false,
+        "note": "Omit when the content has structure (lists, tables, several paragraphs)."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move focus to the next tabbable element inside the dialog; from the last one wrap to the first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move focus to the previous tabbable element inside the dialog; from the first one wrap to the last.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the dialog.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "focus-trap",
+      "entry": "On open, focus moves inside: normally the first focusable element; a static element with tabindex=-1 at the top (title or first paragraph) when the content has structure or is long enough that focusing the first control would scroll the start out of view; the least destructive action for an irreversible step; the most used control (OK, Continue) for a simple continue-or-inform dialog.",
+      "exit": "Focus cannot leave by Tab. Escape or a close control closes the dialog.",
+      "restore": "On close, focus returns to the element that opened the dialog, unless it no longer exists or the workflow makes another element the logical next step.",
+      "tabStops": "The tabbable elements inside the dialog only, cycling."
+    },
+    "variants": [
+      "modal dialog",
+      "alert dialog (see alert-dialog)",
+      "non-modal dialog (no trap; not covered by this page)"
+    ],
+    "components": [
+      "dialog",
+      "drawer",
+      "alert-dialog",
+      "command-palette",
+      "date-picker"
+    ],
+    "apg": {
+      "pages": [
+        "dialog-modal"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/dialog-modal/dialog-modal-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Content outside must be inert (the inert attribute, or aria-hidden on every sibling branch in legacy implementations, never on an ancestor of the dialog). Not direction-sensitive. Nested dialogs: Escape closes only the top layer."
+  }
+}

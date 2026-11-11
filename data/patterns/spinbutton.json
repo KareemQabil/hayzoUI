@@ -1,0 +1,175 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "spinbutton",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/spinbutton/spinbutton-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "spinbutton",
+    "name": {
+      "ar": "زر زيادة ونقصان",
+      "en": "Spinbutton"
+    },
+    "reference": {
+      "name": "APG: Spinbutton Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/"
+    },
+    "roles": [
+      {
+        "role": "spinbutton",
+        "on": "the focusable element, usually a text input",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-valuenow",
+        "on": "spinbutton",
+        "values": "current value",
+        "required": true,
+        "note": "Not a required state of the role in WAI-ARIA 1.2, but required by the pattern page."
+      },
+      {
+        "name": "aria-valuemin",
+        "on": "spinbutton",
+        "values": "minimum, when there is one",
+        "required": false
+      },
+      {
+        "name": "aria-valuemax",
+        "on": "spinbutton",
+        "values": "maximum, when there is one",
+        "required": false
+      },
+      {
+        "name": "aria-valuetext",
+        "on": "spinbutton",
+        "values": "human-readable value",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "spinbutton",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-invalid",
+        "on": "spinbutton",
+        "values": "true",
+        "required": false,
+        "note": "When the value is outside the allowed range."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Increase the value.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Decrease the value.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Set the minimum, if there is one.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Set the maximum, if there is one.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Increase by a larger step than ArrowUp.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Decrease by a larger step than ArrowDown.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "When the field is directly editable: type in the text box; characters that cannot be part of a value are ignored. Standard single-line editing keys are left to the browser.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Focus stays on the text field throughout; the increment and decrement buttons are not tab stops.",
+      "tabStops": "One."
+    },
+    "components": [
+      "number-input",
+      "date-field",
+      "time-picker"
+    ],
+    "apg": {
+      "pages": [
+        "spinbutton"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/spinbutton/spinbutton-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Not direction-sensitive: there are no horizontal bindings, and ArrowLeft/ArrowRight in the editable field belong to the caret. Home and End conflict with caret movement in an editable field; libraries differ on whether they set min/max there. Arabic: the field must accept Arabic-Indic (U+0660..0669) and Extended Arabic-Indic (U+06F0..06F9) digits and the Arabic decimal and thousands separators as input whatever digits it displays; that parsing is the number layer's job."
+  }
+}

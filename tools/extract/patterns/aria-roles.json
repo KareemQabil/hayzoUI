@@ -1,0 +1,1167 @@
+{
+  "source": {
+    "name": "Accessible Rich Internet Applications (WAI-ARIA) 1.2",
+    "url": "https://www.w3.org/TR/wai-aria-1.2/",
+    "published": "2023-06-06",
+    "license": "W3C-20150513"
+  },
+  "counts": {
+    "roles": 94
+  },
+  "roles": [
+    {
+      "role": "alert",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "alertdialog",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "application",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "article",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "banner",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "blockquote",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "button",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "caption",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "figure",
+        "grid",
+        "table",
+        "treegrid"
+      ],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "cell",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "row"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "checkbox",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-checked"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "code",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "columnheader",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "row"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "combobox",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-controls",
+        "aria-expanded"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "command",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "complementary",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "composite",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "contentinfo",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "definition",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "deletion",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "dialog",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "directory",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "document",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "emphasis",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "feed",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "article"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "figure",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "form",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "generic",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "grid",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "row",
+        "rowgroup > row"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "gridcell",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "row"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "group",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "heading",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-level"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "img",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "input",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "insertion",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "landmark",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "link",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "list",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "listitem"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "listbox",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "group > option",
+        "option"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "listitem",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "directory",
+        "list"
+      ],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "log",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "main",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "marquee",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "math",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "menu",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "group > menuitem",
+        "group > menuitemradio",
+        "group > menuitemcheckbox",
+        "menuitem",
+        "menuitemcheckbox",
+        "menuitemradio"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "menubar",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "group > menuitem",
+        "group > menuitemradio",
+        "group > menuitemcheckbox",
+        "menuitem",
+        "menuitemcheckbox",
+        "menuitemradio"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "menuitem",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "group",
+        "menu",
+        "menubar"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "menuitemcheckbox",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-checked"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "group",
+        "menu",
+        "menubar"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "menuitemradio",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "group",
+        "menu",
+        "menubar"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "meter",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-valuenow"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "navigation",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "none",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [],
+      "childrenPresentational": false
+    },
+    {
+      "role": "note",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "option",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-selected"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "group",
+        "listbox"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "paragraph",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "presentation",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [],
+      "childrenPresentational": false
+    },
+    {
+      "role": "progressbar",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "radio",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-checked"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "radiogroup",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "radio"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "range",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "region",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "roletype",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [],
+      "childrenPresentational": false
+    },
+    {
+      "role": "row",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "cell",
+        "columnheader",
+        "gridcell",
+        "rowheader"
+      ],
+      "requiredContextRole": [
+        "grid",
+        "rowgroup",
+        "table",
+        "treegrid"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "rowgroup",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "row"
+      ],
+      "requiredContextRole": [
+        "grid",
+        "table",
+        "treegrid"
+      ],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "rowheader",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "row"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "scrollbar",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-controls",
+        "aria-valuenow"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "search",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "searchbox",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "section",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [],
+      "childrenPresentational": false
+    },
+    {
+      "role": "sectionhead",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "select",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "separator",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-valuenow"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "slider",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-valuenow"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "spinbutton",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "status",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "strong",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "structure",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [],
+      "childrenPresentational": false
+    },
+    {
+      "role": "subscript",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "superscript",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "prohibited"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "switch",
+      "abstract": false,
+      "requiredStatesAndProperties": [
+        "aria-checked"
+      ],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "tab",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "tablist"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": true
+    },
+    {
+      "role": "table",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "row",
+        "rowgroup > row"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "tablist",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "tab"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "tabpanel",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "term",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "textbox",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "time",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "timer",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "toolbar",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "tooltip",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "tree",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "group > treeitem",
+        "treeitem"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "treegrid",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [
+        "row",
+        "rowgroup > row"
+      ],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "treeitem",
+      "abstract": false,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [
+        "group",
+        "tree"
+      ],
+      "nameFrom": [
+        "contents",
+        "author"
+      ],
+      "childrenPresentational": false
+    },
+    {
+      "role": "widget",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [],
+      "childrenPresentational": false
+    },
+    {
+      "role": "window",
+      "abstract": true,
+      "requiredStatesAndProperties": [],
+      "requiredOwnedElements": [],
+      "requiredContextRole": [],
+      "nameFrom": [
+        "author"
+      ],
+      "childrenPresentational": false
+    }
+  ]
+}

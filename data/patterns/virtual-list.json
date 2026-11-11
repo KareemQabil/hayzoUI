@@ -1,0 +1,303 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "virtual-list",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "virtual-list",
+    "name": {
+      "ar": "قائمة افتراضية",
+      "en": "Virtualised list focus"
+    },
+    "reference": {
+      "name": "APG: Listbox Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/"
+    },
+    "roles": [
+      {
+        "role": "listbox",
+        "on": "the scroll container's collection",
+        "required": true,
+        "note": "Or grid, tree or feed; virtualisation adds no role."
+      },
+      {
+        "role": "option",
+        "on": "each rendered item",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-setsize",
+        "on": "each rendered item",
+        "values": "total number of items; -1 when unknown",
+        "required": true,
+        "note": "Required because the DOM holds only a window of the items."
+      },
+      {
+        "name": "aria-posinset",
+        "on": "each rendered item",
+        "values": "1-based position in the full collection",
+        "required": true
+      },
+      {
+        "name": "aria-rowcount",
+        "on": "grid",
+        "values": "total rows; -1 when unknown",
+        "required": false,
+        "note": "Grid and table use row and column counts and indexes instead of setsize and posinset."
+      },
+      {
+        "name": "aria-rowindex",
+        "on": "row",
+        "values": "1-based row position in the full data",
+        "required": false
+      },
+      {
+        "name": "aria-busy",
+        "on": "container",
+        "values": "true while a page of items is loading",
+        "required": false
+      },
+      {
+        "name": "aria-activedescendant",
+        "on": "container",
+        "values": "IDREF of the focused item",
+        "required": false,
+        "note": "Only valid while that item is in the DOM."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next item, rendering it first if it is outside the window, then scrolling it into view.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous item, rendering and scrolling as needed.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Scroll to the start, render the first item and focus it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Scroll to the end and focus the last item; with data that loads on demand, the last loaded item.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Move focus down by the number of items that fit in the viewport.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Move focus up by the number of items that fit in the viewport.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Type-ahead searches the full collection (the data, not the DOM), then renders and focuses the match.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Leave the list; one tab stop, as in the underlying pattern.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "The remembered item, rendered on demand if it was scrolled away.",
+      "exit": "Tab.",
+      "restore": "The focused item stays mounted while scrolled out of view (React Aria keeps it as a \"persisted key\"), so DOM focus is never lost to the body and the arrow keys continue from it; pressing a key scrolls it back into view.",
+      "tabStops": "One.",
+      "note": "Rules the engine must hold: (1) never unmount the element that has DOM focus; (2) navigation is computed on the data model, then rendered, then focused, in that order; (3) the same holds for the active-descendant strategy: the referenced element must exist; (4) items around the focused one stay mounted so screen-reader virtual cursors can step to neighbours; (5) the tab stop must survive a window that contains neither the first nor the selected item."
+    },
+    "variants": [
+      "fixed item height",
+      "measured variable height",
+      "infinite loading",
+      "horizontal",
+      "grid layout",
+      "sticky group headers"
+    ],
+    "components": [
+      "virtual-list",
+      "select",
+      "combobox",
+      "data-grid",
+      "tree",
+      "command-palette"
+    ],
+    "uses": [
+      "listbox"
+    ],
+    "orientation": {
+      "default": "vertical",
+      "supported": [
+        "vertical",
+        "horizontal",
+        "both"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "listbox",
+        "requiredOwnedElements": [
+          "group > option",
+          "option"
+        ]
+      },
+      {
+        "role": "option",
+        "requiredStatesAndProperties": [
+          "aria-selected"
+        ],
+        "requiredContextRole": [
+          "group",
+          "listbox"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "roving-horizontal",
+        "question": "In a horizontal roving-focus composite (tabs, toolbar, menubar, radio group, toggle group), which arrow moves to the next item in RTL?",
+        "apg": "Silent, apart from one aside in the tabs page that calls the last tab the right-most \"in a left-to-right horizontal tab list\". Keys are named physically: Right Arrow is next.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "ArrowLeft is next in RTL for tabs, toolbar and horizontal radio groups; vertical arrows never flip.",
+            "evidence": "packages/react-aria/src/tabs/TabsKeyboardDelegate.ts, packages/react-aria/src/toolbar/useToolbar.ts, packages/react-aria/src/radio/useRadioGroup.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "The composite root swaps the forward and backward horizontal keys when direction is rtl.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "The roving focus group swaps ArrowLeft and ArrowRight before mapping a key to a focus intent when dir is rtl; toggle group, tabs, toolbar, radio group and menubar all pass dir through it.",
+            "evidence": "packages/react/roving-focus/src/roving-focus-group.tsx (getDirectionAwareKey)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Tabs and ToggleButtonGroup pass isRtl to the roving tabindex root.",
+            "evidence": "packages/mui-material/src/Tabs/Tabs.js, packages/mui-material/src/ToggleButtonGroup/ToggleButtonGroup.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Tabs flip the arrow offset when rtl and the tab bar is top or bottom; a horizontal menu maps Left to next when rtl.",
+            "evidence": "@rc-component/tabs es/TabNavList/index.js, @rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Items are laid out from inline-start, so the arrow that points at the visually following item must move to it. All five libraries agree.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "A focus contract layered on listbox, grid or tree; their bindings apply and only the windowing consequences are stated here. Vertical keys are not direction-sensitive. In a horizontal virtual list the arrows follow the roving rule and mirror, and the scroll offset is the real RTL trap: scrollLeft is zero at the right edge and negative leftward in an RTL scroller in current browsers, and older engines used other conventions, so offsets must be normalised to an inline-start distance before computing the window. React Aria carries RTL branches in its virtualizer utilities and scroll-into-view for this (files listed in docs/research/patterns.md)."
+  }
+}

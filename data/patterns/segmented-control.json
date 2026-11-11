@@ -1,0 +1,260 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "segmented-control",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "segmented-control",
+    "name": {
+      "ar": "عنصر تحكم مقسّم",
+      "en": "Segmented control"
+    },
+    "reference": {
+      "name": "APG: Radio Group Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/radio/"
+    },
+    "roles": [
+      {
+        "role": "radiogroup",
+        "on": "container",
+        "required": true
+      },
+      {
+        "role": "radio",
+        "on": "each segment",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-checked",
+        "on": "radio",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "radiogroup",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-orientation",
+        "on": "radiogroup",
+        "values": "horizontal",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Into the control: focus the checked segment, else the first. From it: leave.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus to the next segment and check it, wrapping from last to first.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "segmented-arrows"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus to the previous segment and check it, wrapping from first to last.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "segmented-arrows"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next segment and check it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous segment and check it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Check the focused segment if it is not checked.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first segment and check it.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last segment and check it.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "The checked segment, else the first.",
+      "exit": "Tab leaves.",
+      "tabStops": "One."
+    },
+    "variants": [
+      "single choice (radiogroup)",
+      "view switcher that owns panels (use tabs instead)",
+      "multiple choice (a toolbar or group of toggle buttons with aria-pressed)"
+    ],
+    "components": [
+      "segmented-control",
+      "toggle-group",
+      "button-group"
+    ],
+    "uses": [
+      "radio-group"
+    ],
+    "orientation": {
+      "default": "horizontal",
+      "supported": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "radiogroup",
+        "requiredOwnedElements": [
+          "radio"
+        ]
+      },
+      {
+        "role": "radio",
+        "requiredStatesAndProperties": [
+          "aria-checked"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "segmented-arrows",
+        "question": "Do the horizontal arrows of a segmented control (single-choice button row) swap in RTL?",
+        "apg": "No segmented-control page. The radio group page names Right Arrow as next and is silent on RTL.",
+        "libraries": [
+          {
+            "library": "ant-design",
+            "behaviour": "Does not swap: ArrowLeft and ArrowUp always select the previous option, in both directions, although the component renders an -rtl class.",
+            "evidence": "@rc-component/segmented es/index.js (handleKeyDown)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Swaps: ToggleButtonGroup passes isRtl to the roving tabindex root.",
+            "evidence": "packages/mui-material/src/ToggleButtonGroup/ToggleButtonGroup.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "Swaps: ToggleGroup resolves dir and hands it to the roving focus group.",
+            "evidence": "packages/react/toggle-group/src/toggle-group.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "react-aria",
+            "behaviour": "Swaps for horizontal radio groups, the role a segmented control maps to.",
+            "evidence": "packages/react-aria/src/radio/useRadioGroup.ts",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Same rule as every horizontal roving composite. The Ant Design behaviour sends ArrowLeft to the visually right-hand segment in RTL, which reads as a defect.",
+        "status": "divergent"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Choose the role by meaning: one value of a setting = radiogroup (this file); switching visible content = tabs; independent on/off buttons = toolbar with toggle buttons. RTL: the first segment is on the right; ArrowLeft selects the next. Ant Design's segmented control does not swap (read from source), Material UI and Radix do; we mirror. The sliding selection indicator animates along the inline axis."
+  }
+}

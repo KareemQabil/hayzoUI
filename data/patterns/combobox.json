@@ -1,0 +1,799 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "combobox",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/combobox/combobox-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "MUI X (mui/mui-x)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "9.17.0 @ bb99a92f284a804fcc70f508a10e21de6f02bb12",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "combobox",
+    "name": {
+      "ar": "مربع تحرير وسرد",
+      "en": "Combobox"
+    },
+    "reference": {
+      "name": "APG: Combobox Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/"
+    },
+    "roles": [
+      {
+        "role": "combobox",
+        "on": "the input (or, when not editable, the element that shows the value)",
+        "required": true
+      },
+      {
+        "role": "listbox",
+        "on": "popup",
+        "required": false,
+        "note": "One of listbox, grid, tree or dialog is required as the popup."
+      },
+      {
+        "role": "option",
+        "on": "each suggestion in a listbox popup",
+        "required": false
+      },
+      {
+        "role": "grid",
+        "on": "popup",
+        "required": false
+      },
+      {
+        "role": "tree",
+        "on": "popup",
+        "required": false
+      },
+      {
+        "role": "dialog",
+        "on": "popup",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-controls",
+        "on": "combobox",
+        "values": "IDREF of the popup",
+        "required": true,
+        "note": "Needed only while the popup is visible."
+      },
+      {
+        "name": "aria-expanded",
+        "on": "combobox",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-haspopup",
+        "on": "combobox",
+        "values": "grid | tree | dialog",
+        "required": false,
+        "note": "Omit for a listbox popup (the implicit value)."
+      },
+      {
+        "name": "aria-activedescendant",
+        "on": "combobox",
+        "values": "IDREF of the focused option, cell, row or treeitem",
+        "required": false,
+        "note": "Not used with a dialog popup."
+      },
+      {
+        "name": "aria-selected",
+        "on": "the suggestion shown as selected",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-autocomplete",
+        "on": "combobox",
+        "values": "none | list | both",
+        "required": true,
+        "note": "both = list plus inline completion text that is selected after the caret."
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "combobox",
+        "values": "a label element when the host is an input; otherwise aria-labelledby or aria-label",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "The combobox is one stop in the page sequence; the popup button, the popup and its descendants are not.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "If a popup is available, move focus into it: to the suggestion after an automatically selected one, otherwise to the first focusable element.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "If a popup is available, move focus to its last focusable element.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Dismiss the popup if visible. Optionally, when it was already hidden, clear the combobox.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "In an editable combobox with a suggestion selected: accept it, placing the caret at the end of the value or performing the default action for the value.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Editable: type the character. Not editable: optionally move focus to a value starting with the typed characters.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Alt+ArrowDown"
+        ],
+        "action": "If a popup is available but hidden, show it without moving focus.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Alt+ArrowUp"
+        ],
+        "action": "If the popup is shown: return focus to the combobox if it was in the popup, then close the popup.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Accept the focused option: close the popup, put its value in the combobox and, if editable, place the caret at the end.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the popup and return focus to the combobox. Optionally clear an editable combobox.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to and select the next option; on the last option either return focus to the combobox or do nothing.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to and select the previous option; on the first option either return focus to the combobox or do nothing.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Editable: return focus to the combobox without closing the popup and let the caret move one character as the platform defines for this key.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "text-caret"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Editable: return focus to the combobox without closing the popup and let the caret move one character as the platform defines for this key.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "text-caret"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Either move focus to and select the first option, or (editable) return focus to the combobox with the caret before the first character.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Either move focus to the last option, or (editable) return focus to the combobox with the caret after the last character.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Editable: return focus to the combobox without closing the popup and type the character. Otherwise move focus to the next option whose name starts with the typed characters.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Backspace"
+        ],
+        "action": "Editable: return focus to the combobox and delete the character before the caret.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Delete"
+        ],
+        "action": "Editable: return focus to the combobox, clear the selected state of a suggestion and remove any inline completion.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "listbox popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Accept the selected suggestion: close the popup, put its value in the combobox and, if editable, place the caret at the end.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the popup and return focus to the combobox. Optionally clear an editable combobox.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus one cell toward the row end; at the row end optionally go to the first cell of the next row; on the last cell of the grid do nothing or return focus to the combobox.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "grid popup",
+        "origin": "apg",
+        "decision": "grid-cell-navigation"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus one cell toward the row start; at the row start optionally go to the last cell of the previous row; on the first cell of the grid do nothing or return focus to the combobox.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "grid popup",
+        "origin": "apg",
+        "decision": "grid-cell-navigation"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus one cell down; in the last row do nothing or return focus to the combobox.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus one cell up; in the first row do nothing or return focus to the combobox.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Move focus down by an author-defined number of rows; stay if in the last row.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Move focus up by an author-defined number of rows; stay if in the first row.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Either move focus to the first cell of the row (or of the grid when rows have fewer than three cells or several suggestions), or (editable) return focus to the combobox with the caret before the first character.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Either move focus to the last cell of the row (or of the grid, as for Home), or (editable) return focus to the combobox with the caret after the last character.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Home"
+        ],
+        "action": "Move focus to the first row.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+End"
+        ],
+        "action": "Move focus to the last row.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Editable: return focus to the combobox without closing the popup and type the character.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Backspace"
+        ],
+        "action": "Editable: return focus to the combobox and delete the character before the caret.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Delete"
+        ],
+        "action": "Editable: return focus to the combobox, clear the selected state of a suggestion and remove any inline completion.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "grid popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Accept the selected suggestion: close the popup, put its value in the combobox and, if editable, place the caret at the end.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tree popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the popup and return focus to the combobox. Optionally clear the combobox.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tree popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Closed node: open it, focus and selection stay. Open node: move focus to its first child and select it if selectable. End node: nothing.",
+        "when": "Vertical tree.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "tree popup",
+        "origin": "apg",
+        "decision": "tree-expand-collapse"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Open node: close it. Child that is an end node or closed: move focus to its parent and select it if selectable. Root that is an end node or closed: nothing.",
+        "when": "Vertical tree.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "tree popup",
+        "origin": "apg",
+        "decision": "tree-expand-collapse"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next focusable node without opening or closing, and select it if selectable.",
+        "when": "Vertical tree.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tree popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous focusable node without opening or closing, and select it if selectable.",
+        "when": "Vertical tree.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tree popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first focusable node and select it if selectable.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tree popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last focusable node and select it if selectable.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tree popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Editable: return focus to the combobox without closing the popup and type the character. Otherwise move focus to the next suggestion whose name starts with the typed characters.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tree popup",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Cancel the dialog: return focus to the combobox, either leaving its value unchanged or clearing it. Otherwise the dialog follows dialog-modal and closes when an action in it sets a value.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "dialog popup",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "active-descendant",
+      "entry": "DOM focus is placed on the combobox element and stays there while a listbox, grid or tree popup is navigated; aria-activedescendant names the focused descendant.",
+      "exit": "Tab leaves the combobox; the popup and the popup button are not tab stops.",
+      "restore": "A dialog popup is the exception: DOM focus moves into the dialog and returns to the combobox when it closes.",
+      "tabStops": "One: the combobox.",
+      "note": "In listbox, grid and tree popups selection follows focus and at most one suggestion is selected."
+    },
+    "variants": [
+      "editable, no autocomplete (aria-autocomplete=none)",
+      "editable, list autocomplete (manual selection)",
+      "editable, list autocomplete (automatic selection)",
+      "editable, list plus inline completion (both)",
+      "select-only (not editable)",
+      "listbox popup",
+      "grid popup",
+      "tree popup",
+      "dialog popup (for example a date picker)"
+    ],
+    "components": [
+      "combobox",
+      "select",
+      "date-picker",
+      "tree-select",
+      "cascader",
+      "mentions"
+    ],
+    "uses": [
+      "listbox",
+      "grid",
+      "tree-view",
+      "dialog-modal"
+    ],
+    "apg": {
+      "pages": [
+        "combobox"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "combobox",
+        "requiredStatesAndProperties": [
+          "aria-controls",
+          "aria-expanded"
+        ]
+      },
+      {
+        "role": "listbox",
+        "requiredOwnedElements": [
+          "group > option",
+          "option"
+        ]
+      },
+      {
+        "role": "option",
+        "requiredStatesAndProperties": [
+          "aria-selected"
+        ],
+        "requiredContextRole": [
+          "group",
+          "listbox"
+        ]
+      },
+      {
+        "role": "grid",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      },
+      {
+        "role": "tree",
+        "requiredOwnedElements": [
+          "group > treeitem",
+          "treeitem"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "grid-cell-navigation",
+        "question": "Do ArrowLeft and ArrowRight move by visual cell or by column index in an RTL grid?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right Arrow moves \"one cell to the right\".",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "The grid keyboard delegate resolves the key right of and left of a cell against direction, so movement is visual.",
+            "evidence": "packages/react-aria/src/grid/GridKeyboardDelegate.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "Grid navigation in the composite takes an rtl flag and swaps the horizontal keys.",
+            "evidence": "packages/react/src/internals/composite/root/gridNavigation.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "mui-x",
+            "behaviour": "Data grid keyboard navigation computes left and right targets with isRtl.",
+            "evidence": "packages/x-data-grid/src/hooks/features/keyboardNavigation/utils.ts",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Columns are laid out from inline-start, so the first column is on the right. Following the APG wording literally (move one cell to the right) and mirroring are the same thing here: the key moves focus in the direction it points.",
+        "status": "consensus"
+      },
+      {
+        "id": "text-caret",
+        "question": "Does the engine remap ArrowLeft, ArrowRight, Home and End while a text input inside a composite (combobox, tag input, grid cell editor, spinbutton) has focus?",
+        "apg": "The combobox page says Left and Right Arrow move the input cursor one character and warns that scripts must not interfere with browser-provided text editing keys.",
+        "libraries": [
+          {
+            "library": "base-ui",
+            "behaviour": "The composite returns to native textbox behaviour unless the caret is at the edge it is leaving by and the selection is collapsed.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Autocomplete lets the browser move the caret; it acts on ArrowLeft only when the caret is at index 0 with nothing selected.",
+            "evidence": "packages/mui-material/src/useAutocomplete/useAutocomplete.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "none",
+        "reason": "Caret movement in bidirectional text is the platform's job (visual or logical by OS) and users expect it unchanged. The engine never swaps these keys inside a text input; it only decides when a key leaves the input (see input-edge-handoff).",
+        "status": "consensus"
+      },
+      {
+        "id": "tree-expand-collapse",
+        "question": "Which arrow expands a tree node and which collapses it in RTL?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right arrow opens a closed node, Left arrow closes an open one.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "Expansion keys are keyed by direction: rtl expands with ArrowLeft and collapses with ArrowRight.",
+            "evidence": "packages/react-aria/src/gridlist/useGridListItem.ts (EXPANSION_KEYS)",
+            "checked": "source-read"
+          },
+          {
+            "library": "mui-x",
+            "behaviour": "Tree view expands on ArrowLeft and collapses on ArrowRight when isRtl.",
+            "evidence": "packages/x-tree-view/src/internals/plugins/keyboardNavigation/TreeViewKeyboardNavigationPlugin.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Does not swap: ArrowLeft always collapses or moves to the parent, ArrowRight always expands, although direction is passed for drag positioning.",
+            "evidence": "@rc-component/tree es/Tree.js (onKeyDown)",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "No tree component.",
+            "checked": "not-found"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "No tree component in 1.9.0.",
+            "checked": "not-found"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Children are indented toward inline-end and the disclosure chevron points there; the arrow that points into the indentation expands.",
+        "status": "divergent"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/combobox/combobox-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "RTL: the page describes ArrowLeft and ArrowRight in a listbox popup as moving the caret left and right. In bidirectional text the caret step is the platform's (visual on some systems, logical on others), so the engine hands these keys back to the input untouched rather than computing a direction: they are recorded as not direction-sensitive and debatable (decision text-caret). Home and End in an editable combobox go to the logical start and end of the text. In a horizontal tree popup (aria-orientation=horizontal) ArrowDown/ArrowUp and ArrowRight/ArrowLeft exchange roles. Arabic matters for filtering: matching should ignore tashkeel and tatweel and unify alef and yeh forms; that is the language layer's search normalisation."
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "switch",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/switch/switch-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "switch",
+    "name": {
+      "ar": "مفتاح تبديل",
+      "en": "Switch"
+    },
+    "reference": {
+      "name": "APG: Switch Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/switch/"
+    },
+    "roles": [
+      {
+        "role": "switch",
+        "on": "the control",
+        "required": true
+      },
+      {
+        "role": "group",
+        "on": "a labelled set of switches",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-checked",
+        "on": "switch",
+        "values": "true | false",
+        "required": true,
+        "note": "A native checkbox input uses checked instead."
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "switch",
+        "values": "when its content is not its label; or aria-label",
+        "required": false,
+        "note": "The label must not change with the state."
+      },
+      {
+        "name": "aria-describedby",
+        "on": "switch or group",
+        "values": "IDREF of descriptive text",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Toggle the switch.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Toggle the switch.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "One tab stop.",
+      "tabStops": "One."
+    },
+    "components": [
+      "switch"
+    ],
+    "apg": {
+      "pages": [
+        "switch"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "switch",
+        "requiredStatesAndProperties": [
+          "aria-checked"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "switch-arrows",
+        "question": "Should ArrowLeft and ArrowRight set a switch off and on?",
+        "apg": "Binds only Space and, optionally, Enter.",
+        "libraries": [
+          {
+            "library": "ant-design",
+            "behaviour": "Left sets off and Right sets on, with no direction test, so in RTL the arrow points away from the thumb's destination.",
+            "evidence": "@rc-component/switch es/index.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "No arrow handling.",
+            "evidence": "packages/react/switch/src/switch.tsx",
+            "checked": "not-found"
+          },
+          {
+            "library": "react-aria",
+            "behaviour": "No arrow handling.",
+            "evidence": "packages/react-aria/src/switch/useSwitch.ts",
+            "checked": "not-found"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "No arrow handling.",
+            "evidence": "packages/react/src/switch/root/SwitchRoot.tsx",
+            "checked": "not-found"
+          },
+          {
+            "library": "material",
+            "behaviour": "No arrow handling.",
+            "evidence": "packages/mui-material/src/Switch/Switch.js",
+            "checked": "not-found"
+          }
+        ],
+        "recommendation": "do-not-bind",
+        "reason": "Not in the APG contract, and a switch inside a roving composite needs the arrows for navigation. If a product insists, the binding must mirror.",
+        "status": "divergent"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/switch/switch-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "RTL: no binding is direction-sensitive. The thumb travels toward inline-end when on (left in RTL): styling. Ant Design additionally binds ArrowLeft to off and ArrowRight to on with no RTL handling; we do not bind arrows (decision switch-arrows)."
+  }
+}

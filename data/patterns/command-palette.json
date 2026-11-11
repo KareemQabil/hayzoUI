@@ -1,0 +1,295 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "command-palette",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "command-palette",
+    "name": {
+      "ar": "لوحة الأوامر",
+      "en": "Command palette"
+    },
+    "reference": {
+      "name": "APG: Combobox Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/"
+    },
+    "roles": [
+      {
+        "role": "dialog",
+        "on": "the palette",
+        "required": true
+      },
+      {
+        "role": "combobox",
+        "on": "the search input",
+        "required": true
+      },
+      {
+        "role": "listbox",
+        "on": "the results",
+        "required": true
+      },
+      {
+        "role": "group",
+        "on": "a labelled section of results",
+        "required": false
+      },
+      {
+        "role": "option",
+        "on": "each command",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-modal",
+        "on": "dialog",
+        "values": "true",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "dialog",
+        "values": "localized name",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "combobox",
+        "values": "true (the list is always shown)",
+        "required": true
+      },
+      {
+        "name": "aria-controls",
+        "on": "combobox",
+        "values": "IDREF of the listbox",
+        "required": true
+      },
+      {
+        "name": "aria-activedescendant",
+        "on": "combobox",
+        "values": "IDREF of the highlighted command",
+        "required": true
+      },
+      {
+        "name": "aria-autocomplete",
+        "on": "combobox",
+        "values": "list",
+        "required": true
+      },
+      {
+        "name": "aria-selected",
+        "on": "option",
+        "values": "true on the highlighted command",
+        "required": true
+      },
+      {
+        "name": "aria-keyshortcuts",
+        "on": "option",
+        "values": "the command's own shortcut, when it has one",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Control+K",
+          "Meta+K"
+        ],
+        "action": "From anywhere in the application: open the palette. The shortcut is configurable and must not fire while an input method is composing.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "global",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Highlight the next command, wrapping to the first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Highlight the previous command, wrapping to the last.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Belongs to the caret of the search input.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Belongs to the caret of the search input.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Highlight the command one page of results further.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Highlight the command one page of results back.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Run the highlighted command and close; for a command with sub-commands, open that page.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Clear the query if there is one, else go back one page, else close and restore focus.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Backspace"
+        ],
+        "action": "With an empty query on a sub-page: go back one page.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Edit the query; results are refiltered and the first result is highlighted.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Stays within the dialog (the input is normally its only tab stop).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "palette",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "active-descendant",
+      "entry": "The search input; the first command is highlighted.",
+      "exit": "Escape or running a command.",
+      "restore": "To the element focused before opening, unless the command moved focus.",
+      "tabStops": "One: the input, inside a focus trap.",
+      "note": "A modal dialog that contains a combobox whose listbox is always expanded: focus-trap for the dialog, active-descendant inside it."
+    },
+    "variants": [
+      "single page",
+      "nested pages",
+      "with recent commands",
+      "inline (not a dialog)"
+    ],
+    "components": [
+      "command-palette"
+    ],
+    "uses": [
+      "dialog-modal",
+      "combobox",
+      "listbox"
+    ],
+    "ariaRequired": [
+      {
+        "role": "combobox",
+        "requiredStatesAndProperties": [
+          "aria-controls",
+          "aria-expanded"
+        ]
+      },
+      {
+        "role": "listbox",
+        "requiredOwnedElements": [
+          "group > option",
+          "option"
+        ]
+      },
+      {
+        "role": "option",
+        "requiredStatesAndProperties": [
+          "aria-selected"
+        ],
+        "requiredContextRole": [
+          "group",
+          "listbox"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "No library source was read for this file (cmdk and kbar were not downloaded): bindings are the combobox and dialog contracts plus common convention. ArrowLeft and ArrowRight are unbound and stay with the caret, so nothing is direction-sensitive. Arabic-first: the open shortcut is matched on the physical key (KeyboardEvent.code \"KeyK\"), because with an Arabic layout active the K key produces a different character; shortcuts shown next to commands use the platform's modifier names and stay left-to-right; fuzzy matching runs on normalised Arabic text."
+  }
+}

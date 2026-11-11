@@ -1,0 +1,357 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "navigation-menu",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "navigation-menu",
+    "name": {
+      "ar": "قائمة التنقل",
+      "en": "Navigation menu"
+    },
+    "reference": {
+      "name": "APG example: Disclosure Navigation Menu",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/"
+    },
+    "roles": [
+      {
+        "role": "navigation",
+        "on": "container",
+        "required": true,
+        "note": "A nav element."
+      },
+      {
+        "role": "list",
+        "on": "the top-level items and each panel's links",
+        "required": true
+      },
+      {
+        "role": "listitem",
+        "on": "each item",
+        "required": true
+      },
+      {
+        "role": "button",
+        "on": "trigger that shows a panel of links",
+        "required": true,
+        "note": "A disclosure button, not a menuitem."
+      },
+      {
+        "role": "link",
+        "on": "navigation targets",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "navigation",
+        "values": "name of the navigation; or aria-labelledby",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "trigger button",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-controls",
+        "on": "trigger button",
+        "values": "IDREF of its panel",
+        "required": true
+      },
+      {
+        "name": "aria-current",
+        "on": "link to the current page",
+        "values": "page",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move through triggers, links and the links of an open panel in page order. Tabbing out of the navigation closes the open panel.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move backward in page order.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "On a trigger: toggle its panel; opening one closes any other. On a link: Enter follows it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the open panel and return focus to its trigger.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus to the next top-level trigger or link.",
+        "when": "Horizontal bar.",
+        "optional": true,
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "radix",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus to the previous top-level trigger or link.",
+        "when": "Horizontal bar.",
+        "optional": true,
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "radix",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "On an open trigger of a horizontal bar: move focus into its panel. Inside a panel: next link.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Inside a panel: previous link.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first item of the current level.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last item of the current level.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "radix"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Every trigger and link is a tab stop.",
+      "exit": "Tab; leaving closes the open panel.",
+      "restore": "Escape returns focus to the trigger.",
+      "tabStops": "One per top-level item, plus the links of the open panel, which follow their trigger in the tab order even when rendered elsewhere."
+    },
+    "variants": [
+      "disclosure navigation (this file)",
+      "menubar navigation (role menubar; see menubar): only for application-like menus",
+      "vertical (sidebar) with ArrowRight entering a panel",
+      "hover-opened with pointer grace area"
+    ],
+    "components": [
+      "navigation-menu",
+      "sidebar",
+      "app-shell"
+    ],
+    "uses": [
+      "disclosure",
+      "link"
+    ],
+    "orientation": {
+      "default": "horizontal",
+      "supported": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "list",
+        "requiredOwnedElements": [
+          "listitem"
+        ]
+      },
+      {
+        "role": "listitem",
+        "requiredContextRole": [
+          "directory",
+          "list"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "roving-horizontal",
+        "question": "In a horizontal roving-focus composite (tabs, toolbar, menubar, radio group, toggle group), which arrow moves to the next item in RTL?",
+        "apg": "Silent, apart from one aside in the tabs page that calls the last tab the right-most \"in a left-to-right horizontal tab list\". Keys are named physically: Right Arrow is next.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "ArrowLeft is next in RTL for tabs, toolbar and horizontal radio groups; vertical arrows never flip.",
+            "evidence": "packages/react-aria/src/tabs/TabsKeyboardDelegate.ts, packages/react-aria/src/toolbar/useToolbar.ts, packages/react-aria/src/radio/useRadioGroup.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "The composite root swaps the forward and backward horizontal keys when direction is rtl.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "The roving focus group swaps ArrowLeft and ArrowRight before mapping a key to a focus intent when dir is rtl; toggle group, tabs, toolbar, radio group and menubar all pass dir through it.",
+            "evidence": "packages/react/roving-focus/src/roving-focus-group.tsx (getDirectionAwareKey)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Tabs and ToggleButtonGroup pass isRtl to the roving tabindex root.",
+            "evidence": "packages/mui-material/src/Tabs/Tabs.js, packages/mui-material/src/ToggleButtonGroup/ToggleButtonGroup.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Tabs flip the arrow offset when rtl and the tab bar is top or bottom; a horizontal menu maps Left to next when rtl.",
+            "evidence": "@rc-component/tabs es/TabNavList/index.js, @rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Items are laid out from inline-start, so the arrow that points at the visually following item must move to it. All five libraries agree.",
+        "status": "consensus"
+      },
+      {
+        "id": "submenu-open-close",
+        "question": "Which arrow opens a submenu from a vertical menu, and which closes it, in RTL?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right Arrow opens a submenu, Left Arrow closes it.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "In RTL ArrowLeft opens the submenu and ArrowRight closes it.",
+            "evidence": "packages/react-aria/src/menu/useSubmenuTrigger.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "SUB_OPEN_KEYS and SUB_CLOSE_KEYS are keyed by direction: rtl opens with ArrowLeft, closes with ArrowRight.",
+            "evidence": "packages/react/menu/src/menu.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "List navigation takes an rtl flag; the cross-orientation open and close keys are ArrowLeft and ArrowRight respectively when rtl.",
+            "evidence": "packages/react/src/utils/popups/interactions/useListNavigation.ts, packages/react/src/menu/root/MenuRoot.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "In a vertical menu Left means \"children\" (open) and Right means \"parent\" (close) when rtl.",
+            "evidence": "@rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "A submenu opens toward inline-end, which is the left in RTL; the arrow must point where the submenu appears.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Site navigation is links and disclosure buttons, not ARIA menus: Tab stays in page order and arrows are an optional extra. Radix and Base UI add the arrows; both are direction-aware (read from source): in a horizontal bar the previous-item key is ArrowRight in RTL, and in a vertical bar the key that enters a panel is ArrowLeft in RTL instead of ArrowRight. That vertical entry key is the submenu rule; it is described here in notes rather than bound, because we ship the horizontal bar first."
+  }
+}

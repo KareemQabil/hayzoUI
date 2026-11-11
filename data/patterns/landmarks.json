@@ -1,0 +1,110 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "landmarks",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/landmarks/landmarks-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "landmarks",
+    "name": {
+      "ar": "معالم الصفحة",
+      "en": "Landmarks"
+    },
+    "reference": {
+      "name": "APG: Landmarks Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/"
+    },
+    "roles": [
+      {
+        "role": "banner",
+        "on": "site header",
+        "required": false
+      },
+      {
+        "role": "navigation",
+        "on": "navigation block",
+        "required": false
+      },
+      {
+        "role": "main",
+        "on": "main content",
+        "required": false
+      },
+      {
+        "role": "complementary",
+        "on": "supporting content",
+        "required": false
+      },
+      {
+        "role": "contentinfo",
+        "on": "site footer",
+        "required": false
+      },
+      {
+        "role": "search",
+        "on": "search facility",
+        "required": false
+      },
+      {
+        "role": "form",
+        "on": "a labelled form",
+        "required": false
+      },
+      {
+        "role": "region",
+        "on": "a labelled generic section",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "any landmark that occurs more than once, and every form and region",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": false
+      }
+    ],
+    "keyboard": [],
+    "focus": {
+      "strategy": "none",
+      "note": "Landmarks are not focusable; assistive technology provides navigation between them."
+    },
+    "components": [
+      "app-shell",
+      "sidebar"
+    ],
+    "apg": {
+      "pages": [
+        "landmarks"
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/landmarks/landmarks-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "No keyboard interaction. Keep to about seven landmarks per page and put all content inside one. Listed because the application shell and navigation components must emit them."
+  }
+}

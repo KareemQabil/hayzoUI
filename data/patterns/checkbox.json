@@ -1,0 +1,122 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "checkbox",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/checkbox/checkbox-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "checkbox",
+    "name": {
+      "ar": "خانة اختيار",
+      "en": "Checkbox"
+    },
+    "reference": {
+      "name": "APG: Checkbox Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/"
+    },
+    "roles": [
+      {
+        "role": "checkbox",
+        "on": "the control",
+        "required": true
+      },
+      {
+        "role": "group",
+        "on": "a labelled set of checkboxes",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-checked",
+        "on": "checkbox",
+        "values": "true | false | mixed",
+        "required": true,
+        "note": "mixed only on a tri-state checkbox that summarises a group."
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "checkbox",
+        "values": "when the label is not its content; or aria-label",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "group",
+        "values": "IDREF of the group label",
+        "required": false
+      },
+      {
+        "name": "aria-describedby",
+        "on": "checkbox or group",
+        "values": "IDREF of descriptive text",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Toggle the checkbox. On a tri-state parent: check all, then uncheck all, then optionally restore the remembered partial state.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "One tab stop per checkbox.",
+      "tabStops": "One per checkbox."
+    },
+    "variants": [
+      "dual-state",
+      "tri-state (mixed)"
+    ],
+    "components": [
+      "checkbox",
+      "checkbox-group"
+    ],
+    "apg": {
+      "pages": [
+        "checkbox"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "checkbox",
+        "requiredStatesAndProperties": [
+          "aria-checked"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/checkbox/checkbox-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Enter is not bound (it submits the form on a native checkbox). Not direction-sensitive."
+  }
+}

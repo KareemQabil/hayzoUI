@@ -1,0 +1,369 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "tag-input",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "tag-input",
+    "name": {
+      "ar": "حقل الوسوم",
+      "en": "Tag input (token field)"
+    },
+    "reference": {
+      "name": "React Aria: useTagGroup",
+      "url": "https://react-spectrum.adobe.com/react-aria/useTagGroup.html"
+    },
+    "roles": [
+      {
+        "role": "grid",
+        "on": "the list of tags",
+        "required": true,
+        "note": "React Aria uses a grid with one row per tag so each tag can hold a remove button; a listbox is the simpler alternative when tags have no inner controls."
+      },
+      {
+        "role": "row",
+        "on": "each tag",
+        "required": true
+      },
+      {
+        "role": "gridcell",
+        "on": "the tag content",
+        "required": true
+      },
+      {
+        "role": "button",
+        "on": "remove control inside a tag",
+        "required": false,
+        "note": "Not a tab stop; reachable by Delete or Backspace on the tag."
+      },
+      {
+        "role": "combobox",
+        "on": "the text input, when it suggests values",
+        "required": false,
+        "note": "A plain textbox otherwise."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "grid",
+        "values": "name of the set of tags; or aria-labelledby",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "remove button",
+        "values": "localized \"remove\" plus the tag text",
+        "required": false
+      },
+      {
+        "name": "aria-describedby",
+        "on": "input",
+        "values": "IDREF of a hint such as how many tags are selected",
+        "required": false
+      },
+      {
+        "name": "aria-live",
+        "on": "a visually hidden status element",
+        "values": "polite",
+        "required": false,
+        "note": "Announces \"added\" and \"removed\"."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "With text in the input: add it as a tag (or accept the highlighted suggestion) and clear the input.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "A separator character (comma, the Arabic comma U+060C, optionally Space or semicolon) commits the text as a tag; other characters are typed.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "hayzo"
+      },
+      {
+        "keys": [
+          "Backspace"
+        ],
+        "action": "With the input empty: move focus to the last tag (first press) and remove it (second press); some libraries remove on the first press.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "input",
+        "origin": "material"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "With the caret at the logical start of the input and nothing selected: move focus to the last tag. Otherwise the key moves the caret.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "input",
+        "origin": "material",
+        "debatable": true,
+        "decision": "input-edge-handoff"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus to the next tag; from the last tag, back into the input.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "tags",
+        "origin": "react-aria",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus to the previous tag; stop (or wrap) at the first.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "tags",
+        "origin": "react-aria",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first tag.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tags",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last tag.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tags",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Delete",
+          "Backspace"
+        ],
+        "action": "Remove the focused tag; focus moves to the following tag, else the preceding one, else the input.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tags",
+        "origin": "react-aria"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Return focus to the input.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "tags",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "From the tags or the input: leave the control. The tag list and the input are separate tab stops in React Aria and one composite in Material UI.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "convention"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "The text input. Tags are reached with the arrow at the caret edge, Backspace, or (when the list is its own tab stop) Shift+Tab.",
+      "exit": "Tab leaves.",
+      "restore": "After removing a tag: the next tag, else the previous, else the input.",
+      "tabStops": "One (composite) or two (tag list, input)."
+    },
+    "variants": [
+      "free text tags",
+      "tags from suggestions (combobox)",
+      "tags as a separate listbox above the input",
+      "paste splits on separators"
+    ],
+    "components": [
+      "tags-input",
+      "multi-select",
+      "tag"
+    ],
+    "uses": [
+      "grid",
+      "combobox"
+    ],
+    "ariaRequired": [
+      {
+        "role": "grid",
+        "requiredOwnedElements": [
+          "row",
+          "rowgroup > row"
+        ]
+      },
+      {
+        "role": "row",
+        "requiredOwnedElements": [
+          "cell",
+          "columnheader",
+          "gridcell",
+          "rowheader"
+        ],
+        "requiredContextRole": [
+          "grid",
+          "rowgroup",
+          "table",
+          "treegrid"
+        ]
+      },
+      {
+        "role": "gridcell",
+        "requiredContextRole": [
+          "row"
+        ]
+      },
+      {
+        "role": "combobox",
+        "requiredStatesAndProperties": [
+          "aria-controls",
+          "aria-expanded"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "input-edge-handoff",
+        "question": "Which arrow leaves a text input for the item before it (the last tag of a tag input, the previous cell) in RTL, and when?",
+        "apg": "Silent.",
+        "libraries": [
+          {
+            "library": "base-ui",
+            "behaviour": "Uses the container direction: in RTL the backward key is ArrowRight, and it leaves the input only when selectionStart is 0 and the selection is collapsed. The test is on the logical caret index, so with left-to-right text inside an RTL composite the caret can be at index 0 while still having visual room to move.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Always ArrowLeft at selectionStart 0, with no direction handling in the hook.",
+            "evidence": "packages/mui-material/src/useAutocomplete/useAutocomplete.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Tags sit at inline-start of the input, which is its right side in RTL, so ArrowRight must reach them. Hand off only when the selection is collapsed at logical index 0 and the input's resolved text direction equals the container direction; otherwise leave the key to the caret and rely on Backspace.",
+        "status": "divergent"
+      },
+      {
+        "id": "roving-horizontal",
+        "question": "In a horizontal roving-focus composite (tabs, toolbar, menubar, radio group, toggle group), which arrow moves to the next item in RTL?",
+        "apg": "Silent, apart from one aside in the tabs page that calls the last tab the right-most \"in a left-to-right horizontal tab list\". Keys are named physically: Right Arrow is next.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "ArrowLeft is next in RTL for tabs, toolbar and horizontal radio groups; vertical arrows never flip.",
+            "evidence": "packages/react-aria/src/tabs/TabsKeyboardDelegate.ts, packages/react-aria/src/toolbar/useToolbar.ts, packages/react-aria/src/radio/useRadioGroup.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "The composite root swaps the forward and backward horizontal keys when direction is rtl.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "The roving focus group swaps ArrowLeft and ArrowRight before mapping a key to a focus intent when dir is rtl; toggle group, tabs, toolbar, radio group and menubar all pass dir through it.",
+            "evidence": "packages/react/roving-focus/src/roving-focus-group.tsx (getDirectionAwareKey)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Tabs and ToggleButtonGroup pass isRtl to the roving tabindex root.",
+            "evidence": "packages/mui-material/src/Tabs/Tabs.js, packages/mui-material/src/ToggleButtonGroup/ToggleButtonGroup.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Tabs flip the arrow offset when rtl and the tab bar is top or bottom; a horizontal menu maps Left to next when rtl.",
+            "evidence": "@rc-component/tabs es/TabNavList/index.js, @rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Items are laid out from inline-start, so the arrow that points at the visually following item must move to it. All five libraries agree.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "RTL: tags precede the input in logical order, so they are to its right; the key that leaves the input toward them is ArrowRight, and among tags ArrowLeft is next. Material UI's autocomplete hands off on ArrowLeft at selectionStart 0 with no direction handling (read from source), so in RTL its arrow points away from the tags. Base UI's composite uses the container direction but tests the logical caret index, which misfires when the input holds left-to-right text (a Latin word, a number) inside an RTL field: index 0 is then the visual left edge, not the edge next to the tags. Our rule (decision input-edge-handoff): hand off only when the selection is collapsed at logical index 0 and the input's resolved direction equals the container's; otherwise leave the key to the caret, and Backspace on an empty input always works. The Arabic comma (U+060C) must be a separator wherever the Latin comma is."
+  }
+}

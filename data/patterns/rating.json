@@ -1,0 +1,207 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "rating",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "rating",
+    "name": {
+      "ar": "تقييم",
+      "en": "Rating"
+    },
+    "reference": {
+      "name": "APG example: Rating Radio Group",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/radio/examples/radio-rating/"
+    },
+    "roles": [
+      {
+        "role": "radiogroup",
+        "on": "container",
+        "required": true
+      },
+      {
+        "role": "radio",
+        "on": "each rating value",
+        "required": true,
+        "note": "Including an explicit \"no rating\" radio when clearing is allowed."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "radiogroup",
+        "values": "IDREF of the label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-checked",
+        "on": "radio",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-label",
+        "on": "radio",
+        "values": "localized \"3 stars\" with the locale's plural form",
+        "required": true
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Select the next higher rating; wrap from the highest to the lowest.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "rating-arrows"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Select the next lower rating; wrap from the lowest to the highest.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "rating-arrows"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Select the next lower rating (previous radio).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Select the next higher rating (next radio).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Select the focused rating if not selected.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Into the group: the selected rating, else the first. From it: leave.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "The checked radio, else the first.",
+      "exit": "Tab.",
+      "tabStops": "One."
+    },
+    "variants": [
+      "radio group (whole stars)",
+      "slider (role slider, for half steps; then slider applies, with ArrowUp increasing)",
+      "read-only (role img with a text alternative)"
+    ],
+    "components": [
+      "rating"
+    ],
+    "uses": [
+      "radio-group",
+      "slider"
+    ],
+    "ariaRequired": [
+      {
+        "role": "radiogroup",
+        "requiredOwnedElements": [
+          "radio"
+        ]
+      },
+      {
+        "role": "radio",
+        "requiredStatesAndProperties": [
+          "aria-checked"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "rating-arrows",
+        "question": "In a horizontal rating in RTL, which arrow raises the value?",
+        "apg": "No rating pattern page; the star rating examples are a slider and a radio group, both silent on RTL.",
+        "libraries": [
+          {
+            "library": "ant-design",
+            "behaviour": "Reversed in RTL: Left raises the value and Right lowers it.",
+            "evidence": "@rc-component/rate es/Rate.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Built from native radio inputs, so arrows are the browser's; the pointer mapping is mirrored when isRtl.",
+            "evidence": "packages/mui-material/src/Rating/Rating.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Stars fill from inline-start, like a slider.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Two valid mappings exist and they disagree on the vertical arrows: as a radio group ArrowDown is the next radio (higher rating), as a slider ArrowUp increases. Pick one per component and test it; we default to radio group for whole stars. RTL: stars fill from the right; ArrowLeft raises the rating (Ant Design reverses its arrows in RTL; Material UI mirrors its pointer mapping and leaves keys to native radios). The accessible name needs Arabic plural categories (one, two, few, many): \"نجمة واحدة\", \"نجمتان\", \"3 نجوم\", \"11 نجمة\". Half-star glyphs must be mirrored so the filled half is on the right."
+  }
+}

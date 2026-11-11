@@ -1,0 +1,616 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "menubar",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/menubar/menu-and-menubar-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "menubar",
+    "name": {
+      "ar": "شريط القوائم",
+      "en": "Menubar"
+    },
+    "reference": {
+      "name": "APG: Menu and Menubar Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/"
+    },
+    "roles": [
+      {
+        "role": "menubar",
+        "on": "persistent container of top-level items",
+        "required": true
+      },
+      {
+        "role": "menu",
+        "on": "popup container of items",
+        "required": true
+      },
+      {
+        "role": "menuitem",
+        "on": "item that runs a command or opens a submenu",
+        "required": true
+      },
+      {
+        "role": "menuitemcheckbox",
+        "on": "item with an independent checked state",
+        "required": false
+      },
+      {
+        "role": "menuitemradio",
+        "on": "item in a mutually exclusive group",
+        "required": false
+      },
+      {
+        "role": "separator",
+        "on": "divider between groups of items",
+        "required": false,
+        "note": "Not focusable. Used to delimit a group of menuitemradio items."
+      },
+      {
+        "role": "group",
+        "on": "optional wrapper of related items",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-labelledby",
+        "on": "menubar",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-orientation",
+        "on": "menubar",
+        "values": "vertical",
+        "required": false,
+        "note": "Default is horizontal."
+      },
+      {
+        "name": "aria-haspopup",
+        "on": "parent menuitem",
+        "values": "menu | true",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "parent menuitem",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-checked",
+        "on": "menuitemcheckbox, menuitemradio",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-disabled",
+        "on": "disabled item",
+        "values": "true",
+        "required": false,
+        "note": "Disabled items stay focusable but cannot be activated."
+      },
+      {
+        "name": "aria-orientation",
+        "on": "separator",
+        "values": "matches the separator",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "menu",
+        "values": "IDREF of the menuitem or button that opens it; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-orientation",
+        "on": "menu",
+        "values": "horizontal",
+        "required": false,
+        "note": "Default is vertical."
+      },
+      {
+        "name": "aria-activedescendant",
+        "on": "menu or menubar container",
+        "values": "IDREF of the focused item",
+        "required": false,
+        "note": "Alternative to roving tabindex; the container then has tabindex 0 or -1."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Into the menubar: focus the first item on first entry, afterwards optionally the item that last had focus, else the first enabled item. From an item: leave the menubar and close all menus.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "As Tab, in the reverse direction of the page sequence.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Move focus to the next menubar item, optionally wrapping from last to first.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "menubar",
+        "origin": "apg",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Move focus to the previous menubar item, optionally wrapping from first to last.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "menubar",
+        "origin": "apg",
+        "decision": "roving-horizontal"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "On an item with a submenu: open it and focus its first item.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "On an item with a submenu: open it and focus its last item.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "On an item with a submenu: open it and focus its first item. Otherwise activate the item.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "As Enter; on a menuitemcheckbox or menuitemradio, change its state.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first menubar item.",
+        "when": "Arrow wrapping is not supported.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last menubar item.",
+        "when": "Arrow wrapping is not supported.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Move focus to the next item in the current menubar or menu whose label starts with the character.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "With focus in the bar after a context action opened it: optionally return focus to the invoking context.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menubar",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "On an item with a submenu: open it and focus its first item. Otherwise activate the item and close the menu.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "On a menuitemcheckbox: toggle it without closing. On an unchecked menuitemradio: check it and uncheck the others of its group without closing. On an item with a submenu: open it and focus its first item. On any other item: activate it and close the menu.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next item, optionally wrapping from last to first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous item, optionally wrapping from first to last.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "On an item with a submenu: open it and focus its first item. On an item without one: close the submenu and all parent menus, move focus to the next menubar item and, if that item has a submenu, open it (recommended: without moving focus into it).",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "menu",
+        "origin": "apg",
+        "decision": "submenu-open-close"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "In a submenu of a menu item: close the submenu and return focus to its parent item. In a submenu of a menubar item: close it, move focus to the previous menubar item and, if that item has a submenu, open it (recommended: without moving focus into it).",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "menu",
+        "origin": "apg",
+        "decision": "submenu-open-close"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first item of the current menu.",
+        "when": "Arrow wrapping is not supported.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last item of the current menu.",
+        "when": "Arrow wrapping is not supported.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Move focus to the next item of the current menu whose label starts with the character.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the menu that contains focus and return focus to what opened it (menu button, parent item, or invoking context).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Move focus out of the menu to the next element in the page sequence and close all menus and submenus. Tab never moves focus into a menu.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Tab"
+        ],
+        "action": "Move focus out of the menu to the previous element in the page sequence and close all menus and submenus.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "Tab focuses the first item the first time and optionally the last-focused item afterwards.",
+      "exit": "Tab or Shift+Tab leaves and closes every open menu.",
+      "restore": "Escape in a menu returns focus to the menubar item that opened it.",
+      "tabStops": "One: the item with tabindex 0.",
+      "note": "When moving along the bar from an open menu, the next item's menu opens but focus stays on the bar item (recommended)."
+    },
+    "variants": [
+      "horizontal menubar with vertical menus",
+      "vertical menubar with horizontal menus",
+      "navigation menubar (items that both navigate and open)"
+    ],
+    "components": [
+      "menubar",
+      "navigation-menu"
+    ],
+    "uses": [
+      "menu"
+    ],
+    "orientation": {
+      "default": "horizontal",
+      "supported": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "apg": {
+      "pages": [
+        "menubar"
+      ],
+      "keysNotBound": [
+        {
+          "key": "Shift+F10",
+          "reason": "Named as the Windows command that opens a context menu; see context-menu."
+        },
+        {
+          "key": "Alt+F10",
+          "reason": "An example of an application shortcut that focuses a menubar from an editor; not a binding of the pattern."
+        }
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "menubar",
+        "requiredOwnedElements": [
+          "group > menuitem",
+          "group > menuitemradio",
+          "group > menuitemcheckbox",
+          "menuitem",
+          "menuitemcheckbox",
+          "menuitemradio"
+        ]
+      },
+      {
+        "role": "menu",
+        "requiredOwnedElements": [
+          "group > menuitem",
+          "group > menuitemradio",
+          "group > menuitemcheckbox",
+          "menuitem",
+          "menuitemcheckbox",
+          "menuitemradio"
+        ]
+      },
+      {
+        "role": "menuitem",
+        "requiredContextRole": [
+          "group",
+          "menu",
+          "menubar"
+        ]
+      },
+      {
+        "role": "menuitemcheckbox",
+        "requiredStatesAndProperties": [
+          "aria-checked"
+        ],
+        "requiredContextRole": [
+          "group",
+          "menu",
+          "menubar"
+        ]
+      },
+      {
+        "role": "menuitemradio",
+        "requiredContextRole": [
+          "group",
+          "menu",
+          "menubar"
+        ]
+      },
+      {
+        "role": "separator",
+        "requiredStatesAndProperties": [
+          "aria-valuenow"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "roving-horizontal",
+        "question": "In a horizontal roving-focus composite (tabs, toolbar, menubar, radio group, toggle group), which arrow moves to the next item in RTL?",
+        "apg": "Silent, apart from one aside in the tabs page that calls the last tab the right-most \"in a left-to-right horizontal tab list\". Keys are named physically: Right Arrow is next.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "ArrowLeft is next in RTL for tabs, toolbar and horizontal radio groups; vertical arrows never flip.",
+            "evidence": "packages/react-aria/src/tabs/TabsKeyboardDelegate.ts, packages/react-aria/src/toolbar/useToolbar.ts, packages/react-aria/src/radio/useRadioGroup.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "The composite root swaps the forward and backward horizontal keys when direction is rtl.",
+            "evidence": "packages/react/src/internals/composite/root/useCompositeRoot.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "The roving focus group swaps ArrowLeft and ArrowRight before mapping a key to a focus intent when dir is rtl; toggle group, tabs, toolbar, radio group and menubar all pass dir through it.",
+            "evidence": "packages/react/roving-focus/src/roving-focus-group.tsx (getDirectionAwareKey)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "Tabs and ToggleButtonGroup pass isRtl to the roving tabindex root.",
+            "evidence": "packages/mui-material/src/Tabs/Tabs.js, packages/mui-material/src/ToggleButtonGroup/ToggleButtonGroup.js",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Tabs flip the arrow offset when rtl and the tab bar is top or bottom; a horizontal menu maps Left to next when rtl.",
+            "evidence": "@rc-component/tabs es/TabNavList/index.js, @rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Items are laid out from inline-start, so the arrow that points at the visually following item must move to it. All five libraries agree.",
+        "status": "consensus"
+      },
+      {
+        "id": "submenu-open-close",
+        "question": "Which arrow opens a submenu from a vertical menu, and which closes it, in RTL?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right Arrow opens a submenu, Left Arrow closes it.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "In RTL ArrowLeft opens the submenu and ArrowRight closes it.",
+            "evidence": "packages/react-aria/src/menu/useSubmenuTrigger.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "SUB_OPEN_KEYS and SUB_CLOSE_KEYS are keyed by direction: rtl opens with ArrowLeft, closes with ArrowRight.",
+            "evidence": "packages/react/menu/src/menu.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "List navigation takes an rtl flag; the cross-orientation open and close keys are ArrowLeft and ArrowRight respectively when rtl.",
+            "evidence": "packages/react/src/utils/popups/interactions/useListNavigation.ts, packages/react/src/menu/root/MenuRoot.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "In a vertical menu Left means \"children\" (open) and Right means \"parent\" (close) when rtl.",
+            "evidence": "@rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "A submenu opens toward inline-end, which is the left in RTL; the arrow must point where the submenu appears.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/menubar/menu-and-menubar-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "RTL: the bar starts at the right, so ArrowLeft is next; inside menus ArrowLeft opens a submenu, or on a leaf item moves to the next bar item, and ArrowRight closes a submenu or moves to the previous bar item. In a vertical menubar with horizontal menus the arrow pairs exchange roles. For an item that both navigates and opens a submenu, Enter and Space navigate and ArrowDown opens."
+  }
+}

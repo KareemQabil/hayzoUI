@@ -1,0 +1,511 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "tree-view",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/treeview/treeview-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "MUI X (mui/mui-x)",
+        "url": "https://github.com/mui/mui-x",
+        "version": "9.17.0 @ bb99a92f284a804fcc70f508a10e21de6f02bb12",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "tree-view",
+    "name": {
+      "ar": "عرض شجري",
+      "en": "Tree view"
+    },
+    "reference": {
+      "name": "APG: Tree View Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/"
+    },
+    "roles": [
+      {
+        "role": "tree",
+        "on": "container",
+        "required": true
+      },
+      {
+        "role": "treeitem",
+        "on": "each node",
+        "required": true
+      },
+      {
+        "role": "group",
+        "on": "container of the children of a parent node",
+        "required": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-expanded",
+        "on": "parent treeitem",
+        "values": "true | false",
+        "required": true,
+        "note": "Never on end nodes."
+      },
+      {
+        "name": "aria-multiselectable",
+        "on": "tree",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-selected",
+        "on": "selectable treeitem",
+        "values": "true | false",
+        "required": false,
+        "note": "Or aria-checked instead; absent on nodes that are not selectable."
+      },
+      {
+        "name": "aria-checked",
+        "on": "selectable treeitem",
+        "values": "true | false",
+        "required": false,
+        "note": "Alternative to aria-selected."
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "tree",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-level",
+        "on": "treeitem",
+        "values": "1-based depth",
+        "required": false,
+        "note": "Required with aria-setsize and aria-posinset when not all nodes are in the DOM."
+      },
+      {
+        "name": "aria-setsize",
+        "on": "treeitem",
+        "values": "number of siblings",
+        "required": false
+      },
+      {
+        "name": "aria-posinset",
+        "on": "treeitem",
+        "values": "1-based position among siblings",
+        "required": false
+      },
+      {
+        "name": "aria-orientation",
+        "on": "tree",
+        "values": "horizontal",
+        "required": false,
+        "note": "Default is vertical."
+      },
+      {
+        "name": "aria-activedescendant",
+        "on": "tree",
+        "values": "IDREF of the focused node",
+        "required": false,
+        "note": "Alternative to moving DOM focus."
+      },
+      {
+        "name": "aria-owns",
+        "on": "tree",
+        "values": "IDREFs of root nodes that are not DOM descendants",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Closed node: open it, focus stays. Open node: move focus to its first child. End node: nothing.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "decision": "tree-expand-collapse"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Open node: close it. Child node that is an end node or closed: move focus to its parent. Root node that is an end node or closed: nothing.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "decision": "tree-expand-collapse"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next focusable node without opening or closing any node.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous focusable node without opening or closing any node.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first node without opening or closing any node.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last focusable node without opening any node.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Activate the node (its default action). For a parent node that may be open/close; in a single-select tree without selection-follows-focus it is normally select.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Type-ahead: one character moves focus to the next node whose name starts with it; characters typed in quick succession match the whole string.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "*"
+        ],
+        "action": "Expand all siblings at the same level as the focused node.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Toggle the selection of the focused node.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: recommended model (no modifier needed)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+ArrowDown"
+        ],
+        "action": "Move focus to the next node and toggle its selection.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: recommended model (no modifier needed)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+ArrowUp"
+        ],
+        "action": "Move focus to the previous node and toggle its selection.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: recommended model (no modifier needed)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Space"
+        ],
+        "action": "Select the contiguous nodes from the most recently selected one to the focused one.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: recommended model (no modifier needed)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Shift+Home"
+        ],
+        "action": "Select the focused node and every node up to the first; optionally move focus to the first.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: recommended model (no modifier needed)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Shift+End"
+        ],
+        "action": "Select the focused node and every node down to the last; optionally move focus to the last.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: recommended model (no modifier needed)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+A"
+        ],
+        "action": "Select every node; optionally, when all are selected, unselect all.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: recommended model (no modifier needed)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+ArrowDown"
+        ],
+        "action": "Move focus to the next node and toggle its selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+ArrowUp"
+        ],
+        "action": "Move focus to the previous node and toggle its selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+ArrowDown"
+        ],
+        "action": "Move focus to the next node without changing selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+ArrowUp"
+        ],
+        "action": "Move focus to the previous node without changing selection.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Space"
+        ],
+        "action": "Toggle the selection of the focused node.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Shift+Space"
+        ],
+        "action": "Select the contiguous nodes from the most recently selected one to the focused one.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Shift+Home"
+        ],
+        "action": "Select the focused node and every node up to the first; optionally move focus to the first.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+Shift+End"
+        ],
+        "action": "Select the focused node and every node down to the last; optionally move focus to the last.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Control+A"
+        ],
+        "action": "Select every node; optionally, when all are selected, unselect all.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "multi-select: alternative model (plain arrows collapse the selection)",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "Single-select: the selected node, else the first node. Multi-select: the first selected node, else the first node.",
+      "exit": "Tab leaves the tree.",
+      "tabStops": "One.",
+      "note": "aria-activedescendant on the tree is the alternative. Only visible nodes (those whose ancestors are all open) are focusable."
+    },
+    "variants": [
+      "single-select",
+      "single-select, selection follows focus",
+      "multi-select (recommended model)",
+      "multi-select (modifier model)",
+      "navigation tree (file directory)",
+      "horizontal"
+    ],
+    "components": [
+      "tree",
+      "tree-select"
+    ],
+    "orientation": {
+      "default": "vertical",
+      "supported": [
+        "vertical",
+        "horizontal"
+      ]
+    },
+    "apg": {
+      "pages": [
+        "treeview"
+      ],
+      "keysNotBound": [
+        {
+          "key": "Control",
+          "reason": "Named in prose as a modifier, not as a binding."
+        },
+        {
+          "key": "Shift",
+          "reason": "Named in prose as a modifier, not as a binding."
+        }
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "tree",
+        "requiredOwnedElements": [
+          "group > treeitem",
+          "treeitem"
+        ]
+      },
+      {
+        "role": "treeitem",
+        "requiredContextRole": [
+          "group",
+          "tree"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "tree-expand-collapse",
+        "question": "Which arrow expands a tree node and which collapses it in RTL?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right arrow opens a closed node, Left arrow closes an open one.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "Expansion keys are keyed by direction: rtl expands with ArrowLeft and collapses with ArrowRight.",
+            "evidence": "packages/react-aria/src/gridlist/useGridListItem.ts (EXPANSION_KEYS)",
+            "checked": "source-read"
+          },
+          {
+            "library": "mui-x",
+            "behaviour": "Tree view expands on ArrowLeft and collapses on ArrowRight when isRtl.",
+            "evidence": "packages/x-tree-view/src/internals/plugins/keyboardNavigation/TreeViewKeyboardNavigationPlugin.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Does not swap: ArrowLeft always collapses or moves to the parent, ArrowRight always expands, although direction is passed for drag positioning.",
+            "evidence": "@rc-component/tree es/Tree.js (onKeyDown)",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "No tree component.",
+            "checked": "not-found"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "No tree component in 1.9.0.",
+            "checked": "not-found"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "Children are indented toward inline-end and the disclosure chevron points there; the arrow that points into the indentation expands.",
+        "status": "divergent"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/treeview/treeview-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "RTL: children are indented toward the left, so ArrowLeft opens a node or enters its children and ArrowRight closes it or returns to the parent. React Aria and MUI X do this; Ant Design's tree does not, which makes its arrows point against the indentation. In a horizontal tree (aria-orientation=horizontal) the two arrow pairs exchange roles, and the next/previous pair then mirrors. Type-ahead is recommended above seven root nodes."
+  }
+}

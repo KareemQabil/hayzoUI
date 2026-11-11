@@ -1,0 +1,364 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "select",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-1.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "select",
+    "name": {
+      "ar": "قائمة اختيار منسدلة",
+      "en": "Select (collapsed listbox)"
+    },
+    "reference": {
+      "name": "APG example: Select-Only Combobox",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/"
+    },
+    "roles": [
+      {
+        "role": "combobox",
+        "on": "the trigger that shows the value",
+        "required": true,
+        "note": "Not editable: an element with tabindex 0, not an input."
+      },
+      {
+        "role": "listbox",
+        "on": "popup",
+        "required": true
+      },
+      {
+        "role": "option",
+        "on": "each choice",
+        "required": true
+      },
+      {
+        "role": "group",
+        "on": "option group",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-controls",
+        "on": "combobox",
+        "values": "IDREF of the listbox",
+        "required": true
+      },
+      {
+        "name": "aria-expanded",
+        "on": "combobox",
+        "values": "true | false",
+        "required": true
+      },
+      {
+        "name": "aria-haspopup",
+        "on": "combobox",
+        "values": "listbox (implicit)",
+        "required": false
+      },
+      {
+        "name": "aria-activedescendant",
+        "on": "combobox",
+        "values": "IDREF of the focused option while open",
+        "required": false,
+        "note": "Radix instead moves DOM focus into the listbox and uses roving focus."
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "combobox",
+        "values": "IDREF of the label",
+        "required": true
+      },
+      {
+        "name": "aria-selected",
+        "on": "option",
+        "values": "true on the chosen option, false on the others",
+        "required": true
+      },
+      {
+        "name": "aria-required",
+        "on": "combobox",
+        "values": "true",
+        "required": false
+      },
+      {
+        "name": "aria-invalid",
+        "on": "combobox",
+        "values": "true",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "Open the listbox with focus on the selected option, or the first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "closed",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Open the listbox. Radix focuses the selected option; the APG example opens without moving the highlight.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "closed",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Open the listbox. Radix focuses the selected option; the APG example focuses the first option.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "closed",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "Alt+ArrowDown"
+        ],
+        "action": "Open the listbox without moving the highlighted option.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "closed",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Open the listbox and focus the first option.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "closed",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Open the listbox and focus the last option.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "closed",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Type-ahead. Closed: select the next option whose label starts with the typed string without opening (Radix), or open and focus it (APG example).",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "closed",
+        "origin": "convention"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next option; stop at the last.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous option; stop at the first.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first option.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last option.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Move focus ten options down, or to the last.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Move focus ten options up, or to the first.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "Select the focused option, close, and return focus to the trigger.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Select the focused option, close, and move focus to the next element in the page sequence.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Alt+ArrowUp"
+        ],
+        "action": "Select the focused option and close.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close without changing the value and return focus to the trigger.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Type-ahead: move focus to the next option whose label starts with the typed string; repeating one character cycles through the options that start with it.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "open",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "active-descendant",
+      "entry": "The trigger is the only tab stop. While open, DOM focus stays on the trigger and aria-activedescendant names the option (APG); Radix and Base UI move DOM focus into the popup instead.",
+      "exit": "Tab commits and leaves (APG). Radix traps focus while open and prevents Tab.",
+      "restore": "To the trigger.",
+      "tabStops": "One."
+    },
+    "variants": [
+      "single",
+      "multiple (listbox stays open; Space toggles; aria-multiselectable)",
+      "native select fallback on touch",
+      "item-aligned popup (Radix) vs anchored popup"
+    ],
+    "components": [
+      "select",
+      "multi-select",
+      "country-select",
+      "currency-select"
+    ],
+    "uses": [
+      "combobox",
+      "listbox"
+    ],
+    "ariaRequired": [
+      {
+        "role": "combobox",
+        "requiredStatesAndProperties": [
+          "aria-controls",
+          "aria-expanded"
+        ]
+      },
+      {
+        "role": "listbox",
+        "requiredOwnedElements": [
+          "group > option",
+          "option"
+        ]
+      },
+      {
+        "role": "option",
+        "requiredStatesAndProperties": [
+          "aria-selected"
+        ],
+        "requiredContextRole": [
+          "group",
+          "listbox"
+        ]
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "The APG bindings here were read from the select-only combobox example page (an example, not a pattern page); the Radix ones from its source constants and from memory of its behaviour, hence needs-review. Sources disagree on Tab while open (APG commits and moves on; Radix blocks Tab) and on whether closed-state type-ahead changes the value without opening. No horizontal bindings, so nothing is direction-sensitive: ArrowLeft and ArrowRight are deliberately unbound. Arabic: type-ahead must match on normalised text, and options that mix Arabic and Latin (country names, currencies) need per-item direction isolation, which is rendering, not keys."
+  }
+}

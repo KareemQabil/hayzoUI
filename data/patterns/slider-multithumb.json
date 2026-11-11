@@ -1,0 +1,350 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "slider-multithumb",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/slider-multithumb/slider-multithumb-pattern.html, content/patterns/slider/slider-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Material UI (mui/material-ui)",
+        "url": "https://github.com/mui/material-ui",
+        "version": "10.0.0-alpha.0 @ 0c82795c732a0ae809fd51f9537ee70747ef20a1",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-2.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "slider-multithumb",
+    "name": {
+      "ar": "شريط تمرير متعدد المقابض",
+      "en": "Slider (multi-thumb)"
+    },
+    "reference": {
+      "name": "APG: Slider (Multi-Thumb) Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/slider-multithumb/"
+    },
+    "roles": [
+      {
+        "role": "slider",
+        "on": "each focusable thumb",
+        "required": true
+      },
+      {
+        "role": "group",
+        "on": "the wrapper of the thumbs",
+        "required": false,
+        "note": "Not required by the page; gives the set a name."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-valuenow",
+        "on": "each slider",
+        "values": "current value (decimal)",
+        "required": true
+      },
+      {
+        "name": "aria-valuemin",
+        "on": "each slider",
+        "values": "minimum allowed value",
+        "required": true
+      },
+      {
+        "name": "aria-valuemax",
+        "on": "each slider",
+        "values": "maximum allowed value",
+        "required": true
+      },
+      {
+        "name": "aria-valuetext",
+        "on": "each slider",
+        "values": "human-readable value when the number alone is not meaningful",
+        "required": false
+      },
+      {
+        "name": "aria-labelledby",
+        "on": "each slider",
+        "values": "IDREF of the visible label; otherwise aria-label",
+        "required": true
+      },
+      {
+        "name": "aria-orientation",
+        "on": "each slider",
+        "values": "vertical",
+        "required": false,
+        "note": "Default is horizontal."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Each thumb is a tab stop. The tab order of the thumbs is fixed and does not change when one thumb passes another.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "Increase the value by one step. Applies to the focused thumb, within the limits set by its neighbours.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "slider-arrows"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Increase the value by one step. Applies to the focused thumb, within the limits set by its neighbours.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "Decrease the value by one step. Applies to the focused thumb, within the limits set by its neighbours.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "slider-arrows"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Decrease the value by one step. Applies to the focused thumb, within the limits set by its neighbours.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Set the first allowed value of the range (the minimum). Applies to the focused thumb, within the limits set by its neighbours.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "slider-page-home-end"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Set the last allowed value of the range (the maximum). Applies to the focused thumb, within the limits set by its neighbours.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "slider-page-home-end"
+      },
+      {
+        "keys": [
+          "PageUp"
+        ],
+        "action": "Increase the value by a step larger than one arrow step. Applies to the focused thumb, within the limits set by its neighbours.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "slider-page-home-end"
+      },
+      {
+        "keys": [
+          "PageDown"
+        ],
+        "action": "Decrease the value by a step larger than one arrow step. Applies to the focused thumb, within the limits set by its neighbours.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg",
+        "debatable": true,
+        "decision": "slider-page-home-end"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "Each thumb in a constant order.",
+      "tabStops": "One per thumb."
+    },
+    "variants": [
+      "range (two thumbs)",
+      "more than two thumbs",
+      "thumbs may cross",
+      "thumbs constrained by neighbours"
+    ],
+    "components": [
+      "slider"
+    ],
+    "uses": [
+      "slider"
+    ],
+    "orientation": {
+      "default": "horizontal",
+      "supported": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "apg": {
+      "pages": [
+        "slider-multithumb",
+        "slider"
+      ]
+    },
+    "ariaRequired": [
+      {
+        "role": "slider",
+        "requiredStatesAndProperties": [
+          "aria-valuenow"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "slider-arrows",
+        "question": "In a horizontal slider in RTL, does ArrowRight increase or decrease the value?",
+        "apg": "Right Arrow increases, Left Arrow decreases; no RTL statement. A note allows reversing the direction of value change where that is more intuitive.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "Reverses the horizontal axis in RTL: ArrowLeft increments, ArrowRight decrements; the thumb position is mirrored.",
+            "evidence": "packages/react-aria/src/slider/useSliderThumb.ts (reverseX)",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "ArrowRight is -1 and ArrowLeft is +1 when rtl.",
+            "evidence": "packages/react/src/slider/thumb/SliderThumb.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "Back keys depend on slide direction: from-right (rtl, not inverted) treats ArrowRight as a back key.",
+            "evidence": "packages/react/slider/src/slider.tsx (BACK_KEYS)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "ArrowRight steps by -1 and ArrowLeft by +1 when isRtl.",
+            "evidence": "packages/mui-material/src/Slider/useSlider.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Slider turns reverse on by default for a horizontal slider in RTL; the handle then treats Left as +1 and Right as -1.",
+            "evidence": "components/slider/index.tsx, @rc-component/slider es/Handles/Handle.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "The minimum sits at inline-start, so the track fills from the right in RTL and the arrow pointing toward the maximum must increase. All five libraries do this; a slider whose axis is physical (audio balance, a timeline that stays left-to-right) opts out per instance.",
+        "status": "consensus"
+      },
+      {
+        "id": "slider-page-home-end",
+        "question": "Do PageUp, PageDown, Home and End change meaning in an RTL horizontal slider?",
+        "apg": "Home sets the first allowed value, End the last, Page Up increases by a larger step, Page Down decreases; no RTL statement.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "PageUp increments, PageDown decrements, Home sets the minimum, End the maximum, with no direction test.",
+            "evidence": "packages/react-aria/src/slider/useSliderThumb.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "PageUp +large step, PageDown -large step, Home minimum, End maximum, independent of rtl.",
+            "evidence": "packages/react/src/slider/thumb/SliderThumb.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "Home and PageDown are back keys in every slide direction.",
+            "evidence": "packages/react/slider/src/slider.tsx (BACK_KEYS)",
+            "checked": "source-read"
+          },
+          {
+            "library": "material",
+            "behaviour": "PageUp +shiftStep, PageDown -shiftStep, Home min, End max, independent of isRtl.",
+            "evidence": "packages/mui-material/src/Slider/useSlider.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "Home is min, End is max, PageUp +2 steps, PageDown -2 steps, independent of direction.",
+            "evidence": "@rc-component/slider es/Handles/Handle.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "none",
+        "reason": "These keys name a value (smallest, largest, more, less), not a screen direction. All five libraries keep them fixed.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/slider-multithumb/slider-multithumb-pattern.html, content/patterns/slider/slider-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "The page binds no keys itself: each thumb follows the slider pattern, whose bindings are repeated here so the file stands alone. When one thumb limits another, aria-valuemin or aria-valuemax of the dependent thumb is updated as values change. RTL: as slider; in addition the thumb for the lower bound is the right-hand one, while the tab order stays lower bound first."
+  }
+}

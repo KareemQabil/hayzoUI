@@ -1,0 +1,347 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "context-menu",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Radix Primitives (radix-ui/primitives)",
+        "url": "https://github.com/radix-ui/primitives",
+        "version": "eb3a2b7091293e27df8f9ba906632d8daa3d81a3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "React Aria (adobe/react-spectrum)",
+        "url": "https://github.com/adobe/react-spectrum",
+        "version": "react-aria 3.53.1 @ d354aa2a642fa1d34bc0bdc27e8ae9bcf0c59b32",
+        "license": "Apache-2.0",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Base UI (mui/base-ui)",
+        "url": "https://github.com/mui/base-ui",
+        "version": "1.9.0 @ 5aacdbb7852487518b982ea397885c8322a3ebc6",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      },
+      {
+        "name": "Ant Design and its @rc-component packages",
+        "url": "https://github.com/ant-design/ant-design",
+        "version": "antd 6.7.0 @ 0572a24a2ada6021a55d93fceca93a67b2dc6e2f; @rc-component slider 1.2.1, tabs 2.0.0, menu 1.6.2, tree 1.5.3, picker 1.17.0, rate 1.0.1, segmented 1.4.0, switch 1.0.3",
+        "license": "MIT",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/extra-2.mjs. Bindings are cited but not all checked against a primary source; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "context-menu",
+    "name": {
+      "ar": "قائمة السياق",
+      "en": "Context menu"
+    },
+    "reference": {
+      "name": "Radix Primitives: Context Menu",
+      "url": "https://www.radix-ui.com/primitives/docs/components/context-menu"
+    },
+    "roles": [
+      {
+        "role": "menu",
+        "on": "the popup",
+        "required": true
+      },
+      {
+        "role": "menuitem",
+        "on": "each command",
+        "required": true
+      },
+      {
+        "role": "menuitemcheckbox",
+        "on": "checkable command",
+        "required": false
+      },
+      {
+        "role": "menuitemradio",
+        "on": "exclusive choice",
+        "required": false
+      },
+      {
+        "role": "separator",
+        "on": "divider",
+        "required": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "menu",
+        "values": "name of the menu, since no button labels it",
+        "required": true
+      },
+      {
+        "name": "aria-haspopup",
+        "on": "parent menuitem",
+        "values": "menu",
+        "required": false
+      },
+      {
+        "name": "aria-expanded",
+        "on": "parent menuitem",
+        "values": "true | false",
+        "required": false
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Shift+F10"
+        ],
+        "action": "Open the context menu for the focused element, positioned at the element (not the pointer), and focus the first item.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "trigger",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ContextMenu"
+        ],
+        "action": "The dedicated menu key: same as Shift+F10. Both arrive as the browser's contextmenu event; the engine listens for that event rather than the keys.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "trigger",
+        "origin": "radix"
+      },
+      {
+        "keys": [
+          "Escape"
+        ],
+        "action": "Close the menu and return focus to the element it was opened for.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowDown"
+        ],
+        "action": "Move focus to the next item, optionally wrapping.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowUp"
+        ],
+        "action": "Move focus to the previous item, optionally wrapping.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "ArrowRight"
+        ],
+        "action": "On an item with a submenu: open it and focus its first item.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "menu",
+        "origin": "apg",
+        "decision": "submenu-open-close"
+      },
+      {
+        "keys": [
+          "ArrowLeft"
+        ],
+        "action": "In a submenu: close it and return focus to its parent item.",
+        "directionSensitive": true,
+        "rtl": "mirror-horizontal",
+        "group": "menu",
+        "origin": "apg",
+        "decision": "submenu-open-close"
+      },
+      {
+        "keys": [
+          "Enter",
+          "Space"
+        ],
+        "action": "Activate the focused item and close; on a parent item, open its submenu.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Home"
+        ],
+        "action": "Move focus to the first item.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "End"
+        ],
+        "action": "Move focus to the last item.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Printable"
+        ],
+        "action": "Move focus to the next item whose label starts with the character.",
+        "optional": true,
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Tab"
+        ],
+        "action": "Close the menu. Radix prevents Tab from moving focus while a menu is open.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "group": "menu",
+        "origin": "radix"
+      }
+    ],
+    "focus": {
+      "strategy": "roving-tabindex",
+      "entry": "First item on keyboard open; the menu container on pointer open.",
+      "exit": "Escape, activation, or a press outside.",
+      "restore": "To the element the menu was opened for.",
+      "tabStops": "None."
+    },
+    "variants": [
+      "on an element",
+      "on a region (canvas, table row)",
+      "long-press on touch"
+    ],
+    "components": [
+      "context-menu",
+      "data-table",
+      "tree"
+    ],
+    "uses": [
+      "menu"
+    ],
+    "ariaRequired": [
+      {
+        "role": "menu",
+        "requiredOwnedElements": [
+          "group > menuitem",
+          "group > menuitemradio",
+          "group > menuitemcheckbox",
+          "menuitem",
+          "menuitemcheckbox",
+          "menuitemradio"
+        ]
+      },
+      {
+        "role": "menuitem",
+        "requiredContextRole": [
+          "group",
+          "menu",
+          "menubar"
+        ]
+      },
+      {
+        "role": "menuitemcheckbox",
+        "requiredStatesAndProperties": [
+          "aria-checked"
+        ],
+        "requiredContextRole": [
+          "group",
+          "menu",
+          "menubar"
+        ]
+      },
+      {
+        "role": "menuitemradio",
+        "requiredContextRole": [
+          "group",
+          "menu",
+          "menubar"
+        ]
+      },
+      {
+        "role": "separator",
+        "requiredStatesAndProperties": [
+          "aria-valuenow"
+        ]
+      }
+    ],
+    "rtlDecisions": [
+      {
+        "id": "submenu-open-close",
+        "question": "Which arrow opens a submenu from a vertical menu, and which closes it, in RTL?",
+        "apg": "Silent. No pattern page mentions right-to-left; keys are described physically (left, right) for a left-to-right layout. Right Arrow opens a submenu, Left Arrow closes it.",
+        "libraries": [
+          {
+            "library": "react-aria",
+            "behaviour": "In RTL ArrowLeft opens the submenu and ArrowRight closes it.",
+            "evidence": "packages/react-aria/src/menu/useSubmenuTrigger.ts",
+            "checked": "source-read"
+          },
+          {
+            "library": "radix",
+            "behaviour": "SUB_OPEN_KEYS and SUB_CLOSE_KEYS are keyed by direction: rtl opens with ArrowLeft, closes with ArrowRight.",
+            "evidence": "packages/react/menu/src/menu.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "base-ui",
+            "behaviour": "List navigation takes an rtl flag; the cross-orientation open and close keys are ArrowLeft and ArrowRight respectively when rtl.",
+            "evidence": "packages/react/src/utils/popups/interactions/useListNavigation.ts, packages/react/src/menu/root/MenuRoot.tsx",
+            "checked": "source-read"
+          },
+          {
+            "library": "ant-design",
+            "behaviour": "In a vertical menu Left means \"children\" (open) and Right means \"parent\" (close) when rtl.",
+            "evidence": "@rc-component/menu es/hooks/useAccessibility.js",
+            "checked": "source-read"
+          }
+        ],
+        "recommendation": "mirror-horizontal",
+        "reason": "A submenu opens toward inline-end, which is the left in RTL; the arrow must point where the submenu appears.",
+        "status": "consensus"
+      }
+    ],
+    "verification": {
+      "keyboard": "needs-review",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "Everything after opening is the menu pattern. A context menu must never be the only way to reach a command. RTL: opened by keyboard, the menu is anchored at the inline-start corner of the target (top right in RTL) and submenus open leftward, so ArrowLeft opens and ArrowRight closes. \"ContextMenu\" is the KeyboardEvent.key value of the menu key."
+  }
+}

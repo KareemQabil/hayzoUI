@@ -1,0 +1,137 @@
+{
+  "kind": "pattern",
+  "schemaVersion": 1,
+  "id": "button",
+  "provenance": {
+    "method": "researched",
+    "confidence": "needs-review",
+    "sources": [
+      {
+        "name": "WAI-ARIA Authoring Practices Guide (APG)",
+        "url": "https://github.com/w3c/aria-practices",
+        "version": "0f765e4dc33e966026114ac12a8380db1de3b787",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11",
+        "path": "content/patterns/button/button-pattern.html"
+      },
+      {
+        "name": "WAI-ARIA 1.2 (W3C Recommendation)",
+        "url": "https://www.w3.org/TR/wai-aria-1.2/",
+        "version": "REC-2023-06-06",
+        "license": "W3C-20150513",
+        "retrievedAt": "2026-11-11"
+      }
+    ],
+    "script": "tools/extract/patterns/build.mjs",
+    "notes": "Researched definition in tools/extract/patterns/src/apg-1.mjs. Every binding was checked against the APG page; roles and key names are cross-checked mechanically against apg-skeleton.json and aria-roles.json. Arabic name is an unreviewed translation."
+  },
+  "data": {
+    "id": "button",
+    "name": {
+      "ar": "زر",
+      "en": "Button"
+    },
+    "reference": {
+      "name": "APG: Button Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/button/"
+    },
+    "roles": [
+      {
+        "role": "button",
+        "on": "the control",
+        "required": true,
+        "note": "A native button element is preferred."
+      }
+    ],
+    "attributes": [
+      {
+        "name": "aria-label",
+        "on": "button",
+        "values": "when there is no text content; or aria-labelledby",
+        "required": false
+      },
+      {
+        "name": "aria-describedby",
+        "on": "button",
+        "values": "IDREF of a description",
+        "required": false
+      },
+      {
+        "name": "aria-disabled",
+        "on": "button",
+        "values": "true",
+        "required": false,
+        "note": "When the action is unavailable."
+      },
+      {
+        "name": "aria-pressed",
+        "on": "toggle button",
+        "values": "true | false | mixed",
+        "required": false,
+        "note": "Makes it a toggle button; the label must not change with the state."
+      },
+      {
+        "name": "aria-haspopup",
+        "on": "menu button",
+        "values": "menu | true",
+        "required": false,
+        "note": "See menu-button."
+      }
+    ],
+    "keyboard": [
+      {
+        "keys": [
+          "Space"
+        ],
+        "action": "Activate the button.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      },
+      {
+        "keys": [
+          "Enter"
+        ],
+        "action": "Activate the button.",
+        "directionSensitive": false,
+        "rtl": "none",
+        "origin": "apg"
+      }
+    ],
+    "focus": {
+      "strategy": "native-tab",
+      "entry": "One tab stop.",
+      "restore": "After activation focus follows the action: into a dialog it opens; back to the invoker when it closes a dialog; stays on the button when the context is not dismissed; to the start of the next step when the context changes; stays where it was when activated by a shortcut.",
+      "tabStops": "One."
+    },
+    "variants": [
+      "button",
+      "toggle button (aria-pressed)",
+      "menu button (see menu-button)"
+    ],
+    "components": [
+      "button",
+      "icon-button",
+      "toggle-button",
+      "button-group"
+    ],
+    "apg": {
+      "pages": [
+        "button"
+      ],
+      "keysNotBound": [
+        {
+          "key": "Alt+U",
+          "reason": "An example of an application shortcut for a button, used to explain where focus stays; not part of the pattern."
+        }
+      ]
+    },
+    "verification": {
+      "keyboard": "verified",
+      "keyboardCheckedAgainst": "APG content/patterns/button/button-pattern.html at 0f765e4dc33e",
+      "arabicName": "needs-review",
+      "rtl": "verified"
+    },
+    "notes": "For a non-native element, Enter activates on keydown and Space on keyup (native button behaviour), and Space must not scroll the page. Not direction-sensitive."
+  }
+}
